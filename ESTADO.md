@@ -524,6 +524,9 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
     publicables, con su LEEME.md; es lo único local que lee /especial además del repo y la web):
     `Publicables/AAAA-MM-DD Especial - Título.md` con `tipo: especial borrador` (o `especial publicado` y `web: <url>`),
     `titulo`, `fecha`, `slug`, `rama`, `audio`, y al lado `AAAA-MM-DD Especial - Título.mp3`.
+  - La app Textos (antes Escritura) ya lo lee (8 oct): raíz y Publicables/; manda `tipo:`; usa `titulo:` y `audio:`
+    (solo un nombre de archivo en la misma carpeta) o, si faltan, el nombre del .md; ignora LEEME.md. Si cambia el
+    formato, se apunta aquí.
 - Hecho: paso 6 a medias. portadas.py admite colores de título, barra y cinta y tres motivos nuevos; propuestas
   en pruebas/portadas/especial/ (negro-lupa, papel-sello, negro-carpeta), enseñadas a Cristian. ESPERA SU
   ELECCIÓN: entonces la elegida pasa a SERIES["especial"], se genera assets/ y se sube. Sin portada,
