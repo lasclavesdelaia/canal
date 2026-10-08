@@ -266,7 +266,62 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
   salen si su enlace está en `canal.apps` de config/programas.json (vacíos ahora); RSS abajo, en pequeño: «Para apps
   de pódcast (RSS)» con las tres direcciones. Reproductores con preload="metadata". 18 pruebas en verde. Mirado en
   local a 375 y 1280 px, sin scroll lateral. El push lanza solo_web.
-- En curso: PARTE A (normas de Spotify, Apple e iVoox sobre IA y guía de alta).
+- Hecho (peticiones de la sesión «Central IA», aprobadas por Cristian): commit 448df6d subido. En los feeds, el aviso
+  corto (`canal.aviso_feed`) va LO PRIMERO en la descripción de cada episodio y de cada programa (art. 50.5);
+  espacio de nombres Podcasting 2.0 y `<podcast:transcript type="text/html">` hacia /e/<clave>.transcripcion.html
+  (texto hablado completo, con el aviso). 18 pruebas en verde; XML válido.
+  Ojo: Apple solo usa transcripciones VTT o SRT (con tiempos; fuentes secundarias) y opt-in en Connect; sin ellas,
+  Apple hace la suya automática. La HTML vale para apps de Podcasting 2.0. Un VTT con tiempos aproximados (reparto por
+  caracteres) es posible, pero Apple revisa la calidad: no lo hago sin que Cristian lo pida.
+- ATASCO (8 oct, 11:18 UTC): run 37769194783 (workflow_dispatch, lanzado por la cuenta lasclavesdelaia, no por esta
+  sesión) espera aprobación en «publicar»: el entorno SIGUE con revisor lasclavesdelaia (contra lo apuntado arriba).
+  Con `concurrency: publicar`, todo lo demás (mi push 448df6d y los cron de cada 20 min) queda en cola hasta que
+  Cristian lo apruebe o rechace. No lo apruebo yo.
+
+## Spotify, Apple Podcasts e iVoox: normas de IA y altas (PARTE A, 8 oct 2026)
+Fuentes oficiales leídas el 8 oct 2026 (ninguna muestra fecha de actualización salvo la nota de Spotify):
+- Apple, Content Requirements (podcasters.apple.com/support/891): §1.11 COMPROBADO: quien use IA para generar audio,
+  incluidas voces sintéticas, debe avisarlo de forma destacada «en el contenido y en los metadatos de cada episodio
+  y programa». §1.12: no usar IA para engañar ni falsear hechos reales. §1.9: puede retirar copias duplicadas. §1.1:
+  metadatos fieles. No prohíbe la IA. No encontré casilla de IA en Connect (precaución: mirar al dar de alta).
+  Cumplimos: aviso hablado al principio + aviso lo primero en la descripción de episodio y programa.
+- Spotify: Normas de la plataforma (spotify.com/es/safetyandprivacy/platform-rules) y política de suplantación
+  (support.spotify.com/…/creators/article/impersonation-policy) COMPROBADO: prohíben suplantar o clonar la voz de
+  otra persona sin permiso y el contenido sintético presentado como auténtico con riesgo de daño. Nota del 19 may
+  2026 (newsroom.spotify.com/2026-05-19/podcast-verification-trust-creators-listeners): reafirma la prohibición de
+  clonar voces; insignia «Verified» con criterios de audiencia real. No prohíbe pódcast con voz sintética propia ni
+  pide etiqueta de IA para pódcast (la etiqueta «AI Persona» es solo de música). PRECAUCIÓN: retiró en 2025 cientos de
+  pódcast de spam con voz TTS; tres programas diarios/semanales de IA podrían parecerlo a un revisor: el aviso claro
+  y las fuentes ayudan.
+- iVoox, Condiciones legales (legal.ivoox.com) §4.4 COMPROBADO: permite IA para crear y locutar si tienes los
+  derechos, sin contenido falso o engañoso y sin imitar voces ajenas; EXIGE declarar al subir si es total o
+  parcialmente IA e informarlo en la descripción (cita el art. 50). §4.3: prohíbe audio que anuncie plataformas
+  competidoras o invite a salir de iVoox (nuestros guiones no lo hacen; no mencionar Spotify/YouTube en el audio).
+  Duda: si §4.4 se aplica a pódcast importados por RSS (iVoox se define como lector de feeds); por precaución,
+  marcar la casilla de IA si aparece.
+- YouTube (support.google.com/youtube/answer/14328491): la declaración «contenido alterado o sintético» es para lo
+  realista (personas reales, hechos que no pasaron). Clonar la propia voz para narrar está exento; una voz sintética
+  ajena que narra noticias no se aborda. No hay ajuste por canal; se marca por vídeo («Uso de IA», Sí/No) en Studio.
+  No encontré si sale en los episodios importados por RSS. Recomendado (precaución): marcar «Sí» en cada episodio
+  la primera vez que se vea en Studio y mirar si hay valor por defecto en Ajustes › Subida.
+- VEREDICTO: ninguna lo prohíbe. Se puede subir a las tres.
+
+### Guía de alta (la hace Cristian; un agente nunca crea cuentas ni mete contraseñas)
+- Spotify for Creators (creators.spotify.com): entrar o crear cuenta con lasclavesdelaia@gmail.com › «Empezar» o
+  «Añadir un pódcast» › «Buscar un pódcast existente» / «Tengo un pódcast en otro sitio» › pegar
+  https://claves.cristiansdrojek.com/parte.xml › enviar el código › llega a lasclavesdelaia@gmail.com (sale de
+  itunes:email del feed) › escribirlo › revisar datos, categoría y país › Enviar. Repetir con claves.xml (desde el
+  sábado 10) y mundo.xml (desde el domingo 11). Si pregunta por IA, marcar «sí».
+- Apple Podcasts Connect (podcastsconnect.apple.com): necesita una cuenta de Apple (puede ser una nueva con el correo
+  del canal; pide teléfono y doble factor) › aceptar condiciones › «+» › «Nuevo programa» › «Añadir un programa con
+  un feed RSS» › pegar parte.xml › revisar disponibilidad (todos los países) › «Añadir»/«Publicar». Apple revisa en
+  1-5 días y avisa por correo. No envía código: la propiedad es la cuenta. Si aparece casilla o campo de IA, marcarlo.
+- iVoox (ivoox.com › Sube tu pódcast / iVoox Podcasters): crear cuenta con el correo del canal y confirmar el correo
+  que llega › «¿Ya tienes un programa?» › pegar parte.xml › revisar título, descripción, categoría y etiquetas ›
+  declarar que es contenido generado con IA si lo pregunta › «Publicar» › al ofrecer alojarlo, «Ahora no».
+- Después: copiar el enlace público de cada programa en cada app y ponerlo en `canal.apps` de config/programas.json
+  (en una sesión nueva si esta no puede subir). Hoy `apps` tiene un enlace por app: con tres programas, decidir si se
+  enlaza el primero o se pasa a uno por programa.
 - Siguiente: cuando Cristian tenga los enlaces de cada programa, ponerlos en `canal.apps` (spotify, apple, ivoox).
   Ojo: hoy es un enlace por app, pero son tres programas con tres feeds: si cada app da tres enlaces, habrá que pasar
   `apps` a un enlace por programa (o enlazar la página del autor/perfil en cada app). Si esta sesión ya no puede
