@@ -660,3 +660,11 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   terceros», contacto Las claves de la IA / correo del canal; guardado. Apple dice «estamos procesando los datos
   del programa; vuelve luego y pulsa Publish». FALTA: pulsar Publish cuando acabe (con el sí de Cristian); luego
   revisión de Apple (1-5 días) y su enlace. «Settings» redirige a /business (no hace falta para un pódcast gratis).
+- 8 oct ~17:55: enlaces iVoox y Spotify añadidos y publicados en YouTube › Personalización (junto a «Pódcast» y
+  «Canal principal»). Cristian pide subir A MANO los tres episodios del 8 a YouTube (formato del feed: portada fija +
+  audio). Vídeos en pruebas/videos_youtube/ (1920x1080, portada del programa centrada, MP3 de la Release con la voz
+  podcaster-7) y título+descripción del feed en .txt. Esta app no deja adjuntar ficheros: Cristian los arrastra.
+- AVISO para sitio.py (sesión nueva): la descripción del item de mundo del 8 tiene 5.222 caracteres; YouTube admite
+  5.000. Recortar la lista de fuentes en el feed (p. ej. a 4.800 con «Más fuentes en la web: <enlace>»).
+- Al conectar mañana los feeds en YouTube: conectar cada feed AL PÓDCAST (lista) YA CREADO y elegir subir solo los
+  episodios publicados DESPUÉS del 8 oct, para no duplicar los subidos a mano.
