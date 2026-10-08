@@ -87,6 +87,11 @@ def fecha_hablada(fecha):
     return f"{DIAS[d.weekday()]}, {d.day} de {MESES[d.month - 1]} de {d.year}"
 
 
+def pronunciable(texto):
+    """Ajustes de pronunciación solo para la voz. «IA» se lee como palabra (la voz dijo «la isa»): se escribe «ía»."""
+    return re.sub(r"\bIA(s?)\b", r"ía\1", texto)
+
+
 def texto_hablado(ep, cfg=None):
     """Lo que dice la voz: presentación fija con el aviso corto, el guion y la despedida fija.
 

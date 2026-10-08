@@ -13,6 +13,8 @@ import tempfile
 import urllib.request
 from pathlib import Path
 
+from comun import pronunciable
+
 API = "https://texttospeech.googleapis.com/v1/text:synthesize"
 MAX_BYTES = 4000  # el límite de la API es 5.000 bytes por petición; dejamos margen
 
@@ -82,7 +84,7 @@ def sintetizar(texto, voz, destino, clave=None):
     """Escribe el MP3 final (mono, 64 kbps) en destino. Devuelve el número de caracteres enviados.
     Con voz.quitar_respiraciones, antes de codificar pasa el audio por quitar_respiraciones()."""
     clave = clave or os.environ["GOOGLE_TTS_KEY"]
-    partes = trozos(texto)
+    partes = trozos(pronunciable(texto))
     with tempfile.TemporaryDirectory() as tmp:
         lista = Path(tmp) / "lista.txt"
         nombres = []

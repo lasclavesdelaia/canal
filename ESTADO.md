@@ -608,6 +608,17 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   Program y ligarlos a un proyecto; no se acumulan (blog.google, 27 ene 2026; ayuda de Google One). Cubrirían la
   intermedia con Flash también desde enero (~8 $). Sin confirmar: que valgan para los SKU de Gemini TTS y que vayan a
   la cuenta de facturación de voz-claves. El uso «generoso» de AI Studio es la web, no la API automática.
+- Créditos AI Pro, comprobado (developers.google.com/program/plans-and-pricing y profile/help/benefits, 28 sep
+  2026): «10 $ GenAI and Cloud monthly credit… AI Studio, Gemini Enterprise Agent Platform or any Google product»;
+  se aplican a una cuenta de facturación; caducan al año de concederse (se acumulan hasta 12 meses). Ninguna página
+  nombra la voz (TTS). Precaución: la lista general de exclusiones de descuentos (cloud.google.com/skus/exclusions,
+  oct 2024) excluye «Generative AI» y «Pre-general availability offerings», y 3.8 TTS está en Preview; no está
+  claro si esa lista rige estos créditos. Se sabe con un día de uso: informe de facturación, columna de créditos.
+- Flash y Lite 3.8: salieron juntas (blog 23 sep 2026; Agent Platform, 28 sep). Ninguna es más nueva. Flash: mejor
+  calidad, 130 idiomas; Lite: más barata (audio 6 $ frente a 9 $), 101 idiomas. Hume AI: n.º 1 y n.º 2 en calidad.
+- 8 oct, noche: la voz decía «las claves de la isa» en el especial. Arreglo en main: comun.pronunciable() cambia
+  «IA» por «ía» solo en lo que lee la voz (la web sigue con «IA»); la huella del audio lo incluye, así que los
+  borradores se rehacen solos en la próxima pasada. Los episodios ya publicados no: habría que pedir «rehacer».
 - Preguntas para Cristian: (1) ¿Flash hasta enero y Lite después, solo semanales? (yo: sí, cabe en 4-5 €);
   (2) ¿probar una voz es-ES de la Extended Voice Library (uso «news»), que según Google fija mejor el acento que
   pedirlo en el estilo? (yo: sí, en la comparativa).

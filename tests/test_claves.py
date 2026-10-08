@@ -10,6 +10,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ / "scripts"))
 
 import comparar_voces  # noqa: E402
+import comun  # noqa: E402
 import publicar  # noqa: E402
 import sitio  # noqa: E402
 import voz  # noqa: E402
@@ -112,6 +113,9 @@ class Hablado(unittest.TestCase):
         self.assertIn("inteligencia artificial", cfg["canal"]["aviso_hablado"])
         self.assertIn("errores", cfg["canal"]["aviso_hablado"])
         self.assertTrue(t.endswith(cfg["programas"]["parte"]["despedida"]))
+
+    def test_ia_se_pronuncia_como_palabra(self):
+        self.assertEqual(comun.pronunciable("La IA y las IAs. OpenAI, MIA, IAG."), "La ía y las ías. OpenAI, MIA, IAG.")
 
     def test_trozos_no_pasan_del_limite(self):
         ep = leer_episodio(muestra())
