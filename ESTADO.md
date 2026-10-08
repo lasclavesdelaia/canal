@@ -785,7 +785,7 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Decisión menor: el «revisar» del parte es la fecha de mañana; el de mundo, el domingo siguiente; lo que siga
   abierto tras el sábado vuelve con fecha del lunes.
 - Hecho: commit 04592b3 subido a main.
-- Parte 2 (subtítulos de Gargoyles Devon): ESPERA el sí de Cristian al coste (~100.000 tokens de lectura; unos
+- Parte 2 (subtítulos de Gargoyles Devon): HECHA tras su «vale dale a todo» (ver apartado siguiente). Antes esperaba el sí de Cristian al coste (~100.000 tokens de lectura; unos
   300.000-600.000 procesados en total). Ojo: esta sesión ya tiene la marca de «privado»; si lee los subtítulos (de
   fuera), el portero cortará el push. Mejor hacerla en una sesión limpia.
 - Hecho (misma noche): tres notas más de Cristian, llegadas por la sesión «IVOOX REVISAR»: nada de hace más de ~2
@@ -811,3 +811,4 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   NO se toma. Referente sin nombre en el prompt (como el analista de mundo.md); ninguna frase suya copiada.
 - Coste real: ~99.000 palabras de subtítulos (~130.000 tokens de lectura), algo más de lo avisado (~100.000).
 - Aviso: el portero puede cortar el push final (sesión «privado» + contenido de fuera); si pasa, lo sube una sesión limpia.
+- Hecho: commit e39586b subido a main. Nada pendiente de esta tarea.
