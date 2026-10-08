@@ -72,10 +72,13 @@ color:#fff;font:500 15px/1.2 var(--sans);text-decoration:none;border-radius:3px}
 .seguir{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
 .seguir>div{background:var(--caja);padding:22px}
 .seguir h3{margin-bottom:.4em}
-.seguir ul{list-style:none;padding:0;margin:0}
-.seguir li{padding:6px 0;border-top:1px solid var(--linea);font-family:var(--sans);font-size:.95rem}
-.seguir li:first-child{border-top:0}
-.seguir code{font-size:.8rem;word-break:break-all;color:var(--suave)}
+.seguir p{margin:0 0 .8em}.seguir p:last-child{margin-bottom:0}
+.rss{margin-top:20px;font:400 .85rem/1.5 var(--sans);color:var(--suave)}
+.rss strong{font-weight:600}
+.rss p{margin:.3em 0}
+.rss ul{list-style:none;padding:0;margin:0}
+.rss li{padding:3px 0}
+.rss code{display:block;font-size:.78rem;word-break:break-all;color:var(--suave)}
 audio{width:100%;display:block;margin:10px 0}
 ul.episodios{list-style:none;padding:0;margin:0}
 ul.episodios li{border-top:1px solid var(--linea);padding:18px 0}
@@ -161,7 +164,7 @@ def _item(e, cfg, con_programa=False, con_audio=True):
     meta = f"{fecha_hablada(e['fecha'])} · {_duracion(e['duracion'])}"
     if con_programa:
         meta = f"{prog['lista']} · {meta}"
-    audio = (f'<audio controls preload="none" src="{_e(e["audio_url"])}"></audio>' if con_audio else "")
+    audio = (f'<audio controls preload="metadata" src="{_e(e["audio_url"])}"></audio>' if con_audio else "")
     return f"""<li>
 <p class="meta">{_e(meta)}</p>
 <h3><a href="/e/{_e(e['clave'])}.html">{_e(e['titulo'])}</a></h3>
@@ -185,24 +188,35 @@ def _por_meses(eps, cfg, con_programa=False):
     return "\n".join(bloques)
 
 
+APPS = (("spotify", "Escuchar en Spotify"), ("apple", "Escuchar en Apple Podcasts"), ("ivoox", "Escuchar en iVoox"))
+
+
 def _seguir(cfg):
+    """YouTube primero; botones de las apps solo si su enlace está en config; el RSS abajo y discreto."""
     canal = cfg["canal"]
     web = canal["web"].rstrip("/")
     yt = canal.get("youtube", "")
     if yt:
-        youtube = (f'<p>Los tres programas salen también en el canal de YouTube «{_e(canal["nombre"])}», '
-                   f'cada uno en su lista.</p><p><a class="boton" href="{_e(yt)}">Ir al canal de YouTube</a></p>')
+        youtube = (f'<p>Los tres programas salen en el canal de YouTube «{_e(canal["nombre"])}», '
+                   f'cada uno en su lista.</p><p class="botones"><a class="boton" href="{_e(yt)}">Ver en YouTube</a></p>')
     else:
         youtube = (f'<p>Muy pronto, los tres programas saldrán también en el canal de YouTube '
                    f'«{_e(canal["nombre"])}», cada uno en su lista. El enlace aparecerá aquí.</p>')
+    apps = canal.get("apps", {})
+    botones = "".join(f'<a class="boton claro" href="{_e(apps[c])}">{_e(n)}</a>'
+                      for c, n in APPS if apps.get(c))
+    en_apps = (f'<div><h3>Apps de pódcast</h3><p>También puedes escucharlo en tu aplicación de pódcast.</p>'
+               f'<p class="botones">{botones}</p></div>' if botones else "")
     feeds = "".join(
-        f'<li><a href="/{c}.xml">{_e(p["lista"])}</a><br><code>{_e(web)}/{c}.xml</code></li>'
+        f'<li><a href="/{c}.xml">{_e(p["lista"])}</a> <code>{_e(web)}/{c}.xml</code></li>'
         for c, p in cfg["programas"].items())
     return f"""<h2 id="seguir">Cómo seguirlo</h2>
 <div class="seguir">
 <div><h3>YouTube</h3>{youtube}</div>
-<div><h3>RSS</h3><p>Copia la dirección del programa en tu aplicación de pódcast.</p><ul>{feeds}</ul></div>
-</div>"""
+{en_apps}
+</div>
+<div class="rss"><p><strong>Para apps de pódcast (RSS).</strong> Copia la dirección del programa en tu
+aplicación.</p><ul>{feeds}</ul></div>"""
 
 
 def pagina_inicio(episodios, cfg):
@@ -214,7 +228,7 @@ def pagina_inicio(episodios, cfg):
             u = eps[0]
             ultimo = f"""<div class="ultimo"><p class="meta">Último · {_e(fecha_hablada(u['fecha']))} · {_duracion(u['duracion'])}</p>
 <h3 style="font-size:1.05rem"><a href="/e/{_e(u['clave'])}.html">{_e(u['titulo'])}</a></h3>
-<audio controls preload="none" src="{_e(u['audio_url'])}"></audio></div>"""
+<audio controls preload="metadata" src="{_e(u['audio_url'])}"></audio></div>"""
             cuenta = f"{len(eps)} episodio" + ("s" if len(eps) != 1 else "")
         else:
             ultimo = '<div class="ultimo"><p class="suave">Todavía no hay episodios.</p></div>'
@@ -284,7 +298,7 @@ def pagina_episodio(ep, cfg, anterior=None, siguiente=None):
 · {_duracion(ep['duracion'])}</p>
 <h1 style="font-size:clamp(1.8rem,6vw,2.8rem)">{_e(ep['titulo'])}</h1>
 <p class="entradilla">{_e(ep['descripcion'])}</p>
-<audio controls preload="none" src="{_e(ep['audio_url'])}"></audio>
+<audio controls preload="metadata" src="{_e(ep['audio_url'])}"></audio>
 <p class="mas"><a href="{_e(ep['audio_url'])}">Descargar el audio (MP3)</a></p>
 <h2>Guion</h2><div class="guion">{parrafos}</div>
 <h2>Fuentes</h2><ul class="fuentes">{fuentes}</ul>

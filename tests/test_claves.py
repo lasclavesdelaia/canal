@@ -156,6 +156,7 @@ class Web(unittest.TestCase):
 
     def test_historial_completo_y_paginas(self):
         cfg = config()
+        cfg["canal"]["youtube"] = ""
         with tempfile.TemporaryDirectory() as tmp:
             sitio.generar(self._muchos(), cfg, tmp)
             d = Path(tmp)
@@ -200,6 +201,26 @@ class Web(unittest.TestCase):
             portada = (Path(tmp) / "index.html").read_text()
             self.assertIn('href="https://www.youtube.com/@lasclavesdelaia"', portada)
             self.assertNotIn("Muy pronto", portada)
+            self.assertIn(">Ver en YouTube<", portada)
+            self.assertIn("Para apps de pódcast (RSS)", portada)
+            for c in cfg["programas"]:
+                self.assertIn(f"{cfg['canal']['web']}/{c}.xml", portada)
+            self.assertNotIn("Spotify", portada)  # sin enlace, sin botón
+            self.assertNotIn("Apps de pódcast</h3>", portada)
+
+    def test_botones_de_apps_solo_con_enlace(self):
+        cfg = config()
+        cfg["canal"]["apps"] = {"spotify": "https://open.spotify.com/show/x", "apple": "", "ivoox": ""}
+        with tempfile.TemporaryDirectory() as tmp:
+            sitio.generar(self._muchos(2), cfg, tmp)
+            portada = (Path(tmp) / "index.html").read_text()
+            self.assertIn('href="https://open.spotify.com/show/x">Escuchar en Spotify<', portada)
+            self.assertNotIn("Apple Podcasts", portada)
+            self.assertNotIn("iVoox", portada)
+            self.assertLess(portada.index("Ver en YouTube"), portada.index("Escuchar en Spotify"))
+            self.assertLess(portada.index("Escuchar en Spotify"), portada.index("Para apps de pódcast (RSS)"))
+            self.assertIn('preload="metadata"', portada)
+            self.assertNotIn('preload="none"', portada)
 
 
 if __name__ == "__main__":
