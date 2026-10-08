@@ -505,7 +505,9 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   si el audio cambia; cuenta en el tope del mes. Al publicar el especial, si la huella coincide, reutiliza ese MP3
   (0 caracteres). Decisión menor: los especiales no dicen la fecha en la presentación hablada, para que el audio
   del borrador valga el día que se publique; el guion dice en una frase a qué fecha están los datos.
-- En curso: paso 4 (prompts/especial.md).
-- Siguiente: paso 5 (skills).
+- Hecho: paso 4, prompts/especial.md (extensión 15-60 min, fuentes primarias, rigor extra con partidos y
+  personas, encuestas y art. 69.7 LOREG, texto de partida solo como guion de temas).
+- En curso: paso 5 (skills en ~/.claude/skills: informe, especial, publicar-especial).
+- Siguiente: paso 6 (portada).
 - Nota: el portero marcó la sesión como «privada de segundo grado» al leer ~/bin/lib/portero.py (lo escribió un
   agente tras leer datos privados). No se ha leído nada privado de verdad. Si corta el push, se dice.
