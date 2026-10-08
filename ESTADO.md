@@ -619,6 +619,11 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
 - 8 oct, noche: la voz decía «las claves de la isa» en el especial. Arreglo en main: comun.pronunciable() cambia
   «IA» por «ía» solo en lo que lee la voz (la web sigue con «IA»); la huella del audio lo incluye, así que los
   borradores se rehacen solos en la próxima pasada. Los episodios ya publicados no: habría que pedir «rehacer».
-- Preguntas para Cristian: (1) ¿Flash hasta enero y Lite después, solo semanales? (yo: sí, cabe en 4-5 €);
+- 8 oct, tarde: Cristian probó en Cloud Shell (proyecto voz-claves, créditos) Flash/Lite con voces del catálogo
+  es-ES. Elige **Lite + es-es-podcaster-7** («Radio Host» de España), a 1,15×. Las 4 muestras respiran pese al estilo.
+  Filtro recalibrado con flash-podcaster7.wav (pruebas/voz_gemini/): detecta 5 de 5. Rama claude/voz-gemini: los
+  cuatro programas con esa voz (gastar créditos y medir), velocidad con atempo, filtro «recortar», tope propio
+  600.000 caracteres/mes. Después del 7 ene: facturación de la cuenta con AI Pro (10 $/mes) enlazada a voz-claves.
+- Preguntas para Cristian: (0) ¿filtro sí o no? (yo: sí, recortar; se apaga con una línea). (1) ¿Flash hasta enero y Lite después, solo semanales? (yo: sí, cabe en 4-5 €);
   (2) ¿probar una voz es-ES de la Extended Voice Library (uso «news»), que según Google fija mejor el acento que
   pedirlo en el estilo? (yo: sí, en la comparativa).
