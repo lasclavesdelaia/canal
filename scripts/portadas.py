@@ -37,6 +37,19 @@ SERIES = {
               "lema": "Economía y geopolítica con datos"},
 }
 
+# Especiales: propuestas para que Cristian elija (8 oct 2026). La elegida pasa a SERIES["especial"].
+# Claves opcionales de una serie: «tinta» (título y aviso), «barra» y «barra_texto» (franja de arriba),
+# «cinta» y «texto_cinta» (la cinta torcida) y «motivo» (si no, el de su clave).
+_ESPECIAL = {"n": "04", "titulo": "Especial", "sub": "a fondo", "dia": "De vez en cuando",
+             "lema": "Un tema, investigado a fondo"}
+CANDIDATAS_ESPECIAL = {
+    "negro-lupa": dict(_ESPECIAL, color=TINTA, tinta=PAPEL, barra=ROJO, barra_texto=PAPEL, cinta=ROJO,
+                       texto_cinta=PAPEL, motivo="lupa"),
+    "papel-sello": dict(_ESPECIAL, color=PAPEL, cinta=ROJO, texto_cinta=PAPEL, motivo="sello"),
+    "negro-carpeta": dict(_ESPECIAL, color=TINTA, tinta=PAPEL, barra=PAPEL, barra_texto=TINTA, cinta=ROJO,
+                          texto_cinta=TINTA, motivo="carpeta"),
+}
+
 
 def fuente(tam, peso="Bold"):
     return ImageFont.truetype(HELVETICA, max(1, round(tam)), index=PESOS[peso])
@@ -83,8 +96,47 @@ def tachado(d, x, y, ancho, s, filas):
         d.rectangle((x, yy, x + ancho * largo, yy + 14 * s), fill=TINTA if negro else (17, 17, 17, 70))
 
 
-def motivo(d, clave, s, fondo):
+def motivo(d, clave, s, fondo, ser=None):
     """Zona de arriba (y 90-560): el motivo de cada serie, que se sale por el borde derecho."""
+    ser = ser or SERIES.get(clave, {})
+    clave = ser.get("motivo", clave)
+    tinta = ser.get("tinta", TINTA)
+    if clave == "lupa":  # lupa sobre un documento de puntos: mirar de cerca
+        trama(d, (56 * s, 110 * s, 1000 * s, 540 * s), 22 * s, 3 * s, GRIS)
+        cx, cy, r = 600 * s, 300 * s, 175 * s
+        d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=fondo)
+        trama(d, (cx - r, cy - r, cx + r, cy + r), 44 * s, 8 * s, tinta,
+              lambda x, y: (x - cx) ** 2 + (y - cy) ** 2 < (r - 14 * s) ** 2)
+        d.ellipse((cx - r, cy - r, cx + r, cy + r), outline=tinta, width=round(22 * s))
+        d.line((cx + r * .7, cy + r * .7, cx + r * 1.55, cy + r * 1.45), fill=tinta, width=round(46 * s))
+        d.rectangle((cx - 60 * s, cy - 22 * s, cx + 90 * s, cy + 22 * s), fill=ROJO)
+        return
+    if clave == "sello":  # documento con un sello rojo de «investigación»
+        for i, largo in enumerate((1, .82, .95, .6, .9, .74, .97, .5, .86)):
+            y = (130 + i * 44) * s
+            d.rectangle((56 * s, y, 56 * s + 880 * s * largo, y + 14 * s), fill=(17, 17, 17, 70))
+        cx, cy, r = 700 * s, 330 * s, 190 * s
+        sello = Image.new("RGBA", (round(2 * r), round(2 * r)), (0, 0, 0, 0))
+        ds = ImageDraw.Draw(sello)
+        ds.ellipse((0, 0, 2 * r - 1, 2 * r - 1), outline=ROJO + (235,), width=round(16 * s))
+        ds.ellipse((30 * s, 30 * s, 2 * r - 30 * s, 2 * r - 30 * s), outline=ROJO + (235,), width=round(6 * s))
+        texto(ds, r, r - 10 * s, "INVESTIGACIÓN", fuente(40 * s, "CondensedBlack"), ROJO + (235,), .06, "ms")
+        texto(ds, r, r + 50 * s, "A FONDO", fuente(58 * s, "CondensedBlack"), ROJO + (235,), .08, "ms")
+        sello = sello.rotate(-12, expand=True, resample=Image.BICUBIC)
+        d._image.paste(sello, (round(cx - sello.width / 2), round(cy - sello.height / 2)), sello)
+        return
+    if clave == "carpeta":  # carpeta de expediente con pestaña y clip rojo
+        x0, y0, x1, y1 = 56 * s, 150 * s, 1000 * s, 540 * s
+        d.rectangle((x0, y0 - 50 * s, x0 + 300 * s, y0), fill=PAPEL)
+        d.rectangle((x0, y0, x1, y1), fill=PAPEL)
+        texto(d, x0 + 28 * s, y0 - 14 * s, "EXP. Nº 04", fuente(30 * s), TINTA, .1)
+        for i, (largo, negro) in enumerate([(.9, 0), (.6, 1), (.8, 0), (.45, 1), (.7, 0), (.85, 1)]):
+            y = y0 + (50 + i * 50) * s
+            d.rectangle((x0 + 40 * s, y, x0 + 40 * s + 760 * s * largo, y + 16 * s),
+                        fill=TINTA if negro else (17, 17, 17, 60))
+        d.rounded_rectangle((x1 - 210 * s, y0 - 70 * s, x1 - 150 * s, y0 + 160 * s), radius=28 * s,
+                            outline=ROJO, width=round(14 * s))
+        return
     if clave == "parte":  # informe tachado
         filas = [(1, 0), (.7, 1), (.92, 0), (.55, 1), (1, 1), (.8, 0), (.62, 1), (.9, 0), (.4, 1), (.75, 1)]
         for i, (largo, negro) in enumerate(filas):
@@ -108,32 +160,33 @@ def motivo(d, clave, s, fondo):
         d.rectangle((cx + 120 * s, cy - 170 * s, cx + 170 * s, cy - 120 * s), fill=ROJO)
 
 
-def portada(clave, lado=3000):
+def portada(clave, lado=3000, ser=None):
     s = lado / 1000
-    ser = SERIES[clave]
+    ser = ser or SERIES[clave]
     fondo = ser["color"]
+    tinta = ser.get("tinta", TINTA)
     im = Image.new("RGB", (lado, lado), fondo)
     d = ImageDraw.Draw(im, "RGBA")
-    motivo(d, clave, s, fondo)
-    d.rectangle((0, 0, lado, 90 * s), fill=TINTA)
+    motivo(d, clave, s, fondo, ser)
+    d.rectangle((0, 0, lado, 90 * s), fill=ser.get("barra", TINTA))
     cab = fuente(24 * s)
-    texto(d, 56 * s, 56 * s, "LAS CLAVES DE LA IA", cab, PAPEL, .08)
-    texto(d, 944 * s, 56 * s, f"{ser['n']} / {ser['dia'].upper()}", cab, PAPEL, .08, "rs")
+    texto(d, 56 * s, 56 * s, "LAS CLAVES DE LA IA", cab, ser.get("barra_texto", PAPEL), .08)
+    texto(d, 944 * s, 56 * s, f"{ser['n']} / {ser['dia'].upper()}", cab, ser.get("barra_texto", PAPEL), .08, "rs")
     titulo = ser["titulo"].upper()
     tam = 330 * s
     while fuente(tam, "CondensedBlack").getlength(titulo) > 896 * s:  # que quepa entre márgenes
         tam -= 2 * s
     f = fuente(tam, "CondensedBlack")
-    texto(d, 48 * s, 812 * s, titulo, f, TINTA, -.01)
-    # la segunda palabra, en una cinta negra torcida
+    texto(d, 48 * s, 812 * s, titulo, f, tinta, -.01)
+    # la segunda palabra, en una cinta torcida (negra si la serie no dice otra cosa)
     sub = ser["sub"].upper()
     fs = fuente(96 * s, "CondensedBlack")
     ancho = fs.getlength(sub) + .04 * fs.size * (len(sub) - 1)
-    cinta = Image.new("RGBA", (round(ancho + 60 * s), round(130 * s)), TINTA + (255,))
-    texto(ImageDraw.Draw(cinta), 30 * s, 106 * s, sub, fs, fondo, .04)
+    cinta = Image.new("RGBA", (round(ancho + 60 * s), round(130 * s)), ser.get("cinta", TINTA) + (255,))
+    texto(ImageDraw.Draw(cinta), 30 * s, 106 * s, sub, fs, ser.get("texto_cinta", fondo), .04)
     cinta = cinta.rotate(4, expand=True, resample=Image.BICUBIC)
     im.paste(cinta, (round(40 * s), round(836 * s)), cinta)
-    texto(d, 944 * s, 968 * s, AVISO, fuente(15 * s, "Medium"), TINTA, .02, "rs")
+    texto(d, 944 * s, 968 * s, AVISO, fuente(15 * s, "Medium"), tinta, .02, "rs")
     return grano(im)
 
 
@@ -211,9 +264,23 @@ def generar(salida, con_icono=False):
     banner().save(salida / "youtube" / "banner.png", optimize=True)
 
 
+def candidatas_especial(salida):
+    """Propuestas de portada de Especiales, para elegir: <salida>/<nombre>.png (1000 px) y .jpg (360 px)."""
+    salida = Path(salida)
+    salida.mkdir(parents=True, exist_ok=True)
+    for nombre, ser in CANDIDATAS_ESPECIAL.items():
+        im = portada("especial", 1500, ser)
+        im.resize((1000, 1000), Image.LANCZOS).save(salida / f"{nombre}.png", optimize=True)
+        im.resize((360, 360), Image.LANCZOS).save(salida / f"{nombre}.jpg", quality=90)
+
+
 if __name__ == "__main__":
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     p.add_argument("--salida", default=str(RAIZ / "assets"))
     p.add_argument("--icono", action="store_true", help="genera también el icono de reserva")
+    p.add_argument("--especial", action="store_true", help="solo las propuestas de Especiales, en --salida")
     a = p.parse_args()
-    generar(a.salida, a.icono)
+    if a.especial:
+        candidatas_especial(a.salida)
+    else:
+        generar(a.salida, a.icono)

@@ -509,15 +509,24 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   personas, encuestas y art. 69.7 LOREG, texto de partida solo como guion de temas).
 - Hecho: paso 5. Skills en ~/.claude/skills/{informe,especial,publicar-especial}/SKILL.md (fuera del repo).
   /informe usa ~/.claude/skills/informe/audio_local.py (say + afconvert; elige Premium > Mejorada > Mónica;
-  probado: Marisol (Premium), 64 kbps AAC). /especial y /publicar-especial trabajan en un worktree en $TMPDIR
+  64 kbps AAC). Voz fija «Mónica (Enhanced)» (la eligió Cristian de oído) a `say -r 205` (normal 175; medido:
+  ~214 palabras reales/min la normal, ~238 a 205); se cambian en VOZ y VELOCIDAD del script. /especial y /publicar-especial trabajan en un worktree en $TMPDIR
   para no mover la copia de otras sesiones, y lanzan `gh workflow run publicar.yml --ref main`.
 - Formato para la app Escritura (sección «Informes personales», la hace otra sesión), en
   `40 Taller Intelectual/02_Investigaciones/00_Informes_y_estudios/`:
   - `AAAA-MM-DD Título.md` con cabecera `tipo: informe personal`, `titulo`, `fecha`, `tema`, `audio`, y al lado
     `AAAA-MM-DD Título.m4a` (mismo nombre).
-  - `AAAA-MM-DD Especial - Título.md` con `tipo: especial borrador` (o `especial publicado` y `web: <url>`),
+  - Los especiales, en la subcarpeta `Publicables/` (8 oct, decisión de Cristian: carpeta solo para textos
+    publicables, con su LEEME.md; es lo único local que lee /especial además del repo y la web):
+    `Publicables/AAAA-MM-DD Especial - Título.md` con `tipo: especial borrador` (o `especial publicado` y `web: <url>`),
     `titulo`, `fecha`, `slug`, `rama`, `audio`, y al lado `AAAA-MM-DD Especial - Título.mp3`.
-- En curso: paso 6 (portada).
-- Siguiente: paso 7 (README).
+- Hecho: paso 6 a medias. portadas.py admite colores de título, barra y cinta y tres motivos nuevos; propuestas
+  en pruebas/portadas/especial/ (negro-lupa, papel-sello, negro-carpeta), enseñadas a Cristian. ESPERA SU
+  ELECCIÓN: entonces la elegida pasa a SERIES["especial"], se genera assets/ y se sube. Sin portada,
+  /publicar-especial no publica.
+- Nota portero: un fichero liberado dentro de 30 Personal sigue volviendo privada a la sesión que lo abre (clase()
+  mira la carpeta antes que la liberación). Por eso la carpeta Publicables.
+- En curso: paso 7 (README).
+- Siguiente: push; avisar a la sesión de la app; prueba real con Vox cuando Cristian deje la copia en Publicables.
 - Nota: el portero marcó la sesión como «privada de segundo grado» al leer ~/bin/lib/portero.py (lo escribió un
   agente tras leer datos privados). No se ha leído nada privado de verdad. Si corta el push, se dice.
