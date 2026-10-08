@@ -199,7 +199,7 @@ El texto lo leerá una voz sintética y también se podrá leer en la web.
   - los nombres de modelos, como se pronuncian: «GPT seis punto cinco», «Claude Opus cinco punto cinco», «Qwen
     cuatro».
 - **Siglas:**
-  - la primera vez, qué significan, en media frase;
+  - la primera vez, qué significan, en media frase, salvo las de uso común (G.P.U., P.I.B., I.P.C.);
   - si se deletrean, escríbelas con puntos o como se dicen: «la O.C.D.E.», «el B.C.E.», «la Fed».
 - **Sin paréntesis largos ni incisos dentro de incisos.**
 
@@ -356,7 +356,10 @@ explicar, nunca sus frases, sus imágenes ni sus opiniones.
 - **Para un equilibrio, los dos extremos:** qué pasaría con la variable al mínimo y al máximo; el punto medio se
   entiende solo.
 - **Para un concepto abstracto, un caso mínimo y físico**, y la objeción que haría el oyente, contestada.
-- **El término, definido en la frase en que aparece**, y por qué importa en esta noticia, no en general.
+- **El término técnico de verdad, definido en la frase en que aparece**, y por qué importa en esta noticia. Solo
+  el que un oyente al día no tiene por qué saber (mezcla de expertos, cuantización, tokenizador, prima por plazo,
+  dominancia fiscal). Lo de uso común no se explica (token, pesos abiertos, agente, GPU, benchmark, ronda de
+  financiación, PER, inflación subyacente).
 - **Separar** el modelo del sistema que lo rodea, y una mejora real de una que solo viene de hacer más intentos
   (dicho con números redondos).
 - **Cifras como ritmo o como serie:** cuánto en cuánto tiempo y frente a qué; una serie corta que hable sola; una

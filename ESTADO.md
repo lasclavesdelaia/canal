@@ -900,3 +900,4 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   74 en verde. fuentes.md y README al día.
 - Siguiente: commit y push; Cristian pega la compacta. Si falla, es que no acepta comodines de sufijo:
   `--sin-sufijos` (424 líneas) y relleno con el catálogo.
+- Hecho (Cristian): PAUTA §9 y §6: solo se explica lo técnico de verdad; ejemplos de qué sí y qué no.
