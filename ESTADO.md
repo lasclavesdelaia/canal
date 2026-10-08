@@ -531,7 +531,17 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
 - Nota portero: un fichero liberado dentro de 30 Personal sigue volviendo privada a la sesión que lo abre (clase()
   mira la carpeta antes que la liberación). Por eso la carpeta Publicables.
 - Hecho: paso 7, README («Informes y especiales», cinco líneas).
-- En curso: push.
-- Siguiente: avisar a la sesión de la app; prueba real con Vox cuando Cristian deje la copia en Publicables.
+- Hecho: push 15de11c; run de Actions bien (solo_web); `especial.xml` aún da 404, como debe. Avisadas la
+  sesión de Escritura (formato y Publicables/) y Central IA.
+- Este último apunte quedó sin subir: el portero cortó el push (la sesión juntó una marca de segundo grado y una
+  lectura de la web). Lo sube la próxima sesión que haga push.
+- Siguiente (de Cristian): elegir portada. Luego, en una sesión NUEVA: `/especial` sobre Vox desde
+  `Publicables/2026-10-07 Vox ante el 29-N, qué medidas llegarían de verdad con el PP.md` (ya copiada; consultar
+  da publicable). La primera vez el run pedirá su aprobación del entorno «publicar».
+### Preguntas para Cristian (informes y especiales)
+- Portada de Especiales: negro-lupa, papel-sello o negro-carpeta. Yo elegiría negro-lupa (se distingue mejor de
+  las tres series en miniatura).
+- La Release `borrador-<slug>` es pública (el repo lo es), aunque no sale en la web ni en los feeds. ¿Vale así?
+  Yo lo dejaría: nadie la encuentra sin el enlace.
 - Nota: el portero marcó la sesión como «privada de segundo grado» al leer ~/bin/lib/portero.py (lo escribió un
   agente tras leer datos privados). No se ha leído nada privado de verdad. Si corta el push, se dice.
