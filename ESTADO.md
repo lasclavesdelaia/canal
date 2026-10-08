@@ -724,3 +724,9 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   vigilar que importe claves, mundo y especial del 8. Spotify: se actualizará solo desde el feed.
 - 8 oct: Apple publicó el pódcast general (id 6820597566, lee parte.xml; comprobado en itunes lookup). Enlace en
   canal.apps.apple con el sí de Cristian (aviso de la sesión «IVOOX REVISAR», que el portero había cortado).
+- PREGUNTA para Cristian (8 oct): «Uso de IA» en los episodios que lleguen por RSS. Ayuda oficial (14328491): marcar
+  cuando lo hecho con IA «parece real»; la voz sintética no aparece; marcarlo «won't limit a video's audience or impact
+  its eligibility to earn money»; no marcarlo puede traer etiqueta manual o sanciones. Studio no tiene valor por
+  defecto. Propuesta B: en publicar.yml, tras la ingesta RSS, poner status.containsSyntheticMedia=true con
+  videos.update (API v3, campo desde oct 2024) usando un token OAuth del canal Las claves de la IA guardado como
+  secreto del entorno «publicar». Esperando su sí; lo hace una sesión nueva. Mientras, marcar a mano si hace falta.
