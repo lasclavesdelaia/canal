@@ -37,6 +37,13 @@ def gh_json(*args):
     return json.loads(subprocess.run(["gh", *args], capture_output=True, text=True, check=True).stdout or "null")
 
 
+def es_episodio(ruta):
+    """Solo cuenta `episodios/AAAA-MM-DD-<programa>.md`. Las tarjetas de memoria (`tarjetas/…`) y lo demás no se
+    publican nunca, aunque se llamen igual."""
+    partes = ruta.split("/")
+    return len(partes) == 2 and partes[0] == "episodios" and bool(NOMBRE_FICHERO.match(partes[1]))
+
+
 def episodios_en_ramas():
     """{nombre_fichero: (texto, rama)}. Si varias ramas tienen el mismo fichero, gana el commit más reciente."""
     git("fetch", "--quiet", "origin", "+refs/heads/claude/*:refs/remotes/origin/claude/*")
@@ -47,7 +54,7 @@ def episodios_en_ramas():
         hora = int(git("log", "-1", "--format=%ct", rama).strip() or 0)
         for ruta in git("ls-tree", "-r", "--name-only", rama, "--", "episodios/").splitlines():
             nombre = Path(ruta).name
-            if ruta.count("/") == 1 and NOMBRE_FICHERO.match(nombre):
+            if es_episodio(ruta):
                 encontrados[nombre] = (git("show", f"{rama}:{ruta}"), rama, hora)
     return encontrados
 

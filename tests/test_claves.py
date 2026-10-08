@@ -160,6 +160,19 @@ class Rehacer(unittest.TestCase):
         self.assertIn("Aviso nuevo.", texto_hablado(publicar.episodio_de(meta), cfg))
 
 
+class Tarjetas(unittest.TestCase):
+    def test_las_tarjetas_no_se_publican(self):
+        self.assertTrue(publicar.es_episodio("episodios/2026-10-08-parte.md"))
+        for ruta in ("tarjetas/2026-10-08-parte.md", "tarjetas/episodios/2026-10-08-parte.md",
+                     "episodios/tarjetas/2026-10-08-parte.md", "episodios/2026-10-08-parte-tarjeta.md",
+                     "2026-10-08-parte.md"):
+            self.assertFalse(publicar.es_episodio(ruta), ruta)
+        # La web y los feeds solo salen de los metadatos de las Releases, nunca de ficheros del repositorio.
+        fuente = Path(sitio.__file__).read_text(encoding="utf-8")
+        self.assertNotIn("tarjetas/", fuente)
+        self.assertNotIn("episodios/", fuente)
+
+
 class Web(unittest.TestCase):
     def test_audio_en_la_web_para_el_movil(self):
         # El Safari del iPhone no reproduce las Releases (llegan como octet-stream): la web sirve su copia,
