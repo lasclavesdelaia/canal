@@ -228,9 +228,26 @@ def duracion_segundos(mp3):
     return int(float(r.stdout.strip()))
 
 
+AJUSTES_DE_PRUEBA = {  # para comparar de oído (python3 scripts/voz.py --comparar audio.wav)
+    "1-suave": {"modo": "atenuar", "db": -15},
+    "2-fuerte": {"modo": "atenuar", "db": -35},
+    "3-recorte": {"modo": "recortar", "pausa": 0.12},
+}
+
+
 if __name__ == "__main__":
-    # Prueba de oído sin red: python3 scripts/voz.py entrada.wav salida.mp3 [modo] [db]
+    # Sin red. python3 scripts/voz.py --comparar entrada.wav  → MP3 original y uno por ajuste, junto a la entrada.
+    #          python3 scripts/voz.py entrada.wav salida.mp3 [modo] [db]
     import sys
+    if sys.argv[1] == "--comparar":
+        origen = Path(sys.argv[2])
+        base = origen.with_suffix("")
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(origen), "-ac", "1", "-b:a", "64k",
+                        f"{base}-0-original.mp3"], check=True)
+        for nombre, extra in AJUSTES_DE_PRUEBA.items():
+            hechos = quitar_respiraciones(origen, f"{base}-{nombre}.mp3", {**RESPIRACIONES, **extra})
+            print(f"{nombre}: {len(hechos)} tramos: " + ", ".join(f"{a:.2f}-{b:.2f}" for a, b in hechos))
+        sys.exit(0)
     aj = dict(RESPIRACIONES)
     if len(sys.argv) > 3:
         aj["modo"] = sys.argv[3]

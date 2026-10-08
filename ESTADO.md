@@ -589,5 +589,20 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
     mensual, por proyecto y por servicio; Agent Platform es elegible. Pausa el servicio al pasar el importe. OJO: cuenta
     el coste BRUTO, sin descontar créditos, y no es instantáneo. Con créditos, poner el tope por encima del bruto
     (p. ej. 10 $), o pausará aunque lo paguen los créditos. Desde enero, tope = lo que él quiera pagar.
-- Siguiente: filtro ffmpeg + pruebas sin red; luego rama `claude/voz-gemini`.
-- Commits: solo locales (main ya va 1 por delante: 92cb40d, de otra sesión). No hago push.
+- Hecho: filtro de respiraciones en scripts/voz.py (`voz.quitar_respiraciones`: true o {modo atenuar|recortar,
+  db, pausa, min, max...}). Mide con ffmpeg (astats, tramas de 20 ms): tramo de 0,2-0,8 s, 14-50 dB por debajo de
+  la voz, con muchos cruces por cero (soplo, no voz) y justo tras una pausa (protege la «s» final y la «z» inicial,
+  que son más cortas). Corta en Python sobre PCM, sin numpy. Pruebas con audio sintético: 45 en verde en main, 47 en la rama.
+  Comando de oído: `python3 scripts/voz.py --comparar pruebas/<audio>.wav` → original + 1-suave (-15 dB),
+  2-fuerte (-35 dB), 3-recorte (pausa de 0,12 s).
+- Hecho: rama local `claude/voz-gemini` (sin fusionar ni subir): voces.gemini (3.8 Flash, Alnilam, es-ES, estilo
+  suyo + «Sin respiraciones audibles entre frases», filtro atenuar -30 dB, tope propio 300.000 caracteres/mes)
+  para claves, mundo y especial; el parte sigue con Chirp. Llamada a Agent Platform con token
+  GOOGLE_VOZ_TOKEN (paso google-github-actions/auth con el secreto GOOGLE_VOZ_GEMINI_SA). Pasos de Cristian en
+  PASOS_CRISTIAN.md de la rama. La huella del audio no cambia para lo hecho con Chirp.
+- Pendiente (depende de él): que descargue un audio de AI Studio a pruebas/ para calibrar los umbrales con voz
+  real (el filtro solo está probado con audio sintético); decidir si sigue; crear la cuenta de servicio.
+- Commits: solo locales (main ya iba 1 por delante: 92cb40d, de otra sesión). No hago push.
+- Preguntas para Cristian: (1) ¿Flash hasta enero y Lite después, solo semanales? (yo: sí, cabe en 4-5 €);
+  (2) ¿probar una voz es-ES de la Extended Voice Library (uso «news»), que según Google fija mejor el acento que
+  pedirlo en el estilo? (yo: sí, en la comparativa).
