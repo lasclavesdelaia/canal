@@ -118,8 +118,10 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
   sin escribir; la prueba de verdad es el 9 oct a las 5:07.
 - Hecho: Run now OK (19 s): clonó, vio el parte del 8 en claude/episodios-2026-10-08 y terminó sin escribir. Actions
   «Publicar episodios» cada 20 min en verde; web y parte.xml dan 200.
-- PENDIENTE SESIÓN LIMPIA: `git push origin main` (commit 65b7c46 y siguientes: plan B de rama en RUTINA.md e
-  investigación de Gargoyles, Jon Hernández y LMArena). El portero cortó el push tras la búsqueda web.
+- Hecho: push de 65b7c46, 7031c12 y b7656bc (origin/main = b7656bc, comprobado con ls-remote).
+- Hecho: tarea programada de una vez «Claves de la IA: comprobar el parte del 9 oct» (claves-ia-comprobar-9-oct),
+  9 oct 2026 a las 7:30 de Madrid. Mira la rutina, las ramas claude/, Actions y la Release ep-2026-10-09-parte, y lo
+  apunta aquí. Si la app está cerrada a esa hora, corre al abrirla.
 - Cambio de hora (25 oct): NO se toca el cron. Cristian: da igual 4:07 que 5:07; la reserva pasa a 12:07 y Actions
   (4-13 UTC) lo recoge igual. RUTINA.md dice 5:07 y 13:07: aproximado en invierno.
 - Vigilar el 9 oct tras las 5:07: que exista episodios/2026-10-09-parte.md en una rama claude/ y que Actions lo publique.
