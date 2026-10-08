@@ -208,4 +208,6 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
   Para rehacerlos: `/usr/local/bin/python3 scripts/portadas.py` (el python3 de Homebrew no tiene Pillow).
 - La web y los feeds se rehacen solos al subir (publicar.yml, push a main con cambios en assets/** → job solo_web).
   Los feeds no cambian de URL de imagen; YouTube y las apps de pódcast pueden tardar días en refrescar su copia.
-- Pendiente de Cristian: subir icono y banner en YouTube Studio › Personalización › Imagen de marca.
+- 8 oct, minutos después: a Cristian NO le gustan («todo súper feo»). Repuestas las portadas y miniaturas
+  anteriores; quitados icono y banner de assets/youtube/. El generador queda en scripts/portadas.py para rehacerlo.
+- Preguntas para Cristian: qué le sobra o le falta (¿referencias que le gusten?) antes de otra tanda.
