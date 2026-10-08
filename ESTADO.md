@@ -34,8 +34,8 @@
 - Que `ubuntu-latest` traiga ffmpeg (si no, el paso lo instala).
 
 ## Avisos con fecha
-- Hacia el 6 ene 2027: acaba la prueba gratuita de Google Cloud (90 días desde el alta del 8 oct 2026). Hay que pulsar
-  «Activar cuenta completa» o la voz deja de funcionar. Sigue gratis dentro del millón de caracteres al mes.
+- HECHO el 8 oct 2026: Google Cloud pasado a cuenta completa (botón «Actualizar» de la bienvenida). Los 264 € de
+  crédito siguen hasta el 7 ene 2027; después, Chirp 3 HD sigue gratis dentro del millón de caracteres al mes.
 - F2 en marcha (8 oct): pasos 1-5 HECHOS (Google Cloud como particular; presupuesto «tope-voz» de 1 € solo con alertas, porque
   TTS no admite tope duro; clave «voz-github» restringida a TTS; entorno «publicar» solo en main, con él como revisor
   y GOOGLE_TTS_KEY guardada). Paso 6 HECHO: el DNS real está en QUIC.cloud (no en Hostinger);
