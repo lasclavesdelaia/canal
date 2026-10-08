@@ -1,0 +1,42 @@
+{
+  "canal": {
+    "nombre": "Las claves de la IA",
+    "web": "https://claves.cristiansdrojek.com",
+    "correo": "lasclavesdelaia@gmail.com",
+    "repositorio": "lasclavesdelaia/canal",
+    "idioma": "es-es",
+    "aviso": "Este programa lo investiga, lo escribe y lo locuta por completo una inteligencia artificial, sin revisión humana. Puede contener errores. Las fuentes de cada noticia están en la descripción."
+  },
+  "voz": {
+    "nombre": "es-ES-Chirp3-HD-Charon",
+    "idioma": "es-ES",
+    "velocidad": 1.0,
+    "tope_caracteres_mes": 900000
+  },
+  "programas": {
+    "parte": {
+      "lista": "Parte diario IA",
+      "descripcion": "Cada día, lo que ha pasado en inteligencia artificial y por qué importa: modelos, investigación, empresas y sociedad. Datos y varias voces, sin sensacionalismo.",
+      "dias": "todos",
+      "palabras_min": 300,
+      "palabras_max": 2600,
+      "despedida": "Esto ha sido el Parte diario de Las claves de la IA. Hasta mañana."
+    },
+    "claves": {
+      "lista": "Claves semanales IA",
+      "descripcion": "Cada sábado, los temas de fondo de la semana en inteligencia artificial, con calma y con contexto.",
+      "dias": "sabado",
+      "palabras_min": 1500,
+      "palabras_max": 10000,
+      "despedida": "Esto han sido las Claves semanales de Las claves de la IA. Hasta el sábado que viene."
+    },
+    "mundo": {
+      "lista": "Claves mundo",
+      "descripcion": "Cada domingo, la economía y la geopolítica de la semana con datos: grandes economías, países emergentes y las leyes e impuestos que importan en España.",
+      "dias": "domingo",
+      "palabras_min": 1500,
+      "palabras_max": 10000,
+      "despedida": "Esto han sido las Claves mundo de Las claves de la IA. Hasta el domingo que viene."
+    }
+  }
+}

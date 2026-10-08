@@ -1,0 +1,77 @@
+# Publica los episodios que la rutina de la mañana deja en ramas claude/.
+# Corre siempre el código de main: lo que llega de claude/ solo se lee como texto.
+name: Publicar episodios
+
+on:
+  schedule:
+    - cron: "*/20 4-13 * * *"   # cada 20 minutos de 4:00 a 13:59 UTC (de 5-6 h a 14-15 h en Madrid)
+  workflow_dispatch: {}
+
+concurrency:
+  group: publicar
+  cancel-in-progress: false
+
+jobs:
+  comprobar:
+    # Sin clave ni permisos de escritura: solo mira si hay algo nuevo y válido.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      nuevos: ${{ steps.mirar.outputs.nuevos }}
+      rechazados: ${{ steps.mirar.outputs.rechazados }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Pruebas
+        run: python3 -m unittest discover -s tests -v
+      - id: mirar
+        name: ¿Hay episodios nuevos?
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/publicar.py --solo-comprobar
+      - name: Avisar de un episodio rechazado
+        if: steps.mirar.outputs.rechazados != '0'
+        run: |
+          echo "La rutina dejó un episodio que no pasa el validador. Mira el paso anterior."
+          exit 1
+
+  publicar:
+    needs: comprobar
+    if: needs.comprobar.outputs.nuevos != '0'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # crear Releases con el audio
+    environment:
+      name: publicar   # aquí vive GOOGLE_TTS_KEY; solo desde main; la primera semana pide su aprobación
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Herramientas
+        run: which ffmpeg ffprobe || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+      - name: Recoger, validar, poner voz y publicar
+        env:
+          GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/publicar.py --sitio _site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  web:
+    needs: publicar
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.desplegar.outputs.page_url }}
+    steps:
+      - id: desplegar
+        uses: actions/deploy-pages@v4
