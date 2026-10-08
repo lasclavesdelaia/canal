@@ -752,3 +752,24 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   permiso y no guarda), guarda los 3 secretos con `gh secret set … --env youtube` por la entrada estándar y hace
   una pasada en simulación. El token no se imprime ni toca el disco. Entorno «youtube» creado en GitHub, solo main.
   FALTA: Cristian hace los pasos de Google Cloud y corre el script.
+
+## Línea editorial: notas de Cristian tras escuchar las Claves semanales del 8 oct (8 oct 2026, noche)
+En general está bien; no cambiarlo todo. Pide:
+1. Menos «no tenemos fuentes / aún no se sabe»: decirlo como mucho una vez y solo si importa; nada de insistir en
+   «es lo que dicen ellos, no hay datos para confirmarlo». Pesado y no sirve.
+2. Cabos sueltos con seguimiento: si algo importante queda sin saber (p. ej. quién está detrás del ciberataque a los
+   bancos coreanos), la tarjeta lo apunta como cabo suelto «revisar mañana». El parte siguiente lo revisa; si no hay
+   novedad, lo pasa al sábado. Las Claves del sábado recopilan los cabos sueltos de la semana y cuentan cómo acabaron.
+3. Cero paja y nada obvio (IA, política, economía, geopolítica): no explicar lo evidente (precio por token × tokens),
+   no decir que un modelo nuevo es mejor que el de hace un año (Haiku 5.5 > Haiku 4.5), no presentar como novedad lo
+   que es así desde hace tiempo (los modelos abiertos chinos lideran desde hace ~2 años). En el especial de Vox, no
+   repetir las encuestas ni lo obvio. Dar por sabido lo que un oyente al día ya sabe.
+4. Más fondo técnico explicado sin jerga: ante un modelo nuevo, qué arquitectura tiene, qué lo hace distinto, si hay
+   novedad real o es más de lo mismo. Buscar la información para no cometer incorrecciones. Los programas pueden ser
+   algo más largos para que quepa.
+5. Referente de nivel: «Inteligencia Artificial Semanal» de Gargoyles Devon: su forma de explicar lo técnico de
+   manera llana; NO su forma de opinar contundente sobre tonterías ni sus incorrecciones. Cristian pide analizar
+   subtítulos de 10-15 de sus vídeos (coste aproximado a avisar antes).
+6. El parte diario cuenta lo de las últimas ~30 horas, nada de hace una semana.
+7. Un poco más literario, con empaque y alguna reflexión, no solo dato tras dato.
+Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (sesión limpia).
