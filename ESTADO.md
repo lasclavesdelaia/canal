@@ -445,6 +445,8 @@ Fuentes oficiales leídas el 8 oct 2026 (ninguna muestra fecha de actualización
   Decisión mía: no nombrar a Cárpatos en el prompt, para que no imite su voz (pauta §5.4).
 - Commit 8afa392 (mundo.md) LOCAL: el portero cortó el push (sesión con lo privado y lo de fuera). Lo sube Cristian:
   `cd ~/bin/claves_ia && git push origin main`. Línea editorial TERMINADA salvo esa subida.
+- Añadido (8 oct, petición suya): «Directo y al grano», sin vueltas ni verbosidad, primero de la Línea editorial;
+  manda sobre el tono literario del §2. Commit local, sube con el mismo push.
   Notas W4eHk0-LzQo (12 sep 2026): ÚTIL: «los bonos mandan» con un dato (volatilidad
   de bonos MOVE por encima de 98 = episodios de volatilidad alta en bolsa); separar «dos mundos» (economía endeudada
   frente a la IA que la compensa); techos = proceso, suelos = evento (semis en 2000, rebotes del 37-55 % dentro de un
