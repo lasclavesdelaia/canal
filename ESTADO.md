@@ -375,3 +375,6 @@ Fuentes oficiales leídas el 8 oct 2026 (ninguna muestra fecha de actualización
 - Siguiente: propuesta de rutina de fin de semana con esfuerzo alto (espera su decisión).
 - Pendiente de su sí (de Central IA): lecturas para la línea editorial y subtítulos de Cárpatos con yt-dlp. No lo
   hago en esta sesión: choca con su regla de no usar la red aquí. Se hará en otra sesión si lo confirma.
+- Velocidad 1,1 en main (entró en 8f76dde). Falta lanzar «rehacer = todos»: el permiso automático lo frenó; Cristian
+  lo lanza a mano. Después comprobar en las Releases ep-2026-10-08-* «voz» Aoede y duraciones ~9 % menores
+  (antes: parte 531 s, claves 1295 s, mundo 1138 s; claves y mundo sin campo «voz»).
