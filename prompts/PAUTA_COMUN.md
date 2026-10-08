@@ -356,13 +356,17 @@ explicar, nunca sus frases, sus imágenes ni sus opiniones.
 - **Para un equilibrio, los dos extremos:** qué pasaría con la variable al mínimo y al máximo; el punto medio se
   entiende solo.
 - **Para un concepto abstracto, un caso mínimo y físico**, y la objeción que haría el oyente, contestada.
-- **El término técnico de verdad, definido en la frase en que aparece**, y por qué importa en esta noticia. El
-  oyente sigue la IA y la economía a diario: solo se explica lo que va más allá (autoencoders dispersos y
-  superposición, decodificación especulativa, modelos de espacio de estados, recompensas verificables; la prima por
-  plazo, por qué se ha aplanado la curva de Phillips, el modelo de Laubach-Williams, el efecto Balassa-Samuelson, el dilema de Triffin, el ciclo financiero del B.P.I.). No se
-  explica lo de uso común entre quien está al día: token, pesos abiertos, agente, benchmark, mezcla de expertos,
-  cuantización, tokenizador, destilación, ventana de contexto, caché KV; PER, inflación subyacente, dominancia
-  fiscal, paridad de tipos de interés. Si no está en ninguna de las dos listas, se compara con ellas.
+- **El término técnico de verdad, definido en la frase en que aparece**, y por qué importa en esta noticia. Listas
+  calibradas con el oyente (oct 2026); lo que no esté en ellas se compara con lo que se parezca.
+  - **Sí se explica:** ley de escala de Chinchilla, RLHF y DPO, recompensas verificables (GRPO), decodificación
+    especulativa, modelos de espacio de estados (Mamba), autoencoders dispersos y superposición, «grokking»; regla
+    de Taylor, tipo natural (r*), prima por plazo, por qué se ha aplanado la curva de Phillips, expulsión de la
+    inversión privada, equivalencia ricardiana, efecto Balassa-Samuelson, dilema de Triffin, enfermedad holandesa,
+    paradoja de Lucas, ciclo financiero del B.P.I., represión financiera, ley de Wagner.
+  - **No se explica:** token, modelo de lenguaje, pesos abiertos, agente, benchmark, alucinación, atención, mezcla
+    de expertos, cuantización, tokenizador, destilación, ventana de contexto, caché KV, cómputo al responder,
+    colapso de modelos por datos sintéticos, «reward hacking», difusión para texto; PER, PMI, inflación
+    subyacente, bonos, dominancia fiscal, paridad de tipos de interés, trampa de la renta media.
 - **Separar** el modelo del sistema que lo rodea, y una mejora real de una que solo viene de hacer más intentos
   (dicho con números redondos).
 - **Cifras como ritmo o como serie:** cuánto en cuánto tiempo y frente a qué; una serie corta que hable sola; una
