@@ -150,6 +150,14 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
     confirmar: mirar la ficha antes de usarlo. fuentes.md sigue diciendo «no se lee» hasta confirmarlo.
   - Como el portero marcó esta sesión, estos cambios se suben en una sesión limpia si el push falla.
 
+- YouTube (8 oct, tarde): canal youtube.com/@LasclavesdelaIA (ID UCkZFrpaIjqdS-7VU47swcRw), teléfono verificado.
+  Para enviar feeds RSS, Studio pidió verificar el canal: Cristian mandó el vídeo de 6 s y se aprobó al momento, pero
+  «Enviar un feed RSS» dice «Tu cuenta es demasiado nueva. Inténtalo de nuevo dentro de 24 horas» (8 oct, 12:32):
+  reintentar desde el 9 oct por la tarde.
+  Cuando llegue: Studio › Contenido › Pódcasts › Nuevo pódcast › Enviar un feed RSS, con parte.xml, claves.xml y
+  mundo.xml de https://claves.cristiansdrojek.com (los dos últimos, cuando tengan episodio). Poner el enlace del
+  canal en canal.youtube de config/programas.json (README, paso 2).
+
 ### Preguntas para Cristian (F3, más)
 - Aprobación de cada episodio: plan de una semana (F6). ¿La quito antes? Yo esperaría a oír 3 o 4 episodios.
 
@@ -175,6 +183,9 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
 - Hecho (8 oct, 10:09): Release `comparativa-voces-1` con los 4 Chirp (unos 41 s cada uno). Los 2 Gemini dieron
   HTTP 403: «Agent Platform API» sin activar en el proyecto 512994302884. Cristian debe activarla (y quizá añadirla a
   las restricciones de la clave «voz-github») y relanzar el flujo; o elegir entre los Chirp.
+- 8 oct, 12:45: Agent Platform API (aiplatform.googleapis.com) HABILITADA en voz-claves, pero no se puede añadir a la
+  clave «voz-github»: exige una clave ligada a una cuenta de servicio. Recomendado: elegir entre los 4 Chirp. Gemini
+  solo si Cristian crea esa cuenta de servicio y la clave nueva (no lo hace un agente).
 - Siguiente: Cristian elige de oído. Si elige Gemini, poner `modelo` y `estilo` en `voz` de config/programas.json
   (`voz.py` ya los lee). Coste estimado con ~470.000 caracteres al mes (unas 8,7 h de audio a ~15 caracteres por segundo): Chirp 3 HD, 0 $
   (dentro del millón gratis); Gemini 2.5 Flash, unos 8 $/mes; Gemini 3.1 Flash o 2.5 Pro, unos 16 $/mes. Los
