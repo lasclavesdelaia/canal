@@ -30,6 +30,10 @@ Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian).
    - Cuando exista el canal de YouTube, pon su enlace en `canal.youtube` de `config/programas.json`.
 3. **YouTube** lee los tres feeds (`parte.xml`, `claves.xml`, `mundo.xml`) y publica cada episodio en su lista.
 
+4. **Encargado semanal** (rutina de los domingos, 18:07 de Madrid; prompt `prompts/ENCARGADO.md`): revisa la semana y
+   deja un informe en `revisiones/AAAA-MM-DD.md`, en una rama `claude/revision-…`. Solo propone; no toca `main`. La
+   web no publica las revisiones. Para aplicar una propuesta, dile a una sesión «aplica la revisión del AAAA-MM-DD».
+
 ## Reglas para quien toque esto
 
 - **La rutina lee internet:** no le des claves, conectores ni permiso para subir a `main`.

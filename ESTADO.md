@@ -346,3 +346,11 @@ Fuentes oficiales leídas el 8 oct 2026 (ninguna muestra fecha de actualización
   3. `gh workflow run publicar.yml -f rehacer=2026-10-08-parte` (es el único hecho con Charon; «todos» también vale,
      unos 50.000 caracteres más, dentro del millón gratis). Si sigue el revisor de «publicar», Cristian aprueba.
   4. Comprobar: Release con «voz»: es-ES-Chirp3-HD-Aoede, el MP3 suena con Aoede, parte.xml con el título en cifras.
+
+## Sesión 8 oct 2026 (13:27): subir lo pendiente y encargado semanal
+- Paso 1: b13c284, f7eb552 y f499d01 YA estaban en origin/main (alguien los subió). Run 37769194783 (claves y mundo
+  del 8) en curso; run 37769959624 (workflow_dispatch sobre f499d01, 11:25Z) en espera: parece el rehacer lanzado ya.
+  Compruebo sus entradas en el log antes de lanzar otro.
+- Paso 2: escrito prompts/ENCARGADO.md (revisión dominical; informe en revisiones/ en rama claude/revision-…; solo
+  propone; puede escribir hasta 2 partes atrasados). sitio.py no necesita cambios: solo publica desde Releases, y
+  publicar.py solo coge episodios/*.md, así que las revisiones no salen en la web. README con el párrafo. Pruebas OK.
