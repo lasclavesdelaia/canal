@@ -1,0 +1,28 @@
+# Comparativa de voces: un párrafo del Parte del 8 oct leído por seis voces, como Release prerelease.
+# Se lanza a mano. Usa la clave del entorno «publicar» (solo main, con aprobación de Cristian).
+name: Comparar voces
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  comparar:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # crear la Release con los MP3
+    environment:
+      name: publicar
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Pruebas
+        run: python3 -m unittest discover -s tests -v
+      - name: Herramientas
+        run: which ffmpeg ffprobe || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+      - name: Sintetizar y subir
+        env:
+          GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/comparar_voces.py

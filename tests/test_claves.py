@@ -8,6 +8,7 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ / "scripts"))
 
+import comparar_voces  # noqa: E402
 import sitio  # noqa: E402
 import voz  # noqa: E402
 from comun import config, leer_episodio, texto_hablado  # noqa: E402
@@ -91,6 +92,27 @@ class Hablado(unittest.TestCase):
         partes = voz.trozos(texto_hablado(ep) * 3)
         self.assertTrue(all(len(p.encode()) <= voz.MAX_BYTES for p in partes))
         self.assertEqual(" ".join(" ".join(partes).split()), " ".join((texto_hablado(ep) * 3).split()))
+
+    def test_peticion_chirp_y_gemini(self):
+        chirp = voz.peticion("Hola.", {"idioma": "es-ES", "nombre": "es-ES-Chirp3-HD-Charon", "velocidad": 1.0})
+        self.assertNotIn("modelName", chirp["voice"])
+        self.assertNotIn("prompt", chirp["input"])
+        self.assertEqual(chirp["audioConfig"]["speakingRate"], 1.0)
+        gem = voz.peticion("Hola.", {"idioma": "es-ES", "nombre": "Charon", "modelo": "gemini-2.5-flash-tts",
+                                     "estilo": "Tono sereno."})
+        self.assertEqual(gem["voice"], {"languageCode": "es-ES", "name": "Charon", "modelName": "gemini-2.5-flash-tts"})
+        self.assertEqual(gem["input"]["prompt"], "Tono sereno.")
+        self.assertNotIn("speakingRate", gem["audioConfig"])
+
+    def test_parrafo_de_la_comparativa(self):
+        cfg = config()
+        cuerpo = "Frase de entrada corta.\n\n" + " ".join(["palabra"] * 90) + "\n\nOtro párrafo."
+        t = comparar_voces.parrafo_de_muestra({"programa": "parte", "fecha": "2026-10-08", "cuerpo": cuerpo}, cfg)
+        self.assertTrue(t.startswith("Las claves de la IA. Parte diario IA, jueves, 8 de octubre de 2026."))
+        self.assertIn(cfg["canal"]["aviso_hablado"], t)
+        self.assertTrue(t.endswith(" ".join(["palabra"] * 90)))
+        self.assertEqual(len(comparar_voces.VOCES), 6)
+        self.assertEqual(len({n for n, _, _ in comparar_voces.VOCES}), 6)
 
 
 class Web(unittest.TestCase):

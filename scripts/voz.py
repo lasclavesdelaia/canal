@@ -1,4 +1,4 @@
-"""Convierte el texto hablado en MP3 con Google Cloud Text-to-Speech (voces Chirp 3 HD).
+"""Convierte el texto hablado en MP3 con Google Cloud Text-to-Speech (voces Chirp 3 HD o Gemini-TTS).
 
 La clave llega por la variable de entorno GOOGLE_TTS_KEY (secreto del entorno «publicar» de GitHub Actions).
 Nunca se escribe en disco ni en el registro.
@@ -52,12 +52,25 @@ def trozos(texto, max_bytes=MAX_BYTES):
     return juntos
 
 
-def sintetizar_trozo(texto, voz, clave):
+def peticion(texto, voz):
+    """Cuerpo de la petición. Con «modelo» (Gemini-TTS, p. ej. gemini-2.5-flash-tts) la voz es el nombre corto
+    («Charon») y «estilo» va como instrucción de estilo (campo prompt); sin «modelo», voz Chirp 3 HD."""
     cuerpo = {
         "input": {"text": texto},
         "voice": {"languageCode": voz["idioma"], "name": voz["nombre"]},
-        "audioConfig": {"audioEncoding": "MP3", "speakingRate": voz.get("velocidad", 1.0)},
+        "audioConfig": {"audioEncoding": "MP3"},
     }
+    if voz.get("modelo"):
+        cuerpo["voice"]["modelName"] = voz["modelo"]
+        if voz.get("estilo"):
+            cuerpo["input"]["prompt"] = voz["estilo"]
+    else:
+        cuerpo["audioConfig"]["speakingRate"] = voz.get("velocidad", 1.0)
+    return cuerpo
+
+
+def sintetizar_trozo(texto, voz, clave):
+    cuerpo = peticion(texto, voz)
     req = urllib.request.Request(API, data=json.dumps(cuerpo).encode(), method="POST",
                                  headers={"Content-Type": "application/json", "X-Goog-Api-Key": clave})
     with urllib.request.urlopen(req, timeout=120) as r:
