@@ -438,6 +438,7 @@ Opiniones que se dieron: la postura del programa, si la tomó.
 Hilos abiertos: qué conviene seguir y cuándo (resultados, votaciones, lanzamientos anunciados).
 Sin contar aún: lo que quedó fuera de cada tema y podría ser otro ángulo.
 Cabos sueltos: lo importante que quedó sin saber, uno por línea, con «revisar: <AAAA-MM-DD o sábado>».
+Erratas corregidas: E-NNN (solo si se corrigió alguna; si no, se omite la línea).
 ```
 
 - **Cabos sueltos.** Solo lo que importa y no se sabía (por ejemplo, quién está detrás de un ciberataque), no
@@ -455,3 +456,10 @@ Cabos sueltos: lo importante que quedó sin saber, uno por línea, con «revisar
   remitiendo en una frase («como contamos el martes…»). Y si las últimas semanas usaron la misma estructura, cambia
   la de hoy.
 
+
+## 11. El criterio del programa
+
+`prompts/CRITERIO.md` recoge erratas que corregir y lecturas razonadas que el programa ha hecho suyas. Léelo antes
+de escribir y aplícalo como dice su cabecera. Nunca se menciona de dónde sale ni que exista un debate, una
+revisión o un fichero: se cuenta como razonamiento propio. El criterio cambia la lectura del programa, no esconde
+las demás: la mejor postura contraria se sigue dando, con nombre, y cada dato sigue llevando su fuente.

@@ -26,7 +26,8 @@ Este es el prompt de la rutina de los domingos. Corre a las 18:07, hora de Madri
 ## 2. Qué lees
 
 1. **Las instrucciones**, enteras: `prompts/PAUTA_COMUN.md`, `prompts/parte.md`, `prompts/claves.md`,
-   `prompts/mundo.md`, `prompts/RUTINA.md` y `config/fuentes.md`. Es la vara con la que mides.
+   `prompts/mundo.md`, `prompts/RUTINA.md`, `prompts/CRITERIO.md` y `config/fuentes.md`. Comprueba también que las
+   erratas de `CRITERIO.md` se corrigieron (línea «Erratas corregidas» de las tarjetas). Es la vara con la que mides.
 2. **Los episodios de la semana:**
    `git fetch origin '+refs/heads/claude/*:refs/remotes/origin/claude/*'` y busca en esas ramas los ficheros
    `episodios/AAAA-MM-DD-<programa>.md` de la semana. Léelos enteros.

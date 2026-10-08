@@ -21,7 +21,8 @@ Este es el prompt de la rutina en la nube. Corre a las 5:07 y, de reserva, a las
 5. **Lee las instrucciones**, enteras:
    - `prompts/PAUTA_COMUN.md`;
    - el fichero de cada programa que toque (`prompts/parte.md`, `claves.md`, `mundo.md`);
-   - `config/fuentes.md`.
+   - `config/fuentes.md`;
+   - `prompts/CRITERIO.md` (erratas pendientes y criterio del programa; pauta, apartado 11).
 6. **Lee la memoria: solo las tarjetas** (`tarjetas/`, en las ramas `claude/`; con `git show rama:ruta`), nunca los
    guiones viejos:
    - para el parte, las de los últimos 7 partes;

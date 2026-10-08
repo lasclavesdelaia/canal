@@ -919,3 +919,10 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   de enlaces fuera de la red, añadirlos desde config/red_catalogo.txt quitando otros menos útiles.
 - Duda abierta: si `*.x` cubre también `x` a secas (la doc no lo dice; su lista por defecto pone ambos). Si el
   registro muestra que sí, se puede quitar duplicado y meter más instituciones.
+
+## /debatir y criterio del programa (8 oct 2026, noche; Cristian: «me parece muy bien»)
+- En curso: skill ~/.claude/skills/debatir (episodio por descripción libre, sin nombre exacto), prompts/CRITERIO.md
+  (público; solo conclusiones editoriales), reglas en PAUTA §11, RUTINA paso 5, tarjeta con «Erratas corregidas».
+  Y skill ~/.claude/skills/mis-skills: lista sus skills (~/.claude/skills y ~/.claude/commands) con un ejemplo de uso.
+- Hecho: skills ~/.claude/skills/debatir y ~/.claude/skills/mis-skills (fuera del repo); prompts/CRITERIO.md vacío
+  con su formato; PAUTA §11 y línea «Erratas corregidas» en la tarjeta; RUTINA paso 5 y ENCARGADO leen CRITERIO.md.
