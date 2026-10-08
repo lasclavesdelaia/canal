@@ -902,3 +902,4 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   `--sin-sufijos` (424 líneas) y relleno con el catálogo.
 - Hecho (Cristian): PAUTA §9 y §6: solo se explica lo técnico de verdad; ejemplos de qué sí y qué no.
 - Hecho (Cristian): subido el listón de qué se explica; los primeros ejemplos («mezcla de expertos», «destilación»…) ya los conoce.
+- Hecho (Cristian): prima por plazo y curva de Phillips aplanada SÍ se explican; dominancia fiscal y paridad de tipos NO.
