@@ -1,6 +1,8 @@
 # ESTADO de «Las claves de la IA»
 
 ## Hecho
+- 8 oct 2026: pasos 7 (canal de YouTube) y 8 (Artificial Analysis) HECHOS. fuentes.md y PAUTA_COMUN.md explican
+  cómo usar `AA_API_KEY` sin mostrarla. Comprobar en la primera ejecución que la ruta y la cabecera funcionan.
 - 8 oct 2026 (sesión limpia de la tarde): F3 TERMINADA. 14 pruebas en verde; push e8da804..65b7c46.
 - 8 oct 2026, F1 (código local, sesión de diseño):
   - prompts: pauta común, tres programas y rutina;
@@ -37,8 +39,10 @@
 - F2 en marcha (8 oct): pasos 1-5 HECHOS (Google Cloud como particular; presupuesto «tope-voz» de 1 € solo con alertas, porque
   TTS no admite tope duro; clave «voz-github» restringida a TTS; entorno «publicar» solo en main, con él como revisor
   y GOOGLE_TTS_KEY guardada). Paso 6 HECHO: el DNS real está en QUIC.cloud (no en Hostinger);
-  CNAME claves → lasclavesdelaia.github.io añadido ahí, sin CDN. Pasos 7 (canal de YouTube) y 8 (Artificial Analysis) PENDIENTES: los hará
-  más adelante. el repositorio `lasclavesdelaia/canal` ya existe (visto en su captura). Google Cloud, como
+  CNAME claves → lasclavesdelaia.github.io añadido ahí, sin CDN. Pasos 7 (canal de YouTube) y 8 (Artificial Analysis) HECHOS el 8 oct.
+  La clave de Artificial Analysis va como variable `AA_API_KEY` en el entorno claves-ia de la rutina (la pone Cristian;
+  también la guardó, sin daño, como secreto del entorno «publicar» de GitHub). Pendiente: alta de los tres RSS en
+  YouTube Studio cuando haya 2-3 episodios. el repositorio `lasclavesdelaia/canal` ya existe (visto en su captura). Google Cloud, como
   particular.
 
 ## Preguntas para Cristian

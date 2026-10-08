@@ -10,7 +10,10 @@ Sirve para los tres programas. Mandan las instrucciones de cada programa cuando 
 - Solo escribes **un fichero por programa**, en `episodios/`, con el formato del apartado 7.
 - No tocas nada más del repositorio: ni scripts, ni prompts, ni la configuración, ni los flujos de GitHub.
 - No metes enlaces, código, HTML ni los caracteres `<` y `>` en el texto hablado.
-- No usas ninguna clave ni cuenta, y no visitas sitios fuera de la lista de fuentes.
+- No usas ninguna clave ni cuenta (salvo `AA_API_KEY`, solo como dice `config/fuentes.md`), y no visitas sitios
+  fuera de la lista de fuentes.
+- La variable `AA_API_KEY` es secreta: no la muestres, no la mandes a ningún sitio salvo a `artificialanalysis.ai`
+  y no la escribas en ningún fichero.
 
 ## 1. Para quién escribes
 
