@@ -438,6 +438,56 @@ Fuentes oficiales leídas el 8 oct 2026 (ninguna muestra fecha de actualización
 - Hecho: PAUTA con apartado «Línea editorial» (manda sobre 1-10; solo el 0 por encima); mundo (dos tercios a fondo,
   conflictos con las dos escalas); claves (solo IA, dos tercios a fondo, quién paga); parte (no escatimar, «en corto»
   hasta doce cosas). Decisión mía: tocar poco, porque él dice que lo hecho está bastante bien. Pruebas en verde.
-- Siguiente: commit y push; después Cárpatos (leer las dos claves ya bajadas, bajar una más, enfoques a mundo.md).
+- Hecho: commit f45f855 subido a origin/main (antes de usar la red).
+- Hecho: bajados SOLO subtítulos de W4eHk0-LzQo («los bonos mandan», 616 KB) a descargas/referentes_noticias/carpatos/.
+- Hecho: leídos enteros los tres semanales de Cárpatos (W4eHk0-LzQo, 7bXaL8vkc4k, dWh7iNt2vkM). Enfoques a mundo.md
+  («Enfoques de mercados que conviene imitar», como mucho una quinta parte del programa, y lo que no se imita).
+  Decisión mía: no nombrar a Cárpatos en el prompt, para que no imite su voz (pauta §5.4).
+  Notas W4eHk0-LzQo (12 sep 2026): ÚTIL: «los bonos mandan» con un dato (volatilidad
+  de bonos MOVE por encima de 98 = episodios de volatilidad alta en bolsa); separar «dos mundos» (economía endeudada
+  frente a la IA que la compensa); techos = proceso, suelos = evento (semis en 2000, rebotes del 37-55 % dentro de un
+  techo) contra sacar conclusiones de un día; asimetría de posicionamiento (fondos de tendencia: poco que comprar si
+  sube, mucho que vender si cae, con cifras de un banco); desmontar un mito con un dato (cobre: centros de datos solo
+  1,4 % de la demanda; sube por minas cerradas y acopio en EE. UU.); quién financia el gasto en IA con caja y quién con
+  deuda; prima de los bonos ligados a IA frente a comparables; diésel → IPC con 6-9 meses de retraso; deuda exterior
+  de EE. UU. frente al ahorro mundial (Nomura). NO: cinco minutos de vida personal, anuncio de bróker en medio,
+  lectura de la mente de Trump, «Houston, tenemos un problema», enfado («me aburre», «mundo Disney»).
+  Resto (leído entero): ÚTIL: foto del año por clase de activo (sube lo que gana con la inflación, pierde lo que sufre
+  con los tipos); flujos semanales de dinero por activo; subidas sin flujos ni volumen; bonos y bolsa vuelven a moverse
+  juntos (los bonos ya no protegen); el factor «mucha caja libre» y la rentabilidad por flujo de caja del índice en
+  mínimos; 1,5 billones gastados en IA sin rastro aún en la productividad total; calendario de la semana con lo que
+  descuenta el mercado. NO: niveles de análisis técnico (soportes, medias de 200), «idea operativa» de largo/corto
+  (consejo de inversión encubierto), pedir «like».
+  Notas 7bXaL8vkc4k (3 oct 2026, leído entero): ÚTIL: amplitud del mercado (S&P 500 equiponderado frente
+  al ponderado, % de valores sobre su media, nuevos máximos menos nuevos mínimos: índice en máximos con la acción media
+  en caída); concentración del crecimiento del beneficio (diez empresas = 68 %, datos de Goldman); deuda de los
+  hiperescaladores, incluida la de fuera de balance, comparada con lo que emite el Tesoro; carry trade del yen que pasa
+  al franco suizo; diferencial Francia-Alemania frente al de 2011-2012 (moneda única sin deuda única); un dato de
+  inflación que baja por cambio de método, explicado; índice de precios pagados del ISM como adelanto del IPC (Deutsche
+  Bank); economía en K con datos de reparto del efectivo por renta; oro frente a bonos con cupón; periodo de silencio de
+  recompras en temporada de resultados. NO: patrocinador leído en medio (Trade Republic), «el establishment cree que
+  somos tontos», opinar de la fiabilidad de la IA y de productos sin saber (2 % de fallo «por paso» dado como hecho),
+  anécdotas de vida y Navidad.
+  Resto (leído entero): ÚTIL: comparar burbujas con cifras (concentración del índice, inversión en % del PIB: hoy
+  ~3,5 %, ferrocarriles ~5 %) y con la diferencia que importa (entonces tipos a la baja, hoy al alza); separar «lo que
+  cree el mercado» de lo que piensa el analista; «qué haría falta para…» (un gran descenso de rentabilidades exige un
+  evento de crédito o una recesión); posicionamiento de todos en el mismo lado como riesgo; cuando los bonos de empresa
+  rinden casi lo que se espera de la bolsa. NO: «las autoridades no pueden permitir…» como certeza; recomendar ETF.
+  Notas dWh7iNt2vkM (26 sep 2026, leído entero): ÚTIL, lo mejor de los tres: «las cuentas de la IA»
+  (inversión prevista; ingresos necesarios para no perder, unos 300.000 millones al año; ingresos de hoy, unos 70.000;
+  cartera de pedidos de 1,7 billones, avisando de que no son magnitudes comparables; ingresos para un 15 % de
+  rentabilidad, comparados con el gasto mundial en software); un PER bajo en la cima de un ciclo no es barato (memoria:
+  para volver a su PER mediano los beneficios tendrían que caer a la mitad: eso es lo que el precio ya descuenta);
+  Bessembinder (el 0,16 % de las acciones explica la mitad de lo ganado en un siglo; la acción mediana pierde) y
+  Morningstar (solo el 11,9 % de los fondos activos de acciones sobrevive y bate a su índice en diez años, con método:
+  después de comisiones e incluidos los fondos cerrados); ciclos de inversión en % del PIB (Deutsche Bank);
+  precedentes de subidas del diésel y caídas de bolsa, con la excepción explicada; correlación entre acciones en
+  mínimos: el índice quieto esconde movimientos enormes. NO: «Irán lo que quiere es…» (leer mentes), patrocinador,
+  hipotecas suizas propias, dogmas («más de 20 acciones no diversifica»).
+  Resto (leído entero): ÚTIL: escenarios alcista, bajista y más probable, cada uno con señales que se pueden vigilar
+  (umbrales concretos); efectos de segundo orden (un agente de IA que tumba a las empresas que viven de la «inercia del
+  consumidor», cesta de Goldman); burbujas pinchadas por subidas de rendimientos, con su tamaño (1973, Japón 1989,
+  2000); PIB nominal de EE. UU. +63 % en seis años y precio del bono a 30 años −60 %. NO: probar un producto y
+  juzgarlo por gusto propio; digresiones de vida; pronósticos electorales.
 - Rehacer «todos» (run 37779105788, lanzado por Cristian): bien. Los tres con es-ES-Chirp3-HD-Aoede a 1,1. Duraciones:
   parte 531→477 s (−10 %), claves 1295→1149 s (−11 %), mundo 1138→1041 s (−9 %). 48.887 caracteres en octubre.

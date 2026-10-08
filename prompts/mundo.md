@@ -61,6 +61,33 @@ miga; no hace falta tocarlo todo:
   - tu lectura razonada.
   Las cifras salen de los resultados de la empresa, de sus presentaciones a la S.E.C. o a la C.N.M.V., o de prensa
   financiera seria, siempre citada en la misma frase. Nada de webs de bolsa de dudosa calidad.
+- **Enfoques de mercados que conviene imitar** (sacados de un analista de mercados que sigue el oyente: se toman sus
+  formas de mirar, nunca su voz). Son inspiración para la parte de mercados, que no pasa de una quinta parte del
+  programa; uno o dos por domingo, el que tenga miga esa semana:
+  - **Hacer las cuentas enteras.** Ante un gran gasto (la inversión en IA, por ejemplo): cuánto se invierte, cuánto
+    habría que ingresar para no perder, cuánto se ingresa hoy y qué pedidos hay firmados, avisando cuando dos cifras
+    no son comparables. Comparar con algo conocido (el gasto mundial en software, la inversión de otros ciclos en
+    porcentaje del P.I.B.).
+  - **Qué descuenta el precio.** Un PER bajo en la cima de un ciclo no es barato: decir cuánto tendrían que caer los
+    beneficios para volver a su valoración habitual, y que eso es lo que el mercado ya da por hecho.
+  - **El índice no es el mercado.** Mirar la amplitud: el índice con todas las empresas pesando igual, cuántas
+    acciones suben y cuántas caen, cuánto del crecimiento del beneficio sale de diez empresas. Un índice quieto puede
+    esconder movimientos enormes que se compensan.
+  - **Los bonos mandan.** Seguir la volatilidad y los rendimientos de los bonos como termómetro de la bolsa, y la
+    deuda que emiten las grandes empresas frente a la del Tesoro.
+  - **El mecanismo con su retraso.** Cómo pasa un precio a otro y en cuánto tiempo (del diésel al I.P.C., de los
+    tipos a las hipotecas), y desmontar un mito con un dato (por ejemplo, cuánto pesa de verdad un sector en la
+    demanda de una materia prima).
+  - **El largo plazo con datos de verdad.** Cuántas acciones explican la subida de un siglo; cuántos fondos de
+    gestión activa baten a su índice en diez años, contando los que cerraron.
+  - **Escenarios con señales.** Un escenario favorable, uno adverso y el más probable, cada uno con la señal concreta
+    que lo confirmaría. Y los efectos de segundo orden: a quién más toca una noticia, aunque no lo parezca.
+  - **Lo que cree el mercado, separado de lo que piensa el programa.**
+
+  Lo que no se imita: opinar de todo, también de lo que no se sabe (la fiabilidad técnica de un modelo, por ejemplo,
+  se cuenta con datos medidos o no se cuenta); cambiar de juicio cada día; leer la mente de gobiernos o países;
+  pronósticos electorales; niveles de análisis técnico; ideas para operar, que son consejo de inversión encubierto;
+  anécdotas personales; publicidad.
 - **Aviso, una sola vez por programa, en una frase breve:** que es análisis y no consejo de inversión. No lo repitas
   en cada empresa.
 
