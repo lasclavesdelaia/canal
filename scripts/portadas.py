@@ -163,39 +163,38 @@ def cinta(texto_cinta, tam, fondo, color, giro):
 
 
 def banner(w=2560, h=1440):
-    """Banner. Lo importante va en la zona segura central (1546x423); en escritorio se ve la franja central."""
+    """Banner. En escritorio solo se ve la franja central (2560x423) y en el móvil la zona segura (1546x423):
+    el contenido va pequeño y centrado, con mucho aire negro alrededor."""
     im = Image.new("RGB", (w, h), TINTA)
     d = ImageDraw.Draw(im, "RGBA")
-    zx0, zy0 = (w - 1546) // 2, (h - 423) // 2
-    zx1 = zx0 + 1546
-    # a los lados, fuera de la zona segura: Parte (rojo, tachado) y Mundo (azul, diana)
-    d.rectangle((0, 0, zx0 - 90, h), fill=ROJO)
+    cx0, cy0 = w / 2, h / 2
+    # bandas laterales estrechas: Parte (rojo, tachado) a la izquierda, Mundo (azul, diana) a la derecha
+    d.rectangle((0, 0, 260, h), fill=ROJO)
     for i, (largo, negro) in enumerate([(1, 0), (.7, 1), (.92, 0), (.55, 1), (1, 1), (.8, 0), (.62, 1), (.9, 0),
                                         (.4, 1), (.75, 1), (1, 0), (.6, 1), (.85, 0), (.5, 1), (.95, 1)]):
-        y = 340 + i * 52
-        d.rectangle((60, y, 60 + (zx0 - 210) * largo, y + 28), fill=TINTA if negro else (17, 17, 17, 60))
-    d.rectangle((zx1 + 90, 0, w, h), fill=AZUL)
-    cx, cy, r = zx1 + 90 + (w - zx1 - 90) / 2, h / 2, 190
-    trama(d, (cx - r, cy - r, cx + r, cy + r), 14, 3.4, TINTA, lambda x, y: (x - cx) ** 2 + (y - cy) ** 2 < r * r)
-    d.ellipse((cx - r, cy - r, cx + r, cy + r), outline=TINTA, width=5)
-    d.line((zx1 + 90, cy, w, cy), fill=TINTA, width=5)
-    d.line((cx, 0, cx, h), fill=TINTA, width=5)
-    d.rectangle((zx1 + 30, 0, zx1 + 60, h), fill=AMARILLO)
-    # dentro de la zona segura
-    cab = fuente(26)
-    texto(d, zx0, zy0 + 34, "CADA DÍA · SÁBADOS · DOMINGOS", cab, PAPEL, .08)
-    texto(d, zx1, zy0 + 34, "INFORMATIVO DE INTELIGENCIA ARTIFICIAL", cab, PAPEL, .08, "rs")
+        y = 330 + i * 52
+        d.rectangle((50, y, 50 + 160 * largo, y + 24), fill=TINTA if negro else (17, 17, 17, 60))
+    d.rectangle((w - 260, 0, w, h), fill=AZUL)
+    r, dx = 105, w - 130
+    trama(d, (dx - r, cy0 - r, dx + r, cy0 + r), 12, 3, TINTA, lambda x, y: (x - dx) ** 2 + (y - cy0) ** 2 < r * r)
+    d.ellipse((dx - r, cy0 - r, dx + r, cy0 + r), outline=TINTA, width=4)
+    d.line((w - 260, cy0, w, cy0), fill=TINTA, width=4)
+    d.line((dx, 0, dx, h), fill=TINTA, width=4)
+    d.rectangle((w - 290, 0, w - 276, h), fill=AMARILLO)
+    # centro
+    f = fuente(150, "CondensedBlack")
     titulo = "LAS CLAVES DE LA IA"
-    tam = 260
-    while fuente(tam, "CondensedBlack").getlength(titulo) > 1546:
-        tam -= 2
-    texto(d, zx0, zy0 + 60 + tam * .72, titulo, fuente(tam, "CondensedBlack"), PAPEL)
-    x = zx0
-    for (clave, ser), giro in zip(SERIES.items(), (2, -1.5, 2.5)):
-        c = cinta(f"{ser['titulo']} {ser['sub']}".upper(), 48, ser["color"], TINTA, giro)
-        im.paste(c, (x, zy0 + 300), c)
-        x += c.width + 26
-    texto(d, zx1, zy0 + 412, AVISO, fuente(22, "Medium"), GRIS, .02, "rs")
+    texto(d, cx0, cy0 + 10, titulo, f, PAPEL, .01, "ms")
+    cintas = [cinta(f"{ser['titulo']} {ser['sub']}".upper(), 34, ser["color"], TINTA, g)
+              for ser, g in zip(SERIES.values(), (2, -1.5, 2.5))]
+    total = sum(c.width for c in cintas) + 28 * (len(cintas) - 1)
+    x = cx0 - total / 2
+    for c in cintas:
+        im.paste(c, (round(x), round(cy0 + 50)), c)
+        x += c.width + 28
+    texto(d, cx0, cy0 - 122, "INFORMATIVO DE INTELIGENCIA ARTIFICIAL · CADA DÍA, SÁBADOS Y DOMINGOS",
+          fuente(20), GRIS, .12, "ms")
+    texto(d, cx0, cy0 + 150, AVISO, fuente(18, "Medium"), (130, 127, 120), .03, "ms")
     return grano(im, .06)
 
 
