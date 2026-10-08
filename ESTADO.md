@@ -23,7 +23,7 @@
 
 ## Por comprobar en la primera ejecución real
 - Que la rutina solo pueda subir a ramas `claude/`.
-- Que `effortLevel: low` se aplique.
+- Que `effortLevel: medium` se aplique (Cristian pidió medio el 8 oct).
 - El nombre exacto de la voz Chirp 3 HD en es-ES (`config/programas.json`, `voz.nombre`) y su límite por petición.
 - Que YouTube acepte enlaces a Releases de GitHub (con redirección) como audio del feed.
 - Que `ubuntu-latest` traiga ffmpeg (si no, el paso lo instala).
@@ -96,6 +96,11 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
 4. Avisos de Actions sin prisa: actions/*@v4 usan Node 20 (obsoleto): subir checkout, upload-pages-artifact y
    deploy-pages a su versión nueva; ubuntu-latest pasa a Ubuntu 26 desde el 19 oct (el paso de ffmpeg ya lo instala
    si falta).
+
+### Sesión limpia (8 oct 2026, tarde)
+- Hecho: 12 pruebas en verde; `git push origin main` (eee1c10..43f37a9).
+- Hecho: HTTPS forzado en Pages (https_enforced=true, certificado approved).
+- En curso: F5, rutina en la nube; esperando el «sí» de Cristian. El clasificador de modo auto denegó cargar la skill «schedule»: si no hay herramienta, se le guía a mano en claude.ai/code.
 
 ### Preguntas para Cristian (F3, más)
 - Aprobación de cada episodio: plan de una semana (F6). ¿La quito antes? Yo esperaría a oír 3 o 4 episodios.
