@@ -94,6 +94,17 @@ def texto_hablado(ep, cfg=None):
     """
     cfg = cfg or config()
     prog = cfg["programas"][ep.programa]
-    intro = (f"{cfg['canal']['nombre']}. {prog['lista']}, {fecha_hablada(ep.fecha)}. "
-             f"{cfg['canal']['aviso_hablado']}")
+    # Los especiales no dicen la fecha: así el audio del borrador vale tal cual el día que se publica.
+    cuando = "" if ep.programa == "especial" else f", {fecha_hablada(ep.fecha)}"
+    intro = f"{cfg['canal']['nombre']}. {prog['lista']}{cuando}. {cfg['canal']['aviso_hablado']}"
     return "\n\n".join([intro, ep.cuerpo, prog["despedida"]])
+
+
+def huella_audio(ep, cfg=None):
+    """Identifica el audio que saldría de un episodio: texto hablado y voz. Si coincide, el MP3 se reutiliza."""
+    import hashlib
+    cfg = cfg or config()
+    v = cfg["voz"]
+    base = "\n".join([v["nombre"], str(v.get("velocidad", "")), v.get("modelo", ""), v.get("estilo", ""),
+                      texto_hablado(ep, cfg)])
+    return hashlib.sha256(base.encode()).hexdigest()

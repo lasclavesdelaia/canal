@@ -345,7 +345,7 @@ class Especiales(unittest.TestCase):
     def test_hablado_con_su_despedida(self):
         ep = leer_episodio(con_cuerpo(self.CUERPO, programa="especial", fecha="2026-10-10"))
         t = texto_hablado(ep)
-        self.assertTrue(t.startswith("Las claves de la IA. Especiales, sábado, 10 de octubre de 2026."))
+        self.assertTrue(t.startswith("Las claves de la IA. Especiales. Este programa"))  # sin fecha
         self.assertTrue(t.endswith(config()["programas"]["especial"]["despedida"]))
 
     def test_web_y_feed_con_un_especial(self):
@@ -364,3 +364,58 @@ class Especiales(unittest.TestCase):
             rss = ET.parse(d / "especial.xml").getroot()
             self.assertEqual(rss.find("channel/item/guid").text, "2026-10-10-especial-vox")
             self.assertIsNone(ET.parse(d / "parte.xml").getroot().find("channel/item"))
+
+
+class Borradores(unittest.TestCase):
+    CUERPO = Especiales.CUERPO
+
+    def texto(self, **cab):
+        return con_cuerpo(self.CUERPO, programa="especial", fecha="2026-10-10", **cab)
+
+    def test_rutas(self):
+        self.assertTrue(publicar.es_borrador("borradores/2026-10-10-especial-vox.md"))
+        for malo in ("borradores/2026-10-10-parte.md", "episodios/2026-10-10-especial-vox.md",
+                     "borradores/x/2026-10-10-especial-vox.md", "borradores/2026-10-10-especial.md"):
+            self.assertFalse(publicar.es_borrador(malo), malo)
+
+    def test_pendientes_solo_si_cambia_el_audio(self):
+        import datetime
+        from unittest import mock
+        from comun import huella_audio
+        cfg = config()
+        hoy = datetime.date(2026, 10, 10)
+        ramas = {"vox": ("2026-10-10-especial-vox.md", self.texto(), "claude/borrador-vox", 0),
+                 "malo": ("2026-10-10-especial-malo.md", self.texto(titulo="¡Grito!"), "claude/borrador-malo", 0)}
+        with mock.patch.object(publicar, "borradores_en_ramas", return_value=ramas):
+            pendientes, rechazados = publicar.borradores_pendientes(cfg, [], hoy)
+            self.assertEqual([ep.slug for ep, _ in pendientes], ["vox"])
+            self.assertEqual([r[0] for r in rechazados], ["2026-10-10-especial-malo.md"])
+            ep = pendientes[0][0]
+            hecho = [{"slug": "vox", "huella": huella_audio(ep, cfg)}]
+            self.assertEqual(publicar.borradores_pendientes(cfg, hecho, hoy)[0], [])
+            cambiado = [{"slug": "vox", "huella": "otra"}]
+            self.assertEqual(len(publicar.borradores_pendientes(cfg, cambiado, hoy)[0]), 1)
+
+    def test_el_mp3_del_borrador_solo_vale_si_es_el_mismo_audio(self):
+        from unittest import mock
+        from comun import huella_audio
+        cfg = config()
+        ep, _, _ = validar("episodios/2026-10-12-especial-vox.md",
+                           con_cuerpo(self.CUERPO, programa="especial", fecha="2026-10-12"))
+        borr, _, _ = validar("borradores/2026-10-10-especial-vox.md", self.texto())
+        self.assertEqual(huella_audio(ep, cfg), huella_audio(borr, cfg))  # otra fecha, mismo audio
+        with mock.patch.object(publicar.subprocess, "run") as run:
+            self.assertIsNone(publicar.mp3_del_borrador(ep, cfg, "r/r", [{"slug": "vox", "huella": "otra"}], "/tmp"))
+            self.assertIsNone(publicar.mp3_del_borrador(ep, cfg, "r/r", [], "/tmp"))
+            run.assert_not_called()
+
+    def test_el_tope_cuenta_los_borradores(self):
+        import datetime
+        ya = [{"clave": "2026-10-08-parte", "publicado": "2026-10-08T11:00:00+02:00", "caracteres": 9000}]
+        borr = [{"slug": "vox", "publicado": "2026-10-09T22:00:00+02:00", "caracteres": 60000,
+                 "rehechos": {"2026-10": 50000}}]
+        self.assertEqual(publicar.caracteres_del_mes(ya + borr, datetime.date(2026, 10, 10)), 119000)
+
+    def test_los_borradores_no_entran_en_la_web(self):
+        fuente = Path(sitio.__file__).read_text(encoding="utf-8")
+        self.assertNotIn("borrador", fuente)

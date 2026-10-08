@@ -1,5 +1,8 @@
 # Publica los episodios que la rutina de la mañana deja en ramas claude/.
 # Corre siempre el código de main: lo que llega de claude/ solo se lee como texto.
+# También pone voz a los borradores de especiales (borradores/…-especial-<slug>.md en ramas claude/borrador-*):
+# van a una Release PRERELEASE borrador-<slug>, fuera de la web y de los feeds. La skill /especial lo lanza a mano
+# (gh workflow run publicar.yml --ref main) para no esperar al reloj.
 name: Publicar episodios
 
 on:

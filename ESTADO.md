@@ -500,7 +500,12 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
 - Hecho: leídos README, ESTADO, PAUTA_COMUN, scripts, publicar.yml, normas.
 - Hecho: pasos 1 y 2. `comun.partes_nombre` es la única regla del nombre; Especiales en config con
   `oculto_sin_episodios` (no sale en la web ni tiene feed hasta su primer episodio). 28 pruebas en verde.
-- En curso: paso 3 (modo borrador).
-- Siguiente: paso 4.
+- Hecho: paso 3. publicar.py: `borradores/AAAA-MM-DD-especial-<slug>.md` de ramas `claude/borrador-*` →
+  Release PRERELEASE `borrador-<slug>` con `especial-<slug>.mp3` y su meta (huella del audio). Solo se sintetiza
+  si el audio cambia; cuenta en el tope del mes. Al publicar el especial, si la huella coincide, reutiliza ese MP3
+  (0 caracteres). Decisión menor: los especiales no dicen la fecha en la presentación hablada, para que el audio
+  del borrador valga el día que se publique; el guion dice en una frase a qué fecha están los datos.
+- En curso: paso 4 (prompts/especial.md).
+- Siguiente: paso 5 (skills).
 - Nota: el portero marcó la sesión como «privada de segundo grado» al leer ~/bin/lib/portero.py (lo escribió un
   agente tras leer datos privados). No se ha leído nada privado de verdad. Si corta el push, se dice.
