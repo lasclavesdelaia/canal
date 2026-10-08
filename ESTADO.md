@@ -637,3 +637,14 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
 - Preguntas para Cristian: (0) ¿filtro sí o no? (yo: sí, recortar; se apaga con una línea). (1) ¿Flash hasta enero y Lite después, solo semanales? (yo: sí, cabe en 4-5 €);
   (2) ¿probar una voz es-ES de la Extended Voice Library (uso «news»), que según Google fija mejor el acento que
   pedirlo en el estilo? (yo: sí, en la comparativa).
+
+## Altas en apps (8 oct 2026, con Cristian delante)
+- Cristian quiere en la web los TRES enlaces de cada app (uno por programa): pasar `canal.apps` a un enlace por
+  programa (p. ej. apps.spotify = {parte, claves, mundo}) en una sesión nueva (esta no puede subir).
+- HECHO iVoox: «Parte diario IA · Las claves de la IA» importado por RSS (sin alojar en iVoox), cuenta del canal
+  (entró con Google; sale «Cristian» porque Google pidió un nombre). Id 3239998, enlace https://go.ivoox.com/sq/3239998
+  (falta el enlace largo de ivoox.com). Género Podcasting, castellano, Internet y tecnología, 5 etiquetas. Sin casilla
+  de IA en el formulario; el aviso va lo primero en la descripción. FALLO de iVoox: convierte los acentos del feed en
+  códigos («revisi&oacute;n»); el feed está bien (UTF-8). Corregir a mano en «Editar programa» y vigilar si pasa en
+  los episodios.
+- Pendiente: claves.xml (desde el sábado 10) y mundo.xml (desde el domingo 11) en iVoox; Spotify y Apple.
