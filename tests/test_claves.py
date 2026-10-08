@@ -161,6 +161,26 @@ class Rehacer(unittest.TestCase):
 
 
 class Web(unittest.TestCase):
+    def test_audio_en_la_web_para_el_movil(self):
+        # El Safari del iPhone no reproduce las Releases (llegan como octet-stream): la web sirve su copia,
+        # y el feed sigue con la Release.
+        ep = leer_episodio(muestra())
+        meta = {"clave": ep.clave, "programa": ep.programa, "fecha": ep.fecha, "titulo": ep.titulo,
+                "descripcion": ep.descripcion, "cuerpo": ep.cuerpo, "fuentes": ep.fuentes,
+                "audio_url": "https://github.com/x/y/releases/download/ep-a/a.mp3", "bytes": 3,
+                "duracion": 300, "caracteres": 1000, "publicado": "2026-10-09T06:30:00+02:00"}
+        with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory() as bajados:
+            mp3 = Path(bajados) / f"{ep.clave}.mp3"
+            mp3.write_bytes(b"ID3")
+            sitio.generar([meta], config(), tmp, {ep.clave: mp3})
+            d = Path(tmp)
+            self.assertEqual((d / "audio" / f"{ep.clave}.mp3").read_bytes(), b"ID3")
+            pagina = (d / "e" / f"{ep.clave}.html").read_text()
+            self.assertIn(f'src="/audio/{ep.clave}.mp3"', pagina)
+            self.assertIn(f'src="/audio/{ep.clave}.mp3"', (d / "index.html").read_text())
+            self.assertIn(meta["audio_url"], (d / f"{ep.programa}.xml").read_text())
+            self.assertNotIn("audio_web", meta)
+
     def test_genera_web_y_feeds_validos(self):
         ep = leer_episodio(muestra())
         meta = {"clave": ep.clave, "programa": ep.programa, "fecha": ep.fecha, "titulo": ep.titulo,

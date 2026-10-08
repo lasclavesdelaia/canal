@@ -160,12 +160,18 @@ def _pagina(titulo, cuerpo, cfg, descripcion="", ancho=True):
 """
 
 
+def _reproductor(e):
+    """Los reproductores tiran de la copia en la propia web: GitHub sirve los MP3 de las Releases como descarga
+    (application/octet-stream) y el Safari del iPhone no los reproduce. Sin copia, la Release."""
+    return f'<audio controls preload="metadata" src="{_e(e.get("audio_web") or e["audio_url"])}"></audio>'
+
+
 def _item(e, cfg, con_programa=False, con_audio=True):
     prog = cfg["programas"][e["programa"]]
     meta = f"{fecha_hablada(e['fecha'])} · {_duracion(e['duracion'])}"
     if con_programa:
         meta = f"{prog['lista']} · {meta}"
-    audio = (f'<audio controls preload="metadata" src="{_e(e["audio_url"])}"></audio>' if con_audio else "")
+    audio = _reproductor(e) if con_audio else ""
     return f"""<li>
 <p class="meta">{_e(meta)}</p>
 <h3><a href="/e/{_e(e['clave'])}.html">{_e(e['titulo'])}</a></h3>
@@ -229,7 +235,7 @@ def pagina_inicio(episodios, cfg):
             u = eps[0]
             ultimo = f"""<div class="ultimo"><p class="meta">Último · {_e(fecha_hablada(u['fecha']))} · {_duracion(u['duracion'])}</p>
 <h3 style="font-size:1.05rem"><a href="/e/{_e(u['clave'])}.html">{_e(u['titulo'])}</a></h3>
-<audio controls preload="metadata" src="{_e(u['audio_url'])}"></audio></div>"""
+{_reproductor(u)}</div>"""
             cuenta = f"{len(eps)} episodio" + ("s" if len(eps) != 1 else "")
         else:
             ultimo = '<div class="ultimo"><p class="suave">Todavía no hay episodios.</p></div>'
@@ -299,7 +305,7 @@ def pagina_episodio(ep, cfg, anterior=None, siguiente=None):
 · {_duracion(ep['duracion'])}</p>
 <h1 style="font-size:clamp(1.8rem,6vw,2.8rem)">{_e(ep['titulo'])}</h1>
 <p class="entradilla">{_e(ep['descripcion'])}</p>
-<audio controls preload="metadata" src="{_e(ep['audio_url'])}"></audio>
+{_reproductor(ep)}
 <p class="mas"><a href="{_e(ep['audio_url'])}">Descargar el audio (MP3)</a></p>
 <h2>Guion</h2><div class="guion">{parrafos}</div>
 <h2>Fuentes</h2><ul class="fuentes">{fuentes}</ul>
@@ -375,12 +381,21 @@ def feed(clave, episodios, cfg):
 """
 
 
-def generar(episodios, cfg, destino):
-    """Escribe la web completa en destino. episodios: lista de dicts, en cualquier orden."""
+def generar(episodios, cfg, destino, audios=None):
+    """Escribe la web completa en destino. episodios: lista de dicts, en cualquier orden.
+    audios: {clave: ruta local del MP3}; esos se copian a /audio/ y los reproductores los usan."""
     destino = Path(destino)
     if destino.exists():
         shutil.rmtree(destino)
     (destino / "e").mkdir(parents=True)
+    episodios = [dict(e) for e in episodios]
+    if audios:
+        (destino / "audio").mkdir()
+        for e in episodios:
+            ruta = audios.get(e["clave"])
+            if ruta and Path(ruta).is_file():
+                shutil.copyfile(ruta, destino / "audio" / f"{e['clave']}.mp3")
+                e["audio_web"] = f"/audio/{e['clave']}.mp3"
     eps = sorted(episodios, key=lambda e: (e["fecha"], e["programa"]), reverse=True)
     (destino / "estilo.css").write_text(ESTILO.strip() + "\n", encoding="utf-8")
     (destino / "index.html").write_text(pagina_inicio(eps, cfg), encoding="utf-8")

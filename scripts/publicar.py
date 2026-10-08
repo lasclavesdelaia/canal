@@ -145,6 +145,25 @@ def rehacer_uno(meta, cfg, repo, usados, hoy):
     return nuevo
 
 
+def audios_recientes(eps, repo, hoy, dias, carpeta):
+    """Baja los MP3 de los últimos `dias` días para servirlos desde la web (ver sitio._reproductor).
+    Devuelve {clave: ruta}. Si uno falla, ese episodio se queda con el enlace a la Release."""
+    desde = (hoy - datetime.timedelta(days=dias)).isoformat()
+    rutas = {}
+    for e in eps:
+        if e["fecha"] < desde:
+            continue
+        r = subprocess.run(["gh", "release", "download", f"ep-{e['clave']}", "--repo", repo,
+                            "--pattern", f"{e['clave']}.mp3", "--dir", str(carpeta), "--clobber"],
+                           capture_output=True, text=True)
+        ruta = Path(carpeta) / f"{e['clave']}.mp3"
+        if r.returncode == 0 and ruta.is_file():
+            rutas[e["clave"]] = ruta
+        else:
+            print(f"aviso: no se pudo bajar el audio de {e['clave']}: {r.stderr.strip()[:200]}")
+    return rutas
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--sitio", default="_site")
@@ -204,7 +223,9 @@ def main():
             nuevo = rehacer_uno(meta, cfg, repo, caracteres_del_mes(ya, hoy), hoy)
             if nuevo:
                 ya = [nuevo if e["clave"] == nuevo["clave"] else e for e in ya]
-    sitio.generar(ya, cfg, args.sitio)
+    with tempfile.TemporaryDirectory() as tmp:
+        audios = audios_recientes(ya, repo, hoy, cfg["canal"].get("audio_en_la_web_dias", 60), tmp)
+        sitio.generar(ya, cfg, args.sitio, audios)
     print(f"web generada en {args.sitio} con {len(ya)} episodios")
     return 0
 
