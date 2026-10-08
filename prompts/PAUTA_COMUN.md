@@ -356,10 +356,13 @@ explicar, nunca sus frases, sus imágenes ni sus opiniones.
 - **Para un equilibrio, los dos extremos:** qué pasaría con la variable al mínimo y al máximo; el punto medio se
   entiende solo.
 - **Para un concepto abstracto, un caso mínimo y físico**, y la objeción que haría el oyente, contestada.
-- **El término técnico de verdad, definido en la frase en que aparece**, y por qué importa en esta noticia. Solo
-  el que un oyente al día no tiene por qué saber (mezcla de expertos, cuantización, tokenizador, prima por plazo,
-  dominancia fiscal). Lo de uso común no se explica (token, pesos abiertos, agente, GPU, benchmark, ronda de
-  financiación, PER, inflación subyacente).
+- **El término técnico de verdad, definido en la frase en que aparece**, y por qué importa en esta noticia. El
+  oyente sigue la IA y la economía a diario: solo se explica lo que va más allá (autoencoders dispersos y
+  superposición, decodificación especulativa, modelos de espacio de estados, recompensas verificables; el modelo de
+  Laubach-Williams, el efecto Balassa-Samuelson, el dilema de Triffin, el ciclo financiero del B.P.I.). No se
+  explica lo de uso común entre quien está al día: token, pesos abiertos, agente, benchmark, mezcla de expertos,
+  cuantización, tokenizador, destilación, ventana de contexto, caché KV; PER, inflación subyacente, prima por
+  plazo, dominancia fiscal, curva de Phillips. Ante la duda, no se explica.
 - **Separar** el modelo del sistema que lo rodea, y una mejora real de una que solo viene de hacer más intentos
   (dicho con números redondos).
 - **Cifras como ritmo o como serie:** cuánto en cuánto tiempo y frente a qué; una serie corta que hable sola; una
