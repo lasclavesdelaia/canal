@@ -655,3 +655,8 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   «Las claves de la IA», particular). Añadir el feed parte.xml da «An error has occurred. Try again later» dos veces
   (8 oct, ~17:45). Parece cosa de la cuenta recién creada; reintentar más tarde o mañana (Add Show › con RSS ›
   pegar parte.xml › Add). Si sigue, quizá falte forma de pago en la cuenta (la pone Cristian) o escribir a soporte.
+- Apple, 8 oct ~17:50: Cristian reintentó y ENTRÓ. Borrador «Parte diario IA · Las claves de la IA»
+  (podcastsconnect.apple.com/my-podcasts/show/…/093af55b-f86c-47b8-a7fe-58a7ba99d908). Marcado «sin contenido de
+  terceros», contacto Las claves de la IA / correo del canal; guardado. Apple dice «estamos procesando los datos
+  del programa; vuelve luego y pulsa Publish». FALTA: pulsar Publish cuando acabe (con el sí de Cristian); luego
+  revisión de Apple (1-5 días) y su enlace. «Settings» redirige a /business (no hace falta para un pódcast gratis).
