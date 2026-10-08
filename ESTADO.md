@@ -371,8 +371,24 @@ Fuentes oficiales leídas el 8 oct 2026 (ninguna muestra fecha de actualización
 - Hecho (petición de Central IA, 8 oct): velocidad 1,1 ≈ 165 palabras/min; claves 15-50 min, mundo 15-60, semana
   normal 35-45 min; palabras_min 2400 en claves y mundo; Ucrania con seguimiento y conflictos olvidados en mundo.
   Decisión mía: los 35-45 min valen para los dos semanales.
-- En curso: tarjetas a mano del 8 oct en la rama claude/tarjetas-2026-10-08.
-- Siguiente: propuesta de rutina de fin de semana con esfuerzo alto (espera su decisión).
+- Hecho: tarjetas a mano de los tres episodios del 8 oct, leyendo sus guiones, en la rama claude/tarjetas-2026-10-08
+  (push f188f3c). Pruebas en verde (24).
+- Aviso: con semanales de 35-45 min, la voz gasta unos 40.000 caracteres por semanal; al mes, unos 700.000 con los
+  partes. Cabe en el tope de 900.000, pero un mes con semanales de 60 min se acercaría.
+- Aviso: el portero marcó prompts/mundo.md como «privado» al editarlo (falso positivo: lo escribí yo). El push salió bien.
+
+### Propuesta para Cristian (espera su decisión): rutina de fin de semana con esfuerzo alto
+- Segunda rutina solo sábado y domingo, a las 6:30, con `effortLevel: high`, que solo hace el semanal del día
+  (`claves` o `mundo`) y su tarjeta. La de siempre sigue en medium y, en fin de semana, haría solo el parte (cambio
+  de una línea en RUTINA.md; la de las 13:07 sigue de reserva para todo).
+- Coste aproximado: la prueba de un semanal costó unos 120.000 tokens en medium; con high y la nueva extensión
+  (35-45 min), calculo unos 200.000-300.000 por semanal. Son unos 150.000-250.000 tokens más por fin de semana que
+  en medium, en torno a 0,6-1 millón más al mes. En cuota, como dos o tres sesiones de trabajo largas al mes.
+- Lo que ganaría: más tiempo pensando la valoración de empresas, la elección de temas y la reflexión de fondo.
+
+### Preguntas para Cristian
+- ¿Rutina de fin de semana en high? (yo diría que sí, al menos un mes de prueba).
+- Lecturas de línea editorial y subtítulos de Cárpatos (petición de Central IA): ¿otra sesión, con red permitida?
 - Pendiente de su sí (de Central IA): lecturas para la línea editorial y subtítulos de Cárpatos con yt-dlp. No lo
   hago en esta sesión: choca con su regla de no usar la red aquí. Se hará en otra sesión si lo confirma.
 - Velocidad 1,1 en main (entró en 8f76dde). Falta lanzar «rehacer = todos»: el permiso automático lo frenó; Cristian
