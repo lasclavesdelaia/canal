@@ -796,3 +796,18 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Hecho: aclaración de Cristian (vía «IVOOX REVISAR»): la línea editorial vale igual para los cuatro programas;
   dicho en la cabecera de «Línea editorial». Revisados mundo.md y especial.md: nada lo contradice; en mundo, el
   informe de hace meses queda dicho como «contexto, no noticia».
+
+## Parte 2: referente Gargoyles Devon (8 oct 2026, noche; Cristian dijo «vale dale a todo»)
+- En curso: localizar 10-15 vídeos de «Inteligencia Artificial Semanal» y bajar sus subtítulos automáticos a
+  pruebas/referentes/gargoyles/ (no se suben al repo). Tandas de 3; notas en pruebas/referentes/NOTAS.md.
+- Hecho: 12 subtítulos bajados y limpiados (pruebas/referentes/texto/, ~99.000 palabras, ~130.000 tokens).
+- Hecho: tanda 1 (MFfCTTbYDUM, vxdZEwCwdBw, Tkx__COafK0) apuntada en NOTAS.md.
+- Hecho: tanda 2 (j5-hM2CF_44, N4yVTlHVtuk, vznTOxJX6BQ) apuntada en NOTAS.md.
+- Hecho: tanda 3 (GUT5X2SXbbE, P-8E-t10Zyo, POxXZkR_6fU) apuntada en NOTAS.md.
+- Hecho: tanda 4 (YoZY26ME2Zs, VITXYoXsGHo, hYXtRzaMR8s). Los 12 vídeos leídos y apuntados en NOTAS.md.
+- Hecho: síntesis al final de pruebas/referentes/NOTAS.md (local, no se sube). Bloque «Lo técnico, en llano» en
+  PAUTA_COMUN §9 (tras «Un modelo nuevo»): molde de explicación, extremos, caso mínimo, término en su frase,
+  separar modelo/sistema, cifras como ritmo, negocio detrás de lo técnico, medida en una frase, incidentes, y lo que
+  NO se toma. Referente sin nombre en el prompt (como el analista de mundo.md); ninguna frase suya copiada.
+- Coste real: ~99.000 palabras de subtítulos (~130.000 tokens de lectura), algo más de lo avisado (~100.000).
+- Aviso: el portero puede cortar el push final (sesión «privado» + contenido de fuera); si pasa, lo sube una sesión limpia.

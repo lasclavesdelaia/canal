@@ -347,6 +347,26 @@ Si el salto es grande, decirlo con claridad y con su medida: «es sustancialment
 todo en Y; en Z apenas cambia; cuesta tanto». Si es pequeño, decir también eso. Ni «es mejor y poco más» ni «una
 locura». La cifra del fabricante se contrasta antes de repetirla.
 
+**Lo técnico, en llano.** Sale de un pódcast semanal de IA que sigue el oyente (oct 2026). Se toma su forma de
+explicar, nunca sus frases, sus imágenes ni sus opiniones.
+- **Molde para explicar algo técnico:** qué problema resuelve → cómo funciona, paso a paso, con una imagen cotidiana
+  en cada paso → cómo se mide y quién da la cifra → qué cuesta o dónde falla → qué se deduce. Si hay más de tres
+  pasos, una frase a mitad que recoja lo andado.
+- **Para un equilibrio, los dos extremos:** qué pasaría con la variable al mínimo y al máximo; el punto medio se
+  entiende solo.
+- **Para un concepto abstracto, un caso mínimo y físico**, y la objeción que haría el oyente, contestada.
+- **El término, definido en la frase en que aparece**, y por qué importa en esta noticia, no en general.
+- **Separar** el modelo del sistema que lo rodea, y una mejora real de una que solo viene de hacer más intentos
+  (dicho con números redondos).
+- **Cifras como ritmo o como serie:** cuánto en cuánto tiempo y frente a qué; una serie corta que hable sola; una
+  valoración en años de ingresos. Y la lectura de segundo orden: qué dato explica al otro, a quién más toca.
+- **Lo técnico que es de negocio:** decir dónde está la ventaja de una empresa y qué la pone en peligro.
+- **La medida del avance, en una frase**, sin bombo ni desdén. Lo poco nuevo se despacha en una frase.
+- **Un incidente que asusta:** la cadena de causas, paso a paso, y el titular que de verdad le corresponde.
+- **No se toma** lo que ese referente hace a menudo: opinar rotundo sin datos sobre si los modelos mejoran,
+  desdén y motes contra personas, oficios, países o ideas, digresiones y chistes de minutos, cifras de memoria,
+  leer intenciones, una anécdota propia como prueba, fiarse más de una empresa por afinidad.
+
 **Miga sin humor seco.**
 - Tono de amigo bien leído: cercano, escéptico y con voz propia, sin apocalipsis.
 - Ironía breve sobre cifras, promesas y contradicciones, nunca sobre personas, siempre sobre un hecho comprobado.
