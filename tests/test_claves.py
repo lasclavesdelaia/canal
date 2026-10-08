@@ -1,3 +1,4 @@
+import html
 import json
 import sys
 import tempfile
@@ -140,7 +141,15 @@ class Web(unittest.TestCase):
             self.assertEqual(len(items), 1)
             desc = items[0].find("description").text
             self.assertNotIn("<", desc)
-            self.assertIn("inteligencia artificial", desc)
+            self.assertTrue(desc.startswith(config()["canal"]["aviso_feed"] + "\n\n"))  # aviso de IA, lo primero
+            ns = {"podcast": "https://podcastindex.org/namespace/1.0"}
+            tr = items[0].find("podcast:transcript", ns)
+            self.assertEqual(tr.get("url"), f"https://claves.cristiansdrojek.com/e/{ep.clave}.transcripcion.html")
+            self.assertEqual(tr.get("type"), "text/html")
+            transcripcion = (d / "e" / f"{ep.clave}.transcripcion.html").read_text()
+            prog = config()["programas"][ep.programa]
+            self.assertIn(html.escape(config()["canal"]["aviso_hablado"]), transcripcion)
+            self.assertIn(html.escape(prog["despedida"]), transcripcion)
 
     @staticmethod
     def _muchos(n=45):

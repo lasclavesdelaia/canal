@@ -10,7 +10,8 @@ texto en Source Serif 4, verde oliva de acento):
   /<programa>/         historial completo de un programa, por meses
   /historial/          historial completo de los tres programas
   /e/<clave>.html      un episodio: reproductor, guion y fuentes
-  /<programa>.xml      feed RSS (lo lee YouTube)
+  /e/<clave>.transcripcion.html  transcripción: el texto hablado completo (podcast:transcript del feed)
+  /<programa>.xml      feed RSS (lo leen YouTube y las apps de pódcast)
 """
 import datetime
 import html
@@ -18,7 +19,7 @@ import shutil
 from email.utils import format_datetime
 from pathlib import Path
 
-from comun import MESES, RAIZ, fecha_hablada
+from comun import MESES, RAIZ, Episodio, fecha_hablada, texto_hablado
 
 ULTIMOS_EN_PORTADA = 6
 FRECUENCIA = {"todos": "Cada día", "sabado": "Cada sábado", "domingo": "Cada domingo"}
@@ -306,6 +307,29 @@ def pagina_episodio(ep, cfg, anterior=None, siguiente=None):
     return _pagina(f"{ep['titulo']} · {prog['lista']}", cuerpo, cfg, ep["descripcion"], ancho=False)
 
 
+def _hablado(ep, cfg):
+    return texto_hablado(Episodio(programa=ep["programa"], fecha=ep["fecha"], titulo=ep["titulo"],
+                                  descripcion=ep["descripcion"], cuerpo=ep["cuerpo"], fuentes=ep["fuentes"]), cfg)
+
+
+def pagina_transcripcion(ep, cfg):
+    """Página mínima con el texto hablado completo: presentación con aviso, guion y despedida."""
+    prog = cfg["programas"][ep["programa"]]
+    parrafos = "".join(f"<p>{_e(p.strip())}</p>" for p in _hablado(ep, cfg).split("\n\n") if p.strip())
+    return f"""<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Transcripción · {_e(ep['titulo'])}</title>
+<link rel="canonical" href="/e/{_e(ep['clave'])}.html">
+</head>
+<body style="max-width:700px;margin:0 auto;padding:16px;font:18px/1.6 Georgia,serif">
+{_aviso(cfg['canal'])}
+<h1 style="font-size:1.4rem">{_e(prog['lista'])}: {_e(ep['titulo'])}</h1>
+{parrafos}
+</body></html>
+"""
+
+
 def _x(t):
     return html.escape(t, quote=False)
 
@@ -316,7 +340,8 @@ def feed(clave, episodios, cfg):
     items = []
     for e in [e for e in episodios if e["programa"] == clave][:100]:
         fuentes = "\n".join(f"- {n}: {u}" if u else f"- {n}" for n, u in e["fuentes"])
-        desc = f"{e['descripcion']}\n\nFuentes:\n{fuentes}\n\n{canal['aviso']}"
+        # El aviso de IA, lo primero (art. 50.5 del reglamento europeo de IA: claro y en la primera exposición).
+        desc = f"{canal['aviso_feed']}\n\n{e['descripcion']}\n\nFuentes:\n{fuentes}"
         pub = datetime.datetime.fromisoformat(e["publicado"])
         items.append(f"""<item>
 <title>{_x(e['titulo'])}</title>
@@ -325,17 +350,19 @@ def feed(clave, episodios, cfg):
 <guid isPermaLink="false">{e['clave']}</guid>
 <pubDate>{format_datetime(pub)}</pubDate>
 <enclosure url="{_x(e['audio_url'])}" length="{e['bytes']}" type="audio/mpeg"/>
+<podcast:transcript url="{web}/e/{e['clave']}.transcripcion.html" type="text/html" language="es"/>
 <itunes:duration>{int(e['duracion'])}</itunes:duration>
 <itunes:explicit>false</itunes:explicit>
 </item>""")
     return f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom"
+ xmlns:podcast="https://podcastindex.org/namespace/1.0">
 <channel>
 <title>{_x(prog['lista'])} · {_x(canal['nombre'])}</title>
 <link>{web}/</link>
 <atom:link href="{web}/{clave}.xml" rel="self" type="application/rss+xml"/>
 <language>{canal['idioma']}</language>
-<description>{_x(prog['descripcion'] + ' ' + canal['aviso'])}</description>
+<description>{_x(canal['aviso_feed'] + ' ' + prog['descripcion'])}</description>
 <itunes:author>{_x(canal['nombre'])}</itunes:author>
 <itunes:owner><itunes:name>{_x(canal['nombre'])}</itunes:name><itunes:email>{_x(canal['correo'])}</itunes:email></itunes:owner>
 <itunes:image href="{web}/portadas/{clave}.png"/>
@@ -368,6 +395,8 @@ def generar(episodios, cfg, destino):
             siguiente = del_programa[i - 1] if i > 0 else None
             (destino / "e" / f"{e['clave']}.html").write_text(pagina_episodio(e, cfg, anterior, siguiente),
                                                               encoding="utf-8")
+            (destino / "e" / f"{e['clave']}.transcripcion.html").write_text(pagina_transcripcion(e, cfg),
+                                                                            encoding="utf-8")
         (destino / f"{clave}.xml").write_text(feed(clave, eps, cfg), encoding="utf-8")
     for carpeta in ("portadas", "miniaturas", "fuentes"):
         origen = RAIZ / "assets" / carpeta
