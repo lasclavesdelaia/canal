@@ -61,8 +61,11 @@ def es_borrador(ruta):
 def ficheros_en_ramas(carpeta="episodios", prefijo="claude/", admitido=es_episodio):
     """{nombre_fichero: (texto, rama, hora)}. Si varias ramas tienen el mismo fichero, gana el commit más reciente."""
     git("fetch", "--quiet", "origin", "+refs/heads/claude/*:refs/remotes/origin/claude/*")
+    # for-each-ref casa por componentes de ruta, no por prefijo de texto: «claude/borrador-» no encontraría
+    # «claude/borrador-vox». Se piden todas las de claude/ y se filtra aquí por el prefijo.
     ramas = [r.strip() for r in git("for-each-ref", "--sort=committerdate", "--format=%(refname:short)",
-                                     f"refs/remotes/origin/{prefijo}").splitlines() if r.strip()]
+                                     "refs/remotes/origin/claude/").splitlines()
+             if r.strip().startswith(f"origin/{prefijo}")]
     encontrados = {}
     for rama in ramas:  # de la más antigua a la más reciente: la última pisa
         hora = int(git("log", "-1", "--format=%ct", rama).strip() or 0)

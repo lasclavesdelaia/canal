@@ -125,7 +125,9 @@ sigue: uno, despacio.
 
 ## Título
 
-Lo concreto del programa, dos o tres temas.
+Lo concreto del programa, dos o tres temas. Aquí encaja bien una pregunta de fondo que el programa explora de
+verdad (pauta común, §7): «¿Por qué Europa crece menos que EE. UU. si exporta más?». Si no hay una pregunta clara,
+los temas.
 
 Ejemplo de forma: «La curva de tipos se empina, el caso de una eléctrica barata y el informe del BPI sobre el
 crédito privado» (en el título, siglas sin puntos: no se locuta).

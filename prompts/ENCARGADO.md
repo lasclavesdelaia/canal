@@ -40,7 +40,8 @@ Este es el prompt de la rutina de los domingos. Corre a las 18:07, hora de Madri
 Para cada episodio de la semana:
 
 - **Título y descripción** (PAUTA §7): cifras en cifras, no en palabras («GPT-6», «3,8 %»); sin ganchos, sin
-  exclamaciones, sin las palabras prohibidas del §2; que digan qué hay, no que inviten a escuchar.
+  exclamaciones, sin las palabras prohibidas del §2; que digan qué hay, no que inviten a escuchar. Una pregunta
+  vale (sobre todo sábado, domingo y especiales) si el episodio la responde de verdad; si no, es un gancho.
 - **Cifras contra sus fuentes:** elige las tres o cuatro cifras más importantes de cada episodio y ábrelas en la
   fuente citada, si está en la lista y la red lo permite. Di si coinciden, si no coinciden (con la cifra correcta) o
   si no pudiste abrirla.

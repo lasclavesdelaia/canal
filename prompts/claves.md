@@ -62,6 +62,7 @@ con trabajo detrás) si ilumina lo que pasa ahora; di de cuándo es.
 
 ## Título
 
-Las claves de la semana, en concreto.
+Las claves de la semana, en concreto. Aquí encaja bien una pregunta de fondo que el programa explora de verdad
+(pauta común, §7): «¿Quién paga la factura de la IA?». Si no hay una pregunta clara, los temas.
 
 Ejemplo de forma: «El salto de los modelos chinos, el precio real de razonar y la ley europea en marcha».

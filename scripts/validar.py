@@ -15,7 +15,7 @@ from comun import config, leer_episodio, partes_nombre  # noqa: E402
 # Si aparecen, el episodio no sale.
 PROHIBIDO = [
     r"\bbombazo", r"\bbrutal(es)?\b", r"\balucinante", r"\bflipante", r"no te lo (vas a creer|pierdas)",
-    r"\búltima hora\b", r"\bsuscr[ií]bete", r"dale (a )?like", r"\bactiva la campanita",
+    r"\búltima hora\b", r"lo que nadie te (cuenta|dice)", r"\bsuscr[ií]bete", r"dale (a )?like", r"\bactiva la campanita",
 ]
 # Señales de que una web ha colado instrucciones en el guion.
 INYECCION = [

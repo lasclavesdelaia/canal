@@ -73,6 +73,15 @@ class Validador(unittest.TestCase):
             _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo(TEXTO_LARGO + "\n\n" + malo))
             self.assertTrue(errores, malo)
 
+    def test_titulo_con_pregunta_y_puntos_suspensivos(self):
+        for titulo in ("Pero… ¿qué podemos esperar realmente de un gobierno con Vox?",
+                       "¿Quién paga la factura de la IA?",
+                       "¿Por qué Europa crece menos que EE. UU. si exporta más?"):
+            _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo(TEXTO_LARGO, titulo=titulo))
+            self.assertEqual(errores, [], titulo)
+        _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo(TEXTO_LARGO, titulo="Lo que nadie te cuenta de la IA"))
+        self.assertTrue(errores)
+
     def test_versiones_en_cifras_en_titulo_y_descripcion(self):
         for titulo in ("Claude Haiku cinco punto cinco y más", "GPT seis para todos", "Qwen tres llega"):
             _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo(TEXTO_LARGO, titulo=titulo))
@@ -419,3 +428,46 @@ class Borradores(unittest.TestCase):
     def test_los_borradores_no_entran_en_la_web(self):
         fuente = Path(sitio.__file__).read_text(encoding="utf-8")
         self.assertNotIn("borrador", fuente)
+
+
+class RamasRemotas(unittest.TestCase):
+    """for-each-ref casa por componentes de ruta: «claude/borrador-» tiene que encontrar «claude/borrador-x»."""
+
+    def test_encuentra_episodios_y_borradores(self):
+        import os
+        import subprocess
+
+        def g(*args, cwd):
+            subprocess.run(["git", *args], cwd=cwd, check=True, capture_output=True)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            g("init", "--bare", "-q", "origen.git", cwd=tmp)
+            autor = tmp / "autor"
+            g("clone", "-q", str(tmp / "origen.git"), "autor", cwd=tmp)
+            for k, v in {"user.name": "Prueba", "user.email": "p@example.com", "commit.gpgsign": "false"}.items():
+                g("config", k, v, cwd=autor)
+            g("commit", "-q", "--allow-empty", "-m", "base", cwd=autor)
+            g("push", "-q", "origin", "HEAD:refs/heads/main", cwd=autor)
+            for rama, ruta in [("claude/episodios-x", "episodios/2026-10-09-parte.md"),
+                               ("claude/borrador-x", "borradores/2026-10-09-especial-x.md")]:
+                g("checkout", "-q", "-b", rama, "HEAD", cwd=autor)
+                (autor / ruta).parent.mkdir(exist_ok=True)
+                (autor / ruta).write_text(con_cuerpo("Texto."), encoding="utf-8")
+                g("add", ruta, cwd=autor)
+                g("commit", "-q", "-m", rama, cwd=autor)
+                g("push", "-q", "origin", f"{rama}:refs/heads/{rama}", cwd=autor)
+                g("rm", "-q", ruta, cwd=autor)
+                g("commit", "-q", "-m", "limpio", cwd=autor)
+            g("clone", "-q", str(tmp / "origen.git"), "lector", cwd=tmp)
+            antes = os.getcwd()
+            os.chdir(tmp / "lector")
+            try:
+                episodios = publicar.ficheros_en_ramas()
+                borradores = publicar.ficheros_en_ramas("borradores", "claude/borrador-", publicar.es_borrador)
+            finally:
+                os.chdir(antes)
+        self.assertEqual(list(episodios), ["2026-10-09-parte.md"])
+        self.assertEqual(episodios["2026-10-09-parte.md"][1], "origin/claude/episodios-x")
+        self.assertEqual(list(borradores), ["2026-10-09-especial-x.md"])
+        self.assertEqual(borradores["2026-10-09-especial-x.md"][1], "origin/claude/borrador-x")

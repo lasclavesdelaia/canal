@@ -1,6 +1,10 @@
 # ESTADO de «Las claves de la IA»
 
 ## Hecho
+- 8 oct 2026: publicar.py encontraba 0 borradores (for-each-ref casa por componentes, no por prefijo de texto);
+  ahora filtra en Python. Prueba con repositorio git temporal. Reglas de títulos de Cristian en PAUTA §7, claves,
+  mundo, parte, especial y ENCARGADO (preguntas de fondo, sobre todo fin de semana y especiales); el validador
+  rechaza «lo que nadie te cuenta».
 - 8 oct 2026: pasos 7 (canal de YouTube) y 8 (Artificial Analysis) HECHOS. fuentes.md y PAUTA_COMUN.md explican
   cómo usar `AA_API_KEY` sin mostrarla. Comprobar en la primera ejecución que la ruta y la cabecera funcionan.
 - 8 oct 2026 (sesión limpia de la tarde): F3 TERMINADA. 14 pruebas en verde; push e8da804..65b7c46.

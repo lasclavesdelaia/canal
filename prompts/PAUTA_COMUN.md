@@ -202,6 +202,10 @@ Segundo párrafo hablado.
 
 - **El título:**
   - concreto, informativo, con los dos o tres temas del día;
+  - puede ser una pregunta interesante cuando encaje, sobre todo el sábado y el domingo: una pregunta de fondo
+    que el episodio explora de verdad («¿Quién paga la factura de la IA?», «¿Por qué Europa crece menos que
+    EE. UU. si exporta más?»). En el parte, solo de vez en cuando; lo normal ahí son los temas del día;
+  - sin ganchos vacíos («lo que nadie te cuenta» y parecidos los rechaza el validador);
   - no se locuta, así que los modelos y las cifras van escritos en cifras («GPT-6», «Claude Haiku 5.5»,
     «3,8 %», «100 dólares»), nunca como se pronuncian;
   - sin exclamaciones, mayúsculas de gancho ni `<` o `>`;

@@ -85,7 +85,8 @@ principal.
 
 ## Título
 
-Los dos o tres temas principales del día, concretos.
+Los dos o tres temas principales del día, concretos. Una pregunta solo de vez en cuando, cuando el tema del día
+la pida de verdad (pauta común, §7).
 
 Ejemplo de forma (no de contenido): «Qwen 4 entra en el podio, Nvidia bate previsiones y un paper sobre memoria
 larga».
