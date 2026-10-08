@@ -387,6 +387,9 @@ explicar, nunca sus frases, sus imágenes ni sus opiniones.
   - **Matemáticas y física hasta segundo de carrera se dan por sabidas** (cálculo, álgebra lineal, probabilidad y
     estadística, ecuaciones diferenciales, mecánica): se pueden usar para explicar, dichas en palabras. Más allá,
     sobra para algo que se escucha.
+  - **Explicar un término no es bajar el nivel.** El oyente está informado, no es especialista: le falta
+    vocabulario en algunas áreas, no capacidad. Lo que sobra es lo obvio y la conclusión de manual; el análisis va
+    siempre al fondo, aunque por el camino se defina un término en una frase.
   - **El programa también es para aprender, poco a poco:** cada término de la lista del «sí» que salga es una
     ocasión de dejar algo entendido, sin bajar el nivel del resto.
 - **Separar** el modelo del sistema que lo rodea, y una mejora real de una que solo viene de hacer más intentos

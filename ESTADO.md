@@ -907,3 +907,4 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Hecho (Cristian): finanzas calibradas (conoce FCF, CAPE, duración, spread, curva invertida, beta/alfa, VIX); mates y física hasta 2.º de carrera se dan por sabidas; el programa es también para aprender poco a poco. Pendiente: test de geopolítica.
 - Hecho (Cristian): los términos de finanzas que conoce «regular» pasan a un tercer grupo: recordatorio de media frase.
 - Hecho (Cristian): geopolítica, chips y energía calibrados (conoce 3,6,9,10,11,12,16,17,21,25 de 28).
+- Hecho: PAUTA §9, «explicar un término no es bajar el nivel» (vocabulario frente a profundidad del análisis).
