@@ -559,3 +559,35 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   Yo lo dejaría: nadie la encuentra sin el enlace.
 - Nota: el portero marcó la sesión como «privada de segundo grado» al leer ~/bin/lib/portero.py (lo escribió un
   agente tras leer datos privados). No se ha leído nada privado de verdad. Si corta el push, se dice.
+
+## Voz Gemini (8 oct 2026, sesión de estudio)
+- Encargo: precio y condiciones de gemini-3.8-flash-tts (Alnilam), filtro de respiraciones en voz.py
+  (`voz.quitar_respiraciones`), resumen en seis líneas y, si sigue, rama sin fusionar + pasos suyos.
+- Hecho (investigación, fuentes oficiales consultadas el 8 oct 2026):
+  - Precio (cloud.google.com/text-to-speech/pricing y ai.google.dev/gemini-api/docs/pricing, iguales):
+    3.8 Flash TTS 0,50 $/M tokens de texto + 9 $/M tokens de audio hasta el 31 dic 2026; desde el 1 ene 2027,
+    1 $ y 18 $. Lite: 0,50/6 $ → 1/12 $. Sin capa gratuita en Cloud (en la API de Gemini sí la hay, gratis).
+    Audio: 25 tokens por segundo. 10 h = 900.000 tokens = 8,10 $ (+~0,1 $ de texto) → ~8,2 $/mes; desde enero ~16,4 $.
+    Lite: ~5,5 $ → ~11 $. Solo claves+mundo+1 especial (~4,9 h): Flash ~4,0 $ → ~8 $; Lite ~2,7 $ → ~5,4 $.
+  - 3.8 NO va por la API de Cloud TTS (texttospeech.googleapis.com): solo por la «Gemini Enterprise API»
+    (aiplatform.googleapis.com/v1/projects/P/locations/global/publishers/google/models/gemini-3.8-flash-tts:generateContent),
+    Preview desde el 28 sep 2026, solo región global, OAuth (Bearer), permiso aiplatform.endpoints.predict
+    (rol roles/aiplatform.user). Devuelve WAV 24 kHz mono. Límite 8.192 tokens de entrada.
+  - Petición: parts[].text + parts[].speechMetadata.style; generationConfig.speechConfig.voiceConfig.voice y
+    speechConfig.languageCode (se puede fijar es-ES). temperature/topP/topK: rechazados (INVALID_ARGUMENT) en 3.8.
+  - Contra la «actuación»: estilo corto o vacío (texto largo de estilo «aumenta la deriva»); el acento no va en el
+    estilo: elegir una voz regional es-ES de la Extended Voice Library (>2.000, con uso «news») o crearla con Voice
+    design. Las respiraciones son una etiqueta propia (<breath>); no hay parámetro para quitarlas. Alnilam = «Firm»;
+    Charon y Rasalgethi = «Informative»; Schedar = «Even»; Enceladus = «Breathy» (evitar).
+  - Cláusula EEE (ai.google.dev/gemini-api/terms, 28 abr 2026): con usuarios del EEE solo servicios de pago; lo
+    gratuito puede usarse para entrenar y lo leen revisores. Vertex/Enterprise va por los términos de Google Cloud
+    (Pre-GA, sin entrenamiento con los datos) → no le afecta.
+  - Créditos (docs.cloud.google.com/free/docs/free-cloud-features, 7 oct 2026): los 300 $ NO pagan la API de
+    Gemini de AI Studio; SÍ Agent Platform (antes Vertex). Así que la vía es Agent Platform: hasta el 7 ene 2027 lo
+    pagan los créditos (≈ 3 meses × 8 $ ≈ 25 $ de 264 €). El cambio de precio (1 ene) cae casi a la vez.
+  - Tope duro (docs.cloud.google.com/billing/docs/how-to/budgets-spend-caps, 7 oct 2026): «spend cap budgets»,
+    mensual, por proyecto y por servicio; Agent Platform es elegible. Pausa el servicio al pasar el importe. OJO: cuenta
+    el coste BRUTO, sin descontar créditos, y no es instantáneo. Con créditos, poner el tope por encima del bruto
+    (p. ej. 10 $), o pausará aunque lo paguen los créditos. Desde enero, tope = lo que él quiera pagar.
+- Siguiente: filtro ffmpeg + pruebas sin red; luego rama `claude/voz-gemini`.
+- Commits: solo locales (main ya va 1 por delante: 92cb40d, de otra sesión). No hago push.
