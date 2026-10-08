@@ -76,9 +76,12 @@ def fecha_hablada(fecha):
 
 
 def texto_hablado(ep, cfg=None):
-    """Lo que dice la voz: presentación fija con el aviso, el guion y la despedida fija."""
+    """Lo que dice la voz: presentación fija con el aviso corto, el guion y la despedida fija.
+
+    El aviso largo va en la web y en la descripción (art. 50 del reglamento europeo de IA).
+    """
     cfg = cfg or config()
     prog = cfg["programas"][ep.programa]
     intro = (f"{cfg['canal']['nombre']}. {prog['lista']}, {fecha_hablada(ep.fecha)}. "
-             f"{cfg['canal']['aviso']}")
+             f"{cfg['canal']['aviso_hablado']}")
     return "\n\n".join([intro, ep.cuerpo, prog["despedida"]])

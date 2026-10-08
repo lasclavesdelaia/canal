@@ -100,7 +100,17 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
 ### Sesión limpia (8 oct 2026, tarde)
 - Hecho: 12 pruebas en verde; `git push origin main` (eee1c10..43f37a9).
 - Hecho: HTTPS forzado en Pages (https_enforced=true, certificado approved).
-- En curso: F5, rutina en la nube; esperando el «sí» de Cristian. El clasificador de modo auto denegó cargar la skill «schedule»: si no hay herramienta, se le guía a mano en claude.ai/code.
+- Hecho: Cristian dijo «sí» y pidió esfuerzo medio: .claude/settings.json y README cambiados; commit 1a04761 subido.
+- En curso: F5. La red Custom y la regla de ramas viven en el «entorno» de claude.ai/code, que la API de rutinas no crea; por eso se le guía a mano (la herramienta solo serviría para Run now y para revisar).
+- Antes: esperando el «sí» de Cristian. El clasificador de modo auto denegó cargar la skill «schedule»: si no hay herramienta, se le guía a mano en claude.ai/code.
+
+- Hecho (petición de la sesión de diseño): aviso hablado corto en config/programas.json («aviso_hablado»: «Este
+  programa lo hace por completo una inteligencia artificial y puede contener errores.»); el largo sigue en la web y la
+  descripción (art. 50). PAUTA_COMUN §4: no repetir que una fuente falta (como mucho una frase por episodio).
+- Voz: el parte del 8 oct mandó 8.940 caracteres (cuerpo JSON de la Release). Cálculo del mes: 30 partes ≈ 270.000
+  + 4-5 claves y 4-5 mundo (unos 22.000 cada uno) ≈ 200.000 → unos 470.000, por debajo del millón gratis de Chirp 3 HD
+  y del tope propio de 900.000. Con el aviso corto, unos 100 caracteres menos por episodio.
+- Pendiente: LMArena/arena.ai (¿API oficial o datos con licencia?). Se mira al final, con la red, tras las salidas.
 
 ### Preguntas para Cristian (F3, más)
 - Aprobación de cada episodio: plan de una semana (F6). ¿La quito antes? Yo esperaría a oír 3 o 4 episodios.

@@ -82,6 +82,10 @@ Cada vez que aparezca algo así, una frase sobre **qué es** y otra sobre **para
   - si el coste que muestra un ranking no refleja el coste real de uso, explicarlo.
 - **Sin datos de Artificial Analysis** (si su API no responde o no hay clave): dilo así, «todavía no hay medición
   independiente», y da las cifras del fabricante como cifras del fabricante.
+- **No repitas que una fuente falta.** Nada de «en mis fuentes no aparece…» ni «no he podido acceder a…»: suena a
+  excusa y corta el ritmo. Como mucho una vez por episodio, en una frase breve, y solo si cambia cómo se lee una
+  noticia (por ejemplo, «todavía no hay medición independiente»). Las fuentes que fallen van al final de tu
+  respuesta, no al guion.
 - **LMArena:** solo lo que publique la prensa o el laboratorio, citándolo («según LMArena, citado por…»).
 - **El sentir de la gente:**
   - comentarios de Hacker News (búsqueda por la API de Algolia, `hn.algolia.com/api/v1/search?query=…`, y los

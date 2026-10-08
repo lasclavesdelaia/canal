@@ -81,7 +81,9 @@ class Hablado(unittest.TestCase):
         t = texto_hablado(ep)
         cfg = config()
         self.assertTrue(t.startswith("Las claves de la IA. Parte diario IA, viernes, 9 de octubre de 2026."))
-        self.assertIn(cfg["canal"]["aviso"], t)
+        self.assertIn(cfg["canal"]["aviso_hablado"], t)
+        self.assertIn("inteligencia artificial", cfg["canal"]["aviso_hablado"])
+        self.assertIn("errores", cfg["canal"]["aviso_hablado"])
         self.assertTrue(t.endswith(cfg["programas"]["parte"]["despedida"]))
 
     def test_trozos_no_pasan_del_limite(self):
