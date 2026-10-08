@@ -118,11 +118,15 @@ def sintetizar(texto, voz, destino, clave=None):
             nombres.append(f"file '{f}'")
         lista.write_text("\n".join(nombres))
         ajustes = ajustes_respiraciones(voz.get("quitar_respiraciones"))
+        # Gemini no tiene speakingRate: su «velocidad» se aplica al final con atempo (sin cambiar el tono)
+        tempo = voz.get("velocidad", 1.0) if agent else 1.0
         unido = Path(tmp) / "unido.wav" if ajustes else Path(destino)
+        filtro = [] if ajustes or tempo == 1.0 else ["-af", f"atempo={tempo}"]
         subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lista),
-                        "-ac", "1"] + (["-ar", str(TASA)] if ajustes else ["-b:a", "64k"]) + [str(unido)], check=True)
+                        "-ac", "1"] + filtro + (["-ar", str(TASA)] if ajustes else ["-b:a", "64k"]) + [str(unido)],
+                       check=True)
         if ajustes:
-            tramos = quitar_respiraciones(unido, destino, ajustes)
+            tramos = quitar_respiraciones(unido, destino, ajustes, tempo)
             print(f"Respiraciones: {len(tramos)} tramos, {sum(b - a for a, b in tramos):.1f} s ({ajustes['modo']})")
     return sum(len(t) for t in partes)
 
@@ -235,9 +239,9 @@ def aplicar_respiraciones(pcm, tramos, ajustes, tasa=TASA):
     return out
 
 
-def quitar_respiraciones(origen, destino, ajustes=None):
-    """Lee origen (cualquier audio), escribe destino (MP3 mono 64 kbps, o WAV si acaba en .wav) sin respiraciones.
-    Devuelve los tramos tocados."""
+def quitar_respiraciones(origen, destino, ajustes=None, tempo=1.0):
+    """Lee origen (cualquier audio), escribe destino (MP3 mono 64 kbps, o WAV si acaba en .wav) sin respiraciones
+    y, si tempo no es 1, acelerado con atempo. Devuelve los tramos tocados (en tiempos del original)."""
     ajustes = ajustes or dict(RESPIRACIONES)
     tramos = detectar_respiraciones(medir_tramas(origen), ajustes)
     crudo = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(origen), "-ac", "1", "-ar", str(TASA),
@@ -246,8 +250,9 @@ def quitar_respiraciones(origen, destino, ajustes=None):
     pcm.frombytes(crudo)
     limpio = aplicar_respiraciones(pcm, tramos, ajustes)
     codec = [] if str(destino).endswith(".wav") else ["-b:a", "64k"]
+    filtro = [] if tempo == 1.0 else ["-af", f"atempo={tempo}"]
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-f", "s16le", "-ar", str(TASA), "-ac", "1", "-i", "-"]
-                   + codec + [str(destino)], input=limpio.tobytes(), check=True)
+                   + filtro + codec + [str(destino)], input=limpio.tobytes(), check=True)
     return tramos
 
 

@@ -130,15 +130,15 @@ class Hablado(unittest.TestCase):
 
     def test_voz_por_programa(self):
         cfg = config()
-        self.assertIs(comun.voz_de("parte", cfg), cfg["voz"])  # el parte sigue con Chirp (gratis)
-        for prog in ("claves", "mundo", "especial"):
+        for prog in ("parte", "claves", "mundo", "especial"):  # elegida de oído por Cristian el 8 oct 2026
             v = comun.voz_de(prog, cfg)
-            self.assertEqual((v["modelo"], v["nombre"], v["idioma"]), ("gemini-3.8-flash-tts", "Alnilam", "es-ES"))
+            self.assertEqual((v["modelo"], v["nombre"], v["idioma"], v["velocidad"]),
+                             ("gemini-3.8-flash-lite-tts", "es-es-podcaster-7", "es-ES", 1.15))
             self.assertTrue(v["quitar_respiraciones"])
         cuerpo = voz.peticion_agent_platform("Hola.", comun.voz_de("claves", cfg))
         habla = cuerpo["generationConfig"]["speechConfig"]
-        self.assertEqual(habla, {"languageCode": "es-ES", "voiceConfig": {"voice": "Alnilam"}})
-        self.assertIn("Sin respiraciones", cuerpo["contents"][0]["parts"][0]["speechMetadata"]["style"])
+        self.assertEqual(habla, {"languageCode": "es-ES", "voiceConfig": {"voice": "es-es-podcaster-7"}})
+        self.assertIn("ni respiraciones", cuerpo["contents"][0]["parts"][0]["speechMetadata"]["style"])
         self.assertNotIn("temperature", json.dumps(cuerpo))  # Gemini 3.8 la rechaza
 
     def test_tope_propio_de_la_voz_de_pago(self):
@@ -146,13 +146,13 @@ class Hablado(unittest.TestCase):
         gem = comun.voz_de("claves", cfg)
         gastado = {None: 100000, gem["nombre"]: gem["tope_caracteres_mes"] - 10}
         cuenta = lambda nombre_voz=None: gastado[nombre_voz]  # noqa: E731
-        self.assertIn("Alnilam", publicar.sin_cupo("x" * 20, gem, cfg, cuenta))
+        self.assertIn("podcaster-7", publicar.sin_cupo("x" * 20, gem, cfg, cuenta))
         self.assertIsNone(publicar.sin_cupo("x" * 5, gem, cfg, cuenta))
         self.assertIsNone(publicar.sin_cupo("x" * 20, cfg["voz"], cfg, cuenta))  # Chirp: solo el tope general
-        ya = [{"voz": "Alnilam", "caracteres": 7, "publicado": "2026-10-02T09:00:00+02:00"},
+        ya = [{"voz": "es-es-podcaster-7", "caracteres": 7, "publicado": "2026-10-02T09:00:00+02:00"},
               {"voz": "es-ES-Chirp3-HD-Aoede", "caracteres": 5, "publicado": "2026-10-02T09:00:00+02:00"}]
         hoy = publicar.datetime.date(2026, 10, 9)
-        self.assertEqual(publicar.caracteres_del_mes(ya, hoy, "Alnilam"), 7)
+        self.assertEqual(publicar.caracteres_del_mes(ya, hoy, "es-es-podcaster-7"), 7)
         self.assertEqual(publicar.caracteres_del_mes(ya, hoy), 12)
 
     def test_peticion_chirp_y_gemini(self):
