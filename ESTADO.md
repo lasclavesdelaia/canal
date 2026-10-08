@@ -928,5 +928,5 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   con su formato; PAUTA §11 y línea «Erratas corregidas» en la tarjeta; RUTINA paso 5 y ENCARGADO leen CRITERIO.md.
 - Hecho (Cristian): parte.md vigila siempre los informes de Anthropic y los cambios en las apps (Claude, Gemini,
   ChatGPT; y Meta, xAI, Mistral, chinos… cuando se pongan al día). fuentes.md con sus notas de versión.
-- PARA CRISTIAN (a mano): la red Custom pasa de 598 a 600 líneas con `support.claude.com` y `gemini.google`; volver a
+- HECHO (Cristian la pegó el 8 oct, noche): la red Custom pasa de 598 a 600 líneas con `support.claude.com` y `gemini.google`; volver a
   pegarla (python3 scripts/red_custom.py | pbcopy) o añadir esas dos. Ya está en el tope de 600.
