@@ -710,3 +710,11 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   claves Ciencia y tecnología; mundo y especial Noticias y política). Están en BORRADOR (privado): falta el sí de
   Cristian para publicar. IDs: parte 5fR7ZYP_udc, claves WsuUJkofXFM, mundo 7T0NY5tiKUI, especial 1pzHFJX5Gy0.
   Pendiente: poner por defecto en Configuración › Subida predeterminada (no para niños, IA, idioma, categoría).
+- 8 oct ~18:30: PUBLICADOS en YouTube los 4 vídeos del 8 (público). Canal marcado «No creado para niños» (afecta a
+  todo, también a lo que llegue por RSS). Subida predeterminada: Ciencia y tecnología, español (España) en vídeo y
+  título. NO existe ajuste por defecto de «Uso de IA»: comprobar en el primer episodio que llegue por RSS si sale
+  la casilla y marcarla a mano si hace falta.
+- Apple: Update Frequency = Daily, guardado y Publish → estado «Available». Show ID 6820597566,
+  https://podcasts.apple.com/es/podcast/id6820597566 (poner en canal.apps.apple).
+- iVoox «Editar programa»: la descripción guardada está bien (los códigos raros solo salían en la tarjeta). El nombre
+  sigue «Parte diario IA · Las claves de la IA» porque parte.xml aún no es el feed general; revisarlo cuando cambie.
