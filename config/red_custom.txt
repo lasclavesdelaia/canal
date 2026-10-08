@@ -621,3 +621,5 @@ spectrum.ieee.org
 *.restofworld.org
 *.mlcommons.org
 arcprize.org
+support.claude.com
+gemini.google

@@ -818,7 +818,7 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   países poco habituales, inversión general a largo plazo según PAUTA §5); mercados «a largo plazo»; empresas «de
   vez en cuando»; conflictos olvidados «con frecuencia». PAUTA §9: lo elemental no se explica nunca.
 - Hecho: fuentes.md con fuentes de largo plazo y 24 dominios nuevos al final de la lista Custom.
-- PARA CRISTIAN (a mano): añadir en la red Custom del entorno claves-ia estos dominios:
+- (Superado: la red nueva de config/red_custom.txt ya los incluye.) Antes: añadir en la red Custom estos dominios:
   www.bis.org www.worldbank.org openknowledge.worldbank.org data.worldbank.org www.elibrary.imf.org www.nber.org
   cepr.org unctad.org wid.world ourworldindata.org hdr.undp.org fred.stlouisfed.org www.bruegel.org www.piie.com
   www.brookings.edu reliefweb.int news.un.org www.crisisgroup.org www.sipri.org www.rba.gov.au www.bankofbotswana.bw
@@ -926,3 +926,7 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   Y skill ~/.claude/skills/mis-skills: lista sus skills (~/.claude/skills y ~/.claude/commands) con un ejemplo de uso.
 - Hecho: skills ~/.claude/skills/debatir y ~/.claude/skills/mis-skills (fuera del repo); prompts/CRITERIO.md vacío
   con su formato; PAUTA §11 y línea «Erratas corregidas» en la tarjeta; RUTINA paso 5 y ENCARGADO leen CRITERIO.md.
+- Hecho (Cristian): parte.md vigila siempre los informes de Anthropic y los cambios en las apps (Claude, Gemini,
+  ChatGPT; y Meta, xAI, Mistral, chinos… cuando se pongan al día). fuentes.md con sus notas de versión.
+- PARA CRISTIAN (a mano): la red Custom pasa de 598 a 600 líneas con `support.claude.com` y `gemini.google`; volver a
+  pegarla (python3 scripts/red_custom.py | pbcopy) o añadir esas dos. Ya está en el tope de 600.
