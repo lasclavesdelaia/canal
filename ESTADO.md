@@ -603,6 +603,11 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
 - Pendiente (depende de él): que descargue un audio de AI Studio a pruebas/ para calibrar los umbrales con voz
   real (el filtro solo está probado con audio sintético); decidir si sigue; crear la cuenta de servicio.
 - Commits: solo locales (main ya iba 1 por delante: 92cb40d, de otra sesión). No hago push.
+- Google AI Pro (su suscripción): desde el 27 ene 2026 trae 10 $/mes de créditos de Google Cloud (Google Developer
+  Program premium) válidos para la API de Gemini y Vertex/Agent Platform; hay que activarlos en el sitio del Developer
+  Program y ligarlos a un proyecto; no se acumulan (blog.google, 27 ene 2026; ayuda de Google One). Cubrirían la
+  intermedia con Flash también desde enero (~8 $). Sin confirmar: que valgan para los SKU de Gemini TTS y que vayan a
+  la cuenta de facturación de voz-claves. El uso «generoso» de AI Studio es la web, no la API automática.
 - Preguntas para Cristian: (1) ¿Flash hasta enero y Lite después, solo semanales? (yo: sí, cabe en 4-5 €);
   (2) ¿probar una voz es-ES de la Extended Voice Library (uso «news»), que según Google fija mejor el acento que
   pedirlo en el estilo? (yo: sí, en la comparativa).
