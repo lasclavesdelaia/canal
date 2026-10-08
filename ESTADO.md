@@ -718,3 +718,7 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   https://podcasts.apple.com/es/podcast/id6820597566 (poner en canal.apps.apple).
 - iVoox «Editar programa»: la descripción guardada está bien (los códigos raros solo salían en la tarjeta). El nombre
   sigue «Parte diario IA · Las claves de la IA» porque parte.xml aún no es el feed general; revisarlo cuando cambie.
+- 8 oct ~18:35: con el feed general ya en línea (parte.xml = «Las claves de la IA», portada general.jpg = icono del
+  canal): Apple «Refresh» → ya muestra nombre y logo nuevos. iVoox no relee: cambiados a mano el programa (nombre,
+  descripción, portada) y el canal 9342473 (nombre, descripción con aviso, web, imagen). iVoox aún muestra 1 episodio:
+  vigilar que importe claves, mundo y especial del 8. Spotify: se actualizará solo desde el feed.
