@@ -74,6 +74,11 @@ hay novedad, se cuenta en corto; si no, va a tu tarjeta con «revisar: sábado»
   - rankings independientes;
   - precios;
   - modelos raros y su utilidad.
+- **Siempre que salgan:**
+  - los informes de Anthropic (investigación, interpretabilidad, seguridad, el índice económico, uso de Claude): se
+    cuentan con su fondo, no solo el titular;
+  - cambios concretos en las apps de Claude, Gemini y ChatGPT (funciones nuevas, límites, precios de los planes), y
+    en las de Meta, xAI, Mistral, los laboratorios chinos u otros cuando se pongan a su altura o la superen.
 - **Investigación:** papers e ideas nuevas de universidades y empresas, también de lo que no está de moda, en
   lenguaje llano. El oyente sabe poco de la parte técnica y quiere familiarizarse poco a poco.
 - **Empresas:** rondas, startups, resultados, movimientos de la cadena de chips.

@@ -30,7 +30,9 @@ rutina comprueba cada una desde la nube y anota las que fallen en su informe de 
 ## IA: laboratorios y modelos
 
 - **OpenAI:** `openai.com/news/rss.xml` (RSS).
-- **Anthropic:** `anthropic.com/news` (página).
+- **Anthropic:** `anthropic.com/news` y `anthropic.com/research` (páginas); sus informes interesan siempre.
+- **Novedades de las apps (sin comprobar aún desde la nube):** notas de versión de ChatGPT en `help.openai.com`,
+  de Claude en `support.claude.com` y `docs.anthropic.com`, de Gemini en `gemini.google` y `blog.google`.
 - **Google DeepMind:** `deepmind.google/blog/rss.xml` (RSS). **Google:** `blog.google/technology/ai/rss/`.
 - **Meta AI:** `ai.meta.com/blog/`.
 - **Mistral:** `mistral.ai/news`.
