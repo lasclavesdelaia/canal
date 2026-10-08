@@ -824,3 +824,5 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   www.brookings.edu reliefweb.int news.un.org www.crisisgroup.org www.sipri.org www.rba.gov.au www.bankofbotswana.bw
   www.nrb.org.np www.mongolbank.mn www.beac.int
   (NBER, CEPR y el BPI ya los citaba mundo.md, pero faltaban en la red.) Sin comprobar que se lean sin cuenta.
+- Hecho (petición directa de Cristian): mundo.md, «Nivel y horizonte», viñeta de activos concretos con seguimiento
+  (bitcóin, índices, empresas, oportunidades), a largo plazo y sin consejo personal; el hilo va en la tarjeta.

@@ -17,6 +17,12 @@ resumen de la semana: es lo que la semana enseña, contado con datos, con perspe
   (Nepal, Australia, Chad, Botsuana o Mongolia son ejemplos de la clase de país, no una lista).
 - **Inversión, como análisis general y a largo plazo:** sectores, países y tendencias, con sus argumentos a favor y
   en contra. Nunca «compra esto» ni nada personalizado (pauta común, apartado 5).
+- **Activos concretos, con seguimiento:** cuando haya algo interesante sobre un activo concreto (bitcóin, un
+  índice, una empresa, una materia prima, la deuda de un país), se analiza a fondo y a largo plazo: qué descuenta el
+  precio, los datos que importan, el mejor argumento a favor y en contra con quién lo defiende, y la lectura del
+  programa. Puede ser una oportunidad que se está abriendo o un riesgo que pocos miran. Va en «Hilos abiertos» de la
+  tarjeta, para volver a él cuando cambie algo y contar si la lectura se sostuvo. Sin consejos personales ni
+  momentos de compra (pauta común, apartado 5).
 
 ## Extensión
 
