@@ -624,6 +624,11 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   Filtro recalibrado con flash-podcaster7.wav (pruebas/voz_gemini/): detecta 5 de 5. Rama claude/voz-gemini: los
   cuatro programas con esa voz (gastar créditos y medir), velocidad con atempo, filtro «recortar», tope propio
   600.000 caracteres/mes. Después del 7 ene: facturación de la cuenta con AI Pro (10 $/mes) enlazada a voz-claves.
+- 8 oct, tarde: HECHO por Cristian: cuenta de servicio voz-gemini (solo Usuario de Vertex AI), clave en el secreto
+  GOOGLE_VOZ_GEMINI_SA del entorno publicar, tope de gasto «tope-gemini» (límite de inversión) de 9 €/mes en Vertex
+  AI. Falta: fusionar claude/voz-gemini en main y subir (desde una sesión sin bloqueo del portero). Tras la primera
+  publicación: mirar en Facturación › Informes en qué servicio sale el gasto (si sale en Text-to-Speech, el tope no
+  la frena).
 - Preguntas para Cristian: (0) ¿filtro sí o no? (yo: sí, recortar; se apaga con una línea). (1) ¿Flash hasta enero y Lite después, solo semanales? (yo: sí, cabe en 4-5 €);
   (2) ¿probar una voz es-ES de la Extended Voice Library (uso «news»), que según Google fija mejor el acento que
   pedirlo en el estilo? (yo: sí, en la comparativa).
