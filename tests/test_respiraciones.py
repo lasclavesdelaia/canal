@@ -43,7 +43,7 @@ class Ajustes(unittest.TestCase):
         tramas = [V] * 50 + [S] * 5 + [R] * 20 + [V] * 50   # respiración de 0,4 s tras pausa
         tramas += [R] * 6 + [S] * 10 + [V] * 20              # «s» final: pegada a la voz y corta
         tramas += [S] * 5 + [R] * 60 + [V] * 10              # ruido de 1,2 s: demasiado largo
-        self.assertEqual(voz.detectar_respiraciones(tramas), [(1.1, 1.5)])
+        self.assertEqual(voz.detectar_respiraciones(tramas), [(1.08, 1.52)])  # con 20 ms de margen
 
     def test_atenuar_y_recortar_pcm(self):
         pcm = array.array("h", [1000] * 24000)
@@ -66,10 +66,10 @@ class ConAudio(unittest.TestCase):
             tramos = voz.detectar_respiraciones(voz.medir_tramas(origen))
             self.assertEqual(len(tramos), 2)
             (a1, b1), (a2, b2) = tramos
-            self.assertAlmostEqual(a1, 1.15, delta=0.03)
-            self.assertAlmostEqual(b1, 1.55, delta=0.03)
-            self.assertAlmostEqual(a2, 4.07, delta=0.03)
-            self.assertAlmostEqual(b2, 4.37, delta=0.03)
+            self.assertAlmostEqual(a1, 1.13, delta=0.03)
+            self.assertAlmostEqual(b1, 1.57, delta=0.03)
+            self.assertAlmostEqual(a2, 4.05, delta=0.03)
+            self.assertAlmostEqual(b2, 4.39, delta=0.03)
 
     def test_recortar_acorta_y_deja_mp3(self):
         with tempfile.TemporaryDirectory() as tmp:

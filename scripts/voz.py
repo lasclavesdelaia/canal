@@ -114,12 +114,14 @@ RESPIRACIONES = {
     "modo": "atenuar",   # «atenuar» (baja el tramo «db» decibelios) o «recortar» (lo cambia por «pausa» s de silencio)
     "db": -30,
     "pausa": 0.12,
-    "min": 0.2,          # duración del tramo, en s
+    "min": 0.1,          # duración del tramo, en s
     "max": 0.8,
-    "bajo_voz_db": 14,   # el tramo queda al menos esto por debajo del nivel de la voz...
-    "suelo_db": 50,      # ...y por encima del silencio (nivel de la voz menos esto)
+    "bajo_voz_db": 22,   # el tramo queda al menos esto por debajo del nivel de la voz...
+    "suelo_db": 44,      # ...y por encima del silencio (nivel de la voz menos esto)
+    "tono_db": 30,       # por debajo de esto, lo tonal (pocos cruces por cero) es cola o ruido de sala: cuenta como pausa
     "zcr_min": 0.08,     # cruces por cero por muestra a 16 kHz: la voz sonora queda por debajo, el soplo por encima
     "pausa_antes": 0.04, # silencio exigido justo antes (protege la «s» final de palabra)
+    "margen": 0.02,      # se amplía el tramo esto por cada lado (arranque y cola del soplo)
 }
 
 
@@ -155,14 +157,14 @@ def detectar_respiraciones(tramas, ajustes=None):
     if not voz:
         return []
     ref = voz[int(0.9 * (len(voz) - 1))]  # nivel de la voz: percentil 90
-    alto, suelo = ref - a["bajo_voz_db"], ref - a["suelo_db"]
+    alto, suelo, tono = ref - a["bajo_voz_db"], ref - a["suelo_db"], ref - a["tono_db"]
 
     def clase(d, z):
-        if d < suelo:
-            return "s"  # silencio
+        if d < suelo or (d < tono and z < a["zcr_min"]):
+            return "s"  # silencio, ruido de sala o cola de una vocal
         if d >= alto or z < a["zcr_min"]:
             return "v"  # voz
-        return "r"      # posible respiración
+        return "r"      # soplo: posible respiración
 
     clases = [clase(d, z) for d, z in tramas]
     tramos, i, n = [], 0, len(clases)
@@ -177,7 +179,8 @@ def detectar_respiraciones(tramas, ajustes=None):
         dur = (j - i + 1) * TRAMA
         tras_pausa = i == 0 or (i >= antes and all(c == "s" for c in clases[i - antes:i]))
         if a["min"] <= dur <= a["max"] and tras_pausa:
-            tramos.append((round(i * TRAMA, 3), round((j + 1) * TRAMA, 3)))
+            m = a.get("margen", 0)
+            tramos.append((round(max(0, i * TRAMA - m), 3), round(min(n * TRAMA, (j + 1) * TRAMA + m), 3)))
         i = j + 1
     return tramos
 
