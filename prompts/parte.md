@@ -1,6 +1,8 @@
 # Parte diario IA
 
-Lo que ha pasado en inteligencia artificial desde el episodio anterior (en la práctica, las últimas 24 horas).
+Lo que ha pasado en inteligencia artificial desde el episodio anterior: en la práctica, las últimas 30 horas, más o
+menos. Nada de hace una semana, salvo como contexto en una frase («como se anunció el lunes…»). Si una noticia es de
+hace días y no se contó, solo entra si sigue importando hoy y se dice de cuándo es.
 
 **Sale de domingo a viernes. El sábado no hay parte:** las noticias del sábado las cuenta ese día Claves semanales
 IA. Por eso el parte del domingo cubre desde el sábado por la mañana y no repite lo que contó el semanal (mira su
@@ -42,7 +44,7 @@ El orden va por **importancia**, no por temas.
    - qué ha pasado;
    - el dato;
    - qué dicen distintas voces;
-   - qué no está claro todavía;
+   - qué no está claro todavía, solo si importa y en una frase;
    - por qué importa.
 3. **En corto:** el resto de lo relevante, de una a tres frases cada cosa, hasta doce cosas. Si hay más,
    quédate con las que importen y deja el resto.
@@ -61,6 +63,9 @@ del último semanal de IA (`tarjetas/*-claves.md`).
 Una noticia ya contada solo vuelve si hay algo nuevo, y entonces se cuenta lo nuevo, remitiendo en media frase
 («como contamos el lunes…»). Mira también los «hilos abiertos»: si hoy se resuelve alguno, es candidato a lo
 principal.
+
+**Cabos sueltos** (pauta común, §10): revisa con una búsqueda los que tengan fecha de revisión de hoy o anterior. Si
+hay novedad, se cuenta en corto; si no, va a tu tarjeta con «revisar: sábado», sin mencionarlo en el guion.
 
 ## Temas que vigilar (uso interno; no son secciones)
 

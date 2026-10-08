@@ -22,6 +22,13 @@ pasado en IA desde el parte del viernes (o desde el último parte, si faltó alg
 - Si es un día muy flojo, una frase que lo diga basta.
 - La tarjeta lo refleja: `cubre` va desde el día siguiente al último parte hasta hoy.
 
+## Cabos sueltos de la semana
+
+Recoge los cabos sueltos (pauta común, §10) de las tarjetas de los partes de esta semana y de la del sábado
+anterior, búscalos y cuenta cómo acabaron: qué se supo, de quién y con qué fuente. Los que sigan abiertos, en una
+frase cada uno, sin más. Va en un bloque breve, o dentro de la clave a la que pertenezca. Si no hubo cabos sueltos,
+no se menciona. En tu tarjeta, solo los que sigan abiertos y aún importen, con fecha de revisión del lunes.
+
 ## Sin molde fijo
 
 La forma la decide la semana, no una plantilla. Puede ser de tres a cinco claves; una sola muy a fondo con un
@@ -33,7 +40,7 @@ Es un programa solo de inteligencia artificial. Unos dos tercios van a una o dos
 restante, a lo demás que importe de la semana.
 
 Cada clave, la forma que tenga, lleva:
-- de dónde viene (contexto, lo que se prometió antes);
+- de dónde viene (contexto, lo que se prometió antes), en una frase si el oyente ya lo sabe;
 - qué ha pasado, con datos;
 - las posturas en juego, con nombre, y qué las separa;
 - tu lectura razonada, si la tienes;

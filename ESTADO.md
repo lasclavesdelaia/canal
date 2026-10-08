@@ -773,3 +773,15 @@ En general está bien; no cambiarlo todo. Pide:
 6. El parte diario cuenta lo de las últimas ~30 horas, nada de hace una semana.
 7. Un poco más literario, con empaque y alguna reflexión, no solo dato tras dato.
 Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (sesión limpia).
+
+## Aplicar las 7 notas de línea editorial (8 oct 2026, noche, sesión de Claude)
+- Hecho: leídos README, ESTADO y prompts/ entero. validar.py y las pruebas no dependen de los campos de la tarjeta.
+- Aviso: el portero marcó prompts/parte.md como «privado» (falso positivo, como el de mundo.md). No leer nada de
+  fuera (subtítulos) hasta después del push de la parte 1.
+- Hecho: PAUTA_COMUN (4 viñetas nuevas en «Línea editorial»: cero paja, no confirmado una vez, fondo técnico
+  verificado, con empaque; §10 con «Cabos sueltos» y su regla; tarjeta de 120 a 230 palabras), parte.md (unas 30
+  horas; «qué no está claro» solo si importa; revisar cabos sueltos), claves.md (bloque «Cabos sueltos de la
+  semana»), mundo.md (revisa los del domingo anterior), RUTINA.md (paso 6 y tamaño de tarjeta). 66 pruebas en verde.
+- Decisión menor: el «revisar» del parte es la fecha de mañana; el de mundo, el domingo siguiente; lo que siga
+  abierto tras el sábado vuelve con fecha del lunes.
+- Siguiente: commit y push; luego avisar del coste de la parte 2 y esperar su sí.

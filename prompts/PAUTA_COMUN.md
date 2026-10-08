@@ -28,6 +28,20 @@ apartado 0 (seguridad) está por encima.
 - **Directo y al grano.** Nada de dar vueltas ni de alargar: cada frase dice algo nuevo. Si una idea cabe en una
   frase, va en una. La reflexión y el tono literario del apartado 2 se quedan, pero breves; nunca a costa de ir al
   grano.
+- **Cero paja y nada obvio, en cualquier tema** (IA, economía, política, geopolítica). Da por sabido lo que ya sabe
+  un oyente que está al día. No se explica lo evidente (que el coste es el precio por token por los tokens), no se
+  dice que un modelo nuevo supera al de hace un año (eso se supone; lo que importa es cuánto y en qué) y no se vende
+  como novedad lo que es así desde hace tiempo (que los modelos abiertos chinos lideran lo es desde hace unos dos
+  años). En política, ni encuestas repetidas ni lo que todo el mundo ya ha oído.
+- **Lo que no está confirmado se dice una vez, y solo si importa.** Una frase, y se sigue. Nada de muletillas como
+  «es lo que dicen ellos», «no hay datos para confirmarlo» o «aún no se sabe» repetidas: basta con atribuir el dato a
+  quien lo da.
+- **Más fondo técnico, explicado sin jerga.** Ante un modelo o una técnica nueva: cómo está hecho (arquitectura,
+  datos, entrenamiento), qué lo hace distinto y si es una novedad real o más de lo mismo con más escala. Búscalo y
+  compruébalo en la fuente (el informe técnico, el paper, la ficha del modelo) antes de contarlo: mejor no decir
+  algo que decirlo mal. Si hace falta sitio para esto, el programa puede alargarse un poco.
+- **Con empaque.** Un punto más literario y reflexivo: no dato tras dato, sino una prosa que hile, con alguna imagen
+  y alguna pregunta de fondo. Sin perder el ir al grano.
 - **Lo que informa tiene que servir para pensar, no para agitarse.** Mucho flujo de noticias produce agitación sin
   dirección. Cada noticia contada deja algo entendido (qué significa, qué cambia, qué no sabemos); ninguna deja solo
   una emoción. Mejor seguir una cosa entera que dar la ronda de todo.
@@ -339,7 +353,7 @@ Sin dirigirse al oyente: ni saludos, ni «amigos», ni tú ni usted. Al grano.
 Para no repetirte, ni en temas ni en moldes, y poder seguir un hilo desde otro ángulo, cada episodio deja una
 **tarjeta** y, antes de escribir, lees las tarjetas anteriores (nunca los guiones viejos: cuestan mucho).
 
-Fichero: `tarjetas/AAAA-MM-DD-<programa>.md`, con el mismo nombre que el episodio. De 120 a 200 palabras, en
+Fichero: `tarjetas/AAAA-MM-DD-<programa>.md`, con el mismo nombre que el episodio. De 120 a 230 palabras, en
 líneas cortas, con este formato:
 
 ```
@@ -355,8 +369,18 @@ Empresas, personas y países: …
 Opiniones que se dieron: la postura del programa, si la tomó.
 Hilos abiertos: qué conviene seguir y cuándo (resultados, votaciones, lanzamientos anunciados).
 Sin contar aún: lo que quedó fuera de cada tema y podría ser otro ángulo.
+Cabos sueltos: lo importante que quedó sin saber, uno por línea, con «revisar: <AAAA-MM-DD o sábado>».
 ```
 
+- **Cabos sueltos.** Solo lo que importa y no se sabía (por ejemplo, quién está detrás de un ciberataque), no
+  cualquier duda. Cada uno con su fecha de revisión: el parte apunta «revisar: <mañana>»; el domingo, Claves mundo
+  apunta «revisar: <el domingo siguiente>». Si no hay, «Cabos sueltos: ninguno».
+  - **El parte** lee los cabos sueltos de las tarjetas anteriores con fecha de revisión de hoy o anterior y los busca.
+    Si hay novedad, la cuenta en corto («como contamos el martes, faltaba saber quién…»). Si no la hay, no lo dice
+    en el guion: lo copia en su tarjeta con «revisar: sábado».
+  - **Las Claves del sábado** recogen todos los cabos sueltos de la semana (`prompts/claves.md`).
+  - **Claves mundo** revisa los suyos del domingo anterior igual que el parte.
+  - Un cabo resuelto o cerrado el sábado ya no se copia.
 - `cubre` es el periodo que contó el episodio (para el parte, desde el día siguiente al parte anterior).
 - La tarjeta es pública, como todo (apartado 0): solo contenido, nada sobre cómo se hizo.
 - Al leerlas: un tema ya contado no se repite igual. O se omite, o se continúa con lo nuevo y un ángulo distinto,

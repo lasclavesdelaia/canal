@@ -27,13 +27,14 @@ Este es el prompt de la rutina en la nube. Corre a las 5:07 y, de reserva, a las
    - para el parte, las de los últimos 7 partes;
    - para `claves`, las de los últimos 6 sábados más las de los partes de esta semana;
    - para `mundo`, las de los últimos 6 domingos más las de los partes y el semanal de IA de esta semana.
+   Apunta sus cabos sueltos pendientes (pauta, §10): forman parte de lo que investigas hoy.
    Si aún no hay tarjetas, sigue sin ellas.
 7. **Investiga** en las fuentes de la lista:
    - empieza por los RSS y las API, que son más baratos;
    - abre los artículos solo cuando haga falta.
 8. **Escribe** el guion con el formato exacto del apartado 7 de la pauta y haz el repaso del apartado 8.
 9. **Escribe la tarjeta** de cada episodio: `tarjetas/AAAA-MM-DD-<programa>.md`, con el formato del apartado 10 de la
-   pauta (de 120 a 200 palabras). Es pública, como el guion: solo contenido.
+   pauta (de 120 a 230 palabras), con sus cabos sueltos. Es pública, como el guion: solo contenido.
 10. **Sube solo esos ficheros.** Crea la rama `claude/episodios-AAAA-MM-DD`, haz `git add` solo de
     `episodios/AAAA-MM-DD-*.md` y `tarjetas/AAAA-MM-DD-*.md` y haz el commit con el mensaje «Episodios
     AAAA-MM-DD». Después, `git push origin claude/episodios-AAAA-MM-DD`.

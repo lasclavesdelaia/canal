@@ -108,6 +108,9 @@ dato de esta semana.
   telediarios (Sudán, el Sahel, el este del Congo, Myanmar, Haití, Yemen…): qué pasa, desde cuándo y por qué, quién
   sufre, qué intereses hay. Las tarjetas dicen cuáles ya salieron.
 
+**Cabos sueltos** (pauta común, §10): revisa los de la tarjeta del domingo anterior; cuenta en corto lo que se
+supo y deja en tu tarjeta los que sigan abiertos.
+
 El concepto de economía o de relaciones internacionales del domingo (apartado 9 de la pauta)
 sigue: uno, despacio.
 
