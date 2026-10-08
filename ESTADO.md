@@ -245,7 +245,7 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
   cabecera negra, motivo arriba, título en Helvetica Neue Condensed Black que cabe entre márgenes, segunda palabra
   en cinta negra torcida. Pruebas: pruebas/portadas/expediente2/ y collage_expediente2.png. El icono lo hará
   Cristian con ChatGPT (le di un prompt).
-- Preguntas para Cristian: ¿cambiar «Parte diario» por otro nombre? (suena a «parte de guerra» y al «parte» de RNE
+- RESUELTO (8 oct): «Parte diario» se queda (Cristian: «no, parte diario mejor»). Pregunta anterior: ¿cambiar «Parte diario» por otro nombre? (suena a «parte de guerra» y al «parte» de RNE
   del franquismo). Yo propondría «Diario IA» o «Boletín IA»; tocaría config/programas.json, prompts y portadas.
 - 8 oct, DECISIÓN: a Cristian le gusta la cuarta tanda (portadas «expediente» con cinta) y el banner negro con
   recortes rojo/azul y cintas de las tres series. Generados en assets/ (portadas, miniaturas, youtube/banner.png).
