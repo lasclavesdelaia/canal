@@ -668,3 +668,9 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   5.000. Recortar la lista de fuentes en el feed (p. ej. a 4.800 con «Más fuentes en la web: <enlace>»).
 - Al conectar mañana los feeds en YouTube: conectar cada feed AL PÓDCAST (lista) YA CREADO y elegir subir solo los
   episodios publicados DESPUÉS del 8 oct, para no duplicar los subidos a mano.
+- Medición de cuota (8 oct): tareas programadas locales claves-ia-cuota-antes (4:45) y claves-ia-cuota-despues
+  (6:20), del 9 al 18 oct. Leen el uso del plan (5 h y semanal) y lo apuntan en pruebas/cuota_rutina.md, con resumen
+  por programa (parte; sábado claves; domingo mundo) y estimación ×5 para Pro. Necesitan el Mac encendido y la app
+  abierta. Cuota a las 17:59 del 8 oct: 5 h 40 %, semanal 47 % (Max).
+- Especial del 8 (Vox): vídeo también en pruebas/videos_youtube/; su descripción del feed tiene 6.605 caracteres
+  (>5.000 de YouTube). Altas en apps de claves.xml, mundo.xml y especial.xml: pendientes (ya tienen episodio).
