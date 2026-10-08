@@ -507,7 +507,17 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   del borrador valga el día que se publique; el guion dice en una frase a qué fecha están los datos.
 - Hecho: paso 4, prompts/especial.md (extensión 15-60 min, fuentes primarias, rigor extra con partidos y
   personas, encuestas y art. 69.7 LOREG, texto de partida solo como guion de temas).
-- En curso: paso 5 (skills en ~/.claude/skills: informe, especial, publicar-especial).
-- Siguiente: paso 6 (portada).
+- Hecho: paso 5. Skills en ~/.claude/skills/{informe,especial,publicar-especial}/SKILL.md (fuera del repo).
+  /informe usa ~/.claude/skills/informe/audio_local.py (say + afconvert; elige Premium > Mejorada > Mónica;
+  probado: Marisol (Premium), 64 kbps AAC). /especial y /publicar-especial trabajan en un worktree en $TMPDIR
+  para no mover la copia de otras sesiones, y lanzan `gh workflow run publicar.yml --ref main`.
+- Formato para la app Escritura (sección «Informes personales», la hace otra sesión), en
+  `40 Taller Intelectual/02_Investigaciones/00_Informes_y_estudios/`:
+  - `AAAA-MM-DD Título.md` con cabecera `tipo: informe personal`, `titulo`, `fecha`, `tema`, `audio`, y al lado
+    `AAAA-MM-DD Título.m4a` (mismo nombre).
+  - `AAAA-MM-DD Especial - Título.md` con `tipo: especial borrador` (o `especial publicado` y `web: <url>`),
+    `titulo`, `fecha`, `slug`, `rama`, `audio`, y al lado `AAAA-MM-DD Especial - Título.mp3`.
+- En curso: paso 6 (portada).
+- Siguiente: paso 7 (README).
 - Nota: el portero marcó la sesión como «privada de segundo grado» al leer ~/bin/lib/portero.py (lo escribió un
   agente tras leer datos privados). No se ha leído nada privado de verdad. Si corta el push, se dice.
