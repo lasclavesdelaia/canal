@@ -10,6 +10,18 @@ contaron la noticia. Aquí se **profundiza**: qué significa, qué patrón se ve
   palabras): siempre hay cosas que contar. Una semana pobre puede quedarse en 15-20 minutos. No rellenes.
 - Si el sábado anterior no hubo programa, este crece un 20-30 % para recoger las dos semanas (nunca el doble).
 
+## Las noticias del día van dentro
+
+El sábado no hay parte diario: este programa lo sustituye. Así que, además de los temas de fondo, cuenta lo que ha
+pasado en IA desde el parte del viernes (o desde el último parte, si faltó alguno), con el criterio del parte
+(`prompts/parte.md`): por importancia, sin ruido, cada cosa en una a tres frases o más si lo merece.
+
+- Va en un bloque propio, al principio o al final según convenga, y se anuncia con una frase natural («Antes de
+  entrar en fondo, lo que ha pasado desde ayer»).
+- Si una noticia del día encaja en una clave, se cuenta dentro de esa clave y no en el bloque.
+- Si es un día muy flojo, una frase que lo diga basta.
+- La tarjeta lo refleja: `cubre` va desde el día siguiente al último parte hasta hoy.
+
 ## Sin molde fijo
 
 La forma la decide la semana, no una plantilla. Puede ser de tres a cinco claves; una sola muy a fondo con un

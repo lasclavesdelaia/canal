@@ -46,7 +46,7 @@ Para cada episodio de la semana:
   si no pudiste abrirla.
 - **Fuentes que fallaron:** la rutina diaria no deja guardado qué fuentes le fallaron. Dedúcelo: qué fuentes de
   `config/fuentes.md` no aparecen citadas en toda la semana, y cuáles no abren cuando lo intentas tú.
-- **Días sin episodio:** qué días falta el `parte`, y si falta `claves` (sábado) o `mundo` (domingo). Para cada
+- **Días sin episodio:** qué días falta el `parte` (el sábado no hay: lo sustituye `claves`), y si falta `claves` (sábado) o `mundo` (domingo). Para cada
   hueco, mira si hay rama sin Release (se escribió pero no se publicó: entonces el fallo está en Actions o en el
   validador) o si no hay ni rama (falló la rutina).
 - **Repeticiones** entre episodios, tono (PAUTA §1 y §2) y reglas legales (§5).

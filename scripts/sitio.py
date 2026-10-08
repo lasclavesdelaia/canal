@@ -22,7 +22,7 @@ from pathlib import Path
 from comun import MESES, RAIZ, Episodio, fecha_hablada, texto_hablado
 
 ULTIMOS_EN_PORTADA = 6
-FRECUENCIA = {"todos": "Cada día", "sabado": "Cada sábado", "domingo": "Cada domingo", "a veces": "De vez en cuando"}
+FRECUENCIA = {"todos": "Cada día", "menos sabado": "De domingo a viernes", "sabado": "Cada sábado", "domingo": "Cada domingo", "a veces": "De vez en cuando"}
 
 ESTILO = """
 @font-face{font-family:"Inter Tight";font-style:normal;font-weight:100 900;font-display:swap;

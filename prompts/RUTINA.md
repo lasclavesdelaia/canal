@@ -6,14 +6,14 @@ Este es el prompt de la rutina en la nube. Corre a las 5:07 y, de reserva, a las
 
 1. **La fecha de hoy, en Madrid:** `TZ=Europe/Madrid date +%F` y el día de la semana.
 2. **Qué toca hoy:**
-   - **`parte`**, todos los días;
-   - **`claves`**, si es sábado;
-   - **`mundo`**, si es domingo.
+   - **`parte`**, de domingo a viernes (el sábado no hay parte);
+   - **`claves`**, si es sábado: incluye las noticias del día, que ese día no tienen parte (`prompts/claves.md`);
+   - **`mundo`**, si es domingo, además del parte.
 3. **Mira si ya está hecho.** Ejecuta `git fetch origin '+refs/heads/claude/*:refs/remotes/origin/claude/*'` y busca
    en esas ramas y en `main` el fichero `episodios/AAAA-MM-DD-<programa>.md`. Si ya existe, ese programa no se
    repite. Si ya están todos, termina sin hacer nada.
 4. **Mira qué se perdió.** En esas mismas ramas, busca el último parte (`episodios/*-parte.md` o
-   `tarjetas/*-parte.md`) y el último de cada semanal.
+   `tarjetas/*-parte.md`; el `claves` de un sábado cuenta como parte de ese día) y el último de cada semanal.
    - Si el último parte es de antes de ayer o más atrás, el parte de hoy cubre desde el día siguiente a ese parte
      (`prompts/parte.md`, «Si hubo días sin parte»).
    - Si hoy toca un semanal y falta el de la semana anterior, el de hoy crece un 20-30 %.
@@ -44,8 +44,8 @@ Este es el prompt de la rutina en la nube. Corre a las 5:07 y, de reserva, a las
 
 ## Si no da tiempo
 
-La prioridad es que salga el **parte** del día, aunque sea corto. Si es sábado o domingo y te quedas sin margen,
-entrega primero el parte y después el semanal.
+Entre semana, la prioridad es el **parte**, aunque sea corto. El sábado solo hay `claves`. El domingo, primero el
+parte y después `mundo`.
 
 ## Seguridad
 

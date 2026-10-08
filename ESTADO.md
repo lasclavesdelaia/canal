@@ -377,7 +377,14 @@ Fuentes oficiales leídas el 8 oct 2026 (ninguna muestra fecha de actualización
   partes. Cabe en el tope de 900.000, pero un mes con semanales de 60 min se acercaría.
 - Aviso: el portero marcó prompts/mundo.md como «privado» al editarlo (falso positivo: lo escribí yo). El push salió bien.
 
-### Propuesta para Cristian (espera su decisión): rutina de fin de semana con esfuerzo alto
+- DECIDIDO por Cristian (8 oct): NO hay rutina de fin de semana en high; todo sigue en Sonnet, effort medium.
+- DECIDIDO por Cristian (8 oct): el sábado no hay parte; Claves semanales IA incluye las noticias del día. El domingo
+  sí hay parte (cubre desde el sábado por la mañana) y mundo. Cambiado: RUTINA, parte.md, claves.md, ENCARGADO.md,
+  programas.json (descripciones, dias «menos sabado») y sitio.py («De domingo a viernes»).
+- Pendiente menor: la portada del parte (assets) dice «Cada día»; la despedida del parte dice «Hasta mañana» también
+  el viernes. Lo dejo así salvo que diga otra cosa.
+
+### (Descartada) Propuesta: rutina de fin de semana con esfuerzo alto
 - Segunda rutina solo sábado y domingo, a las 6:30, con `effortLevel: high`, que solo hace el semanal del día
   (`claves` o `mundo`) y su tarjeta. La de siempre sigue en medium y, en fin de semana, haría solo el parte (cambio
   de una línea en RUTINA.md; la de las 13:07 sigue de reserva para todo).
@@ -387,7 +394,6 @@ Fuentes oficiales leídas el 8 oct 2026 (ninguna muestra fecha de actualización
 - Lo que ganaría: más tiempo pensando la valoración de empresas, la elección de temas y la reflexión de fondo.
 
 ### Preguntas para Cristian
-- ¿Rutina de fin de semana en high? (yo diría que sí, al menos un mes de prueba).
 - Lecturas de línea editorial y subtítulos de Cárpatos (petición de Central IA): ¿otra sesión, con red permitida?
 - Pendiente de su sí (de Central IA): lecturas para la línea editorial y subtítulos de Cárpatos con yt-dlp. No lo
   hago en esta sesión: choca con su regla de no usar la red aquí. Se hará en otra sesión si lo confirma.
