@@ -1,10 +1,11 @@
 # Las claves de la IA
 
-Pódcast hecho por completo con IA. Tiene tres programas:
+Pódcast hecho por completo con IA. Tiene tres programas fijos y uno ocasional:
 
 - **Parte diario IA:** a diario.
 - **Claves semanales IA:** los sábados.
 - **Claves mundo:** los domingos.
+- **Especiales:** de vez en cuando, un tema a fondo (no sale en la web hasta el primero).
 
 Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian). Estado: `ESTADO.md`.
 
@@ -33,6 +34,18 @@ Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian).
 4. **Encargado semanal** (rutina de los domingos, 18:07 de Madrid; prompt `prompts/ENCARGADO.md`): revisa la semana y
    deja un informe en `revisiones/AAAA-MM-DD.md`, en una rama `claude/revision-…`. Solo propone; no toca `main`. La
    web no publica las revisiones. Para aplicar una propuesta, dile a una sesión «aplica la revisión del AAAA-MM-DD».
+
+## Informes y especiales (desde el Mac de Cristian)
+
+1. **`/informe <tema>`**: informe privado. Lee lo tuyo y la web; deja `AAAA-MM-DD Título.md` y su `.m4a` (voz del
+   Mac) en `00_Informes_y_estudios`. Nunca sale del Mac.
+2. **`/especial <tema>`**: borrador publicable. Solo web, este repo y `00_Informes_y_estudios/Publicables/`. Sube el
+   guion a `claude/borrador-<slug>`, Actions le pone voz (Release prerelease `borrador-<slug>`, fuera de la web) y
+   deja copia legible y MP3 en `Publicables/`.
+3. **«publícalo»** (en esa sesión) o **`/publicar-especial <slug>`**: pasa a `episodios/…-especial-<slug>.md`, sale
+   en la web, en el historial y en `especial.xml`, con el MP3 del borrador.
+4. Tras el primer especial publicado: alta de `https://claves.cristiansdrojek.com/especial.xml` en YouTube Studio.
+5. Skills en `~/.claude/skills/{informe,especial,publicar-especial}`; prompt en `prompts/especial.md`.
 
 ## Reglas para quien toque esto
 

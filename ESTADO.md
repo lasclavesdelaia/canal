@@ -528,7 +528,8 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   /publicar-especial no publica.
 - Nota portero: un fichero liberado dentro de 30 Personal sigue volviendo privada a la sesión que lo abre (clase()
   mira la carpeta antes que la liberación). Por eso la carpeta Publicables.
-- En curso: paso 7 (README).
-- Siguiente: push; avisar a la sesión de la app; prueba real con Vox cuando Cristian deje la copia en Publicables.
+- Hecho: paso 7, README («Informes y especiales», cinco líneas).
+- En curso: push.
+- Siguiente: avisar a la sesión de la app; prueba real con Vox cuando Cristian deje la copia en Publicables.
 - Nota: el portero marcó la sesión como «privada de segundo grado» al leer ~/bin/lib/portero.py (lo escribió un
   agente tras leer datos privados). No se ha leído nada privado de verdad. Si corta el push, se dice.
