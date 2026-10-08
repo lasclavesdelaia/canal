@@ -326,3 +326,23 @@ Fuentes oficiales leídas el 8 oct 2026 (ninguna muestra fecha de actualización
   Ojo: hoy es un enlace por app, pero son tres programas con tres feeds: si cada app da tres enlaces, habrá que pasar
   `apps` a un enlace por programa (o enlazar la página del autor/perfil en cada app). Si esta sesión ya no puede
   hacer push, hacerlo en una sesión nueva.
+
+## Títulos en cifras y modo «rehacer» (8 oct 2026, noche; peticiones de «Central IA» aprobadas por Cristian)
+- Hecho y PUBLICADO: Release ep-2026-10-08-parte con título «Claude Haiku 5.5, GPT-6 para todos y la prueba de
+  Navier-Stokes en duda» (nombre de la Release y JSON) y «GPT-6» en la descripción. La web lo cogerá en el próximo
+  rehacer de la web.
+- Hecho y SUBIDO a la rama claude/episodios-2026-10-08-semanales (ea2fb99): descripción de mundo con «100 dólares»,
+  «3,8 %» y «4,9 %». El título de claves («719 pruebas…») y el de mundo ya iban en cifras. Validan bien.
+- PORTERO: desde aquí esta sesión ya NO puede subir. Commits LOCALES sin push:
+  - b13c284: validar.py rechaza números en palabras en título y descripción («cinco punto cinco», «GPT seis»,
+    «tres coma ocho», «cuatro por ciento»); PAUTA_COMUN §7 lo dice; prueba nueva.
+  - el siguiente: modo rehacer. `publicar.py --rehacer todos|claves` (o entrada `rehacer` del Run workflow): vuelve a
+    sintetizar con la config actual (voz, aviso hablado, despedida), sube el MP3 con --clobber (misma URL), actualiza en
+    el JSON bytes, duracion, caracteres, «voz» y «rehechos» {mes: caracteres}, que cuenta para el tope mensual. Los
+    episodios nuevos guardan «voz». README: cómo cambiar de voz. 22 pruebas en verde; YAML válido.
+- Siguiente (SESIÓN NUEVA, antes de que Cristian dé de alta los feeds en YouTube mañana por la tarde):
+  1. `cd ~/bin/claves_ia && python3 -m unittest discover -s tests -q && git push origin main`.
+  2. Que esté resuelto el run 37769194783 (Cristian aprueba; publica claves y mundo del 8, ya con Aoede).
+  3. `gh workflow run publicar.yml -f rehacer=2026-10-08-parte` (es el único hecho con Charon; «todos» también vale,
+     unos 50.000 caracteres más, dentro del millón gratis). Si sigue el revisor de «publicar», Cristian aprueba.
+  4. Comprobar: Release con «voz»: es-ES-Chirp3-HD-Aoede, el MP3 suena con Aoede, parte.xml con el título en cifras.
