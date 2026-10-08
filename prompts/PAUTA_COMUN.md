@@ -94,6 +94,9 @@ Cada vez que aparezca algo así, una frase sobre **qué es** y otra sobre **para
 
   Resúmelo con matiz: qué elogian, de qué se quejan y si la queja se repite o es anecdótica. Nunca des un nombre de
   usuario anónimo.
+- **Entrevistas y pódcasts:** fuente de temas, no de estilo. Úsalos con escepticismo: solo gente con trabajo que lo
+  respalde y solo lo que aporte algo nuevo. Atribuye cada idea a quien la dijo y, si se puede, contrástala con datos.
+  No copies su tono, su orden ni sus frases.
 
 ## 5. Reglas legales (obligatorias)
 

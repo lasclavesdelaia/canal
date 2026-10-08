@@ -110,6 +110,9 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
 - Voz: el parte del 8 oct mandó 8.940 caracteres (cuerpo JSON de la Release). Cálculo del mes: 30 partes ≈ 270.000
   + 4-5 claves y 4-5 mundo (unos 22.000 cada uno) ≈ 200.000 → unos 470.000, por debajo del millón gratis de Chirp 3 HD
   y del tope propio de 900.000. Con el aviso corto, unos 100 caracteres menos por episodio.
+- Hecho: Cristian eligió «B, pero muy ampliada»: red Custom con 134 dominios (fuentes.md); entrevistas y pódcasts como
+  fuente de temas, nunca de estilo, y con lupa (PAUTA §4 y fuentes.md). Dominios nuevos sin comprobar desde la nube.
+- Pendiente: mirar si «Inteligencia Artificial Semanal» (Gargoyles devs) y Jon Hernández tienen transcripciones (con red, al final).
 - Pendiente: LMArena/arena.ai (¿API oficial o datos con licencia?). Se mira al final, con la red, tras las salidas.
 
 ### Preguntas para Cristian (F3, más)
