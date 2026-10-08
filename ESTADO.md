@@ -648,3 +648,10 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   códigos («revisi&oacute;n»); el feed está bien (UTF-8). Corregir a mano en «Editar programa» y vigilar si pasa en
   los episodios.
 - Pendiente: claves.xml (desde el sábado 10) y mundo.xml (desde el domingo 11) en iVoox; Spotify y Apple.
+- HECHO Spotify (8 oct, ~17:40): «Parte diario IA» enviado por RSS con verificación por código al correo del canal.
+  España, español, alojamiento «Other», Business & Technology › Technology + News & Politics › Daily News. Sin casilla
+  de IA. Enlace: https://open.spotify.com/show/0mNeHWzVKooVz7yTfZ7uV9 (tarda unas horas en verse).
+- Apple: cuenta de Apple nueva con lasclavesdelaia@gmail.com creada por Cristian; Podcasts Connect activado (cuenta
+  «Las claves de la IA», particular). Añadir el feed parte.xml da «An error has occurred. Try again later» dos veces
+  (8 oct, ~17:45). Parece cosa de la cuenta recién creada; reintentar más tarde o mañana (Add Show › con RSS ›
+  pegar parte.xml › Add). Si sigue, quizá falte forma de pago en la cuenta (la pone Cristian) o escribir a soporte.
