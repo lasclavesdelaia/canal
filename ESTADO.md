@@ -930,3 +930,8 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   ChatGPT; y Meta, xAI, Mistral, chinos… cuando se pongan al día). fuentes.md con sus notas de versión.
 - HECHO (Cristian la pegó el 8 oct, noche): la red Custom pasa de 598 a 600 líneas con `support.claude.com` y `gemini.google`; volver a
   pegarla (python3 scripts/red_custom.py | pbcopy) o añadir esas dos. Ya está en el tope de 600.
+- 8 oct, noche: Cristian lo deja para MAÑANA (9 oct), en esta misma sesión: (1) pasos de Google Cloud y
+  `python3 scripts/permiso_youtube.py`; luego lanzar «Marcar uso de IA en YouTube» primero con simular y después
+  en real, y comprobar que los 4 del 8 salen «ya marcado, no toco nada». (2) Conectar en YouTube Studio los feeds a
+  sus pódcast: parte-solo.xml (NO parte.xml), claves.xml, mundo.xml, especial.xml; solo episodios POSTERIORES al
+  8 oct. Hasta entonces, el workflow de cada hora solo avisa (sin rojo).
