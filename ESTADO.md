@@ -629,6 +629,11 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   AI. Falta: fusionar claude/voz-gemini en main y subir (desde una sesión sin bloqueo del portero). Tras la primera
   publicación: mirar en Facturación › Informes en qué servicio sale el gasto (si sale en Text-to-Speech, el tope no
   la frena).
+- 8 oct, 17 h: SUBIDO main (10 commits de la voz) y REHECHO con rehacer=todos (run 37797334180, verde): claves, mundo,
+  parte y especial vox-ante-el-29n con es-es-podcaster-7 (~69.400 caracteres) + borrador del especial. Primer intento falló
+  (403 iam.serviceAccounts.getAccessToken: el paso auth con token_format pide el token suplantando a la cuenta); arreglo de
+  Cristian: rol «Creador de tokens de cuenta de servicio» de voz-gemini sobre sí misma. Pendiente: mirar el 9 oct en
+  Google Cloud › «Ver todo el uso de los créditos» que el gasto de Vertex AI se descuenta del crédito.
 - Preguntas para Cristian: (0) ¿filtro sí o no? (yo: sí, recortar; se apaga con una línea). (1) ¿Flash hasta enero y Lite después, solo semanales? (yo: sí, cabe en 4-5 €);
   (2) ¿probar una voz es-ES de la Extended Voice Library (uso «news»), que según Google fija mejor el acento que
   pedirlo en el estilo? (yo: sí, en la comparativa).
