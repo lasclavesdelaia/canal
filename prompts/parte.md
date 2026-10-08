@@ -3,6 +3,23 @@
 Lo que ha pasado en inteligencia artificial desde el episodio anterior (en la práctica, las últimas 24 horas; el
 lunes, también lo importante del fin de semana que no se contó).
 
+**El tono del parte se queda como está:** informativo, ágil, con su opinión breve cuando toque. La reflexión larga
+del apartado 2 de la pauta es sobre todo para los semanales; aquí, como mucho una frase de fondo al cerrar una
+noticia principal.
+
+## Si hubo días sin parte
+
+Mira la tarjeta del último parte (su línea `cubre`). Si el último parte es de antes de ayer o más atrás, este parte
+cubre todo lo ocurrido desde entonces:
+
+- Lo dice al empezar, con naturalidad y sin explicar por qué: «No hubo parte desde el martes 3 de noviembre; esto es
+  lo más importante desde entonces».
+- Selecciona más duro: lo que siga importando hoy, por importancia, no día a día. Lo que ya se ha quedado viejo se
+  despacha en una frase o se omite.
+- Puede llegar a unos 15 minutos (2.250 palabras); no más.
+- Un solo episodio, con la fecha de hoy. Nunca episodios atrasados con fechas pasadas.
+- La tarjeta lo refleja en `cubre` (por ejemplo, `2026-11-04 a 2026-11-07`).
+
 ## Extensión
 
 - Depende del día: de 450 a 2.250 palabras, es decir, de 3 a 15 minutos.
@@ -30,6 +47,13 @@ El orden va por **importancia**, no por temas.
 6. **Cierre:** una frase breve. Sin invitaciones.
 
 Los nombres de estas partes son para ti: no los anuncies como secciones. Pasa de una a otra con frases naturales.
+
+## Para no repetirte
+
+Antes de investigar, lee las tarjetas de los últimos 7 partes (`tarjetas/*-parte.md`, en las ramas `claude/`).
+Una noticia ya contada solo vuelve si hay algo nuevo, y entonces se cuenta lo nuevo, remitiendo en media frase
+(«como contamos el lunes…»). Mira también los «hilos abiertos»: si hoy se resuelve alguno, es candidato a lo
+principal.
 
 ## Temas que vigilar (uso interno; no son secciones)
 
