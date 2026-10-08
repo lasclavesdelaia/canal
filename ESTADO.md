@@ -826,3 +826,48 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   (NBER, CEPR y el BPI ya los citaba mundo.md, pero faltaban en la red.) Sin comprobar que se lean sin cuenta.
 - Hecho (petición directa de Cristian): mundo.md, «Nivel y horizonte», viñeta de activos concretos con seguimiento
   (bitcóin, índices, empresas, oportunidades), a largo plazo y sin consejo personal; el hilo va en la tarjeta.
+
+## Miles de fuentes seguras (8 oct 2026, noche; petición de Cristian: «mete miles y miles de fuentes, mientras sean seguras»)
+- Hecho (paso 0): doc oficial code.claude.com/docs/en/cloud-environments: «Allowed domains», un dominio por línea; «A
+  leading `*.` matches every subdomain»; no cita límite de dominios ni comodines de primer nivel (`*.gov`): se prueba al
+  guardar. La API de rutinas (RemoteTrigger get) solo ve environment_id, no la red: el entorno se cambia en el navegador.
+- Decisión menor: la lista grande va en `config/red_custom.txt` (bloques comentados), no en fuentes.md, porque la
+  rutina lee fuentes.md entero en cada ejecución (dos al día): miles de dominios ahí serían ~30.000 tokens por
+  ejecución para nada. `scripts/red_custom.py` saca la lista lista para pegar; cada `*.x` añade también `x`.
+- Decisión menor: comodín `*.dominio` para instituciones (cubre sus subdominios); host exacto para plataformas donde
+  publica cualquiera (substack.com, github.io, youtube): solo el host concreto.
+- Fuentes de verificación: lista de la O.N.U. de oficinas de estadística (unstats.un.org/home/nso_sites, 219 webs) y
+  miembros del B.P.I. (61 bancos centrales). Lo demás, de memoria y comprobado por DNS y título de la portada.
+- En curso: escribir config/red_custom.txt por bloques y comprobar cada bloque (pruebas/red/, no se sube).
+- Hecho: bloques 00 (lista anterior, 158), 01 (comodines de administraciones y universidades: *.gov, *.int, *.edu,
+  *.gob.es, *.gov.uk…), 02 (organismos internacionales y bancos de desarrollo) y 03 (bancos centrales, ~170) en
+  pruebas/red/pNN_*.txt, comprobados por DNS y título. Quitados por no existir o estar aparcados (p. ej. pif.org).
+- Hecho: bloque 04 (oficinas de estadística, ~200; quitadas 9 webs caducadas que hoy son otra cosa: ssnbs.org,
+  ihsi.ht, cnsee.org, ons.mr…). Siguiente: 05 parlamentos y boletines oficiales.
+- Hecho: bloque 05 (parlamentos, boletines oficiales, ministerios de economía y reguladores, ~290). Siguiente: 06
+  academia y repositorios; 07 think tanks; 08 prensa por regiones; 09 IA. Al final, pasada de títulos contra
+  dominios aparcados o reconvertidos.
+- Hecho: bloque 06 (academia, repositorios, revistas, encuestas y datos abiertos, ~330). Fuera zenodo.org y osf.io:
+  cualquiera sube sin moderación.
+- Hecho: bloque 07 (think tanks, consultoras con estudios públicos, seguridad de la IA, derechos, energía; ~330).
+- Hecho: bloque 08 (prensa: agencias, diarios de referencia y económicos de ~150 países; ~640). Quitadas las cerradas (Télam, Notimex, Buenos Aires Herald). Siguiente: 09 IA; luego pasada de títulos.
+- Hecho: bloque 09 (IA: laboratorios de EE. UU., Europa, China, Corea, Japón, India, Golfo; chips; herramientas;
+  medición independiente; reguladores; prensa técnica en varios idiomas; ~300). Sin comodín en baidu.com y
+  naver.com (tienen foros y wikis abiertos): solo sus webs corporativas o de investigación.
+- Decisión menor: quitado `substack.com` a secas de la lista anterior (cualquiera publica); los boletines concretos
+  siguen por su subdominio. Se mantienen YouTube, GitHub, Hacker News y los alojadores de pódcast porque Cristian los
+  aprobó el 8 oct para entrevistas y código.
+- Hecho: config/red_custom.txt montado (bloques 00-10) y scripts/red_custom.py (imprime la lista; `--cuenta`).
+  ~2.840 líneas en el fichero, 5.227 al expandir (cada `*.x` lleva también `x`).
+- Hecho: pasada de títulos sobre los ~2.600 dominios. Quitados por aparcados o reconvertidos: pif.org, upb.it (en
+  venta), terranova.fr, agenciapublica.org (aparcado), globalfund.org («coming soon»; el bueno es theglobalfund.org),
+  esglobal.org, africaportal.org, synced.com, faes.org (no es la FAES española), cbq.qa (banco comercial, no el
+  central), mia.mk (dudoso). Bloque 10 con los sustitutos y los destinos de redirecciones.
+- Siguiente: pruebas (tests/test_red_custom.py), pauta en fuentes.md y mundo.md, y aplicar en el navegador.
+- Hecho: tests/test_red_custom.py (formato, sin repetidos, más de 3.000, nada prohibido —acortadores, foros,
+  plataformas abiertas—, fuentes de partida dentro). 74 pruebas en verde. Los subdominios de plataformas
+  (substack, github.io, wordpress, bearblog) quedan exactos, sin comodín.
+- Hecho: fuentes.md con cabecera nueva y «Qué fuente usar para qué» (cifra, ley, argumento, país poco cubierto, IA;
+  medios estatales sin prensa libre como versión oficial); el bloque final remite a red_custom.txt. mundo.md: una
+  frase en «El dato primero».
+- Siguiente: commit y push; luego el navegador (entorno claves-ia).

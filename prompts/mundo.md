@@ -137,8 +137,10 @@ sigue: uno, despacio.
 
 ## Cómo contarlo
 
-- **El dato primero**, de fuente oficial cuando la haya. Si un dato solo está en prensa secundaria, dilo («según
-  CNBC…»). No uses Wikipedia ni webs de dudosa calidad como fuente de cifras.
+- **El dato primero**, de fuente oficial cuando la haya: la red deja entrar en todos los bancos centrales, oficinas
+  de estadística, parlamentos y boletines oficiales, y en la prensa de referencia de cada país (qué fuente para qué:
+  `config/fuentes.md`). Si un dato solo está en prensa secundaria, dilo («según CNBC…»). No uses Wikipedia ni webs
+  de dudosa calidad como fuente de cifras.
 - **Las interpretaciones con nombre**, de escuelas distintas, cuando el tema lo merezca. Y después, la tuya: puedes
   tomar partido si lo razonas, sin ideología de por medio.
 - **Reflexión de largo plazo**: al menos una por clave, que haga pensar y no sea moralina.

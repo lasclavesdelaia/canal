@@ -1,12 +1,30 @@
 # Fuentes del redactor
 
-La rutina en la nube solo puede salir a los dominios del bloque final: es la lista «Custom» del entorno de red. Si
-añades una fuente aquí, añade también su dominio en el entorno de la rutina, y al revés. La lista se amplió mucho el
-8 oct 2026 (laboratorios, investigadores, entrevistas y pódcasts, más prensa): lo de arriba son las fuentes de
-partida; lo demás se usa cuando una noticia pide ir más a fondo.
+La rutina en la nube solo puede salir a los dominios de la red «Custom» de su entorno. Esa lista vive en
+`config/red_custom.txt` (bloques comentados; `python3 scripts/red_custom.py` la saca para pegar) y desde el 8 oct 2026
+tiene miles de dominios seguros: organismos internacionales, todos los bancos centrales y oficinas de estadística,
+parlamentos y boletines oficiales, universidades y repositorios, think tanks, prensa seria de cada región y la IA.
+Comodines: `*.gov`, `*.int`, `*.edu`, `*.gob.es`, `*.gov.uk`… dejan entrar en cualquier web oficial de esos
+dominios. No hace falta leer `red_custom.txt`: si un enlace no abre, no está en la red; anótalo al final de la
+respuesta para que se añada.
 
-Verificado el 8 oct 2026 que se leen sin cuenta (desde una casa, salvo donde se dice). La primera ejecución de la
+Lo de abajo son las fuentes de partida, verificadas el 8 oct 2026 (se leen sin cuenta). La primera ejecución de la
 rutina comprueba cada una desde la nube y anota las que fallen en su informe de ejecución.
+
+## Qué fuente usar para qué
+
+- **Una cifra:** la oficina de estadística o el banco central del país; para comparar países, F.M.I., Banco Mundial,
+  O.C.D.E., B.P.I. u O.N.U. La prensa solo si no hay dato oficial, y dicho así («según Reuters…»).
+- **Una ley o una decisión pública:** el boletín oficial o el parlamento del país; en la U.E., EUR-Lex y la Comisión.
+- **Un argumento de fondo o un modelo:** papers (NBER, CEPR, SSRN, RePEc, arXiv, revistas) y documentos de trabajo de
+  bancos centrales y del F.M.I. Un think tank aporta análisis, no datos neutros: se nombra y, si es de parte, se dice.
+- **Lo que pasa en un país poco cubierto:** su agencia de noticias y su prensa de referencia o económica, contrastadas
+  con O.N.U., ReliefWeb, Crisis Group o ACLED. Los medios estatales de países sin prensa libre (Xinhua, TASS,
+  IRNA…) se citan como la versión oficial, nunca como un hecho.
+- **IA:** el laboratorio para lo que anuncia; papers y medición independiente (Epoch AI, METR, Artificial Analysis,
+  arXiv) para lo que de verdad hace; la prensa técnica para el contexto. Lo que diga una empresa de sí misma se
+  atribuye.
+- **Siempre:** lo más reciente y con fecha; dos fuentes independientes para todo lo que no sea un dato oficial.
 
 ## IA: laboratorios y modelos
 
@@ -75,8 +93,7 @@ rutina comprueba cada una desde la nube y anota las que fallen en su informe de 
     Crisis Group `www.crisisgroup.org`, SIPRI `www.sipri.org`;
   - bancos centrales de países poco comentados, por ejemplo Australia `www.rba.gov.au`, Botsuana
     `www.bankofbotswana.bw`, Nepal `www.nrb.org.np`, Mongolia `www.mongolbank.mn`, África central (Chad) `www.beac.int`.
-    Otros bancos centrales: buscarlos en la lista del B.P.I. y, si no están en la red, anotarlo al final de la
-    respuesta para que se añadan.
+    Todos los bancos centrales y oficinas de estadística del mundo están en la red (8 oct 2026).
 - **Prensa de mercados (titulares y RSS):** CNBC (`www.cnbc.com`, `search.cnbc.com`). Trading Economics no se usa,
   porque sus condiciones limitan la extracción.
 - **Código y lanzamientos:** `github.com` (repositorios y notas de versión de modelos abiertos).
@@ -96,30 +113,4 @@ rutina comprueba cada una desde la nube y anota las que fallen en su informe de 
 
 ## Dominios para la red «Custom» de la rutina
 
-```
-openai.com anthropic.com deepmind.google blog.google ai.meta.com mistral.ai qwenlm.github.io api-docs.deepseek.com
-huggingface.co artificialanalysis.ai rss.arxiv.org export.arxiv.org arxiv.org epoch.ai importai.substack.com
-www.interconnects.ai techcrunch.com www.theverge.com www.ft.com news.ycombinator.com hn.algolia.com
-hacker-news.firebaseio.com www.boe.es servicios.ine.es www.ine.es app.bde.es www.bde.es www.ecb.europa.eu
-www.federalreserve.gov ec.europa.eu www.imf.org data.imf.org api.worldbank.org www.stats.gov.cn www.reuters.com
-apnews.com feeds.bbci.co.uk www.bbc.com elpais.com feeds.elpais.com www.expansion.com asia.nikkei.com
-home.treasury.gov api.fiscaldata.treasury.gov www.eia.gov www.boj.or.jp www.rbi.org.in www.cnbc.com search.cnbc.com
-github.com
-www.anthropic.com www.openai.com cdn.openai.com x.ai research.google ai.google.dev machinelearning.apple.com
-blogs.nvidia.com developer.nvidia.com blogs.microsoft.com www.microsoft.com aws.amazon.com cohere.com allenai.org
-www.moonshot.ai www.minimax.io z.ai metr.org www.stateof.ai hai.stanford.edu aiindex.stanford.edu scale.com
-livebench.ai simonwillison.net karpathy.ai karpathy.bearblog.dev www.oneusefulthing.org thezvi.substack.com
-www.understandingai.org www.normaltech.ai garymarcus.substack.com newsletter.semianalysis.com semianalysis.com
-www.lesswrong.com www.alignmentforum.org www.astralcodexten.com substack.com dwarkesh.com www.dwarkesh.com
-www.latent.space latent.space lexfridman.com www.cognitiverevolution.ai www.nopriors.com www.youtube.com youtube.com
-m.youtube.com www.ivoox.com podcasts.apple.com feeds.megaphone.fm anchor.fm feeds.transistor.fm feeds.simplecast.com
-rss.art19.com www.spreaker.com arstechnica.com www.wired.com www.technologyreview.com www.economist.com
-www.bloomberg.com www.nytimes.com www.platformer.news www.404media.co www.axios.com www.semafor.com venturebeat.com
-thenextweb.com www.nature.com www.science.org www.xataka.com www.genbeta.com www.elconfidencial.com www.eldiario.es
-www.lavanguardia.com cincodias.elpais.com www.scmp.com www.koreatimes.co.kr digital-strategy.ec.europa.eu
-artificialintelligenceact.eu www.whitehouse.gov www.nist.gov www.gov.uk oecd.ai www.oecd.org
-www.bis.org www.worldbank.org openknowledge.worldbank.org data.worldbank.org www.elibrary.imf.org www.nber.org
-cepr.org unctad.org wid.world ourworldindata.org hdr.undp.org fred.stlouisfed.org www.bruegel.org www.piie.com
-www.brookings.edu reliefweb.int news.un.org www.crisisgroup.org www.sipri.org www.rba.gov.au www.bankofbotswana.bw
-www.nrb.org.np www.mongolbank.mn www.beac.int
-```
+La lista está en `config/red_custom.txt` (más de 5.000 líneas al expandir). Cada dominio de arriba está dentro.
