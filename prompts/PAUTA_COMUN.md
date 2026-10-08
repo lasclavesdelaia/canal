@@ -33,6 +33,15 @@ apartado 0 (seguridad) está por encima.
   dice que un modelo nuevo supera al de hace un año (eso se supone; lo que importa es cuánto y en qué) y no se vende
   como novedad lo que es así desde hace tiempo (que los modelos abiertos chinos lideran lo es desde hace unos dos
   años). En política, ni encuestas repetidas ni lo que todo el mundo ya ha oído.
+- **Nada viejo contado como nuevo.** Lo de hace más de unas dos semanas no se presenta como noticia. Tu entrenamiento
+  no te dice qué es ya viejo: antes de contar algo como nuevo, mira su fecha en la fuente y busca en las tarjetas si
+  ya salió. Lo sabido se da por sabido o cabe en media frase de contexto; se cuenta solo lo nuevo. Ejemplos de lo que
+  no: una compra de hace meses dada como de ayer; «por fin vemos que la IA es un riesgo de ciberseguridad», cuando
+  se sabe desde hace tiempo; volver por quinta vez a lo mismo de una empresa sin nada nuevo.
+- **Datos recientes y análisis con fondo.** Informes concretos, con su autor y su fecha; cifras recientes y
+  comprobadas. En finanzas y burbuja, nada de obviedades («una burbuja depende de los beneficios, no de la
+  valoración»): lo que importa son los beneficios futuros y el ritmo de crecimiento de los ingresos, con el dato
+  reciente de cada empresa (por ejemplo, cuánto se han multiplicado sus ingresos de un año a otro, según su fuente).
 - **Lo que no está confirmado se dice una vez, y solo si importa.** Una frase, y se sigue. Nada de muletillas como
   «es lo que dicen ellos», «no hay datos para confirmarlo» o «aún no se sabe» repetidas: basta con atribuir el dato a
   quien lo da.

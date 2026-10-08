@@ -788,3 +788,8 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Parte 2 (subtítulos de Gargoyles Devon): ESPERA el sí de Cristian al coste (~100.000 tokens de lectura; unos
   300.000-600.000 procesados en total). Ojo: esta sesión ya tiene la marca de «privado»; si lee los subtítulos (de
   fuera), el portero cortará el push. Mejor hacerla en una sesión limpia.
+- Hecho (misma noche): tres notas más de Cristian, llegadas por la sesión «IVOOX REVISAR»: nada de hace más de ~2
+  semanas como nuevo (comprobar fecha y tarjetas, porque el modelo no sabe qué es viejo); en finanzas y burbuja,
+  beneficios futuros y crecimiento de ingresos con datos recientes, sin obviedades; informes concretos con autor y
+  fecha. Dos viñetas nuevas en «Línea editorial» de PAUTA_COMUN. La cifra de ingresos de Anthropic que dio Cristian
+  (×14) NO va en los prompts: no está verificada.
