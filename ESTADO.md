@@ -69,8 +69,15 @@ Claves mundo:
 - Hecho: commit inicial local c78dd93 (23 ficheros, sin pruebas/ ni _site/). Firma del repo: «Las claves de la IA
   <lasclavesdelaia@gmail.com>», para no publicar el nombre del Mac.
 - Hecho: `gh` 2.102.0 instalado (Homebrew).
-- Bloqueado: no hay sesión de GitHub. Cristian tiene que hacer `gh auth login` en su terminal.
-- Siguiente: remoto, push de main, Pages, rama de prueba y workflow.
+- Hecho: Cristian hizo `gh auth login` (cuenta lasclavesdelaia, admin del repo). Entorno «publicar» comprobado:
+  solo ramas elegidas y con revisor.
+- Hecho: incluidos tras leerlos los cambios de la sesión de diseño (fuentes de mercados y github.com; claves.md y
+  mundo.md). Commit eee1c10.
+- Hecho: remoto origin y push de main.
+- Hecho: Pages activado con origen GitHub Actions y dominio claves.cristiansdrojek.com. DNS resuelve a
+  lasclavesdelaia.github.io. HTTPS: el certificado aún no existe; activarlo cuando GitHub lo emita.
+- Hecho: rama claude/episodios-2026-10-08 con solo episodios/2026-10-08-parte.md (validado, 1.466 palabras).
+- En curso: workflow lanzado a mano (run 37753536547). Espera la aprobación de Cristian en el entorno «publicar».
 
 ### Preguntas para Cristian (F3)
 - En el Parte de prueba, el FT citado dice «25 %» de crecimiento de beneficios y el guion dice «veintisiete por

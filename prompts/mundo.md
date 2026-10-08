@@ -21,10 +21,11 @@ semana buscando noticias sesgadas.
    - aranceles y sanciones;
    - energía y materias primas;
    - cadenas de suministro (chips incluidos).
-4. **España, de pasada y sin rencillas:**
-   - solo leyes importantes aprobadas o publicadas en el BOE;
+4. **España, sin rencillas:**
+   - leyes importantes aprobadas o publicadas en el BOE;
    - subidas o bajadas de impuestos;
-   - datos de la economía nacional (INE, Banco de España).
+   - **la economía española:** empleo y paro, inflación, crecimiento, vivienda, deuda, salarios (INE, Banco de
+     España, Eurostat), con la misma calma y los mismos datos que las grandes economías.
    - Nada de quién dijo qué en el Congreso ni de peleas entre partidos.
 
 ## Cómo contarlo

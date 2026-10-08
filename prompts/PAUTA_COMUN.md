@@ -172,8 +172,8 @@ Sale del estudio de los canales que sigue el oyente (8 oct 2026). Si choca con a
 - robótica, chips y energía;
 - leyes, y usos reales con cifras.
 
-En economía y geopolítica: EE. UU., China, Japón, Europa y países menos cubiertos. De España, solo leyes, impuestos y
-datos, nunca rencillas. Ningún país se come el programa. Temas de fondo:
+En economía y geopolítica: EE. UU., China, Japón, Europa y países menos cubiertos. De España: leyes, impuestos y la
+economía española, nunca rencillas. Ningún país se come el programa. Temas de fondo:
 - bancos centrales;
 - inflación frente a precios que suben por escasez;
 - tipos nominales y reales, bonos y deuda;
