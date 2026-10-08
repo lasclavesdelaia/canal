@@ -871,3 +871,13 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   medios estatales sin prensa libre como versión oficial); el bloque final remite a red_custom.txt. mundo.md: una
   frase en «El dato primero».
 - Siguiente: commit y push; luego el navegador (entorno claves-ia).
+- Hecho: commit 34ff79d subido a main.
+- Bloqueo: el navegador integrado no tiene la sesión de claude.ai abierta (redirige a logout/login). No meto
+  contraseñas: o Cristian inicia sesión ahí, o lo pega él a mano. Lista lista: pruebas/red/PEGAR_red_custom.txt
+  (5.218 líneas, local). Pasos: `python3 scripts/red_custom.py | pbcopy`; claude.ai/code › entornos › claves-ia ›
+  Network access: Custom › borrar el cuadro «Allowed domains» › Cmd+V › Guardar. Si rechaza los comodines de
+  primer nivel (`*.gov`, `*.int`…), quitar el bloque 01 de config/red_custom.txt y repetir.
+- Preguntas para Cristian: ¿inicias sesión en el navegador de la app para que lo haga yo, o lo pegas tú?
+- Pendiente tras guardar: la rutina de las 5:07 del 9 oct (3:07 UTC) es la primera con la lista nueva. Qué mirar:
+  en su informe de ejecución, si alguna fuente de fuentes.md no abre (red), si cita fuentes oficiales nuevas en
+  mundo, y que no haya errores de red en WebFetch a dominios con comodín (p. ej. www.ine.es, una web *.gov).
