@@ -354,3 +354,9 @@ Fuentes oficiales leídas el 8 oct 2026 (ninguna muestra fecha de actualización
 - Paso 2: escrito prompts/ENCARGADO.md (revisión dominical; informe en revisiones/ en rama claude/revision-…; solo
   propone; puede escribir hasta 2 partes atrasados). sitio.py no necesita cambios: solo publica desde Releases, y
   publicar.py solo coge episodios/*.md, así que las revisiones no salen en la web. README con el párrafo. Pruebas OK.
+- Rutina creada con el «sí» de Cristian: trig_017oEyXG9KoFZT4a74MhYB7j, «Encargado semanal – Las claves de la IA»,
+  cron «7 16 * * 0» (18:07 de Madrid en verano), entorno env_01LBC5CM7mott3eKNRnzodjy (el de la diaria), Sonnet 5.5,
+  sin conectores (al crearla se pegaron Drive/Gmail/Docs solos; quitados con update clear_mcp_connections). Primera
+  vez: domingo 11 oct, 16:07 UTC. OJO 25 oct: cambio de hora → pasar a «7 17 * * 0». Sin «Run now».
+- Rehacer: el run 37769959624 (lanzado ya, no por mí) rehízo 2026-10-08-parte con es-ES-Chirp3-HD-Aoede (531 s,
+  8.838 caracteres). Run 37769194783 (claves y mundo del 8) terminó bien. No lancé otro.
