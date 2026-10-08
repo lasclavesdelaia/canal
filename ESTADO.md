@@ -119,3 +119,22 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
 ### Preguntas para Cristian (F3)
 - En el Parte de prueba, el FT citado dice «25 %» de crecimiento de beneficios y el guion dice «veintisiete por
   ciento». No lo toco (no puedo comprobarlo); si te importa, rechaza el despliegue.
+
+## Comparativa de voces (8 oct 2026)
+- Hecho: comprobado en la documentación oficial de Google Cloud TTS:
+  - Chirp 3 HD: 30 voces; nombre `es-ES-Chirp3-HD-<Voz>`.
+  - Gemini-TTS por la misma API (`text:synthesize`): `voice.modelName` (gemini-2.5-flash-tts, gemini-2.5-pro-tts,
+    gemini-3.1-flash-tts-preview), `voice.name` = nombre corto («Charon»), `input.prompt` = instrucción de estilo.
+    es-ES admitido. Límites: 4.000 bytes de texto y 4.000 de estilo.
+  - Precios: Chirp 3 HD, 1 M caracteres/mes gratis y luego 30 $/M. Gemini 2.5 Flash TTS, 0,50 $/M tokens de texto
+    más 10 $/M tokens de audio (25 tokens por segundo), sin franja gratis.
+  - Sin confirmar: que la clave de API valga para Gemini (la guía usa OAuth), y que los 300 $ de la prueba cubran
+    Gemini-TTS (solo excluyen Gemini en AI Studio y los modelos de socios).
+- Hecho (commit local a682e20): `scripts/comparar_voces.py`, `.github/workflows/comparar_voces.yml` y
+  `voz.peticion` (modelo y estilo). 14 pruebas en verde.
+- En curso: el portero bloqueó el push en la sesión que lo escribió. Falta `git push` y
+  `gh workflow run comparar_voces.yml` desde una sesión nueva; luego Cristian aprueba en el correo.
+- Siguiente: Cristian elige de oído. Si elige Gemini, poner `modelo` y `estilo` en `voz` de config/programas.json
+  (`voz.py` ya los lee). Coste estimado con ~470.000 caracteres al mes (unas 8,7 h de audio a ~15 caracteres por segundo): Chirp 3 HD, 0 $
+  (dentro del millón gratis); Gemini 2.5 Flash, unos 8 $/mes; Gemini 3.1 Flash o 2.5 Pro, unos 16 $/mes. Los
+  créditos (vencen el 7 ene 2027) lo cubrirían si valen para Gemini; después se pagaría.
