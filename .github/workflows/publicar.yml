@@ -70,9 +70,17 @@ jobs:
           fetch-depth: 0
       - name: Herramientas
         run: which ffmpeg ffprobe || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+      - name: Token de la voz Gemini (cuenta de servicio de voz-claves, solo rol «Usuario de Agent Platform»)
+        id: voz_gemini
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GOOGLE_VOZ_GEMINI_SA }}
+          token_format: access_token
+          access_token_lifetime: 3600s
       - name: Recoger, validar, poner voz y publicar
         env:
           GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
+          GOOGLE_VOZ_TOKEN: ${{ steps.voz_gemini.outputs.access_token }}
           GH_TOKEN: ${{ github.token }}
           REHACER: ${{ inputs.rehacer }}
         run: python3 scripts/publicar.py --sitio _site

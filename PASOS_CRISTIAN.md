@@ -94,3 +94,23 @@ Si lo dejas para otro día, el pódcast cuenta los rankings cuando los publique 
 ---
 
 Cuando termines: el 1 y el 7 los hace solo tu cuenta; el 2, 3, 5 y 6 los compruebo yo con una sesión limpia.
+
+## Voz Gemini 3.8 para semanales y especiales (rama `claude/voz-gemini`, 8 oct 2026)
+
+Solo si decides seguir. Tú creas la cuenta y la clave; Claude nunca las toca.
+
+1. Abre console.cloud.google.com con el proyecto **voz-claves** elegido arriba.
+2. Menú › **IAM y administración › Cuentas de servicio** › **Crear cuenta de servicio**.
+   Nombre: `voz-gemini`. Pulsa **Crear y continuar**.
+3. En «Otorgar acceso», elige solo el rol **Usuario de Agent Platform** (en inglés, «Agent Platform User»;
+   si aún sale con el nombre viejo, «Vertex AI User», `roles/aiplatform.user`). Ningún otro. **Listo**.
+4. Entra en la cuenta `voz-gemini` › pestaña **Claves** › **Agregar clave › Crear clave nueva › JSON**.
+   Se descarga un archivo .json. No lo abras ni lo copies a ningún otro sitio.
+5. En GitHub: repositorio `lasclavesdelaia/canal` › **Settings › Environments › publicar** ›
+   **Environment secrets › Add secret**. Nombre: `GOOGLE_VOZ_GEMINI_SA`. Valor: pega el contenido entero del .json.
+6. Borra el .json del Mac (y vacía la papelera) cuando GitHub lo haya guardado.
+7. **Tope duro** (recomendado): Facturación › **Presupuestos y alertas** › Crear presupuesto ›
+   tipo **Spend cap** (tope de gasto), proyecto voz-claves, servicio **Agent Platform**, mensual.
+   Importe: **10 $** mientras duren los créditos (el tope cuenta el coste bruto, sin descontar créditos;
+   con menos se pararía aunque pagaran los créditos). Desde el 7 ene 2027, lo que quieras pagar al mes.
+8. Dile a Claude «fusiona la voz Gemini». Fusionar antes del paso 5 rompería la publicación.

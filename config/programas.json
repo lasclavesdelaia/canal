@@ -22,6 +22,18 @@
     "velocidad": 1.1,
     "tope_caracteres_mes": 900000
   },
+  "voces": {
+    "gemini": {
+      "via": "agent-platform",
+      "proyecto": "512994302884",
+      "modelo": "gemini-3.8-flash-tts",
+      "nombre": "Alnilam",
+      "idioma": "es-ES",
+      "estilo": "Locutor de Madrid. Acento de España peninsular, con la z y la c como en España, sin seseo. Tono sereno de parte informativo, ritmo ágil. Sin respiraciones audibles entre frases.",
+      "quitar_respiraciones": {"modo": "atenuar", "db": -30},
+      "tope_caracteres_mes": 300000
+    }
+  },
   "programas": {
     "parte": {
       "lista": "Parte diario IA",
@@ -33,6 +45,7 @@
     },
     "claves": {
       "lista": "Claves semanales IA",
+      "voz": "gemini",
       "descripcion": "Cada sábado, las noticias del día y los temas de fondo de la semana en inteligencia artificial, con calma y con contexto.",
       "dias": "sabado",
       "palabras_min": 2400,
@@ -41,6 +54,7 @@
     },
     "mundo": {
       "lista": "Claves mundo",
+      "voz": "gemini",
       "descripcion": "Cada domingo, la economía y la geopolítica de la semana con datos: grandes economías, países emergentes y las leyes e impuestos que importan en España.",
       "dias": "domingo",
       "palabras_min": 2400,
@@ -49,6 +63,7 @@
     },
     "especial": {
       "lista": "Especiales",
+      "voz": "gemini",
       "descripcion": "De vez en cuando, un tema investigado a fondo, de quince minutos a una hora: qué se sabe, qué dicen las distintas posturas y con qué datos, con todas sus fuentes.",
       "dias": "a veces",
       "palabras_min": 2400,

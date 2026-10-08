@@ -1,7 +1,9 @@
-"""Convierte el texto hablado en MP3 con Google Cloud Text-to-Speech (voces Chirp 3 HD o Gemini-TTS).
+"""Convierte el texto hablado en MP3 con Google Cloud Text-to-Speech (voces Chirp 3 HD o Gemini-TTS) o, para
+Gemini 3.8 TTS, con la Gemini Enterprise API de Agent Platform (voz con "via": "agent-platform").
 
-La clave llega por la variable de entorno GOOGLE_TTS_KEY (secreto del entorno «publicar» de GitHub Actions).
-Nunca se escribe en disco ni en el registro.
+La clave de Cloud TTS llega por GOOGLE_TTS_KEY; el token de Agent Platform, por GOOGLE_VOZ_TOKEN (lo saca el
+paso google-github-actions/auth de la cuenta de servicio guardada en el secreto GOOGLE_VOZ_GEMINI_SA del entorno
+«publicar»). Nunca se escriben en disco ni en el registro.
 """
 import array
 import base64
@@ -16,6 +18,8 @@ from pathlib import Path
 from comun import pronunciable
 
 API = "https://texttospeech.googleapis.com/v1/text:synthesize"
+AGENT_PLATFORM = ("https://aiplatform.googleapis.com/v1/projects/{proyecto}/locations/global/publishers/google/"
+                  "models/{modelo}:generateContent")
 MAX_BYTES = 4000  # el límite de la API es 5.000 bytes por petición; dejamos margen
 
 
@@ -72,7 +76,26 @@ def peticion(texto, voz):
     return cuerpo
 
 
+def peticion_agent_platform(texto, voz):
+    """Cuerpo para Gemini 3.8 TTS (generateContent). El estilo va en speechMetadata.style; el idioma se fija con
+    speechConfig.languageCode. Sin temperature: el modelo la rechaza."""
+    parte = {"text": texto}
+    if voz.get("estilo"):
+        parte["speechMetadata"] = {"style": voz["estilo"]}
+    return {
+        "contents": [{"role": "user", "parts": [parte]}],
+        "generationConfig": {"responseModalities": ["AUDIO"],
+                             "speechConfig": {"languageCode": voz["idioma"], "voiceConfig": {"voice": voz["nombre"]}}},
+    }
+
+
 def sintetizar_trozo(texto, voz, clave):
+    if voz.get("via") == "agent-platform":  # devuelve WAV (24 kHz, mono)
+        url = AGENT_PLATFORM.format(proyecto=voz["proyecto"], modelo=voz["modelo"])
+        req = urllib.request.Request(url, data=json.dumps(peticion_agent_platform(texto, voz)).encode(), method="POST",
+                                     headers={"Content-Type": "application/json", "Authorization": f"Bearer {clave}"})
+        with urllib.request.urlopen(req, timeout=300) as r:
+            return base64.b64decode(json.loads(r.read())["candidates"][0]["content"]["parts"][0]["inlineData"]["data"])
     cuerpo = peticion(texto, voz)
     req = urllib.request.Request(API, data=json.dumps(cuerpo).encode(), method="POST",
                                  headers={"Content-Type": "application/json", "X-Goog-Api-Key": clave})
@@ -83,13 +106,14 @@ def sintetizar_trozo(texto, voz, clave):
 def sintetizar(texto, voz, destino, clave=None):
     """Escribe el MP3 final (mono, 64 kbps) en destino. Devuelve el número de caracteres enviados.
     Con voz.quitar_respiraciones, antes de codificar pasa el audio por quitar_respiraciones()."""
-    clave = clave or os.environ["GOOGLE_TTS_KEY"]
+    agent = voz.get("via") == "agent-platform"
+    clave = clave or os.environ["GOOGLE_VOZ_TOKEN" if agent else "GOOGLE_TTS_KEY"]
     partes = trozos(pronunciable(texto))
     with tempfile.TemporaryDirectory() as tmp:
         lista = Path(tmp) / "lista.txt"
         nombres = []
         for i, t in enumerate(partes):
-            f = Path(tmp) / f"{i:04d}.mp3"
+            f = Path(tmp) / f"{i:04d}.{'wav' if agent else 'mp3'}"
             f.write_bytes(sintetizar_trozo(t, voz, clave))
             nombres.append(f"file '{f}'")
         lista.write_text("\n".join(nombres))

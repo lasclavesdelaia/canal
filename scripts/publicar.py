@@ -16,6 +16,7 @@ Uso:
 """
 import argparse
 import datetime
+import functools
 import json
 import os
 import subprocess
@@ -26,7 +27,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import sitio  # noqa: E402
 import voz  # noqa: E402
-from comun import Episodio, config, huella_audio, partes_nombre, texto_hablado  # noqa: E402
+from comun import Episodio, config, huella_audio, partes_nombre, texto_hablado, voz_de  # noqa: E402
 from validar import validar  # noqa: E402
 
 from zoneinfo import ZoneInfo  # noqa: E402
@@ -104,11 +105,25 @@ def publicados(repo, prefijo="ep-"):
     return salida
 
 
-def caracteres_del_mes(eps, hoy):
-    """Caracteres enviados a la voz este mes: episodios publicados en él y voces rehechas en él."""
+def caracteres_del_mes(eps, hoy, nombre_voz=None):
+    """Caracteres enviados a la voz este mes: episodios publicados en él y voces rehechas en él.
+    Con nombre_voz, solo los de esa voz."""
     mes = hoy.strftime("%Y-%m")
+    eps = [e for e in eps if nombre_voz is None or e.get("voz") == nombre_voz]
     return sum(e.get("caracteres", 0) for e in eps if e.get("publicado", "").startswith(mes)) + \
         sum(e.get("rehechos", {}).get(mes, 0) for e in eps)
+
+
+def sin_cupo(hablado, v, cfg, cuenta):
+    """Motivo por el que no cabe en el mes, o None. Tope general (voz.tope_caracteres_mes) y, si la voz del
+    programa trae el suyo (p. ej. Gemini, de pago), también ese. cuenta(nombre_voz=None) da lo gastado."""
+    tope = cfg["voz"]["tope_caracteres_mes"]
+    if cuenta() + len(hablado) > tope:
+        return f"el mes llegaría a {cuenta() + len(hablado)} caracteres (tope {tope})"
+    propio = v.get("tope_caracteres_mes") if v is not cfg["voz"] else None
+    if propio and cuenta(v["nombre"]) + len(hablado) > propio:
+        return f"la voz {v['nombre']} llegaría a {cuenta(v['nombre']) + len(hablado)} caracteres (tope {propio})"
+    return None
 
 
 def elegir_rehacer(peticion, ya):
@@ -149,9 +164,10 @@ def mp3_del_borrador(ep, cfg, repo, borradores, carpeta):
     return ruta
 
 
-def publicar_uno(ep, cfg, repo, usados, borradores=()):
+def publicar_uno(ep, cfg, repo, cuenta, borradores=()):
     hablado = texto_hablado(ep, cfg)
-    tope = cfg["voz"]["tope_caracteres_mes"]
+    v = voz_de(ep.programa, cfg)
+    motivo = sin_cupo(hablado, v, cfg, cuenta)
     with tempfile.TemporaryDirectory() as tmp:
         mp3 = Path(tmp) / f"{ep.clave}.mp3"
         previo = mp3_del_borrador(ep, cfg, repo, borradores, tmp)
@@ -159,18 +175,18 @@ def publicar_uno(ep, cfg, repo, usados, borradores=()):
             previo.rename(mp3)
             caracteres = 0  # ya contaron en el mes del borrador
             print(f"{ep.clave}: se reutiliza el audio del borrador")
-        elif usados + len(hablado) > tope:
-            print(f"NO se publica {ep.clave}: el mes llegaría a {usados + len(hablado)} caracteres (tope {tope})")
+        elif motivo:
+            print(f"NO se publica {ep.clave}: {motivo}")
             return None
         else:
-            caracteres = voz.sintetizar(hablado, cfg["voz"], mp3)
+            caracteres = voz.sintetizar(hablado, v, mp3)
         meta = {
             "clave": ep.clave, "programa": ep.programa, "slug": ep.slug, "fecha": ep.fecha, "titulo": ep.titulo,
             "descripcion": ep.descripcion, "cuerpo": ep.cuerpo, "fuentes": ep.fuentes,
             "audio_url": f"https://github.com/{repo}/releases/download/ep-{ep.clave}/{ep.clave}.mp3",
             "bytes": mp3.stat().st_size, "duracion": voz.duracion_segundos(mp3), "caracteres": caracteres,
             "publicado": datetime.datetime.now(MADRID).replace(microsecond=0).isoformat(),
-            "voz": cfg["voz"]["nombre"],
+            "voz": v["nombre"],
         }
         notas = Path(tmp) / "meta.json"
         notas.write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -182,18 +198,19 @@ def publicar_uno(ep, cfg, repo, usados, borradores=()):
     return meta
 
 
-def borrador_uno(ep, cfg, repo, usados, previo):
+def borrador_uno(ep, cfg, repo, cuenta, previo):
     """Pone voz a un borrador de especial y lo sube a la Release PRERELEASE borrador-<slug> (la crea o la
     sustituye). No toca la web ni los feeds. Devuelve su meta o None si no cabe en el tope."""
     hablado = texto_hablado(ep, cfg)
-    tope = cfg["voz"]["tope_caracteres_mes"]
-    if usados + len(hablado) > tope:
-        print(f"NO se hace el borrador {ep.slug}: el mes llegaría a {usados + len(hablado)} caracteres (tope {tope})")
+    v = voz_de(ep.programa, cfg)
+    motivo = sin_cupo(hablado, v, cfg, cuenta)
+    if motivo:
+        print(f"NO se hace el borrador {ep.slug}: {motivo}")
         return None
     etiqueta = f"borrador-{ep.slug}"
     with tempfile.TemporaryDirectory() as tmp:
         mp3 = Path(tmp) / f"especial-{ep.slug}.mp3"
-        caracteres = voz.sintetizar(hablado, cfg["voz"], mp3)
+        caracteres = voz.sintetizar(hablado, v, mp3)
         mes = datetime.datetime.now(MADRID).strftime("%Y-%m")
         anteriores = dict((previo or {}).get("rehechos", {}))
         if previo and previo.get("publicado", "").startswith(mes):  # lo de antes de este mes ya no cuenta
@@ -201,7 +218,7 @@ def borrador_uno(ep, cfg, repo, usados, previo):
         meta = {
             "clave": ep.clave, "slug": ep.slug, "programa": ep.programa, "fecha": ep.fecha, "titulo": ep.titulo,
             "huella": huella_audio(ep, cfg), "bytes": mp3.stat().st_size, "duracion": voz.duracion_segundos(mp3),
-            "caracteres": caracteres, "rehechos": anteriores, "voz": cfg["voz"]["nombre"],
+            "caracteres": caracteres, "rehechos": anteriores, "voz": v["nombre"],
             "publicado": datetime.datetime.now(MADRID).replace(microsecond=0).isoformat(),
         }
         notas = Path(tmp) / "meta.json"
@@ -239,23 +256,24 @@ def borradores_pendientes(cfg, borradores, hoy):
     return pendientes, rechazados
 
 
-def rehacer_uno(meta, cfg, repo, usados, hoy):
+def rehacer_uno(meta, cfg, repo, cuenta, hoy):
     """Vuelve a poner voz a un episodio publicado con la config actual. El MP3 se sube con el mismo nombre
     (--clobber), así que la URL del feed no cambia. Devuelve el meta actualizado o None si no cabe en el tope."""
     hablado = texto_hablado(episodio_de(meta), cfg)
-    tope = cfg["voz"]["tope_caracteres_mes"]
-    if usados + len(hablado) > tope:
-        print(f"NO se rehace {meta['clave']}: el mes llegaría a {usados + len(hablado)} caracteres (tope {tope})")
+    v = voz_de(meta["programa"], cfg)
+    motivo = sin_cupo(hablado, v, cfg, cuenta)
+    if motivo:
+        print(f"NO se rehace {meta['clave']}: {motivo}")
         return None
     with tempfile.TemporaryDirectory() as tmp:
         mp3 = Path(tmp) / f"{meta['clave']}.mp3"
-        caracteres = voz.sintetizar(hablado, cfg["voz"], mp3)
+        caracteres = voz.sintetizar(hablado, v, mp3)
         nuevo = dict(meta)
         mes = hoy.strftime("%Y-%m")
         rehechos = dict(meta.get("rehechos", {}))
         rehechos[mes] = rehechos.get(mes, 0) + caracteres
         nuevo.update({"bytes": mp3.stat().st_size, "duracion": voz.duracion_segundos(mp3), "caracteres": caracteres,
-                      "voz": cfg["voz"]["nombre"], "rehechos": rehechos})
+                      "voz": v["nombre"], "rehechos": rehechos})
         notas = Path(tmp) / "meta.json"
         notas.write_text(json.dumps(nuevo, ensure_ascii=False, indent=1), encoding="utf-8")
         etiqueta = f"ep-{meta['clave']}"
@@ -327,7 +345,7 @@ def main():
         if args.sin_voz:
             print(f"valido (sin publicar): {nombre}")
             continue
-        meta = publicar_uno(ep, cfg, repo, caracteres_del_mes(ya + borradores, hoy), borradores)
+        meta = publicar_uno(ep, cfg, repo, functools.partial(caracteres_del_mes, ya + borradores, hoy), borradores)
         if meta:
             ya.append(meta)
 
@@ -341,7 +359,7 @@ def main():
     nuevos += len(pendientes)
     if not args.solo_comprobar and not args.sin_voz:
         for ep, previo in pendientes:
-            meta = borrador_uno(ep, cfg, repo, caracteres_del_mes(ya + borradores, hoy), previo)
+            meta = borrador_uno(ep, cfg, repo, functools.partial(caracteres_del_mes, ya + borradores, hoy), previo)
             if meta:
                 borradores = [b for b in borradores if b.get("slug") != ep.slug] + [meta]
 
@@ -355,7 +373,7 @@ def main():
         return 0
     if a_rehacer and not args.sin_voz:
         for meta in a_rehacer:
-            nuevo = rehacer_uno(meta, cfg, repo, caracteres_del_mes(ya + borradores, hoy), hoy)
+            nuevo = rehacer_uno(meta, cfg, repo, functools.partial(caracteres_del_mes, ya + borradores, hoy), hoy)
             if nuevo:
                 ya = [nuevo if e["clave"] == nuevo["clave"] else e for e in ya]
     with tempfile.TemporaryDirectory() as tmp:

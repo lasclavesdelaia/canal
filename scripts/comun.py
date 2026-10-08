@@ -105,11 +105,20 @@ def texto_hablado(ep, cfg=None):
     return "\n\n".join([intro, ep.cuerpo, prog["despedida"]])
 
 
+def voz_de(programa, cfg=None):
+    """Voz de un programa: la de «voces» que nombre programas.<programa>.voz, o la general (cfg["voz"])."""
+    cfg = cfg or config()
+    nombre = cfg["programas"].get(programa, {}).get("voz")
+    return cfg["voces"][nombre] if nombre else cfg["voz"]
+
+
 def huella_audio(ep, cfg=None):
     """Identifica el audio que saldría de un episodio: texto hablado y voz. Si coincide, el MP3 se reutiliza."""
     import hashlib
     cfg = cfg or config()
-    v = cfg["voz"]
-    base = "\n".join([v["nombre"], str(v.get("velocidad", "")), v.get("modelo", ""), v.get("estilo", ""),
-                      texto_hablado(ep, cfg)])
+    v = voz_de(ep.programa, cfg)
+    partes = [v["nombre"], str(v.get("velocidad", "")), v.get("modelo", ""), v.get("estilo", "")]
+    if v.get("quitar_respiraciones"):  # solo si está: así no cambia la huella de lo ya hecho sin el filtro
+        partes.append(json.dumps(v["quitar_respiraciones"], sort_keys=True))
+    base = "\n".join(partes + [texto_hablado(ep, cfg)])
     return hashlib.sha256(base.encode()).hexdigest()
