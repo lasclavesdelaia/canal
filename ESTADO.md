@@ -172,6 +172,9 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
   `voz.peticion` (modelo y estilo). 14 pruebas en verde.
 - En curso: el portero bloqueó el push en la sesión que lo escribió. Falta `git push` y
   `gh workflow run comparar_voces.yml` desde una sesión nueva; luego Cristian aprueba en el correo.
+- Hecho (8 oct, 10:09): Release `comparativa-voces-1` con los 4 Chirp (unos 41 s cada uno). Los 2 Gemini dieron
+  HTTP 403: «Agent Platform API» sin activar en el proyecto 512994302884. Cristian debe activarla (y quizá añadirla a
+  las restricciones de la clave «voz-github») y relanzar el flujo; o elegir entre los Chirp.
 - Siguiente: Cristian elige de oído. Si elige Gemini, poner `modelo` y `estilo` en `voz` de config/programas.json
   (`voz.py` ya los lee). Coste estimado con ~470.000 caracteres al mes (unas 8,7 h de audio a ~15 caracteres por segundo): Chirp 3 HD, 0 $
   (dentro del millón gratis); Gemini 2.5 Flash, unos 8 $/mes; Gemini 3.1 Flash o 2.5 Pro, unos 16 $/mes. Los
