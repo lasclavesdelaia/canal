@@ -22,7 +22,12 @@ Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian).
      desde `main`);
    - el MP3 se sube como Release `ep-<clave>`;
    - `scripts/sitio.py` rehace la web y los tres feeds RSS y los publica en GitHub Pages
-     (`claves.cristiansdrojek.com`).
+     (`claves.cristiansdrojek.com`): portada con los tres programas y cómo seguirlo, historial completo por programa
+     (`/parte/`, `/claves/`, `/mundo/`) y general (`/historial/`), y una página por episodio con guion y fuentes.
+     El aspecto imita las páginas de pódcast de cristiansdrojek.com (fuentes propias en `assets/fuentes`).
+   - Un push a `main` que toque `scripts/sitio.py`, `assets/` o `config/programas.json` (o un lanzamiento a mano sin
+     episodios nuevos) rehace solo la web, sin voz ni clave (job `solo_web`).
+   - Cuando exista el canal de YouTube, pon su enlace en `canal.youtube` de `config/programas.json`.
 3. **YouTube** lee los tres feeds (`parte.xml`, `claves.xml`, `mundo.xml`) y publica cada episodio en su lista.
 
 ## Reglas para quien toque esto

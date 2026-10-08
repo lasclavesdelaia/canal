@@ -137,6 +137,65 @@ class Web(unittest.TestCase):
             self.assertNotIn("<", desc)
             self.assertIn("inteligencia artificial", desc)
 
+    @staticmethod
+    def _muchos(n=45):
+        ep = leer_episodio(muestra())
+        eps = []
+        for i in range(n):
+            fecha = f"2026-{9 + i // 30:02d}-{1 + i % 30:02d}"
+            eps.append({"clave": f"{fecha}-parte", "programa": "parte", "fecha": fecha, "titulo": f"Episodio {i}",
+                        "descripcion": "Desc.", "cuerpo": ep.cuerpo, "fuentes": ep.fuentes,
+                        "audio_url": f"https://example.com/{i}.mp3", "bytes": 1, "duracion": 600,
+                        "publicado": f"{fecha}T06:30:00+02:00"})
+        return eps
+
+    def test_historial_completo_y_paginas(self):
+        cfg = config()
+        with tempfile.TemporaryDirectory() as tmp:
+            sitio.generar(self._muchos(), cfg, tmp)
+            d = Path(tmp)
+            archivo = (d / "parte" / "index.html").read_text()
+            for i in range(45):  # todos, no solo 30
+                self.assertIn(f">Episodio {i}<", archivo)
+            self.assertEqual(archivo.count("<audio"), 45)
+            self.assertIn("Septiembre de 2026", archivo)
+            self.assertIn("Octubre de 2026", archivo)
+            self.assertEqual((d / "historial" / "index.html").read_text().count("<audio"), 45)
+            self.assertIn("Todavía no hay episodios", (d / "claves" / "index.html").read_text())
+            portada = (d / "index.html").read_text()
+            self.assertIn('href="/parte/"', portada)
+            self.assertIn("/parte.xml", portada)
+            self.assertIn('id="seguir"', portada)
+            self.assertIn("Muy pronto", portada)  # sin canal de YouTube todavía
+            for nombre in ("inter-tight.woff2", "source-serif-4.woff2", "source-serif-4-cursiva.woff2"):
+                self.assertTrue((d / "fuentes" / nombre).exists())
+            for prog in cfg["programas"]:
+                self.assertTrue((d / "miniaturas" / f"{prog}.jpg").exists())
+            self.assertTrue((d / "estilo.css").exists())
+            # El aviso de IA está en todas las páginas, arriba.
+            for pagina in [d / "index.html", d / "historial" / "index.html", *d.glob("*/index.html"), *d.glob("e/*.html")]:
+                texto = pagina.read_text()
+                self.assertIn('class="aviso"', texto, pagina)
+                self.assertIn(cfg["canal"]["aviso"], texto, pagina)
+                self.assertIn('name="viewport"', texto, pagina)
+            # Cada episodio: reproductor, guion, fuentes y vecinos.
+            medio = (d / "e" / "2026-09-15-parte.html").read_text()
+            self.assertIn("<audio", medio)
+            self.assertIn("<h2>Guion</h2>", medio)
+            self.assertIn("<h2>Fuentes</h2>", medio)
+            self.assertIn('href="/e/2026-09-14-parte.html">← Anterior', medio)
+            self.assertIn('href="/e/2026-09-16-parte.html">Siguiente →', medio)
+            self.assertNotIn("Siguiente", (d / "e" / "2026-10-15-parte.html").read_text())
+
+    def test_enlace_de_youtube_cuando_exista(self):
+        cfg = config()
+        cfg["canal"]["youtube"] = "https://www.youtube.com/@lasclavesdelaia"
+        with tempfile.TemporaryDirectory() as tmp:
+            sitio.generar([], cfg, tmp)
+            portada = (Path(tmp) / "index.html").read_text()
+            self.assertIn('href="https://www.youtube.com/@lasclavesdelaia"', portada)
+            self.assertNotIn("Muy pronto", portada)
+
 
 if __name__ == "__main__":
     unittest.main()

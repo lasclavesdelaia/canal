@@ -6,6 +6,13 @@ on:
   schedule:
     - cron: "*/20 4-13 * * *"   # cada 20 minutos de 4:00 a 13:59 UTC (de 5-6 h a 14-15 h en Madrid)
   workflow_dispatch: {}
+  push:
+    # Un cambio de diseño rehace la web sin esperar al episodio siguiente (job solo_web: sin voz ni clave).
+    branches: [main]
+    paths:
+      - "scripts/sitio.py"
+      - "assets/**"
+      - "config/programas.json"
 
 concurrency:
   group: publicar
@@ -63,8 +70,29 @@ jobs:
         with:
           path: _site
 
+  solo_web:
+    # Sin episodios nuevos, a mano o tras un cambio de diseño: rehace la web con lo ya publicado. Sin clave.
+    needs: comprobar
+    if: needs.comprobar.outputs.nuevos == '0' && github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Rehacer la web
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/publicar.py --sin-voz --sitio _site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
   web:
-    needs: publicar
+    needs: [publicar, solo_web]
+    if: always() && (needs.publicar.result == 'success' || needs.solo_web.result == 'success')
     runs-on: ubuntu-latest
     permissions:
       pages: write

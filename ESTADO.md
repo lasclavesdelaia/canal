@@ -172,3 +172,15 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
   (`voz.py` ya los lee). Coste estimado con ~470.000 caracteres al mes (unas 8,7 h de audio a ~15 caracteres por segundo): Chirp 3 HD, 0 $
   (dentro del millón gratis); Gemini 2.5 Flash, unos 8 $/mes; Gemini 3.1 Flash o 2.5 Pro, unos 16 $/mes. Los
   créditos (vencen el 7 ene 2027) lo cubrirían si valen para Gemini; después se pagaría.
+
+## Tarea 3: web con el aspecto de cristiansdrojek.com (8 oct 2026, tarde)
+- Hecho: scripts/sitio.py nuevo: portada con los tres programas, «Cómo seguirlo» (YouTube, «muy pronto» hasta que
+  `canal.youtube` tenga enlace; y los tres RSS), historial completo por programa (/parte/, /claves/, /mundo/, por
+  meses, todos los episodios con reproductor) y general (/historial/), página de episodio con guion, fuentes y
+  anterior/siguiente. Aviso de IA arriba y en el pie de todas las páginas. Fuentes Inter Tight y Source Serif 4 en
+  assets/fuentes; miniaturas en assets/miniaturas. Comprobado en local con 90 episodios a 375 px y a 1280 px.
+- Hecho: job `solo_web` en publicar.yml (push a main que toque sitio/assets/config, o a mano sin episodios nuevos).
+- Hecho: 16 pruebas en verde. Commit local (ver git log).
+- En curso: FALTA el push. Esta sesión quedó «privado + de fuera» para el portero (curl a cristiansdrojek.com).
+- Siguiente (sesión limpia): `cd ~/bin/claves_ia && python3 -m unittest discover -s tests -q && git push origin main`;
+  el push lanza `solo_web`; luego mirar https://claves.cristiansdrojek.com/ en móvil y escritorio.
