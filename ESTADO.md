@@ -360,3 +360,18 @@ Fuentes oficiales leídas el 8 oct 2026 (ninguna muestra fecha de actualización
   vez: domingo 11 oct, 16:07 UTC. OJO 25 oct: cambio de hora → pasar a «7 17 * * 0». Sin «Run now».
 - Rehacer: el run 37769959624 (lanzado ya, no por mí) rehízo 2026-10-08-parte con es-ES-Chirp3-HD-Aoede (531 s,
   8.838 caracteres). Run 37769194783 (claves y mundo del 8) terminó bien. No lancé otro.
+
+## Encargo del 8 oct (tarde): tarjetas, mundo con más nivel, tono, días sin cuota, todo público
+- Hecho: leídas pauta, rutina, prompts y scripts. publicar.py: `es_episodio` + prueba (las tarjetas no se publican).
+- Hecho: PAUTA §0 (todo es público), §2 (tono más literario, opinión razonada, un matiz como mucho, sin sesgo),
+  §8 (repaso), §9 donde chocaba, §10 nuevo (tarjetas). RUTINA: días perdidos, leer solo tarjetas, escribirlas y
+  subirlas. parte.md: tarjetas y días sin parte; su tono se queda como estaba (decisión mía: él dijo que no se tocara).
+  claves.md y mundo.md: sin molde fijo, material no semanal, más 20-30 % si faltó el anterior; mundo con mercados
+  de nivel (valoración de empresas con cifras, aviso de no consejo una vez).
+- Hecho (petición de Central IA, 8 oct): velocidad 1,1 ≈ 165 palabras/min; claves 15-50 min, mundo 15-60, semana
+  normal 35-45 min; palabras_min 2400 en claves y mundo; Ucrania con seguimiento y conflictos olvidados en mundo.
+  Decisión mía: los 35-45 min valen para los dos semanales.
+- En curso: tarjetas a mano del 8 oct en la rama claude/tarjetas-2026-10-08.
+- Siguiente: propuesta de rutina de fin de semana con esfuerzo alto (espera su decisión).
+- Pendiente de su sí (de Central IA): lecturas para la línea editorial y subtítulos de Cárpatos con yt-dlp. No lo
+  hago en esta sesión: choca con su regla de no usar la red aquí. Se hará en otra sesión si lo confirma.
