@@ -430,7 +430,14 @@ Fuentes oficiales leídas el 8 oct 2026 (ninguna muestra fecha de actualización
 - Respuestas ronda 1 (8 oct): guerras y conflictos SOLO los domingos (el parte no los toca salvo hechos enormes);
   semanales con dos tercios a fondo y un tercio de novedad; en IA con efecto sobre personas, preguntar siempre quién
   paga, a quién afecta y qué se podría hacer.
-- En curso: preguntas a Cristian (ronda 2).
-- Siguiente: ajustar PAUTA (apartado «Línea editorial»), mundo y claves; pruebas; commit y push; Cárpatos.
+- Aclaración suya: el semanal del sábado es SOLO de IA; lo que ya hay está bastante bien (tocar poco).
+- Respuestas ronda 2 (8 oct): en guerras del domingo, las dos escalas (lo que vive la gente y el porqué); opinión al
+  final y razonada, SIN enredarse en «sobre esto no opinamos» ni explicar por qué no se opina («muy de modelos de IA
+  y queda fatal»); le sirve todo (conceptos, qué IA usar, usos útiles, estar al día sin noticias); «tengo un mono de
+  estar pendiente» de la IA: que los partes diarios NO escatimen.
+- Hecho: PAUTA con apartado «Línea editorial» (manda sobre 1-10; solo el 0 por encima); mundo (dos tercios a fondo,
+  conflictos con las dos escalas); claves (solo IA, dos tercios a fondo, quién paga); parte (no escatimar, «en corto»
+  hasta doce cosas). Decisión mía: tocar poco, porque él dice que lo hecho está bastante bien. Pruebas en verde.
+- Siguiente: commit y push; después Cárpatos (leer las dos claves ya bajadas, bajar una más, enfoques a mundo.md).
 - Rehacer «todos» (run 37779105788, lanzado por Cristian): bien. Los tres con es-ES-Chirp3-HD-Aoede a 1,1. Duraciones:
   parte 531→477 s (−10 %), claves 1295→1149 s (−11 %), mundo 1138→1041 s (−9 %). 48.887 caracteres en octubre.

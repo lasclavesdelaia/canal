@@ -17,11 +17,15 @@ repaso corto; un hilo que una varias noticias; un paper o un informe leído con 
 últimos sábados muestran la misma estructura, cambia la de hoy. Lo único fijo: un arranque de dos o tres frases con
 lo que trae el programa y un cierre breve.
 
+Es un programa solo de inteligencia artificial. Unos dos tercios van a una o dos cosas contadas a fondo; el tercio
+restante, a lo demás que importe de la semana.
+
 Cada clave, la forma que tenga, lleva:
 - de dónde viene (contexto, lo que se prometió antes);
 - qué ha pasado, con datos;
 - las posturas en juego, con nombre, y qué las separa;
 - tu lectura razonada, si la tienes;
+- si afecta a personas (empleo, desigualdad, países), a quién, qué se podría hacer y quién lo propone;
 - una reflexión de largo plazo: qué dice esto de los próximos años, qué se parece a otras épocas, qué pregunta deja
   abierta.
 

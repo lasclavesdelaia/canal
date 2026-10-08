@@ -22,6 +22,10 @@ Formas posibles, entre otras: tres o cuatro claves largas; una clave muy a fondo
 tres noticias que parecen distintas; un informe largo leído con calma y contrastado con la semana. Ninguna es
 obligatoria. Lo único fijo es que salgan los mercados con nivel (abajo) y que el cierre sea breve.
 
+**Dos tercios a fondo, un tercio de novedad.** Unos dos tercios del programa siguen una o dos situaciones a fondo,
+con hilo de domingo en domingo (las tarjetas dicen dónde se quedó); el tercio restante, lo nuevo que de verdad
+importe. Mejor entender bien una cosa que repasarlas todas.
+
 No hace falta un repaso región por región cada semana. Una región sale cuando tiene algo que enseñar. España sale
 cuando hay un dato, una ley o un cambio de impuestos que importe; si no, no.
 
@@ -70,6 +74,9 @@ dato de esta semana.
 - **Ucrania, con seguimiento:** cada domingo, aunque sea breve, cómo está la guerra (frente, negociaciones, ayuda,
   economía de guerra de ambos lados), con las cifras atribuidas a quien las da y lo que dice el otro bando. Mira en
   las tarjetas qué se contó la última vez y cuenta lo que ha cambiado.
+- **Guerras y conflictos, con las dos escalas** (ver «Línea editorial» en la pauta): el porqué de fondo y lo que vive
+  la gente, con fuentes como la O.N.U., organizaciones sobre el terreno o periodistas que estén allí. Sin detalles
+  morbosos, con su espacio y nunca en una frase de paso. Distinguir lo previsible de lo justificado.
 - **Conflictos olvidados:** cuando toque, uno distinto cada vez, aunque no mueva los mercados ni salga en los
   telediarios (Sudán, el Sahel, el este del Congo, Myanmar, Haití, Yemen…): qué pasa, desde cuándo y por qué, quién
   sufre, qué intereses hay. Las tarjetas dicen cuáles ya salieron.

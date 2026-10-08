@@ -23,7 +23,10 @@ cubre todo lo ocurrido desde entonces:
 ## Extensión
 
 - Depende del día: de 450 a 2.250 palabras, es decir, de 3 a 15 minutos.
-- No rellenes. Un día flojo es un episodio corto, y está bien.
+- **No escatimes.** El oyente quiere estar al día de verdad en IA y, si el parte se queda corto, lo buscará por su
+  cuenta en el flujo de noticias, que es lo que se quiere evitar. Ante la duda, una cosa más en corto mejor que una
+  cosa menos, siempre que sea noticia y no ruido.
+- No rellenes con ruido. Un día de verdad flojo es un episodio corto, y está bien.
 - **Siempre sale algo:** si no ha pasado nada importante, un episodio de 2 o 3 minutos que lo diga con naturalidad
   («hoy no ha pasado nada que cambie el panorama») y cuente lo poco que merezca un minuto.
 
@@ -38,7 +41,7 @@ El orden va por **importancia**, no por temas.
    - qué dicen distintas voces;
    - qué no está claro todavía;
    - por qué importa.
-3. **En corto:** el resto de lo relevante, de una a tres frases cada cosa, como mucho ocho cosas. Si hay más,
+3. **En corto:** el resto de lo relevante, de una a tres frases cada cosa, hasta doce cosas. Si hay más,
    quédate con las que importen y deja el resto.
 4. **Para entenderlo** (solo si hace falta): un concepto, un paper o un modelo raro, explicado con calma para alguien
    que no es técnico.
