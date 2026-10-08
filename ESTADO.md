@@ -704,3 +704,9 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   (NO parte.xml), claves.xml, mundo.xml y especial.xml a sus listas y elegir subir solo lo POSTERIOR al 8 oct.
 - Pregunta para Cristian: la portada general es el icono del canal (800 px) escalado a 3000; se ve bien, pero si
   quieres más nitidez habría que rehacerla a 3000 px desde el original. Yo la dejaría así.
+- YouTube (8 oct, ~18:25): creados 4 pódcast (listas) con portada, descripción con aviso de IA y español (España):
+  «Parte diario IA», «Claves semanales IA», «Claves mundo», «Especiales». Los 4 vídeos del 8 subidos a mano y
+  rellenados (título y descripción del feed, su pódcast, no para niños, Uso de IA = Sí, español, categoría: parte y
+  claves Ciencia y tecnología; mundo y especial Noticias y política). Están en BORRADOR (privado): falta el sí de
+  Cristian para publicar. IDs: parte 5fR7ZYP_udc, claves WsuUJkofXFM, mundo 7T0NY5tiKUI, especial 1pzHFJX5Gy0.
+  Pendiente: poner por defecto en Configuración › Subida predeterminada (no para niños, IA, idioma, categoría).
