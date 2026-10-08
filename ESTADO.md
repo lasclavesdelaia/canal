@@ -528,6 +528,9 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   en pruebas/portadas/especial/ (negro-lupa, papel-sello, negro-carpeta), enseñadas a Cristian. ESPERA SU
   ELECCIÓN: entonces la elegida pasa a SERIES["especial"], se genera assets/ y se sube. Sin portada,
   /publicar-especial no publica.
+- Hecho: Cristian eligió «negro-lupa» (8 oct). SERIES["especial"] en portadas.py; generadas solo
+  assets/portadas/especial.png y assets/miniaturas/especial.jpg (`portadas.py --serie especial`), sin rehacer las
+  otras ni el banner.
 - Nota portero: un fichero liberado dentro de 30 Personal sigue volviendo privada a la sesión que lo abre (clase()
   mira la carpeta antes que la liberación). Por eso la carpeta Publicables.
 - Hecho: paso 7, README («Informes y especiales», cinco líneas).
@@ -535,12 +538,10 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   sesión de Escritura (formato y Publicables/) y Central IA.
 - Este último apunte quedó sin subir: el portero cortó el push (la sesión juntó una marca de segundo grado y una
   lectura de la web). Lo sube la próxima sesión que haga push.
-- Siguiente (de Cristian): elegir portada. Luego, en una sesión NUEVA: `/especial` sobre Vox desde
+- Siguiente: subir los commits locales (portada y este ESTADO) desde una sesión limpia. Luego, en una sesión NUEVA: `/especial` sobre Vox desde
   `Publicables/2026-10-07 Vox ante el 29-N, qué medidas llegarían de verdad con el PP.md` (ya copiada; consultar
   da publicable). La primera vez el run pedirá su aprobación del entorno «publicar».
 ### Preguntas para Cristian (informes y especiales)
-- Portada de Especiales: negro-lupa, papel-sello o negro-carpeta. Yo elegiría negro-lupa (se distingue mejor de
-  las tres series en miniatura).
 - La Release `borrador-<slug>` es pública (el repo lo es), aunque no sale en la web ni en los feeds. ¿Vale así?
   Yo lo dejaría: nadie la encuentra sin el enlace.
 - Nota: el portero marcó la sesión como «privada de segundo grado» al leer ~/bin/lib/portero.py (lo escribió un

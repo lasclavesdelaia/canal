@@ -37,7 +37,7 @@ SERIES = {
               "lema": "Economía y geopolítica con datos"},
 }
 
-# Especiales: propuestas para que Cristian elija (8 oct 2026). La elegida pasa a SERIES["especial"].
+# Especiales: propuestas para que Cristian elija (8 oct 2026). Eligió «negro-lupa» (SERIES["especial"], al final).
 # Claves opcionales de una serie: «tinta» (título y aviso), «barra» y «barra_texto» (franja de arriba),
 # «cinta» y «texto_cinta» (la cinta torcida) y «motivo» (si no, el de su clave).
 _ESPECIAL = {"n": "04", "titulo": "Especial", "sub": "a fondo", "dia": "De vez en cuando",
@@ -49,6 +49,7 @@ CANDIDATAS_ESPECIAL = {
     "negro-carpeta": dict(_ESPECIAL, color=TINTA, tinta=PAPEL, barra=PAPEL, barra_texto=TINTA, cinta=ROJO,
                           texto_cinta=TINTA, motivo="carpeta"),
 }
+SERIES["especial"] = CANDIDATAS_ESPECIAL["negro-lupa"]  # elegida por Cristian el 8 oct 2026
 
 
 def fuente(tam, peso="Bold"):
@@ -279,8 +280,13 @@ if __name__ == "__main__":
     p.add_argument("--salida", default=str(RAIZ / "assets"))
     p.add_argument("--icono", action="store_true", help="genera también el icono de reserva")
     p.add_argument("--especial", action="store_true", help="solo las propuestas de Especiales, en --salida")
+    p.add_argument("--serie", help="solo la portada y la miniatura de esa serie (p. ej. especial)")
     a = p.parse_args()
     if a.especial:
         candidatas_especial(a.salida)
+    elif a.serie:
+        im = portada(a.serie)
+        im.save(Path(a.salida) / "portadas" / f"{a.serie}.png", optimize=True)
+        im.resize((360, 360), Image.LANCZOS).save(Path(a.salida) / "miniaturas" / f"{a.serie}.jpg", quality=90)
     else:
         generar(a.salida, a.icono)
