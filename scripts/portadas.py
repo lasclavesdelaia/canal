@@ -2,198 +2,219 @@
 """Portadas, miniaturas, icono y banner de «Las claves de la IA».
 
 Uso:
-  scripts/portadas.py                      # estilo elegido, escribe en assets/
-  scripts/portadas.py --estilo papel --salida pruebas/portadas/papel
+  scripts/portadas.py                         # escribe en assets/
+  scripts/portadas.py --salida pruebas/portadas/expediente
 
-Tres estilos: «papel» (fondo claro, como la web), «negro» (fondo oscuro con franja de color)
-y «color» (fondo del color de cada serie con un motivo sencillo). Cada serie tiene su color.
-Todas las imágenes dicen que las hace una IA y que pueden tener errores (art. 50 del
-reglamento europeo de IA). Necesita Pillow (el Python de /usr/local lo trae).
+Estilo «expediente»: suizo (Helvetica Neue, rejilla, filetes) con aire de prensa y de dossier
+(bloques de color, líneas tachadas, trama de puntos), en la línea de la referencia que Cristian
+eligió en Plató (Alejandra Svriz). Cada serie tiene su color y su motivo: Parte, rojo y texto
+tachado; Claves, amarillo y barras; Mundo, azul y una diana. El aviso de IA (art. 50 del
+reglamento europeo) va pequeño en una esquina. Necesita Pillow (el Python de /usr/local lo trae)
+y la Helvetica Neue del sistema (macOS).
+
+YouTube usa la imagen cuadrada del pódcast como imagen fija de cada vídeo y de la lista:
+por eso hay una por serie. El icono se sube cuadrado y YouTube lo enseña en círculo.
 """
 import argparse
-import math
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFont
 
 RAIZ = Path(__file__).resolve().parent.parent
-FUENTES = RAIZ / "assets" / "fuentes"
-ESTILO_ELEGIDO = "papel"  # se cambia cuando Cristian elija
+HELVETICA = "/System/Library/Fonts/HelveticaNeue.ttc"
+PESOS = {"Regular": 0, "Bold": 1, "Medium": 10, "CondensedBold": 4, "CondensedBlack": 9}
 
-CANAL = "Las claves de la IA"
-AVISO = ("Hecho íntegramente por inteligencia artificial", "Sin revisión humana · puede contener errores")
-AVISO_CORTO = "Hecho por IA · sin revisión humana · puede contener errores"
+PAPEL, TINTA, GRIS = (233, 228, 218), (17, 17, 17), (176, 172, 164)
+ROJO, AMARILLO, AZUL = (215, 38, 30), (242, 205, 46), (44, 84, 166)
+AVISO = "Hecho por IA · puede contener errores"
 
-SERIES = {  # nombre en dos líneas, para que se lea en pequeño
-    "parte": {"lineas": ("Parte", "diario"), "pie": "Cada día", "color": (58, 81, 23)},
-    "claves": {"lineas": ("Claves", "semanales"), "pie": "Cada sábado", "color": (29, 58, 92)},
-    "mundo": {"lineas": ("Claves", "mundo"), "pie": "Cada domingo", "color": (138, 58, 28)},
+SERIES = {
+    "parte": {"n": "01", "titulo": "Parte", "sub": "diario", "dia": "Cada día", "color": ROJO,
+              "lema": "Noticias de inteligencia artificial"},
+    "claves": {"n": "02", "titulo": "Claves", "sub": "semanales", "dia": "Cada sábado", "color": AMARILLO,
+               "lema": "La semana en IA, con contexto"},
+    "mundo": {"n": "03", "titulo": "Claves", "sub": "mundo", "dia": "Cada domingo", "color": AZUL,
+              "lema": "Economía y geopolítica con datos"},
 }
-PAPEL, TINTA, SUAVE = (250, 249, 246), (38, 38, 37), (95, 94, 88)
-NEGRO = (22, 22, 21)
-BLANCO = (255, 255, 255)
 
 
-def sans(tam, peso="Bold"):
-    f = ImageFont.truetype(str(FUENTES / "inter-tight.woff2"), int(tam))
-    f.set_variation_by_name(peso)
-    return f
+def fuente(tam, peso="Bold"):
+    return ImageFont.truetype(HELVETICA, max(1, round(tam)), index=PESOS[peso])
 
 
-def serif(tam):
-    return ImageFont.truetype(str(FUENTES / "source-serif-4.woff2"), int(tam))
+def texto(d, x, y, cadena, f, color, tracking=0.0, ancla="ls"):
+    """Texto con espaciado (en em). Conserva el kerning; `ancla` como en Pillow (l/m/r + s=línea base)."""
+    track = tracking * f.size
+    ancho = f.getlength(cadena) + track * (len(cadena) - 1)
+    if ancla[0] == "m":
+        x -= ancho / 2
+    elif ancla[0] == "r":
+        x -= ancho
+    if not track:
+        d.text((x, y), cadena, font=f, fill=color, anchor="l" + ancla[1])
+        return ancho
+    for i, c in enumerate(cadena):
+        d.text((x + f.getlength(cadena[:i]) + track * i, y), c, font=f, fill=color, anchor="l" + ancla[1])
+    return ancho
 
 
-def ancho(d, texto, fuente):
-    x0, _, x1, _ = d.textbbox((0, 0), texto, font=fuente)
-    return x1 - x0
+def grano(im, fuerza=0.10):
+    """Textura de papel: ruido suave multiplicado sobre la imagen."""
+    ruido = Image.effect_noise(im.size, 64).point(lambda v: 255 - int((255 - v) * fuerza))
+    return ImageChops.multiply(im, Image.merge("RGB", (ruido,) * 3))
 
 
-def centrado(d, cx, y, texto, fuente, color):
-    d.text((cx - ancho(d, texto, fuente) / 2, y), texto, font=fuente, fill=color)
-
-
-def mezcla(a, b, t):
-    return tuple(round(x + (y - x) * t) for x, y in zip(a, b))
-
-
-def paleta(estilo):
-    """Fondo, texto y texto suave de cada estilo (el «color» pone su fondo por serie)."""
-    if estilo == "papel":
-        return PAPEL, TINTA, SUAVE
-    if estilo == "negro":
-        return NEGRO, (245, 244, 240), (170, 168, 160)
-    return (30, 30, 29), BLANCO, (190, 188, 180)
-
-
-def motivo(d, clave, caja, color):
-    """Dibujo sencillo de cada serie: renglones (diario), semana (sábado), globo (mundo)."""
+def trama(d, caja, paso, radio, color, dentro=None):
     x0, y0, x1, y1 = caja
-    grosor = max(2, round((x1 - x0) / 120))
-    if clave == "parte":
-        paso = (y1 - y0) / 6
-        for i in range(7):
-            y = y0 + i * paso
-            d.line((x0, y, x1 if i % 2 == 0 else x0 + (x1 - x0) * .7, y), fill=color, width=grosor)
-    elif clave == "claves":
-        lado = (x1 - x0) / 7
-        for i in range(7):
-            c = (x0 + i * lado + lado * .14, y0 + (y1 - y0) * .3,
-                 x0 + (i + 1) * lado - lado * .14, y0 + (y1 - y0) * .7)
-            d.rectangle(c, outline=color, width=grosor, fill=color if i == 5 else None)
-    else:
-        cx, cy, r = (x0 + x1) / 2, (y0 + y1) / 2, min(x1 - x0, y1 - y0) / 2
-        d.ellipse((cx - r, cy - r, cx + r, cy + r), outline=color, width=grosor)
-        for k in (.38, .74):
-            d.ellipse((cx - r * k, cy - r, cx + r * k, cy + r), outline=color, width=grosor)
-        for k in (-.5, 0, .5):
-            h = r * math.sqrt(1 - k * k)
-            d.line((cx - h, cy + k * r, cx + h, cy + k * r), fill=color, width=grosor)
-        d.line((cx, cy - r, cx, cy + r), fill=color, width=grosor)
+    y = y0 + paso / 2
+    while y < y1:
+        x = x0 + paso / 2
+        while x < x1:
+            if dentro is None or dentro(x, y):
+                d.ellipse((x - radio, y - radio, x + radio, y + radio), fill=color)
+            x += paso
+        y += paso
 
 
-def portada(estilo, clave, lado=3000):
-    s = SERIES[clave]
-    col = s["color"]
-    fondo, texto, suave = paleta(estilo)
-    if estilo == "color":
-        fondo, suave = col, mezcla(col, BLANCO, .72)
+def tachado(d, x, y, ancho, s, filas):
+    """Líneas de «texto» con tramos tachados en negro, como un documento censurado."""
+    for i, (largo, negro) in enumerate(filas):
+        yy = y + i * 30 * s
+        d.rectangle((x, yy, x + ancho * largo, yy + 14 * s), fill=TINTA if negro else (17, 17, 17, 70))
+
+
+def motivo(d, clave, s, fondo):
+    """Zona de arriba (y 90-560): el motivo de cada serie, que se sale por el borde derecho."""
+    if clave == "parte":  # informe tachado
+        filas = [(1, 0), (.7, 1), (.92, 0), (.55, 1), (1, 1), (.8, 0), (.62, 1), (.9, 0), (.4, 1), (.75, 1)]
+        for i, (largo, negro) in enumerate(filas):
+            y = (140 + i * 40) * s
+            d.rectangle((56 * s, y, 56 * s + 1100 * s * largo, y + 22 * s), fill=TINTA if negro else (17, 17, 17, 60))
+    elif clave == "claves":  # código de barras / rejas
+        x = 56
+        for w, hueco in [(70, 26), (22, 18), (110, 30), (34, 16), (60, 40), (16, 14), (90, 22), (40, 30), (130, 0)]:
+            d.rectangle((x * s, 90 * s, (x + w) * s, 540 * s), fill=TINTA)
+            x += w + hueco
+        d.rectangle((56 * s, 470 * s, 1000 * s, 540 * s), fill=fondo)
+        texto(d, 56 * s, 525 * s, "EXPEDIENTE SEMANAL", fuente(30 * s), TINTA, .1)
+    else:  # diana sobre un globo de puntos
+        cx, cy, r = 660 * s, 320 * s, 215 * s
+        trama(d, (cx - r, cy - r, cx + r, cy + r), 14 * s, 3.4 * s, TINTA,
+              lambda x, y: (x - cx) ** 2 + (y - cy) ** 2 < r * r)
+        for k in (1.0, .62):
+            d.ellipse((cx - r * k, cy - r * k, cx + r * k, cy + r * k), outline=TINTA, width=round(5 * s))
+        d.line((0, cy, 1000 * s, cy), fill=TINTA, width=round(5 * s))
+        d.line((cx, 90 * s, cx, 560 * s), fill=TINTA, width=round(5 * s))
+        d.rectangle((cx + 120 * s, cy - 170 * s, cx + 170 * s, cy - 120 * s), fill=ROJO)
+
+
+def portada(clave, lado=3000):
+    s = lado / 1000
+    ser = SERIES[clave]
+    fondo = ser["color"]
     im = Image.new("RGB", (lado, lado), fondo)
+    d = ImageDraw.Draw(im, "RGBA")
+    motivo(d, clave, s, fondo)
+    d.rectangle((0, 0, lado, 90 * s), fill=TINTA)
+    cab = fuente(24 * s)
+    texto(d, 56 * s, 56 * s, "LAS CLAVES DE LA IA", cab, PAPEL, .08)
+    texto(d, 944 * s, 56 * s, f"{ser['n']} / {ser['dia'].upper()}", cab, PAPEL, .08, "rs")
+    titulo = ser["titulo"].upper()
+    tam = 330 * s
+    while fuente(tam, "CondensedBlack").getlength(titulo) > 896 * s:  # que quepa entre márgenes
+        tam -= 2 * s
+    f = fuente(tam, "CondensedBlack")
+    texto(d, 48 * s, 812 * s, titulo, f, TINTA, -.01)
+    # la segunda palabra, en una cinta negra torcida
+    sub = ser["sub"].upper()
+    fs = fuente(96 * s, "CondensedBlack")
+    ancho = fs.getlength(sub) + .04 * fs.size * (len(sub) - 1)
+    cinta = Image.new("RGBA", (round(ancho + 60 * s), round(130 * s)), TINTA + (255,))
+    texto(ImageDraw.Draw(cinta), 30 * s, 106 * s, sub, fs, fondo, .04)
+    cinta = cinta.rotate(4, expand=True, resample=Image.BICUBIC)
+    im.paste(cinta, (round(40 * s), round(836 * s)), cinta)
+    texto(d, 944 * s, 968 * s, AVISO, fuente(15 * s, "Medium"), TINTA, .02, "rs")
+    return grano(im)
+
+
+def icono(lado=800):
+    """Se sube cuadrado; YouTube lo recorta en círculo. Todo va en el centro."""
+    s = lado / 800
+    im = Image.new("RGB", (lado, lado), TINTA)
     d = ImageDraw.Draw(im)
-    u = lado / 100
-    m = 8 * u
-
-    if estilo == "papel":
-        d.rectangle((0, 0, lado, 6 * u), fill=col)
-        d.text((m, 13 * u), CANAL, font=serif(6.4 * u), fill=suave)
-        y = 28 * u
-        for linea in s["lineas"]:
-            d.text((m - .6 * u, y), linea, font=sans(17 * u), fill=col)
-            y += 18.5 * u
-        d.text((m, y + 3 * u), s["pie"], font=sans(5.6 * u, "Medium"), fill=texto)
-        d.line((m, 81 * u, lado - m, 81 * u), fill=(214, 210, 200), width=round(.25 * u))
-        d.text((m, 84.5 * u), AVISO[0], font=sans(3.6 * u, "Medium"), fill=suave)
-        d.text((m, 89 * u), AVISO[1], font=sans(3.6 * u, "Medium"), fill=suave)
-
-    elif estilo == "negro":
-        claro = mezcla(col, BLANCO, .4)
-        d.rectangle((0, 0, 4 * u, lado), fill=claro)
-        d.text((m + 1 * u, 13 * u), CANAL.upper(), font=sans(4.4 * u, "SemiBold"), fill=suave)
-        y = 28 * u
-        for linea in s["lineas"]:
-            d.text((m + .4 * u, y), linea, font=sans(17 * u), fill=texto)
-            y += 18.5 * u
-        d.rectangle((m + 1 * u, y + 3 * u, m + 19 * u, y + 4.2 * u), fill=claro)
-        d.text((m + 1 * u, y + 7 * u), s["pie"], font=sans(5.6 * u, "Medium"), fill=claro)
-        d.text((m + 1 * u, 84.5 * u), AVISO[0], font=sans(3.6 * u, "Medium"), fill=suave)
-        d.text((m + 1 * u, 89 * u), AVISO[1], font=sans(3.6 * u, "Medium"), fill=suave)
-
-    else:
-        motivo(d, clave, (lado - 36 * u, 9 * u, lado - 8 * u, 37 * u), mezcla(col, BLANCO, .4))
-        d.text((m, 12 * u), "Las claves", font=serif(6.4 * u), fill=suave)
-        d.text((m, 19.5 * u), "de la IA", font=serif(6.4 * u), fill=suave)
-        y = 44 * u
-        for linea in s["lineas"]:
-            d.text((m - .6 * u, y), linea, font=sans(16 * u), fill=texto)
-            y += 17 * u
-        d.rectangle((0, 80 * u, lado, lado), fill=mezcla(col, (0, 0, 0), .4))
-        centrado(d, lado / 2, 84.5 * u, AVISO[0], sans(3.6 * u, "Medium"), BLANCO)
-        centrado(d, lado / 2, 89 * u, AVISO[1], sans(3.6 * u, "Medium"), BLANCO)
-    return im
+    c = lado / 2
+    f_ia = fuente(330 * s)
+    l, t, r, b = d.textbbox((0, 0), "IA", font=f_ia, anchor="ls")  # caja real de las letras
+    alto_ia = b - t
+    caja_w, caja_h = 420 * s, alto_ia + 120 * s
+    arriba = c - (caja_h + 80 * s) / 2 + 80 * s  # el lema ocupa 80 px por encima del bloque
+    texto(d, c, arriba - 30 * s, "LAS CLAVES DE LA", fuente(40 * s), PAPEL, .08, "ms")
+    d.rectangle((c - caja_w / 2, arriba, c + caja_w / 2, arriba + caja_h), fill=ROJO)
+    texto(d, c - (l + r) / 2 + f_ia.getlength("IA") / 2, arriba + 60 * s + alto_ia, "IA", f_ia, PAPEL, 0, "ms")
+    return grano(im, .06)
 
 
-def icono(estilo, lado=800):
-    """Icono del canal. YouTube lo recorta en círculo: todo va dentro del 70 % central."""
-    fondo, texto, suave = paleta(estilo)
-    if estilo == "color":
-        fondo, suave = SERIES["claves"]["color"], mezcla(SERIES["claves"]["color"], BLANCO, .7)
-    im = Image.new("RGB", (lado, lado), fondo)
-    d = ImageDraw.Draw(im)
-    u = lado / 100
-    centrado(d, lado / 2, 23 * u, "Las claves de la", serif(8 * u), suave)
-    centrado(d, lado / 2, 30 * u, "IA", sans(42 * u), texto)
-    for i, clave in enumerate(SERIES):  # tres puntos: las tres series
-        cx = lado / 2 + (i - 1) * 9 * u
-        col = SERIES[clave]["color"] if estilo == "papel" else mezcla(SERIES[clave]["color"], BLANCO, .45)
-        d.ellipse((cx - 2.6 * u, 79 * u - 2.6 * u, cx + 2.6 * u, 79 * u + 2.6 * u), fill=col)
-    return im
+def cinta(texto_cinta, tam, fondo, color, giro):
+    f = fuente(tam, "CondensedBlack")
+    ancho = f.getlength(texto_cinta) + .04 * tam * (len(texto_cinta) - 1)
+    im = Image.new("RGBA", (round(ancho + tam * .6), round(tam * 1.3)), fondo + (255,))
+    texto(ImageDraw.Draw(im), tam * .3, tam * 1.06, texto_cinta, f, color, .04)
+    return im.rotate(giro, expand=True, resample=Image.BICUBIC)
 
 
-def banner(estilo, w=2560, h=1440):
-    """Banner del canal. Lo importante va en la zona segura central de 1546x423."""
-    fondo, texto, suave = paleta(estilo)
-    im = Image.new("RGB", (w, h), fondo)
-    d = ImageDraw.Draw(im)
-    sx0, sy0 = (w - 1546) / 2, (h - 423) / 2
-    if estilo == "color":
-        for i, clave in enumerate(SERIES):
-            d.rectangle((i * w / 3, 0, (i + 1) * w / 3, h), fill=SERIES[clave]["color"])
-        d.rectangle((0, sy0 - 30, w, sy0 + 423 + 30), fill=fondo)
-    else:
-        for i, clave in enumerate(SERIES):
-            col = SERIES[clave]["color"] if estilo == "papel" else mezcla(SERIES[clave]["color"], BLANCO, .4)
-            d.rectangle((sx0 + i * 1546 / 3, sy0 + 400, sx0 + (i + 1) * 1546 / 3, sy0 + 416), fill=col)
-    centrado(d, w / 2, sy0 + 15, CANAL, sans(128), texto)
-    centrado(d, w / 2, sy0 + 195, "Parte diario  ·  Claves semanales  ·  Claves mundo", serif(54), texto)
-    centrado(d, w / 2, sy0 + 300, AVISO_CORTO, sans(34, "Medium"), suave)
-    return im
+def banner(w=2560, h=1440):
+    """Banner. Lo importante va en la zona segura central (1546x423); en escritorio se ve la franja central."""
+    im = Image.new("RGB", (w, h), TINTA)
+    d = ImageDraw.Draw(im, "RGBA")
+    zx0, zy0 = (w - 1546) // 2, (h - 423) // 2
+    zx1 = zx0 + 1546
+    # a los lados, fuera de la zona segura: Parte (rojo, tachado) y Mundo (azul, diana)
+    d.rectangle((0, 0, zx0 - 90, h), fill=ROJO)
+    for i, (largo, negro) in enumerate([(1, 0), (.7, 1), (.92, 0), (.55, 1), (1, 1), (.8, 0), (.62, 1), (.9, 0),
+                                        (.4, 1), (.75, 1), (1, 0), (.6, 1), (.85, 0), (.5, 1), (.95, 1)]):
+        y = 340 + i * 52
+        d.rectangle((60, y, 60 + (zx0 - 210) * largo, y + 28), fill=TINTA if negro else (17, 17, 17, 60))
+    d.rectangle((zx1 + 90, 0, w, h), fill=AZUL)
+    cx, cy, r = zx1 + 90 + (w - zx1 - 90) / 2, h / 2, 190
+    trama(d, (cx - r, cy - r, cx + r, cy + r), 14, 3.4, TINTA, lambda x, y: (x - cx) ** 2 + (y - cy) ** 2 < r * r)
+    d.ellipse((cx - r, cy - r, cx + r, cy + r), outline=TINTA, width=5)
+    d.line((zx1 + 90, cy, w, cy), fill=TINTA, width=5)
+    d.line((cx, 0, cx, h), fill=TINTA, width=5)
+    d.rectangle((zx1 + 30, 0, zx1 + 60, h), fill=AMARILLO)
+    # dentro de la zona segura
+    cab = fuente(26)
+    texto(d, zx0, zy0 + 34, "CADA DÍA · SÁBADOS · DOMINGOS", cab, PAPEL, .08)
+    texto(d, zx1, zy0 + 34, "INFORMATIVO DE INTELIGENCIA ARTIFICIAL", cab, PAPEL, .08, "rs")
+    titulo = "LAS CLAVES DE LA IA"
+    tam = 260
+    while fuente(tam, "CondensedBlack").getlength(titulo) > 1546:
+        tam -= 2
+    texto(d, zx0, zy0 + 60 + tam * .72, titulo, fuente(tam, "CondensedBlack"), PAPEL)
+    x = zx0
+    for (clave, ser), giro in zip(SERIES.items(), (2, -1.5, 2.5)):
+        c = cinta(f"{ser['titulo']} {ser['sub']}".upper(), 48, ser["color"], TINTA, giro)
+        im.paste(c, (x, zy0 + 300), c)
+        x += c.width + 26
+    texto(d, zx1, zy0 + 412, AVISO, fuente(22, "Medium"), GRIS, .02, "rs")
+    return grano(im, .06)
 
 
-def generar(estilo, salida):
+def generar(salida, con_icono=False):
     salida = Path(salida)
     for sub in ("portadas", "miniaturas", "youtube"):
         (salida / sub).mkdir(parents=True, exist_ok=True)
     for clave in SERIES:
-        im = portada(estilo, clave)
+        im = portada(clave)
         im.save(salida / "portadas" / f"{clave}.png", optimize=True)
         im.resize((360, 360), Image.LANCZOS).save(salida / "miniaturas" / f"{clave}.jpg", quality=90)
-    icono(estilo).save(salida / "youtube" / "icono.png", optimize=True)
-    banner(estilo).save(salida / "youtube" / "banner.png", optimize=True)
+    if con_icono:  # el icono definitivo lo trae Cristian (ChatGPT); este es solo de reserva
+        icono().save(salida / "youtube" / "icono.png", optimize=True)
+    banner().save(salida / "youtube" / "banner.png", optimize=True)
 
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    p.add_argument("--estilo", choices=("papel", "negro", "color"), default=ESTILO_ELEGIDO)
     p.add_argument("--salida", default=str(RAIZ / "assets"))
+    p.add_argument("--icono", action="store_true", help="genera también el icono de reserva")
     a = p.parse_args()
-    generar(a.estilo, a.salida)
+    generar(a.salida, a.icono)
