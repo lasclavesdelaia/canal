@@ -793,3 +793,6 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   beneficios futuros y crecimiento de ingresos con datos recientes, sin obviedades; informes concretos con autor y
   fecha. Dos viñetas nuevas en «Línea editorial» de PAUTA_COMUN. La cifra de ingresos de Anthropic que dio Cristian
   (×14) NO va en los prompts: no está verificada.
+- Hecho: aclaración de Cristian (vía «IVOOX REVISAR»): la línea editorial vale igual para los cuatro programas;
+  dicho en la cabecera de «Línea editorial». Revisados mundo.md y especial.md: nada lo contradice; en mundo, el
+  informe de hace meses queda dicho como «contexto, no noticia».

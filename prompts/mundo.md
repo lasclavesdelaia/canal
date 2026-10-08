@@ -36,7 +36,7 @@ cuando hay un dato, una ley o un cambio de impuestos que importe; si no, no.
 - **Lo que no es de esta semana pero ilumina el presente:** informes del FMI (Perspectivas, Informe de Estabilidad
   Financiera), del B.P.I. (su informe anual y el trimestral), de los bancos centrales (informes de estabilidad,
   discursos de fondo), papers de economía (NBER, CEPR, documentos de trabajo de bancos centrales) y ensayos largos
-  de autores con trabajo detrás. Si un informe de hace meses explica lo que pasa hoy, úsalo y di de cuándo es.
+  de autores con trabajo detrás. Si un informe de hace meses explica lo que pasa hoy, úsalo y di de cuándo es: es contexto, no noticia.
 - **Lo que ya sabe el oyente medio** (los titulares que repite todo el mundo): se cuenta con un giro que no haya oído
   (el dato que nadie mira, el precedente, la consecuencia de segundo orden) o se omite.
 
