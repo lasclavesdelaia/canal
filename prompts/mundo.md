@@ -3,6 +3,21 @@
 Un programa para entender el mundo con más nivel que un telediario y más calma que un canal de bolsa. No es el
 resumen de la semana: es lo que la semana enseña, contado con datos, con perspectiva larga y con voz propia.
 
+## Nivel y horizonte (manda sobre lo que sigue de este fichero)
+
+- **El oyente sabe economía.** Nada didáctico básico: no se explica qué es la inflación subyacente, que un PMI por
+  encima de 50 es expansión ni cómo funciona un bono. Se usa y se sigue.
+- **Largo plazo, no la semana.** El oyente invierte a largo plazo: el dato de la semana, la reunión de la Fed o lo
+  que hizo la bolsa le aburren. Lo de la semana entra solo si cambia algo de fondo, y en pocas frases.
+- **Macroeconomía de nivel:** un modelo teórico ya conocido aplicado a una situación concreta de ahora (qué modelo
+  lo explica, qué predice y dónde falla), y dinámicas de largo plazo que empiezan a verse y no son triviales.
+- **Con datos recientes de fuentes serias:** informes, papers, bancos centrales, F.M.I., B.P.I., O.C.D.E., Banco
+  Mundial; con su autor y su fecha. No titulares de prensa.
+- **Países poco habituales:** cualquier país del que salga algo interesante sobre desigualdad, economía o finanzas
+  (Nepal, Australia, Chad, Botsuana o Mongolia son ejemplos de la clase de país, no una lista).
+- **Inversión, como análisis general y a largo plazo:** sectores, países y tendencias, con sus argumentos a favor y
+  en contra. Nunca «compra esto» ni nada personalizado (pauta común, apartado 5).
+
 ## Extensión
 
 - Se oye a velocidad 1,1, unas 165 palabras por minuto.
@@ -40,10 +55,10 @@ cuando hay un dato, una ley o un cambio de impuestos que importe; si no, no.
 - **Lo que ya sabe el oyente medio** (los titulares que repite todo el mundo): se cuenta con un giro que no haya oído
   (el dato que nadie mira, el precedente, la consecuencia de segundo orden) o se omite.
 
-## Mercados y finanzas, con nivel
+## Mercados y finanzas, con nivel y a largo plazo
 
-Cada domingo, un bloque de mercados que vaya más allá de «la bolsa sube o baja». Elige lo que esa semana tenga
-miga; no hace falta tocarlo todo:
+Cuando haya algo de fondo, un bloque de mercados mirado a años vista, no a la semana: valoraciones, deuda,
+tendencias. Elige lo que tenga miga; no hace falta tocarlo todo:
 
 - **El estado de los mercados:** índices, valoraciones agregadas (PER del S&P 500 y su media histórica, el PER
   ajustado por el ciclo de Shiller, la prima de riesgo de las acciones frente a los bonos), concentración en pocas
@@ -52,7 +67,7 @@ miga; no hace falta tocarlo todo:
   rendimiento, impagos, quién está endeudado y a qué plazo.
 - **Bonos y tipos:** la curva de tipos y su pendiente, el tipo real, la prima por plazo, las subastas de deuda, el
   diferencial de las primas de riesgo europeas.
-- **Empresas concretas, posiblemente sobrevaloradas o infravaloradas:** una o dos por semana, de cualquier país y
+- **Empresas concretas, posiblemente sobrevaloradas o infravaloradas:** de vez en cuando, de cualquier país y
   sector (no siempre tecnológicas), elegidas porque su caso enseña algo. Para cada una:
   - las cifras con su fuente y su fecha: PER (actual y esperado), flujo de caja libre y su rentabilidad, deuda neta
     frente al resultado bruto de explotación, márgenes, crecimiento;
@@ -104,7 +119,7 @@ dato de esta semana.
 - **Guerras y conflictos, con las dos escalas** (ver «Línea editorial» en la pauta): el porqué de fondo y lo que vive
   la gente, con fuentes como la O.N.U., organizaciones sobre el terreno o periodistas que estén allí. Sin detalles
   morbosos, con su espacio y nunca en una frase de paso. Distinguir lo previsible de lo justificado.
-- **Conflictos olvidados:** cuando toque, uno distinto cada vez, aunque no mueva los mercados ni salga en los
+- **Conflictos olvidados:** con frecuencia, uno distinto cada vez, aunque no mueva los mercados ni salga en los
   telediarios (Sudán, el Sahel, el este del Congo, Myanmar, Haití, Yemen…): qué pasa, desde cuándo y por qué, quién
   sufre, qué intereses hay. Las tarjetas dicen cuáles ya salieron.
 

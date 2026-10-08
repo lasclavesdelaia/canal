@@ -296,7 +296,8 @@ economía a fondo; lo que hace Rallo en entrevista le parece aún básico. Por e
 - Números de verdad: decir la cifra, de dónde sale y cómo se calcula cuando sea sencillo; sin fórmulas leídas, pero
   con la relación entre variables dicha en palabras.
 - Conocimiento en pirámide: dar por sabido lo explicado otros domingos, recordarlo en una frase y subir un escalón.
-  No volver a explicar lo básico cada semana.
+  No volver a explicar lo básico cada semana. Lo elemental (inflación subyacente, el PMI, cómo funciona un bono)
+  no se explica nunca: el oyente ya lo sabe (`prompts/mundo.md`, «Nivel y horizonte»).
 - **Muy despacio y poco a poco.** Un solo concepto nuevo por domingo, como mucho. Mejor un escalón pequeño bien
   asentado que tres a medias. Cada concepto se cuenta con calma: qué es, un ejemplo con números redondos, el caso
   real de la semana y qué no explica. Si un concepto necesita otro previo que no se ha dado, ese domingo se da el

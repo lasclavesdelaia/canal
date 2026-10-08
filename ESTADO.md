@@ -812,3 +812,15 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Coste real: ~99.000 palabras de subtítulos (~130.000 tokens de lectura), algo más de lo avisado (~100.000).
 - Aviso: el portero puede cortar el push final (sesión «privado» + contenido de fuera); si pasa, lo sube una sesión limpia.
 - Hecho: commit e39586b subido a main. Nada pendiente de esta tarea.
+
+## Claves mundo: notas de Cristian tras el del 8 oct (8 oct 2026, noche; vía sesión «IVOOX REVISAR»)
+- Hecho: mundo.md con apartado «Nivel y horizonte» (nada básico, largo plazo, modelos aplicados, fuentes serias,
+  países poco habituales, inversión general a largo plazo según PAUTA §5); mercados «a largo plazo»; empresas «de
+  vez en cuando»; conflictos olvidados «con frecuencia». PAUTA §9: lo elemental no se explica nunca.
+- Hecho: fuentes.md con fuentes de largo plazo y 27 dominios nuevos al final de la lista Custom.
+- PARA CRISTIAN (a mano): añadir en la red Custom del entorno claves-ia estos dominios:
+  www.bis.org www.worldbank.org openknowledge.worldbank.org data.worldbank.org www.elibrary.imf.org www.nber.org
+  cepr.org unctad.org wid.world ourworldindata.org hdr.undp.org fred.stlouisfed.org www.bruegel.org www.piie.com
+  www.brookings.edu reliefweb.int news.un.org www.crisisgroup.org www.sipri.org www.rba.gov.au www.bankofbotswana.bw
+  www.nrb.org.np www.mongolbank.mn www.beac.int
+  (NBER, CEPR y el BPI ya los citaba mundo.md, pero faltaban en la red.) Sin comprobar que se lean sin cuenta.

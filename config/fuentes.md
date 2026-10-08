@@ -63,6 +63,20 @@ rutina comprueba cada una desde la nube y anota las que fallen en su informe de 
   - Banco de la Reserva de la India: `www.rbi.org.in`.
 
   Si un dato de mercado solo aparece en prensa secundaria, se dice así («según CNBC…»).
+- **Largo plazo y países poco comentados (añadidas el 8 oct 2026, sin comprobar aún desde la nube):**
+  - B.P.I.: `www.bis.org` (informe anual, trimestral, documentos de trabajo);
+  - Banco Mundial (informes y datos): `www.worldbank.org`, `openknowledge.worldbank.org`, `data.worldbank.org`;
+  - F.M.I. (informes por país, artículo IV): `www.elibrary.imf.org`; O.C.D.E.: `www.oecd.org`;
+  - papers: NBER `www.nber.org`, CEPR y VoxEU `cepr.org`; UNCTAD `unctad.org`;
+  - desigualdad y datos largos: `wid.world`, `ourworldindata.org`, `hdr.undp.org`; series de la Fed de San Luis
+    (`fred.stlouisfed.org`, descarga en CSV sin clave);
+  - análisis: Bruegel `www.bruegel.org`, PIIE `www.piie.com`, Brookings `www.brookings.edu`;
+  - conflictos poco cubiertos: ReliefWeb (O.N.U.) `reliefweb.int`, Noticias O.N.U. `news.un.org`, International
+    Crisis Group `www.crisisgroup.org`, SIPRI `www.sipri.org`;
+  - bancos centrales de países poco comentados, por ejemplo Australia `www.rba.gov.au`, Botsuana
+    `www.bankofbotswana.bw`, Nepal `www.nrb.org.np`, Mongolia `www.mongolbank.mn`, África central (Chad) `www.beac.int`.
+    Otros bancos centrales: buscarlos en la lista del B.P.I. y, si no están en la red, anotarlo al final de la
+    respuesta para que se añadan.
 - **Prensa de mercados (titulares y RSS):** CNBC (`www.cnbc.com`, `search.cnbc.com`). Trading Economics no se usa,
   porque sus condiciones limitan la extracción.
 - **Código y lanzamientos:** `github.com` (repositorios y notas de versión de modelos abiertos).
@@ -104,4 +118,8 @@ www.bloomberg.com www.nytimes.com www.platformer.news www.404media.co www.axios.
 thenextweb.com www.nature.com www.science.org www.xataka.com www.genbeta.com www.elconfidencial.com www.eldiario.es
 www.lavanguardia.com cincodias.elpais.com www.scmp.com www.koreatimes.co.kr digital-strategy.ec.europa.eu
 artificialintelligenceact.eu www.whitehouse.gov www.nist.gov www.gov.uk oecd.ai www.oecd.org
+www.bis.org www.worldbank.org openknowledge.worldbank.org data.worldbank.org www.elibrary.imf.org www.nber.org
+cepr.org unctad.org wid.world ourworldindata.org hdr.undp.org fred.stlouisfed.org www.bruegel.org www.piie.com
+www.brookings.edu reliefweb.int news.un.org www.crisisgroup.org www.sipri.org www.rba.gov.au www.bankofbotswana.bw
+www.nrb.org.np www.mongolbank.mn www.beac.int
 ```
