@@ -394,3 +394,43 @@ Fuentes oficiales leídas el 8 oct 2026 (ninguna muestra fecha de actualización
 - Velocidad 1,1 en main (entró en 8f76dde). Falta lanzar «rehacer = todos»: el permiso automático lo frenó; Cristian
   lo lanza a mano. Después comprobar en las Releases ep-2026-10-08-* «voz» Aoede y duraciones ~9 % menores
   (antes: parte 531 s, claves 1295 s, mundo 1138 s; claves y mundo sin campo «voz»).
+
+## Línea editorial (8 oct 2026, sesión con red autorizada)
+- Hecho: leídos PAUTA_COMUN, parte, claves y mundo.
+- Hecho: guion v9 leído entero (Drive = Buzón v9, idénticos), con indicaciones, brief, escalera y registro de rechazos.
+  Nota: «el noticiero amplifica, el documental relativiza» NO es suya: la rechazó en v5 («yo no he afirmado nada así
+  tal cual»; «sobre todo es porque no tienes en cuenta al otro»). El centro es el otro, no la utilidad para el oyente.
+- Hecho: leídas enteras las transcripciones de «Un giro en la rueda de este canal» (9 sep) y «¿Podemos ser mejores
+  personas gracias a la IA?» (10 sep). Ideas: dejó YouTube y las noticias; la IA puede informar «de cierta forma, muy
+  aséptica» sin el batiburrillo del algoritmo; rechaza a la vez el optimismo de salvación y el rechazo «infantil»;
+  se indigna con quien habla del hundimiento de países pobres sin preguntar qué se haría (pódcast de Dwarkesh y Dylan
+  Patel); la intención por delante; tener en cuenta a todos los seres que merezca la pena tener en cuenta.
+- Hecho: estudio de referentes leído entero. Ya hay bajadas dos «4 claves de la semana» de Cárpatos
+  (7bXaL8vkc4k, dWh7iNt2vkM, en descargas/referentes_noticias/texto/): solo falta bajar UNA más.
+  Orden decidido: no leer esos subtítulos (contenido de fuera) hasta después del push de los prompts, por el portero.
+
+### Principios editoriales (de su guion y sus vídeos)
+1. El otro en el centro. «Sobre todo es porque no tienes en cuenta al otro» (rechazo de v5). Quien sufre una guerra
+   cuenta en el juicio, no solo como coste estratégico o efecto en mercados; y su dolor no se usa para que el oyente
+   se sienta mejor o «relativice».
+2. Nada en el mismo saco. «Que no acabemos metiendo en el mismo pack una noticia sobre los tipos de interés, otra
+   sobre el fútbol y otra sobre la matanza de miles de personas en Irán.» Lo grave no va en un «en corto» entre dos
+   cifras.
+3. Previsible no es necesario. «Explicar por qué iba a ocurrir no demuestra que hubiera que realizarla.» El análisis
+   por Estados (granulado grueso) vale, pero se dice que lo es y no se toma como medida moral.
+4. Una cosa, entera. «Lea menos. Mire una cosa. Entera.» Mejor seguir a fondo una situación, con hilo entre semanas,
+   que la ronda de todo.
+5. Sin ruido térmico. «Mucha agitación a la que cuesta dar una dirección.» Cada noticia deja algo pensado; ninguna
+   deja solo una emoción.
+6. Informar «de cierta forma, muy aséptica», sin el «batiburrillo» del algoritmo (vídeo de la IA, 10 sep).
+7. IA: ni salvación ni «rechazo infantil» («es muy infantil el rechazo»). Y ante quien habla del hundimiento de
+   países enteros sin preguntar «¿y qué se haría con una situación así?», esa pregunta la hace el programa.
+8. Intención. «Hay que tener muy claro a lo que le dedica uno atención, energía.» Cada bloque se gana su sitio.
+
+- Respuestas ronda 1 (8 oct): guerras y conflictos SOLO los domingos (el parte no los toca salvo hechos enormes);
+  semanales con dos tercios a fondo y un tercio de novedad; en IA con efecto sobre personas, preguntar siempre quién
+  paga, a quién afecta y qué se podría hacer.
+- En curso: preguntas a Cristian (ronda 2).
+- Siguiente: ajustar PAUTA (apartado «Línea editorial»), mundo y claves; pruebas; commit y push; Cárpatos.
+- Rehacer «todos» (run 37779105788, lanzado por Cristian): bien. Los tres con es-ES-Chirp3-HD-Aoede a 1,1. Duraciones:
+  parte 531→477 s (−10 %), claves 1295→1149 s (−11 %), mundo 1138→1041 s (−9 %). 48.887 caracteres en octubre.
