@@ -188,3 +188,9 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
 - En curso: FALTA el push. Esta sesión quedó «privado + de fuera» para el portero (curl a cristiansdrojek.com).
 - Siguiente (sesión limpia): `cd ~/bin/claves_ia && python3 -m unittest discover -s tests -q && git push origin main`;
   el push lanza `solo_web`; luego mirar https://claves.cristiansdrojek.com/ en móvil y escritorio.
+- Hecho (sesión limpia C, 8 oct): ce7bccc ya estaba en origin (lo subió otra sesión junto a 9214fc9). 16 pruebas en
+  verde. Run 37762637100 de «Publicar episodios» en verde: solo_web y web OK.
+- Hecho: comprobada la web publicada: /, /parte/, /historial/ y /e/2026-10-08-parte.html dan 200, sin scroll
+  horizontal a 375 px ni a 1280 px, aviso de IA arriba en las cuatro; parte.xml, claves.xml y mundo.xml dan 200.
+- En curso: nada.
+- Siguiente: enlazar YouTube en config canal.youtube cuando exista el canal.
