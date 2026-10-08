@@ -19,7 +19,7 @@
   "voz": {
     "nombre": "es-ES-Chirp3-HD-Aoede",
     "idioma": "es-ES",
-    "velocidad": 1.0,
+    "velocidad": 1.1,
     "tope_caracteres_mes": 900000
   },
   "programas": {
@@ -35,7 +35,7 @@
       "lista": "Claves semanales IA",
       "descripcion": "Cada sábado, los temas de fondo de la semana en inteligencia artificial, con calma y con contexto.",
       "dias": "sabado",
-      "palabras_min": 1500,
+      "palabras_min": 2400,
       "palabras_max": 10000,
       "despedida": "Esto han sido las Claves semanales de Las claves de la IA. Hasta el sábado que viene."
     },
@@ -43,7 +43,7 @@
       "lista": "Claves mundo",
       "descripcion": "Cada domingo, la economía y la geopolítica de la semana con datos: grandes economías, países emergentes y las leyes e impuestos que importan en España.",
       "dias": "domingo",
-      "palabras_min": 1500,
+      "palabras_min": 2400,
       "palabras_max": 10000,
       "despedida": "Esto han sido las Claves mundo de Las claves de la IA. Hasta el domingo que viene."
     }
