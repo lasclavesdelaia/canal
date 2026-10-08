@@ -881,3 +881,22 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Pendiente tras guardar: la rutina de las 5:07 del 9 oct (3:07 UTC) es la primera con la lista nueva. Qué mirar:
   en su informe de ejecución, si alguna fuente de fuentes.md no abre (red), si cita fuentes oficiales nuevas en
   mundo, y que no haya errores de red en WebFetch a dominios con comodín (p. ej. www.ine.es, una web *.gov).
+- 8 oct, noche: Cristian pegó las 5.218 líneas y el formulario dio «No se pudo actualizar el entorno» (sin decir por
+  qué). Sospechas: comodines de sufijo (`*.gov`, `*.gob.es`…) o un tope de tamaño no documentado. Nuevas opciones en
+  scripts/red_custom.py: `--sin-sufijos` (5.018 líneas) y `--max N`. Prueba 1: sin sufijos. Si falla, prueba 2:
+  `--max 1000`, para saber si es el tamaño.
+- Prueba 1 (sin sufijos, 5.018) FALLA igual. Prueba 2: --sin-sufijos --max 1000.
+- Prueba 2 (sin sufijos, 1.000) FALLA también. Antes guardaban 158 sin comodines. Siguiente: ver la respuesta real del servidor (red del navegador) para saber el límite o el dominio que no le gusta, en vez de probar a ciegas.
+- 200 (sin sufijos) GUARDA; 1.000 no. Tope entre 200 y 1.000 (o un dominio malo entre ambos). Siguiente: 500.
+- 500 GUARDA. Siguiente: 750.
+- 750 NO guarda. Tope entre 500 y 750.
+- 600 GUARDA (8.020 caracteres). Tope: >600 y <750 líneas, o ~8.192 caracteres. Diseño final: ≤600 líneas y ≤8.000 caracteres. Plan: comodines de sufijo + quitar lo que ya cubren + un comodín por institución (sin dominio desnudo salvo las fuentes de partida) + cupos por bloque.
+- Hecho: lista compacta. config/red_custom.txt = lo que se pega tal cual (598 líneas, 7.510 caracteres): 172
+  comodines de sufijo (gobiernos de casi cada país y universidades principales), gobiernos con dominio propio,
+  fuentes de partida, ~95 bancos centrales con dominio propio, organismos internacionales, estadística, academia,
+  think tanks, prensa por regiones, IA. La lista grande pasa a config/red_catalogo.txt como reserva verificada.
+  Una línea por institución: la forma que usa de verdad su web (dominio desnudo o `*.x`, según adónde redirige).
+- Hecho: pruebas: cabe (≤600 líneas, ≤8.000 caracteres), cada dirección de fuentes.md está permitida, catálogo válido.
+  74 en verde. fuentes.md y README al día.
+- Siguiente: commit y push; Cristian pega la compacta. Si falla, es que no acepta comodines de sufijo:
+  `--sin-sufijos` (424 líneas) y relleno con el catálogo.

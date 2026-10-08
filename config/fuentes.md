@@ -1,12 +1,13 @@
 # Fuentes del redactor
 
 La rutina en la nube solo puede salir a los dominios de la red «Custom» de su entorno. Esa lista vive en
-`config/red_custom.txt` (bloques comentados; `python3 scripts/red_custom.py` la saca para pegar) y desde el 8 oct 2026
-tiene miles de dominios seguros: organismos internacionales, todos los bancos centrales y oficinas de estadística,
-parlamentos y boletines oficiales, universidades y repositorios, think tanks, prensa seria de cada región y la IA.
-Comodines: `*.gov`, `*.int`, `*.edu`, `*.gob.es`, `*.gov.uk`… dejan entrar en cualquier web oficial de esos
-dominios. No hace falta leer `red_custom.txt`: si un enlace no abre, no está en la red; anótalo al final de la
-respuesta para que se añada.
+`config/red_custom.txt` (se pega tal cual: `python3 scripts/red_custom.py | pbcopy`). El formulario no guarda más de
+unas 600 líneas, así que la lista tira de comodines: `*.gov`, `*.int`, `*.edu`, `*.gob.es`, `*.gov.uk`, `*.gov.np`,
+`*.gouv.td`… abren todas las webs oficiales de casi cada país (gobierno, estadística, parlamento, boletín y muchos
+bancos centrales). Encima van los bancos centrales y oficinas de estadística con dominio propio, organismos
+internacionales, repositorios, think tanks, prensa de cada región e IA. Reserva verificada para cambiar piezas:
+`config/red_catalogo.txt`. No hace falta leer ninguna de las dos: si un enlace no abre, no está en la red; anótalo al
+final de la respuesta para que se añada.
 
 Lo de abajo son las fuentes de partida, verificadas el 8 oct 2026 (se leen sin cuenta). La primera ejecución de la
 rutina comprueba cada una desde la nube y anota las que fallen en su informe de ejecución.
@@ -93,7 +94,7 @@ rutina comprueba cada una desde la nube y anota las que fallen en su informe de 
     Crisis Group `www.crisisgroup.org`, SIPRI `www.sipri.org`;
   - bancos centrales de países poco comentados, por ejemplo Australia `www.rba.gov.au`, Botsuana
     `www.bankofbotswana.bw`, Nepal `www.nrb.org.np`, Mongolia `www.mongolbank.mn`, África central (Chad) `www.beac.int`.
-    Todos los bancos centrales y oficinas de estadística del mundo están en la red (8 oct 2026).
+    Casi todos los bancos centrales y oficinas de estadística del mundo están en la red, por comodín o por nombre.
 - **Prensa de mercados (titulares y RSS):** CNBC (`www.cnbc.com`, `search.cnbc.com`). Trading Economics no se usa,
   porque sus condiciones limitan la extracción.
 - **Código y lanzamientos:** `github.com` (repositorios y notas de versión de modelos abiertos).
@@ -113,4 +114,4 @@ rutina comprueba cada una desde la nube y anota las que fallen en su informe de 
 
 ## Dominios para la red «Custom» de la rutina
 
-La lista está en `config/red_custom.txt` (más de 5.000 líneas al expandir). Cada dominio de arriba está dentro.
+La lista está en `config/red_custom.txt`. Una prueba comprueba que cada dirección de este fichero está dentro.

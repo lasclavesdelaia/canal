@@ -1,3 +1,4 @@
+import re
 import sys
 import tempfile
 import unittest
@@ -20,10 +21,19 @@ PROHIBIDOS = {
 class RedCustom(unittest.TestCase):
     def setUp(self):
         self.lineas = red_custom.leer()
-        self.lista = red_custom.expandir(self.lineas)
+        self.lista = self.lineas
 
-    def test_miles_de_dominios(self):
-        self.assertGreater(len(self.lista), 3000)
+    def test_cabe_en_el_formulario(self):
+        # 600 líneas (8.020 caracteres) se guardaron; 750 no (8 oct 2026).
+        self.assertLessEqual(len(self.lista), red_custom.MAX_LINEAS)
+        self.assertLessEqual(red_custom.caracteres(self.lista), red_custom.MAX_CARACTERES)
+        self.assertGreater(len(self.lista), 500)
+
+    def test_catalogo_de_reserva(self):
+        catalogo = red_custom.leer(red_custom.CATALOGO)
+        self.assertGreater(len(catalogo), 2500)
+        for d in catalogo:
+            self.assertRegex(d, red_custom.DOMINIO, d)
 
     def test_formato(self):
         for d in self.lista:
@@ -32,17 +42,11 @@ class RedCustom(unittest.TestCase):
             self.assertNotIn(" ", d)
 
     def test_sin_repetidos(self):
-        self.assertEqual(len(self.lista), len(set(self.lista)))
         self.assertEqual(len(self.lineas), len(set(self.lineas)), "línea repetida en red_custom.txt")
 
-    def test_comodin_lleva_el_dominio_desnudo(self):
-        self.assertIn("*.imf.org", self.lista)
-        self.assertIn("imf.org", self.lista)
-
-    def test_sufijo_controlado_sin_dominio_desnudo(self):
-        self.assertIn("*.gob.es", self.lista)
-        self.assertNotIn("gob.es", self.lista)
-        self.assertNotIn("gov", self.lista)
+    def test_comodines_de_administracion(self):
+        for d in ["*.gov", "*.int", "*.gob.es", "*.gov.uk", "*.europa.eu", "*.gov.np", "*.gouv.td"]:
+            self.assertIn(d, self.lista)
 
     def test_nada_prohibido(self):
         for d in self.lista:
@@ -52,10 +56,13 @@ class RedCustom(unittest.TestCase):
                 self.assertNotEqual(base, p, d)
 
     def test_fuentes_de_partida_dentro(self):
-        # Lo que fuentes.md manda leer tiene que estar en la red.
-        for d in ["openai.com", "huggingface.co", "rss.arxiv.org", "www.boe.es", "api.worldbank.org",
-                  "www.bis.org", "www.nrb.org.np", "www.bankofbotswana.bw", "www.mongolbank.mn", "www.beac.int"]:
-            self.assertTrue(self._permitido(d), d)
+        # Cada dirección que cita fuentes.md tiene que abrir desde la red.
+        texto = (RAIZ / "config" / "fuentes.md").read_text(encoding="utf-8")
+        hosts = set(re.findall(r"`([a-z0-9.-]+\.[a-z]{2,})(?:/[^`]*)?`", texto.lower()))
+        hosts = {h for h in hosts if not h.startswith("cs.")}  # categorías de arXiv (`cs.CL`)
+        self.assertGreater(len(hosts), 50)
+        for h in sorted(hosts):
+            self.assertTrue(self._permitido(h), h)
 
     def _permitido(self, host):
         if host in self.lista:
