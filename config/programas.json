@@ -46,6 +46,15 @@
       "palabras_min": 2400,
       "palabras_max": 10000,
       "despedida": "Esto han sido las Claves mundo de Las claves de la IA. Hasta el domingo que viene."
+    },
+    "especial": {
+      "lista": "Especiales",
+      "descripcion": "De vez en cuando, un tema investigado a fondo, de quince minutos a una hora: qué se sabe, qué dicen las distintas posturas y con qué datos, con todas sus fuentes.",
+      "dias": "a veces",
+      "palabras_min": 2400,
+      "palabras_max": 10000,
+      "oculto_sin_episodios": true,
+      "despedida": "Esto ha sido un especial de Las claves de la IA. Gracias por la escucha."
     }
   }
 }

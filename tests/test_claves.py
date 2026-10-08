@@ -31,6 +31,11 @@ def con_cuerpo(cuerpo, **cabecera):
     return f"---\n{lineas}\n---\n{cuerpo}\n\n## Fuentes\n- Algo: https://example.com\n"
 
 
+def visibles(cfg):
+    """Programas que salen en la web aunque no tengan episodios (Especiales espera al primero)."""
+    return [c for c, p in cfg["programas"].items() if not p.get("oculto_sin_episodios")]
+
+
 TEXTO_LARGO = " ".join(["Una frase tranquila con datos y fuente."] * 80)
 
 
@@ -256,7 +261,7 @@ class Web(unittest.TestCase):
             self.assertIn("Muy pronto", portada)  # sin canal de YouTube todavía
             for nombre in ("inter-tight.woff2", "source-serif-4.woff2", "source-serif-4-cursiva.woff2"):
                 self.assertTrue((d / "fuentes" / nombre).exists())
-            for prog in cfg["programas"]:
+            for prog in visibles(cfg):
                 self.assertTrue((d / "miniaturas" / f"{prog}.jpg").exists())
             self.assertTrue((d / "estilo.css").exists())
             # El aviso de IA está en todas las páginas, arriba.
@@ -284,8 +289,9 @@ class Web(unittest.TestCase):
             self.assertNotIn("Muy pronto", portada)
             self.assertIn(">Ver en YouTube<", portada)
             self.assertIn("Para apps de pódcast (RSS)", portada)
-            for c in cfg["programas"]:
+            for c in visibles(cfg):
                 self.assertIn(f"{cfg['canal']['web']}/{c}.xml", portada)
+            self.assertNotIn("/especial.xml", portada)  # Especiales no sale hasta su primer episodio
             self.assertNotIn("Spotify", portada)  # sin enlace, sin botón
             self.assertNotIn("Apps de pódcast</h3>", portada)
 
@@ -306,3 +312,55 @@ class Web(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class Especiales(unittest.TestCase):
+    CUERPO = " ".join(["Una frase tranquila con datos y fuente."] * 400)  # 2.800 palabras
+
+    def test_nombres(self):
+        from comun import partes_nombre
+        self.assertEqual(partes_nombre("2026-10-10-especial-vox-y-el-29n.md"), ("2026-10-10", "especial", "vox-y-el-29n"))
+        self.assertEqual(partes_nombre("2026-10-10-parte.md"), ("2026-10-10", "parte", ""))
+        for malo in ("2026-10-10-especial.md", "2026-10-10-parte-algo.md", "2026-10-10-especial-Vox.md",
+                     "2026-10-10-especial-vox_29n.md", "2026-10-10-especial--vox.md", "2026-10-10-especial-vox-.md",
+                     "2026-10-10-especial-" + "a" * 61 + ".md", "2026-10-10-especial-vox.md.md"):
+            self.assertIsNone(partes_nombre(malo), malo)
+        self.assertTrue(publicar.es_episodio("episodios/2026-10-10-especial-vox.md"))
+        self.assertFalse(publicar.es_episodio("borradores/2026-10-10-especial-vox.md"))
+
+    def test_valida_y_clave(self):
+        texto = con_cuerpo(self.CUERPO, programa="especial", fecha="2026-10-10")
+        ep, errores, _ = validar("episodios/2026-10-10-especial-vox.md", texto)
+        self.assertEqual(errores, [])
+        self.assertEqual(ep.clave, "2026-10-10-especial-vox")
+        _, errores, _ = validar("episodios/2026-10-10-especial-vox.md",
+                                con_cuerpo(self.CUERPO, programa="especial", fecha="2026-10-10", slug="otro"))
+        self.assertTrue(any("slug" in e for e in errores))
+        _, errores, _ = validar("episodios/2026-10-10-especial-vox.md",
+                                con_cuerpo(TEXTO_LARGO, programa="especial", fecha="2026-10-10"))
+        self.assertTrue(any("palabras" in e for e in errores))
+        _, errores, _ = validar("episodios/2026-10-10-especial.md", texto)
+        self.assertTrue(errores)
+
+    def test_hablado_con_su_despedida(self):
+        ep = leer_episodio(con_cuerpo(self.CUERPO, programa="especial", fecha="2026-10-10"))
+        t = texto_hablado(ep)
+        self.assertTrue(t.startswith("Las claves de la IA. Especiales, sábado, 10 de octubre de 2026."))
+        self.assertTrue(t.endswith(config()["programas"]["especial"]["despedida"]))
+
+    def test_web_y_feed_con_un_especial(self):
+        ep, _, _ = validar("episodios/2026-10-10-especial-vox.md",
+                           con_cuerpo(self.CUERPO, programa="especial", fecha="2026-10-10"))
+        meta = {"clave": ep.clave, "programa": ep.programa, "slug": ep.slug, "fecha": ep.fecha, "titulo": ep.titulo,
+                "descripcion": ep.descripcion, "cuerpo": ep.cuerpo, "fuentes": ep.fuentes,
+                "audio_url": "https://example.com/a.mp3", "bytes": 1, "duracion": 1800,
+                "publicado": "2026-10-10T12:00:00+02:00"}
+        with tempfile.TemporaryDirectory() as tmp:
+            sitio.generar([meta], config(), tmp)
+            d = Path(tmp)
+            self.assertTrue((d / "e" / "2026-10-10-especial-vox.html").exists())
+            self.assertIn("Especiales", (d / "especial" / "index.html").read_text())
+            self.assertIn("/especial.xml", (d / "index.html").read_text())
+            rss = ET.parse(d / "especial.xml").getroot()
+            self.assertEqual(rss.find("channel/item/guid").text, "2026-10-10-especial-vox")
+            self.assertIsNone(ET.parse(d / "parte.xml").getroot().find("channel/item"))

@@ -5,8 +5,19 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-PROGRAMAS = ("parte", "claves", "mundo")
-NOMBRE_FICHERO = re.compile(r"^(\d{4}-\d{2}-\d{2})-(parte|claves|mundo)\.md$")
+PROGRAMAS = ("parte", "claves", "mundo", "especial")
+# `AAAA-MM-DD-<programa>.md`; los especiales llevan además su nombre corto: `AAAA-MM-DD-especial-<slug>.md`
+# (slug en minúsculas, cifras y guiones; lo comprueba validar.py).
+NOMBRE_FICHERO = re.compile(r"^(\d{4}-\d{2}-\d{2})-(parte|claves|mundo|especial)(?:-([a-z0-9]+(?:-[a-z0-9]+)*))?\.md$")
+SLUG_MAX = 60
+
+
+def partes_nombre(nombre):
+    """(fecha, programa, slug) de un nombre de episodio válido, o None. Solo los especiales llevan slug, y siempre."""
+    m = NOMBRE_FICHERO.match(nombre)
+    if not m or (m.group(2) == "especial") != bool(m.group(3)) or len(m.group(3) or "") > SLUG_MAX:
+        return None
+    return m.group(1), m.group(2), m.group(3) or ""
 MESES = ("enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre",
          "octubre", "noviembre", "diciembre")
 DIAS = ("lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo")
@@ -24,10 +35,11 @@ class Episodio:
     descripcion: str
     cuerpo: str
     fuentes: list = field(default_factory=list)  # [(texto, url)]
+    slug: str = ""  # solo los especiales: `especial-<slug>`
 
     @property
     def clave(self):
-        return f"{self.fecha}-{self.programa}"
+        return f"{self.fecha}-{self.programa}" + (f"-{self.slug}" if self.slug else "")
 
     @property
     def palabras(self):
@@ -66,7 +78,7 @@ def leer_episodio(texto):
             nombre = linea.replace(u.group(0), "").strip(" :—-") if u else linea
             fuentes.append((nombre, url))
     return Episodio(cabecera["programa"], cabecera["fecha"], cabecera["titulo"],
-                    cabecera["descripcion"], cuerpo, fuentes)
+                    cabecera["descripcion"], cuerpo, fuentes, cabecera.get("slug", ""))
 
 
 def fecha_hablada(fecha):

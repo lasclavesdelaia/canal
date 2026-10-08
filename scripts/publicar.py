@@ -21,7 +21,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import sitio  # noqa: E402
 import voz  # noqa: E402
-from comun import NOMBRE_FICHERO, Episodio, config, texto_hablado  # noqa: E402
+from comun import Episodio, config, partes_nombre, texto_hablado  # noqa: E402
 from validar import validar  # noqa: E402
 
 from zoneinfo import ZoneInfo  # noqa: E402
@@ -38,10 +38,10 @@ def gh_json(*args):
 
 
 def es_episodio(ruta):
-    """Solo cuenta `episodios/AAAA-MM-DD-<programa>.md`. Las tarjetas de memoria (`tarjetas/…`) y lo demás no se
+    """Solo cuenta `episodios/AAAA-MM-DD-<programa>.md` (y `…-especial-<slug>.md`). Las tarjetas de memoria (`tarjetas/…`) y lo demás no se
     publican nunca, aunque se llamen igual."""
     partes = ruta.split("/")
-    return len(partes) == 2 and partes[0] == "episodios" and bool(NOMBRE_FICHERO.match(partes[1]))
+    return len(partes) == 2 and partes[0] == "episodios" and bool(partes_nombre(partes[1]))
 
 
 def episodios_en_ramas():

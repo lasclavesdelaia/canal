@@ -1,4 +1,4 @@
-"""Genera la web y los tres feeds RSS a partir de los metadatos de los episodios publicados.
+"""Genera la web y los feeds RSS (uno por programa) a partir de los metadatos de los episodios publicados.
 
 Cada episodio publicado es un diccionario (lo que se guarda en el cuerpo de su Release de GitHub):
   clave, programa, fecha, titulo, descripcion, cuerpo, fuentes [[nombre, url]], audio_url, bytes,
@@ -6,9 +6,9 @@ Cada episodio publicado es un diccionario (lo que se guarda en el cuerpo de su R
 
 Páginas (el aspecto imita las de pódcast de cristiansdrojek.com: fondo crema, títulos en Inter Tight,
 texto en Source Serif 4, verde oliva de acento):
-  /                    portada: los tres programas, cómo seguirlo y los últimos episodios
+  /                    portada: los programas, cómo seguirlo y los últimos episodios
   /<programa>/         historial completo de un programa, por meses
-  /historial/          historial completo de los tres programas
+  /historial/          historial completo de todos los programas
   /e/<clave>.html      un episodio: reproductor, guion y fuentes
   /e/<clave>.transcripcion.html  transcripción: el texto hablado completo (podcast:transcript del feed)
   /<programa>.xml      feed RSS (lo leen YouTube y las apps de pódcast)
@@ -22,7 +22,7 @@ from pathlib import Path
 from comun import MESES, RAIZ, Episodio, fecha_hablada, texto_hablado
 
 ULTIMOS_EN_PORTADA = 6
-FRECUENCIA = {"todos": "Cada día", "sabado": "Cada sábado", "domingo": "Cada domingo"}
+FRECUENCIA = {"todos": "Cada día", "sabado": "Cada sábado", "domingo": "Cada domingo", "a veces": "De vez en cuando"}
 
 ESTILO = """
 @font-face{font-family:"Inter Tight";font-style:normal;font-weight:100 900;font-display:swap;
@@ -204,10 +204,10 @@ def _seguir(cfg):
     web = canal["web"].rstrip("/")
     yt = canal.get("youtube", "")
     if yt:
-        youtube = (f'<p>Los tres programas salen en el canal de YouTube «{_e(canal["nombre"])}», '
+        youtube = (f'<p>Los programas salen en el canal de YouTube «{_e(canal["nombre"])}», '
                    f'cada uno en su lista.</p><p class="botones"><a class="boton" href="{_e(yt)}">Ver en YouTube</a></p>')
     else:
-        youtube = (f'<p>Muy pronto, los tres programas saldrán también en el canal de YouTube '
+        youtube = (f'<p>Muy pronto, los programas saldrán también en el canal de YouTube '
                    f'«{_e(canal["nombre"])}», cada uno en su lista. El enlace aparecerá aquí.</p>')
     apps = canal.get("apps", {})
     botones = "".join(f'<a class="boton claro" href="{_e(apps[c])}">{_e(n)}</a>'
@@ -251,7 +251,7 @@ def pagina_inicio(episodios, cfg):
     recientes = (f'<ul class="episodios">{recientes}</ul>' if recientes
                  else '<p class="suave">Todavía no hay episodios.</p>')
     cuerpo = f"""<h1>{_e(canal['nombre'])}</h1>
-<p class="entradilla">Tres programas de audio sobre inteligencia artificial y sobre el mundo, con datos y con sus fuentes.
+<p class="entradilla">Programas de audio sobre inteligencia artificial y sobre el mundo, con datos y con sus fuentes.
 Los hace por completo una IA, sin revisión humana.</p>
 <h2 id="programas">Los programas</h2>
 <div class="programas">{''.join(tarjetas)}</div>
@@ -284,7 +284,7 @@ def pagina_programa(clave, episodios, cfg):
 
 def pagina_historial(episodios, cfg):
     cuerpo = f"""<h1>Historial</h1>
-<p class="entradilla">Todos los episodios de los tres programas, del más nuevo al más antiguo.</p>
+<p class="entradilla">Todos los episodios de todos los programas, del más nuevo al más antiguo.</p>
 {_filtro('historial', cfg)}
 {_por_meses(episodios, cfg, con_programa=True)}"""
     return _pagina(f"Historial · {cfg['canal']['nombre']}", cuerpo, cfg, ancho=False)
@@ -396,7 +396,11 @@ def generar(episodios, cfg, destino, audios=None):
             if ruta and Path(ruta).is_file():
                 shutil.copyfile(ruta, destino / "audio" / f"{e['clave']}.mp3")
                 e["audio_web"] = f"/audio/{e['clave']}.mp3"
-    eps = sorted(episodios, key=lambda e: (e["fecha"], e["programa"]), reverse=True)
+    eps = sorted(episodios, key=lambda e: (e["fecha"], e["programa"], e["clave"]), reverse=True)
+    # Un programa marcado «oculto_sin_episodios» (Especiales) no sale en la web ni tiene feed hasta su primer episodio.
+    con_eps = {e["programa"] for e in eps}
+    cfg = dict(cfg, programas={c: p for c, p in cfg["programas"].items()
+                               if c in con_eps or not p.get("oculto_sin_episodios")})
     (destino / "estilo.css").write_text(ESTILO.strip() + "\n", encoding="utf-8")
     (destino / "index.html").write_text(pagina_inicio(eps, cfg), encoding="utf-8")
     (destino / "historial").mkdir()

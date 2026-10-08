@@ -10,7 +10,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from comun import NOMBRE_FICHERO, config, leer_episodio  # noqa: E402
+from comun import config, leer_episodio, partes_nombre  # noqa: E402
 
 # Si aparecen, el episodio no sale.
 PROHIBIDO = [
@@ -39,9 +39,11 @@ def validar(nombre, texto, cfg=None):
     """Devuelve (episodio o None, errores, avisos)."""
     cfg = cfg or config()
     errores, avisos = [], []
-    m = NOMBRE_FICHERO.match(Path(nombre).name)
-    if not m:
-        return None, [f"nombre de fichero no válido: {Path(nombre).name}"], []
+    partes = partes_nombre(Path(nombre).name)
+    if not partes:
+        return None, [f"nombre de fichero no válido: {Path(nombre).name} (AAAA-MM-DD-<programa>.md; los especiales, "
+                      "AAAA-MM-DD-especial-<slug>.md, con el slug en minúsculas, cifras y guiones)"], []
+    fecha, programa, slug = partes
     if len(texto) > 120_000:
         return None, ["el fichero es demasiado grande"], []
     try:
@@ -49,8 +51,11 @@ def validar(nombre, texto, cfg=None):
     except ValueError as e:
         return None, [str(e)], []
 
-    if (ep.fecha, ep.programa) != (m.group(1), m.group(2)):
+    if (ep.fecha, ep.programa) != (fecha, programa):
         errores.append("la fecha o el programa de la cabecera no coinciden con el nombre del fichero")
+    if ep.slug and ep.slug != slug:
+        errores.append("el «slug» de la cabecera no coincide con el nombre del fichero")
+    ep.slug = slug
     prog = cfg["programas"].get(ep.programa)
     if not prog:
         errores.append(f"programa desconocido: {ep.programa}")

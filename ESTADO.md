@@ -491,3 +491,16 @@ Fuentes oficiales leídas el 8 oct 2026 (ninguna muestra fecha de actualización
   juzgarlo por gusto propio; digresiones de vida; pronósticos electorales.
 - Rehacer «todos» (run 37779105788, lanzado por Cristian): bien. Los tres con es-ES-Chirp3-HD-Aoede a 1,1. Duraciones:
   parte 531→477 s (−10 %), claves 1295→1149 s (−11 %), mundo 1138→1041 s (−9 %). 48.887 caracteres en octubre.
+
+## Informes y especiales (8 oct 2026, sesión de construcción)
+Encargo aprobado por Cristian el 8 oct: skills /informe, /especial y /publicar-especial; programa «Especiales»;
+modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en comun/validar con pruebas;
+(2) programa en config y web; (3) modo borrador en publicar.py/.yml y reutilizar su MP3; (4) prompts/especial.md;
+(5) las tres skills; (6) portada (pruebas, espera su elección); (7) README.
+- Hecho: leídos README, ESTADO, PAUTA_COMUN, scripts, publicar.yml, normas.
+- Hecho: pasos 1 y 2. `comun.partes_nombre` es la única regla del nombre; Especiales en config con
+  `oculto_sin_episodios` (no sale en la web ni tiene feed hasta su primer episodio). 28 pruebas en verde.
+- En curso: paso 3 (modo borrador).
+- Siguiente: paso 4.
+- Nota: el portero marcó la sesión como «privada de segundo grado» al leer ~/bin/lib/portero.py (lo escribió un
+  agente tras leer datos privados). No se ha leído nada privado de verdad. Si corta el push, se dice.
