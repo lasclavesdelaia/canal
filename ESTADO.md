@@ -676,9 +676,9 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   (>5.000 de YouTube). Altas en apps de claves.xml, mundo.xml y especial.xml: pendientes (ya tienen episodio).
 - DECISIÓN de Cristian (8 oct, ~18:05): en las apps (iVoox, Spotify, Apple) basta UN solo pódcast «Las claves de la
   IA». NO dar de alta claves.xml, mundo.xml ni especial.xml en las apps.
-  Propuesta (esperando su sí): convertir parte.xml en el feed general «Las claves de la IA» con TODOS los episodios
+  APROBADO por Cristian (8 oct, ~18:10): convertir parte.xml en el feed general «Las claves de la IA» con TODOS los episodios
   (título con prefijo del programa, portada general), porque las tres apps ya leen parte.xml y Spotify no deja cambiar
-  la URL del feed de un pódcast externo. Para YouTube, si quiere una lista por programa, feed nuevo solo-parte
+  la URL del feed de un pódcast externo. Para YouTube SÍ hace falta una lista por programa: feed nuevo solo-parte
   (p. ej. parte-solo.xml) además de claves.xml, mundo.xml y especial.xml. Ajustar la web («Cómo seguirlo»: un botón
   por app, no tres) y `canal.apps` vuelve a un enlace por app: iVoox https://go.ivoox.com/sq/3239998, Spotify
   https://open.spotify.com/show/0mNeHWzVKooVz7yTfZ7uV9, Apple cuando lo aprueben. Ojo al límite de 4.000 caracteres
