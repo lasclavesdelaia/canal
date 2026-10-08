@@ -10,6 +10,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ / "scripts"))
 
 import comparar_voces  # noqa: E402
+import publicar  # noqa: E402
 import sitio  # noqa: E402
 import voz  # noqa: E402
 from comun import config, leer_episodio, texto_hablado  # noqa: E402
@@ -129,6 +130,34 @@ class Hablado(unittest.TestCase):
         self.assertTrue(t.endswith(" ".join(["palabra"] * 90)))
         self.assertEqual(len(comparar_voces.VOCES), 6)
         self.assertEqual(len({n for n, _, _ in comparar_voces.VOCES}), 6)
+
+
+class Rehacer(unittest.TestCase):
+    YA = [{"clave": "2026-10-08-parte", "publicado": "2026-10-08T11:00:00+02:00", "caracteres": 9000},
+          {"clave": "2026-10-09-parte", "publicado": "2026-10-09T06:30:00+02:00", "caracteres": 8000,
+           "rehechos": {"2026-10": 8100}},
+          {"clave": "2026-09-30-parte", "publicado": "2026-09-30T06:30:00+02:00", "caracteres": 7000,
+           "rehechos": {"2026-10": 7200}}]
+
+    def test_elegir(self):
+        self.assertEqual(publicar.elegir_rehacer("", self.YA), [])
+        self.assertEqual([e["clave"] for e in publicar.elegir_rehacer("todos", self.YA)],
+                         ["2026-09-30-parte", "2026-10-08-parte", "2026-10-09-parte"])
+        self.assertEqual([e["clave"] for e in publicar.elegir_rehacer(" 2026-10-09-parte, no-existe ", self.YA)],
+                         ["2026-10-09-parte"])
+
+    def test_tope_cuenta_lo_rehecho(self):
+        import datetime
+        hoy = datetime.date(2026, 10, 20)
+        self.assertEqual(publicar.caracteres_del_mes(self.YA, hoy), 9000 + 8000 + 8100 + 7200)
+
+    def test_texto_hablado_con_la_config_actual(self):
+        ep = leer_episodio(muestra())
+        meta = {"programa": ep.programa, "fecha": ep.fecha, "titulo": ep.titulo, "descripcion": ep.descripcion,
+                "cuerpo": ep.cuerpo, "fuentes": ep.fuentes}
+        cfg = config()
+        cfg["canal"]["aviso_hablado"] = "Aviso nuevo."
+        self.assertIn("Aviso nuevo.", texto_hablado(publicar.episodio_de(meta), cfg))
 
 
 class Web(unittest.TestCase):

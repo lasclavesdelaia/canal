@@ -37,5 +37,7 @@ Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian).
 - **El aviso de IA y la despedida los pone el sistema** (`config/programas.json`), no el modelo. Es obligatorio por
   el artículo 50 del reglamento europeo de IA.
 - **Antes de cambiar Python:** `python3 -m unittest discover -s tests -v`.
+- **Cambiar de voz:** edita `voz.nombre` en `config/programas.json`, sube el cambio y lanza «Publicar episodios» con
+  `rehacer` = `todos` (Actions › Run workflow). El MP3 se sustituye con el mismo nombre; YouTube no cambia lo ya importado.
 - **Retirar un episodio:** borra su Release `ep-<clave>`; el siguiente paso de Actions lo quita de la web y de los
   feeds. En YouTube se oculta a mano en Studio.

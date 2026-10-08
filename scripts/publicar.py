@@ -6,6 +6,8 @@ lee internet) solo se leen ficheros de texto `episodios/AAAA-MM-DD-<programa>.md
 Uso:
   python3 scripts/publicar.py --sitio _site            (normal, en Actions)
   python3 scripts/publicar.py --sitio _site --sin-voz  (prueba: valida y rehace la web sin publicar nada)
+  python3 scripts/publicar.py --sitio _site --rehacer todos   (vuelve a poner voz a lo ya publicado, con la voz,
+      el aviso hablado y la despedida de la config actual; también --rehacer 2026-10-08-parte,2026-10-09-parte)
 """
 import argparse
 import datetime
@@ -19,7 +21,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import sitio  # noqa: E402
 import voz  # noqa: E402
-from comun import NOMBRE_FICHERO, config, texto_hablado  # noqa: E402
+from comun import NOMBRE_FICHERO, Episodio, config, texto_hablado  # noqa: E402
 from validar import validar  # noqa: E402
 
 from zoneinfo import ZoneInfo  # noqa: E402
@@ -64,8 +66,30 @@ def publicados(repo):
 
 
 def caracteres_del_mes(eps, hoy):
+    """Caracteres enviados a la voz este mes: episodios publicados en él y voces rehechas en él."""
     mes = hoy.strftime("%Y-%m")
-    return sum(e.get("caracteres", 0) for e in eps if e.get("publicado", "").startswith(mes))
+    return sum(e.get("caracteres", 0) for e in eps if e.get("publicado", "").startswith(mes)) + \
+        sum(e.get("rehechos", {}).get(mes, 0) for e in eps)
+
+
+def elegir_rehacer(peticion, ya):
+    """Episodios publicados que hay que rehacer: «todos» o claves separadas por comas. Avisa de las que no existen."""
+    peticion = (peticion or "").strip()
+    if not peticion:
+        return []
+    if peticion.lower() == "todos":
+        return sorted(ya, key=lambda e: e["clave"])
+    pedidas = [c.strip() for c in peticion.split(",") if c.strip()]
+    por_clave = {e["clave"]: e for e in ya}
+    for c in pedidas:
+        if c not in por_clave:
+            print(f"aviso: no hay episodio publicado {c}")
+    return [por_clave[c] for c in pedidas if c in por_clave]
+
+
+def episodio_de(meta):
+    return Episodio(programa=meta["programa"], fecha=meta["fecha"], titulo=meta["titulo"],
+                    descripcion=meta["descripcion"], cuerpo=meta["cuerpo"], fuentes=meta.get("fuentes", []))
 
 
 def publicar_uno(ep, cfg, repo, usados):
@@ -83,6 +107,7 @@ def publicar_uno(ep, cfg, repo, usados):
             "audio_url": f"https://github.com/{repo}/releases/download/ep-{ep.clave}/{ep.clave}.mp3",
             "bytes": mp3.stat().st_size, "duracion": voz.duracion_segundos(mp3), "caracteres": caracteres,
             "publicado": datetime.datetime.now(MADRID).replace(microsecond=0).isoformat(),
+            "voz": cfg["voz"]["nombre"],
         }
         notas = Path(tmp) / "meta.json"
         notas.write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -94,6 +119,32 @@ def publicar_uno(ep, cfg, repo, usados):
     return meta
 
 
+def rehacer_uno(meta, cfg, repo, usados, hoy):
+    """Vuelve a poner voz a un episodio publicado con la config actual. El MP3 se sube con el mismo nombre
+    (--clobber), así que la URL del feed no cambia. Devuelve el meta actualizado o None si no cabe en el tope."""
+    hablado = texto_hablado(episodio_de(meta), cfg)
+    tope = cfg["voz"]["tope_caracteres_mes"]
+    if usados + len(hablado) > tope:
+        print(f"NO se rehace {meta['clave']}: el mes llegaría a {usados + len(hablado)} caracteres (tope {tope})")
+        return None
+    with tempfile.TemporaryDirectory() as tmp:
+        mp3 = Path(tmp) / f"{meta['clave']}.mp3"
+        caracteres = voz.sintetizar(hablado, cfg["voz"], mp3)
+        nuevo = dict(meta)
+        mes = hoy.strftime("%Y-%m")
+        rehechos = dict(meta.get("rehechos", {}))
+        rehechos[mes] = rehechos.get(mes, 0) + caracteres
+        nuevo.update({"bytes": mp3.stat().st_size, "duracion": voz.duracion_segundos(mp3), "caracteres": caracteres,
+                      "voz": cfg["voz"]["nombre"], "rehechos": rehechos})
+        notas = Path(tmp) / "meta.json"
+        notas.write_text(json.dumps(nuevo, ensure_ascii=False, indent=1), encoding="utf-8")
+        etiqueta = f"ep-{meta['clave']}"
+        subprocess.run(["gh", "release", "upload", etiqueta, str(mp3), "--clobber", "--repo", repo], check=True)
+        subprocess.run(["gh", "release", "edit", etiqueta, "--notes-file", str(notas), "--repo", repo], check=True)
+    print(f"rehecho: {meta['clave']} con {nuevo['voz']} ({nuevo['duracion']} s, {caracteres} caracteres)")
+    return nuevo
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--sitio", default="_site")
@@ -101,12 +152,15 @@ def main():
     ap.add_argument("--desde", default="2026-10-01", help="ignora episodios anteriores a esta fecha")
     ap.add_argument("--solo-comprobar", action="store_true",
                     help="solo cuenta los episodios nuevos y válidos (para no pedir aprobación en vano)")
+    ap.add_argument("--rehacer", default=os.environ.get("REHACER", ""),
+                    help="«todos» o claves separadas por comas: vuelve a poner voz a lo ya publicado")
     args = ap.parse_args()
 
     cfg = config()
     repo = os.environ.get("GITHUB_REPOSITORY", cfg["canal"]["repositorio"])
     hoy = datetime.datetime.now(MADRID).date()
     ya = publicados(repo)
+    a_rehacer = elegir_rehacer(args.rehacer, ya)  # antes de publicar: lo nuevo ya sale con la voz actual
     hechos = {e["clave"] for e in ya}
     fallos = []
     nuevos = 0
@@ -138,12 +192,18 @@ def main():
             ya.append(meta)
 
     if args.solo_comprobar:
-        print(f"episodios nuevos y válidos: {nuevos}")
+        nuevos += len(a_rehacer)  # rehacer también necesita la clave de la voz
+        print(f"episodios nuevos y válidos, más los que hay que rehacer: {nuevos}")
         salida = os.environ.get("GITHUB_OUTPUT")
         if salida:
             with open(salida, "a") as f:
                 f.write(f"nuevos={nuevos}\nrechazados={len(fallos)}\n")
         return 0
+    if a_rehacer and not args.sin_voz:
+        for meta in a_rehacer:
+            nuevo = rehacer_uno(meta, cfg, repo, caracteres_del_mes(ya, hoy), hoy)
+            if nuevo:
+                ya = [nuevo if e["clave"] == nuevo["clave"] else e for e in ya]
     sitio.generar(ya, cfg, args.sitio)
     print(f"web generada en {args.sitio} con {len(ya)} episodios")
     return 0

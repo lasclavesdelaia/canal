@@ -5,7 +5,12 @@ name: Publicar episodios
 on:
   schedule:
     - cron: "*/20 4-13 * * *"   # cada 20 minutos de 4:00 a 13:59 UTC (de 5-6 h a 14-15 h en Madrid)
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      rehacer:
+        description: "Volver a poner voz a lo publicado (voz, aviso y despedida de la config actual): «todos» o claves separadas por comas (2026-10-08-parte). Vacío: lo normal."
+        required: false
+        default: ""
   push:
     # Un cambio de diseño rehace la web sin esperar al episodio siguiente (job solo_web: sin voz ni clave).
     branches: [main]
@@ -39,6 +44,7 @@ jobs:
         name: ¿Hay episodios nuevos?
         env:
           GH_TOKEN: ${{ github.token }}
+          REHACER: ${{ inputs.rehacer }}
         run: python3 scripts/publicar.py --solo-comprobar
       - name: Avisar de un episodio rechazado
         if: steps.mirar.outputs.rechazados != '0'
@@ -65,6 +71,7 @@ jobs:
         env:
           GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
           GH_TOKEN: ${{ github.token }}
+          REHACER: ${{ inputs.rehacer }}
         run: python3 scripts/publicar.py --sitio _site
       - uses: actions/upload-pages-artifact@v3
         with:
