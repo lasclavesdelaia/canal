@@ -382,7 +382,7 @@ Fuentes oficiales leídas el 8 oct 2026 (ninguna muestra fecha de actualización
   sí hay parte (cubre desde el sábado por la mañana) y mundo. Cambiado: RUTINA, parte.md, claves.md, ENCARGADO.md,
   programas.json (descripciones, dias «menos sabado») y sitio.py («De domingo a viernes»).
 - Pendiente menor: la portada del parte (assets) dice «Cada día»; la despedida del parte dice «Hasta mañana» también
-  el viernes. Lo dejo así salvo que diga otra cosa.
+  el viernes. Cristian: «da igual». Se queda así.
 
 ### (Descartada) Propuesta: rutina de fin de semana con esfuerzo alto
 - Segunda rutina solo sábado y domingo, a las 6:30, con `effortLevel: high`, que solo hace el semanal del día
