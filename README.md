@@ -12,7 +12,7 @@ Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian).
 
 1. **Una rutina en la nube de Claude Code** escribe el guion:
    - modelo Sonnet 5.5, esfuerzo bajo (`.claude/settings.json`);
-   - a las 6:07 y a las 13:07, hora de Madrid;
+   - a las 5:07 y a las 13:07, hora de Madrid;
    - su prompt es `prompts/RUTINA.md`;
    - sube `episodios/AAAA-MM-DD-<programa>.md` a una rama `claude/…`. Nunca sube a `main`.
 2. **GitHub Actions** (`.github/workflows/publicar.yml`) corre cada 20 minutos con el código de `main`:

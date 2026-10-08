@@ -1,6 +1,6 @@
 # Rutina de la mañana de «Las claves de la IA»
 
-Este es el prompt de la rutina en la nube. Corre a las 6:07 y, de reserva, a las 13:07, hora de Madrid.
+Este es el prompt de la rutina en la nube. Corre a las 5:07 y, de reserva, a las 13:07, hora de Madrid.
 
 ## Pasos
 
