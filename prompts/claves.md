@@ -31,6 +31,7 @@ contaron la noticia. Aquí se **profundiza**: qué significa, qué patrón se ve
   - un debate de investigación;
   - una ley;
   - un dato de empleo con tendencia.
+- **Enlaza con los partes por su nombre** («como contamos el martes…») y suma lo nuevo.
 - **Si un tema ya se trató a fondo un sábado anterior,** no lo repitas: menciónalo y suma lo nuevo.
 
 ## Título

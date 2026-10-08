@@ -50,6 +50,16 @@ rutina comprueba cada una desde la nube y anota las que fallen en su informe de 
 - **Eurostat:** `ec.europa.eu/eurostat/api/dissemination`. **FMI:** `www.imf.org` y `data.imf.org`. **Banco
   Mundial:** `api.worldbank.org/v2/`.
 - **Oficina Nacional de Estadística de China:** `www.stats.gov.cn/english/`.
+- **Mercados, de fuente oficial cuando se pueda:**
+  - Tesoro de EE. UU.: `home.treasury.gov`, `api.fiscaldata.treasury.gov`;
+  - EIA (petróleo y energía): `www.eia.gov`;
+  - Banco de Japón: `www.boj.or.jp`;
+  - Banco de la Reserva de la India: `www.rbi.org.in`.
+
+  Si un dato de mercado solo aparece en prensa secundaria, se dice así («según CNBC…»).
+- **Prensa de mercados (titulares y RSS):** CNBC (`www.cnbc.com`, `search.cnbc.com`). Trading Economics no se usa,
+  porque sus condiciones limitan la extracción.
+- **Código y lanzamientos:** `github.com` (repositorios y notas de versión de modelos abiertos).
 - **Prensa internacional (titulares y RSS públicos):** Reuters, AP, BBC Mundo, El País Economía, Expansión, Nikkei
   Asia (titulares).
 
@@ -62,4 +72,6 @@ www.interconnects.ai techcrunch.com www.theverge.com www.ft.com news.ycombinator
 hacker-news.firebaseio.com www.boe.es servicios.ine.es www.ine.es app.bde.es www.bde.es www.ecb.europa.eu
 www.federalreserve.gov ec.europa.eu www.imf.org data.imf.org api.worldbank.org www.stats.gov.cn www.reuters.com
 apnews.com feeds.bbci.co.uk www.bbc.com elpais.com feeds.elpais.com www.expansion.com asia.nikkei.com
+home.treasury.gov api.fiscaldata.treasury.gov www.eia.gov www.boj.or.jp www.rbi.org.in www.cnbc.com search.cnbc.com
+github.com
 ```

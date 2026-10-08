@@ -33,6 +33,9 @@ semana buscando noticias sesgadas.
   Mundial, Oficina Nacional de Estadística de China. Los datos oficiales se pueden citar tal cual.
 - **Después, las interpretaciones:** al menos dos, con nombre y de escuelas distintas, cuando el tema lo merezca.
 - **Lo que no está claro se dice** («los datos apuntan a…, pero…»). Nada de profecías ni de «se viene una crisis».
+- **Si un dato solo está en prensa secundaria, dilo** («según CNBC…»). No uses webs de dudosa calidad ni
+  Wikipedia como fuente de cifras.
+- **No repitas en el repaso por regiones** lo que ya contaron las claves de IA del sábado.
 - **Mercados:** solo si un movimiento es grande y tiene explicación. Este programa no da consejos de inversión.
 
 ## Estructura

@@ -65,9 +65,12 @@ Claves mundo:
 - Hecho: leídos enteros README, ESTADO, PASOS y todo lo que se sube (scripts, prompts, config, tests, flujo,
   .claude, las tres portadas). Nada privado dentro. Quitado de este ESTADO un detalle personal (bloqueador de webs).
 - Hecho: 12 pruebas en verde. pruebas/2026-10-08-parte.md pasa validar.py («bien», 1.466 palabras).
-- Bloqueado: `gh` no está instalado en el Mac. Hace falta `brew install gh` y que Cristian haga `gh auth login`.
-- Bloqueado: falta su frase «lo de claves_ia no es privado». Sin ella no se sube nada.
-- Siguiente: commit inicial, remoto, push de main, Pages, rama de prueba y workflow.
+- Hecho: Cristian escribió «lo de claves_ia no es privado» (8 oct).
+- Hecho: commit inicial local c78dd93 (23 ficheros, sin pruebas/ ni _site/). Firma del repo: «Las claves de la IA
+  <lasclavesdelaia@gmail.com>», para no publicar el nombre del Mac.
+- Hecho: `gh` 2.102.0 instalado (Homebrew).
+- Bloqueado: no hay sesión de GitHub. Cristian tiene que hacer `gh auth login` en su terminal.
+- Siguiente: remoto, push de main, Pages, rama de prueba y workflow.
 
 ### Preguntas para Cristian (F3)
 - En el Parte de prueba, el FT citado dice «25 %» de crecimiento de beneficios y el guion dice «veintisiete por
