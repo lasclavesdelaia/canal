@@ -256,3 +256,4 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
   assets/youtube/icono.png. El icono de reserva del script (`--icono`) no le gusta: no usarlo.
 - Pendiente de Cristian: subir banner (y luego icono) en YouTube Studio › Personalización › Imagen de marca.
 - 8 oct: banner rehecho con más aire (en escritorio quedaba apretado): título 150 px centrado, bandas laterales estrechas.
+- 8 oct: ICONO elegido por Cristian (hecho con ChatGPT): C negra con texto mecanografiado tachado «la inteli… artificial» y barra roja. Ajustado a 800x800 en assets/youtube/icono.png; cabe en el círculo.
