@@ -722,3 +722,5 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   canal): Apple «Refresh» → ya muestra nombre y logo nuevos. iVoox no relee: cambiados a mano el programa (nombre,
   descripción, portada) y el canal 9342473 (nombre, descripción con aviso, web, imagen). iVoox aún muestra 1 episodio:
   vigilar que importe claves, mundo y especial del 8. Spotify: se actualizará solo desde el feed.
+- 8 oct: Apple publicó el pódcast general (id 6820597566, lee parte.xml; comprobado en itunes lookup). Enlace en
+  canal.apps.apple con el sí de Cristian (aviso de la sesión «IVOOX REVISAR», que el portero había cortado).
