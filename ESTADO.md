@@ -784,4 +784,7 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   semana»), mundo.md (revisa los del domingo anterior), RUTINA.md (paso 6 y tamaño de tarjeta). 66 pruebas en verde.
 - Decisión menor: el «revisar» del parte es la fecha de mañana; el de mundo, el domingo siguiente; lo que siga
   abierto tras el sábado vuelve con fecha del lunes.
-- Siguiente: commit y push; luego avisar del coste de la parte 2 y esperar su sí.
+- Hecho: commit 04592b3 subido a main.
+- Parte 2 (subtítulos de Gargoyles Devon): ESPERA el sí de Cristian al coste (~100.000 tokens de lectura; unos
+  300.000-600.000 procesados en total). Ojo: esta sesión ya tiene la marca de «privado»; si lee los subtítulos (de
+  fuera), el portero cortará el push. Mejor hacerla en una sesión limpia.
