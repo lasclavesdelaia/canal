@@ -935,3 +935,4 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   en real, y comprobar que los 4 del 8 salen «ya marcado, no toco nada». (2) Conectar en YouTube Studio los feeds a
   sus pódcast: parte-solo.xml (NO parte.xml), claves.xml, mundo.xml, especial.xml; solo episodios POSTERIORES al
   8 oct. Hasta entonces, el workflow de cada hora solo avisa (sin rojo).
+- Hecho (9 oct, Cristian): en la portada, el bloque RSS va plegado («Para apps de pódcast (RSS)», se abre al pulsar).

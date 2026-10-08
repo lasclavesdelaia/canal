@@ -81,6 +81,8 @@ color:#fff;font:500 15px/1.2 var(--sans);text-decoration:none;border-radius:3px}
 .seguir p{margin:0 0 .8em}.seguir p:last-child{margin-bottom:0}
 .rss{margin-top:20px;font:400 .85rem/1.5 var(--sans);color:var(--suave)}
 .rss strong{font-weight:600}
+.rss summary{cursor:pointer;padding:6px 0;list-style-position:inside}
+.rss summary:hover{color:var(--texto)}
 .rss p{margin:.3em 0}
 .rss ul{list-style:none;padding:0;margin:0}
 .rss li{padding:3px 0}
@@ -227,10 +229,10 @@ def _seguir(cfg):
 <div><h3>YouTube</h3>{youtube}</div>
 {en_apps}
 </div>
-<div class="rss"><p><strong>Para apps de pódcast (RSS).</strong> Un solo pódcast con todos los programas: copia
-esta dirección en tu aplicación.</p><ul><li><a href="/{FEED_GENERAL}.xml">{_e(canal["nombre"])}</a>
+<details class="rss"><summary><strong>Para apps de pódcast (RSS)</strong></summary><p>Un solo pódcast con todos los
+programas: copia esta dirección en tu aplicación.</p><ul><li><a href="/{FEED_GENERAL}.xml">{_e(canal["nombre"])}</a>
 <code>{_e(web)}/{FEED_GENERAL}.xml</code></li></ul>
-<p>Un feed por programa (los usa YouTube, uno por lista):</p><ul>{feeds}</ul></div>"""
+<p>Un feed por programa (los usa YouTube, uno por lista):</p><ul>{feeds}</ul></details>"""
 
 
 def pagina_inicio(episodios, cfg):
