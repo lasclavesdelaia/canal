@@ -692,3 +692,15 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   item ≤ 4.000 (sitio.descripcion_item: quita fuentes del final y pone «Más fuentes: <página>»). Con los 4 episodios
   reales: 3227, 3993, 3864, 3933. Web: un botón por app; RSS general y los de YouTube en letra pequeña. 52 pruebas.
   canal.apps: Spotify y iVoox (enlace largo; iVoox resuelve por el número f13239998, vale aunque cambie el nombre).
+- Paso 5 HECHO: commit dbdd5c7 subido; run 37806085397 «Publicar episodios» en verde (solo_web + web). En línea:
+  parte.xml (general, 4 items, máx. 3.993 caracteres), parte-solo.xml, claves.xml, mundo.xml, especial.xml y
+  portadas/general.jpg dan 200 y son XML válido. La portada muestra «Escuchar en Spotify» y «Escuchar en iVoox».
+  Web vista en local a 375 y 1280 px sin desborde horizontal.
+- Rehechos los .desc/.txt de pruebas/videos_youtube/ (ignorados por git) con la descripción nueva: ninguno pasa
+  de 4.000 (antes mundo 5.330 y especial 6.724), para la subida a mano a YouTube.
+- Pendiente de Cristian: (a) en iVoox, revisar en «Editar programa» que el nombre pase a «Las claves de la IA» y
+  la portada nueva (iVoox no siempre los relee); Spotify y Apple los toman solos del feed en horas. (b) Apple: pulsar
+  Publish; cuando lo aprueben, poner su enlace en canal.apps.apple. (c) YouTube Studio: conectar parte-solo.xml
+  (NO parte.xml), claves.xml, mundo.xml y especial.xml a sus listas y elegir subir solo lo POSTERIOR al 8 oct.
+- Pregunta para Cristian: la portada general es el icono del canal (800 px) escalado a 3000; se ve bien, pero si
+  quieres más nitidez habría que rehacerla a 3000 px desde el original. Yo la dejaría así.
