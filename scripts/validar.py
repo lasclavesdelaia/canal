@@ -23,6 +23,14 @@ INYECCION = [
     r"system prompt", r"prompt del sistema", r"eres un asistente", r"you are an? (ai|assistant)",
     r"<\s*/?\s*(script|iframe)",
 ]
+# Título y descripción no se locutan: versiones y decimales van en cifras («Haiku 5.5», «GPT-6», «3,8 %»).
+_CIFRA = r"(cero|uno|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce)"
+NUMEROS_EN_PALABRAS = [
+    rf"\b{_CIFRA} (punto|coma) {_CIFRA}\b",
+    rf"\b(gpt|qwen|llama|gemini|claude|grok|deepseek|mistral|phi|gemma)[- ]{_CIFRA}\b",
+    rf"\b(haiku|sonnet|opus|fable|flash|pro|ultra|nano|mini|turbo) {_CIFRA}\b",
+    rf"\b{_CIFRA} por ciento\b",
+]
 # Solo avisan.
 VIGILAR = [r"\bincre[ií]ble", r"\bhist[oó]ric[oa]", r"\brevoluci[oó]n", r"\batenci[oó]n[,:]", r"\bimpactante"]
 
@@ -59,6 +67,10 @@ def validar(nombre, texto, cfg=None):
     for campo, valor in (("título", ep.titulo), ("descripción", ep.descripcion)):
         if "<" in valor or ">" in valor:
             errores.append(f"«<» o «>» en la {campo}")
+    for campo, valor in (("título", ep.titulo), ("descripción", ep.descripcion)):
+        if any(re.search(p, valor.lower()) for p in NUMEROS_EN_PALABRAS):
+            errores.append(f"números en palabras en la {campo}: en el título y la descripción, versiones en cifras "
+                           "(Haiku 5.5)")
     if len(ep.descripcion) > 1500:
         errores.append("descripción de más de 1.500 caracteres")
     if re.search(r"https?://", ep.descripcion):

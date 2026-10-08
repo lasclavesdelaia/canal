@@ -67,6 +67,16 @@ class Validador(unittest.TestCase):
             _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo(TEXTO_LARGO + "\n\n" + malo))
             self.assertTrue(errores, malo)
 
+    def test_versiones_en_cifras_en_titulo_y_descripcion(self):
+        for titulo in ("Claude Haiku cinco punto cinco y más", "GPT seis para todos", "Qwen tres llega"):
+            _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo(TEXTO_LARGO, titulo=titulo))
+            self.assertTrue(any("versiones en cifras" in e for e in errores), titulo)
+        _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo(TEXTO_LARGO, titulo="Claude Haiku 5.5 y GPT-6, dos o tres temas"))
+        self.assertFalse(any("cifras" in e for e in errores))
+        # En el texto hablado sí se escriben como se pronuncian.
+        _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo(TEXTO_LARGO + " Llega Haiku cinco punto cinco."))
+        self.assertFalse(any("cifras" in e for e in errores))
+
     def test_longitud(self):
         _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo("Muy corto."))
         self.assertTrue(any("palabras" in e for e in errores))

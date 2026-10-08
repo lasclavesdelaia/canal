@@ -151,11 +151,15 @@ Segundo párrafo hablado.
 
 - **El título:**
   - concreto, informativo, con los dos o tres temas del día;
-  - no se locuta, así que los modelos van escritos como se escriben («GPT-6.5», «Claude Haiku 5.5»);
+  - no se locuta, así que los modelos y las cifras van escritos en cifras («GPT-6», «Claude Haiku 5.5»,
+    «3,8 %», «100 dólares»), nunca como se pronuncian;
   - sin exclamaciones, mayúsculas de gancho ni `<` o `>`;
   - de 100 caracteres como mucho;
   - no repitas el nombre del programa: se añade solo.
-- **La descripción:** sin enlaces; las fuentes ya van aparte.
+- **La descripción:** sin enlaces; las fuentes ya van aparte. Tampoco se locuta: versiones y cifras en cifras,
+  como en el título («Haiku 5.5», «GPT-6», «3,8 %»).
+- **Solo el texto hablado** escribe los números como se pronuncian («cinco punto cinco»). Título y descripción,
+  nunca: si llevan «cinco punto cinco» o «GPT seis», el validador rechaza el episodio.
 - **No escribas la presentación con el aviso de IA ni la despedida:** las pone el sistema solo. Empieza
   directamente por el contenido y termina con la última idea (una frase de cierre breve está bien, sin invitar a
   nada).
