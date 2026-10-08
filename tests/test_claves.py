@@ -93,6 +93,11 @@ class Hablado(unittest.TestCase):
         self.assertTrue(all(len(p.encode()) <= voz.MAX_BYTES for p in partes))
         self.assertEqual(" ".join(" ".join(partes).split()), " ".join((texto_hablado(ep) * 3).split()))
 
+    def test_voz_elegida(self):
+        v = config()["voz"]
+        self.assertEqual(v["nombre"], "es-ES-Chirp3-HD-Aoede")  # elegida de oído por Cristian el 8 oct 2026
+        self.assertNotIn("modelo", v)  # Chirp 3 HD, no Gemini
+
     def test_peticion_chirp_y_gemini(self):
         chirp = voz.peticion("Hola.", {"idioma": "es-ES", "nombre": "es-ES-Chirp3-HD-Charon", "velocidad": 1.0})
         self.assertNotIn("modelName", chirp["voice"])

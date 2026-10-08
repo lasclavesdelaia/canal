@@ -25,10 +25,10 @@ PALABRAS_MIN = 60
 ESTILO = "Tono sereno de parte informativo, sin dramatismo."
 
 VOCES = [
-    ("01-chirp-charon", "Chirp 3 HD, Charon (hombre; la voz actual)", {"nombre": "es-ES-Chirp3-HD-Charon"}),
+    ("01-chirp-charon", "Chirp 3 HD, Charon (hombre; la voz anterior)", {"nombre": "es-ES-Chirp3-HD-Charon"}),
     ("02-chirp-alnilam", "Chirp 3 HD, Alnilam (hombre)", {"nombre": "es-ES-Chirp3-HD-Alnilam"}),
     ("03-chirp-kore", "Chirp 3 HD, Kore (mujer)", {"nombre": "es-ES-Chirp3-HD-Kore"}),
-    ("04-chirp-aoede", "Chirp 3 HD, Aoede (mujer)", {"nombre": "es-ES-Chirp3-HD-Aoede"}),
+    ("04-chirp-aoede", "Chirp 3 HD, Aoede (mujer; la elegida el 8 oct)", {"nombre": "es-ES-Chirp3-HD-Aoede"}),
     ("05-gemini-25-flash-charon", "Gemini 2.5 Flash TTS, Charon, con estilo",
      {"nombre": "Charon", "modelo": "gemini-2.5-flash-tts", "estilo": ESTILO}),
     ("06-gemini-31-flash-charon", "Gemini 3.1 Flash TTS (preview), Charon, con estilo",

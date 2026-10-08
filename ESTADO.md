@@ -186,7 +186,9 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
 - 8 oct, 12:45: Agent Platform API (aiplatform.googleapis.com) HABILITADA en voz-claves, pero no se puede añadir a la
   clave «voz-github»: exige una clave ligada a una cuenta de servicio. Recomendado: elegir entre los 4 Chirp. Gemini
   solo si Cristian crea esa cuenta de servicio y la clave nueva (no lo hace un agente).
-- Siguiente: Cristian elige de oído. Si elige Gemini, poner `modelo` y `estilo` en `voz` de config/programas.json
+- Hecho (8 oct): Cristian eligió de oído **Chirp 3 HD Aoede (mujer)**. `voz.nombre` = es-ES-Chirp3-HD-Aoede en
+  config/programas.json; sin coste (dentro del millón gratis). Gemini descartado.
+- Antes: Cristian elige de oído. Si elige Gemini, poner `modelo` y `estilo` en `voz` de config/programas.json
   (`voz.py` ya los lee). Coste estimado con ~470.000 caracteres al mes (unas 8,7 h de audio a ~15 caracteres por segundo): Chirp 3 HD, 0 $
   (dentro del millón gratis); Gemini 2.5 Flash, unos 8 $/mes; Gemini 3.1 Flash o 2.5 Pro, unos 16 $/mes. Los
   créditos (vencen el 7 ene 2027) lo cubrirían si valen para Gemini; después se pagaría.
