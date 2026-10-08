@@ -1,6 +1,7 @@
 # ESTADO de «Las claves de la IA»
 
 ## Hecho
+- 8 oct 2026 (sesión limpia de la tarde): F3 TERMINADA. 14 pruebas en verde; push e8da804..65b7c46.
 - 8 oct 2026, F1 (código local, sesión de diseño):
   - prompts: pauta común, tres programas y rutina;
   - configuración y fuentes;
@@ -11,6 +12,8 @@
   - Sin probar contra los servicios reales (no hay claves ni repositorio todavía).
 
 ## En curso
+- Tarea 3: web de claves.cristiansdrojek.com con el aspecto de las páginas de pódcast de su web
+  (scripts/sitio.py). Bitácora: ~/bin/docs/WEB_CLAVES_Y_TEMPLE_ESTADO.md, apartado «Tarea 3».
 - F2: los pasos de Cristian (`PASOS_CRISTIAN.md`).
 
 ## Siguiente
@@ -113,6 +116,11 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
   de «publicar». Rama de sesión asignada: claude/happy-lovelace (la rutina pide claude/episodios-FECHA: vigilar el push).
 - Hecho: Run now el 8 oct ~12:00 (sesión cse_01PzXrwjmhRcbAL7MnD76kSi). Como el parte del 8 ya existe, debería terminar
   sin escribir; la prueba de verdad es el 9 oct a las 5:07.
+- Hecho: Run now OK (19 s): clonó, vio el parte del 8 en claude/episodios-2026-10-08 y terminó sin escribir. Actions
+  «Publicar episodios» cada 20 min en verde; web y parte.xml dan 200.
+- PENDIENTE SESIÓN LIMPIA: `git push origin main` (commit 65b7c46 y siguientes: plan B de rama en RUTINA.md e
+  investigación de Gargoyles, Jon Hernández y LMArena). El portero cortó el push tras la búsqueda web.
+- Vigilar el 9 oct tras las 5:07: que exista episodios/2026-10-09-parte.md en una rama claude/ y que Actions lo publique.
 - Antes: esperando el «sí» de Cristian. El clasificador de modo auto denegó cargar la skill «schedule»: si no hay herramienta, se le guía a mano en claude.ai/code.
 
 - Hecho (petición de la sesión de diseño): aviso hablado corto en config/programas.json («aviso_hablado»: «Este
