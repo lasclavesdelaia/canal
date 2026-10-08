@@ -259,3 +259,15 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
 - 8 oct: ICONO elegido por Cristian (hecho con ChatGPT): C negra con texto mecanografiado tachado «la inteli… artificial» y barra roja. Ajustado a 800x800 en assets/youtube/icono.png; cabe en el círculo.
 - HECHO (8 oct): push a main de los cuatro commits (portadas, banner, «Parte diario», icono); main en 0eacec8.
   «Publicar episodios» (solo_web) terminó bien: web y feeds rehechos. Falta solo que Cristian suba icono y banner en Studio.
+
+## Web: cómo seguirlo y apps de pódcast (8 oct 2026, noche)
+- Hecho (PARTE B): commit d647740 subido a main. «Cómo seguirlo»: YouTube primero con botón «Ver en YouTube»
+  (canal.youtube = https://www.youtube.com/@LasclavesdelaIA); botones de Spotify, Apple Podcasts e iVoox que solo
+  salen si su enlace está en `canal.apps` de config/programas.json (vacíos ahora); RSS abajo, en pequeño: «Para apps
+  de pódcast (RSS)» con las tres direcciones. Reproductores con preload="metadata". 18 pruebas en verde. Mirado en
+  local a 375 y 1280 px, sin scroll lateral. El push lanza solo_web.
+- En curso: PARTE A (normas de Spotify, Apple e iVoox sobre IA y guía de alta).
+- Siguiente: cuando Cristian tenga los enlaces de cada programa, ponerlos en `canal.apps` (spotify, apple, ivoox).
+  Ojo: hoy es un enlace por app, pero son tres programas con tres feeds: si cada app da tres enlaces, habrá que pasar
+  `apps` a un enlace por programa (o enlazar la página del autor/perfil en cada app). Si esta sesión ya no puede
+  hacer push, hacerlo en una sesión nueva.
