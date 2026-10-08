@@ -369,10 +369,18 @@ explicar, nunca sus frases, sus imágenes ni sus opiniones.
     Fama-French, riesgo de secuencia, sesgo de supervivencia, opciones y griegas, «carry trade», contango y
     «backwardation», concentración del índice frente al equiponderado. Le suenan pero no sabría definirlos: una
     frase precisa basta.
+    En geopolítica: dilema de seguridad, disuasión por castigo y por negación, equilibrio de poder frente a
+    subirse al carro del fuerte, realismo frente a liberalismo, guerra híbrida, A2/AD, quiénes son las RSF de
+    Sudán, el M23 y Ruanda, la Alianza de Estados del Sahel, la junta de Myanmar y la Operación 1027, AUKUS, la
+    O.C.S. En chips y energía: nodos de fabricación (qué significan de verdad 3 y 2 nm), memoria HBM, empaquetado
+    avanzado (CoWoS), factor de capacidad, coste nivelado de la energía, pequeños reactores modulares.
   - **No se explica:** token, modelo de lenguaje, pesos abiertos, agente, benchmark, alucinación, atención, mezcla
     de expertos, cuantización, tokenizador, destilación, ventana de contexto, caché KV, cómputo al responder,
     colapso de modelos por datos sintéticos, «reward hacking», difusión para texto; PER, PMI, inflación
     subyacente, bonos, dominancia fiscal, paridad de tipos de interés, trampa de la renta media.
+    En geopolítica y chips: trampa de Tucídides, collar de perlas, ambigüedad estratégica sobre Taiwán, sanciones
+    secundarias, flota en la sombra, desdolarización, Wagner y Africa Corps, los hutíes y el mar Rojo, litografía
+    EUV y ASML, controles de exportación de chips.
   - **Se recuerda en media frase, sin explicarlo** (lo conoce, pero regular): flujo de caja libre y su
     rentabilidad, CAPE de Shiller, duración, diferencial de crédito y alto rendimiento, curva invertida, beta y alfa,
     volatilidad implícita y el VIX. Por ejemplo, «la duración, es decir, cuánto cae el bono si suben los tipos».
