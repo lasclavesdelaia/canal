@@ -38,7 +38,14 @@ Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian).
      fuentes no caben, se cortan y se remite a la página del episodio («Más fuentes: …»).
    - Enlaces de las apps en `canal.apps` de `config/programas.json` (un botón por app en la web).
 
-4. **Encargado semanal** (rutina de los domingos, 18:07 de Madrid; prompt `prompts/ENCARGADO.md`): revisa la semana y
+4. **«Uso de IA» en YouTube** (`.github/workflows/marcar_ia.yml`, cada hora): `scripts/marcar_ia_youtube.py` mira los
+   últimos 50 vídeos del canal y pone `status.containsSyntheticMedia` = Sí a los que no lo tengan (YouTube importa
+   los feeds cuando quiere y Studio no tiene valor por defecto). Reenvía el resto del `status` tal cual; si cambiara
+   algo más, se para en rojo. Nunca sube vídeos. Permiso del canal en el entorno `youtube` (solo `main`), secretos
+   `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN`; se dan o renuevan con `python3 scripts/permiso_youtube.py`
+   en el Mac de Cristian (el token no se imprime ni toca el disco).
+
+5. **Encargado semanal** (rutina de los domingos, 18:07 de Madrid; prompt `prompts/ENCARGADO.md`): revisa la semana y
    deja un informe en `revisiones/AAAA-MM-DD.md`, en una rama `claude/revision-…`. Solo propone; no toca `main`. La
    web no publica las revisiones. Para aplicar una propuesta, dile a una sesión «aplica la revisión del AAAA-MM-DD».
 

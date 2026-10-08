@@ -1,0 +1,50 @@
+# Pone «Uso de IA» = Sí (status.containsSyntheticMedia) a los vídeos que YouTube importa desde los feeds RSS.
+# Studio no tiene valor por defecto para esa casilla y la importación llega cuando YouTube quiere: por eso cada hora.
+# Solo toca esa casilla y reenvía el resto del status tal cual; nunca sube vídeos (regla 27 de ~/bin/AGENTS.md).
+# El permiso del canal vive en el entorno «youtube» (solo rama main). Se crea con scripts/permiso_youtube.py.
+name: Marcar uso de IA en YouTube
+
+on:
+  schedule:
+    - cron: "37 * * * *"   # cada hora, a y 37
+  workflow_dispatch:
+    inputs:
+      simular:
+        description: "Solo decir qué marcaría, sin escribir nada en YouTube"
+        type: boolean
+        default: false
+
+concurrency:
+  group: marcar-ia
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  marcar:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: youtube
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Pruebas del marcador
+        run: python3 -m unittest tests.test_marcar_ia -v
+      - name: Marcar «Uso de IA»
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          SIMULAR: ${{ inputs.simular && '--simular' || '' }}
+          EVENTO: ${{ github.event_name }}
+        run: |
+          # Mientras Cristian no haya dado el permiso, la pasada de cada hora avisa sin ponerse en rojo.
+          if [ -z "$YT_REFRESH_TOKEN" ] && [ "$EVENTO" = "schedule" ]; then
+            echo "::warning::Aún no está el permiso del canal (secretos del entorno youtube). No hago nada."
+            exit 0
+          fi
+          python3 scripts/marcar_ia_youtube.py $SIMULAR

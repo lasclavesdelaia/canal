@@ -730,3 +730,25 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   defecto. Propuesta B: en publicar.yml, tras la ingesta RSS, poner status.containsSyntheticMedia=true con
   videos.update (API v3, campo desde oct 2024) usando un token OAuth del canal Las claves de la IA guardado como
   secreto del entorno «publicar». Esperando su sí; lo hace una sesión nueva. Mientras, marcar a mano si hace falta.
+
+## «Uso de IA» automático en YouTube (8 oct 2026, sesión de Claude; Cristian dijo «vale» a la propuesta B)
+- Paso 1 HECHO (documentación oficial, developers.google.com/youtube/v3): videos.update admite
+  `status.containsSyntheticMedia` (revision_history, 30 oct 2024). Cuesta 50 unidades; playlistItems.list,
+  videos.list y channels.list, 1 cada una (cuota diaria normal: 10.000). Al actualizar `status` se pisan TODAS sus
+  propiedades editables: lo que no se envía se borra (privacyStatus volvería al valor por defecto). Hay que reenviar
+  privacyStatus, embeddable, license, publicStatsViewable, selfDeclaredMadeForKids y publishAt (si lo hay).
+  Alcances válidos: youtube, youtube.force-ssl, youtubepartner.
+- Riesgo NO comprobado: Google deja en privado lo que SUBE (videos.insert) un proyecto de API sin auditar; la
+  documentación no dice nada de videos.update. Defensa: el script compara el status antes y después y, si cambia
+  algo más que la casilla de IA, se para y deja el workflow en rojo (como mucho un vídeo afectado).
+- Paso 2 HECHO: scripts/marcar_ia_youtube.py (solo biblioteca estándar) + tests/test_marcar_ia.py (14 pruebas sin
+  red: los 4 del 8 ya marcados → 0 escrituras; status reenviado entero; publishAt solo en privados; se para si
+  cambia la visibilidad; otro canal → no toca nada; permiso caducado → mensaje sin token). Lectura: 3 unidades
+  por pasada (72/día); cada vídeo marcado, 50.
+- Paso 3 HECHO: .github/workflows/marcar_ia.yml (a y 37 de cada hora + a mano con opción «simular»), entorno
+  «youtube», permisos contents: read. Si faltan secretos, sale en rojo con «Faltan los secretos…».
+- Paso 4 (preparado): scripts/permiso_youtube.py (lo corre Cristian): pide ID y secreto de cliente (el secreto sin
+  verse), abre Google con alcance `youtube`, comprueba que el canal es UCkZFrpaIjqdS-7VU47swcRw (si no, retira el
+  permiso y no guarda), guarda los 3 secretos con `gh secret set … --env youtube` por la entrada estándar y hace
+  una pasada en simulación. El token no se imprime ni toca el disco. Entorno «youtube» creado en GitHub, solo main.
+  FALTA: Cristian hace los pasos de Google Cloud y corre el script.
