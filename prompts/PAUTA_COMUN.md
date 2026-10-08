@@ -356,8 +356,10 @@ explicar, nunca sus frases, sus imágenes ni sus opiniones.
 - **Para un equilibrio, los dos extremos:** qué pasaría con la variable al mínimo y al máximo; el punto medio se
   entiende solo.
 - **Para un concepto abstracto, un caso mínimo y físico**, y la objeción que haría el oyente, contestada.
-- **El término técnico de verdad, definido en la frase en que aparece**, y por qué importa en esta noticia. Listas
-  calibradas con el oyente (oct 2026); lo que no esté en ellas se compara con lo que se parezca.
+- **El término técnico de verdad, explicado donde aparece**, y por qué importa en esta noticia. Lo sencillo, en
+  una frase; lo complicado (un modelo, un mecanismo, una de estas ideas de nivel), con el detalle que pida: el
+  molde de explicación de arriba, un ejemplo con números redondos y lo que no explica. Listas calibradas con el
+  oyente (oct 2026); lo que no esté en ellas se compara con lo que se parezca.
   - **Sí se explica:** ley de escala de Chinchilla, RLHF y DPO, recompensas verificables (GRPO), decodificación
     especulativa, modelos de espacio de estados (Mamba), autoencoders dispersos y superposición, «grokking»; regla
     de Taylor, tipo natural (r*), prima por plazo, por qué se ha aplanado la curva de Phillips, expulsión de la
@@ -367,8 +369,8 @@ explicar, nunca sus frases, sus imágenes ni sus opiniones.
     al EBITDA, ROIC frente al WACC, recompras frente a dividendos, prima de riesgo de las acciones, convexidad,
     bonos ligados a la inflación e inflación implícita, crédito privado, ratio de Sharpe, factores de
     Fama-French, riesgo de secuencia, sesgo de supervivencia, opciones y griegas, «carry trade», contango y
-    «backwardation», concentración del índice frente al equiponderado. Le suenan pero no sabría definirlos: una
-    frase precisa basta.
+    «backwardation», concentración del índice frente al equiponderado. Le suenan pero no sabría definirlos: se
+    explican bien, con el detalle que pidan.
     En geopolítica: dilema de seguridad, disuasión por castigo y por negación, equilibrio de poder frente a
     subirse al carro del fuerte, realismo frente a liberalismo, guerra híbrida, A2/AD, quiénes son las RSF de
     Sudán, el M23 y Ruanda, la Alianza de Estados del Sahel, la junta de Myanmar y la Operación 1027, AUKUS, la
@@ -389,7 +391,7 @@ explicar, nunca sus frases, sus imágenes ni sus opiniones.
     sobra para algo que se escucha.
   - **Explicar un término no es bajar el nivel.** El oyente está informado, no es especialista: le falta
     vocabulario en algunas áreas, no capacidad. Lo que sobra es lo obvio y la conclusión de manual; el análisis va
-    siempre al fondo, aunque por el camino se defina un término en una frase.
+    siempre al fondo, aunque por el camino haya que explicar un término, a veces con calma.
   - **El programa también es para aprender, poco a poco:** cada término de la lista del «sí» que salga es una
     ocasión de dejar algo entendido, sin bajar el nivel del resto.
 - **Separar** el modelo del sistema que lo rodea, y una mejora real de una que solo viene de hacer más intentos

@@ -908,3 +908,4 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Hecho (Cristian): los términos de finanzas que conoce «regular» pasan a un tercer grupo: recordatorio de media frase.
 - Hecho (Cristian): geopolítica, chips y energía calibrados (conoce 3,6,9,10,11,12,16,17,21,25 de 28).
 - Hecho: PAUTA §9, «explicar un término no es bajar el nivel» (vocabulario frente a profundidad del análisis).
+- Hecho (Cristian): lo complicado no se despacha en una frase; se explica con el detalle que pida (PAUTA §9).
