@@ -197,3 +197,15 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
   horizontal a 375 px ni a 1280 px, aviso de IA arriba en las cuatro; parte.xml, claves.xml y mundo.xml dan 200.
 - En curso: nada.
 - Siguiente: enlazar YouTube en config canal.youtube cuando exista el canal.
+
+## Portadas, icono y banner (8 oct 2026, sesión de diseño)
+- Hecho: `scripts/portadas.py` (Pillow de /usr/local/bin/python3, tipografías de assets/fuentes) genera portadas
+  3000x3000, miniaturas 360x360, icono 800x800 y banner 2560x1440 en tres estilos: papel, negro, color.
+  Colores por serie: parte verde #3a5117, claves azul #1d3a5c, mundo teja #8a3a1c. Todas llevan el aviso de IA.
+- Pruebas (fuera de git): pruebas/portadas/{papel,negro,color}/ y pruebas/portadas/collage.png.
+- DECISIÓN de Cristian (8 oct): estilo 1, «papel» (`ESTILO_ELEGIDO` en scripts/portadas.py).
+- Hecho: generados assets/portadas/*.png, assets/miniaturas/*.jpg, assets/youtube/icono.png y banner.png. 16 pruebas OK.
+  Para rehacerlos: `/usr/local/bin/python3 scripts/portadas.py` (el python3 de Homebrew no tiene Pillow).
+- La web y los feeds se rehacen solos al subir (publicar.yml, push a main con cambios en assets/** → job solo_web).
+  Los feeds no cambian de URL de imagen; YouTube y las apps de pódcast pueden tardar días en refrescar su copia.
+- Pendiente de Cristian: subir icono y banner en YouTube Studio › Personalización › Imagen de marca.
