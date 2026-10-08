@@ -904,3 +904,4 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Hecho (Cristian): subido el listón de qué se explica; los primeros ejemplos («mezcla de expertos», «destilación»…) ya los conoce.
 - Hecho (Cristian): prima por plazo y curva de Phillips aplanada SÍ se explican; dominancia fiscal y paridad de tipos NO.
 - Hecho (Cristian): términos calibrados con 24 ejemplos (conoce 1,3,10,11,12,20); listas «sí/no se explica» en PAUTA §9.
+- Hecho (Cristian): finanzas calibradas (conoce FCF, CAPE, duración, spread, curva invertida, beta/alfa, VIX); mates y física hasta 2.º de carrera se dan por sabidas; el programa es también para aprender poco a poco. Pendiente: test de geopolítica.

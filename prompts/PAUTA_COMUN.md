@@ -363,10 +363,23 @@ explicar, nunca sus frases, sus imágenes ni sus opiniones.
     de Taylor, tipo natural (r*), prima por plazo, por qué se ha aplanado la curva de Phillips, expulsión de la
     inversión privada, equivalencia ricardiana, efecto Balassa-Samuelson, dilema de Triffin, enfermedad holandesa,
     paradoja de Lucas, ciclo financiero del B.P.I., represión financiera, ley de Wagner.
+    En finanzas: coste medio ponderado del capital (WACC), descuento de flujos y valor terminal, deuda neta frente
+    al EBITDA, ROIC frente al WACC, recompras frente a dividendos, prima de riesgo de las acciones, convexidad,
+    bonos ligados a la inflación e inflación implícita, crédito privado, ratio de Sharpe, factores de
+    Fama-French, riesgo de secuencia, sesgo de supervivencia, opciones y griegas, «carry trade», contango y
+    «backwardation», concentración del índice frente al equiponderado. Le suenan pero no sabría definirlos: una
+    frase precisa basta.
   - **No se explica:** token, modelo de lenguaje, pesos abiertos, agente, benchmark, alucinación, atención, mezcla
     de expertos, cuantización, tokenizador, destilación, ventana de contexto, caché KV, cómputo al responder,
     colapso de modelos por datos sintéticos, «reward hacking», difusión para texto; PER, PMI, inflación
     subyacente, bonos, dominancia fiscal, paridad de tipos de interés, trampa de la renta media.
+    En finanzas: flujo de caja libre y su rentabilidad, CAPE de Shiller, duración, diferencial de crédito y alto
+    rendimiento, curva invertida, beta y alfa, volatilidad implícita y el VIX.
+  - **Matemáticas y física hasta segundo de carrera se dan por sabidas** (cálculo, álgebra lineal, probabilidad y
+    estadística, ecuaciones diferenciales, mecánica): se pueden usar para explicar, dichas en palabras. Más allá,
+    sobra para algo que se escucha.
+  - **El programa también es para aprender, poco a poco:** cada término de la lista del «sí» que salga es una
+    ocasión de dejar algo entendido, sin bajar el nivel del resto.
 - **Separar** el modelo del sistema que lo rodea, y una mejora real de una que solo viene de hacer más intentos
   (dicho con números redondos).
 - **Cifras como ritmo o como serie:** cuánto en cuánto tiempo y frente a qué; una serie corta que hable sola; una
