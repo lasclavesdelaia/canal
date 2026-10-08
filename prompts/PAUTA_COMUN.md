@@ -373,8 +373,9 @@ explicar, nunca sus frases, sus imágenes ni sus opiniones.
     de expertos, cuantización, tokenizador, destilación, ventana de contexto, caché KV, cómputo al responder,
     colapso de modelos por datos sintéticos, «reward hacking», difusión para texto; PER, PMI, inflación
     subyacente, bonos, dominancia fiscal, paridad de tipos de interés, trampa de la renta media.
-    En finanzas: flujo de caja libre y su rentabilidad, CAPE de Shiller, duración, diferencial de crédito y alto
-    rendimiento, curva invertida, beta y alfa, volatilidad implícita y el VIX.
+  - **Se recuerda en media frase, sin explicarlo** (lo conoce, pero regular): flujo de caja libre y su
+    rentabilidad, CAPE de Shiller, duración, diferencial de crédito y alto rendimiento, curva invertida, beta y alfa,
+    volatilidad implícita y el VIX. Por ejemplo, «la duración, es decir, cuánto cae el bono si suben los tipos».
   - **Matemáticas y física hasta segundo de carrera se dan por sabidas** (cálculo, álgebra lineal, probabilidad y
     estadística, ecuaciones diferenciales, mecánica): se pueden usar para explicar, dichas en palabras. Más allá,
     sobra para algo que se escucha.
