@@ -120,6 +120,8 @@ Un hook bloqueó la sesión de F3: «ha leído datos privados y contenido de fue
   «Publicar episodios» cada 20 min en verde; web y parte.xml dan 200.
 - PENDIENTE SESIÓN LIMPIA: `git push origin main` (commit 65b7c46 y siguientes: plan B de rama en RUTINA.md e
   investigación de Gargoyles, Jon Hernández y LMArena). El portero cortó el push tras la búsqueda web.
+- Cambio de hora (25 oct): NO se toca el cron. Cristian: da igual 4:07 que 5:07; la reserva pasa a 12:07 y Actions
+  (4-13 UTC) lo recoge igual. RUTINA.md dice 5:07 y 13:07: aproximado en invierno.
 - Vigilar el 9 oct tras las 5:07: que exista episodios/2026-10-09-parte.md en una rama claude/ y que Actions lo publique.
 - Antes: esperando el «sí» de Cristian. El clasificador de modo auto denegó cargar la skill «schedule»: si no hay herramienta, se le guía a mano en claude.ai/code.
 
