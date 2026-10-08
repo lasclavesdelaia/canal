@@ -11,7 +11,10 @@ texto en Source Serif 4, verde oliva de acento):
   /historial/          historial completo de todos los programas
   /e/<clave>.html      un episodio: reproductor, guion y fuentes
   /e/<clave>.transcripcion.html  transcripción: el texto hablado completo (podcast:transcript del feed)
-  /<programa>.xml      feed RSS (lo leen YouTube y las apps de pódcast)
+  /parte.xml           feed GENERAL «Las claves de la IA», con todos los programas: lo leen las apps de pódcast
+                       (iVoox, Spotify y Apple ya estaban dados de alta con esta dirección y Spotify no deja cambiarla)
+  /parte-solo.xml, /claves.xml, /mundo.xml, /especial.xml
+                       un feed por programa: YouTube necesita uno por lista
 """
 import datetime
 import html
@@ -22,6 +25,8 @@ from pathlib import Path
 from comun import MESES, RAIZ, Episodio, fecha_hablada, texto_hablado
 
 ULTIMOS_EN_PORTADA = 6
+FEED_GENERAL = "parte"  # nombre histórico: las apps ya leen /parte.xml
+MAX_DESCRIPCION = 4000  # Apple corta a 4.000 caracteres; YouTube, a 5.000
 FRECUENCIA = {"todos": "Cada día", "menos sabado": "De domingo a viernes", "sabado": "Cada sábado", "domingo": "Cada domingo", "a veces": "De vez en cuando"}
 
 ESTILO = """
@@ -140,7 +145,7 @@ def _pagina(titulo, cuerpo, cfg, descripcion="", ancho=True):
 <link rel="icon" href="/miniaturas/parte.jpg">
 <link rel="preload" href="/fuentes/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/estilo.css">
-<link rel="alternate" type="application/rss+xml" title="Parte diario" href="/parte.xml">
+<link rel="alternate" type="application/rss+xml" title="{_e(canal['nombre'])}" href="/{FEED_GENERAL}.xml">
 </head>
 <body>
 <header class="cabecera"><div class="ancho">
@@ -215,15 +220,17 @@ def _seguir(cfg):
     en_apps = (f'<div><h3>Apps de pódcast</h3><p>También puedes escucharlo en tu aplicación de pódcast.</p>'
                f'<p class="botones">{botones}</p></div>' if botones else "")
     feeds = "".join(
-        f'<li><a href="/{c}.xml">{_e(p["lista"])}</a> <code>{_e(web)}/{c}.xml</code></li>'
+        f'<li><a href="/{archivo_feed(c)}.xml">{_e(p["lista"])}</a> <code>{_e(web)}/{archivo_feed(c)}.xml</code></li>'
         for c, p in cfg["programas"].items())
     return f"""<h2 id="seguir">Cómo seguirlo</h2>
 <div class="seguir">
 <div><h3>YouTube</h3>{youtube}</div>
 {en_apps}
 </div>
-<div class="rss"><p><strong>Para apps de pódcast (RSS).</strong> Copia la dirección del programa en tu
-aplicación.</p><ul>{feeds}</ul></div>"""
+<div class="rss"><p><strong>Para apps de pódcast (RSS).</strong> Un solo pódcast con todos los programas: copia
+esta dirección en tu aplicación.</p><ul><li><a href="/{FEED_GENERAL}.xml">{_e(canal["nombre"])}</a>
+<code>{_e(web)}/{FEED_GENERAL}.xml</code></li></ul>
+<p>Un feed por programa (los usa YouTube, uno por lista):</p><ul>{feeds}</ul></div>"""
 
 
 def pagina_inicio(episodios, cfg):
@@ -245,7 +252,7 @@ def pagina_inicio(episodios, cfg):
 <div><p class="meta">{_e(_frecuencia(prog))} · {cuenta}</p><h3><a href="/{clave}/">{_e(prog['lista'])}</a></h3></div></div>
 <p>{_e(prog['descripcion'])}</p>
 {ultimo}
-<div class="botones"><a class="boton" href="/{clave}/">Todos los episodios</a><a class="boton claro" href="/{clave}.xml">RSS</a></div>
+<div class="botones"><a class="boton" href="/{clave}/">Todos los episodios</a><a class="boton claro" href="/{archivo_feed(clave)}.xml">RSS</a></div>
 </article>""")
     recientes = "".join(_item(e, cfg, con_programa=True) for e in episodios[:ULTIMOS_EN_PORTADA])
     recientes = (f'<ul class="episodios">{recientes}</ul>' if recientes
@@ -275,7 +282,7 @@ def pagina_programa(clave, episodios, cfg):
     cuerpo = f"""<p class="meta">{_e(_frecuencia(prog))} · {len(eps)} episodio{'s' if len(eps) != 1 else ''}</p>
 <h1>{_e(prog['lista'])}</h1>
 <p class="entradilla">{_e(prog['descripcion'])}</p>
-<p class="botones"><a class="boton claro" href="/{clave}.xml">RSS</a></p>
+<p class="botones"><a class="boton claro" href="/{archivo_feed(clave)}.xml">RSS</a></p>
 {_filtro(clave, cfg)}
 <h2>Historial completo</h2>
 {_por_meses(eps, cfg)}"""
@@ -340,18 +347,38 @@ def _x(t):
     return html.escape(t, quote=False)
 
 
-def feed(clave, episodios, cfg):
-    canal, prog = cfg["canal"], cfg["programas"][clave]
-    web = canal["web"].rstrip("/")
-    items = []
-    for e in [e for e in episodios if e["programa"] == clave][:100]:
-        fuentes = "\n".join(f"- {n}: {u}" if u else f"- {n}" for n, u in e["fuentes"])
-        # El aviso de IA, lo primero (art. 50.5 del reglamento europeo de IA: claro y en la primera exposición).
-        desc = f"{canal['aviso_feed']}\n\n{e['descripcion']}\n\nFuentes:\n{fuentes}"
-        pub = datetime.datetime.fromisoformat(e["publicado"])
-        items.append(f"""<item>
-<title>{_x(e['titulo'])}</title>
-<description>{_x(desc)}</description>
+def archivo_feed(clave):
+    """Nombre del feed de un programa. El del parte es parte-solo: parte.xml es el general."""
+    return f"{clave}-solo" if clave == FEED_GENERAL else clave
+
+
+def descripcion_item(e, cfg):
+    """Aviso de IA, lo primero (art. 50.5 del reglamento europeo de IA: claro y en la primera exposición);
+    luego la entradilla y las fuentes. Si pasa de MAX_DESCRIPCION, se quitan fuentes del final y se remite
+    a la página del episodio, que las tiene todas."""
+    canal = cfg["canal"]
+    pagina = f"{canal['web'].rstrip('/')}/e/{e['clave']}.html"
+    cabeza = f"{canal['aviso_feed']}\n\n{e['descripcion']}"
+    lineas = [f"- {n}: {u}" if u else f"- {n}" for n, u in e["fuentes"]]
+    desc = f"{cabeza}\n\nFuentes:\n" + "\n".join(lineas)
+    if len(desc) <= MAX_DESCRIPCION:
+        return desc
+    cola = f"\nMás fuentes: {pagina}"
+    while lineas and len(f"{cabeza}\n\nFuentes:\n" + "\n".join(lineas) + cola) > MAX_DESCRIPCION:
+        lineas.pop()
+    if lineas:
+        return f"{cabeza}\n\nFuentes:\n" + "\n".join(lineas) + cola
+    cola = f"\n\nFuentes: {pagina}"
+    return cabeza[:MAX_DESCRIPCION - len(cola) - 1].rstrip() + "…" + cola if len(cabeza) + len(cola) > MAX_DESCRIPCION \
+        else cabeza + cola
+
+
+def _item_feed(e, cfg, titulo):
+    web = cfg["canal"]["web"].rstrip("/")
+    pub = datetime.datetime.fromisoformat(e["publicado"])
+    return f"""<item>
+<title>{_x(titulo)}</title>
+<description>{_x(descripcion_item(e, cfg))}</description>
 <link>{web}/e/{e['clave']}.html</link>
 <guid isPermaLink="false">{e['clave']}</guid>
 <pubDate>{format_datetime(pub)}</pubDate>
@@ -359,19 +386,26 @@ def feed(clave, episodios, cfg):
 <podcast:transcript url="{web}/e/{e['clave']}.transcripcion.html" type="text/html" language="es"/>
 <itunes:duration>{int(e['duracion'])}</itunes:duration>
 <itunes:explicit>false</itunes:explicit>
-</item>""")
+</item>"""
+
+
+def _canal_rss(cfg, titulo, archivo, descripcion, portada, items):
+    canal = cfg["canal"]
+    web = canal["web"].rstrip("/")
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom"
  xmlns:podcast="https://podcastindex.org/namespace/1.0">
 <channel>
-<title>{_x(prog['lista'])} · {_x(canal['nombre'])}</title>
+<title>{_x(titulo)}</title>
 <link>{web}/</link>
-<atom:link href="{web}/{clave}.xml" rel="self" type="application/rss+xml"/>
+<atom:link href="{web}/{archivo}.xml" rel="self" type="application/rss+xml"/>
 <language>{canal['idioma']}</language>
-<description>{_x(canal['aviso_feed'] + ' ' + prog['descripcion'])}</description>
+<description>{_x(canal['aviso_feed'] + ' ' + descripcion)}</description>
+<itunes:summary>{_x(canal['aviso_feed'] + ' ' + descripcion)}</itunes:summary>
 <itunes:author>{_x(canal['nombre'])}</itunes:author>
 <itunes:owner><itunes:name>{_x(canal['nombre'])}</itunes:name><itunes:email>{_x(canal['correo'])}</itunes:email></itunes:owner>
-<itunes:image href="{web}/portadas/{clave}.png"/>
+<itunes:image href="{web}/portadas/{portada}"/>
+<image><url>{web}/portadas/{portada}</url><title>{_x(titulo)}</title><link>{web}/</link></image>
 <itunes:category text="News"><itunes:category text="Tech News"/></itunes:category>
 <itunes:explicit>false</itunes:explicit>
 <itunes:type>episodic</itunes:type>
@@ -379,6 +413,22 @@ def feed(clave, episodios, cfg):
 </channel>
 </rss>
 """
+
+
+def feed(clave, episodios, cfg):
+    """Feed de un solo programa (para su lista de YouTube)."""
+    canal, prog = cfg["canal"], cfg["programas"][clave]
+    items = [_item_feed(e, cfg, e["titulo"]) for e in [e for e in episodios if e["programa"] == clave][:100]]
+    return _canal_rss(cfg, f"{prog['lista']} · {canal['nombre']}", archivo_feed(clave), prog["descripcion"],
+                      f"{clave}.png", items)
+
+
+def feed_general(episodios, cfg):
+    """Feed de las apps de pódcast: todos los programas, cada título con el nombre de su programa delante."""
+    canal = cfg["canal"]
+    items = [_item_feed(e, cfg, f"{cfg['programas'][e['programa']]['lista']} · {e['titulo']}")
+             for e in episodios if e["programa"] in cfg["programas"]][:300]
+    return _canal_rss(cfg, canal["nombre"], FEED_GENERAL, canal["descripcion"], "general.jpg", items)
 
 
 def generar(episodios, cfg, destino, audios=None):
@@ -416,7 +466,8 @@ def generar(episodios, cfg, destino, audios=None):
                                                               encoding="utf-8")
             (destino / "e" / f"{e['clave']}.transcripcion.html").write_text(pagina_transcripcion(e, cfg),
                                                                             encoding="utf-8")
-        (destino / f"{clave}.xml").write_text(feed(clave, eps, cfg), encoding="utf-8")
+        (destino / f"{archivo_feed(clave)}.xml").write_text(feed(clave, eps, cfg), encoding="utf-8")
+    (destino / f"{FEED_GENERAL}.xml").write_text(feed_general(eps, cfg), encoding="utf-8")
     for carpeta in ("portadas", "miniaturas", "fuentes"):
         origen = RAIZ / "assets" / carpeta
         if origen.exists():

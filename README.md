@@ -22,14 +22,21 @@ Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian).
    - `scripts/voz.py` les pone voz con Google Chirp 3 HD (clave `GOOGLE_TTS_KEY` en el entorno `publicar`, solo
      desde `main`);
    - el MP3 se sube como Release `ep-<clave>`;
-   - `scripts/sitio.py` rehace la web y los tres feeds RSS y los publica en GitHub Pages
+   - `scripts/sitio.py` rehace la web y los feeds RSS y los publica en GitHub Pages
      (`claves.cristiansdrojek.com`): portada con los tres programas y cómo seguirlo, historial completo por programa
      (`/parte/`, `/claves/`, `/mundo/`) y general (`/historial/`), y una página por episodio con guion y fuentes.
      El aspecto imita las páginas de pódcast de cristiansdrojek.com (fuentes propias en `assets/fuentes`).
    - Un push a `main` que toque `scripts/sitio.py`, `assets/` o `config/programas.json` (o un lanzamiento a mano sin
      episodios nuevos) rehace solo la web, sin voz ni clave (job `solo_web`).
    - Cuando exista el canal de YouTube, pon su enlace en `canal.youtube` de `config/programas.json`.
-3. **YouTube** lee los tres feeds (`parte.xml`, `claves.xml`, `mundo.xml`) y publica cada episodio en su lista.
+3. **Feeds** (decisión de Cristian, 8 oct 2026):
+   - **Apps de pódcast (iVoox, Spotify, Apple): un solo pódcast**, «Las claves de la IA», en `parte.xml`. Se llama así
+     porque las apps ya estaban dadas de alta con esa dirección y Spotify no deja cambiarla. Lleva todos los programas,
+     cada título con el programa delante («Parte diario IA · …»), y la portada `assets/portadas/general.jpg`.
+   - **YouTube: un feed por lista**: `parte-solo.xml`, `claves.xml`, `mundo.xml` y `especial.xml`.
+   - La descripción de cada episodio en los feeds no pasa de 4.000 caracteres (Apple; YouTube admite 5.000): si las
+     fuentes no caben, se cortan y se remite a la página del episodio («Más fuentes: …»).
+   - Enlaces de las apps en `canal.apps` de `config/programas.json` (un botón por app en la web).
 
 4. **Encargado semanal** (rutina de los domingos, 18:07 de Madrid; prompt `prompts/ENCARGADO.md`): revisa la semana y
    deja un informe en `revisiones/AAAA-MM-DD.md`, en una rama `claude/revision-…`. Solo propone; no toca `main`. La
@@ -44,7 +51,7 @@ Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian).
    deja copia legible y MP3 en `Publicables/`.
 3. **«publícalo»** (en esa sesión) o **`/publicar-especial <slug>`**: pasa a `episodios/…-especial-<slug>.md`, sale
    en la web, en el historial y en `especial.xml`, con el MP3 del borrador.
-4. Tras el primer especial publicado: alta de `https://claves.cristiansdrojek.com/especial.xml` en YouTube Studio.
+4. Los especiales salen solos en el pódcast general (`parte.xml`) y, para YouTube, en `especial.xml`.
 5. Skills en `~/.claude/skills/{informe,especial,publicar-especial}`; prompt en `prompts/especial.md`.
 
 ## Reglas para quien toque esto

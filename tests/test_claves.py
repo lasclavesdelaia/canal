@@ -322,6 +322,7 @@ class Web(unittest.TestCase):
     def test_enlace_de_youtube_cuando_exista(self):
         cfg = config()
         cfg["canal"]["youtube"] = "https://www.youtube.com/@lasclavesdelaia"
+        cfg["canal"]["apps"] = {"spotify": "", "apple": "", "ivoox": ""}
         with tempfile.TemporaryDirectory() as tmp:
             sitio.generar([], cfg, tmp)
             portada = (Path(tmp) / "index.html").read_text()
@@ -330,7 +331,9 @@ class Web(unittest.TestCase):
             self.assertIn(">Ver en YouTube<", portada)
             self.assertIn("Para apps de pódcast (RSS)", portada)
             for c in visibles(cfg):
-                self.assertIn(f"{cfg['canal']['web']}/{c}.xml", portada)
+                self.assertIn(f"{cfg['canal']['web']}/{sitio.archivo_feed(c)}.xml", portada)
+            self.assertIn(f"{cfg['canal']['web']}/parte-solo.xml", portada)
+            self.assertIn(f"{cfg['canal']['web']}/parte.xml", portada)  # el general
             self.assertNotIn("/especial.xml", portada)  # Especiales no sale hasta su primer episodio
             self.assertNotIn("Spotify", portada)  # sin enlace, sin botón
             self.assertNotIn("Apps de pódcast</h3>", portada)
@@ -348,6 +351,79 @@ class Web(unittest.TestCase):
             self.assertLess(portada.index("Escuchar en Spotify"), portada.index("Para apps de pódcast (RSS)"))
             self.assertIn('preload="metadata"', portada)
             self.assertNotIn('preload="none"', portada)
+
+    def test_un_boton_por_app_con_la_config_real(self):
+        cfg = config()
+        with tempfile.TemporaryDirectory() as tmp:
+            sitio.generar(self._muchos(2), cfg, tmp)
+            portada = (Path(tmp) / "index.html").read_text()
+            self.assertEqual(portada.count(">Escuchar en Spotify<"), 1)
+            self.assertEqual(portada.count(">Escuchar en iVoox<"), 1)
+            self.assertIn(cfg["canal"]["apps"]["spotify"], portada)
+
+
+class FeedGeneral(unittest.TestCase):
+    """parte.xml es el pódcast único de las apps; YouTube lee un feed por programa."""
+
+    @staticmethod
+    def _ep(programa, fecha, fuentes=None, slug=""):
+        clave = f"{fecha}-{programa}" + (f"-{slug}" if slug else "")
+        return {"clave": clave, "programa": programa, "fecha": fecha, "titulo": f"Título {programa}",
+                "descripcion": "Entradilla del episodio.", "cuerpo": "Uno.\n\nDos.",
+                "fuentes": fuentes or [["Fuente", "https://example.com/a"]],
+                "audio_url": f"https://example.com/{clave}.mp3", "bytes": 10, "duracion": 600,
+                "publicado": f"{fecha}T06:30:00+02:00"}
+
+    def test_general_con_todos_y_feeds_por_programa(self):
+        cfg = config()
+        eps = [self._ep("parte", "2026-10-08"), self._ep("claves", "2026-10-10"), self._ep("mundo", "2026-10-11"),
+               self._ep("especial", "2026-10-08", slug="vox")]
+        with tempfile.TemporaryDirectory() as tmp:
+            sitio.generar(eps, cfg, tmp)
+            d = Path(tmp)
+            canal = ET.parse(d / "parte.xml").getroot().find("channel")
+            self.assertEqual(canal.find("title").text, cfg["canal"]["nombre"])
+            self.assertTrue(canal.find("description").text.startswith(cfg["canal"]["aviso_feed"]))
+            ns = {"itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd"}
+            self.assertTrue(canal.find("itunes:image", ns).get("href").endswith("/portadas/general.jpg"))
+            self.assertTrue((d / "portadas" / "general.jpg").exists())
+            titulos = [i.find("title").text for i in canal.findall("item")]
+            self.assertEqual(len(titulos), 4)
+            for prog in ("parte", "claves", "mundo", "especial"):
+                self.assertIn(f"{cfg['programas'][prog]['lista']} · Título {prog}", titulos)
+            self.assertEqual(canal.find("atom:link", {"atom": "http://www.w3.org/2005/Atom"}).get("href"),
+                             "https://claves.cristiansdrojek.com/parte.xml")
+            # Para YouTube, uno por programa y sin prefijo.
+            for prog in ("parte", "claves", "mundo", "especial"):
+                c = ET.parse(d / f"{sitio.archivo_feed(prog)}.xml").getroot().find("channel")
+                self.assertEqual([i.find("title").text for i in c.findall("item")], [f"Título {prog}"])
+            solo = ET.parse(d / "parte-solo.xml").getroot().find("channel/title").text
+            self.assertEqual(solo, "Parte diario IA · Las claves de la IA")
+
+    def test_descripcion_no_pasa_de_4000(self):
+        cfg = config()
+        muchas = [[f"Fuente número {i} con un nombre largo", f"https://example.com/una/ruta/bastante/larga/{i}"]
+                  for i in range(150)]
+        eps = [self._ep("mundo", "2026-10-11", muchas), self._ep("especial", "2026-10-08", muchas, slug="vox"),
+               self._ep("parte", "2026-10-08")]
+        with tempfile.TemporaryDirectory() as tmp:
+            sitio.generar(eps, cfg, tmp)
+            d = Path(tmp)
+            for archivo in ("parte.xml", "parte-solo.xml", "mundo.xml", "especial.xml"):
+                for item in ET.parse(d / archivo).getroot().findall("channel/item"):
+                    desc = item.find("description").text
+                    self.assertLessEqual(len(desc), 4000, archivo)
+                    self.assertTrue(desc.startswith(cfg["canal"]["aviso_feed"]))
+            largo = ET.parse(d / "mundo.xml").getroot().find("channel/item/description").text
+            self.assertTrue(largo.endswith("Más fuentes: https://claves.cristiansdrojek.com/e/2026-10-11-mundo.html"))
+            self.assertIn("Fuente número 0 con", largo)
+            corto = ET.parse(d / "parte-solo.xml").getroot().find("channel/item/description").text
+            self.assertNotIn("Más fuentes", corto)
+
+    def test_entradilla_enorme_tambien_cabe(self):
+        e = self._ep("mundo", "2026-10-11")
+        e["descripcion"] = "palabra " * 1000
+        self.assertLessEqual(len(sitio.descripcion_item(e, config())), 4000)
 
 
 if __name__ == "__main__":
@@ -403,7 +479,10 @@ class Especiales(unittest.TestCase):
             self.assertIn("/especial.xml", (d / "index.html").read_text())
             rss = ET.parse(d / "especial.xml").getroot()
             self.assertEqual(rss.find("channel/item/guid").text, "2026-10-10-especial-vox")
-            self.assertIsNone(ET.parse(d / "parte.xml").getroot().find("channel/item"))
+            self.assertIsNone(ET.parse(d / "parte-solo.xml").getroot().find("channel/item"))
+            # El general (parte.xml, el de las apps) sí lo lleva, con el programa delante.
+            self.assertEqual(ET.parse(d / "parte.xml").getroot().find("channel/item/title").text,
+                             f"Especiales · {ep.titulo}")
 
 
 class Borradores(unittest.TestCase):

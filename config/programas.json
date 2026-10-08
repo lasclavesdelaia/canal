@@ -8,12 +8,13 @@
     "aviso": "Este programa lo investiga, lo escribe y lo locuta por completo una inteligencia artificial, sin revisión humana. Puede contener errores. Las fuentes de cada noticia están en la descripción.",
     "aviso_hablado": "Este programa lo hace por completo una inteligencia artificial y puede contener errores.",
     "aviso_feed": "Hecho por completo con inteligencia artificial, sin revisión humana. Puede contener errores.",
+    "descripcion": "Programas de audio sobre inteligencia artificial y sobre el mundo, con datos y con sus fuentes. Parte diario IA, de domingo a viernes; Claves semanales IA, los sábados; Claves mundo, la economía y la geopolítica de la semana, los domingos; y, de vez en cuando, especiales a fondo.",
     "youtube": "https://www.youtube.com/@LasclavesdelaIA",
     "audio_en_la_web_dias": 60,
     "apps": {
-      "spotify": "",
+      "spotify": "https://open.spotify.com/show/0mNeHWzVKooVz7yTfZ7uV9",
       "apple": "",
-      "ivoox": ""
+      "ivoox": "https://www.ivoox.com/podcast-parte-diario-ia-las-claves-la_sq_f13239998_1.html"
     }
   },
   "voz": {

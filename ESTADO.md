@@ -683,3 +683,12 @@ modo borrador en Actions; portada propia. Plan: (1) nombre `especial-<slug>` en 
   por app, no tres) y `canal.apps` vuelve a un enlace por app: iVoox https://go.ivoox.com/sq/3239998, Spotify
   https://open.spotify.com/show/0mNeHWzVKooVz7yTfZ7uV9, Apple cuando lo aprueben. Ojo al límite de 4.000 caracteres
   de descripción en Apple y 5.000 en YouTube.
+
+## Feed general en las apps (8 oct 2026, sesión de Claude)
+- Paso 1 HECHO: los 7 commits de ESTADO subidos (origin no tenía nada nuevo); 48 pruebas en verde.
+- Paso 2-4 HECHO en local: parte.xml = feed general «Las claves de la IA» (todos los programas, título con «<lista> ·»
+  delante, portada assets/portadas/general.jpg = icono.png escalado a 3000 px JPEG, descripción en canal.descripcion
+  con el aviso de IA primero). Para YouTube: parte-solo.xml, claves.xml, mundo.xml, especial.xml. Descripción de
+  item ≤ 4.000 (sitio.descripcion_item: quita fuentes del final y pone «Más fuentes: <página>»). Con los 4 episodios
+  reales: 3227, 3993, 3864, 3933. Web: un botón por app; RSS general y los de YouTube en letra pequeña. 52 pruebas.
+  canal.apps: Spotify y iVoox (enlace largo; iVoox resuelve por el número f13239998, vale aunque cambie el nombre).
