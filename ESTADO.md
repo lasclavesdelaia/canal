@@ -909,3 +909,13 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Hecho (Cristian): geopolítica, chips y energía calibrados (conoce 3,6,9,10,11,12,16,17,21,25 de 28).
 - Hecho: PAUTA §9, «explicar un término no es bajar el nivel» (vocabulario frente a profundidad del análisis).
 - Hecho (Cristian): lo complicado no se despacha en una frase; se explica con el detalle que pida (PAUTA §9).
+- HECHO (8 oct, noche): Cristian guardó la lista compacta (598 líneas, 7.510 caracteres) en la red Custom del entorno
+  claves-ia (env_01LBC5CM7mott3eKNRnzodjy). El formulario ACEPTA comodines de sufijo (`*.gov`, `*.int`, `*.gob.es`…).
+  Tope medido: 600 líneas guardan, 750 no (o ~8.192 caracteres). Para cambiar la red: editar config/red_custom.txt
+  (pruebas en verde), `python3 scripts/red_custom.py | pbcopy`, pegar en el entorno, guardar.
+- Pendiente: la rutina de las 5:07 del 9 oct (3:07 UTC, trig_01AuPY3LjQVv88mbVQJWuVmC) es la primera con la red nueva.
+  Qué mirar en su registro (RemoteTrigger list_runs / get_run_log): fallos de red al abrir fuentes de fuentes.md;
+  que abran webs por comodín (p. ej. una *.gov o *.gob.es) y por dominio desnudo (openai.com, arxiv.org); y si avisa
+  de enlaces fuera de la red, añadirlos desde config/red_catalogo.txt quitando otros menos útiles.
+- Duda abierta: si `*.x` cubre también `x` a secas (la doc no lo dice; su lista por defecto pone ambos). Si el
+  registro muestra que sí, se puede quitar duplicado y meter más instituciones.
