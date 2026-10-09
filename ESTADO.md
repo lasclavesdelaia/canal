@@ -1030,3 +1030,11 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   Sin comprobar: si la rutina podría crear commits en main por la API REST de GitHub (GitHub los firma él); poco
   probable, el proxy de la nube es para git.
   Si otra máquina o worktree sube a main: necesita esta llave y la config de firma, o el push se rechaza.
+- Hecho (9 oct): parte del 9 nuevo PUBLICADO (Release ep-2026-10-09-parte, 6:52 UTC). RUTINA_FIRE_TOKEN guardado
+  (secreto de repo): el aviso inmediato a la rutina queda activo (se probará con el primer rechazo real).
+- PENDIENTE (9 oct, ~8:48): Apple Podcasts Connect escribió (0:02 del 9 oct) que «Las claves de la IA» no cumple sus
+  content guidelines y no estará disponible hasta corregirlo. Falta el motivo concreto (resto del correo; el conector
+  de Gmail está desconectado). Esperando captura de Cristian.
+- (Fuera de este proyecto, para que conste) Spotify reclamó derechos en 3 episodios del pódcast personal de Cristian
+  por BWV 1060R (Graubünden Classical Archive, «Live»); él usa la grabación de The Alsace Baroque Orchestra de Musopen
+  (dominio público). Le di el texto de respuesta; lo envía él (2 días de plazo).
