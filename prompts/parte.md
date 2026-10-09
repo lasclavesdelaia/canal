@@ -20,13 +20,17 @@ parte es de antes de ayer o más atrás, este parte cubre todo lo ocurrido desde
   lo más importante desde entonces».
 - Selecciona más duro: lo que siga importando hoy, por importancia, no día a día. Lo que ya se ha quedado viejo se
   despacha en una frase o se omite.
-- Puede llegar a unos 15 minutos (2.250 palabras); no más.
+- Puede llegar a unos 22 minutos (3.600 palabras); no más.
 - Un solo episodio, con la fecha de hoy. Nunca episodios atrasados con fechas pasadas.
 - La tarjeta lo refleja en `cubre` (por ejemplo, `2026-11-04 a 2026-11-07`).
 
 ## Extensión
 
-- Depende del día: de 450 a 2.250 palabras, es decir, de 3 a 15 minutos.
+- Depende del día: de 450 a 3.300 palabras, es decir, de 3 a 20 minutos.
+- **Un día con dos o tres noticias de peso pide 12-20 minutos (2.000-3.300 palabras).** Cada noticia principal se
+  cuenta a fondo, con al menos 400-600 palabras: el original, las cifras de todos los implicados, el mecanismo, las
+  voces y qué cambia. Seis minutos para tres asuntos serios no dan para entrar en ninguno (Cristian, 9 oct 2026).
+  Solo un día de verdad flojo es corto.
 - **No escatimes.** El oyente quiere estar al día de verdad en IA y, si el parte se queda corto, lo buscará por su
   cuenta en el flujo de noticias, que es lo que se quiere evitar. Ante la duda, una cosa más en corto mejor que una
   cosa menos, siempre que sea noticia y no ruido.

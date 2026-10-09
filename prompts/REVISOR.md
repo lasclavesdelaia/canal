@@ -23,8 +23,13 @@ Lee antes `prompts/PAUTA_COMUN.md` (línea editorial, §4b, §9) y el fichero de
    dato.
 4. **Coletillas y fórmulas de molde** (§4b), aunque vengan disfrazadas con otras palabras: frases de sospecha al
    final de una noticia, «queda por ver» y familia, transiciones y cierres de plantilla.
-5. **Opinión sin razonar o sin dato**, y lo contrario: un análisis que se queda en el titular.
-6. **Errores**: cifras que no cuadran con la fuente, fechas, nombres.
+5. **Opinión sin razonar o sin dato**, y lo contrario: un análisis que se queda en el titular. **Equilibrio
+   fabricado**: una comparación sin la cifra del otro lado, o un matiz de método que diluye una conclusión que los
+   datos sí sostienen. Busca la cifra que falta y di la conclusión.
+6. **Poca profundidad.** Una noticia principal de menos de unas 400 palabras, o que no explica el mecanismo ni da
+   las cifras de todos los implicados: pide alargarla con lo concreto que falta. Un día con dos o tres asuntos serios
+   pide 12-20 minutos.
+7. **Errores**: cifras que no cuadran con la fuente, fechas, nombres.
 
 ## Qué devuelves
 

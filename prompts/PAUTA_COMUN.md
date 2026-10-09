@@ -43,6 +43,10 @@ Claves mundo (también en economía, mercados y geopolítica) y los especiales.
   comprobadas. En finanzas y burbuja, nada de obviedades («una burbuja depende de los beneficios, no de la
   valoración»): lo que importa son los beneficios futuros y el ritmo de crecimiento de los ingresos, con el dato
   reciente de cada empresa (por ejemplo, cuánto se han multiplicado sus ingresos de un año a otro, según su fuente).
+- **Nada de equilibrio fabricado.** Si los datos señalan claramente a un lado, se dice claro. En una comparación,
+  siempre las cifras de todos (si se habla de los ingresos de OpenAI frente a Anthropic, las dos cifras, con fecha y
+  fuente) y la conclusión que sale de ellas; un matiz de método se dice si cambia la conclusión, no para diluirla.
+  Ser prudente no es quedarse a medias: es no afirmar lo que no se sabe y sí afirmar lo que los datos muestran.
 - **Lo que no está confirmado: basta con atribuirlo.** «Según OpenAI…», «dice la empresa…» ya le dice al oyente
   quién lo afirma. NO se añade detrás una frase de desconfianza. Ver §4b: el validador rechaza el guion si las repite.
 - **Más fondo técnico, explicado sin jerga.** Ante un modelo o una técnica nueva: cómo está hecho (arquitectura,

@@ -1000,3 +1000,8 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   su texto. 79 pruebas.
 - Riesgo a vigilar: con el 40 % la rutina podría quitar fuentes de prensa usadas en vez de añadir originales; el
   mensaje del validador lo prohíbe y el revisor lo mira. Revisar en el parte del 10.
+- Hecho (9 oct, Cristian: «6 minutos es muy poco»; y el parte pintó OpenAI y Anthropic como parejos, «prudente y
+  tonto»): parte.md: un día con 2-3 noticias de peso, 12-20 min (2.000-3.300 palabras), 400-600 por noticia
+  principal; tope del validador 2.600 → 3.700. PAUTA línea editorial: «Nada de equilibrio fabricado» (las cifras de
+  todos y la conclusión que sale). REVISOR: equilibrio fabricado y poca profundidad. CRITERIO E-001 para el parte
+  del 10: Anthropic >65.000 M$ (finales de julio; CNBC 17 ago y Bloomberg) frente a ~50.000 de OpenAI (FT).
