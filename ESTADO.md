@@ -1046,3 +1046,11 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   como application/octet-stream (no audio/mpeg); si Apple insiste, servir los audios con su tipo correcto.
 - RESUELTO (9 oct, 9:03): tras «Refresh» en Podcasts Connect, Apple volvió a leer parte.xml y el pódcast pasó a
   «Available». Fallo pasajero; no hizo falta Publish.
+- Hecho (9 oct, Cristian dijo «sí» a los 4 fallos del parte rehecho): (1) atribución una vez por noticia: PAUTA §5.1
+  reescrita; validar.py corta a partir de ~4 «según»/«de acuerdo con» por mil palabras (mín. 4) y rechaza cualquier
+  «citado por» (parte del 9: 24 y 4; mundo del 8: 33 y 4). (2) Cifras de una en una: ≤2 por frase, arranque sin
+  cifras (línea editorial + revisor). (3) Anthropic con la misma vara: sus noticias del día, en una sola pieza (línea
+  editorial + revisor). (4) Coletillas disfrazadas («no es que sea cierto, sino…», «predice algo que se puede mirar»,
+  «tendrá razón si…») en COLETILLAS. 83 pruebas. El portero cortó el push (falso positivo: marcó como privado
+  tests/muestras/); lo sube Cristian.
+- PENDIENTE (10 oct): conectar en YouTube Studio los feeds a sus pódcast (cuenta con más de 24 h).
