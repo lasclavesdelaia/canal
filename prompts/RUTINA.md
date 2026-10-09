@@ -46,7 +46,9 @@ en un commit nuevo. No escribas otro episodio. Si al mirarlo ya valida (otra eje
 9. **Escribe la tarjeta** de cada episodio: `tarjetas/AAAA-MM-DD-<programa>.md`, con el formato del apartado 10 de la
    pauta (de 120 a 260 palabras), con sus cabos sueltos. Es pública, como el guion: solo contenido.
 9b. **Revisión del editor, obligatoria.** Lanza un subagente (herramienta Agent) que NO haya escrito el guion, con
-    este encargo: «Sigue prompts/REVISOR.md con el guion episodios/AAAA-MM-DD-<programa>.md». Aplica TODOS sus
+    este encargo: «Sigue prompts/REVISOR.md con el guion episodios/AAAA-MM-DD-<programa>.md». Lánzalo en PRIMER
+    PLANO (sin segundo plano) y espera su respuesta: nunca termines tu turno con el revisor pendiente, porque la
+    ejecución se acaba y el episodio no se sube. Aplica TODOS sus
     cambios: lee las fuentes originales que señale y añádelas a «## Fuentes». Si un cambio te parece un error,
     no lo apliques y di por qué al final de tu respuesta. Si la herramienta Agent no está disponible, haz tú la
     revisión de REVISOR.md releyendo el guion como si fuera de otro, y dilo al final de tu respuesta.
