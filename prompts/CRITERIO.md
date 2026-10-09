@@ -15,6 +15,15 @@ apartado 11). Es público: aquí solo hay contenido, nunca cómo se llegó a él
 Formato de cada entrada:
 
 ```
+### E-001 · AAAA-MM-DD · programa: parte
+Se dijo: … · Lo correcto: … · Fuente: …
+
+### C-001 · AAAA-MM-DD · tema: …
+Conclusión: … · Por qué: … · Lo cambiaría: …
+```
+
+## Erratas
+
 (ninguna)
 
 ## Criterio
