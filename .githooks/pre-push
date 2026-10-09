@@ -1,0 +1,7 @@
+#!/bin/sh
+# Ningún push a main con las pruebas rotas: publicar.yml las ejecuta y, si fallan, no sale ningún episodio.
+python3 -m unittest discover -s tests -q >/tmp/claves_pruebas.log 2>&1 || {
+  echo "Pruebas rotas: push cancelado. Mira /tmp/claves_pruebas.log y arréglalo antes de subir." >&2
+  tail -15 /tmp/claves_pruebas.log >&2
+  exit 1
+}
