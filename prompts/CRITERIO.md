@@ -15,22 +15,7 @@ apartado 11). Es público: aquí solo hay contenido, nunca cómo se llegó a él
 Formato de cada entrada:
 
 ```
-### E-001 · AAAA-MM-DD · programa: parte
-Se dijo: … · Lo correcto: … · Fuente: …
-
-### C-001 · AAAA-MM-DD · tema: …
-Conclusión: … · Por qué: … · Lo cambiaría: …
-```
-
-## Erratas
-
-### E-001 · 2026-10-10 · programa: parte
-Se dijo: que con unos 70.000 M$ de ritmo anual OpenAI se ponía «a la altura de Anthropic», sin dar la cifra de
-Anthropic, y se dejó la comparación en que las dos empresas no cuentan igual. · Lo correcto: Anthropic dijo a sus
-inversores que su ritmo anual de ingresos superó los 65.000 M$ a finales de julio de 2026 (CNBC, 17 ago 2026;
-Bloomberg), frente a los unos 50.000 M$ de OpenAI según el FT; Anthropic va claramente por delante. Comprueba si hay
-una cifra más reciente de cada una antes de decirlo, y da las dos con su fecha. · Fuente:
-https://www.cnbc.com/2026/08/17/anthropic-says-annualized-revenue-climbed-to-65-billion-in-july.html
+(ninguna)
 
 ## Criterio
 

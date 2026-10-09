@@ -1005,3 +1005,6 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   principal; tope del validador 2.600 → 3.700. PAUTA línea editorial: «Nada de equilibrio fabricado» (las cifras de
   todos y la conclusión que sale). REVISOR: equilibrio fabricado y poca profundidad. CRITERIO E-001 para el parte
   del 10: Anthropic >65.000 M$ (finales de julio; CNBC 17 ago y Bloomberg) frente a ~50.000 de OpenAI (FT).
+- Hecho (9 oct, ~8:50, por orden de Cristian): RETIRADO el parte del 9 (Release ep-2026-10-09-parte y rama
+  claude/episodios-2026-10-09 borradas; copia en pruebas/retirados/, fuera de git). Quitada la errata E-001 (ya no
+  hay episodio que corregir). Rutina lanzada a mano para rehacer el parte del 9 con Opus y las reglas nuevas.
