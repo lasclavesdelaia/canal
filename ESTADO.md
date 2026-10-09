@@ -1062,3 +1062,11 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   Release (notas JSON y nombre) a «OpenAI ingresa 20.000 millones menos de lo que se contaba» (lo de que Anthropic va
   por delante ya se sabía desde julio). El fichero de la rama claude/episodios-2026-10-09 conserva el título viejo
   (no se usa: lo publicado sale de la Release). Falta rehacer la web (lo lanza Cristian con el push).
+- Hecho (9 oct, Cristian tras escuchar el parte rehecho: «bombardeo», «odio “según TechCrunch”», «los números en sí
+  no son nada», «más fondo y menos historia evenemencial», «explica cosas triviales», «poco crítico, menos naive»,
+  «ligeramente más gracioso y sarcástico, muy ligeramente»): parte.md (fuera «no escatimes» y «hasta doce cosas»: en
+  corto, 4 como mucho; las principales, desarrollo de ideas y no más datos); PAUTA línea editorial: «Ideas, no
+  aluvión de datos», «Mirada crítica, no ingenua» (crítica con hecho concreto, no etiqueta de sospecha), «Nada
+  trivial explicado», humor ligeramente sarcástico; §5.1: los medios casi nunca en voz alta. validar.py: CIFRAS
+  (12/mil; mundo 18, especial 14; años fuera) y MEDIOS (máx. 1/mil, mín. 2). Parte del 9: 82 cifras (máx. 40) y 22
+  medios (máx. 3). REVISOR 6a (ingenuo o trivial) y 6b (bombardeo). 83 pruebas.

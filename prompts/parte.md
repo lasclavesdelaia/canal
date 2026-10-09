@@ -28,12 +28,12 @@ parte es de antes de ayer o más atrás, este parte cubre todo lo ocurrido desde
 
 - Depende del día: de 450 a 3.300 palabras, es decir, de 3 a 20 minutos.
 - **Un día con dos o tres noticias de peso pide 12-20 minutos (2.000-3.300 palabras).** Cada noticia principal se
-  cuenta a fondo, con al menos 400-600 palabras: el original, las cifras de todos los implicados, el mecanismo, las
-  voces y qué cambia. Seis minutos para tres asuntos serios no dan para entrar en ninguno (Cristian, 9 oct 2026).
+  cuenta a fondo, con al menos 400-600 palabras: no más datos, sino más desarrollo de la idea: por qué pasa, qué
+  mecanismo hay debajo, qué tensión revela, qué consecuencias tiene, qué se parece a otras épocas. Historia de
+  fondo, no crónica de hechos. Seis minutos para tres asuntos serios no dan para entrar en ninguno (Cristian, 9 oct 2026).
   Solo un día de verdad flojo es corto.
-- **No escatimes.** El oyente quiere estar al día de verdad en IA y, si el parte se queda corto, lo buscará por su
-  cuenta en el flujo de noticias, que es lo que se quiere evitar. Ante la duda, una cosa más en corto mejor que una
-  cosa menos, siempre que sea noticia y no ruido.
+- **Pocas cosas, pensadas.** El oyente no quiere un aluvión de titulares ni de cifras: quiere entender dos o tres
+  cosas de verdad (Cristian, 9 oct 2026: «es un bombardeo»). Mejor una noticia menos y una idea más desarrollada.
 - No rellenes con ruido. Un día de verdad flojo es un episodio corto, y está bien.
 - **Siempre sale algo:** si no ha pasado nada importante, un episodio de 2 o 3 minutos que lo diga con naturalidad
   («hoy no ha pasado nada que cambie el panorama») y cuente lo poco que merezca un minuto.
@@ -55,8 +55,8 @@ El orden va por **importancia**, no por temas.
    rivales. Si no hay ficha ni informe publicado, va en corto y en una frase.
    **Si es una política, un informe o un anuncio de una empresa:** se lee el texto original en su web y se cuenta
    desde ahí.
-3. **En corto:** el resto de lo relevante, de una a tres frases cada cosa, hasta doce cosas. Si hay más,
-   quédate con las que importen y deja el resto.
+3. **En corto:** como mucho cuatro cosas, y solo si cambian algo para el oyente; una o dos frases cada una, con una
+   cifra como mucho. Lo demás no entra: el parte no es un repaso de todo lo que pasó.
 4. **Para entenderlo** (solo si hace falta): un concepto, un paper o un modelo raro, explicado con calma para alguien
    que no es técnico.
 5. **El termómetro** (solo si hay algo): un ranking frente al uso real, o qué se comenta entre quienes usan los

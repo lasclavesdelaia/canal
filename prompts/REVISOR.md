@@ -31,6 +31,13 @@ Lee antes `prompts/PAUTA_COMUN.md` (línea editorial, §4b, §9) y el fichero de
 6. **Poca profundidad.** Una noticia principal de menos de unas 400 palabras, o que no explica el mecanismo ni da
    las cifras de todos los implicados: pide alargarla con lo concreto que falta. Un día con dos o tres asuntos serios
    pide 12-20 minutos.
+6a. **Ingenuo o trivial.** ¿Repite el eslogan de una empresa como si fuera un hecho? ¿Falta la pregunta de a quién
+   beneficia, qué calla o qué prometió antes? Propón la frase crítica concreta, con su hecho. ¿Explica algo que el
+   oyente ya sabe (matemáticas o física de carrera, lo básico de la IA, la lista «no se explica» de la pauta §9)?
+   Bórralo. ¿Hay un guiño seco donde encajaría uno, o sobra alguno?
+6b. **Bombardeo.** ¿Hay más hechos y cifras que ideas? Señala las cifras que sobran (las que no cambian lo que se
+   entiende), las noticias en corto que no aportan y dónde falta desarrollar el porqué en vez de añadir datos.
+   Cuenta los medios nombrados en voz alta: solo valen las exclusivas.
 7. **Al oído.** Atribuciones repetidas (más de un «según» por noticia, cualquier «según X citado por Y», o lo mismo
    disfrazado de «dice X», «publica Y»): di cuáles sobran. Frases con más de dos cifras o tres frases seguidas con
    cifras sin explicar: cómo repartirlas. Arranque con cifras.

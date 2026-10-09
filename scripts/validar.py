@@ -50,6 +50,14 @@ COLETILLAS = [
 # 9 oct 2026: «según X citado por Y» una y otra vez cansa al oído. Tope por cada mil palabras, y ningún «citado por».
 SEGUN_POR_MIL = 4
 SEGUN_MIN = 4
+# Bombardeo de datos (Cristian, 9 oct 2026): expresiones numéricas por cada mil palabras, y medios nombrados en voz alta
+# (lo que anuncia una empresa se atribuye a la empresa; el medio solo si el dato es suyo).
+CIFRAS = r"\b(mil|millones?|billones?|por ciento|coma|veces|\d+(?:[.,]\d+)?)\b"
+CIFRAS_POR_MIL = {"parte": 12, "claves": 12, "mundo": 18, "especial": 14}
+MEDIOS = (r"\b(techcrunch|the verge|wired|ars technica|venturebeat|the information|business insider|yahoo finance|axios|"
+          r"bloomberg|reuters|financial times|c\.?n\.?b\.?c\.?|business standard|semafor|the next web|engadget|zdnet)\b")
+MEDIOS_POR_MIL = 1
+MEDIOS_MIN = 2
 COLETILLAS_MAX = {"parte": 1, "claves": 2, "mundo": 2, "especial": 2}
 # Fórmulas de molde que se repetían de un episodio a otro (PAUTA_COMUN §4b). Ninguna.
 MOLDE = [
@@ -178,6 +186,17 @@ def validar(nombre, texto, cfg=None):
         errores.append(f"{segun} «según» (máximo {tope_segun}: unos {SEGUN_POR_MIL} por cada mil palabras; PAUTA_COMUN "
                        "§5.1). Nombra la fuente una vez al empezar cada noticia; las frases siguientes la heredan. "
                        "La lista de «## Fuentes» ya da el resto. No lo cambies por «dice X» o «publica Y» en cada frase")
+    cifras = len(re.findall(CIFRAS, re.sub(r"\b(19|20)\d\d\b", "", cuerpo)))   # los años no cuentan
+    tope_cifras = round(CIFRAS_POR_MIL.get(ep.programa, 12) * ep.palabras / 1000)
+    if cifras > tope_cifras:
+        errores.append(f"unas {cifras} cifras (máximo {tope_cifras}; PAUTA_COMUN, «Ideas, no aluvión de datos»). Deja "
+                       "solo las que sostienen la idea, redondeadas, y usa el espacio para explicar el porqué")
+    medios = re.findall(MEDIOS, cuerpo)
+    tope_medios = max(MEDIOS_MIN, round(MEDIOS_POR_MIL * ep.palabras / 1000))
+    if len(medios) > tope_medios:
+        errores.append(f"{len(medios)} medios nombrados en voz alta ({', '.join(sorted(set(medios)))}; máximo "
+                       f"{tope_medios}; PAUTA_COMUN §5.1). Atribuye a la empresa o al organismo; el medio, solo si "
+                       "el dato es suyo (exclusiva). Los demás van en «## Fuentes»")
     citado = re.findall(r"\bcitad[oa]s? por\b|\bque cita\b", cuerpo)
     if citado:
         errores.append(f"{len(citado)} «citado por»: di solo quién da el dato (el original); quién lo cuenta va en "
