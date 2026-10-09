@@ -48,11 +48,33 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           REHACER: ${{ inputs.rehacer }}
+          RECHAZOS_FICHERO: ${{ runner.temp }}/rechazos.txt
         run: python3 scripts/publicar.py --solo-comprobar
+      - name: Devolver el guion rechazado a la rutina, al momento
+        # Dispara la rutina por su API con los errores: corrige el guion en su rama y lo vuelve a subir; el reloj
+        # lo publica en la pasada siguiente. Token del disparador API de la rutina (claude.ai/code/routines).
+        if: steps.mirar.outputs.rechazados != '0'
+        env:
+          RUTINA_FIRE_TOKEN: ${{ secrets.RUTINA_FIRE_TOKEN }}
+          RECHAZOS_FICHERO: ${{ runner.temp }}/rechazos.txt
+        run: |
+          if [ ! -s "$RECHAZOS_FICHERO" ]; then echo "Solo hay borradores rechazados: no es cosa de la rutina."; exit 0; fi
+          if [ -z "$RUTINA_FIRE_TOKEN" ]; then echo "::warning::Falta el secreto RUTINA_FIRE_TOKEN: no puedo avisar a la rutina."; exit 0; fi
+          python3 - <<'PY' > "$RUNNER_TEMP/fire.json"
+          import json, os
+          errores = open(os.environ["RECHAZOS_FICHERO"], encoding="utf-8").read()
+          print(json.dumps({"text": "El validador de GitHub ha rechazado este guion y no se publicará hasta que lo corrijas:\n\n" + errores}))
+          PY
+          curl -sS --fail-with-body -X POST "https://api.anthropic.com/v1/claude_code/routines/trig_01AuPY3LjQVv88mbVQJWuVmC/fire" \
+            -H "Authorization: Bearer $RUTINA_FIRE_TOKEN" \
+            -H "anthropic-beta: experimental-cc-routine-2026-04-01" \
+            -H "anthropic-version: 2023-06-01" \
+            -H "Content-Type: application/json" \
+            --data @"$RUNNER_TEMP/fire.json" | head -c 400; echo
       - name: Avisar de un episodio rechazado
         if: steps.mirar.outputs.rechazados != '0'
         run: |
-          echo "La rutina dejó un episodio que no pasa el validador. Mira el paso anterior."
+          echo "La rutina dejó un episodio que no pasa el validador. Mira el paso anterior (ya se le ha devuelto)."
           exit 1
 
   publicar:

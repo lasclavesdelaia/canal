@@ -75,6 +75,19 @@ class Validador(unittest.TestCase):
         _, errores, _ = validar("2026-10-10-claves.md", con_cuerpo(cuerpo, programa="claves", fecha="2026-10-10"))
         self.assertFalse(any("coletillas" in e for e in errores), errores)
 
+    def test_formulas_de_molde_rechazadas(self):
+        cuerpo = TEXTO_LARGO + " Y ahora, en corto. Algo pasa. Hasta aquí el día."
+        _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo(cuerpo))
+        self.assertTrue(any("molde" in e and "hasta aquí" in e for e in errores), errores)
+
+    def test_aviso_a_la_rutina_una_vez(self):
+        import datetime as dt
+        t = lambda h, m: dt.datetime(2026, 10, 9, h, m, tzinfo=dt.timezone.utc).timestamp()
+        self.assertTrue(publicar.recien_subido(t(3, 10), t(4, 5)))    # primera pasada: lo de madrugada
+        self.assertFalse(publicar.recien_subido(t(3, 10), t(4, 25)))  # la siguiente ya no repite
+        self.assertTrue(publicar.recien_subido(t(11, 10), t(11, 25)))
+        self.assertFalse(publicar.recien_subido(t(11, 10), t(11, 45)))
+
     def test_exclamaciones_y_titulo_gritado(self):
         _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo(TEXTO_LARGO, titulo="URGENTE BRUTAL nuevo modelo!"))
         self.assertTrue(any("exclamaciones" in e for e in errores))

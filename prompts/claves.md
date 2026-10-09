@@ -45,8 +45,7 @@ Cada clave, la forma que tenga, lleva:
 - las posturas en juego, con nombre, y qué las separa;
 - tu lectura razonada, si la tienes;
 - si afecta a personas (empleo, desigualdad, países), a quién, qué se podría hacer y quién lo propone;
-- una reflexión de largo plazo: qué dice esto de los próximos años, qué se parece a otras épocas, qué pregunta deja
-  abierta.
+- una reflexión de largo plazo cuando la haya: qué dice esto de los próximos años o qué se parece a otras épocas.
 
 Puedes tirar de material que no sea de esta semana (un paper de hace meses, un informe largo, un ensayo de alguien
 con trabajo detrás) si ilumina lo que pasa ahora; di de cuándo es.

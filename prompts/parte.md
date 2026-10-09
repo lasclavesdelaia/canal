@@ -8,9 +8,8 @@ hace días y no se contó, solo entra si sigue importando hoy y se dice de cuán
 IA. Por eso el parte del domingo cubre desde el sábado por la mañana y no repite lo que contó el semanal (mira su
 tarjeta).
 
-**El tono del parte se queda como está:** informativo, ágil, con su opinión breve cuando toque. La reflexión larga
-del apartado 2 de la pauta es sobre todo para los semanales; aquí, como mucho una frase de fondo al cerrar una
-noticia principal.
+**El tono del parte:** informativo, ágil, con su opinión breve cuando toque. La reflexión larga del apartado 2 de la
+pauta es sobre todo para los semanales; aquí, como mucho una frase de fondo en alguna noticia principal, no en todas.
 
 ## Si hubo días sin parte
 
@@ -44,8 +43,8 @@ El orden va por **importancia**, no por temas.
    - qué ha pasado;
    - el dato;
    - qué dicen distintas voces;
-   - qué no está claro todavía, solo si importa y en una frase;
-   - por qué importa.
+   - por qué importa (con un dato o un mecanismo, no con una advertencia).
+   Sin frase final de duda o de sospecha (pauta, §4b).
 3. **En corto:** el resto de lo relevante, de una a tres frases cada cosa, hasta doce cosas. Si hay más,
    quédate con las que importen y deja el resto.
 4. **Para entenderlo** (solo si hace falta): un concepto, un paper o un modelo raro, explicado con calma para alguien

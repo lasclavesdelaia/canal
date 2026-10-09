@@ -971,3 +971,21 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   x-api-key sin prefijo; lo pone Cristian), no como variable: el proxy de Anthropic la añade fuera de la VM y la
   rutina no la ve. fuentes.md, PAUTA §0 y ENCARGADO dicen ya que se llama a la API SIN cabecera. Red: «Completo».
   Comprobar el 10 oct en el registro de la rutina que la API da 200.
+- Hecho (9 oct, revisión sistemática de prompts/, petición de Cristian): quitados los huecos que OBLIGABAN a la
+  coletilla: parte.md («qué no está claro todavía» en cada noticia principal, metido el 8 oct al aplicar su nota 1
+  al revés), PAUTA («qué no sabemos» por noticia; «qué piensas tú (o qué no está claro)»; «qué pregunta deja
+  abierta»; «la cifra del fabricante se contrasta»; «úsalos con escepticismo»), claves.md («qué pregunta deja
+  abierta») y especial.md («qué no», «el dato que las separaría», cierre «qué dato lo aclararía»). Quitados los
+  ejemplos entre comillas que se copiaban literalmente: «Vamos con lo segundo», «Y ahora, en corto», «por dos
+  razones», «hace un año se prometió X; hoy tenemos Y», «el jersey y la oveja», «es sustancialmente mejor…».
+  PAUTA §4b: «Fórmulas de molde» (Hasta aquí, Y ahora en corto, Lo segundo/tercero, Para entenderlo, Para el
+  termómetro, Hoy el protagonista, Mi lectura es, Importa por dos razones) → validar.py las rechaza (MOLDE). Tarjeta
+  con línea nueva «Arranque y cierre» (literal) para no repetirlos; tarjeta hasta 260 palabras. Repaso §8 con
+  «validar en bien». Los 5 episodios del 8-9 oct darían MAL con las reglas nuevas.
+- Hecho: aviso AL MOMENTO a la rutina. publicar.py deja los episodios recién rechazados en RECHAZOS_FICHERO
+  (recien_subido(): una vez; la primera pasada del día, 4:0x UTC, cubre lo subido de madrugada) y publicar.yml los
+  manda a la rutina por su disparador API (/fire, con los errores en `text`). RUTINA.md: apartado «Si te ha llamado
+  el validador»: corrige ese guion en su rama, valida tú mismo y sube; no escribe otro. 79 pruebas.
+  FALTA (Cristian): en claude.ai/code/routines › «Las claves de la IA» › Editar › Añadir otro disparador › API ›
+  Generar token, y guardarlo: `gh secret set RUTINA_FIRE_TOKEN --repo lasclavesdelaia/canal` (pegar al pedirlo).
+  Sin ese secreto, el paso avisa en amarillo y la reserva de las 13:07 sigue corrigiendo.

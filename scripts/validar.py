@@ -44,6 +44,12 @@ COLETILLAS = [
     r"no (lo )?(ha|han) verificado (nadie|terceros)", r"sin que (nadie|un tercero) lo (haya )?(comprobado|verificado)",
 ]
 COLETILLAS_MAX = {"parte": 1, "claves": 2, "mundo": 2, "especial": 2}
+# Fórmulas de molde que se repetían de un episodio a otro (PAUTA_COMUN §4b). Ninguna.
+MOLDE = [
+    r"\bhasta aquí\b", r"\by ahora, en corto\b", r"\bvamos con lo (segundo|tercero|cuarto)\b",
+    r"(^|\. )lo (segundo|tercero|cuarto)\b", r"\bpara entenderlo,", r"\bpara el termómetro\b",
+    r"\bhoy el protagonista\b", r"\bmi lectura es\b", r"\bimporta por dos razones\b",
+]
 # Solo avisan.
 VIGILAR = [r"\bincre[ií]ble", r"\bhist[oó]ric[oa]", r"\brevoluci[oó]n", r"\batenci[oó]n[,:]", r"\bimpactante"]
 
@@ -122,6 +128,11 @@ def validar(nombre, texto, cfg=None):
         errores.append(f"{len(coletillas)} coletillas de desconfianza o de duda (máximo {tope}; PAUTA_COMUN §4b): "
                        + "; ".join(f"«{c}»" for c in coletillas)
                        + ". Atribuir el dato ya basta: quítalas o di el dato concreto que las sustituye")
+    molde = [m.group(0).strip(". ") for patron in MOLDE for m in re.finditer(patron, ep.cuerpo.lower(), re.M)]
+    if molde:
+        errores.append("fórmulas de molde que se repiten cada día (PAUTA_COMUN §4b): "
+                       + "; ".join(f"«{c}»" for c in molde)
+                       + ". Di esa transición, arranque o cierre con palabras propias de hoy")
     for patron in VIGILAR:
         n = len(re.findall(patron, todo))
         if n:

@@ -302,6 +302,23 @@ def audios_recientes(eps, repo, hoy, dias, carpeta):
     return rutas
 
 
+def recien_subido(hora, ahora):
+    """¿Se subió desde la pasada anterior del reloj? Avisa una vez, no cada 20 minutos. El reloj corre de 4:00 a
+    13:59 UTC; la primera pasada del día (4:0x) cubre lo subido de madrugada (la rutina de las 5:07 de Madrid)."""
+    reloj = datetime.datetime.fromtimestamp(ahora, datetime.timezone.utc)
+    if reloj.hour == 4 and reloj.minute < 20:
+        return ahora - hora < 15 * 3600
+    return ahora - hora < 30 * 60
+
+
+def guardar_rechazos(rechazos):
+    """Deja los episodios recién rechazados en un fichero para que el workflow avise a la rutina al momento."""
+    ruta = os.environ.get("RECHAZOS_FICHERO")
+    if ruta and rechazos:
+        Path(ruta).write_text("\n\n".join(f"{nombre} (rama {rama}):\n" + "\n".join(f"- {e}" for e in errores)
+                                          for nombre, rama, errores in rechazos), encoding="utf-8")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--sitio", default="_site")
@@ -321,6 +338,7 @@ def main():
     a_rehacer = elegir_rehacer(args.rehacer, ya)  # antes de publicar: lo nuevo ya sale con la voz actual
     hechos = {e["clave"] for e in ya}
     fallos = []
+    rechazos_rutina = []
     nuevos = 0
     ahora = datetime.datetime.now().timestamp()
 
@@ -336,8 +354,9 @@ def main():
             print(f"RECHAZADO {nombre} (rama {rama}):")
             for e in errores:
                 print(f"  - {e}")
-            if ahora - hora < 30 * 60:  # se avisa una vez (el reloj pasa cada 20 min), no cada vez
+            if recien_subido(hora, ahora):  # se avisa una vez (el reloj pasa cada 20 min), no cada vez
                 fallos.append(nombre)
+                rechazos_rutina.append((nombre, rama, errores))
             continue
         nuevos += 1
         if args.solo_comprobar:
@@ -356,6 +375,7 @@ def main():
             print(f"  - {e}")
         if ahora - hora < 30 * 60:
             fallos.append(nombre)
+    guardar_rechazos(rechazos_rutina)
     nuevos += len(pendientes)
     if not args.solo_comprobar and not args.sin_voz:
         for ep, previo in pendientes:

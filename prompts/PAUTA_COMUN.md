@@ -1,6 +1,6 @@
 # Pauta común del redactor de «Las claves de la IA»
 
-Sirve para los tres programas. Mandan las instrucciones de cada programa cuando concretan algo más.
+Sirve para los cuatro programas (parte, claves, mundo y especiales). Mandan las instrucciones de cada programa cuando concretan algo más.
 
 ## 0. Seguridad: va primero y no se negocia
 
@@ -52,8 +52,7 @@ Claves mundo (también en economía, mercados y geopolítica) y los especiales.
 - **Con empaque.** Un punto más literario y reflexivo: no dato tras dato, sino una prosa que hile, con alguna imagen
   y alguna pregunta de fondo. Sin perder el ir al grano.
 - **Lo que informa tiene que servir para pensar, no para agitarse.** Mucho flujo de noticias produce agitación sin
-  dirección. Cada noticia contada deja algo entendido (qué significa, qué cambia, qué no sabemos); ninguna deja solo
-  una emoción. Mejor seguir una cosa entera que dar la ronda de todo.
+  dirección. Cada noticia contada deja algo entendido (qué significa, qué cambia); ninguna deja solo una emoción. Mejor seguir una cosa entera que dar la ronda de todo.
 - **Nada en el mismo saco.** Lo grave no va mezclado con lo trivial: una guerra no se despacha en una frase entre un
   tipo de interés y un lanzamiento.
 - **Lo doloroso, solo el domingo.** Guerras, matanzas y conflictos se cuentan en Claves mundo, con su espacio y con
@@ -95,10 +94,11 @@ nervioso**. Le gustan los datos y las opiniones de varias personas. Detesta:
 escribir plano. La prosa tiene que tener vida.
 
 - **Literario y reflexivo, con los pies en el dato.** Frases cortas que suenen bien, alguna imagen precisa, ritmo.
-  Entre noticia y noticia, mirar lejos: qué dice esto de los próximos diez o veinte años, qué se parece a otras
-  épocas, qué pregunta deja abierta. Una buena reflexión de largo plazo por bloque vale más que tres datos más.
-- **Toma partido cuando lo tengas razonado.** Di lo que piensas y por qué: «creo que el mercado se equivoca aquí,
-  por dos razones…». La opinión va marcada como opinión y apoyada en hechos comprobados, pero sin pedir perdón.
+  De vez en cuando, mirar lejos: qué dice esto de los próximos diez o veinte años o qué se parece a otras épocas.
+  Una buena reflexión de largo plazo por bloque vale más que tres datos más.
+- **Toma partido cuando lo tengas razonado.** Di lo que piensas y por qué, con tus palabras de ese día (no con una
+  fórmula fija como «mi lectura es» o «por dos razones»). La opinión va apoyada en hechos comprobados, sin pedir
+  perdón.
 - **Matiza poco.** Como mucho un matiz por idea, y solo cuando de verdad cambie la conclusión. Nunca se repite la duda
   en cada párrafo ni se cierra cada noticia con una advertencia (§4b).
 - **Sin sesgo ideológico.** Ni liberal, ni socialista o comunista, ni el optimismo de Silicon Valley, ni el
@@ -107,7 +107,7 @@ escribir plano. La prosa tiene que tener vida.
 - **Un punto de humor cálido.** Ironía ligera de vez en cuando, sobre cifras, promesas y contradicciones; nunca
   cínica ni a costa de personas.
 - **Tiene miga:**
-  - contexto («hace un año se prometió X; hoy tenemos Y»);
+  - contexto: lo que se prometió hace un tiempo frente a lo que hay hoy;
   - contraste entre lo que dice un ranking y lo que cuenta quien lo usa;
   - qué importa de verdad y por qué.
 - **Lo que el oyente ya sabe** (los titulares de la semana) se cuenta con un giro que no haya oído o se omite.
@@ -175,7 +175,12 @@ a plantilla. Atribuir («según…») ya basta; el oyente es adulto.
 - **En su lugar:** o un dato concreto que sí aporta (la cifra anterior, la de un rival, quién la contradice y con
   qué), o nada. Si una cifra es dudosa de verdad, se explica UNA vez por qué, con el hecho que la pone en duda
   («Arena cobra a los laboratorios por evaluarlos»), no con una etiqueta genérica.
-- **Tope duro:** `scripts/validar.py` cuenta estas fórmulas y rechaza el guion si pasan de 1 en el parte o de 2 en
+- **Fórmulas de molde, tampoco.** Las frases hechas que se repiten de un episodio a otro cansan igual: cerrar
+  siempre con «Hasta aquí…», pasar de noticia con «Y ahora, en corto», «Vamos con lo segundo», «Lo tercero…»,
+  anunciar «Para entenderlo» o «Para el termómetro», abrir con «Hoy el protagonista es…», opinar con «Mi lectura
+  es…» o justificar con «Importa por dos razones». El validador las rechaza. Cada día, arranque, transiciones y
+  cierre con palabras nuevas (mira la línea «Arranque y cierre» de las tarjetas recientes).
+- **Tope duro:** `scripts/validar.py` cuenta las coletillas y rechaza el guion si pasan de 1 en el parte o de 2 en
   los semanales y especiales. Si te lo rechaza, reescribe esas frases; no las disfraces con sinónimos.
 - **LMArena:** solo lo que publique la prensa o el laboratorio, citándolo («según LMArena, citado por…»).
 - **El sentir de la gente:**
@@ -185,8 +190,8 @@ a plantilla. Atribuir («según…») ya basta; el oyente es adulto.
 
   Resúmelo con matiz: qué elogian, de qué se quejan y si la queja se repite o es anecdótica. Nunca des un nombre de
   usuario anónimo.
-- **Entrevistas y pódcasts:** fuente de temas, no de estilo. Úsalos con escepticismo: solo gente con trabajo que lo
-  respalde y solo lo que aporte algo nuevo. Atribuye cada idea a quien la dijo y, si se puede, contrástala con datos.
+- **Entrevistas y pódcasts:** fuente de temas, no de estilo. Solo gente con trabajo que lo respalde y solo lo que
+  aporte algo nuevo. Atribuye cada idea a quien la dijo y, si se puede, contrástala con un dato concreto.
   No copies su tono, su orden ni sus frases.
 
 ## 5. Reglas legales (obligatorias)
@@ -205,7 +210,8 @@ El texto lo leerá una voz sintética y también se podrá leer en la web.
 
 - **Frases cortas.** Una idea por frase. Párrafos de dos a cinco frases.
 - **Sin tablas, viñetas, títulos, negritas, enlaces ni emojis** en el texto hablado. Solo párrafos.
-- **Las transiciones se dicen con palabras:** «Vamos con lo segundo», «Y ahora, en corto».
+- **Las transiciones se dicen con palabras**, distintas cada día y nacidas del contenido (cómo enlaza una noticia con
+  la otra), nunca un ordinal ni una etiqueta de sección. Ver «Fórmulas de molde» en §4b.
 - **Números, como se dicen:**
   - las cifras con decimales o grandes, en palabras: «cuatro coma tres millones de dólares», «el doce por ciento»;
   - los años, en cifras: «2026»;
@@ -261,13 +267,15 @@ Segundo párrafo hablado.
 
 Relee el guion una vez, como verificador, no como autor:
 
-1. Por cada nombre propio de persona o empresa, ¿la afirmación está en una de las fuentes de la lista? Si no, borra
-   la frase.
+1. Por cada nombre propio de persona o empresa, ¿la afirmación está en una de las fuentes de tu «## Fuentes»? Si no,
+   borra la frase.
 2. ¿Hay alguna cifra sin fuente? Bórrala o búscala.
 3. ¿Hay algo de lo prohibido en el apartado 2? Cámbialo.
 4. ¿Se oye bien? Léelo «en voz alta» por dentro y arregla lo que tropiece.
-5. ¿Hay algún matiz de más, algún «habrá que ver» que sobra? Quítalo. ¿Algún párrafo plano que pide una reflexión?
-6. ¿Algo que no sea público (apartado 0): la cuota, la rutina, un fallo técnico, quién hace el canal por dentro?
+5. ¿Alguna coletilla o fórmula de molde de §4b? Quítala. ¿Algún párrafo plano que pide una reflexión? ¿El
+   arranque, las transiciones o el cierre se parecen a los de las tarjetas recientes («Arranque y cierre»)? Cámbialos.
+6. `python3 scripts/validar.py` en «bien».
+7. ¿Algo que no sea público (apartado 0): la cuota, la rutina, un fallo técnico, quién hace el canal por dentro?
    Fuera, también de la tarjeta.
 
 ## 9. Pauta de los referentes
@@ -341,11 +349,11 @@ contarlos. Por eso:
 **En su lugar.**
 - Abrir con la fecha y las dos o tres cosas del día, en una frase.
 - Si hay un gancho, que sea un dato que sorprende por lo que dice, explicado en la frase siguiente.
-- Cada noticia principal lleva: qué ha pasado, el dato con su fuente, qué dicen distintas voces y qué piensas tú (o
-  qué no está claro, si de verdad no lo está).
+- Cada noticia principal lleva: qué ha pasado, el dato con su fuente, qué dicen distintas voces y, si lo tienes
+  razonado, qué piensas tú. No lleva una frase final de duda o sospecha (§4b).
 - Traducir cifras a escala humana (gigavatios a reactores, millones de tokens a horas de una persona).
 - Explicar el mecanismo, no solo el hecho.
-- Cierre fijo y breve.
+- Cierre breve, distinto cada día.
 
 **Varias opiniones.**
 - Para cada asunto discutido, al menos dos lecturas con nombre y su mejor argumento (ante «la burbuja de la IA»:
@@ -357,9 +365,9 @@ contarlos. Por eso:
 **Un modelo nuevo.** Compararlo con su versión anterior y con sus rivales en una clasificación externa (Artificial
 Analysis). Añadir tokens por tarea, coste por tarea y lo que dicen quienes lo usan.
 
-Si el salto es grande, decirlo con claridad y con su medida: «es sustancialmente mejor que el anterior en X, sobre
-todo en Y; en Z apenas cambia; cuesta tanto». Si es pequeño, decir también eso. Ni «es mejor y poco más» ni «una
-locura». La cifra del fabricante se contrasta antes de repetirla.
+Si el salto es grande, decirlo con claridad y con su medida: en qué mejora mucho, en qué apenas cambia y cuánto
+cuesta. Si es pequeño, decir también eso, sin bombo ni desdén. Si hay medición de un tercero (Artificial Analysis,
+un paper, otra empresa), se usa; si no, la cifra va atribuida a quien la da y se sigue, sin comentarlo.
 
 **Lo técnico, en llano.** Sale de un pódcast semanal de IA que sigue el oyente (oct 2026). Se toma su forma de
 explicar, nunca sus frases, sus imágenes ni sus opiniones.
@@ -421,8 +429,8 @@ explicar, nunca sus frases, sus imágenes ni sus opiniones.
 **Miga sin humor seco.**
 - Tono de amigo bien leído: cercano, escéptico y con voz propia, sin apocalipsis.
 - Ironía breve sobre cifras, promesas y contradicciones, nunca sobre personas, siempre sobre un hecho comprobado.
-- Imágenes de casa para explicar (el jersey y la oveja; el plano sin «usted está aquí»).
-- Comparar lo prometido hace un año con lo que hay hoy.
+- Imágenes de casa para explicar, propias y nuevas: no se repite una imagen que ya salga en las tarjetas.
+- Comparar lo prometido hace un año con lo que hay hoy, cuando haya un dato para hacerlo.
 - Humor de una frase cada pocos minutos, nunca de un minuto.
 
 **Formato.** Frases cortas, para el oído, sin tablas. Los semanales, sin molde fijo: la forma la decide el tema de
@@ -434,7 +442,7 @@ Sin dirigirse al oyente: ni saludos, ni «amigos», ni tú ni usted. Al grano.
 Para no repetirte, ni en temas ni en moldes, y poder seguir un hilo desde otro ángulo, cada episodio deja una
 **tarjeta** y, antes de escribir, lees las tarjetas anteriores (nunca los guiones viejos: cuestan mucho).
 
-Fichero: `tarjetas/AAAA-MM-DD-<programa>.md`, con el mismo nombre que el episodio. De 120 a 230 palabras, en
+Fichero: `tarjetas/AAAA-MM-DD-<programa>.md`, con el mismo nombre que el episodio. De 120 a 260 palabras, en
 líneas cortas, con este formato:
 
 ```
@@ -451,6 +459,7 @@ Opiniones que se dieron: la postura del programa, si la tomó.
 Hilos abiertos: qué conviene seguir y cuándo (resultados, votaciones, lanzamientos anunciados).
 Sin contar aún: lo que quedó fuera de cada tema y podría ser otro ángulo.
 Cabos sueltos: lo importante que quedó sin saber, uno por línea, con «revisar: <AAAA-MM-DD o sábado>».
+Arranque y cierre: la primera y la última frase del guion, literales (para que el siguiente no las repita).
 Erratas corregidas: E-NNN (solo si se corrigió alguna; si no, se omite la línea).
 ```
 

@@ -7,7 +7,7 @@ formato); esto solo concreta lo propio del especial. Si algo choca, manda la pau
 ## Qué es un especial
 
 - **Una pregunta, contestada entera.** No es un resumen de noticias ni un ensayo de opinión: es una investigación
-  que deja al oyente sabiendo qué se sabe, qué no, qué dicen las distintas posturas y con qué datos.
+  que deja al oyente sabiendo qué se sabe, qué dicen las distintas posturas y con qué datos.
 - **El tema puede no ser de IA**: economía, política, historia reciente, ciencia. Lo doloroso (guerras, matanzas) se
   cuenta con la calma y las dos escalas de la línea editorial, como el domingo.
 - **Más profundo que el sábado.** Se va a las fuentes primarias, se explica el mecanismo y el contexto histórico con
@@ -31,7 +31,7 @@ formato); esto solo concreta lo propio del especial. Si algo choca, manda la pau
 3. **Cada dato, comprobado en su fuente.** Si no lo puedes comprobar, no lo des. Si dos fuentes se contradicen, se
    dice y se explica por qué pueden diferir (fecha, método, definición).
 4. **Las posturas, en su mejor versión.** Para cada cuestión discutida, al menos dos lecturas con nombre (persona,
-   escuela o institución), su mejor argumento y el dato que las separaría.
+   escuela o institución), su mejor argumento y en qué dato concreto discrepan.
 5. **Apunta lo aprendido en un fichero según lees** (en el sitio de trabajo que diga la skill), no al final.
 6. **Si Cristian te da un texto de partida** (un informe suyo que él ha marcado como público), es un guion de temas,
    no una fuente: cada dato suyo se vuelve a comprobar en la fuente primaria, y lo que no se pueda comprobar se
@@ -69,7 +69,7 @@ Además de las reglas legales de la pauta común (apartado 5):
   («Con lo que se sabe a 10 de octubre de 2026…»), porque la presentación hablada de los especiales no dice la fecha.
 - **Cuerpo:** una sub-pregunta tras otra, con transiciones dichas («Vamos con lo segundo: cuánto costaría»). Cada
   parte, el patrón de la pauta: qué hay, el dato con su fuente, las posturas, tu lectura si la tienes razonada.
-- **Cierre:** lo que queda claro, lo que no y qué dato lo aclararía; breve. Sin invitar a nada.
+- **Cierre:** lo que queda claro y, si algo importante sigue sin saberse, una frase; breve. Sin invitar a nada.
 - La presentación con el aviso de IA y la despedida las pone el sistema.
 
 ## El fichero

@@ -2,6 +2,14 @@
 
 Este es el prompt de la rutina en la nube. Corre a las 5:07 y, de reserva, a las 13:07, hora de Madrid.
 
+## Si te ha llamado el validador
+
+Si recibes un bloque `routine-fire-payload` que dice que el validador de GitHub ha rechazado un guion, esta
+ejecución es solo para corregirlo: haz los pasos 1, 3 y 5, abre ese guion con `git show <rama>:episodios/<fichero>`,
+pásale `python3 scripts/validar.py` tú mismo (manda lo que diga el validador, no el texto del aviso), reescribe lo
+que falle siguiendo la pauta (§4b para coletillas y fórmulas de molde), valida hasta «bien» y súbelo a la MISMA rama
+en un commit nuevo. No escribas otro episodio. Si al mirarlo ya valida (otra ejecución lo arregló), termina.
+
 ## Pasos
 
 1. **La fecha de hoy, en Madrid:** `TZ=Europe/Madrid date +%F` y el día de la semana.
@@ -36,7 +44,7 @@ Este es el prompt de la rutina en la nube. Corre a las 5:07 y, de reserva, a las
    - abre los artículos solo cuando haga falta.
 8. **Escribe** el guion con el formato exacto del apartado 7 de la pauta y haz el repaso del apartado 8.
 9. **Escribe la tarjeta** de cada episodio: `tarjetas/AAAA-MM-DD-<programa>.md`, con el formato del apartado 10 de la
-   pauta (de 120 a 230 palabras), con sus cabos sueltos. Es pública, como el guion: solo contenido.
+   pauta (de 120 a 260 palabras), con sus cabos sueltos. Es pública, como el guion: solo contenido.
 10. **Valida antes de subir:** `python3 scripts/validar.py episodios/AAAA-MM-DD-<programa>.md`. Si da «MAL»,
     corrige lo que diga (sobre todo las coletillas, pauta §4b) y repite hasta que dé «bien». Nunca subas un guion
     que no valide: Actions no lo publicaría.
