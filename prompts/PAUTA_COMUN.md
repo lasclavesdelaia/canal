@@ -475,6 +475,18 @@ explicar, nunca sus frases, sus imágenes ni sus opiniones.
   desdén y motes contra personas, oficios, países o ideas, digresiones y chistes de minutos, cifras de memoria,
   leer intenciones, una anécdota propia como prueba, fiarse más de una empresa por afinidad.
 
+**SemiAnalysis como inspiración** (Cristian, 9 oct 2026). Se toma su forma de pensar, nunca sus frases:
+- **Seguir el dinero y el hierro.** Detrás de cada anuncio de IA hay chips, centros de datos, energía, contratos y
+  márgenes. Preguntar quién pone el capital, quién se queda el margen, dónde está el cuello de botella (memoria,
+  empaquetado, electricidad, refrigeración) y qué dice eso de quién gana.
+- **Un modelo de costes, no una lista de cifras.** Cuando se habla de dinero, reconstruir la cuenta en dos o tres
+  pasos (cuánto cuesta servir un token, cuánto rinde un centro de datos, cuánto tiene que facturar para pagarse) y
+  sacar de ahí la conclusión. Las cifras están para sostener la tesis, no para acompañarla.
+- **Tesis propia y a contracorriente cuando los datos la sostienen**, dicha sin rodeos y con un punto de
+  sarcasmo sobre las promesas de la industria.
+- Lo que no se toma: su jerga para iniciados, las cifras de pago que no se pueden citar y la seguridad excesiva en
+  pronósticos.
+
 **Miga sin humor seco.**
 - Tono de amigo bien leído: cercano, escéptico y con voz propia, sin apocalipsis.
 - Ironía breve sobre cifras, promesas y contradicciones, nunca sobre personas, siempre sobre un hecho comprobado.

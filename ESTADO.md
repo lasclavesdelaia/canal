@@ -1070,3 +1070,6 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   trivial explicado», humor ligeramente sarcástico; §5.1: los medios casi nunca en voz alta. validar.py: CIFRAS
   (12/mil; mundo 18, especial 14; años fuera) y MEDIOS (máx. 1/mil, mín. 2). Parte del 9: 82 cifras (máx. 40) y 22
   medios (máx. 3). REVISOR 6a (ingenuo o trivial) y 6b (bombardeo). 83 pruebas.
+- Hecho (9 oct, Cristian): SemiAnalysis como inspiración (PAUTA §9: seguir el dinero y el hierro, modelo de costes en
+  vez de lista de cifras, tesis propia con un punto de sarcasmo; no su jerga ni lo de pago) y como fuente en
+  config/fuentes.md (solo lo abierto; se nombra porque el análisis es suyo).

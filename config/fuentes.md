@@ -36,6 +36,10 @@ rutina comprueba cada una desde la nube y anota las que fallen en su informe de 
 - **Mistral:** `mistral.ai/news`.
 - **Qwen:** `qwenlm.github.io/blog/index.xml` (RSS).
 - **DeepSeek:** `api-docs.deepseek.com/news/news`.
+- **SemiAnalysis:** `semianalysis.com` (también su newsletter). Análisis de chips, centros de datos, energía y
+  economía de la IA. Solo lo que está en abierto; lo de pago no se cita ni se reconstruye. Es análisis con tesis
+  propia: se atribuye como lectura suya («SemiAnalysis calcula…»), es una de las pocas veces en que el nombre del
+  medio sí va en voz alta, porque el análisis es suyo.
 - **Hugging Face:**
   - blog: `huggingface.co/blog/feed.xml`;
   - modelos en tendencia: `huggingface.co/api/models?sort=trendingScore&limit=30`;
