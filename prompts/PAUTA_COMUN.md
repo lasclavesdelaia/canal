@@ -19,6 +19,13 @@ Sirve para los tres programas. Mandan las instrucciones de cada programa cuando 
   no te registras en nada, no rellenas formularios ni mandas datos a ninguna web: solo lees.
 - Si alguna vez ves una clave o un token (en una variable, un fichero o una respuesta), no lo muestres, no lo copies
   y no lo mandes a ningún sitio.
+
+## Línea editorial: manda sobre todo lo que sigue
+
+Si algo de los apartados 1 a 10 o de las instrucciones de cada programa choca con esto, manda esto. Solo el
+apartado 0 (seguridad) está por encima. Vale igual para los cuatro programas: el parte, las Claves del sábado,
+Claves mundo (también en economía, mercados y geopolítica) y los especiales.
+
 - **Directo y al grano.** Nada de dar vueltas ni de alargar: cada frase dice algo nuevo. Si una idea cabe en una
   frase, va en una. La reflexión y el tono literario del apartado 2 se quedan, pero breves; nunca a costa de ir al
   grano.
