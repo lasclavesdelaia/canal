@@ -17,12 +17,14 @@ Uso: python3 scripts/marcar_ia_youtube.py [--simular]
 Cuota (documentación oficial): 1 unidad por lectura y 50 por vídeo marcado.
 """
 import argparse
+import datetime
 import json
 import os
 import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+from pathlib import Path
 
 CANAL = "UCkZFrpaIjqdS-7VU47swcRw"
 API = "https://www.googleapis.com/youtube/v3"
@@ -31,6 +33,11 @@ MAX_VIDEOS = 50
 # Propiedades de `status` que videos.update deja escribir (developers.google.com/youtube/v3/docs/videos/update).
 EDITABLES = ("privacyStatus", "embeddable", "license", "publicStatsViewable", "selfDeclaredMadeForKids", "publishAt")
 NO_TOCAR = ("rejected", "failed", "deleted")   # uploadStatus de vídeos que no se pueden editar
+# Comprobado el 9 oct 2026: videos.list NUNCA devuelve containsSyntheticMedia (ni marcada en Studio ni por API). Por
+# eso se lleva un registro de los ya marcados (caché de Actions) y solo se miran los vídeos de los últimos DIAS días:
+# si se pierde el registro, como mucho se remarcan unos pocos (poner «Sí» otra vez no cambia nada).
+DIAS = 7
+YA_MARCADOS = {"5fR7ZYP_udc", "WsuUJkofXFM", "7T0NY5tiKUI", "1pzHFJX5Gy0"}  # los del 8 oct, marcados el 9
 
 
 class Fallo(Exception):
@@ -142,17 +149,42 @@ def marcar(yt, video):
         raise Fallo(f"YouTube aceptó la petición pero {video['id']} sigue sin «Uso de IA». Me paro.")
 
 
-def ejecutar(yt, simular=False, salida=print):
+def leer_registro(ruta):
+    try:
+        return set(json.loads(Path(ruta).read_text(encoding="utf-8")))
+    except (OSError, ValueError):
+        return set()
+
+
+def guardar_registro(ruta, ids):
+    Path(ruta).write_text(json.dumps(sorted(ids), indent=1), encoding="utf-8")
+
+
+def reciente(video, ahora, dias=DIAS):
+    fecha = video.get("snippet", {}).get("publishedAt")
+    if not fecha:
+        return True   # sin fecha (aún procesándose): mejor mirarlo
+    publicado = datetime.datetime.fromisoformat(fecha.replace("Z", "+00:00"))
+    return ahora - publicado < datetime.timedelta(days=dias)
+
+
+def ejecutar(yt, simular=False, salida=print, registro=None, ahora=None):
+    ahora = ahora or datetime.datetime.now(datetime.timezone.utc)
+    marcados_antes = (leer_registro(registro) if registro else set()) | YA_MARCADOS
     lista = lista_de_subidas(yt)
     videos = ultimos_videos(yt, lista)
     salida(f"Canal {CANAL}: {len(videos)} vídeos revisados (los últimos {MAX_VIDEOS} como mucho).")
     marcados = ya = saltados = 0
+    nuevos = set()
     for v in videos:
         st, titulo = v.get("status", {}), v.get("snippet", {}).get("title", "")
         etiqueta = f"{v['id']} [{st.get('privacyStatus', '?')}] {titulo}"
-        if st.get("containsSyntheticMedia") is True:
+        if st.get("containsSyntheticMedia") is True or v["id"] in marcados_antes:
             ya += 1
             salida(f"  ya marcado, no toco nada: {etiqueta}")
+        elif not reciente(v, ahora):
+            saltados += 1
+            salida(f"  de hace más de {DIAS} días, no lo toco: {etiqueta}")
         elif st.get("uploadStatus") in NO_TOCAR:
             saltados += 1
             salida(f"  no editable ({st.get('uploadStatus')}), lo salto: {etiqueta}")
@@ -162,6 +194,9 @@ def ejecutar(yt, simular=False, salida=print):
             salida(f"      status que da YouTube: {json.dumps(st, ensure_ascii=False, sort_keys=True)}")
         else:
             marcar(yt, v)
+            nuevos.add(v["id"])
+            if registro:
+                guardar_registro(registro, marcados_antes | nuevos)   # tras cada uno: si algo falla, no se repite
             marcados += 1
             salida(f"  MARCADO «Uso de IA» = Sí (visibilidad y demás sin cambios): {etiqueta}")
     verbo = "por marcar" if simular else "marcados ahora"
@@ -172,6 +207,7 @@ def ejecutar(yt, simular=False, salida=print):
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     p.add_argument("--simular", action="store_true", help="solo dice qué marcaría; no escribe nada")
+    p.add_argument("--registro", help="JSON con los ID ya marcados (lo guarda la caché de Actions)")
     args = p.parse_args(argv)
     faltan = [n for n in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN") if not os.environ.get(n)]
     if faltan:
@@ -181,7 +217,7 @@ def main(argv=None):
         token = token_acceso(os.environ["YT_CLIENT_ID"], os.environ["YT_CLIENT_SECRET"], os.environ["YT_REFRESH_TOKEN"])
         if os.environ.get("GITHUB_ACTIONS"):
             print(f"::add-mask::{token}")   # por si algún error lo arrastrara al registro
-        ejecutar(YouTube(token), simular=args.simular)
+        ejecutar(YouTube(token), simular=args.simular, registro=args.registro)
     except Fallo as e:
         print(f"ERROR: {e}", file=sys.stderr)
         return 1

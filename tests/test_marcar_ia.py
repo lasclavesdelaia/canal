@@ -21,7 +21,7 @@ def video(vid, ia, privacidad="public", **extra):
     if ia:
         status["containsSyntheticMedia"] = True
     status.update(extra)
-    return {"id": vid, "snippet": {"title": f"Episodio {vid}"}, "status": status}
+    return {"id": vid, "snippet": {"title": f"Episodio {vid}", "publishedAt": "2026-10-09T05:00:00Z"}, "status": status}
 
 
 class YouTubeFalso:
@@ -61,16 +61,20 @@ class YouTubeFalso:
         return [p for p in self.peticiones if p[0] == "PUT"]
 
 
-def correr(falso, simular=False):
+AHORA = __import__("datetime").datetime(2026, 10, 9, 12, 0, tzinfo=__import__("datetime").timezone.utc)
+
+
+def correr(falso, simular=False, registro=None):
     lineas = []
     yt = m.YouTube("TOKEN", abrir=falso)
-    n = m.ejecutar(yt, simular=simular, salida=lineas.append)
+    n = m.ejecutar(yt, simular=simular, salida=lineas.append, registro=registro, ahora=AHORA)
     return n, "\n".join(lineas), yt
 
 
 class MarcarIA(unittest.TestCase):
     def test_los_cuatro_del_8_ya_marcados_no_se_tocan(self):
-        falso = YouTubeFalso([video(i, True) for i in ("5fR7ZYP_udc", "WsuUJkofXFM", "7T0NY5tiKUI", "1pzHFJX5Gy0")])
+        # La API no devuelve la casilla al leer (comprobado el 9 oct): se reconocen por la lista fija.
+        falso = YouTubeFalso([video(i, False) for i in ("5fR7ZYP_udc", "WsuUJkofXFM", "7T0NY5tiKUI", "1pzHFJX5Gy0")])
         n, registro, yt = correr(falso)
         self.assertEqual(n, 0)
         self.assertEqual(falso.puts(), [])
@@ -155,6 +159,25 @@ class MarcarIA(unittest.TestCase):
             m.token_acceso("id", "secreto", "REFRESCO-SECRETO", abrir=abrir)
         self.assertIn("permiso_youtube.py", str(ctx.exception))
         self.assertNotIn("REFRESCO-SECRETO", str(ctx.exception))
+
+    def test_registro_evita_remarcar_cada_hora(self):
+        import tempfile, os
+        ruta = os.path.join(tempfile.mkdtemp(), "registro.json")
+        falso = YouTubeFalso([video("nuevo1", False)])
+        correr(falso, registro=ruta)
+        self.assertEqual(len(falso.puts()), 1)
+        falso.videos["nuevo1"]["status"].pop("containsSyntheticMedia")   # como la API real: no la devuelve
+        n, registro, _ = correr(falso, registro=ruta)
+        self.assertEqual((n, len(falso.puts())), (0, 1))
+        self.assertIn("ya marcado", registro)
+
+    def test_viejos_no_se_tocan(self):
+        v = video("viejo", False)
+        v["snippet"]["publishedAt"] = "2026-09-01T00:00:00Z"
+        falso = YouTubeFalso([v])
+        n, registro, _ = correr(falso)
+        self.assertEqual((n, falso.puts()), (0, []))
+        self.assertIn("más de 7 días", registro)
 
     def test_faltan_secretos(self):
         import os

@@ -1008,3 +1008,13 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Hecho (9 oct, ~8:50, por orden de Cristian): RETIRADO el parte del 9 (Release ep-2026-10-09-parte y rama
   claude/episodios-2026-10-09 borradas; copia en pruebas/retirados/, fuera de git). Quitada la errata E-001 (ya no
   hay episodio que corregir). Rutina lanzada a mano para rehacer el parte del 9 con Opus y las reglas nuevas.
+- Hecho (9 oct, ~9:15): permiso de YouTube. En el navegador de la app (cuenta lasclavesdelaia@gmail.com, proyecto
+  voz-claves): YouTube Data API v3 activada; Google Auth Platform: app «Marcador IA», externa, EN PRODUCCIÓN (página
+  claves.cristiansdrojek.com, privacidad cristiansdrojek.com/politica-de-privacidad/, dominio cristiansdrojek.com);
+  cliente OAuth de escritorio «Marcador IA». Cristian corrió permiso_youtube.py: canal correcto y 3 secretos en el
+  entorno «youtube». Pasada real: los 4 del 8 marcados, siguen públicos, nada más cambió (el miedo al proyecto sin
+  auditar, descartado para videos.update). COMPROBADO: videos.list NUNCA devuelve containsSyntheticMedia (ni puesta
+  en Studio ni por API) → registro de marcados en la caché de Actions (registro_ia.json) + solo vídeos de los
+  últimos 7 días + lista fija con los 4 del 8. 81 pruebas.
+- Pendiente de seguridad (Cristian dijo «sí» a cerrarlo): main sin protección; la rutina (red completa) podría
+  subir a main un workflow que use los secretos. Ver cómo impedir que la rutina empuje a main.

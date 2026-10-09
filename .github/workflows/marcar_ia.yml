@@ -34,6 +34,12 @@ jobs:
           ref: main
       - name: Pruebas del marcador
         run: python3 -m unittest tests.test_marcar_ia -v
+      - name: Registro de vídeos ya marcados (la API no devuelve la casilla al leer)
+        uses: actions/cache/restore@v4
+        with:
+          path: registro_ia.json
+          key: marcar-ia-${{ github.run_id }}
+          restore-keys: marcar-ia-
       - name: Marcar «Uso de IA»
         env:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
@@ -47,4 +53,10 @@ jobs:
             echo "::warning::Aún no está el permiso del canal (secretos del entorno youtube). No hago nada."
             exit 0
           fi
-          python3 scripts/marcar_ia_youtube.py $SIMULAR
+          python3 scripts/marcar_ia_youtube.py $SIMULAR --registro registro_ia.json
+      - name: Guardar el registro
+        if: always() && hashFiles('registro_ia.json') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: registro_ia.json
+          key: marcar-ia-${{ github.run_id }}
