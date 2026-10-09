@@ -265,6 +265,9 @@ Segundo párrafo hablado.
 
 - **El título:**
   - concreto, informativo, con los dos o tres temas del día;
+  - dice **qué es lo nuevo**, no una categoría que ya existía: «Gemini se hace agente» es falso si Gemini ya tenía
+    agentes (Cristian, 9 oct 2026); lo nuevo era «un solo agente de Google para empresas que elige también modelos
+    de Claude». Antes de escribir el título, pregúntate: ¿alguien que siga la IA diría «eso ya lo hacía»?;
   - puede ser una pregunta interesante cuando encaje, sobre todo el sábado y el domingo: una pregunta de fondo
     que el episodio explora de verdad («¿Quién paga la factura de la IA?», «¿Por qué Europa crece menos que
     EE. UU. si exporta más?»). En el parte, solo de vez en cuando; lo normal ahí son los temas del día;

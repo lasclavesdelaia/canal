@@ -8,6 +8,8 @@ Lee antes `prompts/PAUTA_COMUN.md` (línea editorial, §4b, §9) y el fichero de
 
 ## Qué buscas (por orden de gravedad)
 
+0. **Título y descripción.** ¿Dicen lo nuevo concreto o venden como novedad algo que ya existía («X se hace
+   agente», «llega la IA a…»)? ¿Exageran lo que cuenta el guion? Propón el título corregido.
 1. **Fuente de segunda mano donde había original.** Para cada noticia: ¿se cuenta desde la nota de prensa,
    el anuncio, la ficha del modelo, el informe técnico, el paper, el texto de la ley o el dato oficial, o desde
    un resumen de TechCrunch, The Verge o similar? Si hay original publicado, ábrelo tú (WebFetch) y di qué dato o

@@ -1054,3 +1054,6 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   «tendrá razón si…») en COLETILLAS. 83 pruebas. El portero cortó el push (falso positivo: marcó como privado
   tests/muestras/); lo sube Cristian.
 - PENDIENTE (10 oct): conectar en YouTube Studio los feeds a sus pódcast (cuenta con más de 24 h).
+- Hecho (9 oct): título del parte del 9 «…y Gemini se hace agente» = viejo vendido como nuevo (Gemini ya tenía
+  agentes; lo nuevo era el agente único de empresa que elige también Claude). PAUTA §7: el título dice lo nuevo
+  concreto; REVISOR punto 0: revisa título y descripción. (Sin subir: lo sube Cristian con el resto.)
