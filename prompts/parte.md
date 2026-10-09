@@ -45,6 +45,12 @@ El orden va por **importancia**, no por temas.
    - qué dicen distintas voces;
    - por qué importa (con un dato o un mecanismo, no con una advertencia).
    Sin frase final de duda o de sospecha (pauta, §4b).
+   **Si es un modelo** (y también si un modelo sale en corto o en el termómetro): desde su ficha o su informe
+   técnico, no desde la prensa: cómo está hecho (arquitectura, tamaño o parámetros activos, contexto, cómo se
+   entrenó), qué cambia frente a su versión anterior, precio, y dónde queda en Artificial Analysis frente a sus
+   rivales. Si no hay ficha ni informe publicado, va en corto y en una frase.
+   **Si es una política, un informe o un anuncio de una empresa:** se lee el texto original en su web y se cuenta
+   desde ahí.
 3. **En corto:** el resto de lo relevante, de una a tres frases cada cosa, hasta doce cosas. Si hay más,
    quédate con las que importen y deja el resto.
 4. **Para entenderlo** (solo si hace falta): un concepto, un paper o un modelo raro, explicado con calma para alguien

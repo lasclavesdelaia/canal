@@ -989,3 +989,14 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   FALTA (Cristian): en claude.ai/code/routines › «Las claves de la IA» › Editar › Añadir otro disparador › API ›
   Generar token, y guardarlo: `gh secret set RUTINA_FIRE_TOKEN --repo lasclavesdelaia/canal` (pegar al pedirlo).
   Sin ese secreto, el paso avisa en amarillo y la reserva de las 13:07 sigue corrigiendo.
+- Hecho (9 oct, Cristian: paja «asquerosa», fondo técnico «muy muy flojo», fuentes de segunda mano «horrible»):
+  (1) validar.py exige ≥40 % de fuentes PRIMARIAS (config/fuentes_primarias.txt: organismos, papers, laboratorios,
+  empresas, medición independiente; la prensa, también FT o Reuters, cuenta como secundaria; foros no cuentan).
+  Con las reglas nuevas: parte del 9 → 0 de 11; claves del 8 → 7/28; mundo → 9/31; especial Vox → 7/33: todos MAL.
+  (2) prompts/REVISOR.md: editor jefe aparte (subagente) que busca fuente de segunda mano, modelo sin fondo técnico,
+  paja y obviedades, coletillas, opinión sin dato, errores; devuelve cambios concretos. RUTINA paso 9b obligatorio;
+  herramienta Agent añadida a la rutina (trigger actualizado). (3) parte.md: un modelo se cuenta desde su ficha o
+  informe técnico (arquitectura, tamaño, contexto, entrenamiento, precio, Artificial Analysis); una política, desde
+  su texto. 79 pruebas.
+- Riesgo a vigilar: con el 40 % la rutina podría quitar fuentes de prensa usadas en vez de añadir originales; el
+  mensaje del validador lo prohíbe y el revisor lo mira. Revisar en el parte del 10.

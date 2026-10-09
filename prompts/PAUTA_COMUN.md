@@ -180,6 +180,9 @@ a plantilla. Atribuir («según…») ya basta; el oyente es adulto.
   anunciar «Para entenderlo» o «Para el termómetro», abrir con «Hoy el protagonista es…», opinar con «Mi lectura
   es…» o justificar con «Importa por dos razones». El validador las rechaza. Cada día, arranque, transiciones y
   cierre con palabras nuevas (mira la línea «Arranque y cierre» de las tarjetas recientes).
+- **Fuentes originales, con tope duro.** Cada noticia se cuenta desde su original (anuncio, ficha del modelo,
+  informe técnico, paper, ley, dato oficial), que hay que abrir y leer; la prensa, solo cuando aporte algo propio.
+  El validador exige que al menos el 40 % de las fuentes sean primarias (`config/fuentes_primarias.txt`).
 - **Tope duro:** `scripts/validar.py` cuenta las coletillas y rechaza el guion si pasan de 1 en el parte o de 2 en
   los semanales y especiales. Si te lo rechaza, reescribe esas frases; no las disfraces con sinónimos.
 - **LMArena:** solo lo que publique la prensa o el laboratorio, citándolo («según LMArena, citado por…»).

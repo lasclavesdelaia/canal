@@ -8,6 +8,7 @@ Uso: python3 scripts/validar.py episodios/2026-10-09-parte.md [...]
 import re
 import sys
 from pathlib import Path
+from urllib.parse import urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from comun import config, leer_episodio, partes_nombre  # noqa: E402
@@ -50,6 +51,42 @@ MOLDE = [
     r"(^|\. )lo (segundo|tercero|cuarto)\b", r"\bpara entenderlo,", r"\bpara el termómetro\b",
     r"\bhoy el protagonista\b", r"\bmi lectura es\b", r"\bimporta por dos razones\b",
 ]
+# Fuentes primarias (config/fuentes_primarias.txt): al menos esta parte de las fuentes. Los foros (Hacker News, Reddit)
+# no cuentan ni a favor ni en contra. Cristian, 9 oct 2026: el parte salió casi entero de TechCrunch y The Verge.
+PRIMARIAS_MIN = 0.4
+FOROS = ("news.ycombinator.com", "hn.algolia.com", "reddit.com", "lobste.rs")
+
+
+def _patrones_primarios():
+    ruta = Path(__file__).resolve().parent.parent / "config" / "fuentes_primarias.txt"
+    return [l.strip().lower() for l in ruta.read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
+
+
+def es_primaria(url, patrones=None):
+    host = (urlparse(url).hostname or "").lower().removeprefix("www.")
+    for p in patrones if patrones is not None else _patrones_primarias_cache():
+        if p.startswith("*."):
+            if host.endswith(p[1:]) or host == p[2:]:
+                return True
+        elif host == p or host.endswith("." + p):
+            return True
+    return False
+
+
+_CACHE = []
+
+
+def _patrones_primarias_cache():
+    if not _CACHE:
+        _CACHE.extend(_patrones_primarios())
+    return _CACHE
+
+
+def _es_foro(url):
+    host = (urlparse(url).hostname or "").lower().removeprefix("www.")
+    return any(host == f or host.endswith("." + f) for f in FOROS)
+
+
 # Solo avisan.
 VIGILAR = [r"\bincre[ií]ble", r"\bhist[oó]ric[oa]", r"\brevoluci[oó]n", r"\batenci[oó]n[,:]", r"\bimpactante"]
 
@@ -142,6 +179,15 @@ def validar(nombre, texto, cfg=None):
         errores.append("faltan las fuentes («## Fuentes» con una URL por línea)")
     elif any(not url for _, url in ep.fuentes):
         avisos.append("alguna fuente sin URL")
+    else:
+        contadas = [url for _, url in ep.fuentes if url and not _es_foro(url)]
+        primarias = [u for u in contadas if es_primaria(u)]
+        if contadas and len(primarias) < PRIMARIAS_MIN * len(contadas):
+            errores.append(
+                f"solo {len(primarias)} de {len(contadas)} fuentes son primarias (mínimo {int(PRIMARIAS_MIN * 100)} %; "
+                "lista en config/fuentes_primarias.txt). Ve al original de cada noticia (el anuncio, la ficha del "
+                "modelo, el informe técnico, el paper, el dato oficial) y léelo; la prensa, solo cuando aporte algo "
+                "propio. No quites fuentes que hayas usado para cumplir: añade las originales")
     return ep, errores, avisos
 
 

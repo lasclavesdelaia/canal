@@ -29,7 +29,7 @@ def con_cuerpo(cuerpo, **cabecera):
            "descripcion": "Una descripción normal."}
     cab.update(cabecera)
     lineas = "\n".join(f"{k}: {v}" for k, v in cab.items())
-    return f"---\n{lineas}\n---\n{cuerpo}\n\n## Fuentes\n- Algo: https://example.com\n"
+    return f"---\n{lineas}\n---\n{cuerpo}\n\n## Fuentes\n- Algo: https://arxiv.org/abs/0000.00000\n"
 
 
 def visibles(cfg):
