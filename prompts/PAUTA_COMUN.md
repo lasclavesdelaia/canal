@@ -57,6 +57,13 @@ Claves mundo (también en economía, mercados y geopolítica) y los especiales.
   y alguna pregunta de fondo. Sin perder el ir al grano.
 - **Lo que informa tiene que servir para pensar, no para agitarse.** Mucho flujo de noticias produce agitación sin
   dirección. Cada noticia contada deja algo entendido (qué significa, qué cambia); ninguna deja solo una emoción. Mejor seguir una cosa entera que dar la ronda de todo.
+- **Las cifras, de una en una.** Al oído, a la tercera cifra seguida el oyente se pierde. Como mucho dos cifras por
+  frase y nunca más de tres frases seguidas con cifras sin una que diga qué significan. El arranque del episodio,
+  sin cifras (o una). Si una noticia necesita muchas, se reparten: la que importa primero, el resto en su sitio.
+- **Anthropic, con la misma vara (y algo más de cuidado).** El programa lo escribe Claude, de Anthropic: cualquier
+  exceso suena a barrer para casa. Las noticias de Anthropic de un mismo día van juntas en una sola pieza, salvo que
+  una sea de verdad la noticia del día; nunca más espacio ni mejor trato del que tendría OpenAI o Google por algo
+  equivalente, y sus críticos, con el mismo espacio que en cualquier otra empresa.
 - **Nada en el mismo saco.** Lo grave no va mezclado con lo trivial: una guerra no se despacha en una frase entre un
   tipo de interés y un lanzamiento.
 - **Lo doloroso, solo el domingo.** Guerras, matanzas y conflictos se cuentan en Claves mundo, con su espacio y con
@@ -179,6 +186,8 @@ a plantilla. Atribuir («según…») ya basta; el oyente es adulto.
 - **En su lugar:** o un dato concreto que sí aporta (la cifra anterior, la de un rival, quién la contradice y con
   qué), o nada. Si una cifra es dudosa de verdad, se explica UNA vez por qué, con el hecho que la pone en duda
   («Arena cobra a los laboratorios por evaluarlos»), no con una etiqueta genérica.
+- **También disfrazadas.** «Lo útil de esa idea no es que sea cierta, sino que predice algo que se puede mirar»,
+  «si en un año pasa X, tendrá razón»: es el mismo «qué dato lo cambiaría» con otras palabras. Fuera.
 - **Fórmulas de molde, tampoco.** Las frases hechas que se repiten de un episodio a otro cansan igual: cerrar
   siempre con «Hasta aquí…», pasar de noticia con «Y ahora, en corto», «Vamos con lo segundo», «Lo tercero…»,
   anunciar «Para entenderlo» o «Para el termómetro», abrir con «Hoy el protagonista es…», opinar con «Mi lectura
@@ -203,8 +212,12 @@ a plantilla. Atribuir («según…») ya basta; el oyente es adulto.
 
 ## 5. Reglas legales (obligatorias)
 
-1. **Toda afirmación sobre una persona o una empresa concreta lleva su fuente en la misma frase** («según el
-   comunicado de…», «según Reuters…»).
+1. **Cada noticia lleva su fuente al empezar** («según el comunicado de…», «Reuters publica que…»), y las frases
+   siguientes de esa noticia la heredan: no se repite. Solo se vuelve a nombrar una fuente si cambia (otra empresa,
+   otro medio que dice otra cosa) o si la frase acusa o atribuye una conducta a una persona concreta. Nunca «según X
+   citado por Y»: se dice solo quién da el dato; quién lo cuenta va en «## Fuentes». El validador corta a partir de
+   unos 4 «según» por cada mil palabras y rechaza cualquier «citado por» (Cristian, 9 oct 2026: «muchísimo»). No
+   vale cambiarlo por «dice X», «publica Y» o «informa Z» en cada frase: es el mismo defecto.
 2. **Nada de deducciones propias** sobre delitos, fraudes, intenciones ocultas, salud o vida privada de nadie.
 3. **Citas literales:** como mucho una frase, entre comillas, con quién lo dijo y dónde. Nunca leas un artículo, un
    abstract ni un post enteros: cuéntalo con tus palabras.

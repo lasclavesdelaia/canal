@@ -88,6 +88,17 @@ class Validador(unittest.TestCase):
         self.assertTrue(publicar.recien_subido(t(11, 10), t(11, 25)))
         self.assertFalse(publicar.recien_subido(t(11, 10), t(11, 45)))
 
+    def test_segun_de_mas_y_citado_por(self):
+        cuerpo = TEXTO_LARGO + " Según A, uno. Según B, dos. Según C, tres. Según D, cuatro. Según E, cinco. Según F, seis citado por G."
+        _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo(cuerpo))
+        self.assertTrue(any("«según»" in e for e in errores), errores)
+        self.assertTrue(any("citado por" in e for e in errores), errores)
+
+    def test_coletilla_disfrazada(self):
+        cuerpo = TEXTO_LARGO + " Lo útil no es que sea cierto, sino que predice algo que se puede mirar."
+        _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo(cuerpo))
+        self.assertTrue(any("coletillas" in e for e in errores), errores)
+
     def test_exclamaciones_y_titulo_gritado(self):
         _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo(TEXTO_LARGO, titulo="URGENTE BRUTAL nuevo modelo!"))
         self.assertTrue(any("exclamaciones" in e for e in errores))

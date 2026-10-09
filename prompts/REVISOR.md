@@ -29,7 +29,12 @@ Lee antes `prompts/PAUTA_COMUN.md` (línea editorial, §4b, §9) y el fichero de
 6. **Poca profundidad.** Una noticia principal de menos de unas 400 palabras, o que no explica el mecanismo ni da
    las cifras de todos los implicados: pide alargarla con lo concreto que falta. Un día con dos o tres asuntos serios
    pide 12-20 minutos.
-7. **Errores**: cifras que no cuadran con la fuente, fechas, nombres.
+7. **Al oído.** Atribuciones repetidas (más de un «según» por noticia, cualquier «según X citado por Y», o lo mismo
+   disfrazado de «dice X», «publica Y»): di cuáles sobran. Frases con más de dos cifras o tres frases seguidas con
+   cifras sin explicar: cómo repartirlas. Arranque con cifras.
+8. **Anthropic de más.** Si las noticias de Anthropic ocupan más de una pieza el mismo día, o tienen mejor trato que
+   las de sus rivales: cómo agruparlas o recortarlas.
+9. **Errores**: cifras que no cuadran con la fuente, fechas, nombres.
 
 ## Qué devuelves
 

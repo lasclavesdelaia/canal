@@ -43,7 +43,13 @@ COLETILLAS = [
     r"un dato (así|que) (lo|la) cambiar[ií]a", r"qu[eé] dato (lo|la) (cambiar|resolver|aclarar|decidir)[ií]a",
     r"a[uú]n no se sabe", r"no hay datos? (para|que) (confirmar|lo confirme)", r"es lo que dicen ellos",
     r"no (lo )?(ha|han) verificado (nadie|terceros)", r"sin que (nadie|un tercero) lo (haya )?(comprobado|verificado)",
+    r"no es que sea cierto, sino", r"predice algo que se puede (mirar|comprobar|medir|ver)",
+    r"(tendrá|tendrán) razón si", r"si en un año .{0,80} tendrá razón",
 ]
+# Atribuciones: la fuente se nombra una vez por noticia; las frases siguientes la heredan (PAUTA_COMUN §5.1). Cristian,
+# 9 oct 2026: «según X citado por Y» una y otra vez cansa al oído. Tope por cada mil palabras, y ningún «citado por».
+SEGUN_POR_MIL = 4
+SEGUN_MIN = 4
 COLETILLAS_MAX = {"parte": 1, "claves": 2, "mundo": 2, "especial": 2}
 # Fórmulas de molde que se repetían de un episodio a otro (PAUTA_COMUN §4b). Ninguna.
 MOLDE = [
@@ -165,6 +171,17 @@ def validar(nombre, texto, cfg=None):
         errores.append(f"{len(coletillas)} coletillas de desconfianza o de duda (máximo {tope}; PAUTA_COMUN §4b): "
                        + "; ".join(f"«{c}»" for c in coletillas)
                        + ". Atribuir el dato ya basta: quítalas o di el dato concreto que las sustituye")
+    cuerpo = ep.cuerpo.lower()
+    segun = len(re.findall(r"\bsegún\b|\bde acuerdo con\b", cuerpo))
+    tope_segun = max(SEGUN_MIN, round(SEGUN_POR_MIL * ep.palabras / 1000))
+    if segun > tope_segun:
+        errores.append(f"{segun} «según» (máximo {tope_segun}: unos {SEGUN_POR_MIL} por cada mil palabras; PAUTA_COMUN "
+                       "§5.1). Nombra la fuente una vez al empezar cada noticia; las frases siguientes la heredan. "
+                       "La lista de «## Fuentes» ya da el resto. No lo cambies por «dice X» o «publica Y» en cada frase")
+    citado = re.findall(r"\bcitad[oa]s? por\b|\bque cita\b", cuerpo)
+    if citado:
+        errores.append(f"{len(citado)} «citado por»: di solo quién da el dato (el original); quién lo cuenta va en "
+                       "«## Fuentes»")
     molde = [m.group(0).strip(". ") for patron in MOLDE for m in re.finditer(patron, ep.cuerpo.lower(), re.M)]
     if molde:
         errores.append("fórmulas de molde que se repiten cada día (PAUTA_COMUN §4b): "
