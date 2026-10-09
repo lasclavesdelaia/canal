@@ -1018,3 +1018,15 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   últimos 7 días + lista fija con los 4 del 8. 81 pruebas.
 - Pendiente de seguridad (Cristian dijo «sí» a cerrarlo): main sin protección; la rutina (red completa) podría
   subir a main un workflow que use los secretos. Ver cómo impedir que la rutina empuje a main.
+- Hecho (9 oct, ~9:00): parte del 9 REHECHO por la rutina con Opus y las reglas nuevas (rama claude/episodios-2026-10-09,
+  3.334 palabras, ~20 min; fuentes originales; AA por secreto de red funciona; el revisor dio 25 puntos y cazó dos
+  errores reales). Rutina: 18 min; el revisor solo, ~184.000 tokens.
+- Hecho (9 oct, seguridad, con el sí de Cristian): la rutina sube con la MISMA cuenta (lasclavesdelaia) que las
+  sesiones del Mac, así que no se puede bloquear por usuario. Solución: main solo acepta commits FIRMADOS con la
+  llave ~/.ssh/id_ed25519_firma (solo en el Mac; la cubre el deny de ~/.ssh/id_* de los agentes), registrada en
+  GitHub como llave de firma. Firma activada solo en este repo (git config local: gpg.format ssh, commit.gpgsign).
+  Ruleset 24772688 en main: firmas obligatorias, sin force-push, sin borrar, sin excepciones. COMPROBADO: un commit
+  sin firmar a main → «push declined due to repository rule violations». Las ramas claude/ no cambian.
+  Sin comprobar: si la rutina podría crear commits en main por la API REST de GitHub (GitHub los firma él); poco
+  probable, el proxy de la nube es para git.
+  Si otra máquina o worktree sube a main: necesita esta llave y la config de firma, o el push se rechaza.
