@@ -1044,3 +1044,5 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   durante el cambio del 8 oct ~18:35 (nombre, portada y feed general a la vez) — deducción, no comprobado. Cristian
   pulsó Refresh y va a pulsar Publish para reenviarlo a revisión. Vigilar si vuelve a fallar: GitHub sirve los MP3
   como application/octet-stream (no audio/mpeg); si Apple insiste, servir los audios con su tipo correcto.
+- RESUELTO (9 oct, 9:03): tras «Refresh» en Podcasts Connect, Apple volvió a leer parte.xml y el pódcast pasó a
+  «Available». Fallo pasajero; no hizo falta Publish.
