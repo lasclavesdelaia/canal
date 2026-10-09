@@ -59,6 +59,22 @@ class Validador(unittest.TestCase):
         _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo(TEXTO_LARGO + " Es un bombazo."))
         self.assertTrue(any("prohibida" in e for e in errores))
 
+    def test_coletillas_rechazadas(self):
+        """Las frases de sospecha de relleno del parte del 9 oct 2026: más de una en el parte, rechazado."""
+        cuerpo = TEXTO_LARGO + (" Es cifra y promesa de la empresa. Queda por ver cuántos falsos avisos da."
+                                " Es una clasificación nueva de una empresa que vive de que se la crea.")
+        _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo(cuerpo))
+        self.assertTrue(any("3 coletillas" in e for e in errores), errores)
+
+    def test_una_coletilla_se_tolera(self):
+        _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo(TEXTO_LARGO + " Queda por ver si se cumple."))
+        self.assertEqual(errores, [])
+
+    def test_coletillas_tope_mas_alto_en_semanales(self):
+        cuerpo = " ".join([TEXTO_LARGO] * 6) + " Habrá que ver. Aún no se sabe."
+        _, errores, _ = validar("2026-10-10-claves.md", con_cuerpo(cuerpo, programa="claves", fecha="2026-10-10"))
+        self.assertFalse(any("coletillas" in e for e in errores), errores)
+
     def test_exclamaciones_y_titulo_gritado(self):
         _, errores, _ = validar("2026-10-09-parte.md", con_cuerpo(TEXTO_LARGO, titulo="URGENTE BRUTAL nuevo modelo!"))
         self.assertTrue(any("exclamaciones" in e for e in errores))

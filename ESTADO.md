@@ -953,3 +953,17 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Pregunta de Cristian: red completa para la rutina. Respuesta: el daño posible es pequeño (sin secretos salvo la
   clave de AA, gratuita; solo puede subir a ramas claude/, que pasan el validador; no toca main, YouTube ni la voz).
   Recomendado: «Completo». Si lo cambia, actualizar config/fuentes.md (la línea de la red Custom).
+- Hecho (9 oct, Cristian: «el texto de hoy ha sido muy flojo… es realmente cansino»): el parte del 9 tenía 9
+  coletillas de sospecha («es cifra y promesa de la empresa», «vive de que se la crea», «queda por ver», «medición
+  independiente», «el dato que falta», «un dato así lo cambiaría»…). Causa: solo estaba prohibido en la pauta, y la
+  propia pauta daba como EJEMPLO «todavía no hay medición independiente» y pedía «qué dato lo cambiaría».
+  (1) validar.py: lista COLETILLAS; más de 1 en el parte o de 2 en semanales/especiales → MAL (no se publica). Con el
+  parte del 9: 9 → MAL; el claves del 8: 3 → MAL. 3 pruebas nuevas; 77 en verde. (2) PAUTA_COMUN: §4b nuevo con la
+  familia prohibida y qué poner en su lugar; quitados los ejemplos que la enseñaban. (3) RUTINA: paso 10 obligatorio
+  de validar antes de subir; si un episodio ya subido no valida, la reserva de las 13:07 lo corrige en vez de
+  saltarlo. (4) Rutina pasada a Opus 5.5 (trigger actualizado; esfuerzo medio del .claude/settings.json).
+  (5) Red COMPLETA (Cristian la puso): fuentes.md y pauta §0 al día; regla de ir a la fuente primaria, no quedarse
+  en TechCrunch/The Verge (el parte del 9 sacó casi todo de esos dos).
+- Clave de AA: la de GitHub (entorno «publicar») no la ve la rutina, que corre en la nube de Claude. Cristian crea
+  otra y la pega en el entorno claves-ia como AA_API_KEY. Navegador de la app abierto en artificialanalysis.ai.
+- Ojo cuota: Opus gasta más que Sonnet; las tareas de cuota del 10-18 oct medirán ya con Opus.

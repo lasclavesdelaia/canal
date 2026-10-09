@@ -31,6 +31,19 @@ NUMEROS_EN_PALABRAS = [
     rf"\b(haiku|sonnet|opus|fable|flash|pro|ultra|nano|mini|turbo) {_CIFRA}\b",
     rf"\b{_CIFRA} por ciento\b",
 ]
+# Coletillas de desconfianza o de duda de relleno. Cristian las ha pedido fuera varias veces («es realmente cansino»,
+# 9 oct 2026): atribuir el dato («según X») ya dice quién lo dice. Como mucho COLETILLAS_MAX por episodio.
+COLETILLAS = [
+    r"medici[oó]n(es)? independiente", r"verificaci[oó]n independiente", r"de forma independiente",
+    r"vive de que (se |le |la |lo )*crea", r"queda por ver", r"habr[aá] que ver", r"el tiempo dir[aá]",
+    r"\b(es|son) (una )?(cifras?|promesas?)( y (cifras?|promesas?))? de la (propia )?empresa",
+    r"\b(cifras?|promesas?) (y (cifras?|promesas?) )?del fabricante", r"anécdota, no una medici[oó]n",
+    r"no se pueden? (contrastar|comprobar|verificar)", r"lo (único )?comprobable es", r"(es )?el dato que falta",
+    r"un dato (así|que) (lo|la) cambiar[ií]a", r"qu[eé] dato (lo|la) (cambiar|resolver|aclarar|decidir)[ií]a",
+    r"a[uú]n no se sabe", r"no hay datos? (para|que) (confirmar|lo confirme)", r"es lo que dicen ellos",
+    r"no (lo )?(ha|han) verificado (nadie|terceros)", r"sin que (nadie|un tercero) lo (haya )?(comprobado|verificado)",
+]
+COLETILLAS_MAX = {"parte": 1, "claves": 2, "mundo": 2, "especial": 2}
 # Solo avisan.
 VIGILAR = [r"\bincre[ií]ble", r"\bhist[oó]ric[oa]", r"\brevoluci[oó]n", r"\batenci[oó]n[,:]", r"\bimpactante"]
 
@@ -103,6 +116,12 @@ def validar(nombre, texto, cfg=None):
     for patron in INYECCION:
         if re.search(patron, todo):
             errores.append(f"posible instrucción colada desde una web: {patron}")
+    coletillas = [m.group(0) for patron in COLETILLAS for m in re.finditer(patron, ep.cuerpo.lower())]
+    tope = COLETILLAS_MAX.get(ep.programa, 1)
+    if len(coletillas) > tope:
+        errores.append(f"{len(coletillas)} coletillas de desconfianza o de duda (máximo {tope}; PAUTA_COMUN §4b): "
+                       + "; ".join(f"«{c}»" for c in coletillas)
+                       + ". Atribuir el dato ya basta: quítalas o di el dato concreto que las sustituye")
     for patron in VIGILAR:
         n = len(re.findall(patron, todo))
         if n:

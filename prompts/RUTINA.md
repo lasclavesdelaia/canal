@@ -11,7 +11,8 @@ Este es el prompt de la rutina en la nube. Corre a las 5:07 y, de reserva, a las
    - **`mundo`**, si es domingo, además del parte.
 3. **Mira si ya está hecho.** Ejecuta `git fetch origin '+refs/heads/claude/*:refs/remotes/origin/claude/*'` y busca
    en esas ramas y en `main` el fichero `episodios/AAAA-MM-DD-<programa>.md`. Si ya existe, ese programa no se
-   repite. Si ya están todos, termina sin hacer nada.
+   repite, salvo que no pase `python3 scripts/validar.py` (cópialo a `episodios/` con `git show`): entonces corrígelo,
+   súbelo a la misma rama en un commit nuevo y no escribas otro. Si ya están todos y validan, termina sin hacer nada.
 4. **Mira qué se perdió.** En esas mismas ramas, busca el último parte (`episodios/*-parte.md` o
    `tarjetas/*-parte.md`; el `claves` de un sábado cuenta como parte de ese día) y el último de cada semanal.
    - Si el último parte es de antes de ayer o más atrás, el parte de hoy cubre desde el día siguiente a ese parte
@@ -36,12 +37,15 @@ Este es el prompt de la rutina en la nube. Corre a las 5:07 y, de reserva, a las
 8. **Escribe** el guion con el formato exacto del apartado 7 de la pauta y haz el repaso del apartado 8.
 9. **Escribe la tarjeta** de cada episodio: `tarjetas/AAAA-MM-DD-<programa>.md`, con el formato del apartado 10 de la
    pauta (de 120 a 230 palabras), con sus cabos sueltos. Es pública, como el guion: solo contenido.
-10. **Sube solo esos ficheros.** Crea la rama `claude/episodios-AAAA-MM-DD`, haz `git add` solo de
+10. **Valida antes de subir:** `python3 scripts/validar.py episodios/AAAA-MM-DD-<programa>.md`. Si da «MAL»,
+    corrige lo que diga (sobre todo las coletillas, pauta §4b) y repite hasta que dé «bien». Nunca subas un guion
+    que no valide: Actions no lo publicaría.
+11. **Sube solo esos ficheros.** Crea la rama `claude/episodios-AAAA-MM-DD`, haz `git add` solo de
     `episodios/AAAA-MM-DD-*.md` y `tarjetas/AAAA-MM-DD-*.md` y haz el commit con el mensaje «Episodios
     AAAA-MM-DD». Después, `git push origin claude/episodios-AAAA-MM-DD`.
     - Nunca subas a `main`.
     - Nunca toques otros ficheros.
-11. **Si una fuente falla** (403, error de red), sigue con las demás. Anótala en una línea al final de tu respuesta,
+12. **Si una fuente falla** (403, error de red), sigue con las demás. Anótala en una línea al final de tu respuesta,
     no en el guion ni en la tarjeta.
 
 ## Si no da tiempo

@@ -1,13 +1,11 @@
 # Fuentes del redactor
 
-La rutina en la nube solo puede salir a los dominios de la red «Custom» de su entorno. Esa lista vive en
-`config/red_custom.txt` (se pega tal cual: `python3 scripts/red_custom.py | pbcopy`). El formulario no guarda más de
-unas 600 líneas, así que la lista tira de comodines: `*.gov`, `*.int`, `*.edu`, `*.gob.es`, `*.gov.uk`, `*.gov.np`,
-`*.gouv.td`… abren todas las webs oficiales de casi cada país (gobierno, estadística, parlamento, boletín y muchos
-bancos centrales). Encima van los bancos centrales y oficinas de estadística con dominio propio, organismos
-internacionales, repositorios, think tanks, prensa de cada región e IA. Reserva verificada para cambiar piezas:
-`config/red_catalogo.txt`. No hace falta leer ninguna de las dos: si un enlace no abre, no está en la red; anótalo al
-final de la respuesta para que se añada.
+Desde el 9 oct 2026 la rutina tiene la red **completa** (decisión de Cristian). Las fuentes de abajo son el punto de
+partida, no un límite. Regla de oro: **ve a la fuente primaria** (el anuncio del laboratorio, la política publicada,
+el paper, el dato oficial) en vez de quedarte en el resumen de TechCrunch o The Verge; la prensa sirve para
+enterarse y para el contexto, y se cita cuando aporta algo propio (una exclusiva, una entrevista, un análisis). Webs
+de poca calidad (granjas de contenido, blogs anónimos, agregadores) no se citan. `config/red_custom.txt` y
+`config/red_catalogo.txt` quedan como reserva, por si se vuelve a la red limitada.
 
 Lo de abajo son las fuentes de partida, verificadas el 8 oct 2026 (se leen sin cuenta). La primera ejecución de la
 rutina comprueba cada una desde la nube y anota las que fallen en su informe de ejecución.
