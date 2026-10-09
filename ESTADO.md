@@ -1057,3 +1057,8 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Hecho (9 oct): título del parte del 9 «…y Gemini se hace agente» = viejo vendido como nuevo (Gemini ya tenía
   agentes; lo nuevo era el agente único de empresa que elige también Claude). PAUTA §7: el título dice lo nuevo
   concreto; REVISOR punto 0: revisa título y descripción. (Sin subir: lo sube Cristian con el resto.)
+- Hecho (9 oct): títulos cortos y de una sola idea: PAUTA §7 (≤70 caracteres, sin ensalada de tres temas ni jerga de
+  titular), parte.md, claves.md, mundo.md, especial.md; validar.py corta en 70. Título del parte del 9 cambiado en su
+  Release (notas JSON y nombre) a «OpenAI ingresa 20.000 millones menos de lo que se contaba» (lo de que Anthropic va
+  por delante ya se sabía desde julio). El fichero de la rama claude/episodios-2026-10-09 conserva el título viejo
+  (no se usa: lo publicado sale de la Release). Falta rehacer la web (lo lanza Cristian con el push).

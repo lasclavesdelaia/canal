@@ -264,7 +264,10 @@ Segundo párrafo hablado.
 ```
 
 - **El título:**
-  - concreto, informativo, con los dos o tres temas del día;
+  - **corto y agradable de leer: una sola idea, la noticia principal, en menos de 70 caracteres** (el validador
+    corta en 70). Nada de ensaladas de tres temas unidos por comas («X hace esto, Y hace aquello y Z se hace
+    tal»): los demás temas van en la descripción. Frase natural, como la diría una persona, sin jerga de titular
+    («sale a cazar», «se hace»). Ejemplo: «OpenAI ingresa 20.000 millones menos de lo que se contaba»;
   - dice **qué es lo nuevo**, no una categoría que ya existía: «Gemini se hace agente» es falso si Gemini ya tenía
     agentes (Cristian, 9 oct 2026); lo nuevo era «un solo agente de Google para empresas que elige también modelos
     de Claude». Antes de escribir el título, pregúntate: ¿alguien que siga la IA diría «eso ya lo hacía»?;
@@ -275,7 +278,7 @@ Segundo párrafo hablado.
   - no se locuta, así que los modelos y las cifras van escritos en cifras («GPT-6», «Claude Haiku 5.5»,
     «3,8 %», «100 dólares»), nunca como se pronuncian;
   - sin exclamaciones, mayúsculas de gancho ni `<` o `>`;
-  - de 100 caracteres como mucho;
+  - de 70 caracteres como mucho;
   - no repitas el nombre del programa: se añade solo.
 - **La descripción:** sin enlaces; las fuentes ya van aparte. Tampoco se locuta: versiones y cifras en cifras,
   como en el título («Haiku 5.5», «GPT-6», «3,8 %»).

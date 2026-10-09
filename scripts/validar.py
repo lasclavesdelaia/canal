@@ -124,8 +124,8 @@ def validar(nombre, texto, cfg=None):
         return ep, errores, avisos
 
     # Título y descripción: YouTube no admite < ni >.
-    if len(ep.titulo) > 100:
-        errores.append("título de más de 100 caracteres")
+    if len(ep.titulo) > 70:
+        errores.append(f"título de {len(ep.titulo)} caracteres; máximo 70, con una sola idea (PAUTA_COMUN §7)")
     if "!" in ep.titulo or "¡" in ep.titulo:
         errores.append("título con exclamaciones")
     gritos = [p for p in re.findall(r"\b[A-ZÁÉÍÓÚÑ]{5,}\b", ep.titulo)]

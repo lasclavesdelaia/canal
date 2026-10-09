@@ -95,7 +95,7 @@ Primer párrafo hablado.
   la misma línea pasa a `episodios/` con la fecha del día de publicación.
 - **Título:** más atractivo que el de los programas: una pregunta o una tensión real que el episodio responde de
   verdad. Ejemplo: «Pero… ¿qué podemos esperar realmente de un gobierno con Vox?». Sin exclamaciones, sin
-  mayúsculas de gancho, sin «lo que nadie te cuenta» ni parecidos; 100 caracteres como mucho; cifras y versiones
+  mayúsculas de gancho, sin «lo que nadie te cuenta» ni parecidos; 70 caracteres como mucho; cifras y versiones
   en cifras; no repitas «especial».
 - **Fuentes:** todas, con URL; en un especial suelen ser muchas. Las primarias, primero.
 - **Tarjeta** (pauta común, apartado 10): `tarjetas/AAAA-MM-DD-especial-<slug>.md`, en la misma rama.

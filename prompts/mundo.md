@@ -151,6 +151,8 @@ sigue: uno, despacio.
 
 ## Título
 
+Corto (menos de 70 caracteres) y con una sola idea; ver pauta común, §7.
+
 Lo concreto del programa, dos o tres temas. Aquí encaja bien una pregunta de fondo que el programa explora de
 verdad (pauta común, §7): «¿Por qué Europa crece menos que EE. UU. si exporta más?». Si no hay una pregunta clara,
 los temas.

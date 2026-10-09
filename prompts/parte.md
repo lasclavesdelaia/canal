@@ -104,8 +104,7 @@ hay novedad, se cuenta en corto; si no, va a tu tarjeta con «revisar: sábado»
 
 ## Título
 
-Los dos o tres temas principales del día, concretos. Una pregunta solo de vez en cuando, cuando el tema del día
-la pida de verdad (pauta común, §7).
+La noticia principal del día, en una frase corta y natural de menos de 70 caracteres (pauta común, §7). Lo nuevo
+de verdad, no lo que ya se sabía. Los demás temas, en la descripción. Una pregunta solo de vez en cuando.
 
-Ejemplo de forma (no de contenido): «Qwen 4 entra en el podio, Nvidia bate previsiones y un paper sobre memoria
-larga».
+Ejemplo de forma (no de contenido): «Qwen 4 entra en el podio de los modelos abiertos».

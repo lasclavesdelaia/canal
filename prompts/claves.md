@@ -68,6 +68,8 @@ con trabajo detrás) si ilumina lo que pasa ahora; di de cuándo es.
 
 ## Título
 
+Corto (menos de 70 caracteres) y con una sola idea; ver pauta común, §7.
+
 Las claves de la semana, en concreto. Aquí encaja bien una pregunta de fondo que el programa explora de verdad
 (pauta común, §7): «¿Quién paga la factura de la IA?». Si no hay una pregunta clara, los temas.
 
