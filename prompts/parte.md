@@ -102,6 +102,12 @@ hay novedad, se cuenta en corto; si no, va a tu tarjeta con «revisar: sábado»
   - ciberataques;
   - gobiernos y leyes.
 
+## Predicciones
+
+Pauta común, §12. En el parte casi nunca se da una: solo si un lanzamiento o una capacidad de modelos pide una
+apuesta con umbral y fecha (autor `modelo`). Sí se retoma, en una frase dentro de la noticia, una predicción abierta
+cuyo resultado se conozca hoy o cuyo tema sea justo la noticia principal. Nada de una por costumbre.
+
 ## Título
 
 La noticia principal del día, en una frase corta y natural de menos de 70 caracteres (pauta común, §7). Lo nuevo

@@ -61,6 +61,14 @@ Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian).
    (`scripts/juicios.py` valida y resume); con 8 semanas de juicios propone entradas C-NNN de criterio. Los titulares y
    `vida_media.json` viven en la rama `datos-titulares` (main exige firma y el bot no firma). Con datos, la web publica `/vida-media/` (sin enlace en el menú).
 
+7. **Marcador de predicciones** (pauta común §12): el programa da de vez en cuando una probabilidad a algo decidible con una
+   fuente y una fecha (1-24 meses). El registro es un diario, `datos/predicciones/AAAA-MM-DD.json` (altas y resoluciones);
+   las altas salen de las líneas `Predicciones dadas:` de las tarjetas y las resoluciones de las vencidas, y las escribe el
+   encargado de los domingos (paso 0c de `prompts/ENCARGADO.md`) en su rama `claude/revision-*`, sin tocar `main`.
+   `scripts/predicciones.py` valida el formato y los ids, calcula el Brier (global, por autor y por tema) y la calibración
+   por tramos, y con `--ramas` lee también lo aún sin fusionar. La web publica `/marcador/` (enlace en el pie) con las
+   abiertas, las resueltas, el Brier y la calibración en SVG. El balance anual lo propone el encargado.
+
 ## Informes y especiales (desde el Mac de Cristian)
 
 1. **`/informe <tema>`**: informe privado. Lee lo tuyo y la web; deja `AAAA-MM-DD Título.md` y su `.m4a` (voz del

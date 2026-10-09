@@ -152,6 +152,11 @@ nunca como única prueba, y se dice quién las financia cuando importa. Las regl
 pauta común rigen aquí; los años y los plazos de una serie no cuentan como cifras. En «## Fuentes» la mayoría debe ser
 primaria.
 
+## Predicciones
+
+El Balance largo mira a diez años o más: no registra predicciones (pauta común, §12). Si una predicción abierta toca
+justo la mejora o la serie del día, puede retomarse en una frase.
+
 ## Título
 
 Corto (menos de 70 caracteres), una sola idea, con lo concreto de la historia. Sin «buenas noticias», sin gancho, sin

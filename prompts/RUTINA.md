@@ -48,6 +48,9 @@ en un commit nuevo. No escribas otro episodio. Si al mirarlo ya valida (otra eje
    - para `claves`, las de los últimos 6 sábados más las de los partes de esta semana;
    - para `mundo`, las de los últimos 6 domingos más las de los partes y el semanal de IA de esta semana.
    Apunta sus cabos sueltos pendientes (pauta, §10): forman parte de lo que investigas hoy.
+   En `parte` (si el tema lo pide), `claves`, `mundo` y los especiales, mira también las predicciones abiertas
+   (`python3 scripts/predicciones.py --abiertas --ramas`; pauta, §12): retoma las vencidas o las que vuelven a la
+   actualidad, y decide si hoy cabe dar una nueva (lo normal es ninguna).
    Si aún no hay tarjetas, sigue sin ellas.
 7. **Investiga** en las fuentes de la lista:
    - empieza por los RSS y las API, que son más baratos;
@@ -58,6 +61,7 @@ en un commit nuevo. No escribas otro episodio. Si al mirarlo ya valida (otra eje
 9. **Escribe la tarjeta** de cada episodio: `tarjetas/AAAA-MM-DD-<programa>.md`, con el formato del apartado 10 de la
    pauta (de 120 a 260 palabras; la del `balance` lleva además las líneas que dice su pauta), con sus cabos sueltos. Es
    pública, como el guion: solo contenido.
+    Si has dado o retomado una predicción, sus líneas `Predicciones dadas:` / `Predicciones retomadas:` (pauta, §12).
 9b. **Revisión del editor, obligatoria.** Lanza un subagente (herramienta Agent) que NO haya escrito el guion, con
     este encargo: «Sigue prompts/REVISOR.md con el guion episodios/AAAA-MM-DD-<programa>.md». Lánzalo en PRIMER
     PLANO (sin segundo plano) y espera su respuesta: nunca termines tu turno con el revisor pendiente, porque la

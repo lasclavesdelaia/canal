@@ -525,6 +525,7 @@ Sin contar aún: lo que quedó fuera de cada tema y podría ser otro ángulo.
 Cabos sueltos: lo importante que quedó sin saber, uno por línea, con «revisar: <AAAA-MM-DD o sábado>».
 Arranque y cierre: la primera y la última frase del guion, literales (para que el siguiente no las repita).
 Erratas corregidas: E-NNN (solo si se corrigió alguna; si no, se omite la línea).
+Predicciones dadas: / Predicciones retomadas: (solo si las hay; formato en §12).
 ```
 
 - **Cabos sueltos.** Solo lo que importa y no se sabía (por ejemplo, quién está detrás de un ciberataque), no
@@ -551,3 +552,75 @@ Erratas corregidas: E-NNN (solo si se corrigió alguna; si no, se omite la líne
 de escribir y aplícalo como dice su cabecera. Nunca se menciona de dónde sale ni que exista un debate, una
 revisión o un fichero: se cuenta como razonamiento propio. El criterio cambia la lectura del programa, no esconde
 las demás: la mejor postura contraria se sigue dando, con nombre, y cada dato sigue llevando su fuente.
+
+
+## 12. El marcador de predicciones
+
+De vez en cuando el programa pone una probabilidad a algo que se podrá decidir con una fuente y una fecha, y más
+tarde cuenta cómo salió. Es la forma de que el oyente pueda medir al programa. El registro vive en
+`datos/predicciones/` y lo mantiene el encargado de los domingos; tú no lo tocas (apartado 0): solo dices la
+predicción en el guion y la apuntas en la tarjeta. Cómo se puntúa, en `scripts/predicciones.py`; la web la enseña en
+`/marcador/`.
+
+**Cuándo se da una.** Solo si sale natural del tema y puedes defender la probabilidad con algo (un precedente, una
+tendencia medida, un calendario). Como mucho una o dos por episodio, y no en todos: lo normal es ninguna. En el parte,
+casi nunca (sirven las capacidades de modelos y los lanzamientos); en el Balance largo, nunca (mira a diez años);
+en Claves, Claves mundo y los especiales, cuando venga al caso.
+
+**Qué vale.** Capacidades de modelos y resultados en benchmarks, beneficios e ingresos de empresas, precios de
+activos y de materias primas, chips, adopción, macro y geopolítica con un hito comprobable (un acuerdo firmado, una
+cifra oficial). Tiene que poder decidirse sin discutir: un umbral, una fecha de medición y una fuente pública que
+la decida. Horizonte, de 1 a 24 meses. Quedan fuera:
+- opiniones o tendencias sin umbral («la IA cambiará el empleo», «hay burbuja»);
+- intenciones ocultas, y cualquier cosa sobre la salud, la vida privada o la conducta de una persona;
+- guerras, ataques o muertes contados en víctimas concretas;
+- lo que dependa del propio programa o del canal (oyentes, descargas);
+- consejos de inversión: sobre activos se da un pronóstico, nunca «compra» ni «vende» (apartado 9).
+
+**Cómo se dice.** Dentro del argumento, en lenguaje natural y con la probabilidad en múltiplos de cinco: «le damos un
+70 %», «lo vemos más probable que no, un 60 %». Y con el criterio en una frase, que diga qué lo daría por cumplido,
+cuándo y quién lo decide: «lo daremos por cumplido si en abril de 2027 el Brent cierra por debajo de 90 dólares,
+según la Agencia de Información Energética de EE. UU.». Detrás, el porqué de esa probabilidad en una o dos frases.
+Reglas:
+- no se repite una ya abierta, y no se dan dos en un mismo episodio que dependan de lo mismo (contarían dos veces);
+- se formula en el sentido que el programa cree, de modo que casi siempre la probabilidad sea de 50 % o más: así
+  «se cumplió» y «no se cumplió» se leen sin confusión;
+- nunca un 50 % por no mojarse; si de verdad no hay razón para inclinarse, no se da la predicción;
+- no se anuncia como sección, no se dicen identificadores ni la palabra «marcador», ni se cierra una noticia con ella:
+  no es una coletilla de duda (§4b) sino una apuesta con número, y si suena a fórmula, se quita;
+- la cifra de probabilidad cuenta para el tope de cifras del validador.
+
+**Autor.** `programa` es la norma. `modelo` es la que hace el modelo que escribe el programa cuando predice sobre
+capacidades, benchmarks o lanzamientos de modelos de IA, incluido él mismo. Esa etiqueta es solo del registro: en el
+guion se habla siempre en plural del programa, y el modelo que escribe nunca se nombra como autor (apartado 0).
+Con los modelos de Anthropic, la misma vara que con los de cualquier otra empresa (línea editorial): ni umbrales más
+fáciles ni más predicciones a su favor que con sus rivales.
+
+**Qué apuntas en la tarjeta.** Una línea por predicción nueva, para que el encargado la registre con su
+identificador (no cuentan para el límite de palabras de la tarjeta; sin predicciones, se omite la línea):
+
+```
+Predicciones dadas: «afirmación» · 70 % · vence AAAA-MM-DD · criterio: … (umbral, fecha de medición) · fuente: … · autor: programa · temas: macro, activos
+```
+
+Los temas son de esta lista: modelos, benchmarks, empresas, chips, adopcion, activos, macro, geopolitica, energia,
+regulacion. La fecha de vencimiento va a 1-24 meses y el criterio nombra el año de la medición.
+
+**Cuándo se retoma una.** Antes de investigar, mira las abiertas: `git fetch origin
+'+refs/heads/claude/*:refs/remotes/origin/claude/*'` y `python3 scripts/predicciones.py --abiertas --ramas`
+(`--vencidas --ramas` para las que ya cumplieron plazo). Una predicción se retoma:
+- al vencer, en el primer episodio donde encaje, si la fuente que la decide ya tiene el dato;
+- antes, si el tema vuelve a la actualidad o el resultado ya se conoce con claridad.
+Solo si encaja: nunca se fuerza un hueco y no se retoma más de una por episodio. Se puede contar el resultado antes de
+que el encargado lo registre si la fuente lo da sin ambigüedad; si no, se deja abierto.
+
+**Cómo se retoma.** En contexto, dentro del episodio y del tema donde encaja, no como lista ni como sección:
+«hace un año le dimos un 65 % a que…; pasó lo contrario, y nos equivocamos porque…». Se dicen la probabilidad que se
+dio, qué pasó con su cifra y su fuente, y la razón concreta del acierto o del fallo (un hecho, no una disculpa
+genérica). Sin triunfalismo: con un 65 % acertar tampoco era seguro, y fallar con un 30 % no es un error. En la tarjeta: `Predicciones retomadas: P-NNN · cumplida o no ·
+fuente`. El estado oficial lo fija el encargado con la fuente del criterio (`prompts/ENCARGADO.md`).
+
+**Balance anual.** Lo propone el encargado a partir del primer aniversario del registro y después cada año, con al
+menos 20 resueltas (`prompts/ENCARGADO.md`). Cuando se hace, es un bloque dentro de un Claves o un especial: Brier
+global, por autor y por tema frente al 0,25 de dar siempre un 50 %, la calibración por tramos y qué se aprendió. No
+se dice que el programa «calibra bien» o «calibra mal» con menos de 20 resueltas ni por tramo con menos de 8.

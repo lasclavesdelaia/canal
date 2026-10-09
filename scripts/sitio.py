@@ -11,6 +11,8 @@ texto en Source Serif 4, verde oliva de acento):
   /historial/          historial completo de todos los programas
   /e/<clave>.html      un episodio: reproductor, guion y fuentes
   /e/<clave>.transcripcion.html  transcripción: el texto hablado completo (podcast:transcript del feed)
+  /marcador/           marcador de predicciones: abiertas, resueltas, Brier y calibración (con las abiertas ya basta;
+                       enlace discreto en el pie)
   /vida-media/         curva de vida media de las noticias por tema (solo cuando datos/vida_media.json ya tiene
                        titulares de 30+ días; sin enlace en el menú)
   /parte.xml           feed GENERAL «Las claves de la IA», con todos los programas: lo leen las apps de pódcast
@@ -108,7 +110,7 @@ color:var(--suave)}
 .pie p{margin:.3em 0}
 main{padding-bottom:8px}
 table{border-collapse:collapse;width:100%;font:400 .9rem/1.4 var(--sans);display:block;overflow-x:auto}
-th,td{padding:6px 10px;border-bottom:1px solid var(--linea);text-align:right}th:first-child{text-align:left}
+th,td{padding:6px 10px;border-bottom:1px solid var(--linea);text-align:right}th:first-child,td.izq{text-align:left}
 @media (max-width:600px){body{font-size:17px}.programa,.seguir>div{padding:18px}.entradilla{font-size:1.1rem}}
 """
 
@@ -166,6 +168,7 @@ def _pagina(titulo, cuerpo, cfg, descripcion="", ancho=True):
 <footer class="pie"><div class="{caja}">
 <p>{_e(canal['aviso'])}</p>
 <p><a href="https://cristiansdrojek.com/">cristiansdrojek.com</a> · <a href="/historial/">Todos los episodios</a>
+· <a href="/marcador/">Marcador de predicciones</a>
 · Escríbenos: <a href="mailto:{_e(canal['correo'])}">{_e(canal['correo'])}</a></p>
 </div></footer>
 </body></html>
@@ -495,6 +498,100 @@ de vocabulario cuenta como terminado. Actualizado el {_e(datos['referencia'])}.<
     return _pagina(f"Vida media de las noticias · {cfg['canal']['nombre']}", cuerpo, cfg, ancho=False)
 
 
+def _leer_marcador():
+    """Predicciones del registro (datos/predicciones/) con su estado; [] si no hay o el registro tiene errores."""
+    try:
+        import predicciones
+        preds, errores = predicciones.registro(predicciones.cargar())
+    except (OSError, ValueError, ImportError):
+        return []
+    return [] if errores else preds
+
+
+def _svg_calibracion(tramos):
+    """Probabilidad dada (x) frente a frecuencia con que se cumplió (y), por tramos; la diagonal es la calibración perfecta."""
+    ancho, alto, m = 360, 360, 44
+    x = lambda v: m + (ancho - 2 * m) * v
+    y = lambda v: alto - m - (alto - 2 * m) * v
+    ejes = "".join(
+        f'<line x1="{m}" x2="{ancho - m}" y1="{y(v):.0f}" y2="{y(v):.0f}" stroke="#e2dfd6"/>'
+        f'<text x="{m - 6}" y="{y(v) + 4:.0f}" text-anchor="end" font-size="11" fill="#5f5e58">{round(v * 100)} %</text>'
+        f'<text x="{x(v):.0f}" y="{alto - m + 16}" text-anchor="middle" font-size="11" fill="#5f5e58">{round(v * 100)} %</text>'
+        for v in (0, .25, .5, .75, 1))
+    diagonal = f'<line x1="{x(0)}" y1="{y(0)}" x2="{x(1)}" y2="{y(1)}" stroke="#a4a299" stroke-dasharray="5 4"/>'
+    puntos = "".join(
+        f'<circle cx="{x(t["probabilidad_media"]):.1f}" cy="{y(t["frecuencia"]):.1f}" r="{min(6 + 2 * t["n"], 18)}" '
+        f'fill="{"#3a5117" if t["fiable"] else "#b08a1e"}" fill-opacity=".75"><title>{_e(t["tramo"])}: '
+        f'{t["n"]} resueltas, se cumplieron el {round(t["frecuencia"] * 100)} %</title></circle>' for t in tramos)
+    return (f'<svg viewBox="0 0 {ancho} {alto}" role="img" aria-label="Calibración: probabilidad dada frente a frecuencia '
+            f'real" style="width:100%;max-width:420px;height:auto">{ejes}{diagonal}{puntos}'
+            f'<text x="{ancho / 2}" y="{alto - 4}" text-anchor="middle" font-size="11" fill="#5f5e58">probabilidad dada</text>'
+            f'<text x="12" y="{alto / 2}" font-size="11" fill="#5f5e58" transform="rotate(-90 12 {alto / 2})" '
+            f'text-anchor="middle">se cumplió</text></svg>')
+
+
+def pagina_marcador(preds, cfg):
+    """Marcador de predicciones: abiertas siempre; puntuación y calibración solo cuando hay resueltas."""
+    import predicciones
+    res = predicciones.resumen(preds)
+    pct = lambda p: f"{round(p['probabilidad'] * 100)} %"
+    etiqueta = {"acertada": "se cumplió", "fallada": "no se cumplió", "anulada": "anulada"}
+
+    def fila_abierta(p):
+        return (f"<tr><th>{_e(p['id'])}</th><td class=\"izq\">{_e(p['afirmacion'])}<br><span class=\"suave\">"
+                f"{_e(p['criterio'])} Fuente: {_e(p['fuente_decisoria'])}.</span></td><td>{pct(p)}</td>"
+                f"<td>{_e(p['vence'])}</td><td>{_e(p['autor'])}</td></tr>")
+
+    def fila_resuelta(p):
+        return (f"<tr><th>{_e(p['id'])}</th><td class=\"izq\">{_e(p['afirmacion'])}<br><span class=\"suave\">"
+                f"{_e(p.get('nota') or '')} Fuente: {_e(p.get('fuente_resolucion') or '')}.</span></td><td>{pct(p)}</td>"
+                f"<td>{_e(etiqueta[p['estado']])}</td><td>{_e(p.get('resuelta') or '')}</td></tr>")
+
+    def tabla(titulo, cab, filas):
+        if not filas:
+            return ""
+        return f"<h2>{titulo}</h2><table><thead><tr>{cab}</tr></thead><tbody>{''.join(filas)}</tbody></table>"
+
+    abiertas = predicciones.abiertas(preds)
+    resueltas = sorted((p for p in preds if p["estado"] != "abierta"), key=lambda p: (p["resuelta"], p["id"]), reverse=True)
+    puntuacion = ""
+    if res["resueltas"]:
+        def f_b(nombre, b):
+            return f"<tr><th>{_e(nombre)}</th><td>{b['n']}</td><td>{b['brier']:.3f}</td></tr>" if b["n"] else ""
+        autores = "".join(f_b(a, b) for a, b in res["por_autor"].items())
+        temas = "".join(f_b(t, b) for t, b in res["por_tema"].items())
+        cal = "".join(
+            f"<tr><th>{_e(t['tramo'])}</th><td>{t['n']}</td><td>{round(t['probabilidad_media'] * 100)} %</td>"
+            f"<td>{round(t['frecuencia'] * 100)} %</td></tr>" for t in res["calibracion"])
+        aviso = ("" if res["suficiente_para_juzgar"] else
+                 f'<p class="suave">Aún hay pocas predicciones resueltas ({res["resueltas"]}): no se sacan conclusiones '
+                 f'hasta tener al menos {predicciones.MIN_RESUELTAS_JUICIO}.</p>')
+        puntuacion = f"""<h2>Puntuación</h2>
+<p>Brier global: <strong>{res['global']['brier']:.3f}</strong> sobre {res['resueltas']} resueltas
+(dar siempre un 50 % da 0,250; cuanto más bajo, mejor).</p>{aviso}
+<table><thead><tr><th>Autor</th><th>Resueltas</th><th>Brier</th></tr></thead><tbody>{autores}</tbody></table>
+<table><thead><tr><th>Tema</th><th>Resueltas</th><th>Brier</th></tr></thead><tbody>{temas}</tbody></table>
+<h2>Calibración</h2>
+{_svg_calibracion(res['calibracion'])}
+<p class="suave">Cada círculo es un tramo de probabilidad; sobre la línea discontinua, el programa acertaría en la misma
+proporción en que lo anuncia. Los círculos amarillos tienen menos de {predicciones.MIN_POR_TRAMO} resueltas.</p>
+<table><thead><tr><th>Tramo</th><th>Resueltas</th><th>Probabilidad media</th><th>Se cumplió</th></tr></thead>
+<tbody>{cal}</tbody></table>"""
+    cuerpo = f"""<h1>Marcador de predicciones</h1>
+<p class="entradilla">De vez en cuando el programa pone una probabilidad a algo que se podrá decidir con una fuente
+concreta y una fecha. Aquí están todas, las que siguen abiertas y las ya resueltas, con la puntuación de Brier: la
+media del cuadrado de la distancia entre la probabilidad dada y lo que ocurrió (1 si se cumplió, 0 si no).
+«Modelo» marca las que hace la IA que escribe el programa sobre capacidades de modelos de IA, incluida ella misma.</p>
+{puntuacion}
+{tabla("Abiertas", "<th></th><th>Afirmación y criterio</th><th>Prob.</th><th>Vence</th><th>Autor</th>",
+       [fila_abierta(p) for p in abiertas])}
+{tabla("Resueltas", "<th></th><th>Afirmación y resultado</th><th>Prob.</th><th>Estado</th><th>Resuelta</th>",
+       [fila_resuelta(p) for p in resueltas])}
+<p class="suave">Una predicción «anulada» tenía un criterio ambiguo y no puntúa. «No se cumplió» con una probabilidad
+baja no es un error del programa: lo mide el Brier. Esto no es un consejo de inversión.</p>"""
+    return _pagina(f"Marcador de predicciones · {cfg['canal']['nombre']}", cuerpo, cfg, ancho=False)
+
+
 def generar(episodios, cfg, destino, audios=None):
     """Escribe la web completa en destino. episodios: lista de dicts, en cualquier orden.
     audios: {clave: ruta local del MP3}; esos se copian a /audio/ y los reproductores los usan."""
@@ -542,4 +639,8 @@ def generar(episodios, cfg, destino, audios=None):
     if vida:
         (destino / "vida-media").mkdir()
         (destino / "vida-media" / "index.html").write_text(pagina_vida_media(vida, cfg), encoding="utf-8")
+    marcador = _leer_marcador()
+    if marcador:
+        (destino / "marcador").mkdir()
+        (destino / "marcador" / "index.html").write_text(pagina_marcador(marcador, cfg), encoding="utf-8")
     (destino / ".nojekyll").write_text("")

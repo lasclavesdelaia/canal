@@ -21,6 +21,7 @@ on:
       - "scripts/sitio.py"
       - "assets/**"
       - "config/programas.json"
+      - "datos/predicciones/**"
 
 concurrency:
   group: publicar

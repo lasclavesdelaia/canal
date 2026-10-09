@@ -100,6 +100,12 @@ Primer párrafo hablado.
 - **Fuentes:** todas, con URL; en un especial suelen ser muchas. Las primarias, primero.
 - **Tarjeta** (pauta común, apartado 10): `tarjetas/AAAA-MM-DD-especial-<slug>.md`, en la misma rama.
 
+## Predicciones
+
+Pauta común, §12. Un especial puede dar una o dos si el tema lo pide, con la misma forma. En un especial de balance
+de las predicciones del programa (el balance anual), los datos salen de `python3 scripts/predicciones.py --resumen
+--ramas`, con las reglas de muestra mínima del §12.
+
 ## Antes de entregar
 
 El repaso de la pauta común (apartado 8) y, además:

@@ -1,0 +1,135 @@
+{
+  "fecha": "2026-10-09",
+  "altas": [
+    {
+      "id": "P-001",
+      "fecha": "2026-10-09",
+      "programa": "mundo",
+      "episodio": "siembra",
+      "afirmacion": "El rendimiento del bono del Tesoro de EE. UU. a 10 años cerrará el 1 de abril de 2027 por encima del 5,00 %.",
+      "probabilidad": 0.6,
+      "criterio": "Se cumple si el rendimiento de cierre a 10 años (par yield) del 1 de abril de 2027 es estrictamente superior a 5,00 %. Si ese día no hay dato, vale el último día hábil anterior. Se mira el dato publicado por el Tesoro, no el de un intermediario.",
+      "fuente_decisoria": "U.S. Department of the Treasury, Daily Treasury Par Yield Curve Rates (home.treasury.gov); contraste en FRED, serie DGS10",
+      "vence": "2027-04-02",
+      "temas": [
+        "macro",
+        "activos"
+      ],
+      "autor": "programa"
+    },
+    {
+      "id": "P-002",
+      "fecha": "2026-10-09",
+      "programa": "mundo",
+      "episodio": "siembra",
+      "afirmacion": "El I.P.C. de España de diciembre de 2026 crecerá menos de un 4,0 % interanual.",
+      "probabilidad": 0.55,
+      "criterio": "Se cumple si la tasa de variación anual del I.P.C. general de España de diciembre de 2026, en su dato definitivo (no el adelantado), es inferior a 4,0 %. Si el I.N.E. la publica con un decimal, se usa ese decimal.",
+      "fuente_decisoria": "Instituto Nacional de Estadística, nota de prensa del I.P.C. definitivo de diciembre de 2026 (ine.es)",
+      "vence": "2027-01-29",
+      "temas": [
+        "macro"
+      ],
+      "autor": "programa"
+    },
+    {
+      "id": "P-003",
+      "fecha": "2026-10-09",
+      "programa": "mundo",
+      "episodio": "siembra",
+      "afirmacion": "El Brent cerrará el 30 de abril de 2027 por debajo de 90 dólares el barril.",
+      "probabilidad": 0.6,
+      "criterio": "Se cumple si el precio spot diario del Brent (Europe Brent Spot Price FOB) del 30 de abril de 2027 es inferior a 90 dólares por barril. Si ese día no hay dato, vale el último día hábil anterior.",
+      "fuente_decisoria": "U.S. Energy Information Administration, serie RBRTED (eia.gov/dnav/pet/hist/RBRTED.htm)",
+      "vence": "2027-05-04",
+      "temas": [
+        "energia",
+        "geopolitica"
+      ],
+      "autor": "programa"
+    },
+    {
+      "id": "P-004",
+      "fecha": "2026-10-09",
+      "programa": "claves",
+      "episodio": "siembra",
+      "afirmacion": "Lambda, la empresa de nubes de G.P.U., habrá presentado públicamente su salida a bolsa en Estados Unidos antes del 30 de septiembre de 2027.",
+      "probabilidad": 0.45,
+      "criterio": "Se cumple si antes de las 23:59 (hora de Nueva York) del 30 de septiembre de 2027 figura en E.D.G.A.R. un formulario S-1 o F-1 público de Lambda (el emisor que ofrece nubes de G.P.U.), o si sus acciones ya cotizan en una bolsa estadounidense. Una presentación confidencial no cuenta.",
+      "fuente_decisoria": "S.E.C., sistema E.D.G.A.R. (sec.gov/edgar), búsqueda por empresa",
+      "vence": "2027-10-04",
+      "temas": [
+        "empresas",
+        "chips",
+        "activos"
+      ],
+      "autor": "programa"
+    },
+    {
+      "id": "P-005",
+      "fecha": "2026-10-09",
+      "programa": "claves",
+      "episodio": "siembra",
+      "afirmacion": "El S&P 500 cerrará el 30 de junio de 2027 por encima de su cierre del 9 de octubre de 2026.",
+      "probabilidad": 0.62,
+      "criterio": "Se cumple si el cierre del índice S&P 500 (rentabilidad por precio, no total) del 30 de junio de 2027 es superior a su cierre del 9 de octubre de 2026. Si algún día no hay sesión, vale la sesión anterior. Se comparan los dos cierres oficiales del mismo índice.",
+      "fuente_decisoria": "S&P Dow Jones Indices, datos históricos del S&P 500 (spglobal.com); contraste en FRED, serie SP500",
+      "vence": "2027-07-02",
+      "temas": [
+        "activos",
+        "macro"
+      ],
+      "autor": "programa"
+    },
+    {
+      "id": "P-006",
+      "fecha": "2026-10-09",
+      "programa": "parte",
+      "episodio": "siembra",
+      "afirmacion": "Un modelo de IA logrará al menos un 85 % en OSWorld-Verified antes del 9 de octubre de 2027.",
+      "probabilidad": 0.5,
+      "criterio": "Se cumple si antes del 9 de octubre de 2027 aparece en la tabla de resultados de OSWorld-Verified (os-world.github.io) un resultado de 85,0 % o más de éxito, con el número de pasos máximo que fije la tabla en esa fecha. Cuenta tanto lo medido por los autores del banco como lo enviado por un laboratorio y aceptado en la tabla.",
+      "fuente_decisoria": "Tabla pública de OSWorld-Verified, os-world.github.io",
+      "vence": "2027-10-11",
+      "temas": [
+        "modelos",
+        "benchmarks"
+      ],
+      "autor": "modelo"
+    },
+    {
+      "id": "P-007",
+      "fecha": "2026-10-09",
+      "programa": "parte",
+      "episodio": "siembra",
+      "afirmacion": "Un modelo de IA superará el 60 % en Humanity's Last Exam, sin herramientas, antes del 9 de octubre de 2027.",
+      "probabilidad": 0.5,
+      "criterio": "Se cumple si antes del 9 de octubre de 2027 Artificial Analysis publica para algún modelo un resultado de 60,0 % o más en Humanity's Last Exam sin herramientas, o si lo publica el tablero oficial de la prueba (lastexam.ai) con esa misma condición. Cuentan los resultados sobre el conjunto completo de preguntas de texto y multimodales que use cada fuente.",
+      "fuente_decisoria": "Artificial Analysis (artificialanalysis.ai), resultados de Humanity's Last Exam; tablero oficial lastexam.ai",
+      "vence": "2027-10-11",
+      "temas": [
+        "modelos",
+        "benchmarks"
+      ],
+      "autor": "modelo"
+    },
+    {
+      "id": "P-008",
+      "fecha": "2026-10-09",
+      "programa": "claves",
+      "episodio": "siembra",
+      "afirmacion": "En la primera semana de octubre de 2027, un modelo de pesos abiertos de un laboratorio chino figurará entre los tres primeros del Artificial Analysis Intelligence Index.",
+      "probabilidad": 0.15,
+      "criterio": "Se cumple si en la consulta del Intelligence Index de Artificial Analysis hecha entre el 1 y el 8 de octubre de 2027, entre los tres primeros puestos de todos los modelos (abiertos y cerrados, en la versión vigente del índice) hay al menos un modelo de pesos abiertos de un laboratorio con sede en China continental o Hong Kong. Quien resuelva cita la fecha de consulta y la lista de los tres primeros.",
+      "fuente_decisoria": "Artificial Analysis, Intelligence Index (artificialanalysis.ai/leaderboards/models)",
+      "vence": "2027-10-11",
+      "temas": [
+        "modelos",
+        "benchmarks",
+        "geopolitica"
+      ],
+      "autor": "modelo"
+    }
+  ],
+  "resoluciones": []
+}

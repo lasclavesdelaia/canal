@@ -149,6 +149,13 @@ sigue: uno, despacio.
 - **No repitas** lo que ya contaron el semanal de IA del sábado ni los partes; remite en una frase si hace falta.
 - **España sin rencillas**: leyes, impuestos y datos; nada de quién dijo qué en el Congreso.
 
+## Predicciones
+
+Pauta común, §12. Hasta una o dos por programa, no todos los domingos: tipos, bonos, inflación, materias primas,
+activos y geopolítica con hito comprobable, siempre con umbral, fecha de medición y fuente oficial (Eurostat, I.N.E.,
+Tesoro, E.I.A., banco central). Es un pronóstico razonado en la clave del tema, nunca un consejo de inversión. Revisa
+antes las abiertas y retoma, dentro de su clave, las vencidas o las que vuelven a la actualidad.
+
 ## Título
 
 Corto (menos de 70 caracteres) y con una sola idea; ver pauta común, §7.

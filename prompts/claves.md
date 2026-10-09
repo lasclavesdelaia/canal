@@ -66,6 +66,13 @@ con trabajo detrás) si ilumina lo que pasa ahora; di de cuándo es.
 - **Enlaza con los partes por su nombre** («como contamos el martes…») y suma lo nuevo.
 - **Si un tema ya se trató a fondo un sábado anterior,** no lo repitas: menciónalo y suma lo nuevo.
 
+## Predicciones
+
+Pauta común, §12. Hasta una o dos por programa, no todas las semanas, dentro de la clave a la que pertenezcan:
+capacidades y benchmarks de modelos (autor `modelo`), resultados de empresas, chips y adopción. Revisa antes las
+abiertas (`python3 scripts/predicciones.py --abiertas --ramas`) y retoma, dentro de su clave, la que haya vencido o
+cuyo tema vuelva: «hace seis meses le dimos un 60 % a…».
+
 ## Título
 
 Corto (menos de 70 caracteres) y con una sola idea; ver pauta común, §7.
