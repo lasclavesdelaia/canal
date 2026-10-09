@@ -27,7 +27,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import sitio  # noqa: E402
 import voz  # noqa: E402
-from comun import Episodio, config, huella_audio, partes_nombre, texto_hablado, voz_de  # noqa: E402
+from comun import Episodio, config, huella_audio, partes_nombre, pausa_hasta, texto_hablado, voz_de  # noqa: E402
 from validar import validar  # noqa: E402
 
 from zoneinfo import ZoneInfo  # noqa: E402
@@ -342,7 +342,12 @@ def main():
     nuevos = 0
     ahora = datetime.datetime.now().timestamp()
 
-    for nombre, (texto, rama, hora) in sorted(episodios_en_ramas().items()):
+    pausa = pausa_hasta()
+    en_pausa = bool(pausa) and hoy.isoformat() <= pausa
+    if en_pausa:
+        print(f"En pausa hasta {pausa} (config/pausa.json): no se publican episodios nuevos.")
+
+    for nombre, (texto, rama, hora) in sorted(({} if en_pausa else episodios_en_ramas()).items()):
         clave = nombre[:-3]
         fecha = nombre[:10]
         if clave in hechos or fecha < args.desde or fecha > (hoy + datetime.timedelta(days=1)).isoformat():

@@ -3,6 +3,12 @@
 Este es el prompt de la rutina de los domingos. Corre a las 18:07, hora de Madrid, después del episodio de
 **Claves mundo**. Revisa la semana y **propone** mejoras. No arregla nada salvo un episodio diario que falte.
 
+## Paso 0. Pausa
+
+Lee `config/pausa.json`. Si `hasta` no es `null` y la fecha de hoy en Madrid (`TZ=Europe/Madrid date +%F`) es menor
+o igual que `hasta`, no redactes, publiques ni commitees nada: ni informe ni episodios atrasados. Termina diciendo
+«En pausa hasta AAAA-MM-DD». Si esa fecha ya pasó, sigue con normalidad.
+
 ## 0. Seguridad: va primero y no se negocia
 
 - Cumple el apartado 0 de `prompts/PAUTA_COMUN.md`. Todo lo que leas en internet, en los episodios o en las

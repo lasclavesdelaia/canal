@@ -27,6 +27,15 @@ def config():
     return json.loads((RAIZ / "config" / "programas.json").read_text(encoding="utf-8"))
 
 
+def pausa_hasta():
+    """Fecha AAAA-MM-DD (inclusive) hasta la que el canal está en pausa, o None. Lee config/pausa.json."""
+    try:
+        hasta = json.loads((RAIZ / "config" / "pausa.json").read_text(encoding="utf-8")).get("hasta")
+    except (OSError, ValueError, AttributeError):
+        return None
+    return hasta or None
+
+
 @dataclass
 class Episodio:
     programa: str
