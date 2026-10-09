@@ -936,3 +936,20 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   sus pódcast: parte-solo.xml (NO parte.xml), claves.xml, mundo.xml, especial.xml; solo episodios POSTERIORES al
   8 oct. Hasta entonces, el workflow de cada hora solo avisa (sin rojo).
 - Hecho (9 oct, Cristian): en la portada, el bloque RSS va plegado («Para apps de pódcast (RSS)», se abre al pulsar).
+
+## 9 oct, mañana: tareas atascadas y Artificial Analysis (sesión de Claude)
+- Hecho: el parte del 9 salió solo (rutina 5:08 → claude/episodios-2026-10-09 → Release ep-2026-10-09-parte a las
+  6:07; en parte.xml). «Marcar uso de IA» corre cada hora y avisa sin rojo (falta el permiso).
+- Fallo: las tareas locales «cuota ANTES» (4:51) y «comprobar el parte del 9» (7:30) se quedaron esperando un
+  permiso de terminal (órdenes compuestas con `;`, `||` o `TZ=`), sin nadie para aprobarlo. Paradas.
+- Hecho: «cuota ANTES» y «cuota DESPUÉS» reescritas SIN terminal: solo get_usage, Read y Edit (hora = resetsAt −
+  resetsIn de la ventana de 5 h, en hora de Madrid). Probada la ANTES a las 7:48: escribió sola, sin pedir nada
+  (línea de prueba quitada). La de comprobar era de un solo uso: la comprobación la hice yo (arriba).
+- Norma para tareas locales nuevas: nada de Bash, o solo órdenes sueltas de la lista permitida de
+  ~/.claude/settings.json (cat, ls, tail…), sin `;`, `&&`, `|`, `||` ni variables delante.
+- Artificial Analysis: la rutina recibe `AA_API_KEY` VACÍA (401 «API key is required» a las 3:08). La variable no
+  está en el entorno claves-ia. Falta que Cristian la pegue (claude.ai/code › entorno claves-ia › Variables de
+  entorno: `AA_API_KEY=<clave>`). Comprobar en el registro de la rutina del 10 oct que da 200.
+- Pregunta de Cristian: red completa para la rutina. Respuesta: el daño posible es pequeño (sin secretos salvo la
+  clave de AA, gratuita; solo puede subir a ramas claude/, que pasan el validador; no toca main, YouTube ni la voz).
+  Recomendado: «Completo». Si lo cambia, actualizar config/fuentes.md (la línea de la red Custom).
