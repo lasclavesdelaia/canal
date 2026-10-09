@@ -1038,3 +1038,9 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - (Fuera de este proyecto, para que conste) Spotify reclamó derechos en 3 episodios del pódcast personal de Cristian
   por BWV 1060R (Graubünden Classical Archive, «Live»); él usa la grabación de The Alsace Baroque Orchestra de Musopen
   (dominio público). Le di el texto de respuesta; lo envía él (2 días de plazo).
+- Apple (9 oct, 9:02): motivo «trouble downloading the artwork, metadata, or episodes» (automático). Revisado el feed
+  parte.xml: XML válido, portada 3000×3000 RGB JPEG (1,18 MB), audios con HEAD y rangos (206), GUID fijos, categoría,
+  idioma, email y explicit. Apple lo leyó bien hoy a las 6:12 y la portada se ve en Connect. Probable fallo pasajero
+  durante el cambio del 8 oct ~18:35 (nombre, portada y feed general a la vez) — deducción, no comprobado. Cristian
+  pulsó Refresh y va a pulsar Publish para reenviarlo a revisión. Vigilar si vuelve a fallar: GitHub sirve los MP3
+  como application/octet-stream (no audio/mpeg); si Apple insiste, servir los audios con su tipo correcto.
