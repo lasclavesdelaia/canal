@@ -96,6 +96,8 @@ class FormatoDeLosDatos(unittest.TestCase):
                 self.assertLess(r["primera"], f.stem)
 
     def test_vida_media_json(self):
+        if not (RAIZ / "datos" / "vida_media.json").exists():
+            self.skipTest("los datos viven en la rama datos-titulares")
         d = json.loads((RAIZ / "datos" / "vida_media.json").read_text(encoding="utf-8"))
         for clave in ("generado", "referencia", "dias_con_datos", "titulares_total", "titulares_elegibles", "global",
                       "por_medio", "por_tema", "curva_por_tema", "curva_global", "temas_mayores"):
@@ -178,6 +180,8 @@ class PaginaVidaMedia(unittest.TestCase):
     def test_sin_datos_no_hay_pagina(self):
         import sitio
         antes = sitio._leer_vida_media()
+        if not (RAIZ / "datos" / "vida_media.json").exists():
+            self.skipTest("los datos viven en la rama datos-titulares")
         datos = json.loads((RAIZ / "datos" / "vida_media.json").read_text(encoding="utf-8"))
         if not datos["titulares_elegibles"]:
             self.assertIsNone(antes)

@@ -15,6 +15,8 @@ Cada día un script guarda los titulares de portada de cinco periódicos en `dat
 fecha y sección). Tu parte, una vez por semana, es juzgar con criterio una muestra de los de hace un mes, sabiendo ya
 qué pasó después. Es un paso breve; hazlo antes de la revisión de episodios y sigue pase lo que pase.
 
+0. Los datos están en la rama `datos-titulares`, no en main: `git fetch origin datos-titulares && git checkout
+   origin/datos-titulares -- datos/titulares datos/vida_media.json` (no los subas a tu rama: solo añades tus juicios).
 1. Si no existe `datos/titulares/` con al menos un fichero de hace 30 días o más, anótalo en una línea del informe
    («Vida media: aún no hay 30 días de datos») y salta al apartado 0.
 2. Saca la muestra: `python3 scripts/vida_media.py --muestra 40`. Son unos 40 titulares de hace 30-37 días,

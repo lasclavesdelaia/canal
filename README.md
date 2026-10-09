@@ -57,9 +57,8 @@ Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian).
    días (lo que reaparece va a «reaparecen»). `scripts/vida_media.py` mide sin modelo, para los titulares de hace 30+
    días, si su tema sigue apareciendo a los 7, 14 y 30 días, y escribe `datos/vida_media.json`. Los domingos el
    encargado juzga una muestra de ~40 (paso 0b de `prompts/ENCARGADO.md`) y la guarda en `datos/juicios/`
-   (`scripts/juicios.py` valida y resume); con 8 semanas de juicios propone entradas C-NNN de criterio. El bot sube
-   `datos/` a `main`; si una regla de rama se lo impide, a la rama `datos-titulares` (la siguiente ejecución parte de
-   ella). Con datos, la web publica `/vida-media/` (sin enlace en el menú).
+   (`scripts/juicios.py` valida y resume); con 8 semanas de juicios propone entradas C-NNN de criterio. Los titulares y
+   `vida_media.json` viven en la rama `datos-titulares` (main exige firma y el bot no firma). Con datos, la web publica `/vida-media/` (sin enlace en el menú).
 
 ## Informes y especiales (desde el Mac de Cristian)
 
