@@ -15,7 +15,7 @@ texto en Source Serif 4, verde oliva de acento):
                        titulares de 30+ días; sin enlace en el menú)
   /parte.xml           feed GENERAL «Las claves de la IA», con todos los programas: lo leen las apps de pódcast
                        (iVoox, Spotify y Apple ya estaban dados de alta con esta dirección y Spotify no deja cambiarla)
-  /parte-solo.xml, /claves.xml, /mundo.xml, /especial.xml
+  /parte-solo.xml, /balance.xml, /claves.xml, /mundo.xml, /especial.xml
                        un feed por programa: YouTube necesita uno por lista
 """
 import datetime
@@ -30,7 +30,7 @@ from comun import MESES, RAIZ, Episodio, fecha_hablada, texto_hablado
 ULTIMOS_EN_PORTADA = 6
 FEED_GENERAL = "parte"  # nombre histórico: las apps ya leen /parte.xml
 MAX_DESCRIPCION = 4000  # Apple corta a 4.000 caracteres; YouTube, a 5.000
-FRECUENCIA = {"todos": "Cada día", "menos sabado": "De domingo a viernes", "sabado": "Cada sábado", "domingo": "Cada domingo", "a veces": "De vez en cuando"}
+FRECUENCIA = {"todos": "Cada día", "menos sabado": "De domingo a viernes", "viernes": "Cada viernes", "sabado": "Cada sábado", "domingo": "Cada domingo", "a veces": "De vez en cuando"}
 
 ESTILO = """
 @font-face{font-family:"Inter Tight";font-style:normal;font-weight:100 900;font-display:swap;

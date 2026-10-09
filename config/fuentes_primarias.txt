@@ -42,6 +42,20 @@ wto.org
 iea.org
 ecb.europa.eu
 federalreserve.gov
+# Balance largo (viernes): organismos que miden series de salud, desarrollo, energía y clima
+unicef.org
+unaids.org
+undp.org
+unhcr.org
+unodc.org
+unesco.org
+fao.org
+wfp.org
+irena.org
+ipcc.ch
+copernicus.eu
+airef.es
+healthdata.org
 # Universidades, papers y datos de investigación
 *.edu
 *.ac.uk
@@ -54,6 +68,15 @@ cepr.org
 nature.com
 science.org
 pnas.org
+thelancet.com
+nejm.org
+bmj.com
+jamanetwork.com
+plos.org
+cochranelibrary.com
+campbellcollaboration.org
+povertyactionlab.org
+poverty-action.org
 openreview.net
 aclanthology.org
 proceedings.mlr.press

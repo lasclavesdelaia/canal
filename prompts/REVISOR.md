@@ -51,3 +51,11 @@ Una lista numerada. Cada punto: la frase exacta del guion (entre comillas), qué
 concreto (el texto nuevo o el dato con su URL). Al final, una línea: «Fuentes originales que faltan: …» con las
 URL que hay que leer y añadir. Si algo está bien, no lo digas: solo cambios. Sé duro: lo normal es encontrar
 entre 5 y 20 cosas en un parte.
+
+## Si el guion es un Balance largo (viernes)
+
+Lee también `prompts/balance.md` y comprueba, además de lo anterior: que la mejora pasa sus cinco criterios (gancho de
+las últimas semanas, diez años o más, comparador, causa, alcance y sombra); que la serie se abrió en el organismo
+que la mide; que la persona tiene trayectoria en varias fuentes independientes y que el guion dice un coste y un
+límite concretos; que no hay lenguaje de celebración, remate sentimental ni imperativos; y que el cierre es una
+acción concreta, proporcionada y verificable, o dice con claridad que la acción eficaz no está al alcance individual.

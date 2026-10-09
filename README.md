@@ -1,8 +1,9 @@
 # Las claves de la IA
 
-Pódcast hecho por completo con IA. Tiene tres programas fijos y uno ocasional:
+Pódcast hecho por completo con IA. Tiene cuatro programas fijos y uno ocasional:
 
-- **Parte diario IA:** a diario.
+- **Parte diario IA:** de domingo a viernes.
+- **Balance largo:** los viernes, una mejora medida a diez años o más y una persona de trayectoria documentada.
 - **Claves semanales IA:** los sábados.
 - **Claves mundo:** los domingos.
 - **Especiales:** de vez en cuando, un tema a fondo (no sale en la web hasta el primero).

@@ -53,12 +53,12 @@ SEGUN_MIN = 4
 # Bombardeo de datos (Cristian, 9 oct 2026): expresiones numéricas por cada mil palabras, y medios nombrados en voz alta
 # (lo que anuncia una empresa se atribuye a la empresa; el medio solo si el dato es suyo).
 CIFRAS = r"\b(mil|millones?|billones?|por ciento|coma|veces|\d+(?:[.,]\d+)?)\b"
-CIFRAS_POR_MIL = {"parte": 12, "claves": 12, "mundo": 18, "especial": 14}
+CIFRAS_POR_MIL = {"parte": 12, "balance": 14, "claves": 12, "mundo": 18, "especial": 14}
 MEDIOS = (r"\b(techcrunch|the verge|wired|ars technica|venturebeat|the information|business insider|yahoo finance|axios|"
           r"bloomberg|reuters|financial times|c\.?n\.?b\.?c\.?|business standard|semafor|the next web|engadget|zdnet)\b")
 MEDIOS_POR_MIL = 1
 MEDIOS_MIN = 2
-COLETILLAS_MAX = {"parte": 1, "claves": 2, "mundo": 2, "especial": 2}
+COLETILLAS_MAX = {"parte": 1, "balance": 2, "claves": 2, "mundo": 2, "especial": 2}
 # Fórmulas de molde que se repetían de un episodio a otro (PAUTA_COMUN §4b). Ninguna.
 MOLDE = [
     r"\bhasta aquí\b", r"\by ahora, en corto\b", r"\bvamos con lo (segundo|tercero|cuarto)\b",
@@ -100,6 +100,18 @@ def _es_foro(url):
     host = (urlparse(url).hostname or "").lower().removeprefix("www.")
     return any(host == f or host.endswith("." + f) for f in FOROS)
 
+
+# Solo el Balance largo de los viernes (prompts/balance.md): ni lenguaje de celebración ni imperativos de cierre
+# ni consuelo genérico: el cierre es una acción concreta, sin imperativos ni moralina.
+BALANCE_PROHIBIDO = [
+    r"buenas noticias", r"\bmilagro", r"\bpor fin\b", r"\bh[eé]roes?\b", r"\bhero[ií]nas?\b",
+    r"\b(una|gran|la) victoria (sobre|contra|de la)\b",
+    r"t[uú] tambi[eé]n puedes", r"usted tambi[eé]n puede", r"no (te|se) quede[s]? de brazos cruzados",
+    r"motivos? (para|de) (el )?(optimismo|esperanza)",
+]
+# Imperativos al arrancar frase («Dona», «Piense»): en medio de una frase, «ayuda» o «piensa» son otra cosa.
+BALANCE_IMPERATIVOS = (r"(^|[.:?»]\s+|\n)(haz|haga|act[uú]a|act[uú]e|dona|done|ayuda|ayude|piensa|piense|recuerda|"
+                       r"recuerde|imagina|imagine|no (te|se) quede[s]?)\b")
 
 # Solo avisan.
 VIGILAR = [r"\bincre[ií]ble", r"\bhist[oó]ric[oa]", r"\brevoluci[oó]n", r"\batenci[oó]n[,:]", r"\bimpactante"]
@@ -206,6 +218,15 @@ def validar(nombre, texto, cfg=None):
         errores.append("fórmulas de molde que se repiten cada día (PAUTA_COMUN §4b): "
                        + "; ".join(f"«{c}»" for c in molde)
                        + ". Di esa transición, arranque o cierre con palabras propias de hoy")
+    if ep.programa == "balance":
+        for patron in BALANCE_PROHIBIDO:
+            if re.search(patron, todo):
+                errores.append(f"en el Balance largo no va «{patron}» (prompts/balance.md: sin lenguaje de "
+                               "celebración, sin consuelo genérico ni «buenas noticias»)")
+        imperativos = re.findall(BALANCE_IMPERATIVOS, ep.cuerpo.lower())
+        if imperativos:
+            errores.append(f"{len(imperativos)} imperativo(s) al empezar frase (prompts/balance.md, «El cierre»): "
+                           "se cuenta la acción como un hecho, sin dar órdenes al oyente")
     for patron in VIGILAR:
         n = len(re.findall(patron, todo))
         if n:

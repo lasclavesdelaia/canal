@@ -20,6 +20,8 @@ en un commit nuevo. No escribas otro episodio. Si al mirarlo ya valida (otra eje
 1. **La fecha de hoy, en Madrid:** `TZ=Europe/Madrid date +%F` y el día de la semana.
 2. **Qué toca hoy:**
    - **`parte`**, de domingo a viernes (el sábado no hay parte);
+   - **`balance`**, si es viernes, además del parte (`prompts/balance.md`: una mejora medida y una persona; no cuenta
+     noticias del día y, si falta el del viernes anterior, no crece);
    - **`claves`**, si es sábado: incluye las noticias del día, que ese día no tienen parte (`prompts/claves.md`);
    - **`mundo`**, si es domingo, además del parte.
 3. **Mira si ya está hecho.** Ejecuta `git fetch origin '+refs/heads/claude/*:refs/remotes/origin/claude/*'` y busca
@@ -30,26 +32,32 @@ en un commit nuevo. No escribas otro episodio. Si al mirarlo ya valida (otra eje
    `tarjetas/*-parte.md`; el `claves` de un sábado cuenta como parte de ese día) y el último de cada semanal.
    - Si el último parte es de antes de ayer o más atrás, el parte de hoy cubre desde el día siguiente a ese parte
      (`prompts/parte.md`, «Si hubo días sin parte»).
-   - Si hoy toca un semanal y falta el de la semana anterior, el de hoy crece un 20-30 %.
+   - Si hoy toca un semanal y falta el de la semana anterior, el de hoy crece un 20-30 %; el `balance` no crece (no
+     tiene semana que recuperar).
    - Nunca se hacen episodios atrasados ni dos del mismo programa en un día.
 5. **Lee las instrucciones**, enteras:
    - `prompts/PAUTA_COMUN.md`;
-   - el fichero de cada programa que toque (`prompts/parte.md`, `claves.md`, `mundo.md`);
+   - el fichero de cada programa que toque (`prompts/parte.md`, `balance.md`, `claves.md`, `mundo.md`);
    - `config/fuentes.md`;
    - `prompts/CRITERIO.md` (erratas pendientes y criterio del programa; pauta, apartado 11).
 6. **Lee la memoria: solo las tarjetas** (`tarjetas/`, en las ramas `claude/`; con `git show rama:ruta`), nunca los
    guiones viejos:
    - para el parte, las de los últimos 7 partes;
+   - para `balance`, las de los últimos 6 viernes (`tarjetas/*-balance.md`; los viernes cuentan además sus líneas
+     «Seguimiento») y, solo para no repetir tema, las de los partes de esta semana;
    - para `claves`, las de los últimos 6 sábados más las de los partes de esta semana;
    - para `mundo`, las de los últimos 6 domingos más las de los partes y el semanal de IA de esta semana.
    Apunta sus cabos sueltos pendientes (pauta, §10): forman parte de lo que investigas hoy.
    Si aún no hay tarjetas, sigue sin ellas.
 7. **Investiga** en las fuentes de la lista:
    - empieza por los RSS y las API, que son más baratos;
-   - abre los artículos solo cuando haga falta.
+   - abre los artículos solo cuando haga falta;
+   - para `balance`, la búsqueda parte de series y evaluaciones, no de noticias (`prompts/balance.md`, «Fuentes»):
+     las series y los informes se abren en el organismo que los publica.
 8. **Escribe** el guion con el formato exacto del apartado 7 de la pauta y haz el repaso del apartado 8.
 9. **Escribe la tarjeta** de cada episodio: `tarjetas/AAAA-MM-DD-<programa>.md`, con el formato del apartado 10 de la
-   pauta (de 120 a 260 palabras), con sus cabos sueltos. Es pública, como el guion: solo contenido.
+   pauta (de 120 a 260 palabras; la del `balance` lleva además las líneas que dice su pauta), con sus cabos sueltos. Es
+   pública, como el guion: solo contenido.
 9b. **Revisión del editor, obligatoria.** Lanza un subagente (herramienta Agent) que NO haya escrito el guion, con
     este encargo: «Sigue prompts/REVISOR.md con el guion episodios/AAAA-MM-DD-<programa>.md». Lánzalo en PRIMER
     PLANO (sin segundo plano) y espera su respuesta: nunca termines tu turno con el revisor pendiente, porque la
@@ -70,8 +78,8 @@ en un commit nuevo. No escribas otro episodio. Si al mirarlo ya valida (otra eje
 
 ## Si no da tiempo
 
-Entre semana, la prioridad es el **parte**, aunque sea corto. El sábado solo hay `claves`. El domingo, primero el
-parte y después `mundo`.
+Entre semana, la prioridad es el **parte**, aunque sea corto. El viernes, primero el parte y después `balance`. El
+sábado solo hay `claves`. El domingo, primero el parte y después `mundo`.
 
 ## Seguridad
 

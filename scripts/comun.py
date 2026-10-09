@@ -5,10 +5,10 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-PROGRAMAS = ("parte", "claves", "mundo", "especial")
+PROGRAMAS = ("parte", "balance", "claves", "mundo", "especial")
 # `AAAA-MM-DD-<programa>.md`; los especiales llevan además su nombre corto: `AAAA-MM-DD-especial-<slug>.md`
 # (slug en minúsculas, cifras y guiones; lo comprueba validar.py).
-NOMBRE_FICHERO = re.compile(r"^(\d{4}-\d{2}-\d{2})-(parte|claves|mundo|especial)(?:-([a-z0-9]+(?:-[a-z0-9]+)*))?\.md$")
+NOMBRE_FICHERO = re.compile(r"^(\d{4}-\d{2}-\d{2})-(parte|balance|claves|mundo|especial)(?:-([a-z0-9]+(?:-[a-z0-9]+)*))?\.md$")
 SLUG_MAX = 60
 
 

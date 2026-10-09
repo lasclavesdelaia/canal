@@ -26,6 +26,7 @@ PESOS = {"Regular": 0, "Bold": 1, "Medium": 10, "CondensedBold": 4, "CondensedBl
 
 PAPEL, TINTA, GRIS = (233, 228, 218), (17, 17, 17), (176, 172, 164)
 ROJO, AMARILLO, AZUL = (215, 38, 30), (242, 205, 46), (44, 84, 166)
+VERDE = (46, 122, 86)
 AVISO = "Hecho por IA · puede contener errores"
 
 SERIES = {
@@ -36,6 +37,10 @@ SERIES = {
     "mundo": {"n": "03", "titulo": "Claves", "sub": "mundo", "dia": "Cada domingo", "color": AZUL,
               "lema": "Economía y geopolítica con datos"},
 }
+
+# Balance largo (viernes): serie de barras que sube con un comparador plano (nombre: «Balance largo»).
+SERIES["balance"] = {"n": "05", "titulo": "Balance", "sub": "largo", "dia": "Cada viernes", "color": VERDE, "tinta": TINTA,
+                     "lema": "Una mejora medida y una persona"}
 
 # Especiales: propuestas para que Cristian elija (8 oct 2026). Eligió «negro-lupa» (SERIES["especial"], al final).
 # Claves opcionales de una serie: «tinta» (título y aviso), «barra» y «barra_texto» (franja de arriba),
@@ -150,6 +155,15 @@ def motivo(d, clave, s, fondo, ser=None):
             x += w + hueco
         d.rectangle((56 * s, 470 * s, 1000 * s, 540 * s), fill=fondo)
         texto(d, 56 * s, 525 * s, "EXPEDIENTE SEMANAL", fuente(30 * s), TINTA, .1)
+    elif clave == "balance":  # serie larga de barras que sube, con la línea plana del comparador
+        base = 520 * s
+        alturas = (70, 85, 80, 110, 130, 125, 170, 200, 215, 260, 300, 345)
+        x = 56
+        for i, h in enumerate(alturas):
+            d.rectangle((x * s, base - h * s, (x + 54) * s, base), fill=TINTA)
+            x += 78
+        d.line((56 * s, base - 95 * s, 990 * s, base - 95 * s), fill=ROJO, width=round(8 * s))
+        d.rectangle((56 * s, base + 6 * s, 990 * s, base + 14 * s), fill=TINTA)
     else:  # diana sobre un globo de puntos
         cx, cy, r = 660 * s, 320 * s, 215 * s
         trama(d, (cx - r, cy - r, cx + r, cy + r), 14 * s, 3.4 * s, TINTA,
