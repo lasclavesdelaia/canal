@@ -1,0 +1,70 @@
+# Guarda cada día los titulares de portada de cinco periódicos (proyecto «Vida media de las noticias»).
+# Solo titular, URL, medio, fecha y sección; nunca el cuerpo. Ver scripts/titulares.py y scripts/vida_media.py.
+# Es independiente de publicar.yml: grupo de concurrencia propio y solo toca datos/. Un push suyo a main no
+# dispara publicar.yml (sus `paths` no incluyen datos/ y los pushes con GITHUB_TOKEN no lanzan workflows).
+# Si main exigiera pull request o firma y el push fallase, sube a la rama `datos-titulares` y avisa con un aviso
+# amarillo; la ejecución siguiente parte de esa rama, así que no se pierde ningún día. Habría que fusionarla a
+# mano (o quitar la regla para github-actions[bot]).
+name: Titulares
+
+on:
+  schedule:
+    # 07:00 de Madrid: 05:00 UTC en verano (CEST) y 06:00 UTC en invierno (CET). Se programan las dos y el
+    # primer paso deja pasar solo la que cae a las 07-08 en Madrid. GitHub puede retrasar el cron unos minutos.
+    - cron: "0 5 * * *"
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: titulares
+  cancel-in-progress: false
+
+jobs:
+  titulares:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # solo para subir datos/
+    steps:
+      - name: Comprobar la hora
+        id: hora
+        run: |
+          hora=$(TZ=Europe/Madrid date +%H)
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$hora" = "07" ]; then
+            echo "toca=si" >> "$GITHUB_OUTPUT"
+          else
+            echo "toca=no" >> "$GITHUB_OUTPUT"; echo "Son las $hora en Madrid: lo hará el otro cron."
+          fi
+      - uses: actions/checkout@v4
+        if: steps.hora.outputs.toca == 'si'
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Partir de datos-titulares si hay días sin fusionar
+        # Esa rama solo existe si alguna vez main rechazó el push (ver el último paso).
+        if: steps.hora.outputs.toca == 'si'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git fetch origin datos-titulares; then
+            git checkout -B trabajo origin/datos-titulares
+            git merge --no-edit origin/main
+          fi
+      - name: Descargar titulares
+        if: steps.hora.outputs.toca == 'si'
+        run: python3 scripts/titulares.py
+      - name: Recalcular la vida media
+        if: steps.hora.outputs.toca == 'si'
+        # Si falla no debe perder el día de datos.
+        run: python3 scripts/vida_media.py || echo "::warning::vida_media.py falló; los titulares de hoy se guardan igualmente."
+      - name: Guardar en el repositorio
+        if: steps.hora.outputs.toca == 'si'
+        run: |
+          git add datos/titulares datos/vida_media.json
+          if git diff --cached --quiet; then echo "Nada nuevo que guardar."; exit 0; fi
+          git commit -m "Titulares del $(TZ=Europe/Madrid date +%F)"
+          for intento in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          echo "::warning::No pude subir a main (¿regla de rama?). Subo a la rama datos-titulares."
+          git push origin HEAD:refs/heads/datos-titulares
