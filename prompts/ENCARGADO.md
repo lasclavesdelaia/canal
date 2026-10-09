@@ -14,7 +14,7 @@ Este es el prompt de la rutina de los domingos. Corre a las 18:07, hora de Madri
   1. tu informe, `revisiones/AAAA-MM-DD.md`, en la rama `claude/revision-AAAA-MM-DD`;
   2. si falta un episodio **diario** de la semana, ese episodio, `episodios/AAAA-MM-DD-parte.md`, en su rama
      `claude/episodios-AAAA-MM-DD`.
-- No usas claves ni cuentas, salvo `AA_API_KEY` tal como dice `config/fuentes.md`. No visitas sitios fuera de la
+- No usas claves ni cuentas, salvo la API de Artificial Analysis tal como dice `config/fuentes.md` (su clave la pone el proxy). No visitas sitios fuera de la
   lista de fuentes, salvo GitHub para leer las Releases y los runs de este repositorio.
 
 ## 1. Qué semana revisas

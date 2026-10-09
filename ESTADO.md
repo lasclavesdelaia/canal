@@ -967,3 +967,7 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Clave de AA: la de GitHub (entorno «publicar») no la ve la rutina, que corre en la nube de Claude. Cristian crea
   otra y la pega en el entorno claves-ia como AA_API_KEY. Navegador de la app abierto en artificialanalysis.ai.
 - Ojo cuota: Opus gasta más que Sonnet; las tareas de cuota del 10-18 oct medirán ya con Opus.
+- Hecho (9 oct): la clave de AA va como SECRETO DE RED del entorno claves-ia (host artificialanalysis.ai, cabecera
+  x-api-key sin prefijo; lo pone Cristian), no como variable: el proxy de Anthropic la añade fuera de la VM y la
+  rutina no la ve. fuentes.md, PAUTA §0 y ENCARGADO dicen ya que se llama a la API SIN cabecera. Red: «Completo».
+  Comprobar el 10 oct en el registro de la rutina que la API da 200.

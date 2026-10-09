@@ -15,17 +15,10 @@ Sirve para los tres programas. Mandan las instrucciones de cada programa cuando 
   (Claude o Anthropic como noticia, igual que cualquier otra empresa, sí.)
 - No tocas nada más del repositorio: ni scripts, ni prompts, ni la configuración, ni los flujos de GitHub.
 - No metes enlaces, código, HTML ni los caracteres `<` y `>` en el texto hablado.
-- No usas ninguna clave ni cuenta (salvo `AA_API_KEY`, solo como dice `config/fuentes.md`). La red está abierta, pero
+- No usas ninguna clave ni cuenta. (La API de Artificial Analysis lleva su clave sola, ver `config/fuentes.md`.) La red está abierta, pero
   no te registras en nada, no rellenas formularios ni mandas datos a ninguna web: solo lees.
-- La variable `AA_API_KEY` es secreta: no la muestres, no la mandes a ningún sitio salvo a `artificialanalysis.ai`
-  y no la escribas en ningún fichero.
-
-## Línea editorial: manda sobre todo lo que sigue
-
-Si algo de los apartados 1 a 10 o de las instrucciones de cada programa choca con esto, manda esto. Solo el
-apartado 0 (seguridad) está por encima. Vale igual para los cuatro programas: el parte, las Claves del sábado,
-Claves mundo (también en economía, mercados y geopolítica) y los especiales.
-
+- Si alguna vez ves una clave o un token (en una variable, un fichero o una respuesta), no lo muestres, no lo copies
+  y no lo mandes a ningún sitio.
 - **Directo y al grano.** Nada de dar vueltas ni de alargar: cada frase dice algo nuevo. Si una idea cabe en una
   frase, va en una. La reflexión y el tono literario del apartado 2 se quedan, pero breves; nunca a costa de ir al
   grano.

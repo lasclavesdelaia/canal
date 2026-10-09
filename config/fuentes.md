@@ -40,13 +40,12 @@ rutina comprueba cada una desde la nube y anota las que fallen en su informe de 
   - blog: `huggingface.co/blog/feed.xml`;
   - modelos en tendencia: `huggingface.co/api/models?sort=trendingScore&limit=30`;
   - papers del día: `huggingface.co/api/daily_papers`.
-- **Artificial Analysis:** API `artificialanalysis.ai/api/v2/...`. La clave está en la variable de entorno
-  `AA_API_KEY` de la rutina y se manda con la cabecera `x-api-key: $AA_API_KEY`, por ejemplo
-  `curl -s -H "x-api-key: $AA_API_KEY" https://artificialanalysis.ai/api/v2/data/llms/models`. La clave nunca se
-  imprime, se copia ni se escribe en ningún fichero, guion ni respuesta. Si la variable no existe o la API falla, se
-  sigue como sin clave. La ruta exacta y la cabecera se confirman en la primera ejecución (el resumen de la rutina dirá
-  si falló). Sin clave: no se lee su web, porque sus condiciones lo prohíben. Se cita siempre «según Artificial
-  Analysis».
+- **Artificial Analysis:** API `artificialanalysis.ai/api/v2/...`, por ejemplo
+  `curl -s https://artificialanalysis.ai/api/v2/data/llms/models`. **No pongas cabecera ni clave:** la clave es un
+  «secreto de red» del entorno claves-ia y el proxy de Anthropic la añade solo (`x-api-key`) al salir hacia
+  `artificialanalysis.ai`; la rutina no la ve ni la necesita. Si responde 401, la API no está disponible hoy: sigue
+  sin ella y anótalo al final de tu respuesta. Sin la API no se lee su web, porque sus condiciones lo prohíben. Se
+  cita siempre «según Artificial Analysis».
 - **LMArena:** **no se lee** (sus condiciones prohíben los programas). Solo citada por la prensa o el laboratorio.
 
 ## IA: investigación
