@@ -12,10 +12,14 @@ en un commit nuevo. No escribas otro episodio. Si al mirarlo ya valida (otra eje
 
 ## Pasos
 
-0. **Pausa.** Lee `config/pausa.json`. Si `hasta` no es `null` y la fecha de hoy en Madrid
-   (`TZ=Europe/Madrid date +%F`) es menor o igual que `hasta`, no redactes, publiques ni commitees nada (tampoco si
-   te ha llamado el validador) y termina diciendo «En pausa hasta AAAA-MM-DD». Si esa fecha ya pasó, sigue con
-   normalidad; no hace falta tocar el fichero. Al volver, el paso 4 trata esos días como días sin parte.
+0. **Pausa.** Lee `config/pausa.json` y la fecha de hoy en Madrid (`TZ=Europe/Madrid date +%F`).
+   - Si `hasta` no es `null` y hoy es menor o igual, el canal entero está en pausa: no redactes, publiques ni
+     commitees nada (tampoco si te ha llamado el validador) y termina diciendo «En pausa hasta AAAA-MM-DD».
+   - Si el programa que toca hoy (paso 2) aparece en `por_programa` con un `hasta` mayor o igual que hoy, ese
+     programa no se escribe; si hoy toca otro además, sigue solo con ese. Si no queda ninguno, termina diciendo
+     «<programa> en pausa hasta AAAA-MM-DD».
+   - Las fechas pasadas no cuentan; no hace falta tocar el fichero. Al volver, el paso 4 trata esos días como días
+     sin parte.
 
 1. **La fecha de hoy, en Madrid:** `TZ=Europe/Madrid date +%F` y el día de la semana.
 2. **Qué toca hoy:**

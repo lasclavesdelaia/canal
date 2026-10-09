@@ -7,7 +7,8 @@ Este es el prompt de la rutina de los domingos. Corre a las 18:07, hora de Madri
 
 Lee `config/pausa.json`. Si `hasta` no es `null` y la fecha de hoy en Madrid (`TZ=Europe/Madrid date +%F`) es menor
 o igual que `hasta`, no redactes, publiques ni commitees nada: ni informe ni episodios atrasados. Termina diciendo
-«En pausa hasta AAAA-MM-DD». Si esa fecha ya pasó, sigue con normalidad.
+«En pausa hasta AAAA-MM-DD». Si esa fecha ya pasó, sigue con normalidad. Un programa en pausa en `por_programa`
+no cuenta como episodio que falta ni se revisa por su ausencia.
 
 ## Paso 0b. Juicio de vida media (proyecto «Vida media de las noticias»)
 

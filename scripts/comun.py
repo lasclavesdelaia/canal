@@ -27,13 +27,21 @@ def config():
     return json.loads((RAIZ / "config" / "programas.json").read_text(encoding="utf-8"))
 
 
-def pausa_hasta():
-    """Fecha AAAA-MM-DD (inclusive) hasta la que el canal está en pausa, o None. Lee config/pausa.json."""
+def pausa_hasta(programa=None):
+    """Fecha AAAA-MM-DD (inclusive) hasta la que el canal, o ese programa, está en pausa; o None.
+
+    Lee config/pausa.json: `hasta` pausa todos los programas; `por_programa` pausa solo los que nombra. Si hay
+    las dos, manda la fecha más tardía.
+    """
     try:
-        hasta = json.loads((RAIZ / "config" / "pausa.json").read_text(encoding="utf-8")).get("hasta")
+        datos = json.loads((RAIZ / "config" / "pausa.json").read_text(encoding="utf-8"))
+        fechas = [datos.get("hasta")]
+        if programa:
+            fechas.append((datos.get("por_programa") or {}).get(programa, {}).get("hasta"))
     except (OSError, ValueError, AttributeError):
         return None
-    return hasta or None
+    fechas = [f for f in fechas if f]
+    return max(fechas) if fechas else None
 
 
 @dataclass

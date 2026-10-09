@@ -350,6 +350,11 @@ def main():
     for nombre, (texto, rama, hora) in sorted(({} if en_pausa else episodios_en_ramas()).items()):
         clave = nombre[:-3]
         fecha = nombre[:10]
+        partes = partes_nombre(nombre)
+        pausa_prog = pausa_hasta(partes[1]) if partes else None
+        if pausa_prog and hoy.isoformat() <= pausa_prog:
+            print(f"{nombre}: {partes[1]} en pausa hasta {pausa_prog}; no se publica.")
+            continue
         if clave in hechos or fecha < args.desde or fecha > (hoy + datetime.timedelta(days=1)).isoformat():
             continue
         ep, errores, avisos = validar(nombre, texto, cfg)
