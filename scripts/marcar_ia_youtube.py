@@ -159,6 +159,7 @@ def ejecutar(yt, simular=False, salida=print):
         elif simular:
             marcados += 1
             salida(f"  [simulación] marcaría «Uso de IA»: {etiqueta}")
+            salida(f"      status que da YouTube: {json.dumps(st, ensure_ascii=False, sort_keys=True)}")
         else:
             marcar(yt, v)
             marcados += 1
