@@ -162,6 +162,27 @@ class VidaMedia(unittest.TestCase):
             self.assertEqual(m, vida_media.muestra(ts, re_, 4, "2026-10-05"))  # determinista
 
 
+class PaginaVidaMedia(unittest.TestCase):
+    def test_pagina_con_datos(self):
+        import comun
+        import sitio
+        r = {"n": 40, "fiable": True, "persistencia": {"7": 0.5, "14": 0.3, "30": 0.1}, "vida_media_dias": 6.5}
+        datos = {"referencia": "2026-11-20", "desde": "2026-10-09", "global": r, "por_medio": {"BBC": r},
+                 "por_tema": {"politica": r}, "curva_global": [1 - d / 40 for d in range(31)],
+                 "curva_por_tema": {"politica": [1 - d / 30 for d in range(31)]}}
+        html = sitio.pagina_vida_media(datos, comun.config())
+        self.assertIn("<svg", html)
+        self.assertIn("politica", html)
+        self.assertIn("50 %", html)
+
+    def test_sin_datos_no_hay_pagina(self):
+        import sitio
+        antes = sitio._leer_vida_media()
+        datos = json.loads((RAIZ / "datos" / "vida_media.json").read_text(encoding="utf-8"))
+        if not datos["titulares_elegibles"]:
+            self.assertIsNone(antes)
+
+
 def juicio(**kw):
     base = {"titular": "T", "url": "https://x/1", "medio": "BBC", "visto": "2026-09-05",
             "veredicto": "ruido", "tipo": "declaración", "porque": "No cambió nada."}

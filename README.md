@@ -51,6 +51,16 @@ Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian).
    deja un informe en `revisiones/AAAA-MM-DD.md`, en una rama `claude/revision-…`. Solo propone; no toca `main`. La
    web no publica las revisiones. Para aplicar una propuesta, dile a una sesión «aplica la revisión del AAAA-MM-DD».
 
+6. **Vida media de las noticias** (`.github/workflows/titulares.yml`, cada día hacia las 07:00 de Madrid, independiente de
+   `publicar.yml`): `scripts/titulares.py` guarda en `datos/titulares/AAAA-MM-DD.json` los titulares de portada (RSS) de El
+   País, El Mundo, La Vanguardia, elDiario.es y BBC; solo titular, URL, medio, fecha y sección, sin duplicados entre
+   días (lo que reaparece va a «reaparecen»). `scripts/vida_media.py` mide sin modelo, para los titulares de hace 30+
+   días, si su tema sigue apareciendo a los 7, 14 y 30 días, y escribe `datos/vida_media.json`. Los domingos el
+   encargado juzga una muestra de ~40 (paso 0b de `prompts/ENCARGADO.md`) y la guarda en `datos/juicios/`
+   (`scripts/juicios.py` valida y resume); con 8 semanas de juicios propone entradas C-NNN de criterio. El bot sube
+   `datos/` a `main`; si una regla de rama se lo impide, a la rama `datos-titulares` (la siguiente ejecución parte de
+   ella). Con datos, la web publica `/vida-media/` (sin enlace en el menú).
+
 ## Informes y especiales (desde el Mac de Cristian)
 
 1. **`/informe <tema>`**: informe privado. Lee lo tuyo y la web; deja `AAAA-MM-DD Título.md` y su `.m4a` (voz del
