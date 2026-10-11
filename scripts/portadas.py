@@ -27,6 +27,7 @@ PESOS = {"Regular": 0, "Bold": 1, "Medium": 10, "CondensedBold": 4, "CondensedBl
 PAPEL, TINTA, GRIS = (233, 228, 218), (17, 17, 17), (176, 172, 164)
 ROJO, AMARILLO, AZUL = (215, 38, 30), (242, 205, 46), (44, 84, 166)
 VERDE = (46, 122, 86)
+ROSA = (236, 118, 160)
 AVISO = "Hecho por IA · puede contener errores"
 
 SERIES = {
@@ -39,7 +40,7 @@ SERIES = {
 }
 
 # Claves progreso (viernes): serie de barras que sube con un comparador plano (nombre: «Claves progreso»).
-SERIES["progreso"] = {"n": "05", "titulo": "Claves", "sub": "progreso", "dia": "Cada viernes", "color": VERDE, "tinta": TINTA,
+SERIES["progreso"] = {"n": "05", "titulo": "Claves", "sub": "progreso", "dia": "Cada viernes", "color": ROSA, "tinta": TINTA,
                      "lema": "Una mejora medida y una persona"}
 
 # Especiales: propuestas para que Cristian elija (8 oct 2026). Eligió «negro-lupa» (SERIES["especial"], al final).
