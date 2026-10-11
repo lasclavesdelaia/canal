@@ -8,7 +8,7 @@
     "aviso": "Este programa lo investiga, lo escribe y lo locuta por completo una inteligencia artificial, sin revisión humana. Puede contener errores. Las fuentes de cada noticia están en la descripción.",
     "aviso_hablado": "Este programa lo hace por completo una inteligencia artificial y puede contener errores.",
     "aviso_feed": "Hecho por completo con inteligencia artificial, sin revisión humana. Puede contener errores.",
-    "descripcion": "Programas de audio sobre inteligencia artificial y sobre el mundo, con datos y con sus fuentes. Parte diario IA, de domingo a viernes; Claves progreso, los viernes, con una mejora medida a diez años o más y una persona de trayectoria documentada; Claves semanales IA, los sábados; Claves mundo, la economía y la geopolítica de la semana, los domingos; y, de vez en cuando, especiales a fondo.",
+    "descripcion": "Programas de audio sobre inteligencia artificial y sobre el mundo, con datos y con sus fuentes. Parte diario IA, de domingo a viernes; Claves progreso, los viernes, historias de lo que mejora gracias a personas concretas, con una reflexión de fondo; Claves semanales IA, los sábados; Claves mundo, la economía y la geopolítica de la semana, los domingos; y, de vez en cuando, especiales a fondo.",
     "youtube": "https://www.youtube.com/@LasclavesdelaIA",
     "audio_en_la_web_dias": 60,
     "apps": {
@@ -49,7 +49,7 @@
     "progreso": {
       "lista": "Claves progreso",
       "voz": "gemini",
-      "descripcion": "Cada viernes, una mejora duradera medida con series largas y una persona de trayectoria documentada, con sus costes y sus límites.",
+      "descripcion": "Cada viernes, historias reales de las últimas semanas en las que algo mejoró gracias a personas concretas, contadas con calma y con una reflexión de fondo sobre lo que dicen del ser humano.",
       "dias": "viernes",
       "palabras_min": 3000,
       "palabras_max": 6500,

@@ -535,8 +535,7 @@ Predicciones dadas: / Predicciones retomadas: (solo si las hay; formato en §12)
     Si hay novedad, la cuenta en corto («como contamos el martes, faltaba saber quién…»). Si no la hay, no lo dice
     en el guion: lo copia en su tarjeta con «revisar: sábado».
   - **Las Claves del sábado** recogen todos los cabos sueltos de la semana (`prompts/claves.md`).
-  - **Claves progreso** no mira cabos de la semana: su línea «Seguimiento» (`prompts/progreso.md`) alimenta el
-    minuto mensual del primer viernes de cada mes.
+  - **Claves progreso** no mira cabos de la semana: cuenta historias nuevas cada viernes (`prompts/progreso.md`).
   - **Claves mundo** revisa los suyos del domingo anterior igual que el parte.
   - Un cabo resuelto o cerrado el sábado ya no se copia.
 - `cubre` es el periodo que contó el episodio (para el parte, desde el día siguiente al parte anterior).

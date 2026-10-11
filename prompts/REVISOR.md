@@ -6,6 +6,11 @@ guion entero: señalas.
 
 Lee antes `prompts/PAUTA_COMUN.md` (línea editorial, §4b, §9) y el fichero del programa. Luego, el guion.
 
+**Si el guion es de Claves progreso** (viernes), manda `prompts/progreso.md`: historias cortas, literarias, con peso
+espiritual y SIN método ni fuentes en voz alta. No pidas añadir atribuciones, comparadores, cifras ni fondo técnico al
+audio (las fuentes van en «## Fuentes»); al contrario, señala todo lo que suene a informe y dónde falta hondura,
+calidez o una escena humana.
+
 ## Qué buscas (por orden de gravedad)
 
 0. **Título y descripción.** ¿Dicen lo nuevo concreto o venden como novedad algo que ya existía («X se hace

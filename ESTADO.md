@@ -1179,3 +1179,11 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   dos retiradas de Apple: los despliegues de GitHub Pages dejan un hueco breve en el que el feed o la portada no se
   sirven bien. Siguiente: (1) mirar el 12 oct si YouTube recogió el episodio de progreso solo; (2) que publicar.yml no
   despliegue Pages si _site no ha cambiado (comparar hash con lo publicado) y reducir despliegues.
+- Hecho (11 oct, noche; Cristian sobre el primer Claves progreso: «horrible, todo números, muy frío, cero
+  inspirador… deberían ser noticias cortas varias y bastantes, más literario y sobre todo con más peso espiritual…
+  odio que se citen así las fuentes y la verificación»): prompts/progreso.md REESCRITO: 6-10 historias recientes de lo
+  que mejora (3-4 más largas), literarias, con reflexión espiritual (tradiciones contemplativas, sin sermón ni
+  proselitismo), muy pocas cifras y fechas, NADA de método ni fuentes en voz alta (se comprueba entre bastidores).
+  validar.py: en progreso los años cuentan como cifras y el tope baja a 8/mil; PROGRESO_METODO rechaza método en voz
+  alta. RUTINA, REVISOR y PAUTA_COMUN §10 al día; descripciones de progreso en config/programas.json. El episodio del
+  11 oct NO se ha tocado (Cristian decide si se retira).
