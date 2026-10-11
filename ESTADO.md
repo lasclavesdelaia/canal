@@ -1158,3 +1158,8 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Pendiente de Cristian: dominios de Claves progreso en la Red Custom, lista de YouTube con progreso.xml,
   revisar las 8 predicciones sembradas (P-006/7/8 sin comprobar en vivo).
 - Siguiente: 8 nov, vida media en la web. Primer Claves progreso: viernes 16 oct.
+- 11 oct, noche: portada y miniatura de Claves progreso pasadas a rosa (ROSA = 236,118,160 en portadas.py), fb91fdf subido a main por Cristian (26bcbb6..fb91fdf), pruebas OK. Siguiente: `gh workflow run publicar.yml -R lasclavesdelaia/canal` y comprobar /miniaturas/progreso.jpg en la web.
+- 11 oct: intento de conectar Claves progreso (progreso.xml) a YouTube por RSS: YouTube lo rechaza («El feed RSS no es
+  válido. Debe contener al menos un episodio»). PENDIENTE: conectarlo en cuanto salga el primer episodio (viernes 16
+  oct, si no hay pausa): Studio › Crear › Nuevo pódcast › Enviar un feed RSS › progreso.xml › código al correo
+  (lo teclea Cristian) › subir desde ese viernes. Mismo flujo que los otros cuatro.
