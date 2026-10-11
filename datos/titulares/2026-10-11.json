@@ -1,0 +1,3143 @@
+{
+ "fecha": "2026-10-11",
+ "titulares": [
+  {
+   "titular": "Gabriel Rufián será candidato por Esquerra Republicana el 29-N",
+   "url": "https://elpais.com/espana/catalunya/2026-10-11/rufian-sera-candidato-por-esquerra-republicana-el-29-n.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "cataluña"
+  },
+  {
+   "titular": "Sánchez pide al Supremo que “frene el intento de atropello” de Feijóo y Abascal y permita votar a los descendientes del exilio",
+   "url": "https://elpais.com/espana/elecciones-generales/2026-10-11/sanchez-pide-al-supremo-que-frene-el-intento-de-atropello-de-feijoo-y-abascal-y-permita-votar-a-los-descendientes-del-exilio.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "elecciones generales"
+  },
+  {
+   "titular": "Cándido Conde-Pumpido: “Cuestionar al Tribunal Constitucional es cuestionar la democracia”",
+   "url": "https://elpais.com/espana/2026-10-11/candido-conde-pumpido-cuestionar-al-tribunal-constitucional-es-cuestionar-la-democracia.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "españa"
+  },
+  {
+   "titular": "Los titulares en vídeo de la entrevista a Cándido Conde-Pumpido",
+   "url": "https://elpais.com/videos/2026-10-11/los-titulares-en-video-de-la-entrevista-a-candido-conde-pumpido.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "españa"
+  },
+  {
+   "titular": "El movimiento de vivienda señala a los pequeños caseros: ¿son responsables del alza de los precios?",
+   "url": "https://elpais.com/economia/vivienda/2026-10-11/el-movimiento-de-vivienda-senala-a-los-pequenos-caseros-son-responsables-del-alza-de-los-precios.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "vivienda"
+  },
+  {
+   "titular": "¿Vivienda, inmigración o Gobierno? Qué preocupa más a los votantes de cada partido",
+   "url": "https://elpais.com/espana/elecciones-generales/2026-10-11/vivienda-inmigracion-o-gobierno-que-preocupa-mas-a-los-votantes-de-cada-partido.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "españa"
+  },
+  {
+   "titular": "Trump anuncia una tregua energética de carácter “inmediato” entre Rusia y Ucrania",
+   "url": "https://elpais.com/internacional/2026-10-11/zelenski-ofrece-a-putin-una-tregua-energetica-en-plena-escalada-verbal-con-trump.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "guerra de rusia en ucrania"
+  },
+  {
+   "titular": "Aitana Sánchez-Gijón: “Ya están aquí. Censurando, denunciando, ganando. Y nos lo estamos comiendo”",
+   "url": "https://elpais.com/eps/2026-10-11/aitana-sanchez-gijon-ya-estan-aqui-censurando-denunciando-ganando-y-nos-lo-estamos-comiendo.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "aitana sánchez gijón"
+  },
+  {
+   "titular": "La guerra entre ‘La revuelta’, ‘Cara al show’, ‘El hormiguero’, ‘El perro andaluz’… por dar con el invitado perfecto",
+   "url": "https://elpais.com/television/2026-10-11/la-guerra-entre-la-revuelta-cara-al-show-el-hormiguero-el-perro-andaluz-por-dar-con-el-invitado-perfecto.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "televisión"
+  },
+  {
+   "titular": "Javier Urra: “Hay niños más viejos que yo: les hemos robado la esperanza”",
+   "url": "https://elpais.com/sociedad/2026-10-11/javier-urra-hay-ninos-mas-viejos-que-yo-les-hemos-robado-la-esperanza.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "Un día de chicas para lobas y ‘minishakis’",
+   "url": "https://elpais.com/cultura/2026-10-11/un-dia-de-chicas-para-lobas-y-minishakis.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "Juan Carlos Ferrero: “Ojalá hubiera disfrutado más, he sido demasiado cuadriculado”",
+   "url": "https://elpais.com/deportes/tenis/2026-10-11/juan-carlos-ferrero-ojala-hubiera-disfrutado-mas-he-sido-demasiado-cuadriculado.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "juan carlos ferrero"
+  },
+  {
+   "titular": "Una ejecución en 18 segundos: una conversación telefónica fue la sentencia de muerte de Natalia",
+   "url": "https://elpais.com/espana/madrid/2026-10-11/una-ejecucion-en-18-segundos-una-conversacion-telefonica-fue-la-sentencia-de-muerte-de-natalia.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "comunidad de madrid"
+  },
+  {
+   "titular": "La era de la crueldad",
+   "url": "https://elpais.com/opinion/2026-10-11/la-era-de-la-crueldad.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "Esa cosa tan desprestigiada",
+   "url": "https://elpais.com/eps/2026-10-11/esa-cosa-tan-desprestigiada.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "Cuánta Falange hay en Vox",
+   "url": "https://elpais.com/opinion/2026-10-11/cuanta-falange-hay-en-vox.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "Que nos hablen como adultos",
+   "url": "https://elpais.com/opinion/2026-10-11/que-nos-hablen-como-adultos.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "La oleada de ataques hutíes contra aeropuertos de Arabia Saudí impulsa otra escalada que puede arrastrar a Trump",
+   "url": "https://elpais.com/internacional/2026-10-11/la-oleada-de-ataques-huties-contra-aeropuertos-de-arabia-saudi-impulsa-otra-escalada-que-puede-arrastrar-a-trump.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "ataque contra irán"
+  },
+  {
+   "titular": "El eurodiputado Raphaël Glucksmann gana las primarias socialistas en Francia",
+   "url": "https://elpais.com/internacional/2026-10-11/el-eurodiputado-raphael-glucksmann-gana-las-primarias-socialistas-en-francia.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "francia"
+  },
+  {
+   "titular": "El Papa anuncia que tiene un nódulo en un pulmón y va a ser operado",
+   "url": "https://elpais.com/internacional/2026-10-11/el-papa-anuncia-que-tiene-un-nodulo-en-un-pulmon-y-va-a-ser-operado.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "papa león xiv"
+  },
+  {
+   "titular": "El gran enfado salta a las urnas",
+   "url": "https://elpais.com/espana/elecciones-generales/2026-10-11/el-gran-enfado-salta-a-las-urnas.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "elecciones generales"
+  },
+  {
+   "titular": "Una madrugada de huidas y otro campamento desalojado en Ceuta",
+   "url": "https://elpais.com/espana/2026-10-11/la-policia-se-despliega-en-el-guano-para-desalojar-otro-asentamiento-de-inmigrantes-en-ceuta-48-horas-antes-de-la-visita-de-los-reyes.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "españa"
+  },
+  {
+   "titular": "Polonia investiga un supuesto plan para atentar contra Tusk y el ministro de Defensa",
+   "url": "https://elpais.com/internacional/2026-10-11/polonia-investiga-un-supuesto-plan-para-atentar-contra-tusk-y-el-ministro-de-defensa.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "guerra de rusia en ucrania"
+  },
+  {
+   "titular": "August Hanning, el espía alemán que se vendía al mejor postor",
+   "url": "https://elpais.com/internacional/2026-10-11/august-hanning-el-espia-aleman-que-se-vendia-al-mejor-postor.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "alemania"
+  },
+  {
+   "titular": "Las familias israelíes buscan descendencia en el esperma extraído de los cadáveres de sus hijos",
+   "url": "https://elpais.com/internacional/2026-10-11/las-familias-israelies-buscan-descendencia-en-el-esperma-extraido-de-los-cadaveres-de-sus-hijos.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "israel"
+  },
+  {
+   "titular": "En tiempos revueltos, el Mourinho más mourinhista e intervencionista con el equipo",
+   "url": "https://elpais.com/deportes/futbol/2026-10-11/en-tiempos-revueltos-el-mourinho-mas-mourinhista-e-intervencionista-con-el-equipo.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "laliga ea sports"
+  },
+  {
+   "titular": "“Si un alumno no entrena la capacidad de frustración, entre lo bueno y lo fácil elegirá lo fácil”",
+   "url": "https://elpais.com/sociedad/branded/pensemos-el-manana/2026-10-05/si-un-alumno-no-entrena-la-capacidad-de-frustracion-entre-lo-bueno-y-lo-facil-elegira-lo-facil.html",
+   "medio": "El País",
+   "fecha": "2026-10-05",
+   "seccion": "educación"
+  },
+  {
+   "titular": "Bezzecchi gana el GP de Indonesia, donde Martín y Márquez firman tablas en la batalla por el título",
+   "url": "https://elpais.com/deportes/motociclismo/2026-10-11/bezzecchi-gana-el-gp-de-indonesia-donde-martin-y-marquez-firman-tablas-en-la-batalla-por-el-titulo.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "mundial motociclismo"
+  },
+  {
+   "titular": "El cantante Jaime Anglada se prepara para su regreso a los escenarios: “Siento como si el accidente hubiera acelerado mi vejez”",
+   "url": "https://elpais.com/gente/2026-10-11/el-cantante-jaime-anglada-se-prepara-para-su-regreso-a-los-escenarios-siento-como-si-el-accidente-hubiera-acelerado-mi-vejez.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "gente"
+  },
+  {
+   "titular": "Médiums, horóscopo, tarot…, ¿cuánto tiene que ver el auge del misticismo pop con el individualismo neoliberal?",
+   "url": "https://elpais.com/smoda/2026-10-11/mediums-horoscopo-tarot-cuanto-tiene-que-ver-el-auge-del-misticismo-pop-con-el-individualismo-neoliberal.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "pseudociencia"
+  },
+  {
+   "titular": "De aquel Brad Pitt a Jacob Elordi: ¿puede volver la perilla?",
+   "url": "https://elpais.com/icon/2026-10-11/de-aquel-brad-pitt-a-jacob-elordi-puede-volver-la-perilla.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "estilo hombre"
+  },
+  {
+   "titular": "Sin espacio para los matices",
+   "url": "https://elpais.com/defensor-a-del-lector/2026-10-11/sin-espacio-para-los-matices.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "defensor del lector el país"
+  },
+  {
+   "titular": "Marco Rubio no está leyendo a Conrad",
+   "url": "https://elpais.com/opinion/2026-10-11/marco-rubio-no-esta-leyendo-a-conrad.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "El nuevo Consenso de Washington: simpatía por el diablo",
+   "url": "https://elpais.com/ideas/2026-10-11/el-nuevo-consenso-de-washington-simpatia-por-el-diablo.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "ultraderecha"
+  },
+  {
+   "titular": "Junts: interés, cálculo, moralidad",
+   "url": "https://elpais.com/opinion/2026-10-11/junts-interes-calculo-moralidad.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "Flavita Banana: no se mete en política",
+   "url": "https://elpais.com/opinion/2026-10-11/flavita-banana-no-se-mete-en-politica.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "Apocalipsis de andar por casa",
+   "url": "https://elpais.com/opinion/2026-10-11/apocalipsis-de-andar-por-casa.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "Cómo movilizar a un votante bombardeado y enfadado",
+   "url": "https://elpais.com/ideas/2026-10-11/como-movilizar-a-un-votante-bombardeado-y-enfadado.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "política"
+  },
+  {
+   "titular": "París en la Puerta del Sol",
+   "url": "https://elpais.com/opinion/2026-10-11/paris-en-la-puerta-del-sol.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "Kevin Bacon: “Sigo pensando al 100% en mejorar, trascender y hacer algo impactante”",
+   "url": "https://elpais.com/cultura/cine/2026-10-11/kevin-bacon-sigo-pensando-al-100-en-mejorar-trascender-y-hacer-algo-impactante.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "cine"
+  },
+  {
+   "titular": "A tortas por el dinero de los ricos: un negocio de 10.000 millones en comisiones que ningún banco se quiere perder",
+   "url": "https://elpais.com/economia/negocios/2026-10-10/a-tortas-por-el-dinero-de-los-ricos-un-negocio-de-10000-millones-en-comisiones-que-ningun-banco-se-quiere-perder.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "economía"
+  },
+  {
+   "titular": "Un conflicto nuclear y el uso malicioso de la inteligencia artificial se cuelan entre las amenazas para la salud mundial: “Sería un apocalipsis”",
+   "url": "https://elpais.com/salud-y-bienestar/2026-10-11/un-conflicto-nuclear-y-el-uso-malicioso-de-la-inteligencia-artificial-se-cuelan-entre-las-amenazas-para-la-salud-mundial-seria-un-apocalipsis.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "salud"
+  },
+  {
+   "titular": "“Que nos dejen, que se vayan”: líderes indígenas claman contra proyectos de conservación de la naturaleza que les expulsan de sus tierras",
+   "url": "https://elpais.com/planeta-futuro/2026-10-11/que-nos-dejen-que-se-vayan-lideres-indigenas-claman-contra-proyectos-de-conservacion-de-la-naturaleza-que-les-expulsan-de-sus-tierras.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "indígenas"
+  },
+  {
+   "titular": "Yotam Ottolenghi: “Mi vida transcurre alrededor de la comida. Supongo que soy una especie de verdura, porque paso la mayor parte del tiempo entre ellas”",
+   "url": "https://elpais.com/gastronomia/2026-10-11/yotam-ottolenghi-cocinero-mi-vida-transcurre-alrededor-de-la-comida-supongo-que-soy-una-especie-de-verdura-porque-paso-la-mayor-parte-del-tiempo-entre-ellas.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "gastronomía"
+  },
+  {
+   "titular": "Los Mossos buscan a los autores de un tiroteo que acaba con una mujer herida de bala en la cabeza en Figueres",
+   "url": "https://elpais.com/espana/catalunya/2026-10-11/los-mossos-buscan-a-los-autores-de-un-tiroteo-acaba-con-una-mujer-herida-de-bala-en-la-cabeza-en-figueres.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "cataluña"
+  },
+  {
+   "titular": "Josep Maria Castellet, mestre d’un temps, d’un país",
+   "url": "https://elpais.com/quadern/2026-10-11/josep-maria-castellet-mestre-dun-temps-dun-pais.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "josep maría castellet"
+  },
+  {
+   "titular": "El dilema de Puigdemont sobre su regreso: entre la expectativa de bombazo electoral y el temor al pinchazo",
+   "url": "https://elpais.com/espana/catalunya/2026-10-11/el-dilema-de-puigdemont-sobre-su-regreso-entre-la-expectativa-de-bombazo-electoral-y-el-temor-al-pinchazo.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "cataluña"
+  },
+  {
+   "titular": "Al menos 139 migrantes mueren, entre ellos 15 niños, en un naufragio entre Yibuti y Yemen",
+   "url": "https://elpais.com/internacional/2026-10-11/al-menos-139-migrantes-mueren-entre-ellos-15-ninos-en-un-naufragio-entre-yibuti-y-yemen.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "migración"
+  },
+  {
+   "titular": "Abdul El-Sayed, la apuesta más arriesgada de los demócratas para las elecciones: “Habrá que exigir responsabilidades a Trump por todo el mal que ha hecho”",
+   "url": "https://elpais.com/us/2026-10-11/abdul-el-sayed-la-apuesta-mas-arriesgada-de-los-democratas-para-las-elecciones-habra-que-exigir-responsabilidades-a-trump-por-todo-el-mal-que-ha-hecho.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "estados unidos"
+  },
+  {
+   "titular": "El Departamento de Justicia de EE UU investiga la cobertura de Trump de las cadenas de televisión",
+   "url": "https://elpais.com/internacional/2026-10-11/el-departamento-de-justicia-de-eeuu-investiga-la-cobertura-de-trump-de-las-cadenas-de-television.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "donald trump"
+  },
+  {
+   "titular": "Las imágenes de una nueva riada en Nepal",
+   "url": "https://elpais.com/videos/2026-10-11/las-imagenes-de-una-nueva-riada-en-nepal.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "riada nepal 2026"
+  },
+  {
+   "titular": "Bolsonaro logra el apoyo de tres perdedores y de varios partidos de derechas para la segunda vuelta",
+   "url": "https://elpais.com/america/2026-10-10/bolsonaro-logra-el-apoyo-de-los-perdedores-y-de-varios-partidos-de-derechas-para-la-segunda-vuelta.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "elecciones brasil"
+  },
+  {
+   "titular": "Máximo Quiles, el protegido de los Márquez, se proclama campeón de Moto3",
+   "url": "https://elpais.com/deportes/motociclismo/2026-10-11/maximo-quiles-el-protegido-de-los-marquez-se-proclama-campeon-de-moto3.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "motociclismo"
+  },
+  {
+   "titular": "Diomande alivia al Madrid ante el Villarreal",
+   "url": "https://elpais.com/deportes/futbol/2026-10-10/diomande-alivia-al-madrid-ante-el-villarreal.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "real madrid"
+  },
+  {
+   "titular": "Eugenio Chacarra, subcampeón en el Open de España, va tras los pasos de Seve y Jon Rahm",
+   "url": "https://elpais.com/deportes/2026-10-11/eugenio-chacarra-subcampeon-en-el-open-de-espana-va-tras-los-pasos-de-seve-y-jon-rahm.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "eugenio lópez-chacarra"
+  },
+  {
+   "titular": "Verstappen lidera la marcha por Singapur y Antonelli ya está a tiro de su primer Mundial",
+   "url": "https://elpais.com/deportes/formula-1/2026-10-11/verstappen-lidera-la-marcha-por-singapur-y-antonelli-ya-esta-a-tiro-de-su-primer-mundial.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "fórmula 1"
+  },
+  {
+   "titular": "El Barça muerde más que el Getafe",
+   "url": "https://elpais.com/deportes/futbol/2026-10-10/el-barca-muerde-mas-que-el-getafe.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "fc barcelona"
+  },
+  {
+   "titular": "Del colchón a la Bolsa: la nueva cuenta que aspira a movilizar ahorro por un billón de euros",
+   "url": "https://cincodias.elpais.com/mercados-financieros/2026-10-11/del-colchon-a-la-bolsa-la-nueva-cuenta-que-aspira-a-movilizar-ahorro-por-un-billon-de-euros.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "mercados financieros"
+  },
+  {
+   "titular": "El Sabadell, con escudo francés y sin prima de opa",
+   "url": "https://cincodias.elpais.com/mercados-financieros/2026-10-11/el-sabadell-con-escudo-frances-y-sin-prima-de-opa.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "mercados financieros"
+  },
+  {
+   "titular": "Natarajan Chandrasekaran, el corredor de fondo que lucha por seguir en la cima de Tata",
+   "url": "https://cincodias.elpais.com/opinion/2026-10-11/natarajan-chandrasekaran-el-corredor-de-fondo-que-lucha-por-seguir-en-la-cima-de-tata.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "La gran pugna por la IA",
+   "url": "https://elpais.com/economia/negocios/2026-10-11/la-gran-pugna-por-la-ia.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "economía"
+  },
+  {
+   "titular": "La trastienda de la industria que equipa a la hostelería",
+   "url": "https://elpais.com/economia/negocios/2026-10-11/la-trastienda-de-la-industria-que-equipa-a-la-hosteleria.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "economía"
+  },
+  {
+   "titular": "Manolo Millares, el artista del desgarro y la violencia",
+   "url": "https://elpais.com/cultura/2026-10-11/manolo-millares-el-artista-del-desgarro-y-la-violencia.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "Así es el tetrapanax, mucho más que una planta de hojas gigantes",
+   "url": "https://elpais.com/estilo-de-vida/2026-10-11/asi-es-el-tetrapanax-mucho-mas-que-una-planta-de-hojas-gigantes.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "estilo vida"
+  },
+  {
+   "titular": "Pasarles un trapo",
+   "url": "https://elpais.com/eps/2026-10-11/pasarles-un-trapo.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "metro"
+  },
+  {
+   "titular": "Una aventura por las joyas del Altiplano andino entre desiertos, salares, paisajes lunares y géiseres",
+   "url": "https://elpais.com/elviajero/2026-10-11/una-aventura-por-las-joyas-del-altiplano-andino-entre-desiertos-salares-paisajes-lunares-y-geiseres.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "viajes"
+  },
+  {
+   "titular": "El capitán Kirk no descarta un último viaje",
+   "url": "https://elpais.com/television/2026-10-11/el-capitan-kirk-no-descarta-un-ultimo-viaje.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "televisión"
+  },
+  {
+   "titular": "El pastel vasco: el postre casero con museo propio, día de fiesta y una cofradía",
+   "url": "https://elpais.com/gastronomia/2026-10-11/el-pastel-vasco-el-postre-casero-con-museo-propio-dia-de-fiesta-y-una-cofradia.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "dulces"
+  },
+  {
+   "titular": "Menú semanal de El Comidista (12 a 18 de octubre)",
+   "url": "https://elpais.com/gastronomia/el-comidista/2026-10-11/menu-semanal-de-el-comidista-12-a-18-de-octubre.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "gastronomía"
+  },
+  {
+   "titular": "Bally Bagayoko, alcalde de Saint-Denis: “Francia tiene que responder a los estudiantes con medidas concretas y no con la policía”",
+   "url": "https://elpais.com/internacional/2026-10-10/bally-bagayoko-alcalde-de-saint-denis-francia-tiene-que-responder-a-los-estudiantes-con-medidas-concretas-y-no-con-la-policia.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "francia"
+  },
+  {
+   "titular": "La travesía en el desierto de María Patiño: “Llegué a ser incapaz de encender la tele porque me hacía daño”",
+   "url": "https://elpais.com/gente/2026-10-10/la-travesia-en-el-desierto-de-maria-patino-llegue-a-ser-incapaz-de-encender-la-tele-porque-me-hacia-dano.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "presentadores televisión"
+  },
+  {
+   "titular": "Pippa York: “Las trans no somos el problema en el mundo femenino: nosotras no agredimos a otras mujeres”",
+   "url": "https://elpais.com/deportes/ciclismo/2026-10-09/pippa-york-las-trans-no-somos-el-problema-en-el-mundo-femenino-nosotras-no-agredimos-a-otras-mujeres.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "ciclismo"
+  },
+  {
+   "titular": "Barrio rico, barrio pobre: la brecha de renta per cápita entre La Moraleja y Torreblanca supera los 220.000 euros",
+   "url": "https://elpais.com/economia/2026-10-08/barrio-rico-barrio-pobre-la-brecha-de-renta-per-capita-entre-la-moraleja-y-torreblanca-supera-los-220000-euros.html",
+   "medio": "El País",
+   "fecha": "2026-10-08",
+   "seccion": "economía"
+  },
+  {
+   "titular": "Los productos mejor valorados para quienes odian planchar",
+   "url": "https://elpais.com/escaparate/estilo-de-vida/como-evitar-planchar.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "planchas"
+  },
+  {
+   "titular": "6 inventos para secar el pelo más rápido y reducir el encrespamiento",
+   "url": "https://elpais.com/escaparate/belleza/como-secarse-el-pelo-mas-rapido.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "belleza"
+  },
+  {
+   "titular": "7 accesorios para quienes pasan horas leyendo en el sofá o en la cama",
+   "url": "https://elpais.com/escaparate/estilo-de-vida/productos-para-leer-en-el-sofa-o-la-cama.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "casa hogar"
+  },
+  {
+   "titular": "Adiós al caos en la entrada: productos que mantienen el recibidor ordenado",
+   "url": "https://elpais.com/escaparate/estilo-de-vida/productos-para-recibidor.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "casa hogar"
+  },
+  {
+   "titular": "Christa Pike recibe el alta en el hospital tras su ejecución fallida y regresa a prisión",
+   "url": "https://elpais.com/us/2026-10-10/christa-pike-recibe-el-alta-en-el-hospital-y-es-trasladada-de-nuevo-a-prision.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "estados unidos"
+  },
+  {
+   "titular": "La prensa se apaga en el Ecuador de Noboa",
+   "url": "https://elpais.com/america/2026-10-10/la-prensa-se-apaga-en-el-ecuador-de-noboa.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "daniel noboa"
+  },
+  {
+   "titular": "La jurista sudafricana Navi Pillay, Premio Nobel de la Paz 2026",
+   "url": "https://elpais.com/internacional/2026-10-09/premio-nobel-de-la-paz.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "noruega"
+  },
+  {
+   "titular": "Mertxe Aizpurua no repetirá como candidata de EH Bildu al Congreso el 29-N",
+   "url": "https://elpais.com/espana/elecciones-generales/2026-10-11/mertxe-aizpurua-no-repetira-como-candidata-de-eh-bildu-al-congreso-el-29-n.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "elecciones generales"
+  },
+  {
+   "titular": "La caída del esquivo Andrey Victorovich, el artesano de las ‘armas Frankenstein’",
+   "url": "https://elpais.com/espana/2026-10-10/la-caida-del-esquivo-andrey-victorovich-el-artesano-de-las-armas-frankenstein.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "españa"
+  },
+  {
+   "titular": "Rafael Amargo es detenido junto a su pareja tras una pelea con otra persona que entró en su vivienda de madrugada",
+   "url": "https://elpais.com/espana/madrid/2026-10-10/rafael-amargo-es-detenido-junto-a-su-pareja-tras-una-pelea-con-otra-persona-que-entro-en-su-vivienda-de-madrugada.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "comunidad de madrid"
+  },
+  {
+   "titular": "Trump crea un comité para investigar a Lisa Cook, la gobernadora de la Fed que quiere despedir pese a la oposición del Supremo",
+   "url": "https://elpais.com/economia/2026-10-09/trump-crea-un-comite-para-investigar-a-lisa-cook-la-gobernadora-de-la-fed-que-quiere-despedir-pese-a-la-oposicion-del-supremo.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "economía"
+  },
+  {
+   "titular": "El Banco de España mejora la previsión de crecimiento hasta el 2,6% para 2026, pero alerta de un duro repunte de la inflación",
+   "url": "https://elpais.com/economia/2026-10-09/el-banco-de-espana-mejora-la-prevision-de-crecimiento-hasta-el-26-para-2026-pero-alerta-de-un-duro-repunte-de-la-inflacion.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "economía"
+  },
+  {
+   "titular": "La UE alcanza un entendimiento con China para reducir la importación de coches híbridos a la mitad",
+   "url": "https://elpais.com/economia/2026-10-09/la-ue-alcanza-un-entendimiento-con-china-para-reducir-la-importacion-de-coches-hibridos-a-la-mitad.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "economía"
+  },
+  {
+   "titular": "Mark Galeotti, experto en crimen organizado: “Hemos creado una sociedad cíborg a gran escala en la que todos nuestros datos son vulnerables”",
+   "url": "https://elpais.com/sociedad/2026-10-11/mark-galeotti-experto-en-crimen-organizado-hemos-creado-una-sociedad-ciborg-a-gran-escala-en-la-que-todos-nuestros-datos-son-vulnerables.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "Multa récord de 750.000 euros por la rifa que realizó TheGrefg de su coche de lujo sin tener los permisos necesarios",
+   "url": "https://elpais.com/sociedad/2026-10-09/un-youtuber-espanol-residente-en-andorra-multado-con-750000-euros-por-la-rifa-de-un-coche-de-lujo.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "La orden San Juan de Dios aparta a uno de sus hermanos acusado de abusos y le abre proceso canónico",
+   "url": "https://elpais.com/sociedad/2026-10-09/la-orden-san-juan-de-dios-aparta-a-uno-de-sus-hermanos-acusado-de-abusos-y-le-abre-proceso-canonico.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "El juez investiga a tres maestras de un colegio concertado de Madrid por maltratar a bebés: “Les tapaba la nariz para tragar”",
+   "url": "https://elpais.com/educacion/2026-10-09/el-juez-investiga-a-tres-maestras-de-un-colegio-concertado-de-madrid-por-maltratar-a-bebes-les-tapaba-la-nariz-para-tragar.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "colegios"
+  },
+  {
+   "titular": "Cultivar, bordar y vivir del turismo en los Balcanes",
+   "url": "https://elpais.com/economia/formacion/2026-10-09/del-campo-al-turismo-aprender-para-vivir-de-lo-que-uno-ya-sabe-hacer.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "educación"
+  },
+  {
+   "titular": "El Supremo tumba el decreto del Gobierno para frenar las universidades ‘chiringuito’",
+   "url": "https://elpais.com/educacion/2026-10-08/el-supremo-tumba-el-decreto-para-frenar-las-universidades-chiringuito.html",
+   "medio": "El País",
+   "fecha": "2026-10-08",
+   "seccion": "educación"
+  },
+  {
+   "titular": "Andalucía, a la cola de España en comunidades energéticas pese a ser la región con mayor potencial solar",
+   "url": "https://elpais.com/espana/andalucia/2026-09-28/andalucia-a-la-cola-de-espana-en-comunidades-energeticas-pese-a-ser-la-region-con-mayor-potencial-solar.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "españa"
+  },
+  {
+   "titular": "El Tribunal de Estrasburgo rechaza la demanda del Mar Menor contra España, pero reconoce su “personalidad jurídica ecológica”",
+   "url": "https://elpais.com/sociedad/2026-10-09/el-tribunal-europeo-de-derechos-humanos-declara-inadmisible-la-demanda-del-mar-menor-contra-espana.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "‘Atenas’, la tortuga que arrastraba la mitad de su peso en basura: redes, bolsas, cabos y hasta una caja",
+   "url": "https://elpais.com/clima-y-medio-ambiente/2026-10-09/atenas-la-tortuga-que-arrastraba-la-mitad-de-su-peso-en-basura-redes-bolsas-cabos-y-hasta-una-caja.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "tortugas"
+  },
+  {
+   "titular": "Más allá de Instagram: el yoga llega a hospitales y cárceles",
+   "url": "https://elpais.com/sociedad/2026-10-10/mas-alla-de-instagram-el-yoga-llega-a-hospitales-y-carceles.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "La montaña como gimnasio: por qué el ejercicio en altura beneficia al cuerpo",
+   "url": "https://elpais.com/salud-y-bienestar/enformate/2026-10-10/la-montana-como-gimnasio-por-que-el-ejercicio-en-altura-beneficia-al-cuerpo.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "salud"
+  },
+  {
+   "titular": "Los Nobel de 2026 honran a los audaces que se enfrentaron a las preguntas esenciales de la ciencia",
+   "url": "https://elpais.com/ciencia/2026-10-10/los-nobel-de-2026-honran-a-los-audaces-que-se-enfrentaron-a-las-preguntas-esenciales-de-la-ciencia.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "premios nobel"
+  },
+  {
+   "titular": "¿Se puede ser cruel con una IA? Anthropic prohíbe insultar “de manera sostenida” a su ‘chatbot’ Claude",
+   "url": "https://elpais.com/tecnologia/2026-10-09/se-puede-ser-cruel-con-una-ia-anthropic-prohibe-insultar-de-manera-sostenida-a-su-chatbot-claude.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "tecnología"
+  },
+  {
+   "titular": "La IA no distingue el bien del mal: dos físicos destapan lo que las grandes empresas quieren esconder",
+   "url": "https://elpais.com/tecnologia/2026-10-08/la-ia-no-distingue-el-bien-del-mal-dos-fisicos-destapan-lo-que-las-grandes-empresas-quieren-esconder.html",
+   "medio": "El País",
+   "fecha": "2026-10-08",
+   "seccion": "tecnología"
+  },
+  {
+   "titular": "El consejo de sabios de la IA pide más impuestos a las tecnológicas y reforzar el control de los menores",
+   "url": "https://elpais.com/tecnologia/2026-10-08/el-consejo-de-sabios-de-la-ia-pide-mas-impuestos-a-las-tecnologicas-y-reforzar-el-control-de-los-menores.html",
+   "medio": "El País",
+   "fecha": "2026-10-08",
+   "seccion": "tecnología"
+  },
+  {
+   "titular": "Gabriela Sabatini: “Hoy día, los deportistas tienen mucha más conciencia social”",
+   "url": "https://elpais.com/deportes/tenis/2026-10-10/gabriela-sabatini-hoy-dia-los-deportistas-tienen-mucha-mas-conciencia-social.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "gabriela sabatini"
+  },
+  {
+   "titular": "David Puig: “Soy el jugador que soy gracias a LIV”",
+   "url": "https://elpais.com/deportes/2026-10-10/david-puig-soy-el-jugador-que-soy-gracias-a-liv.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "deportes"
+  },
+  {
+   "titular": "El Barcelona tira por la borda una victoria contra Zalgiris en el último cuarto",
+   "url": "https://elpais.com/deportes/baloncesto/2026-10-09/el-barcelona-tira-por-la-borda-una-victoria-contra-zalgiris-en-el-ultimo-cuarto.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "baloncesto"
+  },
+  {
+   "titular": "Rosa Montero: “Se puede intentar salvar el mundo siendo buena persona”",
+   "url": "https://elpais.com/eps/2026-10-09/rosa-montero-se-puede-intentar-salvar-el-mundo-siendo-buena-persona.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "rosa montero"
+  },
+  {
+   "titular": "Yuval Abraham, director de ‘NAZA’: “¿Cómo puede alguien tener una imagen de sí mismo de buena persona y seguir participando en la matanza en Gaza?”",
+   "url": "https://elpais.com/cultura/cine/2026-10-09/yuval-abraham-director-de-naza-como-puede-alguien-tener-una-imagen-de-si-mismo-de-buena-persona-y-seguir-participando-en-la-matanza-en-gaza.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "cine"
+  },
+  {
+   "titular": "Recuperados un mes después los dos cuadros robados del Museo Renoir en Francia",
+   "url": "https://elpais.com/cultura/2026-10-09/recuperados-un-mes-despues-los-dos-cuadros-robados-del-museo-renoir-en-francia.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "Martín Escolar abandona ‘Saber y ganar’, pero solo por unos días",
+   "url": "https://elpais.com/television/2026-10-11/martin-escolar-abandona-saber-y-ganar-pero-solo-por-unos-dias.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "televisión"
+  },
+  {
+   "titular": "Él siempre a su manera. O sea, Sinatra",
+   "url": "https://elpais.com/television/2026-10-10/el-siempre-a-su-manera-o-sea-sinatra.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "televisión"
+  },
+  {
+   "titular": "El caso de Daniel Sancho se convierte en serie de Netflix con Martiño Rivas transformado",
+   "url": "https://elpais.com/television/series/2026-10-09/el-caso-de-daniel-sancho-se-convierte-en-serie-de-netflix-con-martino-rivas-transformado.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "series televisión"
+  },
+  {
+   "titular": "Bella Hadid, la ‘top model’ que se atreve a denunciar la parte más fea del mundo desde su Instagram, cumple 30 años",
+   "url": "https://elpais.com/gente/2026-10-09/bella-hadid-la-top-model-que-se-atreve-a-denunciar-la-parte-mas-fea-del-mundo-desde-su-instagram-cumple-30-anos.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "gente"
+  },
+  {
+   "titular": "La viuda de Hugh Hefner pide a Jessica Biel que reconsidere su papel en el ‘biopic’ sobre el fundador de ‘Playboy’: “Sufrí abuso sexual, emocional y físico”",
+   "url": "https://elpais.com/gente/2026-10-09/la-viuda-de-hugh-hefner-pide-a-jessica-biel-que-reconsidere-su-papel-en-el-biopic-sobre-el-fundador-de-playboy-sufri-abuso-sexual-emocional-y-fisico.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "gente"
+  },
+  {
+   "titular": "El expríncipe Andrés recibe 356.000 euros de indemnización por su desalojo de la mansión de Royal Lodge",
+   "url": "https://elpais.com/gente/2026-10-09/el-exprincipe-andres-recibe-356000-euros-de-indemnizacion-por-dejar-la-mansion-de-royal-lodge.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "gente"
+  },
+  {
+   "titular": "Alexander de Croo, jefe del PNUD: “Nadie en este mundo puede cerrar los ojos ante el sufrimiento en Gaza”",
+   "url": "https://elpais.com/planeta-futuro/2026-10-10/alexander-de-croo-jefe-del-pnud-nadie-en-este-mundo-puede-cerrar-los-ojos-ante-el-sufrimiento-en-gaza.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "pnud"
+  },
+  {
+   "titular": "La guerra con Irán rescata del olvido a Eritrea, el país más hermético del Cuerno de África",
+   "url": "https://elpais.com/planeta-futuro/2026-10-07/la-guerra-con-iran-rescata-del-olvido-a-eritrea-el-pais-mas-hermetico-del-cuerno-de-africa.html",
+   "medio": "El País",
+   "fecha": "2026-10-07",
+   "seccion": "eritrea"
+  },
+  {
+   "titular": "Jordi Savall: “Hoy todas las orquestas suenan igual y eso es muy grave”",
+   "url": "https://elpais.com/eps/2026-10-09/jordi-savall-hoy-todas-las-orquestas-suenan-igual-y-eso-es-muy-grave.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "Magic In The Air: vuelve aquella fiesta de los noventa que amaba los sesenta",
+   "url": "https://elpais.com/eps/2026-10-08/magic-in-the-air-vuelve-aquella-fiesta-de-los-noventa-que-amaba-los-sesenta.html",
+   "medio": "El País",
+   "fecha": "2026-10-08",
+   "seccion": "música"
+  },
+  {
+   "titular": "Olana Light: “Hay que bajar el ritmo y estar más conectados con la naturaleza”",
+   "url": "https://elpais.com/smoda/placeres/2026-10-09/olana-light-hay-que-bajar-el-ritmo-y-estar-mas-conectados-con-la-naturaleza.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "arte"
+  },
+  {
+   "titular": "Sissy Spacek no fue solo una adolescente cubierta de sangre: la vida de amor y tragedia de la protagonista de ‘Carrie’",
+   "url": "https://elpais.com/smoda/2026-10-07/sissy-spacek-no-fue-solo-una-adolescente-cubierta-de-sangre-la-vida-de-amor-y-tragedia-de-la-protagonista-de-carrie.html",
+   "medio": "El País",
+   "fecha": "2026-10-07",
+   "seccion": "películas"
+  },
+  {
+   "titular": "El derecho de una mujer a ser un monstruo: lo que Netflix ha hecho con Cathy en ‘Al este del Edén’",
+   "url": "https://elpais.com/icon/2026-10-10/el-derecho-de-una-mujer-a-ser-un-monstruo-lo-que-netflix-ha-hecho-con-cathy-en-al-este-del-eden.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "literatura"
+  },
+  {
+   "titular": "Australia pone límites al turismo en los Doce Apóstoles, uno de sus principales reclamos",
+   "url": "https://elpais.com/elviajero/2026-10-07/australia-pone-limites-al-turismo-en-los-doce-apostoles-uno-de-sus-principales-reclamos.html",
+   "medio": "El País",
+   "fecha": "2026-10-07",
+   "seccion": "viajes"
+  },
+  {
+   "titular": "Cachemira: jardines mogoles, lagos y una calma inesperada",
+   "url": "https://elpais.com/elviajero/lonely-planet/2026-10-08/cachemira-jardines-mogoles-lagos-y-una-calma-inesperada.html",
+   "medio": "El País",
+   "fecha": "2026-10-08",
+   "seccion": "viajes"
+  },
+  {
+   "titular": "Irina Scherbakova, activista: “No creo en la ONU, ni en las organizaciones de derechos humanos, ni en las organizaciones de mujeres”",
+   "url": "https://elpais.com/ideas/2026-10-07/irina-scherbakova-activista-no-creo-en-la-onu-ni-en-las-organizaciones-de-derechos-humanos-ni-en-las-organizaciones-de-mujeres.html",
+   "medio": "El País",
+   "fecha": "2026-10-07",
+   "seccion": "rusia"
+  },
+  {
+   "titular": "Obsesión por el crecimiento rápido: la IA puede caer en el mismo error que las redes sociales",
+   "url": "https://elpais.com/ideas/2026-10-02/obsesion-por-el-crecimiento-rapido-la-ia-puede-caer-en-el-mismo-error-que-las-redes-sociales.html",
+   "medio": "El País",
+   "fecha": "2026-10-02",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "El periodo de prueba de seis meses no es la ley de la selva para los despidos: estos son los límites de los jueces",
+   "url": "https://elpais.com/economia/negocios/2026-10-11/el-periodo-de-prueba-de-seis-meses-no-es-la-ley-de-la-selva-estos-son-los-limites-de-los-jueces-a-las-practicas-de-algunos-empresarios.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "economía"
+  },
+  {
+   "titular": "Las cajas de ahorro islámicas están de moda en Turquía",
+   "url": "https://elpais.com/economia/negocios/carta-del-corresponsal/2026-10-10/las-cajas-de-ahorro-islamicas-estan-de-moda-en-turquia.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "economía"
+  },
+  {
+   "titular": "‘Las leopardas’, de Marta Borraz: fatalidad y resistencia de las mujeres ante el sida",
+   "url": "https://elpais.com/babelia/2026-10-09/las-leopardas-de-marta-borraz-fatalidad-y-resistencia-de-las-mujeres-ante-el-sida.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "‘Europeana’: lo sublime y, sobre todo, lo grotesco del siglo XX europeo",
+   "url": "https://elpais.com/babelia/2026-10-09/europeana-lo-sublime-y-sobre-todo-lo-grotesco-del-siglo-xx-europeo.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "Calamares de campo, la receta de posguerra que sigue estando buenísima",
+   "url": "https://elpais.com/gastronomia/el-comidista/2026-10-09/calamares-de-campo-la-receta-de-posguerra-que-sigue-estando-buenisima.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "recetas cocina"
+  },
+  {
+   "titular": "Banana bread, la receta de bizcocho de plátano que no empalaga",
+   "url": "https://elpais.com/gastronomia/el-comidista/2026-10-08/banana-bread-la-receta-de-bizcocho-de-platano-que-no-empalaga.html",
+   "medio": "El País",
+   "fecha": "2026-10-08",
+   "seccion": "recetas cocina"
+  },
+  {
+   "titular": "¿Cuál es la mejor forma de hacer ondas en el pelo? He probado cuatro herramientas térmicas y te cuento cuál elegir según el resultado",
+   "url": "https://elpais.com/escaparate/belleza/probamos-mejores-herramientas-termicas-para-rizar-el-pelo.html",
+   "medio": "El País",
+   "fecha": "2026-10-11",
+   "seccion": "amazon"
+  },
+  {
+   "titular": "¿Qué aspirador comprar? Estos son los mejores modelos según el tipo de limpieza que busques",
+   "url": "https://elpais.com/escaparate/comparativas/mejores-aspiradores.html",
+   "medio": "El País",
+   "fecha": "2026-10-10",
+   "seccion": "comparativas de productos"
+  },
+  {
+   "titular": "¿Qué tienen estos leggings de menos de 12 euros para acumular más de 90.000 reseñas en Amazon? Los he probado y ahora entiendo que sean un superventas",
+   "url": "https://elpais.com/escaparate/estilo-de-vida/probamos-leggings-superventas-de-amazon.html",
+   "medio": "El País",
+   "fecha": "2026-10-09",
+   "seccion": "amazon"
+  },
+  {
+   "titular": "29-N",
+   "url": "https://www.elmundo.es/elecciones/elecciones-generales/2026/10/11/6aca5993e4d4d8704b8b456f.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "elecciones generales"
+  },
+  {
+   "titular": "Cataluña|Elecciones generales 29-N",
+   "url": "https://www.elmundo.es/cataluna/2026/10/11/6aca79c0e9cf4a25568b45b0.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "artículos gerard melgar"
+  },
+  {
+   "titular": "Elecciones generales 2026",
+   "url": "https://www.elmundo.es/elecciones/elecciones-generales/2026/10/11/6acbac50e85ece731f8b457c.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "vox"
+  },
+  {
+   "titular": "Historias",
+   "url": "https://www.elmundo.es/papel/historias/2026/10/10/6aca003ce85ece4d438b459c.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "defensa"
+  },
+  {
+   "titular": "Crónica",
+   "url": "https://www.elmundo.es/cronica/2026/10/10/6ac962dfe4d4d8bc398b45a1.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-10",
+   "seccion": "nlpremium"
+  },
+  {
+   "titular": "Crisis en la frontera",
+   "url": "https://www.elmundo.es/espana/2026/10/11/6aca28e121efa0457e8b459e.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "ceuta"
+  },
+  {
+   "titular": "La España deteriorada (1)",
+   "url": "https://www.elmundo.es/economia/empresas/2026/10/10/6ac922d5e9cf4a980b8b4598.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-10",
+   "seccion": "nlpremium"
+  },
+  {
+   "titular": "Internacional",
+   "url": "https://www.elmundo.es/internacional/2026/10/11/6acb6381e9cf4a4d388b459c.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "papa león xiv"
+  },
+  {
+   "titular": "Arabia Saudí-Yemen",
+   "url": "https://www.elmundo.es/internacional/2026/10/11/6acb5c33e4d4d89f188b459d.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "artículos el mundo"
+  },
+  {
+   "titular": "Guerra en Europa",
+   "url": "https://www.elmundo.es/internacional/2026/10/11/6acb9d2921efa0e3338b457a.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "donald trump"
+  },
+  {
+   "titular": "País Vasco",
+   "url": "https://www.elmundo.es/pais-vasco/2026/10/11/6acbbd44fdddff80638b458c.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "artículos josean izarra"
+  },
+  {
+   "titular": "Otra historia",
+   "url": "https://www.elmundo.es/deportes/mas-deporte/2026/10/09/6abe6781e4d4d8b1278b45a7.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-09",
+   "seccion": "hípica"
+  },
+  {
+   "titular": "Personas que suman",
+   "url": "https://www.elmundo.es/papel/historias/2026/10/10/6ac8c32ffdddffd46a8b457d.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-10",
+   "seccion": "salud"
+  },
+  {
+   "titular": "Crónica... de la España abandonada (4)",
+   "url": "https://www.elmundo.es/cronica/2026/10/10/6ab69943fc6c8312598b45ab.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-10",
+   "seccion": "andalucía"
+  },
+  {
+   "titular": "Fórmula 1",
+   "url": "https://www.elmundo.es/deportes/formula-1/2026/10/11/6acba00921efa06e378b4587.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "deportes"
+  },
+  {
+   "titular": "Marbella",
+   "url": "https://www.elmundo.es/andalucia/2026/10/10/6aca8542e4d4d85c2e8b4598.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-10",
+   "seccion": "andalucía"
+  },
+  {
+   "titular": "La semana geoeconómica",
+   "url": "https://www.elmundo.es/economia/macroeconomia/2026/10/11/6ac913fde4d4d8641f8b4589.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "artículos pablo pardo"
+  },
+  {
+   "titular": "Transporte",
+   "url": "https://www.elmundo.es/economia/2026/10/11/6acba69221efa0c0698b4579.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "economia"
+  },
+  {
+   "titular": "¡No doy crédito!",
+   "url": "https://www.elmundo.es/economia/macroeconomia/2026/10/11/6ac771b0e9cf4ab30f8b4571.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "actualidad económica opinión"
+  },
+  {
+   "titular": "Educación",
+   "url": "https://www.elmundo.es/espana/2026/10/11/6ac9352bfdddffe6038b458e.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "artículos olga r. sanmartín"
+  },
+  {
+   "titular": "Cultura",
+   "url": "https://www.elmundo.es/cultura/2026/10/11/6acbd370e85ece946a8b4581.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "La ley de la calle",
+   "url": "https://www.elmundo.es/madrid/2026/10/11/6ac6ae93e85ecefa3d8b45af.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "madrid"
+  },
+  {
+   "titular": "Recuperación",
+   "url": "https://www.elmundo.es/cultura/toros/2026/10/11/6acb9c0ee9cf4aa30e8b458b.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "toros"
+  },
+  {
+   "titular": "Sociedad",
+   "url": "https://www.elmundo.es/madrid/2026/10/10/6abbfe6de85eceb5448b4596.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-10",
+   "seccion": "madrid"
+  },
+  {
+   "titular": "Perfil",
+   "url": "https://www.elmundo.es/yodona/vida-saludable/2026/10/11/6aa0169721efa0ee248b45cc.html",
+   "medio": "El Mundo",
+   "fecha": "2026-10-11",
+   "seccion": "tendencias de belleza"
+  },
+  {
+   "titular": "Rufián volverá a liderar la candidatura de ERC en el 29-N",
+   "url": "https://www.lavanguardia.com/politica/20261011/11656507/gabriel-rufian-volvera-liderar-candidatura-erc-elecciones-29-n.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "política"
+  },
+  {
+   "titular": "Francesc-Marc Álvaro será el cabeza de lista de ERC al Senado por Barcelona el 29-N",
+   "url": "https://www.lavanguardia.com/politica/20261011/11656609/francesc-marc-alvaro-sera-cabeza-lista-erc-senado-barcelona-29-n.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "política"
+  },
+  {
+   "titular": "Reconciliación a la izquierda",
+   "url": "https://www.lavanguardia.com/politica/20261011/11656064/reconciliacion-izquierda.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "política"
+  },
+  {
+   "titular": "España, en primera línea",
+   "url": "https://www.lavanguardia.com/politica/20261011/11656129/espana-primera-linea.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "política"
+  },
+  {
+   "titular": "Mertxe Aizpurua no repetirá como candidata de EH Bildu al Congreso por decisión propia",
+   "url": "https://www.lavanguardia.com/politica/20261011/11656480/mertxe-aizpurua-repetira-candidata-eh-bildu-congreso-decision-propia.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "política"
+  },
+  {
+   "titular": "Illa encumbra a Jordi Hereu como candidato del PSC y declara la guerra a Junts: “¿Para qué sirves?”",
+   "url": "https://www.lavanguardia.com/politica/20261011/11656509/illa-encumbra-jordi-hereu-candidato-psc-declara-guerra-junts-que-sirves.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "política"
+  },
+  {
+   "titular": "Sánchez agita causas de izquierda para aglutinar voto: “La disyuntiva es Feijóo y Abascal o PSOE”",
+   "url": "https://www.lavanguardia.com/politica/20261011/11656533/sanchez-agita-causas-izquierda-aglutinar-voto-disyuntiva-feijoo-abascal-psoe.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "política"
+  },
+  {
+   "titular": "El PP replica al PSOE que el “sacrificio” no tiene “nada que ver con los recortes”: “Si te esfuerzas, tienes recompensa”",
+   "url": "https://www.lavanguardia.com/politica/20261011/11656532/pp-replica-psoe-sacrificio-ver-recortes-te-esfuerzas-tienes-recompensa.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "política"
+  },
+  {
+   "titular": "Negociación en la sombra: así fracasó el decreto de vivienda",
+   "url": "https://www.lavanguardia.com/economia/20261011/11656109/negociacion-sombra-asi-fracaso-decreto-vivienda.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "economía"
+  },
+  {
+   "titular": "Así arranca la carrera electoral",
+   "url": "https://www.lavanguardia.com/politica/20261011/11655530/asi-arranca-carrera-electoral.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "política"
+  },
+  {
+   "titular": "El largo camino de los jóvenes hacia la emancipación",
+   "url": "https://www.lavanguardia.com/vida/20261011/11649381/generacion-irse-casa-cinco-casos-reales-ilustran-crisis-emancipacion-espana.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "Trump anuncia una tregua energética entre Ucrania y Rusia, pero Zelenski dice desconocerla",
+   "url": "https://www.lavanguardia.com/internacional/20261011/11656578/trump-anuncia-tregua-energetica-efecto-inmediato-ucrania-rusia.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Zelenski propone a Rusia una tregua de ataques a instalaciones energéticas tras el pacto entre Trump y Putin",
+   "url": "https://www.lavanguardia.com/internacional/20261011/11656559/zelenski-propone-putin-tregua-ataques-instalaciones-energeticas-pacto-ee-uu-rusia.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "El papa León XIV anuncia que será operado de un nódulo en el pulmón",
+   "url": "https://www.lavanguardia.com/internacional/20261011/11656513/papa-leon-xiv-anuncia-sera-operado-nodulo-pulmon.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Los hutíes no dan tregua a Riad y vuelven a atacar el aeropuerto",
+   "url": "https://www.lavanguardia.com/internacional/20261011/11656571/riad-registra-nueva-explosion-ataque-aeropuerto-dejo-12-muertos.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "La trampa de Roma",
+   "url": "https://www.lavanguardia.com/internacional/20261011/11656112/trampa-roma.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "¿Camina Europa sonámbula hacia la guerra?",
+   "url": "https://www.lavanguardia.com/internacional/20261011/11655475/camina-europa-sonambula-guerra.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "La policía polaca desbarata un “posible intento de asesinato” contra el primer ministro",
+   "url": "https://www.lavanguardia.com/internacional/20261011/11656555/servicios-seguridad-polacos-reunen-posible-intento-asesinato-primer-ministro-ministro-defensa.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "El eurodiputado Raphaël Glucksmann gana las primarias de los socialistas franceses",
+   "url": "https://www.lavanguardia.com/internacional/20261011/11656515/eurodiputado-raphael-glucksmann-gana-primarias-socialistas-franceses.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "‘Per Barcelona’, las memorias nada convencionales de Lluís Permanyer",
+   "url": "https://www.lavanguardia.com/cultura/20261011/11655816/per-barcelona-memorias-convencionales-lluis-permanyer.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "Demagogia contra las plazas duras / Monumento a José Antonio",
+   "url": "https://www.lavanguardia.com/cultura/20261011/11655823/demagogia-plazas-duras-monumento-jose-antonio.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "Una sombra que amenaza la Barcelona literaria",
+   "url": "https://www.lavanguardia.com/cultura/20261011/11655885/comprension-lectora-pisa-lectura-libros-barcelona-literaria.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "VW pide a Francia y Alemania más protección para los coches eléctricos",
+   "url": "https://www.lavanguardia.com/dinero/20261011/11656646/vw-pide-francia-alemania-mas-proteccion-coches-electricos.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "dinero"
+  },
+  {
+   "titular": "La versión de Zapatero sobre las joyas cae en saco roto",
+   "url": "https://www.lavanguardia.com/politica/20261011/11656068/version-zapatero-sobre-joyas-cae-saco-roto.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "política"
+  },
+  {
+   "titular": "Culmina el desalojo del último gran asentamiento de migrantes en Ceuta",
+   "url": "https://www.lavanguardia.com/politica/20261011/11656424/policia-desaloja-ultimo-gran-asentamiento-migrantes-ceuta.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "política"
+  },
+  {
+   "titular": "La sanción que le puede caer a Vinícius según el acta arbitral: peligra el clásico",
+   "url": "https://www.lavanguardia.com/deportes/real-madrid/20261011/11656474/sancion-le-caer-vinicius-acta-arbitral-peligra-clasico.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "real madrid"
+  },
+  {
+   "titular": "La Palma estrena el complejo más potente del mundo para captar el universo extremo",
+   "url": "https://www.lavanguardia.com/ciencia/20261011/11651082/palma-estrena-complejo-mas-potente-mundo-captar-universo-extremo.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "big vang"
+  },
+  {
+   "titular": "Por qué un ingeniero aeroespacial decidió aprender de políticos y diplomáticos",
+   "url": "https://www.lavanguardia.com/economia/20261009/11655292/ingeniero-aeroespacial-decidio-aprender-politicos-diplomaticos.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-09",
+   "seccion": "economía"
+  },
+  {
+   "titular": "Alejandro Amenábar: “La perversidad humana parece que nunca nos sorprende”",
+   "url": "https://www.lavanguardia.com/cultura/20261011/11656495/amenabar-prepara-pelicula-misterio-celebra-30-anos-tesis-sitges.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "Peter Jackson: “El mejor festival de cine del mundo es Sitges”",
+   "url": "https://www.lavanguardia.com/cultura/20261011/11656466/peter-jackson-mejor-festival-cine-mundo-sitges.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "Rafael Amargo y su esposa, en libertad provisional sin medidas cautelares",
+   "url": "https://www.lavanguardia.com/gente/20261011/11656535/rafael-amargo-libertad-medidas-cautelares.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "gente"
+  },
+  {
+   "titular": "Ceuta se prepara para la visita de los Reyes",
+   "url": "https://www.lavanguardia.com/vida/20261011/11656059/ceuta-prepara-visita-reyes.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "El plasma: un recurso esencial para miles de pacientes que aún es un gran desconocido",
+   "url": "https://www.lavanguardia.com/vida/20261006/11651095/plasma-recurso-esencial-miles-pacientes-sigue-siendo-gran-desconocido-brl.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-06",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "Rosalía sorprende en ‘Saturday Night Live’ al cantar ‘Reliquia’ sobre las puntas de sus pies",
+   "url": "https://www.lavanguardia.com/gente/20261011/11656411/rosalia-sorprende-saturday-night-live-actuacion-reliquia-sobre-puntas-pies.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "gente"
+  },
+  {
+   "titular": "Pepe Colubi hace público que tiene parkinson: “Tengo algo para echarse a temblar”",
+   "url": "https://www.lavanguardia.com/gente/20261011/11656628/pepe-colubi-publico-parkinson-echarse-temblar.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "gente"
+  },
+  {
+   "titular": "El susto que llevó a una enfermera a crear un 'escudo protector' contra las alergias",
+   "url": "https://www.lavanguardia.com/vida/20261011/11653189/mama-me-cuesta-respirar-susto-llevo-enfermera-crear-escudo-protector-alergias.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "Athenea del Castillo, expulsada por tirar del pelo a una rival como Vinícius",
+   "url": "https://www.lavanguardia.com/deportes/futbol/20261011/11656612/athenea-castillo-expulsada-tirar-pelo-rival-vinicius-real-madrid.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "fútbol"
+  },
+  {
+   "titular": "Migrantes en Lanzarote, protestas por la vivienda y el mundo: las imágenes del día",
+   "url": "https://www.lavanguardia.com/fotos/20261011/11656564/migrantes-lanzarote-protestas-vivienda-mundo-imagenes-dia.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "fotografía"
+  },
+  {
+   "titular": "Vivir como un famoso por un puñado de dólares",
+   "url": "https://www.lavanguardia.com/gente/20261011/11655549/vivir-famoso-punado-dolares.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "gente"
+  },
+  {
+   "titular": "Las cuentas nómina sin comisiones más recomendadas de España",
+   "url": "https://www.lavanguardia.com/dinero/20260929/11637887/cuentas-nomina-comisiones-mas-recomendadas-espana-brl.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-09-29",
+   "seccion": "dinero"
+  },
+  {
+   "titular": "Derribo de presas fluviales con lista de espera",
+   "url": "https://www.lavanguardia.com/natural/20261011/11654291/derribo-presas-fluviales-lista-espera.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "natural"
+  },
+  {
+   "titular": "Un disparo accidental hiere a una mujer en la cabeza en el barrio de Sant Joan de Figueres",
+   "url": "https://www.lavanguardia.com/local/girona/20261011/11656635/disparo-accidental-hiere-mujer-cabeza-barrio-sant-joan-figueres.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "girona"
+  },
+  {
+   "titular": "Bombers centran la búsqueda del menor Rami en el río Congost en Granollers",
+   "url": "https://www.lavanguardia.com/local/barcelona/20261011/11656561/bombers-centran-busqueda-menor-rami-rio-congost-granollers.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "barcelona"
+  },
+  {
+   "titular": "Con el sol de cara: el puente festivo llena los alojamientos valencianos en la costa y el interior",
+   "url": "https://www.lavanguardia.com/local/valencia/20261011/11656472/sol-cara-puente-festivo-llena-alojamientos-valencianos-costa-interior.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "comunidad valenciana"
+  },
+  {
+   "titular": "Jóvenes y urnas",
+   "url": "https://www.lavanguardia.com/local/valencia/20261011/11655466/jovenes-urnas.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "comunidad valenciana"
+  },
+  {
+   "titular": "Vandalizan en Quart de Poblet una escultura de homenaje a 14 vecinos fusilados por el franquismo",
+   "url": "https://www.lavanguardia.com/local/valencia/20261011/11656553/vandalizan-quart-poblet-escultura-homenaje-14-vecinos-fusilados-franquismo.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "comunidad valenciana"
+  },
+  {
+   "titular": "'Besos', la aplaudida obra del teatro valenciano que emociona 27 años después",
+   "url": "https://www.lavanguardia.com/local/valencia/20261011/11656497/besos-aplaudida-obra-teatro-valenciano-emociona-27-anos.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "comunidad valenciana"
+  },
+  {
+   "titular": "Casi 4.400 militares marcharán en el desfile del 12 de octubre por Madrid",
+   "url": "https://www.lavanguardia.com/local/madrid/20261010/11655875/4-400-militares-marcharan-desfile-12-octubre-madrid.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-10",
+   "seccion": "madrid"
+  },
+  {
+   "titular": "Caen dos grupos dedicados al robo con fuerza en viviendas de Madrid y Catalunya",
+   "url": "https://www.lavanguardia.com/sucesos/20261010/11655911/caen-dos-grupos-dedicados-robo-fuerza-viviendas-madrid-catalunya.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-10",
+   "seccion": "sucesos"
+  },
+  {
+   "titular": "La SGAE rinde homenaje a Rafael Azcona en una exposición sobre sus distintas facetas creativas",
+   "url": "https://www.lavanguardia.com/cultura/20261009/11655438/sgae-rinde-homenaje-rafael-azcona-exposicion-sobre-distintas-facetas-creativas.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-09",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "“El dolor es una experiencia subjetiva”",
+   "url": "https://www.lavanguardia.com/lacontra/20261011/11654931/dolor-experiencia-subjetiva.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "la contra"
+  },
+  {
+   "titular": "Los secretos del ‘espía’ alemán August Hanning",
+   "url": "https://www.lavanguardia.com/internacional/20261011/11656060/secretos-alemania-espia-august-hanning-sospecha-traicion-seguridad.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Canadá: el despertar del enigmático vecino del norte",
+   "url": "https://www.lavanguardia.com/internacional/20261011/11655130/canada-despertar-enigmatico-vecino-norte.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Claves para sobrevivir a la inflación",
+   "url": "https://www.lavanguardia.com/dinero/bolsillo/20261011/11655512/sobrevivir-inflacion-pca.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "bolsillo"
+  },
+  {
+   "titular": "Hemos heredado una casa entre tres hermanos y uno quiere quedársela: qué hacer y cuánto cuesta",
+   "url": "https://www.lavanguardia.com/dinero/bolsillo/20261011/11645937/hemos-heredado-casa-tres-hermanos-quiere-quedarsela-que-cuesta-pca.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "bolsillo"
+  },
+  {
+   "titular": "No todas las Skechers ofrecen lo mismo: qué mirar antes de elegir unas para el día a día",
+   "url": "https://www.lavanguardia.com/comprar/moda-belleza/20261011/11654916/todas-skechers-ofrecen-que-mirar-elegir-dia-dia-mkt-skec.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "moda y belleza"
+  },
+  {
+   "titular": "“La cosmética ya no te vende antienvejecimiento, sino la idea de alcanzar tu mejor versión”",
+   "url": "https://www.lavanguardia.com/vivo/longevity/20261011/11653996/carmen-lanchares-periodista-lugar-hablar-antienvejecimiento-industria-cosmetica-vende-idea-alcanzar-mejor-version.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "longevity"
+  },
+  {
+   "titular": "Los 5 ingredientes que hay que comprar en octubre y las recetas para aprovecharlos",
+   "url": "https://www.lavanguardia.com/comer/recetas/20261011/11653474/5-ingredientes-hay-comprar-octubre-recetas-aprovecharlos.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "recetas"
+  },
+  {
+   "titular": "Tres causas de dolor en el pecho que se confunden con un infarto",
+   "url": "https://www.lavanguardia.com/vida/salud/20261011/11653470/tres-causas-dolor-pecho-confunden-infarto.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "salud"
+  },
+  {
+   "titular": "El secreto de las rotaciones de Flick: un Excel, confianza en Lamine Yamal y nuevos liderazgos",
+   "url": "https://www.lavanguardia.com/deportes/futbol/20261011/11656588/secreto-rotaciones-flick-excel-confianza-lamine-yamal-nuevos-liderazgos.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "fútbol"
+  },
+  {
+   "titular": "Gol de Deco",
+   "url": "https://www.lavanguardia.com/deportes/20261010/11656096/gol-deco.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-10",
+   "seccion": "deportes"
+  },
+  {
+   "titular": "La intrahistoria del motín de Vallecas: “Hoy, los aviones; otro día, el papel de váter o de aluminio”",
+   "url": "https://www.lavanguardia.com/deportes/futbol/20261011/11656100/intrahistoria-motin-vallecas-hoy-aviones-dia-papel-vater-aluminio.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "fútbol"
+  },
+  {
+   "titular": "Haaland, Doku y Cherki ‘amnistían’ al City con una goleada en un Anfield caldeado",
+   "url": "https://www.lavanguardia.com/deportes/futbol/20261011/11656643/haaland-doku-cherki-amnistian-al-city-con-goleada-en-anfield-caliente.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "fútbol"
+  },
+  {
+   "titular": "A Kiplimo, el maratón se le hace bola: se desfonda y acaba cuarto; Kipruto firma 2h01m09s",
+   "url": "https://www.lavanguardia.com/deportes/otros-deportes/20261011/11656568/kiplimo-maraton-le-bola-desfonda-acaba-cuarto-kipruto-firma-2h01m09s.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "otros deportes"
+  },
+  {
+   "titular": "Chacarra se queda sin gasolina y abre las puertas a Forrest en Madrid",
+   "url": "https://www.lavanguardia.com/deportes/golf/20261011/11656622/grant-forrest-open-de-espana-dp-world-tour-eugenio-chacarra.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "golf"
+  },
+  {
+   "titular": "Verstappen vuelve a asustar y se pasea por Marina Bay como un turista más",
+   "url": "https://www.lavanguardia.com/deportes/automovilismo/20261011/11656566/verstappen-gp-singapur-formula-1.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "automovilismo"
+  },
+  {
+   "titular": "Máximo Quiles certifica el título de Moto3 ganando en Indonesia",
+   "url": "https://www.lavanguardia.com/deportes/motociclismo/20261011/11656492/maximo-quiles-certifica-titulo-moto3-ganar-indonesia.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "motociclismo"
+  },
+  {
+   "titular": "Bezzecchi no se rinde y Martín recupera el liderato en Mandalika",
+   "url": "https://www.lavanguardia.com/deportes/motociclismo/20261011/11656417/bezzecchi-rinde-martin-recupera-liderato-mandalika.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "motociclismo"
+  },
+  {
+   "titular": "Colaboración ante la crisis de la vivienda",
+   "url": "https://www.lavanguardia.com/opinion/20261011/11656011/colaboracion-crisis-vivienda.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "Historia de dos portadas",
+   "url": "https://www.lavanguardia.com/opinion/20261011/11656127/historia-dos-portadas.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "El rompecabezas de la diplomacia",
+   "url": "https://www.lavanguardia.com/opinion/20261011/11656013/rompecabezas-diplomacia.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "Lo que viene",
+   "url": "https://www.lavanguardia.com/opinion/20261011/11656017/viene.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "Almas muertas",
+   "url": "https://www.lavanguardia.com/opinion/20261011/11656091/almas-muertas.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "¿Qué pasará?",
+   "url": "https://www.lavanguardia.com/opinion/20261011/11656032/que-pasara.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "Riders on the storm",
+   "url": "https://www.lavanguardia.com/comer/opinion/20261011/11655088/riders-on-the-storm.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "Restablecer la normalidad",
+   "url": "https://www.lavanguardia.com/opinion/20261011/11656024/restablecer-normalidad.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "La pena máxima se queda corta",
+   "url": "https://www.lavanguardia.com/opinion/20261011/11656016/pena-maxima-queda-corta.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "El dios de la lluvia",
+   "url": "https://www.lavanguardia.com/opinion/20261011/11656018/dios-lluvia.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "Empapados en Sants",
+   "url": "https://www.lavanguardia.com/opinion/20261011/11656023/empapados-sants.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "La hora del café",
+   "url": "https://www.lavanguardia.com/opinion/20261011/11656025/hora-cafe.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "Raphinha, con Lula",
+   "url": "https://www.lavanguardia.com/opinion/20261011/11656121/raphinha-lula.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "opinión"
+  },
+  {
+   "titular": "Las 9 carreras al Senado que determinarán los dos últimos años de mandato de Trump",
+   "url": "https://www.lavanguardia.com/internacional/20261011/11656114/9-carreras-senado-ee-uu-determinaran-dos-ultimos-anos-mandato-trump.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Trump sugiere rebautizar el Atlántico o el Pacífico con su nombre o llamarlo “el océano de las Américas”",
+   "url": "https://www.lavanguardia.com/internacional/20261011/11656412/trump-sugiere-rebautizar-atlantico-pacifico-nombre-llamarlo-oceano-americas.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "La batalla de Cable Street",
+   "url": "https://www.lavanguardia.com/internacional/20261011/11656117/batalla-cable-street.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Ucrania ataca el tercer centro de datos del gigante informático ruso Yandex",
+   "url": "https://www.lavanguardia.com/internacional/20261011/11656428/ucrania-ataca-tercer-centro-datos-gigante-informatico-ruso-yandex.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Las 'Cucarachas' llaman a extender las protestas a todo el país tras el bloqueo en Delhi",
+   "url": "https://www.lavanguardia.com/internacional/20261011/11656574/cucarachas-llaman-extender-protestas-pais-bloqueo-delhi.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Al menos 11 muertos y 27 heridos en Turquía por el choque de un autobús y un camión",
+   "url": "https://www.lavanguardia.com/internacional/20261011/11656604/11-muertos-27-heridos-turquia-choque-autobus-camion.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Abascal llama a evitar el “exceso de confianza” y avisa que Sánchez usará la “mentira” y la “violencia”",
+   "url": "https://www.lavanguardia.com/politica/20261011/11656642/abascal-llama-evitar-exceso-confianza-encuestas-avisa-sanchez-usara-mentira-violencia.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "política"
+  },
+  {
+   "titular": "El sexto destructor de EE.UU. llegará a Rota el próximo 15 de octubre",
+   "url": "https://www.lavanguardia.com/politica/20261011/11656638/sexto-destructor-ee-uu-llegara-rota-proximo-15-octubre.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "política"
+  },
+  {
+   "titular": "Madrid, ‘meeting point’ de exalcaldes de Barcelona",
+   "url": "https://www.lavanguardia.com/politica/elecciones/20261011/11655548/madrid-meeting-point-exalcaldes-barcelona.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "elecciones"
+  },
+  {
+   "titular": "El ‘shadow AI’ se propaga y aumenta riesgos en la empresa",
+   "url": "https://www.lavanguardia.com/economia/20261011/11655470/shadow-ai-propaga-aumenta-riesgos-empresa.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "economía"
+  },
+  {
+   "titular": "Avance científico e IA",
+   "url": "https://www.lavanguardia.com/dinero/20261011/11655006/avance-cientifico-e-ia.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "dinero"
+  },
+  {
+   "titular": "“Vamos a crecer en Catalunya con las cafeterías Juan Valdez”",
+   "url": "https://www.lavanguardia.com/dinero/20261011/11655487/crecer-catalunya-cafeterias-juan-valdez.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "dinero"
+  },
+  {
+   "titular": "“Estamos privatizando el conocimiento”",
+   "url": "https://www.lavanguardia.com/dinero/20261011/11655480/privatizando-conocimiento.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "dinero"
+  },
+  {
+   "titular": "Barcelona, centro neurálgico de Cosnova",
+   "url": "https://www.lavanguardia.com/dinero/20261011/11655476/barcelona-centro-neuralgico-cosnova.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "dinero"
+  },
+  {
+   "titular": "Los españoles pierden 35.000 millones al año por el dinero en cuentas ociosas",
+   "url": "https://www.lavanguardia.com/economia/20261011/11656076/espanoles-pierden-35-000-millones-ano-dinero-cuentas-ociosas.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "economía"
+  },
+  {
+   "titular": "Los bancos se preparan para empezar a ofrecer la nueva cuenta de inversión",
+   "url": "https://www.lavanguardia.com/economia/20261011/11656081/bancos-preparan-empezar-ofrecer-nueva-cuenta-inversion.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "economía"
+  },
+  {
+   "titular": "La AIE insta a los países a liberar más reservas de diésel por la crisis de precios",
+   "url": "https://www.lavanguardia.com/economia/20261011/11656648/aie-insta-paises-liberar-mas-reservas-diesel-crisis-precios.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "economía"
+  },
+  {
+   "titular": "Capitán de fábricas espaciales",
+   "url": "https://www.lavanguardia.com/economia/20261011/11656071/capitan-fabricas-espaciales.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "economía"
+  },
+  {
+   "titular": "Internacionalizando",
+   "url": "https://www.lavanguardia.com/economia/20261011/11656073/internacionalizando.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "economía"
+  },
+  {
+   "titular": "“El problema no siempre está en el plato, está en si tu cuerpo absorbe bien lo que hay”",
+   "url": "https://www.lavanguardia.com/comprar/deporte-salud/20261011/11655156/rocio-roca-farmaceutica-problema-siempre-esta-plato-esta-cuerpo-esta-absorbiendo-hay.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "deporte y salud"
+  },
+  {
+   "titular": "Fin del reinado de las mamparas correderas: la alternativa plegable, resistente y apta para baños pequeños que es muy fácil de instalar",
+   "url": "https://www.lavanguardia.com/comprar/hogar-cocina/20261011/11651120/reinado-mamparas-correderas-alternativa-plegable-resistente-apta-banos-pequenos-facil-instalar.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "hogar y cocina"
+  },
+  {
+   "titular": "Los elegantes botines de lluvia de Gioseppo que querrás para el otoño/invierno 2026-2027: impermeables, modernos y suman altura",
+   "url": "https://www.lavanguardia.com/comprar/moda-belleza/20261011/11654343/elegantes-botines-lluvia-gioseppo-querras-otono-invierno-2026-2027-impermeables-modernos-suman-altura-mkt-gios.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "moda y belleza"
+  },
+  {
+   "titular": "Cómo decorar una habitación infantil: 10 ideas, inspiradoras, bonitas y sencillas de aplicar",
+   "url": "https://www.lavanguardia.com/comprar/hogar-cocina/20261011/11648736/decorar-habitacion-infantil-mkt-nrt.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "hogar y cocina"
+  },
+  {
+   "titular": "¿Tu banco no te da nada? Estas cuentas te pagan hasta un 3,20% por tus ahorros",
+   "url": "https://www.lavanguardia.com/comprar/finanzas/20240529/9582657/cuentas-remuneradas-dinero-ahorro-2026-mkt-klt.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-08",
+   "seccion": "finanzas"
+  },
+  {
+   "titular": "El encuadernador de Hospital",
+   "url": "https://www.lavanguardia.com/local/barcelona/20261011/11655425/encuadernador-hospital.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "barcelona"
+  },
+  {
+   "titular": "Un 16% más de rescates de montaña y 16 fallecidos en nueve meses",
+   "url": "https://www.lavanguardia.com/local/barcelona/20261011/11654597/16-mas-rescates-montana-16-fallecidos-nueve-meses.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "barcelona"
+  },
+  {
+   "titular": "Muere un joven de 21 años tras ser apuñalado en un local de ocio de Cúllar Vega",
+   "url": "https://www.lavanguardia.com/local/andalucia/20261011/11656542/muere-joven-21-anos-apunalado-local-ocio-cullar-vega.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "andalucía"
+  },
+  {
+   "titular": "Incautadas 3 toneladas de cocaína y 4 fusiles de asalto en una casa rural en Guadalajara",
+   "url": "https://www.lavanguardia.com/local/castilla-la-mancha/20261011/11656459/incautadas-3-toneladas-cocaina-4-fusiles-asalto-casa-rural-guadalajara.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "castilla la mancha"
+  },
+  {
+   "titular": "“A mis alumnos les digo que para ser buen médico lo principal es ser buena persona”",
+   "url": "https://www.lavanguardia.com/vida/20261011/11654928/mis-alumnos-les-digo-buen-medico-principal-buena-persona.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "Los cirujanos del futuro se forman en Zanzíbar de la mano del Sagrat Cor",
+   "url": "https://www.lavanguardia.com/vida/20261011/11567506/cirujanos-futuro-forman-zanzibar-mano-sagrat-cor.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "Por qué escribir la ciudad también puede ser un ejercicio íntimo",
+   "url": "https://www.lavanguardia.com/magazine/20261009/11655300/escribir-ciudad-ejercicio-intimo-brl.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-09",
+   "seccion": "magazine"
+  },
+  {
+   "titular": "Otra riada en Nepal arrasa un pueblo y deja al menos cinco desaparecidos",
+   "url": "https://www.lavanguardia.com/internacional/20261011/11656494/riada-nepal-arrasa-pueblo-deja-cinco-desaparecidos.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Emilce Cuda reivindica una teología atenta a la realidad",
+   "url": "https://www.lavanguardia.com/vida/20261011/11655999/emilce-cuda-reivindica-teologia-atenta-realidad.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "El Ateneu Universitari Sant Pacià reflexionará sobre la IA en un congreso",
+   "url": "https://www.lavanguardia.com/vida/20261011/11656004/ateneu-universitari-sant-pacia-reflexionara-sobre-ia-congreso.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "El Pilar que nos sostiene",
+   "url": "https://www.lavanguardia.com/vida/20261011/11654437/pilar-sostiene.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "Ahora sí, el último concierto de Oques Grasses",
+   "url": "https://www.lavanguardia.com/cultura/20261010/11656126/ultimo-concierto-oques-grasses.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-10",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "Ni siquiera la lluvia",
+   "url": "https://www.lavanguardia.com/cultura/20261011/11655845/siquiera-lluvia.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "Ali Smith: “Olvídense del petróleo y del dinero; el lenguaje es nuestro bien más valioso y el poder lo sabe”",
+   "url": "https://www.lavanguardia.com/cultura/20261011/11655203/ali-smith-olvidense-petroleo-dinero-lenguaje-mas-valioso.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "‘Carrie’, 50 años de sangre y furia adolescente",
+   "url": "https://www.lavanguardia.com/cultura/20261011/11652676/carrie-50-anos-sangre-furia-adolescente.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "La mentira como supervivencia, en Víctor Català y Montserrat Roig",
+   "url": "https://www.lavanguardia.com/cultura/20261011/11656079/mentira-supervivencia-victor-catala-montserrat-roig.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "Teenage Fanclub (★★★✩✩), la alegría como antídoto y otros discos de la semana",
+   "url": "https://www.lavanguardia.com/cultura/20261011/11655901/teenage-fanclub-alegria-antidoto-otros-discos-semana.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "Hamburgo irrumpe en el calendario del arte contemporáneo",
+   "url": "https://www.lavanguardia.com/cultura/culturas/20261011/11653364/hamburgo-irrumpe-calendario-arte-contemporaneo.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "cultura|s"
+  },
+  {
+   "titular": "La mujer que dibujaba a Apel·les Fenosa",
+   "url": "https://www.lavanguardia.com/cultura/culturas/20261011/11651136/mujer-dibujaba-apel-les-fenosa.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "cultura|s"
+  },
+  {
+   "titular": "El no Hamlet de Andrew Scott",
+   "url": "https://www.lavanguardia.com/cultura/culturas/20261011/11651623/hamlet-andrew-scott.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "cultura|s"
+  },
+  {
+   "titular": "Securitas Direct ya es Verisure: qué hay detrás del cambio de nombre",
+   "url": "https://www.lavanguardia.com/vida/20261002/11649576/securitas-direct-verisure-que-hay-detras-cambio-nombre.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-02",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "De un stage de fútbol de primera división a la sala de juntas: Andorra y el turismo de empresa",
+   "url": "https://www.lavanguardia.com/empresas-de-vanguardia/20260925/11611006/stage-futbol-primera-division-sala-juntas-asi-conquista-andorra-turismo-empresa-brl.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-09-25",
+   "seccion": "empresas de vanguardia"
+  },
+  {
+   "titular": "Un referente del cine de autor que se digitaliza y vive su momento más dulce",
+   "url": "https://www.lavanguardia.com/empresas-de-vanguardia/historias-de-exito/20261009/11653495/cinemes-girona-referente-cine-autor-digitaliza-vive-momento-mas-dulce.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-09",
+   "seccion": "historias de éxito"
+  },
+  {
+   "titular": "Tamar Novas: “La música me inspira; es lo que más me abre emocionalmente”",
+   "url": "https://www.lavanguardia.com/magazine/protagonistas/20261011/11653520/tamar-novas-musica-me-inspira-mas-me-abre-emocionalmente.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "protagonistas"
+  },
+  {
+   "titular": "Fabienne Chapot, la marca holandesa que parece parisina",
+   "url": "https://www.lavanguardia.com/magazine/moda/20261011/11652228/fabienne-chapot-marca-holandesa-parece-parisina.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "moda"
+  },
+  {
+   "titular": "¿Es la IA un nuevo Renacimiento?",
+   "url": "https://www.lavanguardia.com/magazine/lifestyle/20261011/11654091/ia-nuevo-renacimiento.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "lifestyle"
+  },
+  {
+   "titular": "Large, el centro cultural más moderno de París, es obra del estudio catalán RCR Arquitectes",
+   "url": "https://www.lavanguardia.com/magazine/lifestyle/20261011/11648685/large-centro-cultural-mas-moderno-paris-obra-estudio-catalan-rcr-arquitectes.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "lifestyle"
+  },
+  {
+   "titular": "Daniel Craig compra un pub londinense del siglo XVIII con fama de estar encantado",
+   "url": "https://www.lavanguardia.com/gente/20261011/11656407/daniel-craig-compra-pub-londinense-siglo-xviii-fama-encantado.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "gente"
+  },
+  {
+   "titular": "Jessica Springsteen, hija de Bruce, anuncia que espera su primer hijo",
+   "url": "https://www.lavanguardia.com/gente/20261011/11656516/jessica-springsteen-hija-bruce-anuncia-espera-primer-hijo.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "gente"
+  },
+  {
+   "titular": "Tom Hiddleston y Gendon Phuntsok: “Todos tenemos un Everest en nuestras vidas”",
+   "url": "https://www.lavanguardia.com/television/20261011/11655841/tom-hiddleston-gendon-phuntsok-todos-everest-vidas.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "televisión"
+  },
+  {
+   "titular": "George Clooney rompe su silencio sobre la muerte del hijo de Cindy Crawford y Rande Gerber",
+   "url": "https://www.lavanguardia.com/gente/20261010/11655959/george-clooney-rompe-silencio-sobre-muerte-hijo-cindy-crawford-rande-gerber.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-10",
+   "seccion": "gente"
+  },
+  {
+   "titular": "Florence Pugh y Finn Cole oficializan su relación con su primera aparición en una alfombra roja",
+   "url": "https://www.lavanguardia.com/gente/20261010/11655978/florence-pugh-finn-cole-oficializan-relacion-primera-aparicion-alfombra-roja.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-10",
+   "seccion": "gente"
+  },
+  {
+   "titular": "El gazapo de la Farmàcia Albinyana",
+   "url": "https://www.lavanguardia.com/participacion/las-fotos-de-los-lectores/20261011/11654933/gazapo-farmacia-albinyana.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "las fotos de los lectores"
+  },
+  {
+   "titular": "¿Cuántos conejos eres capaz de ver en menos de 30 segundos?",
+   "url": "https://www.lavanguardia.com/participacion/retos/20261011/11654099/reto-visual-conejos-capaz-ver-30-segundos.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "retos"
+  },
+  {
+   "titular": "“Me gustaría poder fotografiar algo imposible, como el alma de alguien”",
+   "url": "https://www.lavanguardia.com/participacion/red-lectores/20261011/11655099/me-gustaria-fotografiar-imposible-alma-alguien.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "red de lectores"
+  },
+  {
+   "titular": "María J. Soler, nefróloga: “Comer carne cada día no es bueno para los riñones”",
+   "url": "https://www.lavanguardia.com/podcast/principio-activo/20261002/11632056/maria-j-soler-nefrologa-comer-carne-dia-bueno-rinones-smr.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-02",
+   "seccion": "principio activo"
+  },
+  {
+   "titular": "Calcetines ensangrentados en Huércal",
+   "url": "https://www.lavanguardia.com/sucesos/20261001/11648491/podcat-podcast-lv-huercal-asesinato-francisco-salvador-garcia-sanchez-violencia-machista-guardia-civil-antonia-garcia.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-01",
+   "seccion": "sucesos"
+  },
+  {
+   "titular": "Pablo Gil: “El millonario de antes del euro ahora sería pobre”",
+   "url": "https://www.lavanguardia.com/dinero/bolsillo/20261006/11651547/pablo-gil-economista-inversion-bolsillo-podcast-pca.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-06",
+   "seccion": "bolsillo"
+  },
+  {
+   "titular": "Comparativa de arenas para gato: 5 opciones para controlar olores",
+   "url": "https://www.lavanguardia.com/comprar/mas-valorados/20261010/11647702/mejores-arenas-gato-comparativa-mkt-eo.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-10",
+   "seccion": "más valorados"
+  },
+  {
+   "titular": "Comparativa de pilas recargables 2026: las mejores AA y AAA",
+   "url": "https://www.lavanguardia.com/comprar/mas-valorados/20261010/11652289/mejores-pilas-recargables-comparativa-mkt-eo.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-10",
+   "seccion": "más valorados"
+  },
+  {
+   "titular": "Mejores hipotecas de octubre de 2026: comparativa",
+   "url": "https://www.lavanguardia.com/comprar/finanzas/20260826/11619570/mejores-hipotecas-comparativa-bancos-tin-tae-perfil-mkt-witm.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-02",
+   "seccion": "finanzas"
+  },
+  {
+   "titular": "El vino de la semana: Casa Lebai El Portillo 2023",
+   "url": "https://www.lavanguardia.com/comer/20261011/11645035/vino-semana-casa-lebai-portillo-2023.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "comer"
+  },
+  {
+   "titular": "Las catanias, creadas en Vilafranca por Josep Cudié, cumplen 80 años",
+   "url": "https://www.lavanguardia.com/local/barcelona/20261010/11655065/catanias-creadas-vilafranca-josep-cudie-cumplen-80-anos.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-10",
+   "seccion": "barcelona"
+  },
+  {
+   "titular": "Las catanias cumplen 80 años y esta es su singular historia",
+   "url": "https://www.lavanguardia.com/comer/al-dia/20261009/11652087/catanias-cumplen-80-anos-singular-historia.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-09",
+   "seccion": "al día"
+  },
+  {
+   "titular": "Prepara buñuelos de mató y anchoa para salir del aperitivo de siempre",
+   "url": "https://www.lavanguardia.com/comer/recetas/20261009/11646825/prepara-bunuelos-mato-anchoa-salir-aperitivo-siempre.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-09",
+   "seccion": "recetas"
+  },
+  {
+   "titular": "La cumbre entre Reagan y Gorbachov que descongeló la guerra fría",
+   "url": "https://www.lavanguardia.com/historiayvida/historia-contemporanea/20261011/11654559/cumbre-reagan-gorbachov-descongelo-guerra-fria.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "historia contemporánea"
+  },
+  {
+   "titular": "Bola negra a Montserrat Caballé: así rechazaron los socios del Cercle del Liceu a la diva",
+   "url": "https://www.lavanguardia.com/historiayvida/20261010/11655556/bola-negra-montserrat-caballe-asi-rechazaron-socios-cercle-liceu-diva.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-10",
+   "seccion": "historia y vida"
+  },
+  {
+   "titular": "El rey que vivía de noche y llevaba los bolsillos llenos de triaca: la locura de Felipe V",
+   "url": "https://www.lavanguardia.com/historiayvida/edad-moderna/20261009/11581236/rey-vivia-noche-llevaba-bolsillos-llenos-triaca-locura-felipe-v.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-09",
+   "seccion": "historia moderna"
+  },
+  {
+   "titular": "Elecciones anticipadas, futurismo italiano y rumores desde Siberia",
+   "url": "https://www.lavanguardia.com/historiayvida/20261008/11654363/elecciones-anticipadas-futurismo-italiano-rumores-siberia.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-08",
+   "seccion": "historia y vida"
+  },
+  {
+   "titular": "Del ratoncito protestón al chopo del amor",
+   "url": "https://www.lavanguardia.com/participacion/las-fotos-de-los-lectores/20261011/11655187/ratoncito-proteston-chopo-amor.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "las fotos de los lectores"
+  },
+  {
+   "titular": "Encuesta: ¿Apruebas prohibir la compra especulativa de vivienda?",
+   "url": "https://www.lavanguardia.com/participacion/debates/20261011/11653287/encuesta-apruebas-prohibir-compra-especulativa-vivienda.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "debates"
+  },
+  {
+   "titular": "Cuatro españolas humanistas del Renacimiento",
+   "url": "https://www.lavanguardia.com/participacion/red-lectores/20261011/11655031/cuatro-espanolas-humanistas-renacimiento.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-11",
+   "seccion": "red de lectores"
+  },
+  {
+   "titular": "Reto visual: ¿Cuántas perdices eres capaz de ver en menos de 30 segundos?",
+   "url": "https://www.lavanguardia.com/participacion/retos/20261010/11654088/reto-visual-perdices-capaz-ver-30-segundos.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-10",
+   "seccion": "retos"
+  },
+  {
+   "titular": "Comparativa de telescopios 2026: cuáles son los mejores para observar estrellas, eclipses y el cielo nocturno",
+   "url": "https://www.lavanguardia.com/comprar/mas-valorados/20260429/11524304/mejores-telescopios-comparativa-mkt-eo.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-05",
+   "seccion": "más valorados"
+  },
+  {
+   "titular": "Comparativa de multivitamínicos 2026: los más completos para el día a día (cápsulas y comprimidos)",
+   "url": "https://www.lavanguardia.com/comprar/mas-valorados/20260221/11470419/mejores-multivitaminicos-comparativas-mkt-eo.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-08",
+   "seccion": "más valorados"
+  },
+  {
+   "titular": "Comparativa de estantes para gatos 2026: 5 ideas para ganar espacio (sin destrozar el salón)",
+   "url": "https://www.lavanguardia.com/comprar/mas-valorados/20260223/11470572/mejores-estantes-gatos-comparativas-mkt-eo.html",
+   "medio": "La Vanguardia",
+   "fecha": "2026-10-07",
+   "seccion": "más valorados"
+  },
+  {
+   "titular": "ERC confirma a Rufián como cabeza de lista y cierra la puerta al Frente Amplio",
+   "url": "https://www.eldiario.es/catalunya/erc-confirma-rufian-cabeza-lista-cierra-puerta-frente-amplio_1_13577275.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "catalunya"
+  },
+  {
+   "titular": "Más Madrid propone una lista liderada por Emilio Delgado para las elecciones del 29N",
+   "url": "https://www.eldiario.es/politica/madrid-propone-lista-consenso-liderada-emilio-delgado-elecciones-29n_1_13578644.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "politica"
+  },
+  {
+   "titular": "Izquierda Unida respalda la vía Colau y pide \"responsabilidad\" al resto de fuerzas tras el movimiento de Rufián",
+   "url": "https://www.eldiario.es/politica/izquierda-unida-respalda-via-colau-pide-responsabilidad-resto-fuerzas-movimiento-rufian_1_13578996.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "politica"
+  },
+  {
+   "titular": "Mertxe Aizpurua no irá en las listas de EH Bildu para las generales y no continuará en el Congreso",
+   "url": "https://www.eldiario.es/euskadi/mertxe-aizpurua-no-ira-listas-eh-bildu-generales-no-continuara-congreso_1_13578124.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "euskadi"
+  },
+  {
+   "titular": "El plan del 'Grupo Leire' contra la jueza Biedma: ¿atentado o disparate?",
+   "url": "https://www.eldiario.es/politica/plan-grupo-leire-jueza-biedma-atentado-disparate_1_13573249.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "politica"
+  },
+  {
+   "titular": "La jueza Biedma declara ante Pedraz que sintió \"temor\" pero que no le influyó en sus resoluciones sobre David Sánchez",
+   "url": "https://www.eldiario.es/politica/jueza-biedma-declara-pedraz-sintio-temor-no-le-influyo-resoluciones-david-sanchez_1_13571505.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-08",
+   "seccion": "politica"
+  },
+  {
+   "titular": "Siete palabras en la agenda de Leire Díez y ya tenemos otro espectáculo",
+   "url": "https://www.eldiario.es/blog/politica-para-supervivientes/siete-palabras-agenda-leire-diez-espectaculo_132_13577590.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "blog"
+  },
+  {
+   "titular": "Sigue el incendio interno en el PNV: Aitor Esteban cuestiona abiertamente la salida de Elixabete Etxanobe de Bizkaia",
+   "url": "https://www.eldiario.es/euskadi/sigue-incendio-interno-pnv-aitor-esteban-cuestiona-abiertamente-salida-elixabete-etxanobe-bizkaia_1_13578052.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "euskadi"
+  },
+  {
+   "titular": "La historia del ático más caro de España",
+   "url": "https://www.eldiario.es/blog/el-boletin-del-director/historia-atico-caro-espana_132_13576964.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "blog"
+  },
+  {
+   "titular": "Trump asegura que Rusia y Ucrania han aceptado un alto el fuego \"energético\" y les pide que \"no lo rompan\"",
+   "url": "https://www.eldiario.es/internacional/trump-asegura-rusia-ucrania-han-aceptado-alto-fuego-energetico-les-pide-no-rompan_1_13578878.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Zelenski propone a Putin una tregua energética y ofrece \"organizar elecciones\" si Rusia respeta un alto el fuego de 60 días",
+   "url": "https://www.eldiario.es/internacional/zelenski-propone-putin-tregua-ataques-infraestructuras-energeticas_1_13578849.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Por qué el Mar Negro se ha vuelto a convertir en una zona de desestabilización global",
+   "url": "https://www.eldiario.es/internacional/mar-negro-vuelto-convertir-zona-desestabilizacion-global_1_13569712.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "La Administración Trump lanza una investigación contra las principales cadenas por el plantón tras el veto a CNN, MS NOW y Politico",
+   "url": "https://www.eldiario.es/internacional/administracion-trump-lanza-investigacion-principales-cadenas-planton-veto-cnn-ms-now-politico_1_13578039.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Jesús Ordax, trabajar de día y dormir en la calle hasta encontrar techo: \"Nadie se imagina acabar así\"",
+   "url": "https://www.eldiario.es/catalunya/jesus-ordax-trabajar-dia-dormir-calle-encontrar-techo-nadie-imagina-acabar_1_13571883.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "catalunya"
+  },
+  {
+   "titular": "Decenas de migrantes son expulsados sin procedimiento a Marruecos tras el desalojo del asentamiento del Guano en Ceuta",
+   "url": "https://www.eldiario.es/desalambre/policia-ejercito-desalojan-asentamiento-guano-ceuta-resignacion-migrantes-adios-espana_1_13578061.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "desalambre"
+  },
+  {
+   "titular": "El escándalo por la detención de su antiguo jefe sacude a los servicios secretos alemanes: \"Es una puñalada en el corazón\"",
+   "url": "https://www.eldiario.es/internacional/theguardian/escandalo-detencion-antiguo-jefe-sacude-servicios-secretos-alemanes-punalada-corazon_1_13578931.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "La espiral de deuda en la que se ahoga Francia puede contagiar a Europa",
+   "url": "https://www.eldiario.es/economia/espiral-deuda-ahoga-francia-contagiar-europa_1_13574722.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "economia"
+  },
+  {
+   "titular": "Raphäel Glucksmann gana las primarias del Partido Socialista francés y será el candidato en las presidenciales de 2027",
+   "url": "https://www.eldiario.es/internacional/raphael-glucksmann-gana-primarias-partido-socialista-frances-sera-candidato-presidenciales-2027_1_13579013.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "El estudio genético de los últimos 125 agotes en Navarra, \"el pueblo maldito\", acaba con el \"misterio\" de su origen",
+   "url": "https://www.eldiario.es/navarra/estudio-genetico-ultimos-125-agotes-navarra-pueblo-maldito-acaba-misterio-origen_1_13568422.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "navarra"
+  },
+  {
+   "titular": "Al menos 12 muertos y 300 heridos en un ataque de los hutíes contra el aeropuerto saudí de Riad",
+   "url": "https://www.eldiario.es/internacional/12-muertos-300-heridos-ataque-huti-aeropuerto-riad_1_13578028.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Netanyahu pide que se investigue y procese a los participantes del documental 'NAZA'",
+   "url": "https://www.eldiario.es/internacional/netanyahu-pide-investigue-procese-participantes-documental-naza_1_13579029.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "El Servicio Secreto Militar informó a Franco del espionaje en Canarias un año antes de su llegada",
+   "url": "https://www.eldiario.es/canariasahora/sociedad/servicio-secreto-militar-informo-franco-espionaje-canarias-ano-llegada_1_13572602.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "canariasahora"
+  },
+  {
+   "titular": "Las conclusiones sobre el informe especial para Franco: sabía de la facilidad para neutralizar a los militares si no se adherían al golpe",
+   "url": "https://www.eldiario.es/canariasahora/sociedad/conclusiones-informe-especial-franco-sabia-facilidad-neutralizar-militares-si-no-adherian-golpe_1_13573669.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "canariasahora"
+  },
+  {
+   "titular": "¿Y si no retiramos los monumentos franquistas? \"Quitarlos sin más es borrar las huellas del crimen\"",
+   "url": "https://www.eldiario.es/sociedad/si-no-retiramos-monumentos-franquistas-quitarlos-borrar-huellas-crimen_1_13554260.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "Radiografía económica de una legislatura: liderazgo en crecimiento y empleo con el lastre de la vivienda y los precios",
+   "url": "https://www.eldiario.es/economia/radiografia-economica-legislatura-liderazgo-crecimiento-empleo-lastre-vivienda-precios_1_13573154.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "economia"
+  },
+  {
+   "titular": "Detenido un empresario por someter a hambre y agresiones a una trabajadora de un yate en Mallorca",
+   "url": "https://www.eldiario.es/illes-balears/sociedad/detenido-empresario-someter-hambre-agresiones-condiciones-extremas-trabajadora-yate-mallorca_1_13578566.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "illes-balears"
+  },
+  {
+   "titular": "Las nueve vocalías progresistas del CGPJ piden respetar los acuerdos de 2024 en la renovación de las comisiones",
+   "url": "https://www.eldiario.es/politica/nueve-vocalias-progresistas-cgpj-pide-respetar-acuerdos-2024-renovacion-comisiones_1_13578811.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "politica"
+  },
+  {
+   "titular": "Padre, hijo y el voto del Espíritu Santo: la alianza entre ultraderecha y evangélicos para tumbar a la izquierda en Brasil",
+   "url": "https://www.eldiario.es/internacional/padre-hijo-voto-espiritu-santo-alianza-ultraderecha-evangelicos-tumbar-izquierda-brasil_1_13575535.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "El papa anuncia que deberá operarse de un nódulo en el pulmón en fase \"muy inicial\"",
+   "url": "https://www.eldiario.es/sociedad/papa-anuncia-debera-operarse-nodulo-pulmon-fase-inicial_1_13578519.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "Las farmacéuticas del covid se reinventan para sobrevivir: nuevas vacunas y medicamentos antiobesidad",
+   "url": "https://www.eldiario.es/sociedad/farmaceuticas-covid-reinventan-sobrevivir-nuevas-vacunas-medicamentos-antiobesidad_1_13574916.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "Grete Hermann, la joven matemática que cuestionó a John von Neumann",
+   "url": "https://www.eldiario.es/sociedad/grete-hermann-joven-matematica-cuestiono-john-von-neumann_1_13549008.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "Pucherazo",
+   "url": "https://www.eldiario.es/opinion/pucherazo_131_13577947.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "opinion"
+  },
+  {
+   "titular": "Fresnos, chopos, eucaliptos, además de cascadas y aguas cristalinas forman parte de esta apacible ruta valenciana",
+   "url": "https://www.eldiario.es/viajes/fresnos-chopos-eucaliptos-ademas-cascadas-aguas-cristalinas-forman-parte-apacible-ruta-valenciana-pm_1_13578054.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "viajes"
+  },
+  {
+   "titular": "'Verborrea': cómo acabaron los punkis de postal y el punk de escaparate",
+   "url": "https://www.eldiario.es/cultura/teatro/verborrea-acabaron-punkis-postal-punk-escaparate_129_13567063.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "La economía y la política se “maximizan”",
+   "url": "https://www.eldiario.es/opinion/zona-critica/economia-politica-maximizan_129_13577775.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "opinion"
+  },
+  {
+   "titular": "Ayuso liter eta",
+   "url": "https://www.eldiario.es/opinion/zona-critica/ayuso-liter-eta_129_13577778.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "opinion"
+  },
+  {
+   "titular": "Los motivos del 11N",
+   "url": "https://www.eldiario.es/opinion/tribuna-abierta/motivos-11n_129_13577584.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "opinion"
+  },
+  {
+   "titular": "Solía odiar a Rufián, ahora le amo",
+   "url": "https://www.eldiario.es/opinion/zona-critica/solia-odiar-rufian-ahora-le-amo_129_13577647.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "opinion"
+  },
+  {
+   "titular": "Abandonad toda esperanza",
+   "url": "https://www.eldiario.es/opinion/zona-critica/abandonad-esperanza_129_13577789.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "opinion"
+  },
+  {
+   "titular": "La fractura residencial: de la tragedia individual a la emergencia colectiva",
+   "url": "https://www.eldiario.es/opinion/tribuna-abierta/fractura-residencial-tragedia-individual-emergencia-colectiva_129_13577728.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "opinion"
+  },
+  {
+   "titular": "El puzzle",
+   "url": "https://www.eldiario.es/opinion/puzzle_131_13577974.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "opinion"
+  },
+  {
+   "titular": "Volkswagen se envuelve en la bandera europea y pide apoyo político para replicar el caso de éxito de España",
+   "url": "https://www.eldiario.es/motor/sector_y_mercado/volkswagen-envuelve-bandera-europea-pide-apoyo-politico-replicar-caso-exito-espana_1_13578410.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "motor"
+  },
+  {
+   "titular": "Por qué es mejor no preguntarle a los niños qué quieren comer: la explicación de una experta en nutrición pediátrica",
+   "url": "https://www.eldiario.es/nidos/mejor-no-preguntarle-hijos-quieren-comer-explicacion-experta-nutricion-xp_1_13578194.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "nidos"
+  },
+  {
+   "titular": "Ocho detenidos y casi tres toneladas de cocaína incautadas en una casa rural de Guadalajara",
+   "url": "https://www.eldiario.es/castilla-la-mancha/provincias/guadalajara/ocho-detenidos-tres-toneladas-cocaina-incautadas-casa-rural-guadalajara_1_13578166.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "castilla-la-mancha"
+  },
+  {
+   "titular": "Pionero de la arqueología, la intuición de este vecino gaditano le llevó en 1793 a comprar unas tierras para luego descubrir todo un yacimiento romano",
+   "url": "https://www.eldiario.es/spin/pionero-arqueologia-intuicion-vecino-gaditano-le-llevo-1793-comprar-tierras-luego-descubrir-yacimiento-romano-pm_1_13576968.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "spin"
+  },
+  {
+   "titular": "Encuentran bajo el agua un anillo romano de hace 2.000 años con la imagen de una de las siete maravillas del mundo antiguo",
+   "url": "https://www.eldiario.es/spin/encuentran-agua-anillo-romano-2-000-anos-imagen-siete-maravillas-mundo-antiguo-pm_1_13578333.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "spin"
+  },
+  {
+   "titular": "Espacio de poder y del pueblo: por qué la Puerta del Sol es el lugar de las algaradas y revoluciones en Madrid",
+   "url": "https://www.eldiario.es/madrid/somos/espacio-pueblo-puerta-sol-lugar-algaradas-revoluciones-madrid_1_13564107.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "madrid"
+  },
+  {
+   "titular": "Sánchez y Feijóo encaran su duelo electoral más cruento",
+   "url": "https://www.eldiario.es/politica/sanchez-feijoo-encaran-duelo-electoral-cruento_1_13574968.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "politica"
+  },
+  {
+   "titular": "Operación Octubre Rojo o cómo ganar perdiendo",
+   "url": "https://www.eldiario.es/comunitat-valenciana/operacion-octubre-rojo-ganar-perdiendo_129_13577455.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "comunitat-valenciana"
+  },
+  {
+   "titular": "La abogada Miriam González anuncia su candidatura al Congreso por Democracia 21, que solo presentará listas en Madrid y Barcelona",
+   "url": "https://www.eldiario.es/politica/abogada-miriam-gonzalez-anuncia-candidatura-congreso-democracia-21-presentara-listas-madrid-barcelona_1_13577548.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "politica"
+  },
+  {
+   "titular": "Drago Canarias anuncia que concurrirá en solitario a las elecciones generales",
+   "url": "https://www.eldiario.es/canariasahora/politica/drago-canarias-anuncia-concurrira-solitario-elecciones-generales_1_13577708.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "canariasahora"
+  },
+  {
+   "titular": "Quién compra los calcetines: cuando el cambio de armario se convierte en una trampa (también sentimental) para las madres",
+   "url": "https://www.eldiario.es/nidos/compra-calcetines-cambio-armario-convierte-trampa-sentimental-madres_129_13572058.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "nidos"
+  },
+  {
+   "titular": "Pablo espera el desalojo en la villa de la 'casera de los famosos' de Ibiza: \"Cerramos cada día la puerta\"",
+   "url": "https://www.eldiario.es/illes-balears/economia/pablo-espera-desalojo-villa-casera-famosos-ibiza-cerramos-dia-puerta_1_13575794.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "illes-balears"
+  },
+  {
+   "titular": "Historias de la lista a la que la Xunta relega a quienes rechazan operarse en la privada: esperas de dos años y nula información",
+   "url": "https://www.eldiario.es/galicia/historias-lista-xunta-relega-rechazan-operarse-privada-esperas-anos-nula-informacion_1_13570313.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "galicia"
+  },
+  {
+   "titular": "Las cincuenta y siete campañas de verdeo a la espalda de Antonio Mateos con el olor de la salmuera en las manos",
+   "url": "https://www.eldiario.es/sevilla/cincuenta-siete-campanas-verdeo-espalda-antonio-mateos-olor-salmuera-manos_130_13565682.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "sevilla"
+  },
+  {
+   "titular": "La Junta de Andalucía cita a los sindicatos para poner fecha a la exigencia del B1 de inglés en las oposiciones y el teletrabajo",
+   "url": "https://www.eldiario.es/andalucia/junta-andalucia-cita-sindicatos-poner-fecha-exigencia-b1-ingles-oposiciones-teletrabajo_1_13578292.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "andalucia"
+  },
+  {
+   "titular": "La justicia patriarcal en el Patronato de Protección a la Mujer: treinta días de arresto a la amante de un guardia en Las Palmas",
+   "url": "https://www.eldiario.es/canariasahora/sociedad/justicia-patriarcal-patronato-proteccion-mujer-treinta-dias-arresto-amante-guardia-palmas_1_13372335.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "canariasahora"
+  },
+  {
+   "titular": "'Navalleiros' de Aguiño (A Coruña) y el buceo a pulmón como arte de pesca sostenible: \"El mar es parte del futuro\"",
+   "url": "https://www.eldiario.es/galicia/mar-a-bordo/navalleiros-aguino-coruna-buceo-pulmon-arte-pesca-sostenible-mar-parte-futuro_1_13525421.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-09-22",
+   "seccion": "galicia"
+  },
+  {
+   "titular": "'Conexión a Tierra’: un viaje por la España rural que convive con las renovables",
+   "url": "https://www.eldiario.es/edcreativo/conexion-tierra-viaje-espana-rural-convive-renovables_1_13537468.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-09-25",
+   "seccion": "edcreativo"
+  },
+  {
+   "titular": "Pagar en la tienda evoluciona: la inmediatez de las transferencias instantáneas, con la comodidad del pago sin contacto",
+   "url": "https://www.eldiario.es/edcreativo/pagar-tienda-evoluciona-inmediatez-transferencias-instantaneas-comodidad-pago-contacto_1_13537691.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-09-30",
+   "seccion": "edcreativo"
+  },
+  {
+   "titular": "OMODA & JAECOO, o la importancia de tener el respaldo de un gigante de la automoción",
+   "url": "https://www.eldiario.es/motor/omoda-jaecoo-importancia-respaldo-gigante-automocion_1_13503206.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-09-24",
+   "seccion": "motor"
+  },
+  {
+   "titular": "Navi Pillay frente a la ley del más fuerte",
+   "url": "https://www.eldiario.es/internacional/navi-pillay-frente-ley-fuerte_129_13577451.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Navi Pillay, jurista y expresidenta del grupo de expertos de la ONU que acusó a Israel de genocidio, premio Nobel de la Paz 2026",
+   "url": "https://www.eldiario.es/internacional/jueza-corte-penal-internacional-navanethem-navi-pillay-premio-nobel-paz-2026_1_13574390.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-09",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Christa Pike, la mujer que sobrevivió a dos inyecciones letales, es dada de alta",
+   "url": "https://www.eldiario.es/internacional/christa-pike-mujer-sobrevivio-inyecciones-letales-dada-alta_1_13577727.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Trump carga contra Zelenski tras criticar su pacto con Putin sobre el diésel: \"Ha llegado el momento de que Ucrania tenga un nuevo presidente\"",
+   "url": "https://www.eldiario.es/internacional/trump-carga-zelenski-criticar-pacto-putin-diesel-llegado-momento-ucrania-tenga-nuevo-presidente_1_13577813.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "Un tirador deja ocho muertos, incluyendo dos niños, y se quita la vida en Pensilvania",
+   "url": "https://www.eldiario.es/internacional/tirador-deja-ocho-muertos-incluyendo-ninos-quita-vida-pensilvania_1_13577923.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "internacional"
+  },
+  {
+   "titular": "De K Street a Mar-a-Lago: los ‘lobbies’ se reajustan a las nuevas riendas del poder ‘trumpista’",
+   "url": "https://www.eldiario.es/economia/k-street-mar-lago-lobbies-reajustan-nuevas-riendas-trumpista_129_13573286.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "economia"
+  },
+  {
+   "titular": "València lleva 4 años sin aplicar el recargo del IBI a los grandes tenedores de vivienda pese a recogerlo la ley",
+   "url": "https://www.eldiario.es/comunitat-valenciana/valencia/valencia-lleva-4-anos-aplicar-recargo-ibi-grandes-tenedores-vivienda-pese-recogerlo-ley_1_13572008.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "comunitat-valenciana"
+  },
+  {
+   "titular": "Los frugales van ganando: la propuesta irlandesa para negociar el presupuesto europeo parte de un recorte del 8%",
+   "url": "https://www.eldiario.es/economia/frugales-ganando-propuesta-irlandesa-negociar-presupuesto-europeo-parte-recorte-8_1_13577038.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "economia"
+  },
+  {
+   "titular": "Anthropic admite que su IA envió pistas falsas sobre un homicidio a la policía y rellenó visados de forma autónoma",
+   "url": "https://www.eldiario.es/tecnologia/anthropic-admite-ia-envio-pistas-falsas-homicidio-policia-relleno-visados-forma-autonoma_1_13577005.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "tecnologia"
+  },
+  {
+   "titular": "Consumo multa con 750.000 euros la rifa de un coche de lujo de un youtuber residente en Andorra",
+   "url": "https://www.eldiario.es/economia/consumo-multa-750-000-euros-rifa-coche-lujo-youtuber-residente-andorra_1_13572983.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-09",
+   "seccion": "economia"
+  },
+  {
+   "titular": "El Banco de España dispara al 2,2% su previsión del PIB en 2027 ante la “notable resiliencia” de la economía",
+   "url": "https://www.eldiario.es/economia/banco-espana-mejora-2-6-prevision-pib-notable-resiliencia-economia_1_13574446.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-09",
+   "seccion": "economia"
+  },
+  {
+   "titular": "🎙 PODCAST | ESPECIAL | 'Un tema Al día', en directo: ¿Cómo hemos llegado hasta aquí?",
+   "url": "https://www.eldiario.es/un-tema-al-dia/podcast-especial-tema-dia-directo-hemos-llegado_132_13570242.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-08",
+   "seccion": "un-tema-al-dia"
+  },
+  {
+   "titular": "Gaza: qué ha pasado mientras no mirábamos",
+   "url": "https://www.eldiario.es/carnecruda/programas/gaza-pasado-no-mirabamos_132_13566707.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-06",
+   "seccion": "carnecruda"
+  },
+  {
+   "titular": "Operación \"sherpa\": un viaje alrededor del mundo en busca de la biología más extrema | 🎙 PODCAST",
+   "url": "https://www.eldiario.es/sociedad/catastrofe-ultravioleta/operacion-sherpa-viaje-alrededor-mundo-busca-biologia-extrema-podcast_1_13360410.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-02",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "¿Hay hogares que vale la pena dejar ir?",
+   "url": "https://www.eldiario.es/canariasahora/hogar-de-cenizas/hay-hogares-vale-pena_1_13569465.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-07",
+   "seccion": "canariasahora"
+  },
+  {
+   "titular": "Nicolas Winding Refn regresa al cine con ‘Su propio infierno’: “Si Hans Christian Andersen siguiera vivo, sería yo”",
+   "url": "https://www.eldiario.es/cultura/cine/nicolas-winding-refn-regresa-cine-propio-infierno-si-hans-christian-andersen-siguiera-vivo-seria_1_13575302.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "Los mejores planes para el fin de semana: libros, películas y canciones",
+   "url": "https://www.eldiario.es/cultura/cultura/mejores-planes-semana-libros-peliculas-canciones_132_13573096.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-09",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "Detenido Rafael Amargo por agredir a un policía tras una pelea con una persona que irrumpió en su casa",
+   "url": "https://www.eldiario.es/cultura/detenidos-rafael-amargo-agredir-policia-pelea-persona-entro-casa_1_13577602.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "El indiferente general",
+   "url": "https://www.eldiario.es/cultura/indiferente-general_129_13577636.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "Esta es la ruta botánica en la que puedes ver una casona del siglo XIX, una excavación que servía de nevera y un antiguo monasterio",
+   "url": "https://www.eldiario.es/viajes/ruta-botanica-puedes-ver-casona-siglo-xix-excavacion-servia-nevera-antiguo-monasterio-pm_1_13576517.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "viajes"
+  },
+  {
+   "titular": "Qué hacer si te llueve en plena escapada: planes B para siete ciudades españolas",
+   "url": "https://www.eldiario.es/viajes/si-llueve-plena-escapada-planes-b-siete-ciudades-espanolas_1_13574127.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-09",
+   "seccion": "viajes"
+  },
+  {
+   "titular": "Construido en el siglo XVIII con forma de U, este palacio fue regalado a Sissi y es uno de los monumentos más grandes de este país",
+   "url": "https://www.eldiario.es/spin/construido-siglo-xviii-forma-u-castillo-regalado-sissi-monumentos-grandes-pais-pm_1_13576534.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "spin"
+  },
+  {
+   "titular": "48 horas siguiendo los pasos de Federico García Lorca por Granada",
+   "url": "https://www.eldiario.es/viajes/48-horas-siguiendo-pasos-federico-garcia-lorca-granada_1_13575785.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "viajes"
+  },
+  {
+   "titular": "Una dermatóloga explica cómo elegir crema hidratante: “La piel puede tener exceso de grasa y estar deshidratada”",
+   "url": "https://www.eldiario.es/consumoclaro/dermatologa-explica-elegir-crema-hidratante-piel-exceso-grasa-deshidratada-xp_1_13573731.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-09",
+   "seccion": "consumoclaro"
+  },
+  {
+   "titular": "Topkapi, la ciudad amurallada desde la que los sultanes gobernaron durante casi 400 años el Imperio otomano",
+   "url": "https://www.eldiario.es/viajes/topkapi-ciudad-amurallada-sultanes-gobernaron-durante-400-anos-imperio-otomano-pm_1_13575466.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "viajes"
+  },
+  {
+   "titular": "Un fósil de millones de años hallado en Marruecos revela una antigua práctica religiosa",
+   "url": "https://www.eldiario.es/spin/fosil-millones-anos-hallado-marruecos-revela-antigua-practica-religiosa-pm_1_13578513.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "spin"
+  },
+  {
+   "titular": "Este impresionante edificio de 1570 es la oficina del primer ministro de este pequeño país y se llama Albergue de Castilla",
+   "url": "https://www.eldiario.es/spin/impresionante-edificio-1570-oficina-primer-ministro-pequeno-pais-llama-albergue-castilla-pm_1_13578116.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "spin"
+  },
+  {
+   "titular": "Las 500 figuras pintadas en las paredes de esta cueva, sobre todo aves, la convierten en uno de los mejores ejemplos del arte rupestre de la península",
+   "url": "https://www.eldiario.es/spin/500-figuras-pintadas-paredes-cueva-aves-convierten-mejores-ejemplos-arte-rupestre-peninsula-pm_1_13578433.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "spin"
+  },
+  {
+   "titular": "¿Puede el cuerpo humano funcionar como una red inalámbrica? Científicos ya lo utilizan para comunicar diminutos implantes médicos",
+   "url": "https://www.eldiario.es/spin/cuerpo-humano-funcionar-red-inalambrica-cientificos-utilizan-comunicar-diminutos-implantes-medicos-pm_1_13573919.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "spin"
+  },
+  {
+   "titular": "Un jardín de esculturas gigantes en la Toscana: el sorprendente homenaje a Gaudí inspirado en el tarot",
+   "url": "https://www.eldiario.es/viajes/jardin-esculturas-gigantes-toscana-sorprendente-homenaje-gaudi-inspirado-tarot-pm_1_13575471.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-11",
+   "seccion": "viajes"
+  },
+  {
+   "titular": "A una hora de Lisboa: la localidad vinculada desde el siglo XV a las aguas termales y está reconocida por la UNESCO",
+   "url": "https://www.eldiario.es/viajes/hora-lisboa-localidad-vinculada-siglo-xv-aguas-termales-reconocida-unesco_1_13565803.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-08",
+   "seccion": "viajes"
+  },
+  {
+   "titular": "Del rocódromo a la roca: qué debes tener en cuenta si vas a dar el salto a la escalada en exteriores",
+   "url": "https://www.eldiario.es/viajes/rocodromo-roca-guia-practica-iniciarse-escalada-montana-forma-segura_1_13569810.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-08",
+   "seccion": "viajes"
+  },
+  {
+   "titular": "El jardín botánico de estilo inglés y romántico del siglo XIX que alberga una colección subtropical al aire libre muy peculiar",
+   "url": "https://www.eldiario.es/viajes/jardin-botanico-estilo-ingles-romantico-siglo-xix-alberga-coleccion-subtropical-aire-libre-peculiar_1_13563057.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-07",
+   "seccion": "viajes"
+  },
+  {
+   "titular": "Un tema Al día reúne a más de 1.300 personas en el teatro: “No estamos solos ni somos pocos”",
+   "url": "https://www.eldiario.es/redaccion/tema-dia-reune-1-300-personas-teatro-no-solos_132_13560680.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-04",
+   "seccion": "redaccion"
+  },
+  {
+   "titular": "Hugo Morán, secretario de Estado de Medio Ambiente: \"El zapatero y el técnico de lavadora volverán a nuestras vidas\"",
+   "url": "https://www.eldiario.es/sociedad/secretario-medio-ambiente-hugo-moran-zapatero-tecnico-lavadora-volveran-vidas_1_13552525.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-01",
+   "seccion": "sociedad"
+  },
+  {
+   "titular": "Niña Polaca: “Lo que sucede en Sol es un aliento, la gente se está cogiendo de la mano para cambiar la situación”",
+   "url": "https://www.eldiario.es/cultura/musica/nina-polaca-sucediendo-sol-aliento-gente-cogiendo-mano-cambiar-situacion_1_13544685.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-09-28",
+   "seccion": "cultura"
+  },
+  {
+   "titular": "‘Alerta democrática’, la revista de elDiario.es, pone el termómetro al sistema: “Vivimos un peligro real que se llama Poder Judicial”",
+   "url": "https://www.eldiario.es/eventos/alerta-democratica-revista-eldiario-pone-termometro-sistema-vivimos-peligro-real-llama-judicial_1_13519136.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-09-17",
+   "seccion": "eventos"
+  },
+  {
+   "titular": "La industria de automoción se 'cuela' en el desfile del 12 de octubre",
+   "url": "https://www.eldiario.es/motor/sector_y_mercado/industria-automocion-cuela-desfile-12-octubre_1_13576104.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-10",
+   "seccion": "motor"
+  },
+  {
+   "titular": "Volkswagen lanza el nuevo ID. Tiguan eléctrico más barato que el de gasolina (con ayudas)",
+   "url": "https://www.eldiario.es/motor/novedades/volkswagen-lanza-nuevo-id-tiguan-electrico-barato-gasolina-ayudas_1_13576420.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-09",
+   "seccion": "motor"
+  },
+  {
+   "titular": "La UE logra un acuerdo con China para reducir a la mitad sus exportaciones de vehículos híbridos a Europa",
+   "url": "https://www.eldiario.es/economia/ue-logra-acuerdo-china-reducir-mitad-exportaciones-vehiculos-hibridos-europa_1_13574933.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-09",
+   "seccion": "economia"
+  },
+  {
+   "titular": "Los coches chinos también conquistan el Salón del Automóvil de París",
+   "url": "https://www.eldiario.es/motor/sector_y_mercado/coches-chinos-conquistan-salon-automovil-paris_1_13575543.html",
+   "medio": "elDiario.es",
+   "fecha": "2026-10-09",
+   "seccion": "motor"
+  },
+  {
+   "titular": "Saudi capital airport hit by second Houthi strike in two days",
+   "url": "https://www.bbc.co.uk/news/articles/cr93znyk44e1o",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "Riyadh airport attacks another dangerous moment in already tense conflict",
+   "url": "https://www.bbc.co.uk/news/articles/cr4g1pwxxlq1o",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "PM says it is 'clear' Russia interfered with Brexit vote",
+   "url": "https://www.bbc.co.uk/news/articles/c6jdm3zggl0ko",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "Wildlife park remains closed after fatal tiger attack",
+   "url": "https://www.bbc.co.uk/news/articles/cmgr8221v4x1o",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "Poland stabbings driven by online glorification of violence, Tusk says",
+   "url": "https://www.bbc.co.uk/news/articles/ckp8gyd65z2go",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "Children among 139 dead after boat capsizes off Djibouti, UN says",
+   "url": "https://www.bbc.co.uk/news/articles/cwy7lxx60dg5o",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "Pope Leo to have surgery after lump found on lung",
+   "url": "https://www.bbc.co.uk/news/articles/c6m2dnngvw8xo",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "Ukraine strikes Yandex data centre in third attack on Russian tech giant",
+   "url": "https://www.bbc.co.uk/news/articles/cw0k0g57mk3zo",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "DUP MP says her party could help remove O'Neill as first minister over Drumcree row",
+   "url": "https://www.bbc.co.uk/news/articles/cm79pd2zzl59o",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "Buildings swept away as flash floods hit central Nepal",
+   "url": "https://www.bbc.co.uk/news/videos/cwzrdnljedx0o",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "Three friends on their student debt: One paid off, one chipping away and one creeping up",
+   "url": "https://www.bbc.co.uk/news/articles/c9rk3k25vmxko",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "Citroen revives the 2CV for an electric age",
+   "url": "https://www.bbc.co.uk/news/articles/c620r33plgppo",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "Inside the room: What it was like to be with Blackpink's Lisa as race scandal erupted",
+   "url": "https://www.bbc.co.uk/news/articles/cjzxl56q30k7o",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "AI is creating a 'human premium' for art made by people, but will it hold?",
+   "url": "https://www.bbc.co.uk/news/articles/c5vgjm3gk7rzo",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "I was told I had depression for 14 years until I got sectioned - it was bipolar",
+   "url": "https://www.bbc.co.uk/news/articles/ck3rer7e4rngo",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "Northern Lights dazzle skies across the UK",
+   "url": "https://www.bbc.co.uk/news/articles/c9rkyey458xdo",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "Russo named England player of the year",
+   "url": "https://www.bbc.co.uk/sport/football/articles/ckgel112lr1qo",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "sport"
+  },
+  {
+   "titular": "Why are so many four-year-olds not potty-trained before school?",
+   "url": "https://www.bbc.co.uk/news/articles/c5x2vnp4jrkdo",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "Man, 36, arrested six years on from double murder",
+   "url": "https://www.bbc.co.uk/news/articles/cvglw0y7p10ro",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "Swinney backs Flynn in ferry gas leak row and says 'nobody's perfect'",
+   "url": "https://www.bbc.co.uk/news/articles/cq5yn75jr75ro",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "news"
+  },
+  {
+   "titular": "BBC News app",
+   "url": "https://www.bbc.co.uk/news/10628994",
+   "medio": "BBC",
+   "fecha": "2025-04-30",
+   "seccion": "news"
+  },
+  {
+   "titular": "Does Zack Polanski Face A Leadership Crisis?",
+   "url": "https://www.bbc.co.uk/sounds/play/p0pf3l61",
+   "medio": "BBC",
+   "fecha": "2026-10-03",
+   "seccion": "sounds"
+  },
+  {
+   "titular": "Brad Pitt stars as a tank commander on a dangerous mission in WWII",
+   "url": "https://www.bbc.co.uk/iplayer/episode/m0031xrp",
+   "medio": "BBC",
+   "fecha": "2026-09-23",
+   "seccion": "iplayer"
+  },
+  {
+   "titular": "Who 'simply has to do better'? Liverpool v Man City player ratings",
+   "url": "https://www.bbc.co.uk/sport/football/articles/ck87z1jjynyqo",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "sport"
+  },
+  {
+   "titular": "Verstappen dominates for first Singapore Grand Prix win",
+   "url": "https://www.bbc.co.uk/sport/formula1/articles/c84g1p2ql9z5o",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "sport"
+  },
+  {
+   "titular": "Burnham to release details of Man City meetings",
+   "url": "https://www.bbc.co.uk/sport/football/articles/c962y5nd273no",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "sport"
+  },
+  {
+   "titular": "Sensational Smith, relentless quicks - Australia veterans serve reminder",
+   "url": "https://www.bbc.co.uk/sport/cricket/articles/cqvg0pdye05ro",
+   "medio": "BBC",
+   "fecha": "2026-10-11",
+   "seccion": "sport"
+  }
+ ],
+ "reaparecen": [],
+ "errores": {}
+}
