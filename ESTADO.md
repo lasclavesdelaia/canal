@@ -1073,3 +1073,88 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Hecho (9 oct, Cristian): SemiAnalysis como inspiración (PAUTA §9: seguir el dinero y el hierro, modelo de costes en
   vez de lista de cifras, tesis propia con un punto de sarcasmo; no su jerga ni lo de pago) y como fuente en
   config/fuentes.md (solo lo abierto; se nombra porque el análisis es suyo).
+
+## 9 oct 2026 — Pausa
+- Hecho: config/pausa.json + paso 0 en RUTINA/ENCARGADO + publicar.py la respeta (10922b6). Skills /pausarclaves y /reanudarclaves en ~/.claude/skills. Arreglado test_red_custom (semianalysis.com), que bloqueaba publicar.yml (8786503).
+- Ojo: la Red Custom del entorno de la nube debe llevar semianalysis.com (sin comodín) y puede quitar asia.nikkei.com.
+- En cola (tras «Vida media»): «Marcador de predicciones»: registro P-NNN (afirmación, probabilidad, criterio de resolución objetivo, fecha), también a 6-24 meses (capacidades de modelos, beneficios, etc.); al vencer o cuando el tema vuelva, el episodio lo retoma en su contexto; Brier y calibración en la web; balance anual. ~150k tokens.
+
+## 9 oct 2026 — Vida media de las noticias (listo, falta subirlo)
+- Hecho: rama local `worktree-agent-ad0b2cef6347ed52a` (worktree en .claude/worktrees/agent-ad0b2cef6347ed52a), revisada; pruebas en verde. Los datos viven en la rama `datos-titulares` (main exige firma; el bot no firma).
+- En curso: el portero bloqueó el push en la sesión que lo hizo (leyó contenido de fuera).
+- Siguiente (en una sesión nueva): `git fetch && git rebase origin/main` en esa rama, `git push origin HEAD:main`, luego `gh workflow run titulares.yml` y comprobar que aparece la rama `datos-titulares` con `datos/titulares/<hoy>.json`. Después, borrar el worktree.
+- Pendiente para el 8 nov: la página /vida-media/ se genera en publicar.yml desde main, que no tendrá datos; que sitio.py lea `datos/vida_media.json` de la rama `datos-titulares`.
+- Después, en cola: «Marcador de predicciones».
+- Viernes: el primer agente cayó en un worktree de temario_mates; relanzado en .claude/worktrees/viernes (rama `viernes`, apilada sobre la de vida media). Al subir: basta con subir `viernes` (incluye vida media).
+
+## 9 oct 2026 — Balance largo (viernes) listo; SUBIR JUNTO CON VIDA MEDIA
+- Hecho: rama local `viernes` (worktree .claude/worktrees/viernes), commit 84c4a1d sobre la de vida media (dcb3bff). 116 pruebas OK. Revisada la pauta `prompts/balance.md` (sin nada privado).
+- Siguiente, en una sesión nueva (esta tiene el portero activo): desde ese worktree `git fetch && git rebase origin/main`, pruebas, `git push origin HEAD:main`; luego `gh workflow run titulares.yml` y comprobar la rama `datos-titulares`. Antes del viernes 16 oct.
+- Pendiente de Cristian: dominios del balance para la Red Custom (está al tope; lista en PASOS_CRISTIAN.md, «Balance largo»), lista de YouTube Studio con balance.xml, vigilar cuota de voz tras el primer viernes.
+- Después: «Marcador de predicciones» (en cola).
+- En cola (tras predicciones, en su misma rama): pausa por programa. Formato: `{"hasta": null, "motivo": "", "por_programa": {"balance": {"hasta": "AAAA-MM-DD", "motivo": ""}}}`; la pausa general sigue igual. Tocar comun.py (pausa_hasta(programa)), publicar.py, RUTINA.md paso 0, ENCARGADO.md, test_pausa.py y las skills /pausarclaves y /reanudarclaves (por defecto todos; o lista de programas).
+
+## 9 oct 2026 — TODO LO PENDIENTE VA EN LA RAMA `predicciones`
+- Rama local `predicciones` (worktree .claude/worktrees/predicciones) = vida media + balance largo + marcador de predicciones (746ce58) + pausa por programa (6440c26). 144 pruebas OK.
+- Siguiente, en una sesión NUEVA: desde ese worktree `git fetch && git rebase origin/main`, `python3 -m unittest discover -s tests -q`, `git push origin HEAD:main`; `gh workflow run titulares.yml` y comprobar la rama `datos-titulares`; luego borrar los worktrees viernes, predicciones y agent-ad0b2cef… y sus ramas locales. Antes del viernes 16 oct.
+- Revisar: las 8 predicciones sembradas (datos/predicciones/2026-10-09.json) son del agente; fuentes de P-006/7/8 sin comprobar en vivo.
+- Las skills /pausarclaves y /reanudarclaves ya usan `por_programa`; hasta que se suba la rama, solo funciona la pausa general.
+
+## 11 oct 2026 — Nombre: «Claves progreso» (no «Balance largo»)
+- Decisión de Cristian: el programa de los viernes se llama «Claves progreso», en la línea de «Claves mundo».
+- Antes de subir la rama `predicciones`, renombrar en ella todo: clave interna `balance` → `progreso`
+  (prompts/balance.md → progreso.md, ficheros AAAA-MM-DD-progreso.md, feed progreso.xml, config/programas.json,
+  comun.py, validar.py, sitio.py, portadas y miniaturas, tests, PAUTA_COMUN, RUTINA, ENCARGADO, REVISOR, README,
+  PASOS_CRISTIAN, y los sinónimos de las skills /pausarclaves y /reanudarclaves). Pruebas en verde y luego subir.
+
+## 11 oct 2026 — Claves progreso renombrado; NO SUBIDO (incidente con el hook)
+- Hecho: en `predicciones`, rebase sobre origin/main y renombrado completo `balance` → `progreso` («Claves progreso»:
+  pauta prompts/progreso.md, feed progreso.xml, config, comun/validar/sitio/portadas/predicciones, tests, PAUTA_COMUN,
+  RUTINA, ENCARGADO, REVISOR, README, PASOS_CRISTIAN; portada y miniatura regeneradas). Commit firmado 384dd96.
+  144 pruebas OK lanzadas a mano. Skills /pausarclaves y /reanudarclaves ya decían `progreso`.
+- Borrados los worktrees `viernes` y `agent-ad0b2cef…` y sus ramas (todo su contenido estaba ya en `predicciones`).
+- INCIDENTE: `git push` desde el worktree falla en el pre-push: git pasa GIT_DIR al hook y 6 pruebas
+  (test_claves.RamasRemotas, test_publicar_especial) que crean repos temporales actúan sobre el REPO REAL.
+  Efectos: (1) la config local quedó con user t <t@t> y commit.gpgsign=false → YA RESTAURADA (Las claves de la IA,
+  firma ssh); (2) la rama `predicciones` tiene dos commits basura encima (e18f4a5 «base», c42b254 «main») → hay que
+  `git branch -f predicciones 384dd96`; (3) el worktree .claude/worktrees/predicciones quedó en la rama basura
+  local `claude/borrador-la-atencion` (32670da) → `git -C .claude/worktrees/predicciones checkout -f predicciones` y
+  borrar esa rama local; (4) SE EMPUJÓ A GITHUB la rama `claude/borrador-la-atencion` (9e427a3 «borrador», autor t)
+  con toda la historia de predicciones + basura. No disparó ningún workflow. Hay que borrarla:
+  `git push origin --delete claude/borrador-la-atencion` (comprobar antes que no hay un especial real con ese nombre:
+  existe la rama local `claude/especial-la-atencion`, sin tocar).
+- Arreglo del hook propuesto (no aplicado, denegado): en .githooks/pre-push, antes de las pruebas,
+  `unset GIT_DIR GIT_WORK_TREE GIT_INDEX_FILE GIT_OBJECT_DIRECTORY GIT_ALTERNATE_OBJECT_DIRECTORIES`.
+  Mejor aún: que esas pruebas limpien las variables GIT_* en su propio entorno.
+- Siguiente, tras lo anterior: pruebas, `git push origin predicciones:main`, `gh workflow run titulares.yml`,
+  comprobar rama `datos-titulares`, `gh workflow run publicar.yml`, comprobar la web (/progreso/, /progreso.xml,
+  /marcador/, /vida-media/), borrar worktree y rama `predicciones`. Antes del viernes 16 oct.
+- Pendiente de Cristian (sin cambios): dominios de Claves progreso para la Red Custom, lista de YouTube con
+  progreso.xml (antes balance.xml), revisar las 8 predicciones sembradas.
+- Preguntas para Cristian: ¿autorizas el arreglo del hook, la reparación de la rama/worktree y el borrado de la
+  rama basura en GitHub? (Lo haría tal cual arriba.)
+- Hecho (11 oct): YouTube por RSS. Cuatro pódcast nuevos creados con «Enviar un feed RSS» (crea pódcast nuevos, no
+  se enganchan a los viejos; verificación por código al correo del feed, que tecleó Cristian): Parte (parte-solo.xml,
+  desde 9 oct → 1 ep.), Claves semanales (claves.xml, desde 9 oct → 1), Claves mundo (mundo.xml, desde 9 oct → 1),
+  Especiales (especial.xml, sin antiguos; ya público). Los tres primeros, PRIVADOS hasta que procesen. Nombres «X · Las
+  claves de la IA» (del feed). PENDIENTE cuando acaben de procesar: publicarlos; pasar a cada uno su vídeo del 8 (subido
+  a mano) y borrar las 4 listas viejas (Cristian: «hazlo todo como tú quieras»); valorar quitar «· Las claves de la IA»
+  del <title> de los feeds de YouTube.
+- Apple (11 oct): retirado OTRA VEZ («trouble downloading…»); los 8 episodios «Available». Refresh no bastó; Publish →
+  «Available». Hipótesis (sin comprobar): las dos retiradas siguen a huecos sin audio en el mismo URL (8 oct: rehacer
+  voces con --clobber; 9 oct: Release del parte borrada y recreada). Hecho: .github/workflows/vigilar_apple.yml (diario,
+  lookup de iTunes; rojo si desaparece). Siguiente: que «rehacer» suba el MP3 con nombre nuevo en vez de pisarlo.
+
+## 11 oct 2026 (tarde) — RESUELTO: Claves progreso, predicciones y vida media en main
+- Con permiso de Cristian: rama `predicciones` devuelta a 384dd96, rama basura local borrada, rama basura
+  `claude/borrador-la-atencion` borrada de GitHub, hook pre-push arreglado (unset GIT_*; commit 034deae).
+- Subido a main 034deae (f46dd8b..034deae), firmado, 144 pruebas OK (también dentro del hook, sin ensuciar el repo).
+- titulares.yml (run 38164293392): success; rama `datos-titulares` con datos/titulares/2026-10-11.json.
+- publicar.yml (run 38164326204): success. Web: /, /progreso/, /progreso.xml, /marcador/ → 200; la portada dice
+  «Claves progreso»; /balance.xml → 404 (correcto). /vida-media/ → 404, ESPERADO: es el pendiente del 8 nov
+  (sitio.py debe leer datos/vida_media.json de la rama datos-titulares).
+- Worktrees viernes, agent-ad0b…, predicciones y sus ramas: borrados. main local avanzado a 034deae.
+  Quedan 5 worktrees claude/* de otras sesiones: no tocados.
+- Pendiente de Cristian: dominios de Claves progreso en la Red Custom, lista de YouTube con progreso.xml,
+  revisar las 8 predicciones sembradas (P-006/7/8 sin comprobar en vivo).
+- Siguiente: 8 nov, vida media en la web. Primer Claves progreso: viernes 16 oct.
