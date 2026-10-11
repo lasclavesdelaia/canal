@@ -1174,3 +1174,8 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   Mundo y Progreso procesando su episodio: PUBLICARLOS cuando acaben si YouTube no lo hace solo). sitio.py: el
   <title> de los feeds por programa pasa a ser solo el nombre del programa (sin «· Las claves de la IA»); YouTube
   debería tomarlo del feed (sin comprobar). parte.xml (general) no cambia.
+- 11 oct, 21:52: YouTube «no pudimos descargar los episodios» del feed de Claves progreso. Coincide al segundo con
+  el despliegue de Pages del push 4c65828 (run de las 19:51:52 UTC). NUEVA HIPÓTESIS (sin comprobar), también para las
+  dos retiradas de Apple: los despliegues de GitHub Pages dejan un hueco breve en el que el feed o la portada no se
+  sirven bien. Siguiente: (1) mirar el 12 oct si YouTube recogió el episodio de progreso solo; (2) que publicar.yml no
+  despliegue Pages si _site no ha cambiado (comparar hash con lo publicado) y reducir despliegues.
