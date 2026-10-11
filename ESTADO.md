@@ -1158,8 +1158,14 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Pendiente de Cristian: dominios de Claves progreso en la Red Custom, lista de YouTube con progreso.xml,
   revisar las 8 predicciones sembradas (P-006/7/8 sin comprobar en vivo).
 - Siguiente: 8 nov, vida media en la web. Primer Claves progreso: viernes 16 oct.
-- 11 oct, noche: portada y miniatura de Claves progreso pasadas a rosa (ROSA = 236,118,160 en portadas.py), fb91fdf subido a main por Cristian (26bcbb6..fb91fdf), pruebas OK. Siguiente: `gh workflow run publicar.yml -R lasclavesdelaia/canal` y comprobar /miniaturas/progreso.jpg en la web.
+- 11 oct, noche: portada y miniatura de Claves progreso pasadas a rosa (ROSA = 236,118,160 en portadas.py), fb91fdf subido a main por Cristian (26bcbb6..fb91fdf), pruebas OK. publicar.yml lanzado por el push (run 38164918339): success. Falta mirar /progreso/ en la web (esta sesión no puede leerla).
 - 11 oct: intento de conectar Claves progreso (progreso.xml) a YouTube por RSS: YouTube lo rechaza («El feed RSS no es
   válido. Debe contener al menos un episodio»). PENDIENTE: conectarlo en cuanto salga el primer episodio (viernes 16
   oct, si no hay pausa): Studio › Crear › Nuevo pódcast › Enviar un feed RSS › progreso.xml › código al correo
   (lo teclea Cristian) › subir desde ese viernes. Mismo flujo que los otros cuatro.
+- HECHO (11 oct, ~21:20): primer Claves progreso escrito a mano fuera del viernes (rutina de un solo uso
+  trig_01VQW6aF94YdmCwbeHfo1Kmi, creada por API: llevó por defecto los conectores Drive/Docs/Gmail/Remote, que la API
+  no deja quitar; en su registro no usó ninguno y su allowed_tools no los incluye. BORRARLA en claude.ai/code/routines).
+  Episodio «Qué hizo caer la muerte por infarto en Finlandia» (3.811 palabras), publicado (Release
+  ep-2026-10-11-progreso). progreso.xml conectado a YouTube por RSS (sube todos: 1 ep.). Ojo: no crear rutinas por API
+  (meten los conectores); para algo excepcional, «Ejecutar ahora» en la UI tras quitar conectores.
