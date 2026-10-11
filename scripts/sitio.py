@@ -429,7 +429,8 @@ def feed(clave, episodios, cfg):
     """Feed de un solo programa (para su lista de YouTube)."""
     canal, prog = cfg["canal"], cfg["programas"][clave]
     items = [_item_feed(e, cfg, e["titulo"]) for e in [e for e in episodios if e["programa"] == clave][:100]]
-    return _canal_rss(cfg, f"{prog['lista']} · {canal['nombre']}", archivo_feed(clave), prog["descripcion"],
+    # Solo el nombre del programa: estos feeds los lee YouTube y el canal ya se llama «Las claves de la IA».
+    return _canal_rss(cfg, prog["lista"], archivo_feed(clave), prog["descripcion"],
                       f"{clave}.png", items)
 
 

@@ -438,7 +438,7 @@ class FeedGeneral(unittest.TestCase):
                 c = ET.parse(d / f"{sitio.archivo_feed(prog)}.xml").getroot().find("channel")
                 self.assertEqual([i.find("title").text for i in c.findall("item")], [f"Título {prog}"])
             solo = ET.parse(d / "parte-solo.xml").getroot().find("channel/title").text
-            self.assertEqual(solo, "Parte diario IA · Las claves de la IA")
+            self.assertEqual(solo, "Parte diario IA")  # feeds por programa: solo el nombre (YouTube)
 
     def test_descripcion_no_pasa_de_4000(self):
         cfg = config()

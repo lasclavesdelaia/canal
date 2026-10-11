@@ -1169,3 +1169,8 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   Episodio «Qué hizo caer la muerte por infarto en Finlandia» (3.811 palabras), publicado (Release
   ep-2026-10-11-progreso). progreso.xml conectado a YouTube por RSS (sube todos: 1 ep.). Ojo: no crear rutinas por API
   (meten los conectores); para algo excepcional, «Ejecutar ahora» en la UI tras quitar conectores.
+- Hecho (11 oct, noche): YouTube ordenado. Los 4 vídeos del 8 (subidos a mano) pasados a los pódcast nuevos de RSS;
+  los 4 pódcast viejos (vacíos) eliminados; quedan 5, uno por programa (Parte, Claves semanales y Especiales públicos;
+  Mundo y Progreso procesando su episodio: PUBLICARLOS cuando acaben si YouTube no lo hace solo). sitio.py: el
+  <title> de los feeds por programa pasa a ser solo el nombre del programa (sin «· Las claves de la IA»); YouTube
+  debería tomarlo del feed (sin comprobar). parte.xml (general) no cambia.
