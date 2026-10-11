@@ -35,7 +35,7 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 CARPETA = RAIZ / "datos" / "predicciones"
-PROGRAMAS = ("parte", "balance", "claves", "mundo", "especial")
+PROGRAMAS = ("parte", "progreso", "claves", "mundo", "especial")
 AUTORES = ("programa", "modelo")
 ESTADOS = ("abierta", "acertada", "fallada", "anulada")
 RESUELTOS = ("acertada", "fallada")
@@ -47,7 +47,7 @@ MIN_RESUELTAS_JUICIO = 20         # por debajo de esto no se dice que el program
 MIN_POR_TRAMO = 8
 FECHA = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 ID = re.compile(r"^P-\d{3,}$")
-EPISODIO = re.compile(r"^(siembra|\d{4}-\d{2}-\d{2}-(parte|balance|claves|mundo|especial(-[a-z0-9]+)*))$")
+EPISODIO = re.compile(r"^(siembra|\d{4}-\d{2}-\d{2}-(parte|progreso|claves|mundo|especial(-[a-z0-9]+)*))$")
 CAMPOS_ALTA = ("id", "fecha", "programa", "episodio", "afirmacion", "probabilidad", "criterio", "fuente_decisoria",
                "vence", "temas", "autor")
 

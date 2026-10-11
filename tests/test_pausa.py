@@ -46,13 +46,13 @@ class PausaPorPrograma(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             (Path(d) / "config").mkdir()
             (Path(d) / "config" / "pausa.json").write_text(json.dumps(
-                {"hasta": "2026-10-10", "motivo": "", "por_programa": {"balance": {"hasta": "2026-11-01", "motivo": ""}}}),
+                {"hasta": "2026-10-10", "motivo": "", "por_programa": {"progreso": {"hasta": "2026-11-01", "motivo": ""}}}),
                 encoding="utf-8")
             antes, comun.RAIZ = comun.RAIZ, Path(d)
             try:
                 self.assertEqual(comun.pausa_hasta(), "2026-10-10")
                 self.assertEqual(comun.pausa_hasta("parte"), "2026-10-10")
-                self.assertEqual(comun.pausa_hasta("balance"), "2026-11-01")
+                self.assertEqual(comun.pausa_hasta("progreso"), "2026-11-01")
             finally:
                 comun.RAIZ = antes
 

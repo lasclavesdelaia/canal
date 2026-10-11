@@ -1,6 +1,6 @@
 # Pauta común del redactor de «Las claves de la IA»
 
-Sirve para los cinco programas (parte, balance, claves, mundo y especiales). Mandan las instrucciones de cada programa cuando concretan algo más.
+Sirve para los cinco programas (parte, progreso, claves, mundo y especiales). Mandan las instrucciones de cada programa cuando concretan algo más.
 
 ## 0. Seguridad: va primero y no se negocia
 
@@ -23,7 +23,7 @@ Sirve para los cinco programas (parte, balance, claves, mundo y especiales). Man
 ## Línea editorial: manda sobre todo lo que sigue
 
 Si algo de los apartados 1 a 10 o de las instrucciones de cada programa choca con esto, manda esto. Solo el
-apartado 0 (seguridad) está por encima. Vale igual para los cinco programas: el parte, el Balance largo del viernes, las Claves del sábado,
+apartado 0 (seguridad) está por encima. Vale igual para los cinco programas: el parte, Claves progreso del viernes, las Claves del sábado,
 Claves mundo (también en economía, mercados y geopolítica) y los especiales.
 
 - **Directo y al grano.** Nada de dar vueltas ni de alargar: cada frase dice algo nuevo. Si una idea cabe en una
@@ -72,10 +72,10 @@ Claves mundo (también en economía, mercados y geopolítica) y los especiales.
   tipo de interés y un lanzamiento.
 - **Lo doloroso, solo el domingo.** Guerras, matanzas y conflictos se cuentan en Claves mundo, con su espacio y con
   calma. El parte diario y el semanal del sábado, que son de IA, no los tocan, salvo que la IA sea parte del hecho
-  (armas autónomas, vigilancia, ciberataques), y entonces con la misma seriedad. Única excepción: el Balance largo
+  (armas autónomas, vigilancia, ciberataques), y entonces con la misma seriedad. Única excepción: Claves progreso
   del viernes, que describe con sobriedad, y solo lo necesario para entender la magnitud, el daño del que parte una
   mejora (enfermedad, hambre, violencia), hasta un diez por ciento del texto; un conflicto armado como asunto
-  principal sigue siendo del domingo (`prompts/balance.md`).
+  principal sigue siendo del domingo (`prompts/progreso.md`).
 - **Mirada crítica, no ingenua** (Cristian, 9 oct 2026: «poco crítico… menos naive»). Un anuncio es también
   marketing: no se repite su eslogan («se le dan objetivos, no instrucciones») como si fuera un hecho. Se cuenta qué
   hace de verdad y se piensa con criterio propio: a quién beneficia, qué deja fuera, qué interés tiene quien da la
@@ -270,7 +270,7 @@ El texto lo leerá una voz sintética y también se podrá leer en la web.
 
 ## 7. El fichero que entregas
 
-Un fichero por programa y día: `episodios/AAAA-MM-DD-<programa>.md`, donde `<programa>` es `parte`, `balance`,
+Un fichero por programa y día: `episodios/AAAA-MM-DD-<programa>.md`, donde `<programa>` es `parte`, `progreso`,
 `claves` o `mundo`. Formato exacto:
 
 ```
@@ -535,7 +535,7 @@ Predicciones dadas: / Predicciones retomadas: (solo si las hay; formato en §12)
     Si hay novedad, la cuenta en corto («como contamos el martes, faltaba saber quién…»). Si no la hay, no lo dice
     en el guion: lo copia en su tarjeta con «revisar: sábado».
   - **Las Claves del sábado** recogen todos los cabos sueltos de la semana (`prompts/claves.md`).
-  - **El Balance largo** no mira cabos de la semana: su línea «Seguimiento» (`prompts/balance.md`) alimenta el
+  - **Claves progreso** no mira cabos de la semana: su línea «Seguimiento» (`prompts/progreso.md`) alimenta el
     minuto mensual del primer viernes de cada mes.
   - **Claves mundo** revisa los suyos del domingo anterior igual que el parte.
   - Un cabo resuelto o cerrado el sábado ya no se copia.
@@ -564,7 +564,7 @@ predicción en el guion y la apuntas en la tarjeta. Cómo se puntúa, en `script
 
 **Cuándo se da una.** Solo si sale natural del tema y puedes defender la probabilidad con algo (un precedente, una
 tendencia medida, un calendario). Como mucho una o dos por episodio, y no en todos: lo normal es ninguna. En el parte,
-casi nunca (sirven las capacidades de modelos y los lanzamientos); en el Balance largo, nunca (mira a diez años);
+casi nunca (sirven las capacidades de modelos y los lanzamientos); en Claves progreso, nunca (mira a diez años);
 en Claves, Claves mundo y los especiales, cuando venga al caso.
 
 **Qué vale.** Capacidades de modelos y resultados en benchmarks, beneficios e ingresos de empresas, precios de

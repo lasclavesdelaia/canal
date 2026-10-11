@@ -1,4 +1,4 @@
-"""Balance largo (viernes): programa, validador, web y feeds. Pauta: prompts/balance.md."""
+"""Claves progreso (viernes): programa, validador, web y feeds. Pauta: prompts/progreso.md."""
 import json
 import sys
 import tempfile
@@ -20,7 +20,7 @@ CUERPO = "\n\n".join(" ".join([FRASE] * 5) for _ in range(75))  # unas 4.100 pal
 
 
 def episodio(cuerpo=CUERPO, fecha="2026-10-16", **cabecera):
-    cab = {"programa": "balance", "fecha": fecha, "titulo": "Una serie de veinte años sobre la mortalidad infantil",
+    cab = {"programa": "progreso", "fecha": fecha, "titulo": "Una serie de veinte años sobre la mortalidad infantil",
            "descripcion": "Una mejora medida durante dos décadas y una persona de trayectoria documentada."}
     cab.update(cabecera)
     lineas = "\n".join(f"{k}: {v}" for k, v in cab.items())
@@ -29,72 +29,72 @@ def episodio(cuerpo=CUERPO, fecha="2026-10-16", **cabecera):
 
 class Programa(unittest.TestCase):
     def test_nombre_y_config(self):
-        self.assertEqual(partes_nombre("2026-10-16-balance.md"), ("2026-10-16", "balance", ""))
-        self.assertIsNone(partes_nombre("2026-10-16-balance-algo.md"))
-        self.assertIn("balance", comun.PROGRAMAS)
-        prog = config()["programas"]["balance"]
+        self.assertEqual(partes_nombre("2026-10-16-progreso.md"), ("2026-10-16", "progreso", ""))
+        self.assertIsNone(partes_nombre("2026-10-16-progreso-algo.md"))
+        self.assertIn("progreso", comun.PROGRAMAS)
+        prog = config()["programas"]["progreso"]
         self.assertEqual(prog["dias"], "viernes")
         self.assertEqual((prog["palabras_min"], prog["palabras_max"]), (3000, 6500))
         self.assertNotIn("buenas noticias", json.dumps(prog, ensure_ascii=False).lower())
-        self.assertEqual(comun.voz_de("balance")["nombre"], comun.voz_de("claves")["nombre"])
+        self.assertEqual(comun.voz_de("progreso")["nombre"], comun.voz_de("claves")["nombre"])
 
     def test_despedida_y_presentacion(self):
         ep = comun.leer_episodio(episodio())
         hablado = comun.texto_hablado(ep)
-        self.assertIn("Balance largo", hablado.splitlines()[0])
+        self.assertIn("Claves progreso", hablado.splitlines()[0])
         self.assertTrue(hablado.endswith("Hasta el viernes que viene."))
 
     def test_es_un_episodio_publicable(self):
-        self.assertTrue(publicar.es_episodio("episodios/2026-10-16-balance.md"))
-        self.assertFalse(publicar.es_episodio("tarjetas/2026-10-16-balance.md"))
-        self.assertFalse(publicar.es_borrador("borradores/2026-10-16-balance.md"))
+        self.assertTrue(publicar.es_episodio("episodios/2026-10-16-progreso.md"))
+        self.assertFalse(publicar.es_episodio("tarjetas/2026-10-16-progreso.md"))
+        self.assertFalse(publicar.es_borrador("borradores/2026-10-16-progreso.md"))
 
     def test_pauta_existe_y_la_rutina_la_nombra(self):
-        self.assertTrue((RAIZ / "prompts" / "balance.md").is_file())
+        self.assertTrue((RAIZ / "prompts" / "progreso.md").is_file())
         rutina = (RAIZ / "prompts" / "RUTINA.md").read_text(encoding="utf-8")
-        self.assertIn("`balance`", rutina)
+        self.assertIn("`progreso`", rutina)
         self.assertIn("viernes", rutina)
 
 
 class Validador(unittest.TestCase):
     def test_valido(self):
-        ep, errores, _ = validar("2026-10-16-balance.md", episodio())
+        ep, errores, _ = validar("2026-10-16-progreso.md", episodio())
         self.assertEqual(errores, [], errores)
-        self.assertEqual(ep.programa, "balance")
+        self.assertEqual(ep.programa, "progreso")
 
     def test_longitud(self):
-        _, errores, _ = validar("2026-10-16-balance.md", episodio("Un párrafo corto."))
+        _, errores, _ = validar("2026-10-16-progreso.md", episodio("Un párrafo corto."))
         self.assertTrue(any("palabras" in e for e in errores))
 
     def test_sin_buenas_noticias_ni_celebracion(self):
         for frase in ("Estas son las buenas noticias de la semana.", "Fue un milagro lento.", "Por fin llegó.",
                       "Era un héroe de su tiempo.", "Fue una victoria sobre la enfermedad."):
-            _, errores, _ = validar("2026-10-16-balance.md", episodio(CUERPO + "\n\n" + frase))
-            self.assertTrue(any("Balance largo" in e for e in errores), (frase, errores))
+            _, errores, _ = validar("2026-10-16-progreso.md", episodio(CUERPO + "\n\n" + frase))
+            self.assertTrue(any("Claves progreso" in e for e in errores), (frase, errores))
 
     def test_titulo_sin_buenas_noticias(self):
-        _, errores, _ = validar("2026-10-16-balance.md", episodio(titulo="Buenas noticias sobre la malaria"))
-        self.assertTrue(any("Balance largo" in e for e in errores), errores)
+        _, errores, _ = validar("2026-10-16-progreso.md", episodio(titulo="Buenas noticias sobre la malaria"))
+        self.assertTrue(any("Claves progreso" in e for e in errores), errores)
 
     def test_imperativos_de_cierre_rechazados(self):
         for cierre in ("Dona lo que puedas.", "No te quedes de brazos cruzados.", "Tú también puedes ayudar.",
                        "Piense en lo que cuesta una mosquitera."):
-            _, errores, _ = validar("2026-10-16-balance.md", episodio(CUERPO + "\n\n" + cierre))
-            self.assertTrue(any("Balance largo" in e or "imperativo" in e for e in errores), (cierre, errores))
+            _, errores, _ = validar("2026-10-16-progreso.md", episodio(CUERPO + "\n\n" + cierre))
+            self.assertTrue(any("Claves progreso" in e or "imperativo" in e for e in errores), (cierre, errores))
 
     def test_cierre_como_hecho_vale(self):
         cierre = ("Una mosquitera tratada cuesta unos pocos euros y, según la revisión Cochrane, reduce las muertes "
                   "infantiles. La ayuda no cierra la brecha por sí sola. Se puede comprobar en la revisión original.")
-        _, errores, _ = validar("2026-10-16-balance.md", episodio(CUERPO + "\n\n" + cierre))
+        _, errores, _ = validar("2026-10-16-progreso.md", episodio(CUERPO + "\n\n" + cierre))
         self.assertEqual(errores, [], errores)
 
     def test_ayuda_en_medio_de_frase_no_es_imperativo(self):
-        _, errores, _ = validar("2026-10-16-balance.md", episodio(CUERPO + "\n\nLa ayuda exterior pesó menos que la vacunación."))
+        _, errores, _ = validar("2026-10-16-progreso.md", episodio(CUERPO + "\n\nLa ayuda exterior pesó menos que la vacunación."))
         self.assertEqual(errores, [], errores)
 
     def test_tope_de_cifras_propio(self):
         denso = CUERPO + "\n\n" + " ".join(["En 2010 murieron 3 de cada 100 y 4 de cada 100."] * 40)
-        _, errores, _ = validar("2026-10-16-balance.md", episodio(denso))
+        _, errores, _ = validar("2026-10-16-progreso.md", episodio(denso))
         self.assertTrue(any("cifras" in e for e in errores), errores)
 
 
@@ -108,25 +108,25 @@ class Web(unittest.TestCase):
 
     def test_pagina_feed_y_tarjeta(self):
         cfg = config()
-        eps = [self._meta("parte", "2026-10-16"), self._meta("balance", "2026-10-16")]
+        eps = [self._meta("parte", "2026-10-16"), self._meta("progreso", "2026-10-16")]
         with tempfile.TemporaryDirectory() as tmp:
             sitio.generar(eps, cfg, tmp)
             d = Path(tmp)
-            self.assertTrue((d / "balance" / "index.html").exists())
-            self.assertIn("Cada viernes", (d / "balance" / "index.html").read_text())
+            self.assertTrue((d / "progreso" / "index.html").exists())
+            self.assertIn("Cada viernes", (d / "progreso" / "index.html").read_text())
             self.assertIn("Cada viernes", (d / "index.html").read_text())
-            c = ET.parse(d / "balance.xml").getroot().find("channel")
-            self.assertEqual([i.find("title").text for i in c.findall("item")], ["Título balance"])
+            c = ET.parse(d / "progreso.xml").getroot().find("channel")
+            self.assertEqual([i.find("title").text for i in c.findall("item")], ["Título progreso"])
             general = ET.parse(d / "parte.xml").getroot().find("channel")
-            self.assertIn("Balance largo · Título balance", [i.find("title").text for i in general.findall("item")])
+            self.assertIn("Claves progreso · Título progreso", [i.find("title").text for i in general.findall("item")])
             solo = ET.parse(d / "parte-solo.xml").getroot().find("channel")
             self.assertEqual([i.find("title").text for i in solo.findall("item")], ["Título parte"])
 
     def test_portada_y_miniatura_existen(self):
         # portadas.py necesita Pillow (no está en CI): se mira su código sin importarlo
-        self.assertIn('SERIES["balance"]', (RAIZ / "scripts" / "portadas.py").read_text(encoding="utf-8"))
-        self.assertTrue((RAIZ / "assets" / "miniaturas" / "balance.jpg").is_file())
-        self.assertTrue((RAIZ / "assets" / "portadas" / "balance.png").is_file())
+        self.assertIn('SERIES["progreso"]', (RAIZ / "scripts" / "portadas.py").read_text(encoding="utf-8"))
+        self.assertTrue((RAIZ / "assets" / "miniaturas" / "progreso.jpg").is_file())
+        self.assertTrue((RAIZ / "assets" / "portadas" / "progreso.png").is_file())
 
 
 if __name__ == "__main__":

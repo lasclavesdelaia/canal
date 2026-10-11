@@ -8,7 +8,7 @@
     "aviso": "Este programa lo investiga, lo escribe y lo locuta por completo una inteligencia artificial, sin revisión humana. Puede contener errores. Las fuentes de cada noticia están en la descripción.",
     "aviso_hablado": "Este programa lo hace por completo una inteligencia artificial y puede contener errores.",
     "aviso_feed": "Hecho por completo con inteligencia artificial, sin revisión humana. Puede contener errores.",
-    "descripcion": "Programas de audio sobre inteligencia artificial y sobre el mundo, con datos y con sus fuentes. Parte diario IA, de domingo a viernes; Balance largo, los viernes, con una mejora medida a diez años o más y una persona de trayectoria documentada; Claves semanales IA, los sábados; Claves mundo, la economía y la geopolítica de la semana, los domingos; y, de vez en cuando, especiales a fondo.",
+    "descripcion": "Programas de audio sobre inteligencia artificial y sobre el mundo, con datos y con sus fuentes. Parte diario IA, de domingo a viernes; Claves progreso, los viernes, con una mejora medida a diez años o más y una persona de trayectoria documentada; Claves semanales IA, los sábados; Claves mundo, la economía y la geopolítica de la semana, los domingos; y, de vez en cuando, especiales a fondo.",
     "youtube": "https://www.youtube.com/@LasclavesdelaIA",
     "audio_en_la_web_dias": 60,
     "apps": {
@@ -46,14 +46,14 @@
       "palabras_max": 3700,
       "despedida": "Esto ha sido el Parte diario de Las claves de la IA. Hasta mañana."
     },
-    "balance": {
-      "lista": "Balance largo",
+    "progreso": {
+      "lista": "Claves progreso",
       "voz": "gemini",
       "descripcion": "Cada viernes, una mejora duradera medida con series largas y una persona de trayectoria documentada, con sus costes y sus límites.",
       "dias": "viernes",
       "palabras_min": 3000,
       "palabras_max": 6500,
-      "despedida": "Esto ha sido el Balance largo de Las claves de la IA. Hasta el viernes que viene."
+      "despedida": "Esto han sido las Claves progreso de Las claves de la IA. Hasta el viernes que viene."
     },
     "claves": {
       "lista": "Claves semanales IA",

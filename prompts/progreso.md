@@ -1,4 +1,4 @@
-# Balance largo (viernes): una mejora medida y una persona
+# Claves progreso (viernes): una mejora medida y una persona
 
 Un programa para mirar el mundo con series largas y no con titulares. Cada viernes cuenta dos cosas: una mejora
 sostenida durante años, medida contra algo, y una persona cuya conducta, bien documentada, enseña algo. Es tan
@@ -25,7 +25,7 @@ real y con un comparador. Lo que la tecnología resolverá algún día no entra.
 Entra si cumple los cinco; un solo fallo la deja fuera.
 
 1. **Gancho de actualidad.** Parte de algo de las últimas semanas: un informe, una nueva edición de una serie, un
-   resultado publicado, una decisión. Se dice qué es y su fecha. Desde ahí se cuenta el balance largo. Sin gancho
+   resultado publicado, una decisión. Se dice qué es y su fecha. Desde ahí se cuenta la tendencia larga. Sin gancho
    reciente, se busca otra historia; lo que tiene más de dos semanas no se presenta como noticia.
 2. **Duración.** Una tendencia de diez años o más, con su año base. Un máximo, un mínimo o una recuperación tras un
    hundimiento no valen como ejemplo; si es una recuperación, se cuenta así.
@@ -154,7 +154,7 @@ primaria.
 
 ## Predicciones
 
-El Balance largo mira a diez años o más: no registra predicciones (pauta común, §12). Si una predicción abierta toca
+Claves progreso mira a diez años o más: no registra predicciones (pauta común, §12). Si una predicción abierta toca
 justo la mejora o la serie del día, puede retomarse en una frase.
 
 ## Título
@@ -164,7 +164,7 @@ celebración. Una pregunta de fondo encaja si el programa la explora de verdad.
 
 ## Tarjeta
 
-`tarjetas/AAAA-MM-DD-balance.md`, con las líneas de la pauta común (§10) y además (hasta 300 palabras):
+`tarjetas/AAAA-MM-DD-progreso.md`, con las líneas de la pauta común (§10) y además (hasta 300 palabras):
 
 - `Mejora:` indicador, lugar, periodo y comparador, en una línea.
 - `Persona:` quién y qué decisión central; para no repetirla.

@@ -38,8 +38,8 @@ SERIES = {
               "lema": "Economía y geopolítica con datos"},
 }
 
-# Balance largo (viernes): serie de barras que sube con un comparador plano (nombre: «Balance largo»).
-SERIES["balance"] = {"n": "05", "titulo": "Balance", "sub": "largo", "dia": "Cada viernes", "color": VERDE, "tinta": TINTA,
+# Claves progreso (viernes): serie de barras que sube con un comparador plano (nombre: «Claves progreso»).
+SERIES["progreso"] = {"n": "05", "titulo": "Claves", "sub": "progreso", "dia": "Cada viernes", "color": VERDE, "tinta": TINTA,
                      "lema": "Una mejora medida y una persona"}
 
 # Especiales: propuestas para que Cristian elija (8 oct 2026). Eligió «negro-lupa» (SERIES["especial"], al final).
@@ -155,7 +155,7 @@ def motivo(d, clave, s, fondo, ser=None):
             x += w + hueco
         d.rectangle((56 * s, 470 * s, 1000 * s, 540 * s), fill=fondo)
         texto(d, 56 * s, 525 * s, "EXPEDIENTE SEMANAL", fuente(30 * s), TINTA, .1)
-    elif clave == "balance":  # serie larga de barras que sube, con la línea plana del comparador
+    elif clave == "progreso":  # serie larga de barras que sube, con la línea plana del comparador
         base = 520 * s
         alturas = (70, 85, 80, 110, 130, 125, 170, 200, 215, 260, 300, 345)
         x = 56

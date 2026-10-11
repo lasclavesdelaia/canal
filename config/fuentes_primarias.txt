@@ -42,7 +42,7 @@ wto.org
 iea.org
 ecb.europa.eu
 federalreserve.gov
-# Balance largo (viernes): organismos que miden series de salud, desarrollo, energía y clima
+# Claves progreso (viernes): organismos que miden series de salud, desarrollo, energía y clima
 unicef.org
 unaids.org
 undp.org

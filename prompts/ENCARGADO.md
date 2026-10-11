@@ -110,7 +110,7 @@ Cada semana, después del paso 0b y antes de la revisión de episodios. Es breve
 ## 2. Qué lees
 
 1. **Las instrucciones**, enteras: `prompts/PAUTA_COMUN.md`, `prompts/parte.md`, `prompts/claves.md`,
-   `prompts/balance.md`, `prompts/mundo.md`, `prompts/RUTINA.md`, `prompts/CRITERIO.md` y `config/fuentes.md`. Comprueba también que las
+   `prompts/progreso.md`, `prompts/mundo.md`, `prompts/RUTINA.md`, `prompts/CRITERIO.md` y `config/fuentes.md`. Comprueba también que las
    erratas de `CRITERIO.md` se corrigieron (línea «Erratas corregidas» de las tarjetas). Es la vara con la que mides.
 2. **Los episodios de la semana:**
    `git fetch origin '+refs/heads/claude/*:refs/remotes/origin/claude/*'` y busca en esas ramas los ficheros
@@ -132,7 +132,7 @@ Para cada episodio de la semana:
   si no pudiste abrirla.
 - **Fuentes que fallaron:** la rutina diaria no deja guardado qué fuentes le fallaron. Dedúcelo: qué fuentes de
   `config/fuentes.md` no aparecen citadas en toda la semana, y cuáles no abren cuando lo intentas tú.
-- **Días sin episodio:** qué días falta el `parte` (el sábado no hay: lo sustituye `claves`), y si falta `balance` (viernes), `claves` (sábado) o `mundo` (domingo). Para cada
+- **Días sin episodio:** qué días falta el `parte` (el sábado no hay: lo sustituye `claves`), y si falta `progreso` (viernes), `claves` (sábado) o `mundo` (domingo). Para cada
   hueco, mira si hay rama sin Release (se escribió pero no se publicó: entonces el fallo está en Actions o en el
   validador) o si no hay ni rama (falló la rutina).
 - **Repeticiones** entre episodios, tono (PAUTA §1 y §2) y reglas legales (§5).
@@ -144,7 +144,7 @@ Si un día de la semana no tiene `parte` (ni en ramas ni en Releases), puedes es
 `prompts/RUTINA.md` como si fuera ese día: noticias de ese día, con la fecha de ese día en el nombre y en la
 cabecera. Súbelo a su rama `claude/episodios-AAAA-MM-DD` (fecha del episodio), con `git add` solo de ese fichero.
 Como mucho, dos episodios por revisión; si faltan más, escribe los dos más recientes y anota el resto.
-No escribas `balance`, `claves` ni `mundo` atrasados: anótalos.
+No escribas `progreso`, `claves` ni `mundo` atrasados: anótalos.
 
 ## 5. El informe
 

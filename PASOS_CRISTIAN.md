@@ -115,27 +115,27 @@ Solo si decides seguir. Tú creas la cuenta y la clave; Claude nunca las toca.
    con menos se pararía aunque pagaran los créditos). Desde el 7 ene 2027, lo que quieras pagar al mes.
 8. Dile a Claude «fusiona la voz Gemini». Fusionar antes del paso 5 rompería la publicación.
 
-## Balance largo de los viernes (rama `viernes`, 9 oct 2026)
+## Claves progreso de los viernes (rama `viernes`, 9 oct 2026)
 
 Lo que el repositorio no puede hacer solo. La rama `viernes` no se ha subido: `main` exige firma, así que la sube y
 la fusiona quien tenga la firma, con la suite en verde (`python3 -m unittest discover -s tests -q`).
 
-1. **Fusionar antes del primer viernes.** El programa solo existe para la rutina cuando `prompts/balance.md`,
+1. **Fusionar antes del primer viernes.** El programa solo existe para la rutina cuando `prompts/progreso.md`,
    `prompts/RUTINA.md` y `config/programas.json` están en `main`. Sin eso, el viernes saldría solo el parte.
 2. **Rutina en la nube: no hace falta otra hora ni otro disparo.** Ya corre cada día a las 5:07 y, de reserva, a las
    13:07, y el viernes ya salía el parte. Comprueba solo dos cosas en su configuración: que el prompt de la rutina
    mande leer `prompts/RUTINA.md` desde `main` (no una copia pegada) y que el viernes tenga margen de tiempo y de
    cuota para dos episodios largos y dos revisiones (hoy el domingo ya hace parte y `mundo`). Si se queda corta, la
    salida es subir la hora de reserva, no quitar el parte.
-3. **Tope de voz.** Cada Balance largo añade unos 28.000 caracteres a la voz Gemini (unos 120.000 al mes). El tope
+3. **Tope de voz.** Cada Claves progreso añade unos 28.000 caracteres a la voz Gemini (unos 120.000 al mes). El tope
    mensual de esa voz está en `config/programas.json` (`voces.gemini.tope_caracteres_mes`, 600.000) y el
    presupuesto de Google (paso 7 de la sección de la voz Gemini). Mira el gasto del mes tras el primer viernes.
-4. **Portadas.** `assets/portadas/balance.png` y `assets/miniaturas/balance.jpg` son una propuesta (barras que suben
-   sobre una línea plana, en verde). Para YouTube hay que subirla en la lista del feed `balance.xml`; el banner no
-   se ha tocado. Si prefieres otro color o motivo: `python3 scripts/portadas.py --serie balance` con Pillow.
-5. **Alta de la lista en YouTube Studio** con el feed `https://claves.cristiansdrojek.com/balance.xml`, igual que
+4. **Portadas.** `assets/portadas/progreso.png` y `assets/miniaturas/progreso.jpg` son una propuesta (barras que suben
+   sobre una línea plana, en verde). Para YouTube hay que subirla en la lista del feed `progreso.xml`; el banner no
+   se ha tocado. Si prefieres otro color o motivo: `python3 scripts/portadas.py --serie progreso` con Pillow.
+5. **Alta de la lista en YouTube Studio** con el feed `https://claves.cristiansdrojek.com/progreso.xml`, igual que
    los otros programas, cuando salga el primer episodio.
-6. **Red «Custom» de la rutina: faltan dominios del Balance largo.** No los he añadido a `config/red_custom.txt`
+6. **Red «Custom» de la rutina: faltan dominios de Claves progreso.** No los he añadido a `config/red_custom.txt`
    porque está en su tope (600 líneas, 7.544 de 8.000 caracteres) y cada dominio nuevo obliga a quitar otro que
    decidas tú. Con la lista de ahora ya abren la OMS y el resto de `*.int`, el Banco Mundial, la ONU, UNICEF, UNESCO,
    FAO, OIT, AIE, IRENA, Eurostat, INE, Banco de España, NOAA y PubMed (`*.gov`), Nature, Science, NBER y Our World

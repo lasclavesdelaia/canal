@@ -17,7 +17,7 @@ texto en Source Serif 4, verde oliva de acento):
                        titulares de 30+ días; sin enlace en el menú)
   /parte.xml           feed GENERAL «Las claves de la IA», con todos los programas: lo leen las apps de pódcast
                        (iVoox, Spotify y Apple ya estaban dados de alta con esta dirección y Spotify no deja cambiarla)
-  /parte-solo.xml, /balance.xml, /claves.xml, /mundo.xml, /especial.xml
+  /parte-solo.xml, /progreso.xml, /claves.xml, /mundo.xml, /especial.xml
                        un feed por programa: YouTube necesita uno por lista
 """
 import datetime
