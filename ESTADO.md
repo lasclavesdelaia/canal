@@ -1187,3 +1187,6 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   validar.py: en progreso los años cuentan como cifras y el tope baja a 8/mil; PROGRESO_METODO rechaza método en voz
   alta. RUTINA, REVISOR y PAUTA_COMUN §10 al día; descripciones de progreso en config/programas.json. El episodio del
   11 oct NO se ha tocado (Cristian decide si se retira).
+- Hecho (12 oct): RUTINA.md admite un encargo extra por «Ejecutar ahora» con el texto exacto «EXTRA: <programa>»
+  (escribe solo ese programa con la fecha de hoy). Es la vía para episodios fuera de calendario sin crear rutinas por
+  API (que engancharían los conectores).
