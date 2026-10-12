@@ -1,0 +1,26 @@
+# Mira cada día si Apple Podcasts sigue mostrando «Las claves de la IA» (id 6820597566). Apple lo retiró dos veces
+# (8 y 10-11 oct 2026) con «trouble downloading the artwork, metadata, or episodes»; si vuelve a pasar, este flujo
+# se pone en rojo y GitHub avisa por correo. Arreglo: Podcasts Connect › Refresh y, si sigue retirado, Publish.
+name: Vigilar Apple Podcasts
+
+on:
+  schedule:
+    - cron: "17 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  vigilar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: ¿Sigue publicado en Apple?
+        run: |
+          n=$(curl -s "https://itunes.apple.com/lookup?id=6820597566&country=es" | python3 -c "import json,sys; print(json.load(sys.stdin).get('resultCount', 0))")
+          echo "Resultados en Apple: $n"
+          if [ "$n" = "0" ]; then
+            echo "::error::Apple Podcasts no muestra «Las claves de la IA». Entra en Podcasts Connect: Refresh y, si sigue retirado, Publish."
+            exit 1
+          fi

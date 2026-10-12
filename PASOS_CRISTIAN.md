@@ -131,7 +131,7 @@ la fusiona quien tenga la firma, con la suite en verde (`python3 -m unittest dis
    mensual de esa voz está en `config/programas.json` (`voces.gemini.tope_caracteres_mes`, 600.000) y el
    presupuesto de Google (paso 7 de la sección de la voz Gemini). Mira el gasto del mes tras el primer viernes.
 4. **Portadas.** `assets/portadas/progreso.png` y `assets/miniaturas/progreso.jpg` son una propuesta (barras que suben
-   sobre una línea plana, en verde). Para YouTube hay que subirla en la lista del feed `progreso.xml`; el banner no
+   sobre una línea plana, en rosa desde el 11 oct). Para YouTube hay que subirla en la lista del feed `progreso.xml`; el banner no
    se ha tocado. Si prefieres otro color o motivo: `python3 scripts/portadas.py --serie progreso` con Pillow.
 5. **Alta de la lista en YouTube Studio** con el feed `https://claves.cristiansdrojek.com/progreso.xml`, igual que
    los otros programas, cuando salga el primer episodio.
