@@ -1190,3 +1190,15 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Hecho (12 oct): RUTINA.md admite un encargo extra por «Ejecutar ahora» con el texto exacto «EXTRA: <programa>»
   (escribe solo ese programa con la fecha de hoy). Es la vía para episodios fuera de calendario sin crear rutinas por
   API (que engancharían los conectores).
+
+## 12 oct 2026 — Claves progreso, en stand by
+- Decisión de Cristian: toda la serie (y su RSS) queda en stand by, sin fecha de vuelta.
+- Hecho: `config/pausa.json` → `por_programa.progreso.hasta = "9999-12-31"` (= sin fecha). Con eso la rutina no lo
+  escribe los viernes (paso 0; tampoco con «EXTRA: progreso»), publicar.py no lo publica aunque aparezca en una rama, y
+  el encargado no lo cuenta como episodio que falta. La web dice «En pausa» en vez de «Cada viernes» (sitio.py lee la
+  pausa). Quitado «Cada viernes» de la descripción de progreso y la frase de Claves progreso de la descripción general
+  del canal (va en parte.xml, Apple y Spotify). README al día.
+- Sigue publicado: el episodio del 11 oct, /progreso/ y progreso.xml (YouTube sigue enganchado; simplemente no llegan
+  episodios nuevos). Si Cristian quiere retirarlo, aparte.
+- Para reanudar: quitar la entrada de `por_programa` (o /reanudarclaves progreso) y devolver las dos descripciones
+  de config/programas.json (ver el diff de este commit).
