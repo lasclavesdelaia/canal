@@ -3,7 +3,8 @@
 Pódcast hecho por completo con IA. Tiene cuatro programas fijos y uno ocasional:
 
 - **Parte diario IA:** de domingo a viernes.
-- **Claves progreso:** los viernes, una mejora medida a diez años o más y una persona de trayectoria documentada.
+- **Claves progreso:** en stand by desde el 12 oct 2026 (`config/pausa.json`); eran los viernes, historias de lo
+  que mejora gracias a personas concretas. Su episodio y su feed siguen publicados.
 - **Claves semanales IA:** los sábados.
 - **Claves mundo:** los domingos.
 - **Especiales:** de vez en cuando, un tema a fondo (no sale en la web hasta el primero).
