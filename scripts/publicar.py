@@ -105,6 +105,13 @@ def publicados(repo, prefijo="ep-"):
     return salida
 
 
+def visibles(eps):
+    """Los episodios que salen en la web y en los feeds: todos menos los retirados («retirado»: true en las notas de
+    su Release; lo pone scripts/retirar.py). Un retirado sigue contando como publicado, para no volver a sacarlo de
+    su rama, y su MP3 no se borra: así el feed nunca apunta a un audio que ya no existe."""
+    return [e for e in eps if not e.get("retirado")]
+
+
 def caracteres_del_mes(eps, hoy, nombre_voz=None):
     """Caracteres enviados a la voz este mes: episodios publicados en él y voces rehechas en él.
     Con nombre_voz, solo los de esa voz."""
@@ -257,8 +264,10 @@ def borradores_pendientes(cfg, borradores, hoy):
 
 
 def rehacer_uno(meta, cfg, repo, cuenta, hoy):
-    """Vuelve a poner voz a un episodio publicado con la config actual. El MP3 se sube con el mismo nombre
-    (--clobber), así que la URL del feed no cambia. Devuelve el meta actualizado o None si no cabe en el tope."""
+    """Vuelve a poner voz a un episodio publicado con la config actual. El MP3 nuevo se sube con OTRO nombre
+    (<clave>-<AAAAMMDDHHMM>.mp3) y el viejo se queda: pisarlo (--clobber) borra el fichero antes de subir el nuevo
+    y deja la URL del feed unos instantes sin audio, y Apple retiró el pódcast tras algo así (8 oct 2026). El feed
+    pasa a la URL nueva al rehacer la web. Devuelve el meta actualizado o None si no cabe en el tope."""
     hablado = texto_hablado(episodio_de(meta), cfg)
     v = voz_de(meta["programa"], cfg)
     motivo = sin_cupo(hablado, v, cfg, cuenta)
@@ -266,18 +275,20 @@ def rehacer_uno(meta, cfg, repo, cuenta, hoy):
         print(f"NO se rehace {meta['clave']}: {motivo}")
         return None
     with tempfile.TemporaryDirectory() as tmp:
-        mp3 = Path(tmp) / f"{meta['clave']}.mp3"
+        sello = datetime.datetime.now(MADRID).strftime("%Y%m%d%H%M")
+        mp3 = Path(tmp) / f"{meta['clave']}-{sello}.mp3"
         caracteres = voz.sintetizar(hablado, v, mp3)
         nuevo = dict(meta)
         mes = hoy.strftime("%Y-%m")
         rehechos = dict(meta.get("rehechos", {}))
         rehechos[mes] = rehechos.get(mes, 0) + caracteres
         nuevo.update({"bytes": mp3.stat().st_size, "duracion": voz.duracion_segundos(mp3), "caracteres": caracteres,
-                      "voz": v["nombre"], "rehechos": rehechos})
+                      "voz": v["nombre"], "rehechos": rehechos,
+                      "audio_url": f"https://github.com/{repo}/releases/download/ep-{meta['clave']}/{mp3.name}"})
         notas = Path(tmp) / "meta.json"
         notas.write_text(json.dumps(nuevo, ensure_ascii=False, indent=1), encoding="utf-8")
         etiqueta = f"ep-{meta['clave']}"
-        subprocess.run(["gh", "release", "upload", etiqueta, str(mp3), "--clobber", "--repo", repo], check=True)
+        subprocess.run(["gh", "release", "upload", etiqueta, str(mp3), "--repo", repo], check=True)
         subprocess.run(["gh", "release", "edit", etiqueta, "--notes-file", str(notas), "--repo", repo], check=True)
     print(f"rehecho: {meta['clave']} con {nuevo['voz']} ({nuevo['duracion']} s, {caracteres} caracteres)")
     return nuevo
@@ -291,10 +302,11 @@ def audios_recientes(eps, repo, hoy, dias, carpeta):
     for e in eps:
         if e["fecha"] < desde:
             continue
+        nombre = e.get("audio_url", "").rsplit("/", 1)[-1] or f"{e['clave']}.mp3"   # tras rehacer, el nombre cambia
         r = subprocess.run(["gh", "release", "download", f"ep-{e['clave']}", "--repo", repo,
-                            "--pattern", f"{e['clave']}.mp3", "--dir", str(carpeta), "--clobber"],
+                            "--pattern", nombre, "--dir", str(carpeta), "--clobber"],
                            capture_output=True, text=True)
-        ruta = Path(carpeta) / f"{e['clave']}.mp3"
+        ruta = Path(carpeta) / nombre
         if r.returncode == 0 and ruta.is_file():
             rutas[e["clave"]] = ruta
         else:
@@ -406,10 +418,11 @@ def main():
             nuevo = rehacer_uno(meta, cfg, repo, functools.partial(caracteres_del_mes, ya + borradores, hoy), hoy)
             if nuevo:
                 ya = [nuevo if e["clave"] == nuevo["clave"] else e for e in ya]
+    en_web = visibles(ya)
     with tempfile.TemporaryDirectory() as tmp:
-        audios = audios_recientes(ya, repo, hoy, cfg["canal"].get("audio_en_la_web_dias", 60), tmp)
-        sitio.generar(ya, cfg, args.sitio, audios)
-    print(f"web generada en {args.sitio} con {len(ya)} episodios")
+        audios = audios_recientes(en_web, repo, hoy, cfg["canal"].get("audio_en_la_web_dias", 60), tmp)
+        sitio.generar(en_web, cfg, args.sitio, audios)
+    print(f"web generada en {args.sitio} con {len(en_web)} episodios ({len(ya) - len(en_web)} retirados)")
     return 0
 
 
