@@ -63,5 +63,6 @@ Manda `prompts/progreso.md` y su «Revisión antes de entregar». Los puntos 1, 
 audio: no pidas fuentes, fondo técnico ni cifras en voz alta. Comprueba entre bastidores que cada historia es
 verdad y reciente (abre su fuente en «## Fuentes»), y en el guion señala: lo que suene a informe (método,
 verificación, «según», cifras o fechas seguidas), dónde falta una escena o un detalle humano, si son menos de seis
-historias o una se come el episodio, y si el cierre no tiene hondura o cae en sermón, autoayuda, propaganda o
+historias o una se come el episodio, toda frase de teletipo («X publicó el primer recuento…», «Y ha anunciado
+que…»: propón cómo contarla desde la escena), y si el cierre no tiene hondura o cae en sermón, autoayuda, propaganda o
 cursilería.

@@ -46,6 +46,11 @@ vuelve a un sitio. De cualquier lugar del mundo, mezclando escalas: algo enorme 
   falta decir de dónde sale algo, se dice con naturalidad y una sola vez («lo contaron sus vecinos a la prensa
   local»). Las fuentes van todas en «## Fuentes». La regla legal sigue: lo que se afirma de la conducta de una
   persona viva concreta se atribuye en la frase.
+- **Nada de frase de teletipo**: ni «a principios de octubre, la fundación X y la Universidad Y publicaron el primer
+  recuento completo en un cuarto de siglo», ni «este mes, quienes lo criaron han contado por escrito…», ni «la
+  organización Z ha anunciado que…». Quién publicó qué y cuándo es andamiaje: se cuenta lo que ve alguien que está
+  allí («hoy, quien recorre el atolón cuenta más caparazones que personas en todo el país»). Si la novedad es la
+  publicación, se dice lo que revela, no que se publicó.
 - **Lo que sigue mal** se reconoce con honestidad en una frase cuando es importante, sin apagar la historia.
 - **Lo doloroso** (la enfermedad, la guerra o el hambre de partida) solo lo necesario para entender lo que se superó,
   con calma y sin detalle gráfico. Es la única excepción a «lo doloroso, solo el domingo» de la pauta común.
