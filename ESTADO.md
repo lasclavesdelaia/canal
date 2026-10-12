@@ -1198,7 +1198,9 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   el encargado no lo cuenta como episodio que falta. La web dice «En pausa» en vez de «Cada viernes» (sitio.py lee la
   pausa). Quitado «Cada viernes» de la descripción de progreso y la frase de Claves progreso de la descripción general
   del canal (va en parte.xml, Apple y Spotify). README al día.
-- Sigue publicado: el episodio del 11 oct, /progreso/ y progreso.xml (YouTube sigue enganchado; simplemente no llegan
-  episodios nuevos). Si Cristian quiere retirarlo, aparte.
+- Sigue publicado: el episodio del 12 oct («Sembrar para nietos que no veremos», ya con la pauta nueva), /progreso/ y
+  progreso.xml (YouTube sigue enganchado; simplemente no llegan episodios nuevos). El del 11 oct ya no está en el feed.
+- Comprobado tras el merge (publicar.yml run 38284309843, success): /progreso/ dice «En pausa · 1 episodio»,
+  /progreso.xml → 200, y la descripción de parte.xml ya no nombra Claves progreso.
 - Para reanudar: quitar la entrada de `por_programa` (o /reanudarclaves progreso) y devolver las dos descripciones
   de config/programas.json (ver el diff de este commit).
