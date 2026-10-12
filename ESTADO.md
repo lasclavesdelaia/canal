@@ -1204,3 +1204,24 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   /progreso.xml → 200, y la descripción de parte.xml ya no nombra Claves progreso.
 - Para reanudar: quitar la entrada de `por_programa` (o /reanudarclaves progreso) y devolver las dos descripciones
   de config/programas.json (ver el diff de este commit).
+
+## 12 oct 2026 — Claves progreso extra (EXTRA: progreso)
+- Hecho: rutina lanzada a las 07:15 UTC (cse_01CuboxhssyLk2arLgVm9qk5); va por la vía EXTRA, solo progreso, con Opus.
+- Hecho: REVISOR.md tenía al final el bloque viejo de progreso (cinco criterios, comparador, coste): reescrito (c739213, falta push).
+- En curso: esperando la rama claude/episodios-2026-10-12-progreso.
+- Siguiente: validar, publicar, YouTube (podcast Claves progreso y «Uso de IA»).
+- Hecho (07:45 UTC): rama cafbdb7 validada («bien», 3.117 palabras); publicada por el cron (run 38218961323); Release ep-2026-10-12-progreso con mp3; ya en progreso.xml.
+  Título «Sembrar para nietos que no veremos»: 10 historias, Weil y Honi; sin método en voz alta. Revisado por mí: bien.
+- Siguiente: comprobar más tarde que YouTube lo recoge en el pódcast Claves progreso y que el marcador le pone «Uso de IA».
+- Hecho: regla «nada de frase de teletipo» en progreso.md y REVISOR.md (petición de Cristian).
+- Hecho (13:10 UTC): en YouTube como N0xUadwAERA, público, en el pódcast Claves progreso; «Uso de IA» marcado a las 08:53 UTC (run 38226360458). Ojo: el nombre del pódcast en YouTube sigue con «· Las claves de la IA».
+- Hecho (12 oct, tarde): YouTube NO aplica al pódcast cambios de título/descripción del feed (aviso de Studio). Renombrados a mano los cinco pódcasts sin «· Las claves de la IA»; en Claves progreso, también la descripción nueva. Si se cambia el nombre o la descripción de un programa, hay que tocarlo a mano en Studio.
+- Pendiente: el pódcast Claves mundo sigue «Privado» y «Procesando…» desde el 11 oct.
+- Claves mundo en YouTube (12 oct, tarde): el feed mundo.xml está bien (2 episodios; el MP3 del 11 coincide en tamaño con el Release). En Studio, el pódcast sigue «Procesando…» y sin la etiqueta RSS; el episodio del 11 («¿Por qué Washington paga…?») no se ha importado. Su «Visibilidad» (= visibilidad por defecto de lo que entre por RSS) estaba en Privada: puesta en Pública, como los otros cuatro.
+  Siguiente: si el domingo 18 el episodio nuevo tampoco entra, borrar este pódcast y volver a enviar mundo.xml (código al correo, lo teclea Cristian), y devolverle el vídeo del 8.
+- 12 oct (tarde, petición de Cristian): pódcast Claves mundo BORRADO en Studio (el vídeo del 8 se conserva). Reenviando mundo.xml por RSS: esperando el código que tecleará Cristian.
+- Hecho (12 oct, tarde): Claves mundo reenviado por RSS → pódcast nuevo PLS6-yy4_7JO8 (código tecleado por Cristian), «subir desde el 9 oct» (solo el episodio del 11; el del 8 ya existe a mano). Título cambiado a mano a «Claves mundo» (YouTube tomó el título viejo, aunque mundo.xml ya dice «Claves mundo»), visibilidad Pública, y vídeo del 8 (7T0NY5tiKUI) añadido. Queda «Procesando…».
+  CAUSA PROBABLE del atasco: al reenviar, YouTube avisó «puede que tardemos unos días en subir 1 episodio debido al límite de subidas diarias». El 11 se crearon 5 pódcast y se subieron vídeos a mano: el canal (nuevo, sin verificar) llegó a su tope diario. No era un fallo del feed.
+  Siguiente: mirar el 13-14 oct que el episodio del 11 («¿Por qué Washington paga…?») haya entrado y salga público.
+- Hecho (12 oct, noche): Claves mundo YA ENTRÓ (RSS, público, 2 vídeos). El episodio del 11 (Z3Xh5cUPi64) llegó PRIVADO (lo importó con la visibilidad vieja): puesto Público a mano. «Uso de IA»: lo pondrá el marcador en su pasada horaria.
+- Hecho (12 oct, noche, petición de Cristian): Claves progreso en stand by → pódcast de YouTube «Claves progreso» ELIMINADO; sus vídeos se conservan (N0xUadwAERA público; zCZ3OPz4LmE privado). El feed progreso.xml sigue en la web. Si se reanuda: volver a enviar progreso.xml por RSS en Studio (código al correo) y añadirle esos vídeos.
