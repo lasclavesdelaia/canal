@@ -21,41 +21,57 @@ def fila(rank, nombre, fecha="2026-10-08", rating=1500.0):
 ANTES = [fila(1, "a", "2026-10-02"), fila(2, "b", "2026-10-02"), fila(3, "c", "2026-10-02")]
 
 
+VISTOS = {"a", "b", "c"}
+
+
 class Cambios(unittest.TestCase):
-    def test_sin_cambios_aunque_se_muevan_puestos(self):
-        ultima = [fila(1, "a"), fila(2, "c"), fila(3, "b")]
-        self.assertEqual(lmarena.cambios(ultima, ANTES), [])
+    def test_sin_modelos_nuevos_no_hay_nada_que_contar(self):
+        ultima = [fila(1, "c"), fila(2, "a"), fila(3, "b")]  # cambia el primero, pero nadie es nuevo
+        self.assertEqual(lmarena.cambios(ultima, VISTOS), [])
 
-    def test_modelo_nuevo_con_sus_vecinos(self):
+    def test_modelo_nuevo_con_sus_vecinos_y_el_primero(self):
         ultima = [fila(1, "a"), fila(2, "nuevo"), fila(3, "b"), fila(4, "c")]
-        self.assertEqual(lmarena.cambios(ultima, ANTES), ["entra nuevo (lab) en el puesto 2, entre a y b"])
+        self.assertEqual(lmarena.cambios(ultima, VISTOS),
+                         ["entra un modelo nuevo, nuevo (lab), en el puesto 2, entre a y b; primero: a"])
 
-    def test_nuevo_primero(self):
+    def test_modelo_nuevo_primero(self):
         ultima = [fila(1, "nuevo"), fila(2, "a"), fila(3, "b")]
-        self.assertEqual(lmarena.cambios(ultima, ANTES), [
-            "entra nuevo (lab) en el puesto 1, justo encima de a", "nuevo primero: nuevo (antes lo era a)"])
+        self.assertEqual(lmarena.cambios(ultima, VISTOS),
+                         ["entra un modelo nuevo, nuevo (lab), en el puesto 1, justo encima de a; pasa a ser el primero"])
 
-    def test_cambia_el_primero_sin_modelo_nuevo(self):
-        ultima = [fila(1, "b"), fila(2, "a"), fila(3, "c")]
-        self.assertEqual(lmarena.cambios(ultima, ANTES), ["nuevo primero: b (antes lo era a)"])
+    def test_una_variante_de_un_modelo_ya_visto_no_es_nueva(self):
+        # 12 oct 2026: «Claude Opus 5.5 (Max)» salió con ese nombre, pero «(High)» llevaba semanas.
+        vistos = {lmarena.base("Claude Opus 5.5 (High)"), lmarena.base("GPT 6.1 Sol (Max)")}
+        ultima = [fila(1, "Claude Opus 5.5 (Max)"), fila(2, "GPT 6.1 Sol (Max)")]
+        self.assertEqual(lmarena.cambios(ultima, vistos), [])
+        self.assertEqual(lmarena.base("claude-opus-5.5-high"), lmarena.base("Claude Opus 5.5 (Max)"))
+        self.assertEqual(lmarena.base("gemini-4-argon-preview-0905"), lmarena.base("gemini-4-argon-high"))
+        self.assertNotEqual(lmarena.base("gpt-6.1-sol"), lmarena.base("gpt-6-sol"))
 
     def test_nuevo_muy_abajo_no_cuenta(self):
         ultima = [fila(1, "a"), fila(2, "b"), fila(3, "c"), fila(lmarena.RELEVANTES + 1, "lejano")]
-        self.assertEqual(lmarena.cambios(ultima, ANTES), [])
+        self.assertEqual(lmarena.cambios(ultima, VISTOS), [])
 
     def test_primera_publicacion_no_es_cambio(self):
-        self.assertEqual(lmarena.cambios([fila(1, "a")], []), [])
+        self.assertEqual(lmarena.cambios([fila(1, "a")], set()), [])
 
 
 class Resumen(unittest.TestCase):
-    def test_compara_las_dos_ultimas_publicaciones(self):
+    def test_compara_con_todo_el_historial(self):
+        # «viejo» faltó en la publicación anterior pero ya había salido: no es nuevo.
         viejas = [fila(1, "viejo", "2026-09-01")]
-        ultima = [fila(1, "a"), fila(2, "nuevo"), fila(3, "b"), fila(4, "c")]
+        ultima = [fila(1, "a"), fila(2, "nuevo"), fila(3, "viejo"), fila(4, "b"), fila(5, "c")]
         t = lmarena.resumir("Text Arena · Overall", "text_style_control", "overall", viejas + ANTES + ultima)
         self.assertEqual((t["fecha"], t["anterior"]), ("2026-10-08", "2026-10-02"))
-        self.assertEqual(t["cambios"], ["entra nuevo (lab) en el puesto 2, entre a y b"])
-        self.assertEqual([f["model_name"] for f in t["filas"]], ["a", "nuevo", "b", "c"])
+        self.assertEqual(t["cambios"], ["entra un modelo nuevo, nuevo (lab), en el puesto 2, entre a y viejo; primero: a"])
+        self.assertEqual([f["model_name"] for f in t["filas"]], ["a", "nuevo", "viejo", "b", "c"])
         self.assertNotIn("category", t["filas"][0])
+
+    def test_lo_ya_salido_en_otra_tabla_no_es_nuevo(self):
+        ultima = [fila(1, "a"), fila(2, "de-text-arena-high")]
+        historico = [("de-text-arena", "2026-09-15")]
+        t = lmarena.resumir("Agent Arena · Overall", "agent", "overall", ANTES + ultima, historico)
+        self.assertEqual(t["cambios"], [])
 
     def test_informe_y_agent_arena(self):
         agente = {"rank": 1, "model_name": "Modelo (Max)", "organization": "lab", "score": 0.1789,
@@ -63,7 +79,7 @@ class Resumen(unittest.TestCase):
         datos = {"fuente": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (CC-BY-4.0)", "tablas": [
             lmarena.resumir("Text Arena · Overall", "text_style_control", "overall", ANTES),
             {"nombre": "Agent Arena · Overall", "fecha": "2026-10-12", "anterior": "2026-10-08",
-             "cambios": ["nuevo primero: Modelo (Max) (antes lo era otro)"], "filas": [agente]}]}
+             "cambios": ["entra un modelo nuevo, Modelo (Max) (lab), en el puesto 1"], "filas": [agente]}]}
         texto = lmarena.informe(datos)
         self.assertIn("«según LMArena»", texto)
         self.assertIn("Text Arena · Overall · publicada 2026-10-02 (anterior: —) · SIN CAMBIOS", texto)

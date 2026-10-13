@@ -4,8 +4,9 @@ Fuente: el dataset oficial y abierto de LMArena en Hugging Face (`lmarena-ai/lea
 la web de arena.ai. Dos usos:
 
 - `--descargar` (lo hace .github/workflows/lmarena.yml cada 6 horas; necesita pyarrow): baja los parquet completos,
-  compara la última publicación de cada tabla con la anterior y guarda el resumen en datos/lmarena.json, en la rama
-  `datos-lmarena` (main exige commits firmados y el bot no firma).
+  busca en la última publicación de cada tabla los modelos que no habían salido nunca antes (con ningún nombre ni
+  variante, en ninguna tabla) y guarda el resumen en datos/lmarena.json, en la rama `datos-lmarena` (main exige
+  commits firmados y el bot no firma).
 - sin argumentos (la rutina; solo biblioteca estándar): lee ese resumen de la rama y lo cuenta en texto.
   Si no lo encuentra, lo dice en una línea y termina con código 0: la rutina sigue sin estos datos.
 
@@ -14,6 +15,7 @@ Uso: python3 scripts/lmarena.py [--fichero RUTA] [--top N]
 """
 import argparse
 import json
+import re
 import subprocess
 import sys
 import tempfile
@@ -34,57 +36,69 @@ TABLAS = (
 )
 GUARDADAS = 25     # filas de cada tabla en el resumen
 RELEVANTES = 20    # un modelo nuevo por debajo de este puesto no se cuenta
+# Variantes del mismo modelo: «Claude Opus 5.5 (High)» y «(Max)», «claude-opus-5.5-high», «…-preview», «…-20260922».
+# El 12 oct 2026 «Claude Opus 5.5 (Max)» salió con ese nombre por primera vez, pero el modelo llevaba semanas.
+VARIANTE = re.compile(r"-(?:x?high|max|min|low|medium|thinking|reasoning|preview|exp|experimental|latest"
+                      r"|20\d{2}-?\d{2}-?\d{2}|\d{4})$")
 CAMPOS = ("rank", "model_name", "organization", "license", "rating", "rating_lower", "rating_upper", "vote_count",
           "score", "score_ci_lower", "score_ci_upper", "session_count")
 
 
-def cambios(ultima, antes, relevantes=RELEVANTES):
-    """Lo que interesa contar: modelos que no estaban en la publicación anterior (con su puesto y entre quiénes
-    quedan) y cambio de primero. `ultima` y `antes`: filas completas de cada publicación."""
-    if not ultima or not antes:
+def base(nombre):
+    """El modelo sin su variante: «Claude Opus 5.5 (Max)» y «claude-opus-5.5-high» → «claude-opus-5-5»."""
+    n = re.sub(r"[\s._]+", "-", re.sub(r"\([^)]*\)", "", nombre.lower()).strip())
+    while (m := VARIANTE.search(n)) and m.start() > 0:
+        n = n[:m.start()]
+    return n
+
+
+def cambios(ultima, vistos, relevantes=RELEVANTES):
+    """Lo único que se cuenta: un modelo nuevo de verdad (su `base` no está en `vistos`, lo ya salido antes en
+    LMArena) que entra entre los `relevantes` primeros, con su puesto, sus vecinos y quién va primero."""
+    if not ultima or not vistos:
         return []
-    previos = {f["model_name"] for f in antes}
     orden = sorted(ultima, key=lambda f: f["rank"])
     salida = []
     for i, f in enumerate(orden):
-        if f["model_name"] in previos or f["rank"] > relevantes:
+        if base(f["model_name"]) in vistos or f["rank"] > relevantes:
             continue
         vecinos = [orden[j]["model_name"] for j in (i - 1, i + 1) if 0 <= j < len(orden)]
-        salida.append(f"entra {f['model_name']} ({f['organization']}) en el puesto {int(f['rank'])}"
+        salida.append(f"entra un modelo nuevo, {f['model_name']} ({f['organization']}), en el puesto {int(f['rank'])}"
                       + (f", entre {' y '.join(vecinos)}" if len(vecinos) == 2 else
-                         f", justo {'debajo' if i else 'encima'} de {vecinos[0]}" if vecinos else ""))
-    primero = orden[0]["model_name"]
-    antes_primero = min(antes, key=lambda f: f["rank"])["model_name"]
-    if primero != antes_primero:
-        salida.append(f"nuevo primero: {primero} (antes lo era {antes_primero})")
+                         f", justo {'debajo' if i else 'encima'} de {vecinos[0]}" if vecinos else "")
+                      + ("; pasa a ser el primero" if i == 0 else f"; primero: {orden[0]['model_name']}"))
     return salida
 
 
-def resumir(nombre, subconjunto, categoria, filas):
-    """Resumen de una tabla a partir de todas sus filas históricas (las de su categoría)."""
+def resumir(nombre, subconjunto, categoria, filas, historico=()):
+    """Resumen de una tabla a partir de todas sus filas históricas (las de su categoría). `historico`: pares
+    (modelo, fecha) de todas las tablas, para que no cuente como nuevo lo que ya salió en otra."""
     fechas = sorted({f["leaderboard_publish_date"] for f in filas})
     if not fechas:
         return {"nombre": nombre, "subconjunto": subconjunto, "categoria": categoria, "fecha": None}
     ultima = [f for f in filas if f["leaderboard_publish_date"] == fechas[-1]]
-    antes = [f for f in filas if len(fechas) > 1 and f["leaderboard_publish_date"] == fechas[-2]]
+    pares = list(historico) + [(f["model_name"], f["leaderboard_publish_date"]) for f in filas]
+    vistos = {base(m) for m, fecha in pares if fecha < fechas[-1]}
     limpia = [{k: (round(f[k], 4) if isinstance(f[k], float) else f[k]) for k in CAMPOS if f.get(k) is not None}
               for f in sorted(ultima, key=lambda f: f["rank"])[:GUARDADAS]]
     return {"nombre": nombre, "subconjunto": subconjunto, "categoria": categoria, "fecha": fechas[-1],
-            "anterior": fechas[-2] if len(fechas) > 1 else None, "cambios": cambios(ultima, antes), "filas": limpia}
+            "anterior": fechas[-2] if len(fechas) > 1 else None, "cambios": cambios(ultima, vistos), "filas": limpia}
 
 
 def descargar(salida):
     import pyarrow.parquet as pq  # solo en GitHub Actions
 
-    tablas = []
+    leidas = []
     with tempfile.TemporaryDirectory() as tmp:
         for nombre, subconjunto, categoria in TABLAS:
             ruta = Path(tmp) / f"{subconjunto}.parquet"
             if not ruta.exists():
                 with urllib.request.urlopen(PARQUET.format(subconjunto), timeout=300) as r:
                     ruta.write_bytes(r.read())
-            filas = pq.read_table(ruta, filters=[("category", "=", categoria)]).to_pylist()
-            tablas.append(resumir(nombre, subconjunto, categoria, filas))
+            leidas.append((nombre, subconjunto, categoria,
+                           pq.read_table(ruta, filters=[("category", "=", categoria)]).to_pylist()))
+    historico = [(f["model_name"], f["leaderboard_publish_date"]) for *_, filas in leidas for f in filas]
+    tablas = [resumir(nombre, subconjunto, categoria, filas, historico) for nombre, subconjunto, categoria, filas in leidas]
     datos = {"fuente": f"https://huggingface.co/datasets/{DATASET} (CC-BY-4.0)", "tablas": tablas}
     Path(salida).parent.mkdir(parents=True, exist_ok=True)
     Path(salida).write_text(json.dumps(datos, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
