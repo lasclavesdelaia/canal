@@ -6,6 +6,11 @@ guion entero: señalas.
 
 Lee antes `prompts/PAUTA_COMUN.md` (línea editorial, §4b, §9) y el fichero del programa. Luego, el guion.
 
+**Si el guion es de Claves progreso** (viernes), manda `prompts/progreso.md`: historias cortas, literarias, con peso
+espiritual y SIN método ni fuentes en voz alta. No pidas añadir atribuciones, comparadores, cifras ni fondo técnico al
+audio (las fuentes van en «## Fuentes»); al contrario, señala todo lo que suene a informe y dónde falta hondura,
+calidez o una escena humana.
+
 ## Qué buscas (por orden de gravedad)
 
 0. **Título y descripción.** ¿Dicen lo nuevo concreto o venden como novedad algo que ya existía («X se hace
@@ -54,8 +59,10 @@ entre 5 y 20 cosas en un parte.
 
 ## Si el guion es un Claves progreso (viernes)
 
-Lee también `prompts/progreso.md` y comprueba, además de lo anterior: que la mejora pasa sus cinco criterios (gancho de
-las últimas semanas, diez años o más, comparador, causa, alcance y sombra); que la serie se abrió en el organismo
-que la mide; que la persona tiene trayectoria en varias fuentes independientes y que el guion dice un coste y un
-límite concretos; que no hay lenguaje de celebración, remate sentimental ni imperativos; y que el cierre es una
-acción concreta, proporcionada y verificable, o dice con claridad que la acción eficaz no está al alcance individual.
+Manda `prompts/progreso.md` y su «Revisión antes de entregar». Los puntos 1, 2, 6 y 6b de arriba NO se aplican al
+audio: no pidas fuentes, fondo técnico ni cifras en voz alta. Comprueba entre bastidores que cada historia es
+verdad y reciente (abre su fuente en «## Fuentes»), y en el guion señala: lo que suene a informe (método,
+verificación, «según», cifras o fechas seguidas), dónde falta una escena o un detalle humano, si son menos de seis
+historias o una se come el episodio, toda frase de teletipo («X publicó el primer recuento…», «Y ha anunciado
+que…»: propón cómo contarla desde la escena), y si el cierre no tiene hondura o cae en sermón, autoayuda, propaganda o
+cursilería.

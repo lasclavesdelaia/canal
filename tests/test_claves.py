@@ -231,6 +231,27 @@ class Rehacer(unittest.TestCase):
         self.assertEqual([e["clave"] for e in publicar.elegir_rehacer(" 2026-10-09-parte, no-existe ", self.YA)],
                          ["2026-10-09-parte"])
 
+    def test_rehacer_no_pisa_el_mp3(self):
+        """Rehacer sube el audio con otro nombre y sin --clobber: la URL vieja del feed nunca se queda sin fichero
+        (pisarlo dejaba un hueco y Apple retiró el pódcast el 8 oct 2026)."""
+        import datetime
+        from unittest import mock
+        llamadas = []
+        meta = {"clave": "2026-10-09-parte", "programa": "parte", "caracteres": 8000,
+                "audio_url": "https://github.com/r/canal/releases/download/ep-2026-10-09-parte/2026-10-09-parte.mp3"}
+        with mock.patch.object(publicar, "episodio_de"), mock.patch.object(publicar, "texto_hablado", return_value="x"), \
+                mock.patch.object(publicar, "voz_de", return_value={"nombre": "v"}), \
+                mock.patch.object(publicar, "sin_cupo", return_value=None), \
+                mock.patch.object(publicar.voz, "sintetizar", side_effect=lambda h, v, mp3: (mp3.write_bytes(b"0" * 10), 5)[1]), \
+                mock.patch.object(publicar.voz, "duracion_segundos", return_value=60), \
+                mock.patch.object(publicar.subprocess, "run", side_effect=lambda a, **k: llamadas.append(a)):
+            nuevo = publicar.rehacer_uno(meta, {}, "r/canal", None, datetime.date(2026, 10, 12))
+        subida = [a for a in llamadas if a[:3] == ["gh", "release", "upload"]][0]
+        self.assertNotIn("--clobber", subida)
+        nombre = Path(subida[4]).name
+        self.assertRegex(nombre, r"^2026-10-09-parte-\d{12}\.mp3$")
+        self.assertTrue(nuevo["audio_url"].endswith("/ep-2026-10-09-parte/" + nombre))
+
     def test_tope_cuenta_lo_rehecho(self):
         import datetime
         hoy = datetime.date(2026, 10, 20)
@@ -621,3 +642,10 @@ class RamasRemotas(unittest.TestCase):
         self.assertEqual(episodios["2026-10-09-parte.md"][1], "origin/claude/episodios-x")
         self.assertEqual(list(borradores), ["2026-10-09-especial-x.md"])
         self.assertEqual(borradores["2026-10-09-especial-x.md"][1], "origin/claude/borrador-x")
+
+
+class Retirados(unittest.TestCase):
+    def test_fuera_de_web_y_feeds_pero_siguen_publicados(self):
+        ya = [{"clave": "a"}, {"clave": "b", "retirado": True}]
+        self.assertEqual([e["clave"] for e in publicar.visibles(ya)], ["a"])
+        self.assertEqual(len(ya), 2)   # «hechos» los sigue contando: no se vuelven a publicar desde su rama

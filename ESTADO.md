@@ -1179,3 +1179,50 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   dos retiradas de Apple: los despliegues de GitHub Pages dejan un hueco breve en el que el feed o la portada no se
   sirven bien. Siguiente: (1) mirar el 12 oct si YouTube recogió el episodio de progreso solo; (2) que publicar.yml no
   despliegue Pages si _site no ha cambiado (comparar hash con lo publicado) y reducir despliegues.
+- Hecho (11 oct, noche; Cristian sobre el primer Claves progreso: «horrible, todo números, muy frío, cero
+  inspirador… deberían ser noticias cortas varias y bastantes, más literario y sobre todo con más peso espiritual…
+  odio que se citen así las fuentes y la verificación»): prompts/progreso.md REESCRITO: 6-10 historias recientes de lo
+  que mejora (3-4 más largas), literarias, con reflexión espiritual (tradiciones contemplativas, sin sermón ni
+  proselitismo), muy pocas cifras y fechas, NADA de método ni fuentes en voz alta (se comprueba entre bastidores).
+  validar.py: en progreso los años cuentan como cifras y el tope baja a 8/mil; PROGRESO_METODO rechaza método en voz
+  alta. RUTINA, REVISOR y PAUTA_COMUN §10 al día; descripciones de progreso en config/programas.json. El episodio del
+  11 oct NO se ha tocado (Cristian decide si se retira).
+- Hecho (12 oct): RUTINA.md admite un encargo extra por «Ejecutar ahora» con el texto exacto «EXTRA: <programa>»
+  (escribe solo ese programa con la fecha de hoy). Es la vía para episodios fuera de calendario sin crear rutinas por
+  API (que engancharían los conectores).
+
+## 12 oct 2026 — Claves progreso, en stand by
+- Decisión de Cristian: toda la serie (y su RSS) queda en stand by, sin fecha de vuelta.
+- Hecho: `config/pausa.json` → `por_programa.progreso.hasta = "9999-12-31"` (= sin fecha). Con eso la rutina no lo
+  escribe los viernes (paso 0; tampoco con «EXTRA: progreso»), publicar.py no lo publica aunque aparezca en una rama, y
+  el encargado no lo cuenta como episodio que falta. La web dice «En pausa» en vez de «Cada viernes» (sitio.py lee la
+  pausa). Quitado «Cada viernes» de la descripción de progreso y la frase de Claves progreso de la descripción general
+  del canal (va en parte.xml, Apple y Spotify). README al día.
+- Sigue publicado: el episodio del 12 oct («Sembrar para nietos que no veremos», ya con la pauta nueva), /progreso/ y
+  progreso.xml (YouTube sigue enganchado; simplemente no llegan episodios nuevos). El del 11 oct ya no está en el feed.
+- Comprobado tras el merge (publicar.yml run 38284309843, success): /progreso/ dice «En pausa · 1 episodio»,
+  /progreso.xml → 200, y la descripción de parte.xml ya no nombra Claves progreso.
+- Para reanudar: quitar la entrada de `por_programa` (o /reanudarclaves progreso) y devolver las dos descripciones
+  de config/programas.json (ver el diff de este commit).
+
+## 12 oct 2026 — Claves progreso extra (EXTRA: progreso)
+- Hecho: rutina lanzada a las 07:15 UTC (cse_01CuboxhssyLk2arLgVm9qk5); va por la vía EXTRA, solo progreso, con Opus.
+- Hecho: REVISOR.md tenía al final el bloque viejo de progreso (cinco criterios, comparador, coste): reescrito (c739213, falta push).
+- En curso: esperando la rama claude/episodios-2026-10-12-progreso.
+- Siguiente: validar, publicar, YouTube (podcast Claves progreso y «Uso de IA»).
+- Hecho (07:45 UTC): rama cafbdb7 validada («bien», 3.117 palabras); publicada por el cron (run 38218961323); Release ep-2026-10-12-progreso con mp3; ya en progreso.xml.
+  Título «Sembrar para nietos que no veremos»: 10 historias, Weil y Honi; sin método en voz alta. Revisado por mí: bien.
+- Siguiente: comprobar más tarde que YouTube lo recoge en el pódcast Claves progreso y que el marcador le pone «Uso de IA».
+- Hecho: regla «nada de frase de teletipo» en progreso.md y REVISOR.md (petición de Cristian).
+- Hecho (13:10 UTC): en YouTube como N0xUadwAERA, público, en el pódcast Claves progreso; «Uso de IA» marcado a las 08:53 UTC (run 38226360458). Ojo: el nombre del pódcast en YouTube sigue con «· Las claves de la IA».
+- Hecho (12 oct, tarde): YouTube NO aplica al pódcast cambios de título/descripción del feed (aviso de Studio). Renombrados a mano los cinco pódcasts sin «· Las claves de la IA»; en Claves progreso, también la descripción nueva. Si se cambia el nombre o la descripción de un programa, hay que tocarlo a mano en Studio.
+- Pendiente: el pódcast Claves mundo sigue «Privado» y «Procesando…» desde el 11 oct.
+- Claves mundo en YouTube (12 oct, tarde): el feed mundo.xml está bien (2 episodios; el MP3 del 11 coincide en tamaño con el Release). En Studio, el pódcast sigue «Procesando…» y sin la etiqueta RSS; el episodio del 11 («¿Por qué Washington paga…?») no se ha importado. Su «Visibilidad» (= visibilidad por defecto de lo que entre por RSS) estaba en Privada: puesta en Pública, como los otros cuatro.
+  Siguiente: si el domingo 18 el episodio nuevo tampoco entra, borrar este pódcast y volver a enviar mundo.xml (código al correo, lo teclea Cristian), y devolverle el vídeo del 8.
+- 12 oct (tarde, petición de Cristian): pódcast Claves mundo BORRADO en Studio (el vídeo del 8 se conserva). Reenviando mundo.xml por RSS: esperando el código que tecleará Cristian.
+- Hecho (12 oct, tarde): Claves mundo reenviado por RSS → pódcast nuevo PLS6-yy4_7JO8 (código tecleado por Cristian), «subir desde el 9 oct» (solo el episodio del 11; el del 8 ya existe a mano). Título cambiado a mano a «Claves mundo» (YouTube tomó el título viejo, aunque mundo.xml ya dice «Claves mundo»), visibilidad Pública, y vídeo del 8 (7T0NY5tiKUI) añadido. Queda «Procesando…».
+  CAUSA PROBABLE del atasco: al reenviar, YouTube avisó «puede que tardemos unos días en subir 1 episodio debido al límite de subidas diarias». El 11 se crearon 5 pódcast y se subieron vídeos a mano: el canal (nuevo, sin verificar) llegó a su tope diario. No era un fallo del feed.
+  Siguiente: mirar el 13-14 oct que el episodio del 11 («¿Por qué Washington paga…?») haya entrado y salga público.
+- Hecho (12 oct, noche): Claves mundo YA ENTRÓ (RSS, público, 2 vídeos). El episodio del 11 (Z3Xh5cUPi64) llegó PRIVADO (lo importó con la visibilidad vieja): puesto Público a mano. «Uso de IA»: lo pondrá el marcador en su pasada horaria.
+- Hecho (12 oct, noche, petición de Cristian): Claves progreso en stand by → pódcast de YouTube «Claves progreso» ELIMINADO; sus vídeos se conservan (N0xUadwAERA público; zCZ3OPz4LmE privado). El feed progreso.xml sigue en la web. Si se reanuda: volver a enviar progreso.xml por RSS en Studio (código al correo) y añadirle esos vídeos.
+- Hecho (12 oct, noche): Apple. La web YA solo se despliega cuando hay cambio (episodio nuevo o cambio de diseño): no hacía falta tocar publicar.yml. La causa más probable de las retiradas no son los despliegues sino el audio que desaparece: el 8 oct `rehacer` pisó los MP3 con --clobber (borra y sube) y el 9 oct se borró una Release. Arreglado: (1) `rehacer` sube el MP3 con otro nombre y no borra el viejo (audio_url nueva en el meta); (2) `scripts/retirar.py <clave>` marca «retirado» en la Release (sale de web y feeds, el MP3 se queda; --deshacer); publicar.visibles() filtra. README al día. Pruebas nuevas en test_claves (Rehacer, Retirados).

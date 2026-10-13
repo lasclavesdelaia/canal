@@ -26,8 +26,9 @@ import json
 import shutil
 from email.utils import format_datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
-from comun import MESES, RAIZ, Episodio, fecha_hablada, texto_hablado
+from comun import MESES, RAIZ, Episodio, fecha_hablada, pausa_hasta, texto_hablado
 
 ULTIMOS_EN_PORTADA = 6
 FEED_GENERAL = "parte"  # nombre histórico: las apps ya leen /parte.xml
@@ -133,7 +134,7 @@ def _mes(fecha):
 
 
 def _frecuencia(prog):
-    return FRECUENCIA.get(prog.get("dias", ""), "")
+    return "En pausa" if prog.get("en_pausa") else FRECUENCIA.get(prog.get("dias", ""), "")
 
 
 def _aviso(canal):
@@ -611,7 +612,10 @@ def generar(episodios, cfg, destino, audios=None):
     eps = sorted(episodios, key=lambda e: (e["fecha"], e["programa"], e["clave"]), reverse=True)
     # Un programa marcado «oculto_sin_episodios» (Especiales) no sale en la web ni tiene feed hasta su primer episodio.
     con_eps = {e["programa"] for e in eps}
-    cfg = dict(cfg, programas={c: p for c, p in cfg["programas"].items()
+    # Un programa en pausa (config/pausa.json; «9999-12-31» = sin fecha de vuelta) dice «En pausa» y no su frecuencia.
+    hoy = datetime.datetime.now(ZoneInfo("Europe/Madrid")).date().isoformat()
+    cfg = dict(cfg, programas={c: dict(p, en_pausa=hoy <= (pausa_hasta(c) or ""))
+                               for c, p in cfg["programas"].items()
                                if c in con_eps or not p.get("oculto_sin_episodios")})
     (destino / "estilo.css").write_text(ESTILO.strip() + "\n", encoding="utf-8")
     (destino / "index.html").write_text(pagina_inicio(eps, cfg), encoding="utf-8")

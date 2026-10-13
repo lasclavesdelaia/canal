@@ -106,21 +106,52 @@ class Web(unittest.TestCase):
                 "audio_url": f"https://example.com/{clave}.mp3", "bytes": 10, "duracion": 1800,
                 "publicado": f"{fecha}T06:30:00+02:00"}
 
-    def test_pagina_feed_y_tarjeta(self):
+    def _generar(self, eps, tmp, pausa):
+        """Genera la web con un config/pausa.json de prueba, no con el real."""
+        conf = Path(tmp) / "raiz" / "config"
+        conf.mkdir(parents=True)
+        (conf / "pausa.json").write_text(json.dumps(pausa), encoding="utf-8")
         cfg = config()
+        antes, comun.RAIZ = comun.RAIZ, conf.parent
+        try:
+            sitio.generar(eps, cfg, Path(tmp) / "web")
+        finally:
+            comun.RAIZ = antes
+        return Path(tmp) / "web"
+
+    def test_pagina_feed_y_tarjeta(self):
         eps = [self._meta("parte", "2026-10-16"), self._meta("progreso", "2026-10-16")]
         with tempfile.TemporaryDirectory() as tmp:
-            sitio.generar(eps, cfg, tmp)
-            d = Path(tmp)
+            d = self._generar(eps, tmp, {"hasta": None, "motivo": ""})
             self.assertTrue((d / "progreso" / "index.html").exists())
-            self.assertIn("Cada viernes", (d / "progreso" / "index.html").read_text())
-            self.assertIn("Cada viernes", (d / "index.html").read_text())
+            self.assertIn('<p class="meta">Cada viernes · 1 episodio</p>', (d / "progreso" / "index.html").read_text())
+            self.assertIn('<p class="meta">Cada viernes · 1 episodio</p>', (d / "index.html").read_text())
             c = ET.parse(d / "progreso.xml").getroot().find("channel")
             self.assertEqual([i.find("title").text for i in c.findall("item")], ["Título progreso"])
             general = ET.parse(d / "parte.xml").getroot().find("channel")
             self.assertIn("Claves progreso · Título progreso", [i.find("title").text for i in general.findall("item")])
             solo = ET.parse(d / "parte-solo.xml").getroot().find("channel")
             self.assertEqual([i.find("title").text for i in solo.findall("item")], ["Título parte"])
+
+    def test_en_pausa_sin_fecha(self):
+        # Stand by (12 oct 2026): la web dice «En pausa», pero el programa, su episodio y su feed siguen ahí.
+        eps = [self._meta("parte", "2026-10-16"), self._meta("progreso", "2026-10-16")]
+        pausa = {"hasta": None, "motivo": "", "por_programa": {"progreso": {"hasta": "9999-12-31", "motivo": ""}}}
+        with tempfile.TemporaryDirectory() as tmp:
+            d = self._generar(eps, tmp, pausa)
+            self.assertIn('<p class="meta">En pausa · 1 episodio</p>', (d / "progreso" / "index.html").read_text())
+            portada = (d / "index.html").read_text()
+            self.assertIn('<p class="meta">En pausa · 1 episodio</p>', portada)
+            self.assertIn('<p class="meta">De domingo a viernes · 1 episodio</p>', portada)  # el parte sigue
+            c = ET.parse(d / "progreso.xml").getroot().find("channel")
+            self.assertEqual([i.find("title").text for i in c.findall("item")], ["Título progreso"])
+
+    def test_pausa_vencida_no_cuenta(self):
+        eps = [self._meta("progreso", "2026-10-16")]
+        pausa = {"hasta": None, "motivo": "", "por_programa": {"progreso": {"hasta": "2026-01-01", "motivo": ""}}}
+        with tempfile.TemporaryDirectory() as tmp:
+            d = self._generar(eps, tmp, pausa)
+            self.assertIn('<p class="meta">Cada viernes · 1 episodio</p>', (d / "progreso" / "index.html").read_text())
 
     def test_portada_y_miniatura_existen(self):
         # portadas.py necesita Pillow (no está en CI): se mira su código sin importarlo
