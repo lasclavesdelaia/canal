@@ -267,10 +267,7 @@
    "categoria": "overall",
    "fecha": "2026-10-12",
    "anterior": "2026-10-08",
-   "cambios": [
-    "entra Claude Opus 5.5 (Max) (anthropic) en el puesto 1, justo encima de GPT 6.1 Sol (Max)",
-    "nuevo primero: Claude Opus 5.5 (Max) (antes lo era Claude Opus 5.5 (High))"
-   ],
+   "cambios": [],
    "filas": [
     {
      "rank": 1,
