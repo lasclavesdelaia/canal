@@ -66,6 +66,8 @@ en un commit nuevo. No escribas otro episodio. Si al mirarlo ya valida (otra eje
    Si aún no hay tarjetas, sigue sin ellas.
 7. **Investiga** en las fuentes de la lista:
    - empieza por los RSS y las API, que son más baratos;
+   - para `parte` y `claves`, ejecuta `python3 scripts/lmarena.py` (pauta, §4, «LMArena, cada día»: solo se cuenta
+     si una tabla cambia y no está ya en una tarjeta);
    - abre los artículos solo cuando haga falta;
    - para `progreso`, historias de las últimas semanas de todo el mundo (`prompts/progreso.md`, «Fuentes»); cada
      una se comprueba en su origen, pero el método no se cuenta en el audio.

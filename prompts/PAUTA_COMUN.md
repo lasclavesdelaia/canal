@@ -183,10 +183,22 @@ Cada vez que aparezca algo así, una frase sobre **qué es** y otra sobre **para
 ## 4. Benchmarks y lo que opina la gente
 
 - **Cuando sale un modelo:**
+  - **dónde queda en LMArena**, que manda sobre las demás clasificaciones: su puesto en Text Arena · Overall y en
+    Agent Arena · Overall, entre qué modelos queda y quién va primero (ver «LMArena, cada día»);
   - dónde queda en Artificial Analysis frente a su versión anterior y frente a sus rivales parecidos;
   - si cambian los primeros puestos;
-  - precio y eficiencia de tokens cuando importen;
+  - **lo que cuesta, por tarea y no por token:** la cifra que importa es el coste por tarea del índice de
+    inteligencia de Artificial Analysis (lo que cuesta de media resolver una de sus tareas), al lado de su
+    puntuación: cuánta inteligencia da por cada dólar y quién está en la frontera. El precio oficial por millón de
+    tokens importa poco: un modelo barato por token que gasta muchos más tokens (sobre todo en sus modos de
+    razonamiento alto o máximo) puede salir más caro por tarea. Si solo tienes el precio por token, no lo
+    presentes como lo que cuesta el modelo;
   - si el coste que muestra un ranking no refleja el coste real de uso, explicarlo.
+- **LMArena, cada día (parte y Claves del sábado).** Ejecuta siempre `python3 scripts/lmarena.py`, pero solo se
+  cuenta cuando una tabla dice «CAMBIA» (entra un modelo nuevo entre los 20 primeros o cambia el primero) y ese
+  cambio no está ya en una tarjeta («LMArena contada», §10). Entonces, en corto: dónde entra el modelo nuevo, entre
+  cuáles, quién va primero y con cuánta ventaja; si la diferencia cabe en el margen de error, es un empate y se
+  dice así. Si dice «SIN CAMBIOS» o no hay datos, ese día LMArena no se menciona: ni «sigue igual» ni «no hay datos».
 - **Sin datos de Artificial Analysis** (si su API no responde o no hay clave): da las cifras atribuidas a quien las
   publica («según Google, …») y sigue. No se comenta que falta la medición.
 - **Nunca digas que una fuente falta o falló.** Ni «en mis fuentes no aparece…», ni «no he podido acceder a…», ni
@@ -414,8 +426,9 @@ contarlos. Por eso:
 - No sentenciar burbujas, AGI ni plazos como certezas; sí decir hacia dónde te inclinas y por qué.
 - Atribuir lo que dice el fabricante sobre sí mismo y no comprar tampoco al escéptico de oficio. Un famoso no es una prueba.
 
-**Un modelo nuevo.** Compararlo con su versión anterior y con sus rivales en una clasificación externa (Artificial
-Analysis). Añadir tokens por tarea, coste por tarea y lo que dicen quienes lo usan.
+**Un modelo nuevo.** Compararlo con su versión anterior y con sus rivales en las clasificaciones externas (LMArena
+primero; luego Artificial Analysis; §4). Añadir su coste por tarea (no el precio por token), los tokens por tarea y
+lo que dicen quienes lo usan.
 
 Si el salto es grande, decirlo con claridad y con su medida: en qué mejora mucho, en qué apenas cambia y cuánto
 cuesta. Si es pequeño, decir también eso, sin bombo ni desdén. Si hay medición de un tercero (Artificial Analysis,
@@ -526,6 +539,7 @@ Cabos sueltos: lo importante que quedó sin saber, uno por línea, con «revisar
 Arranque y cierre: la primera y la última frase del guion, literales (para que el siguiente no las repita).
 Erratas corregidas: E-NNN (solo si se corrigió alguna; si no, se omite la línea).
 Predicciones dadas: / Predicciones retomadas: (solo si las hay; formato en §12).
+LMArena contada: <tabla> <fecha de publicación> (solo si el episodio contó un cambio de LMArena; §4).
 ```
 
 - **Cabos sueltos.** Solo lo que importa y no se sabía (por ejemplo, quién está detrás de un ciberataque), no

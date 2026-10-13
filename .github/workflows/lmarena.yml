@@ -1,0 +1,55 @@
+# Resumen diario de LMArena para la rutina: Text Arena · Overall y Agent Arena · Overall (scripts/lmarena.py).
+# Baja los parquet completos del dataset oficial de LMArena en Hugging Face (CC-BY-4.0), compara la última
+# publicación de cada tabla con la anterior y guarda datos/lmarena.json. No lee la web de arena.ai.
+# Los datos viven en la rama `datos-lmarena`, no en main: main exige commits firmados y el bot no firma.
+# Cada 6 horas: el dataset se regenera hacia las 03:00 UTC y la rutina lee lo último que haya en la rama.
+# Solo hay commit si el resumen cambia.
+name: LMArena
+
+on:
+  schedule:
+    - cron: "20 3,9,15,21 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: lmarena
+  cancel-in-progress: false
+
+jobs:
+  lmarena:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # solo para subir datos/lmarena.json
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar pyarrow
+        run: python3 -m pip install --quiet "pyarrow==21.0.0"
+      - name: Partir de la rama de datos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git fetch origin datos-lmarena; then
+            git checkout -B trabajo origin/datos-lmarena
+            git merge --no-edit -X theirs origin/main
+          else
+            git checkout -B trabajo
+          fi
+      - name: Resumir LMArena
+        run: python3 scripts/lmarena.py --descargar
+      - name: Guardar en el repositorio
+        run: |
+          git add datos/lmarena.json
+          if git diff --cached --quiet; then echo "Nada nuevo que guardar."; exit 0; fi
+          git commit -m "LMArena: resumen del $(TZ=Europe/Madrid date +%F)"
+          for intento in 1 2 3; do
+            git push origin HEAD:refs/heads/datos-lmarena && exit 0
+            git fetch origin datos-lmarena && git rebase origin/datos-lmarena
+            sleep 5
+          done
+          echo "::error::No pude subir el resumen a datos-lmarena."; exit 1
