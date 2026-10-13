@@ -90,6 +90,9 @@ Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian).
   el artículo 50 del reglamento europeo de IA.
 - **Antes de cambiar Python:** `python3 -m unittest discover -s tests -v`.
 - **Cambiar de voz:** edita `voz.nombre` en `config/programas.json`, sube el cambio y lanza «Publicar episodios» con
-  `rehacer` = `todos` (Actions › Run workflow). El MP3 se sustituye con el mismo nombre; YouTube no cambia lo ya importado.
-- **Retirar un episodio:** borra su Release `ep-<clave>`; el siguiente paso de Actions lo quita de la web y de los
-  feeds. En YouTube se oculta a mano en Studio.
+  `rehacer` = `todos` (Actions › Run workflow). El MP3 nuevo se sube con otro nombre (`<clave>-<fecha y hora>.mp3`)
+  y el viejo se queda, para que el feed nunca apunte a un fichero que no está; YouTube no cambia lo ya importado.
+- **Retirar un episodio:** `python3 scripts/retirar.py <clave>` (p. ej. `2026-10-11-progreso`). Marca «retirado» en
+  su Release y rehace la web: sale de la web y de los feeds, pero su MP3 NO se borra. No borres la Release: el feed
+  se quedaría apuntando a un audio que ya no existe y Apple retira el pódcast entero cuando lo ve (sospecha fundada: así le pasó tras el 8 y el 9 oct 2026).
+  `--deshacer` lo devuelve. En YouTube, el vídeo ya importado se oculta a mano en Studio.
