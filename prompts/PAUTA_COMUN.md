@@ -195,10 +195,12 @@ Cada vez que aparezca algo así, una frase sobre **qué es** y otra sobre **para
     presentes como lo que cuesta el modelo;
   - si el coste que muestra un ranking no refleja el coste real de uso, explicarlo.
 - **LMArena, cada día (parte y Claves del sábado).** Ejecuta siempre `python3 scripts/lmarena.py`, pero solo se
-  cuenta cuando una tabla dice «CAMBIA» (entra un modelo nuevo entre los 20 primeros o cambia el primero) y ese
-  cambio no está ya en una tarjeta («LMArena contada», §10). Entonces, en corto: dónde entra el modelo nuevo, entre
-  cuáles, quién va primero y con cuánta ventaja; si la diferencia cabe en el margen de error, es un empate y se
-  dice así. Si dice «SIN CAMBIOS» o no hay datos, ese día LMArena no se menciona: ni «sigue igual» ni «no hay datos».
+  cuenta cuando una tabla dice «CAMBIA»: entra entre los 20 primeros un modelo nuevo de verdad, que no había salido
+  nunca en LMArena con ningún nombre ni variante (una variante nueva de un modelo ya visto, como «Max» tras «High», o
+  un cambio de puestos entre modelos ya vistos, no cuentan). Y solo si no está ya en una tarjeta («LMArena contada»,
+  §10). Entonces, en corto: dónde entra, entre cuáles, quién va primero y con cuánta ventaja; si la diferencia cabe en
+  el margen de error, es un empate y se dice así. Si dice «SIN CAMBIOS» o no hay datos, ese día LMArena no se
+  menciona: ni «sigue igual» ni «no hay datos».
 - **Sin datos de Artificial Analysis** (si su API no responde o no hay clave): da las cifras atribuidas a quien las
   publica («según Google, …») y sigue. No se comenta que falta la medición.
 - **Nunca digas que una fuente falta o falló.** Ni «en mis fuentes no aparece…», ni «no he podido acceder a…», ni

@@ -1239,6 +1239,11 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Ojo: Agent Arena · Code NO está en el dataset (de Agent Arena solo publican «overall»). Si algún día lo publican,
   basta añadirlo en TABLAS de lmarena.py.
 - Descartado: la API JSON de datasets-server de Hugging Face (13 oct: 503, «index is loading» y 8 min sin respuesta).
+- Corregido (13 oct, Cristian: «eso ocurrió hace semanas, no digas nada»): la primera versión comparaba solo con la
+  publicación anterior y daba como nuevo a «Claude Opus 5.5 (Max)» en Agent Arena (12 oct), que es el Opus 5.5 de
+  hace semanas con otro nombre. Ahora es nuevo solo lo que no salió nunca en ninguna tabla con ningún nombre ni
+  variante (lmarena.base), y el cambio de primero suelto ya no se cuenta. Repasado sobre agosto-octubre: solo
+  marca lanzamientos reales (Opus 5.5 y Gemini 4 Argon al primer puesto en Text, GPT 6 Sol, Sonnet 5.5…).
 - Artificial Analysis (PAUTA §4 y fuentes.md): importa el coste por tarea frente a su índice de inteligencia, no el
   precio por token. La API gratuita no lo trae (solo índices, velocidad y precio por millón de tokens): se usa cuando lo
   publique el laboratorio o lo cite la prensa. Su plan Pro (~417 $/mes por persona) sí lo daría.
