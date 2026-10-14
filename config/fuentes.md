@@ -49,8 +49,16 @@ rutina comprueba cada una desde la nube y anota las que fallen en su informe de 
   «secreto de red» del entorno claves-ia y el proxy de Anthropic la añade solo (`x-api-key`) al salir hacia
   `artificialanalysis.ai`; la rutina no la ve ni la necesita. Si responde 401, la API no está disponible hoy: sigue
   sin ella y anótalo al final de tu respuesta. Sin la API no se lee su web, porque sus condiciones lo prohíben. Se
-  cita siempre «según Artificial Analysis».
-- **LMArena:** **no se lee** (sus condiciones prohíben los programas). Solo citada por la prensa o el laboratorio.
+  cita siempre «según Artificial Analysis». Para comparar modelos lo que importa es el **coste por tarea** frente a
+  su índice de inteligencia, no el precio oficial por millón de tokens (PAUTA_COMUN §4). La API gratuita no lo trae
+  (solo índices, velocidad y precio por token): úsalo cuando lo publique el laboratorio o lo cite la prensa,
+  atribuido, y no lo calcules a partir del precio por token.
+- **LMArena (arena.ai): la clasificación que más pesa en el canal** (por encima de Artificial Analysis). Se lee solo
+  con `python3 scripts/lmarena.py`: un flujo de GitHub resume cada 6 horas el dataset oficial y abierto de LMArena
+  (`huggingface.co/datasets/lmarena-ai/leaderboard-dataset`, CC-BY-4.0). Su web no se lee (sus condiciones prohíben
+  los programas). Tablas: Text Arena · Overall (la de la web, con control de estilo) y Agent Arena · Overall (puntúa
+  la mejora neta, en %, no un Elo); las categorías Code, Chat y Work de Agent Arena no están en el dataset. Se cita
+  «según LMArena» y, en las fuentes del episodio, la dirección del dataset. Cuándo se cuenta: PAUTA_COMUN §4.
 
 ## IA: investigación
 

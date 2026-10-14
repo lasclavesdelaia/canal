@@ -1226,3 +1226,24 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Hecho (12 oct, noche): Claves mundo YA ENTRÓ (RSS, público, 2 vídeos). El episodio del 11 (Z3Xh5cUPi64) llegó PRIVADO (lo importó con la visibilidad vieja): puesto Público a mano. «Uso de IA»: lo pondrá el marcador en su pasada horaria.
 - Hecho (12 oct, noche, petición de Cristian): Claves progreso en stand by → pódcast de YouTube «Claves progreso» ELIMINADO; sus vídeos se conservan (N0xUadwAERA público; zCZ3OPz4LmE privado). El feed progreso.xml sigue en la web. Si se reanuda: volver a enviar progreso.xml por RSS en Studio (código al correo) y añadirle esos vídeos.
 - Hecho (12 oct, noche): Apple. La web YA solo se despliega cuando hay cambio (episodio nuevo o cambio de diseño): no hacía falta tocar publicar.yml. La causa más probable de las retiradas no son los despliegues sino el audio que desaparece: el 8 oct `rehacer` pisó los MP3 con --clobber (borra y sube) y el 9 oct se borró una Release. Arreglado: (1) `rehacer` sube el MP3 con otro nombre y no borra el viejo (audio_url nueva en el meta); (2) `scripts/retirar.py <clave>` marca «retirado» en la Release (sale de web y feeds, el MP3 se queda; --deshacer); publicar.visibles() filtra. README al día. Pruebas nuevas en test_claves (Rehacer, Retirados).
+
+## 13 oct 2026 — LMArena por delante; de Artificial Analysis, el coste por tarea
+- Decisión de Cristian: LMArena le importa más que Artificial Analysis. Le interesan Text Arena · Overall y Agent
+  Arena (sobre todo Code; también Overall). La rutina lo mira a diario, pero solo lo cuenta cuando la clasificación
+  cambia por un modelo nuevo (dónde entra, entre quiénes, quién va primero); sin cambios o sin datos, no lo menciona.
+- Hecho: scripts/lmarena.py + .github/workflows/lmarena.yml (cada 6 h; baja los parquet oficiales de
+  huggingface.co/datasets/lmarena-ai/leaderboard-dataset con pyarrow y guarda datos/lmarena.json en la rama
+  `datos-lmarena`). La rutina ejecuta `python3 scripts/lmarena.py`, que lee esa rama (RUTINA paso 7; PAUTA §4
+  «LMArena, cada día»; línea «LMArena contada» en la tarjeta para no contarlo dos veces). fuentes.md: LMArena ya se
+  lee, pero solo por el dataset, nunca la web. No hace falta tocar la red de la rutina (lee de GitHub).
+- Ojo: Agent Arena · Code NO está en el dataset (de Agent Arena solo publican «overall»). Si algún día lo publican,
+  basta añadirlo en TABLAS de lmarena.py.
+- Descartado: la API JSON de datasets-server de Hugging Face (13 oct: 503, «index is loading» y 8 min sin respuesta).
+- Corregido (13 oct, Cristian: «eso ocurrió hace semanas, no digas nada»): la primera versión comparaba solo con la
+  publicación anterior y daba como nuevo a «Claude Opus 5.5 (Max)» en Agent Arena (12 oct), que es el Opus 5.5 de
+  hace semanas con otro nombre. Ahora es nuevo solo lo que no salió nunca en ninguna tabla con ningún nombre ni
+  variante (lmarena.base), y el cambio de primero suelto ya no se cuenta. Repasado sobre agosto-octubre: solo
+  marca lanzamientos reales (Opus 5.5 y Gemini 4 Argon al primer puesto en Text, GPT 6 Sol, Sonnet 5.5…).
+- Artificial Analysis (PAUTA §4 y fuentes.md): importa el coste por tarea frente a su índice de inteligencia, no el
+  precio por token. La API gratuita no lo trae (solo índices, velocidad y precio por millón de tokens): se usa cuando lo
+  publique el laboratorio o lo cite la prensa. Su plan Pro (~417 $/mes por persona) sí lo daría.
