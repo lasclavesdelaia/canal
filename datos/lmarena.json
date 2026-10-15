@@ -267,8 +267,8 @@
    "nombre": "Agent Arena · Overall",
    "subconjunto": "agent",
    "categoria": "overall",
-   "fecha": "2026-10-13",
-   "anterior": "2026-10-12",
+   "fecha": "2026-10-14",
+   "anterior": "2026-10-13",
    "cambios": [],
    "filas": [
     {
@@ -276,250 +276,250 @@
      "model_name": "Claude Opus 5.5 (Max)",
      "organization": "anthropic",
      "license": "Proprietary",
-     "score": 0.1701,
-     "score_ci_lower": 0.135,
-     "score_ci_upper": 0.2053,
-     "session_count": 6025.0
+     "score": 0.1718,
+     "score_ci_lower": 0.138,
+     "score_ci_upper": 0.2056,
+     "session_count": 6796.0
     },
     {
      "rank": 2,
      "model_name": "GPT 6.1 Sol (Max)",
      "organization": "openai",
      "license": "Proprietary",
-     "score": 0.1505,
-     "score_ci_lower": 0.1295,
-     "score_ci_upper": 0.1716,
-     "session_count": 12052.0
+     "score": 0.1478,
+     "score_ci_lower": 0.1275,
+     "score_ci_upper": 0.1681,
+     "session_count": 12705.0
     },
     {
      "rank": 3,
      "model_name": "Claude Fable 5.1 (Max)",
      "organization": "anthropic",
      "license": "Proprietary",
-     "score": 0.1432,
-     "score_ci_lower": 0.1228,
-     "score_ci_upper": 0.1637,
-     "session_count": 16212.0
+     "score": 0.1412,
+     "score_ci_lower": 0.121,
+     "score_ci_upper": 0.1613,
+     "session_count": 16282.0
     },
     {
      "rank": 4,
+     "model_name": "Gemini 4 Argon (High)",
+     "organization": "google",
+     "license": "Proprietary",
+     "score": 0.1373,
+     "score_ci_lower": 0.1221,
+     "score_ci_upper": 0.1525,
+     "session_count": 28097.0
+    },
+    {
+     "rank": 5,
      "model_name": "GPT 6 Astra (Max)",
      "organization": "openai",
      "license": "Proprietary",
      "score": 0.1369,
-     "score_ci_lower": 0.1135,
-     "score_ci_upper": 0.1603,
-     "session_count": 12774.0
-    },
-    {
-     "rank": 5,
-     "model_name": "Gemini 4 Argon (High)",
-     "organization": "google",
-     "license": "Proprietary",
-     "score": 0.1359,
-     "score_ci_lower": 0.1201,
-     "score_ci_upper": 0.1517,
-     "session_count": 26905.0
+     "score_ci_lower": 0.1137,
+     "score_ci_upper": 0.1601,
+     "session_count": 12892.0
     },
     {
      "rank": 6,
      "model_name": "Claude Sonnet 5.5 (Max)",
      "organization": "anthropic",
      "license": "Proprietary",
-     "score": 0.13,
-     "score_ci_lower": 0.0983,
-     "score_ci_upper": 0.1616,
-     "session_count": 7404.0
+     "score": 0.1255,
+     "score_ci_lower": 0.0942,
+     "score_ci_upper": 0.1568,
+     "session_count": 7446.0
     },
     {
      "rank": 7,
      "model_name": "GPT 6 Sol (Max)",
      "organization": "openai",
      "license": "Proprietary",
-     "score": 0.1051,
-     "score_ci_lower": 0.0821,
-     "score_ci_upper": 0.1282,
-     "session_count": 6664.0
+     "score": 0.112,
+     "score_ci_lower": 0.0894,
+     "score_ci_upper": 0.1347,
+     "session_count": 7075.0
     },
     {
      "rank": 8,
      "model_name": "Claude Opus 5 (Max)",
      "organization": "anthropic",
      "license": "Proprietary",
-     "score": 0.0923,
-     "score_ci_lower": 0.0752,
-     "score_ci_upper": 0.1093,
-     "session_count": 23536.0
+     "score": 0.092,
+     "score_ci_lower": 0.075,
+     "score_ci_upper": 0.1089,
+     "session_count": 23614.0
     },
     {
      "rank": 9,
      "model_name": "Claude Fable 5 (High)",
      "organization": "anthropic",
      "license": "Proprietary",
-     "score": 0.0849,
-     "score_ci_lower": 0.0707,
-     "score_ci_upper": 0.0991,
-     "session_count": 42384.0
+     "score": 0.0839,
+     "score_ci_lower": 0.0698,
+     "score_ci_upper": 0.098,
+     "session_count": 42474.0
     },
     {
      "rank": 10,
      "model_name": "GPT 5.6 Sol (xHigh)",
      "organization": "openai",
      "license": "Proprietary",
-     "score": 0.0774,
-     "score_ci_lower": 0.0631,
-     "score_ci_upper": 0.0917,
-     "session_count": 36282.0
+     "score": 0.0742,
+     "score_ci_lower": 0.06,
+     "score_ci_upper": 0.0883,
+     "session_count": 36373.0
     },
     {
      "rank": 11,
      "model_name": "Claude Opus 4.8 (High)",
      "organization": "anthropic",
      "license": "Proprietary",
-     "score": 0.0755,
-     "score_ci_lower": 0.06,
-     "score_ci_upper": 0.091,
-     "session_count": 40269.0
+     "score": 0.0714,
+     "score_ci_lower": 0.0561,
+     "score_ci_upper": 0.0867,
+     "session_count": 40277.0
     },
     {
      "rank": 12,
-     "model_name": "Claude Sonnet 5 (High)",
-     "organization": "anthropic",
+     "model_name": "Muse Wonder (Max)",
+     "organization": "meta",
      "license": "Proprietary",
-     "score": 0.0488,
-     "score_ci_lower": 0.0316,
-     "score_ci_upper": 0.0661,
-     "session_count": 33083.0
+     "score": 0.0642,
+     "score_ci_lower": 0.0427,
+     "score_ci_upper": 0.0857,
+     "session_count": 5526.0
     },
     {
      "rank": 13,
-     "model_name": "Gemini 3.8 Flash (High)",
-     "organization": "google",
+     "model_name": "Claude Sonnet 5 (High)",
+     "organization": "anthropic",
      "license": "Proprietary",
-     "score": 0.0402,
-     "score_ci_lower": 0.0293,
-     "score_ci_upper": 0.0511,
-     "session_count": 37264.0
+     "score": 0.0469,
+     "score_ci_lower": 0.0299,
+     "score_ci_upper": 0.0639,
+     "session_count": 33161.0
     },
     {
      "rank": 14,
-     "model_name": "MiMo V2.6 Pro",
-     "organization": "xiaomi",
-     "license": "MIT",
-     "score": 0.0376,
-     "score_ci_lower": 0.0254,
-     "score_ci_upper": 0.0497,
-     "session_count": 22815.0
+     "model_name": "Gemini 3.8 Flash (High)",
+     "organization": "google",
+     "license": "Proprietary",
+     "score": 0.0397,
+     "score_ci_lower": 0.0289,
+     "score_ci_upper": 0.0505,
+     "session_count": 37462.0
     },
     {
      "rank": 15,
-     "model_name": "Muse Spark 1.3 (Max)",
-     "organization": "meta",
-     "license": "Proprietary",
-     "score": 0.035,
-     "score_ci_lower": 0.0269,
-     "score_ci_upper": 0.0431,
-     "session_count": 73214.0
+     "model_name": "MiMo V2.6 Pro",
+     "organization": "xiaomi",
+     "license": "MIT",
+     "score": 0.0381,
+     "score_ci_lower": 0.0262,
+     "score_ci_upper": 0.0499,
+     "session_count": 23636.0
     },
     {
      "rank": 16,
-     "model_name": "GPT 5.5 (xHigh)",
-     "organization": "openai",
+     "model_name": "Muse Spark 1.3 (Max)",
+     "organization": "meta",
      "license": "Proprietary",
-     "score": 0.0348,
-     "score_ci_lower": 0.0219,
-     "score_ci_upper": 0.0478,
-     "session_count": 54290.0
+     "score": 0.0363,
+     "score_ci_lower": 0.0282,
+     "score_ci_upper": 0.0445,
+     "session_count": 73452.0
     },
     {
      "rank": 17,
      "model_name": "Grok 4.7 (xHigh)",
      "organization": "xai",
      "license": "Proprietary",
-     "score": 0.0333,
-     "score_ci_lower": 0.0165,
-     "score_ci_upper": 0.0502,
-     "session_count": 14702.0
+     "score": 0.0339,
+     "score_ci_lower": 0.0172,
+     "score_ci_upper": 0.0507,
+     "session_count": 14843.0
     },
     {
      "rank": 18,
-     "model_name": "GPT 6 Luna (Max)",
+     "model_name": "GPT 5.5 (xHigh)",
      "organization": "openai",
      "license": "Proprietary",
-     "score": 0.0319,
-     "score_ci_lower": 0.027,
-     "score_ci_upper": 0.0369,
-     "session_count": 151980.0
+     "score": 0.0331,
+     "score_ci_lower": 0.0203,
+     "score_ci_upper": 0.0459,
+     "session_count": 54310.0
     },
     {
      "rank": 19,
-     "model_name": "Deepseek V4.1 Flash (Max)",
-     "organization": "deepseek",
-     "license": "MIT",
-     "score": 0.0294,
-     "score_ci_lower": 0.0256,
-     "score_ci_upper": 0.0332,
-     "session_count": 222942.0
+     "model_name": "GPT 6 Luna (Max)",
+     "organization": "openai",
+     "license": "Proprietary",
+     "score": 0.0326,
+     "score_ci_lower": 0.0277,
+     "score_ci_upper": 0.0374,
+     "session_count": 155783.0
     },
     {
      "rank": 20,
-     "model_name": "Hy4 preview",
-     "organization": "tencent",
-     "license": "Apache 2.0",
-     "score": 0.0288,
-     "score_ci_lower": 0.0219,
-     "score_ci_upper": 0.0356,
-     "session_count": 81837.0
+     "model_name": "Deepseek V4.1 Flash (Max)",
+     "organization": "deepseek",
+     "license": "MIT",
+     "score": 0.0295,
+     "score_ci_lower": 0.0258,
+     "score_ci_upper": 0.0332,
+     "session_count": 228658.0
     },
     {
      "rank": 21,
-     "model_name": "GLM 5.2 (Max)",
-     "organization": "zai",
-     "license": "MIT",
-     "score": 0.0257,
-     "score_ci_lower": 0.0173,
-     "score_ci_upper": 0.0341,
-     "session_count": 86588.0
+     "model_name": "Hy4 preview",
+     "organization": "tencent",
+     "license": "Apache 2.0",
+     "score": 0.029,
+     "score_ci_lower": 0.0222,
+     "score_ci_upper": 0.0359,
+     "session_count": 82690.0
     },
     {
      "rank": 22,
      "model_name": "MiMo V2.6 Flash",
      "organization": "xiaomi",
      "license": "MIT",
-     "score": 0.0213,
-     "score_ci_lower": 0.0061,
-     "score_ci_upper": 0.0364,
-     "session_count": 18662.0
+     "score": 0.0253,
+     "score_ci_lower": 0.0101,
+     "score_ci_upper": 0.0404,
+     "session_count": 18936.0
     },
     {
      "rank": 23,
-     "model_name": "GLM 5.3 (Max)",
+     "model_name": "GLM 5.2 (Max)",
      "organization": "zai",
      "license": "MIT",
-     "score": 0.0209,
-     "score_ci_lower": 0.0125,
-     "score_ci_upper": 0.0293,
-     "session_count": 86092.0
+     "score": 0.0235,
+     "score_ci_lower": 0.0152,
+     "score_ci_upper": 0.0319,
+     "session_count": 86843.0
     },
     {
      "rank": 24,
-     "model_name": "Qwen3.8 Max",
-     "organization": "alibaba",
-     "license": "Proprietary",
-     "score": 0.0198,
-     "score_ci_lower": 0.0136,
-     "score_ci_upper": 0.026,
-     "session_count": 66946.0
+     "model_name": "GLM 5.3 (Max)",
+     "organization": "zai",
+     "license": "MIT",
+     "score": 0.02,
+     "score_ci_lower": 0.0115,
+     "score_ci_upper": 0.0284,
+     "session_count": 86255.0
     },
     {
      "rank": 25,
      "model_name": "Kimi K3 (Max)",
      "organization": "moonshot",
      "license": "Kimi K3 license",
-     "score": 0.019,
-     "score_ci_lower": 0.0118,
-     "score_ci_upper": 0.0262,
-     "session_count": 134227.0
+     "score": 0.0195,
+     "score_ci_lower": 0.0123,
+     "score_ci_upper": 0.0266,
+     "session_count": 134561.0
     }
    ]
   }
