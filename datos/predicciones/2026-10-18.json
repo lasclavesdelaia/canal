@@ -1,0 +1,19 @@
+{
+  "fecha": "2026-10-18",
+  "altas": [
+    {
+      "id": "P-009",
+      "fecha": "2026-10-17",
+      "programa": "claves",
+      "episodio": "2026-10-17-claves",
+      "afirmacion": "Anthropic cotizará en una bolsa de EE. UU. antes del 31 de marzo de 2027.",
+      "probabilidad": 0.65,
+      "criterio": "Se cumple si antes del 31 de marzo de 2027 (23:59, hora de Nueva York) sus acciones cotizan en una bolsa estadounidense; una presentación confidencial o un folleto sin cotización no cuentan.",
+      "fuente_decisoria": "S.E.C., E.D.G.A.R. (sec.gov), y la bolsa de cotización",
+      "vence": "2027-04-02",
+      "temas": ["empresas", "activos"],
+      "autor": "programa"
+    }
+  ],
+  "resoluciones": []
+}
