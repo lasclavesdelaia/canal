@@ -1,9 +1,9 @@
 {
- "generado": "2026-10-18T05:19:27Z",
- "referencia": "2026-10-18",
- "dias_con_datos": 8,
+ "generado": "2026-10-19T05:25:45Z",
+ "referencia": "2026-10-19",
+ "dias_con_datos": 9,
  "desde": "2026-10-11",
- "titulares_total": 2728,
+ "titulares_total": 3035,
  "titulares_elegibles": 0,
  "metodo": "Temas por solapamiento de términos (>=2 términos y >=40 % del peso por rareza, hueco máximo 10 días). Persistencia a 7/14/30 días = hay algún titular o reaparición del tema ese día o después. Vida media = días hasta la última aparición del tema, con tope 30.",
  "global": {
