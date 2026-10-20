@@ -9,7 +9,7 @@ Estilo «expediente»: suizo (Helvetica Neue, rejilla, filetes) con aire de pren
 (bloques de color, líneas tachadas, trama de puntos), en la línea de la referencia que Cristian
 eligió en Plató (Alejandra Svriz). Cada serie tiene su color y su motivo: Parte, rojo y texto
 tachado; Claves, amarillo y barras; Especial, negro y una lupa. (Mundo, azul, y Progreso, rosa, se retiraron
-el 20 oct 2026; el banner aún lleva la banda azul de Mundo: rehacerlo es cosa de diseño.) El aviso de IA (art. 50 del
+el 20 oct 2026, y el banner se rehízo sin ellos.) El aviso de IA (art. 50 del
 reglamento europeo) va pequeño en una esquina. Necesita Pillow (el Python de /usr/local lo trae)
 y la Helvetica Neue del sistema (macOS).
 
@@ -216,37 +216,50 @@ def cinta(texto_cinta, tam, fondo, color, giro):
     return im.rotate(giro, expand=True, resample=Image.BICUBIC)
 
 
-def banner(w=2560, h=1440):
+def banner(w=2560, h=1440, derecha="especial"):
     """Banner. En escritorio solo se ve la franja central (2560x423) y en el móvil la zona segura (1546x423):
-    el contenido va pequeño y centrado, con mucho aire negro alrededor."""
+    el contenido va pequeño y centrado, con mucho aire negro alrededor. `derecha`: la banda de la derecha,
+    «especial» (papel con la lupa) o «claves» (amarillo con barras); la de la izquierda es siempre Parte."""
     im = Image.new("RGB", (w, h), TINTA)
     d = ImageDraw.Draw(im, "RGBA")
     cx0, cy0 = w / 2, h / 2
-    # bandas laterales estrechas: Parte (rojo, tachado) a la izquierda, Mundo (azul, diana) a la derecha
+    # bandas laterales estrechas: Parte (rojo, tachado) a la izquierda y otra serie a la derecha
     d.rectangle((0, 0, 260, h), fill=ROJO)
     for i, (largo, negro) in enumerate([(1, 0), (.7, 1), (.92, 0), (.55, 1), (1, 1), (.8, 0), (.62, 1), (.9, 0),
                                         (.4, 1), (.75, 1), (1, 0), (.6, 1), (.85, 0), (.5, 1), (.95, 1)]):
         y = 330 + i * 52
         d.rectangle((50, y, 50 + 160 * largo, y + 24), fill=TINTA if negro else (17, 17, 17, 60))
-    d.rectangle((w - 260, 0, w, h), fill=AZUL)
-    r, dx = 105, w - 130
-    trama(d, (dx - r, cy0 - r, dx + r, cy0 + r), 12, 3, TINTA, lambda x, y: (x - dx) ** 2 + (y - cy0) ** 2 < r * r)
-    d.ellipse((dx - r, cy0 - r, dx + r, cy0 + r), outline=TINTA, width=4)
-    d.line((w - 260, cy0, w, cy0), fill=TINTA, width=4)
-    d.line((dx, 0, dx, h), fill=TINTA, width=4)
-    d.rectangle((w - 290, 0, w - 276, h), fill=AMARILLO)
+    if derecha == "claves":  # código de barras, como la portada de Claves
+        d.rectangle((w - 260, 0, w, h), fill=AMARILLO)
+        x = w - 220
+        for ancho_barra, hueco in [(34, 14), (12, 10), (52, 16), (18, 10), (30, 0)]:
+            d.rectangle((x, 300, x + ancho_barra, h - 300), fill=TINTA)
+            x += ancho_barra + hueco
+        d.rectangle((w - 290, 0, w - 276, h), fill=PAPEL)
+    else:  # lupa sobre un documento de puntos, como la portada de Especial (en papel: el negro es el fondo)
+        d.rectangle((w - 260, 0, w, h), fill=PAPEL)
+        trama(d, (w - 240, 300, w - 20, h - 300), 16, 2.5, GRIS)
+        r, dx, dy = 78, w - 145, cy0 - 30
+        d.ellipse((dx - r, dy - r, dx + r, dy + r), fill=PAPEL)
+        trama(d, (dx - r, dy - r, dx + r, dy + r), 22, 4.5, TINTA,
+              lambda x, y: (x - dx) ** 2 + (y - dy) ** 2 < (r - 10) ** 2)
+        d.ellipse((dx - r, dy - r, dx + r, dy + r), outline=TINTA, width=11)
+        d.line((dx + r * .7, dy + r * .7, dx + r * 1.5, dy + r * 1.45), fill=TINTA, width=22)
+        d.rectangle((dx - 30, dy - 11, dx + 44, dy + 11), fill=ROJO)
+        d.rectangle((w - 290, 0, w - 276, h), fill=AMARILLO)
     # centro
     f = fuente(150, "CondensedBlack")
     titulo = "LAS CLAVES DE LA IA"
     texto(d, cx0, cy0 + 10, titulo, f, PAPEL, .01, "ms")
-    cintas = [cinta(f"{ser['titulo']} {ser['sub']}".upper(), 34, ser["color"], TINTA, g)
-              for ser, g in zip(SERIES.values(), (2, -1.5, 2.5))]
+    # Especial es negro: sobre el fondo negro su cinta va en papel
+    cintas = [cinta(f"{ser['titulo']} {ser['sub']}".upper(), 34, PAPEL if ser["color"] == TINTA else ser["color"],
+                    TINTA, g) for ser, g in zip(SERIES.values(), (2, -1.5, 2.5))]
     total = sum(c.width for c in cintas) + 28 * (len(cintas) - 1)
     x = cx0 - total / 2
     for c in cintas:
         im.paste(c, (round(x), round(cy0 + 50)), c)
         x += c.width + 28
-    texto(d, cx0, cy0 - 122, "INFORMATIVO DE INTELIGENCIA ARTIFICIAL · CADA DÍA, SÁBADOS Y DOMINGOS",
+    texto(d, cx0, cy0 - 122, "INFORMATIVO DE INTELIGENCIA ARTIFICIAL · EL PARTE DE DOMINGO A VIERNES, LAS CLAVES EL SÁBADO",
           fuente(20), GRIS, .12, "ms")
     texto(d, cx0, cy0 + 150, AVISO, fuente(18, "Medium"), (130, 127, 120), .03, "ms")
     return grano(im, .06)

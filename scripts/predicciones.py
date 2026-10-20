@@ -3,7 +3,7 @@
 El programa da de vez en cuando una probabilidad a algo que se podrá decidir con una fuente (ver
 prompts/PAUTA_COMUN.md, §12). El registro es un diario: cada fichero `datos/predicciones/AAAA-MM-DD.json` lleva las
 altas de esa semana y las resoluciones de las vencidas. Así la revisión de cada domingo añade un fichero propio en su
-rama `claude/revision-*` sin pisar a nadie (igual que `datos/juicios/`).
+rama `claude/revision-*` sin pisar a nadie.
 
 Formato de un fichero:
   {"fecha": "AAAA-MM-DD",

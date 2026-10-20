@@ -1276,3 +1276,16 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   Mundo, La Vanguardia, elDiario.es y BBC; titulares.yml, /vida-media/ y el paso 0b del encargado)? No es de
   mundo ni de progreso, pero ya no sirve a ningún programa de IA; se ha dejado. (2) Los especiales siguen admitiendo
   temas que no son de IA (prompts/especial.md); ¿se limitan a IA? Se ha dejado como estaba.
+
+## 20 oct 2026 (tarde) — Fuera la vida media de las noticias; banner sin Claves mundo
+- Hecho (Cristian, sobre la pregunta (1) de arriba: «quítalo»): borrados titulares.yml, scripts/titulares.py,
+  vida_media.py y juicios.py (solo servía a esto), tests/test_titulares.py y ESTADO_titulares.md; fuera /vida-media/
+  de sitio.py, el paso 0b de prompts/ENCARGADO.md (el marcador de predicciones pasa de 0c a 0b; el encargado ya no
+  escribe datos/juicios/) y el punto 6 del README. Marcador de predicciones y LMArena, intactos. Los dominios de los
+  periódicos se quedan en config/red_*.txt (son fuentes generales).
+- La rama remota `datos-titulares` (datos de los titulares desde el 11 oct) NO se ha borrado: decide Cristian.
+- Banner: scripts/portadas.py banner(derecha="especial"|"claves"). Sin la banda azul de Mundo; cintas Parte diario,
+  Claves semanales y Especial a fondo (en papel); texto «… EL PARTE DE DOMINGO A VIERNES, LAS CLAVES EL SÁBADO».
+  assets/youtube/banner.png = opción A (banda derecha de Especial, papel con lupa). La B (amarilla con barras de
+  Claves) sale con banner(derecha="claves"). Pendiente de Cristian: subirlo a mano en YouTube Studio.
+- Siguiente: nada en esto.
