@@ -53,12 +53,12 @@ SEGUN_MIN = 4
 # Bombardeo de datos (Cristian, 9 oct 2026): expresiones numéricas por cada mil palabras, y medios nombrados en voz alta
 # (lo que anuncia una empresa se atribuye a la empresa; el medio solo si el dato es suyo).
 CIFRAS = r"\b(mil|millones?|billones?|por ciento|coma|veces|\d+(?:[.,]\d+)?)\b"
-CIFRAS_POR_MIL = {"parte": 12, "progreso": 8, "claves": 12, "mundo": 18, "especial": 14}
+CIFRAS_POR_MIL = {"parte": 12, "claves": 12, "especial": 14}
 MEDIOS = (r"\b(techcrunch|the verge|wired|ars technica|venturebeat|the information|business insider|yahoo finance|axios|"
           r"bloomberg|reuters|financial times|c\.?n\.?b\.?c\.?|business standard|semafor|the next web|engadget|zdnet)\b")
 MEDIOS_POR_MIL = 1
 MEDIOS_MIN = 2
-COLETILLAS_MAX = {"parte": 1, "progreso": 2, "claves": 2, "mundo": 2, "especial": 2}
+COLETILLAS_MAX = {"parte": 1, "claves": 2, "especial": 2}
 # Fórmulas de molde que se repetían de un episodio a otro (PAUTA_COMUN §4b). Ninguna.
 MOLDE = [
     r"\bhasta aquí\b", r"\by ahora, en corto\b", r"\bvamos con lo (segundo|tercero|cuarto)\b",
@@ -100,26 +100,6 @@ def _es_foro(url):
     host = (urlparse(url).hostname or "").lower().removeprefix("www.")
     return any(host == f or host.endswith("." + f) for f in FOROS)
 
-
-# Solo Claves progreso de los viernes (prompts/progreso.md): ni lenguaje de celebración ni imperativos de cierre
-# ni consuelo genérico: el cierre es una acción concreta, sin imperativos ni moralina.
-PROGRESO_PROHIBIDO = [
-    r"buenas noticias", r"\bmilagro", r"\bpor fin\b", r"\bh[eé]roes?\b", r"\bhero[ií]nas?\b",
-    r"\b(una|gran|la) victoria (sobre|contra|de la)\b",
-    r"t[uú] tambi[eé]n puedes", r"usted tambi[eé]n puede", r"no (te|se) quede[s]? de brazos cruzados",
-    r"motivos? (para|de) (el )?(optimismo|esperanza)",
-]
-# Claves progreso: el método no se cuenta en voz alta (Cristian, 11 oct 2026: «odio que se citen así las fuentes y la
-# verificación»). Se comprueba entre bastidores; en el audio, solo la historia.
-PROGRESO_METODO = [
-    r"fuente primaria", r"fuentes primarias", r"revisad[oa]s? por pares", r"\bmetodolog", r"\bcomparador",
-    r"quien mide es", r"\bseg[uú]n (el|un) (estudio|art[ií]culo|informe|an[aá]lisis) (publicado|de|del)",
-    r"\bverificad[oa]s?\b", r"\bverificaci[oó]n\b", r"intervalo de confianza", r"\bmodelo impact\b",
-    r"\bsignificaci[oó]n estad[ií]stica",
-]
-# Imperativos al arrancar frase («Dona», «Piense»): en medio de una frase, «ayuda» o «piensa» son otra cosa.
-PROGRESO_IMPERATIVOS = (r"(^|[.:?»]\s+|\n)(haz|haga|act[uú]a|act[uú]e|dona|done|ayuda|ayude|piensa|piense|recuerda|"
-                       r"recuerde|imagina|imagine|no (te|se) quede[s]?)\b")
 
 # Solo avisan.
 VIGILAR = [r"\bincre[ií]ble", r"\bhist[oó]ric[oa]", r"\brevoluci[oó]n", r"\batenci[oó]n[,:]", r"\bimpactante"]
@@ -206,8 +186,8 @@ def validar(nombre, texto, cfg=None):
         errores.append(f"{segun} «según» (máximo {tope_segun}: unos {SEGUN_POR_MIL} por cada mil palabras; PAUTA_COMUN "
                        "§5.1). Nombra la fuente una vez al empezar cada noticia; las frases siguientes la heredan. "
                        "La lista de «## Fuentes» ya da el resto. No lo cambies por «dice X» o «publica Y» en cada frase")
-    # Los años no cuentan, salvo en Claves progreso: allí el bombardeo eran las fechas (Cristian, 11 oct 2026).
-    sin_anios = cuerpo if ep.programa == "progreso" else re.sub(r"\b(19|20)\d\d\b", "", cuerpo)
+    # Los años no cuentan.
+    sin_anios = re.sub(r"\b(19|20)\d\d\b", "", cuerpo)
     cifras = len(re.findall(CIFRAS, sin_anios))
     tope_cifras = round(CIFRAS_POR_MIL.get(ep.programa, 12) * ep.palabras / 1000)
     if cifras > tope_cifras:
@@ -228,20 +208,6 @@ def validar(nombre, texto, cfg=None):
         errores.append("fórmulas de molde que se repiten cada día (PAUTA_COMUN §4b): "
                        + "; ".join(f"«{c}»" for c in molde)
                        + ". Di esa transición, arranque o cierre con palabras propias de hoy")
-    if ep.programa == "progreso":
-        for patron in PROGRESO_PROHIBIDO:
-            if re.search(patron, todo):
-                errores.append(f"en Claves progreso no va «{patron}» (prompts/progreso.md: sin lenguaje de "
-                               "celebración, sin consuelo genérico ni «buenas noticias»)")
-        metodo = [m.group(0) for patron in PROGRESO_METODO for m in re.finditer(patron, ep.cuerpo.lower())]
-        if metodo:
-            errores.append("método o fuentes en voz alta en Claves progreso (prompts/progreso.md): "
-                           + "; ".join(f"«{c}»" for c in metodo)
-                           + ". Cuenta la historia; las fuentes van solo en «## Fuentes»")
-        imperativos = re.findall(PROGRESO_IMPERATIVOS, ep.cuerpo.lower())
-        if imperativos:
-            errores.append(f"{len(imperativos)} imperativo(s) al empezar frase (prompts/progreso.md, «El cierre»): "
-                           "se cuenta la acción como un hecho, sin dar órdenes al oyente")
     for patron in VIGILAR:
         n = len(re.findall(patron, todo))
         if n:

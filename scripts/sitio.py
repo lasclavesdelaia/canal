@@ -17,8 +17,11 @@ texto en Source Serif 4, verde oliva de acento):
                        titulares de 30+ días; sin enlace en el menú)
   /parte.xml           feed GENERAL «Las claves de la IA», con todos los programas: lo leen las apps de pódcast
                        (iVoox, Spotify y Apple ya estaban dados de alta con esta dirección y Spotify no deja cambiarla)
-  /parte-solo.xml, /progreso.xml, /claves.xml, /mundo.xml, /especial.xml
+  /parte-solo.xml, /claves.xml, /especial.xml
                        un feed por programa: YouTube necesita uno por lista
+
+Claves mundo y Claves progreso se retiraron el 20 oct 2026: sin páginas ni feeds (mundo.xml y progreso.xml ya no se
+publican). Sus Releases y sus MP3 se quedan, como los de cualquier episodio retirado.
 """
 import datetime
 import html
@@ -33,7 +36,7 @@ from comun import MESES, RAIZ, Episodio, fecha_hablada, pausa_hasta, texto_habla
 ULTIMOS_EN_PORTADA = 6
 FEED_GENERAL = "parte"  # nombre histórico: las apps ya leen /parte.xml
 MAX_DESCRIPCION = 4000  # Apple corta a 4.000 caracteres; YouTube, a 5.000
-FRECUENCIA = {"todos": "Cada día", "menos sabado": "De domingo a viernes", "viernes": "Cada viernes", "sabado": "Cada sábado", "domingo": "Cada domingo", "a veces": "De vez en cuando"}
+FRECUENCIA = {"todos": "Cada día", "menos sabado": "De domingo a viernes", "sabado": "Cada sábado", "a veces": "De vez en cuando"}
 
 ESTILO = """
 @font-face{font-family:"Inter Tight";font-style:normal;font-weight:100 900;font-display:swap;
@@ -269,7 +272,7 @@ def pagina_inicio(episodios, cfg):
     recientes = (f'<ul class="episodios">{recientes}</ul>' if recientes
                  else '<p class="suave">Todavía no hay episodios.</p>')
     cuerpo = f"""<h1>{_e(canal['nombre'])}</h1>
-<p class="entradilla">Programas de audio sobre inteligencia artificial y sobre el mundo, con datos y con sus fuentes.
+<p class="entradilla">Programas de audio sobre inteligencia artificial, con datos y con sus fuentes.
 Los hace por completo una IA, sin revisión humana.</p>
 <h2 id="programas">Los programas</h2>
 <div class="programas">{''.join(tarjetas)}</div>
@@ -601,7 +604,8 @@ def generar(episodios, cfg, destino, audios=None):
     if destino.exists():
         shutil.rmtree(destino)
     (destino / "e").mkdir(parents=True)
-    episodios = [dict(e) for e in episodios]
+    # Solo los programas de config/programas.json: los de mundo y progreso (retirados) no salen en ninguna página.
+    episodios = [dict(e) for e in episodios if e["programa"] in cfg["programas"]]
     if audios:
         (destino / "audio").mkdir()
         for e in episodios:

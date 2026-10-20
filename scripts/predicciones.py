@@ -35,6 +35,8 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 CARPETA = RAIZ / "datos" / "predicciones"
+# Mundo y progreso se retiraron el 20 oct 2026, pero sus predicciones ya registradas siguen en el marcador: borrar
+# predicciones abiertas restaría crédito a la puntuación. No se dan nuevas (ya no hay episodios suyos).
 PROGRAMAS = ("parte", "progreso", "claves", "mundo", "especial")
 AUTORES = ("programa", "modelo")
 ESTADOS = ("abierta", "acertada", "fallada", "anulada")

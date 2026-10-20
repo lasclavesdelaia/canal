@@ -60,7 +60,7 @@ class RedCustom(unittest.TestCase):
         texto = (RAIZ / "config" / "fuentes.md").read_text(encoding="utf-8")
         hosts = set(re.findall(r"`([a-z0-9.-]+\.[a-z]{2,})(?:/[^`]*)?`", texto.lower()))
         hosts = {h for h in hosts if not h.startswith("cs.")}  # categorías de arXiv (`cs.CL`)
-        self.assertGreater(len(hosts), 50)
+        self.assertGreater(len(hosts), 20)  # que la expresión siga encontrándolas (eran más de 50 con mundo)
         for h in sorted(hosts):
             self.assertTrue(self._permitido(h), h)
 

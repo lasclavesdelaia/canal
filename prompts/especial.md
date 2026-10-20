@@ -9,7 +9,7 @@ formato); esto solo concreta lo propio del especial. Si algo choca, manda la pau
 - **Una pregunta, contestada entera.** No es un resumen de noticias ni un ensayo de opinión: es una investigación
   que deja al oyente sabiendo qué se sabe, qué dicen las distintas posturas y con qué datos.
 - **El tema puede no ser de IA**: economía, política, historia reciente, ciencia. Lo doloroso (guerras, matanzas) se
-  cuenta con la calma y las dos escalas de la línea editorial, como el domingo.
+  cuenta con la calma y las dos escalas de la línea editorial.
 - **Más profundo que el sábado.** Se va a las fuentes primarias, se explica el mecanismo y el contexto histórico con
   fechas, y se sube un escalón de nivel (modelos, cifras, leyes) sin jerga gratuita.
 

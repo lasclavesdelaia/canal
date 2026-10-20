@@ -170,7 +170,7 @@ class Hablado(unittest.TestCase):
 
     def test_voz_por_programa(self):
         cfg = config()
-        for prog in ("parte", "claves", "mundo", "especial"):  # elegida de oído por Cristian el 8 oct 2026
+        for prog in ("parte", "claves", "especial"):  # elegida de oído por Cristian el 8 oct 2026
             v = comun.voz_de(prog, cfg)
             self.assertEqual((v["modelo"], v["nombre"], v["idioma"], v["velocidad"]),
                              ("gemini-3.8-flash-lite-tts", "es-es-podcaster-7", "es-ES", 1.15))
@@ -312,7 +312,7 @@ class Web(unittest.TestCase):
             self.assertIn(ep.titulo, (d / "index.html").read_text())
             self.assertTrue((d / "e" / f"{ep.clave}.html").exists())
             self.assertEqual((d / "CNAME").read_text().strip(), "claves.cristiansdrojek.com")
-            for prog in ("parte", "claves", "mundo"):
+            for prog in ("parte", "claves"):
                 raiz = ET.parse(d / f"{prog}.xml").getroot()
                 self.assertEqual(raiz.tag, "rss")
             items = ET.parse(d / "parte.xml").getroot().findall("./channel/item")
@@ -437,7 +437,7 @@ class FeedGeneral(unittest.TestCase):
 
     def test_general_con_todos_y_feeds_por_programa(self):
         cfg = config()
-        eps = [self._ep("parte", "2026-10-08"), self._ep("claves", "2026-10-10"), self._ep("mundo", "2026-10-11"),
+        eps = [self._ep("parte", "2026-10-08"), self._ep("claves", "2026-10-10"),
                self._ep("especial", "2026-10-08", slug="vox")]
         with tempfile.TemporaryDirectory() as tmp:
             sitio.generar(eps, cfg, tmp)
@@ -449,13 +449,13 @@ class FeedGeneral(unittest.TestCase):
             self.assertTrue(canal.find("itunes:image", ns).get("href").endswith("/portadas/general.jpg"))
             self.assertTrue((d / "portadas" / "general.jpg").exists())
             titulos = [i.find("title").text for i in canal.findall("item")]
-            self.assertEqual(len(titulos), 4)
-            for prog in ("parte", "claves", "mundo", "especial"):
+            self.assertEqual(len(titulos), 3)
+            for prog in ("parte", "claves", "especial"):
                 self.assertIn(f"{cfg['programas'][prog]['lista']} · Título {prog}", titulos)
             self.assertEqual(canal.find("atom:link", {"atom": "http://www.w3.org/2005/Atom"}).get("href"),
                              "https://claves.cristiansdrojek.com/parte.xml")
             # Para YouTube, uno por programa y sin prefijo.
-            for prog in ("parte", "claves", "mundo", "especial"):
+            for prog in ("parte", "claves", "especial"):
                 c = ET.parse(d / f"{sitio.archivo_feed(prog)}.xml").getroot().find("channel")
                 self.assertEqual([i.find("title").text for i in c.findall("item")], [f"Título {prog}"])
             solo = ET.parse(d / "parte-solo.xml").getroot().find("channel/title").text
@@ -465,24 +465,24 @@ class FeedGeneral(unittest.TestCase):
         cfg = config()
         muchas = [[f"Fuente número {i} con un nombre largo", f"https://example.com/una/ruta/bastante/larga/{i}"]
                   for i in range(150)]
-        eps = [self._ep("mundo", "2026-10-11", muchas), self._ep("especial", "2026-10-08", muchas, slug="vox"),
+        eps = [self._ep("claves", "2026-10-10", muchas), self._ep("especial", "2026-10-08", muchas, slug="vox"),
                self._ep("parte", "2026-10-08")]
         with tempfile.TemporaryDirectory() as tmp:
             sitio.generar(eps, cfg, tmp)
             d = Path(tmp)
-            for archivo in ("parte.xml", "parte-solo.xml", "mundo.xml", "especial.xml"):
+            for archivo in ("parte.xml", "parte-solo.xml", "claves.xml", "especial.xml"):
                 for item in ET.parse(d / archivo).getroot().findall("channel/item"):
                     desc = item.find("description").text
                     self.assertLessEqual(len(desc), 4000, archivo)
                     self.assertTrue(desc.startswith(cfg["canal"]["aviso_feed"]))
-            largo = ET.parse(d / "mundo.xml").getroot().find("channel/item/description").text
-            self.assertTrue(largo.endswith("Más fuentes: https://claves.cristiansdrojek.com/e/2026-10-11-mundo.html"))
+            largo = ET.parse(d / "claves.xml").getroot().find("channel/item/description").text
+            self.assertTrue(largo.endswith("Más fuentes: https://claves.cristiansdrojek.com/e/2026-10-10-claves.html"))
             self.assertIn("Fuente número 0 con", largo)
             corto = ET.parse(d / "parte-solo.xml").getroot().find("channel/item/description").text
             self.assertNotIn("Más fuentes", corto)
 
     def test_entradilla_enorme_tambien_cabe(self):
-        e = self._ep("mundo", "2026-10-11")
+        e = self._ep("claves", "2026-10-10")
         e["descripcion"] = "palabra " * 1000
         self.assertLessEqual(len(sitio.descripcion_item(e, config())), 4000)
 
@@ -649,3 +649,42 @@ class Retirados(unittest.TestCase):
         ya = [{"clave": "a"}, {"clave": "b", "retirado": True}]
         self.assertEqual([e["clave"] for e in publicar.visibles(ya)], ["a"])
         self.assertEqual(len(ya), 2)   # «hechos» los sigue contando: no se vuelven a publicar desde su rama
+
+
+class ProgramasRetirados(unittest.TestCase):
+    """Claves mundo y Claves progreso se retiraron el 20 oct 2026: el canal es solo de IA."""
+
+    def test_ya_no_existen(self):
+        cfg = config()
+        for prog in ("mundo", "progreso"):
+            self.assertNotIn(prog, cfg["programas"])
+            self.assertNotIn(prog, comun.PROGRAMAS)
+            self.assertIsNone(comun.partes_nombre(f"2026-10-25-{prog}.md"))
+            self.assertFalse(publicar.es_episodio(f"episodios/2026-10-25-{prog}.md"))  # ni se recoge de su rama
+            self.assertFalse((RAIZ / "prompts" / f"{prog}.md").exists())
+        rutina = (RAIZ / "prompts" / "RUTINA.md").read_text(encoding="utf-8")
+        self.assertNotIn("mundo.md", rutina)
+        self.assertNotIn("progreso.md", rutina)
+        self.assertEqual(json.loads((RAIZ / "config" / "pausa.json").read_text(encoding="utf-8"))["por_programa"], {})
+
+    def test_sus_episodios_publicados_salen_de_la_web_y_los_feeds(self):
+        """Sus Releases siguen (el MP3 no se borra nunca), pero sin páginas ni feeds, y no se rehacen."""
+        cfg = config()
+        ep = FeedGeneral._ep
+        ya = [ep("parte", "2026-10-18"), ep("mundo", "2026-10-18"), ep("progreso", "2026-10-12")]
+        self.assertEqual([e["clave"] for e in publicar.vigentes(ya, cfg)], ["2026-10-18-parte"])
+        self.assertEqual([e["clave"] for e in publicar.elegir_rehacer("todos", publicar.vigentes(ya, cfg))],
+                         ["2026-10-18-parte"])
+        with tempfile.TemporaryDirectory() as tmp:
+            sitio.generar(ya, cfg, tmp)   # aunque le lleguen, no rompe ni los saca
+            d = Path(tmp)
+            for prog in ("mundo", "progreso"):
+                self.assertFalse((d / prog).exists())
+                self.assertFalse((d / f"{prog}.xml").exists())
+            self.assertFalse((d / "e" / "2026-10-18-mundo.html").exists())
+            general = ET.parse(d / "parte.xml").getroot().findall("channel/item")
+            self.assertEqual([i.find("guid").text for i in general], ["2026-10-18-parte"])
+            portada = (d / "index.html").read_text()
+            self.assertNotIn("Claves mundo", portada)
+            self.assertNotIn("Claves progreso", portada)
+

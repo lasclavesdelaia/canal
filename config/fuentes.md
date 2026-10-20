@@ -17,9 +17,6 @@ rutina comprueba cada una desde la nube y anota las que fallen en su informe de 
 - **Una ley o una decisión pública:** el boletín oficial o el parlamento del país; en la U.E., EUR-Lex y la Comisión.
 - **Un argumento de fondo o un modelo:** papers (NBER, CEPR, SSRN, RePEc, arXiv, revistas) y documentos de trabajo de
   bancos centrales y del F.M.I. Un think tank aporta análisis, no datos neutros: se nombra y, si es de parte, se dice.
-- **Lo que pasa en un país poco cubierto:** su agencia de noticias y su prensa de referencia o económica, contrastadas
-  con O.N.U., ReliefWeb, Crisis Group o ACLED. Los medios estatales de países sin prensa libre (Xinhua, TASS,
-  IRNA…) se citan como la versión oficial, nunca como un hecho.
 - **IA:** el laboratorio para lo que anuncia; papers y medición independiente (Epoch AI, METR, Artificial Analysis,
   arXiv) para lo que de verdad hace; la prensa técnica para el contexto. Lo que diga una empresa de sí misma se
   atribuye.
@@ -77,40 +74,7 @@ rutina comprueba cada una desde la nube y anota las que fallen en su informe de 
   - portada: `news.ycombinator.com/rss`;
   - búsqueda y comentarios: `hn.algolia.com/api/v1/` y `hacker-news.firebaseio.com/v0/`.
 - **Reddit:** NO. Cierra sus RSS el 13 nov 2026 y bloquea la nube.
-
-## Economía y geopolítica (domingo)
-
-- **BOE:** `www.boe.es/datosabiertos/api/boe/sumario/AAAAMMDD` y RSS.
-- **INE:** `servicios.ine.es/wstempus/js/` (API) y RSS. **Banco de España:** `app.bde.es/bierest/`.
-- **BCE:** `www.ecb.europa.eu` (RSS). **Fed:** `www.federalreserve.gov/feeds/`.
-- **Eurostat:** `ec.europa.eu/eurostat/api/dissemination`. **FMI:** `www.imf.org` y `data.imf.org`. **Banco
-  Mundial:** `api.worldbank.org/v2/`.
-- **Oficina Nacional de Estadística de China:** `www.stats.gov.cn/english/`.
-- **Mercados, de fuente oficial cuando se pueda:**
-  - Tesoro de EE. UU.: `home.treasury.gov`, `api.fiscaldata.treasury.gov`;
-  - EIA (petróleo y energía): `www.eia.gov`;
-  - Banco de Japón: `www.boj.or.jp`;
-  - Banco de la Reserva de la India: `www.rbi.org.in`.
-
-  Si un dato de mercado solo aparece en prensa secundaria, se dice así («según CNBC…»).
-- **Largo plazo y países poco comentados (añadidas el 8 oct 2026, sin comprobar aún desde la nube):**
-  - B.P.I.: `www.bis.org` (informe anual, trimestral, documentos de trabajo);
-  - Banco Mundial (informes y datos): `www.worldbank.org`, `openknowledge.worldbank.org`, `data.worldbank.org`;
-  - F.M.I. (informes por país, artículo IV): `www.elibrary.imf.org`; O.C.D.E.: `www.oecd.org`;
-  - papers: NBER `www.nber.org`, CEPR y VoxEU `cepr.org`; UNCTAD `unctad.org`;
-  - desigualdad y datos largos: `wid.world`, `ourworldindata.org`, `hdr.undp.org`; series de la Fed de San Luis
-    (`fred.stlouisfed.org`, descarga en CSV sin clave);
-  - análisis: Bruegel `www.bruegel.org`, PIIE `www.piie.com`, Brookings `www.brookings.edu`;
-  - conflictos poco cubiertos: ReliefWeb (O.N.U.) `reliefweb.int`, Noticias O.N.U. `news.un.org`, International
-    Crisis Group `www.crisisgroup.org`, SIPRI `www.sipri.org`;
-  - bancos centrales de países poco comentados, por ejemplo Australia `www.rba.gov.au`, Botsuana
-    `www.bankofbotswana.bw`, Nepal `www.nrb.org.np`, Mongolia `www.mongolbank.mn`, África central (Chad) `www.beac.int`.
-    Casi todos los bancos centrales y oficinas de estadística del mundo están en la red, por comodín o por nombre.
-- **Prensa de mercados (titulares y RSS):** CNBC (`www.cnbc.com`, `search.cnbc.com`). Trading Economics no se usa,
-  porque sus condiciones limitan la extracción.
 - **Código y lanzamientos:** `github.com` (repositorios y notas de versión de modelos abiertos).
-- **Prensa internacional (titulares y RSS públicos):** Reuters, AP, BBC Mundo, El País Economía, Expansión, Nikkei
-  Asia (titulares).
 
 ## Entrevistas, pódcasts y blogs de investigadores
 
