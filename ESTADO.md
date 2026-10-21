@@ -1226,6 +1226,7 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Hecho (12 oct, noche): Claves mundo YA ENTRÓ (RSS, público, 2 vídeos). El episodio del 11 (Z3Xh5cUPi64) llegó PRIVADO (lo importó con la visibilidad vieja): puesto Público a mano. «Uso de IA»: lo pondrá el marcador en su pasada horaria.
 - Hecho (12 oct, noche, petición de Cristian): Claves progreso en stand by → pódcast de YouTube «Claves progreso» ELIMINADO; sus vídeos se conservan (N0xUadwAERA público; zCZ3OPz4LmE privado). El feed progreso.xml sigue en la web. Si se reanuda: volver a enviar progreso.xml por RSS en Studio (código al correo) y añadirle esos vídeos.
 - Hecho (12 oct, noche): Apple. La web YA solo se despliega cuando hay cambio (episodio nuevo o cambio de diseño): no hacía falta tocar publicar.yml. La causa más probable de las retiradas no son los despliegues sino el audio que desaparece: el 8 oct `rehacer` pisó los MP3 con --clobber (borra y sube) y el 9 oct se borró una Release. Arreglado: (1) `rehacer` sube el MP3 con otro nombre y no borra el viejo (audio_url nueva en el meta); (2) `scripts/retirar.py <clave>` marca «retirado» en la Release (sale de web y feeds, el MP3 se queda; --deshacer); publicar.visibles() filtra. README al día. Pruebas nuevas en test_claves (Rehacer, Retirados).
+- 12 oct, noche: Cristian volvió a poner PÚBLICO en YouTube el vídeo de Finlandia (zCZ3OPz4LmE). Sigue fuera de la web y los feeds (su Release se borró el 11).
 
 ## 13 oct 2026 — LMArena por delante; de Artificial Analysis, el coste por tarea
 - Decisión de Cristian: LMArena le importa más que Artificial Analysis. Le interesan Text Arena · Overall y Agent
@@ -1247,3 +1248,44 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
 - Artificial Analysis (PAUTA §4 y fuentes.md): importa el coste por tarea frente a su índice de inteligencia, no el
   precio por token. La API gratuita no lo trae (solo índices, velocidad y precio por millón de tokens): se usa cuando lo
   publique el laboratorio o lo cite la prensa. Su plan Pro (~417 $/mes por persona) sí lo daría.
+
+## 20 oct 2026 — Claves mundo y Claves progreso, retirados: el canal se queda solo con IA
+- Decisión de Cristian («El canal se va a quedar únicamente para las claves de la IA. Punto.»): deja de consumir
+  actualidad económica y mundial y ahorra suscripción. Quedan el parte (domingo a viernes), Claves semanales (sábado)
+  y los especiales.
+- Hecho: fuera de config/programas.json, comun.PROGRAMAS y el patrón de nombres (un `…-mundo.md` o `…-progreso.md`
+  en una rama claude/ ya ni se recoge ni se rechaza); sin pautas (`prompts/mundo.md` y `progreso.md` borrados), sin
+  reglas propias en validar.py, sin portadas ni miniaturas, y RUTINA, ENCARGADO, REVISOR, PAUTA_COMUN, fuentes.md,
+  README y PASOS sin ellos. config/pausa.json vuelve a no tener pausas (la de progreso sobraba).
+- Web y feeds: `publicar.vigentes` deja fuera sus episodios (y no los rehace) y sitio.generar los ignora: sin
+  /mundo/, /progreso/, mundo.xml, progreso.xml ni páginas de episodio; también salen del pódcast general (parte.xml).
+  Sus Releases y MP3 NO se borran (ep-2026-10-08-mundo, ep-2026-10-11-mundo, ep-2026-10-18-mundo,
+  ep-2026-10-12-progreso): si un feed ya leído apuntara a un audio borrado, Apple retira el pódcast entero.
+- Se quedan a propósito: las 3 predicciones de mundo (P-001 a P-003, siembra) siguen en el marcador (borrar
+  predicciones abiertas resta crédito a la puntuación); predicciones.py acepta aún «mundo» y «progreso» para leer el
+  registro. config/red_custom.txt es reserva sin uso (red completa desde el 9 oct): no se ha podado. Los dominios de
+  organismos siguen contando como fuente primaria (valen igual para la IA).
+- Rutinas: no había ninguna propia de mundo ni de progreso. La rutina diaria (trig_01AuPY3LjQVv88mbVQJWuVmC) escribe
+  lo que diga RUTINA.md, y el encargado de los domingos (trig_017oEyXG9KoFZT4a74MhYB7j) revisa la semana: las dos
+  siguen, sin tocar.
+- Pendiente de Cristian, en YouTube Studio (a mano): borrar el pódcast/lista «Claves mundo» (PLS6-yy4_7JO8) y sus
+  vídeos: 7T0NY5tiKUI (8 oct), Z3Xh5cUPi64 (11 oct) y el del 18 oct (su ID no está apuntado). De progreso (su
+  pódcast ya se borró el 12 oct): N0xUadwAERA (12 oct) y zCZ3OPz4LmE (Finlandia, 11 oct). El banner del canal
+  (assets/youtube/banner.png) aún lleva «Claves mundo» y su banda azul: rehacerlo si se quiere.
+- Preguntas para Cristian: (1) ¿quitamos también la «vida media de las noticias» (titulares diarios de El País, El
+  Mundo, La Vanguardia, elDiario.es y BBC; titulares.yml, /vida-media/ y el paso 0b del encargado)? No es de
+  mundo ni de progreso, pero ya no sirve a ningún programa de IA; se ha dejado. (2) Los especiales siguen admitiendo
+  temas que no son de IA (prompts/especial.md); ¿se limitan a IA? Se ha dejado como estaba.
+
+## 20 oct 2026 (tarde) — Fuera la vida media de las noticias; banner sin Claves mundo
+- Hecho (Cristian, sobre la pregunta (1) de arriba: «quítalo»): borrados titulares.yml, scripts/titulares.py,
+  vida_media.py y juicios.py (solo servía a esto), tests/test_titulares.py y ESTADO_titulares.md; fuera /vida-media/
+  de sitio.py, el paso 0b de prompts/ENCARGADO.md (el marcador de predicciones pasa de 0c a 0b; el encargado ya no
+  escribe datos/juicios/) y el punto 6 del README. Marcador de predicciones y LMArena, intactos. Los dominios de los
+  periódicos se quedan en config/red_*.txt (son fuentes generales).
+- La rama remota `datos-titulares` (datos de los titulares desde el 11 oct) NO se ha borrado: decide Cristian.
+- Banner: scripts/portadas.py banner(derecha="especial"|"claves"). Sin la banda azul de Mundo; cintas Parte diario,
+  Claves semanales y Especial a fondo (en papel); texto «… EL PARTE DE DOMINGO A VIERNES, LAS CLAVES EL SÁBADO».
+  assets/youtube/banner.png = opción A (banda derecha de Especial, papel con lupa). La B (amarilla con barras de
+  Claves) sale con banner(derecha="claves"). Pendiente de Cristian: subirlo a mano en YouTube Studio.
+- Siguiente: nada en esto.

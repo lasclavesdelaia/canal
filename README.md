@@ -1,13 +1,13 @@
 # Las claves de la IA
 
-Pódcast hecho por completo con IA. Tiene cuatro programas fijos y uno ocasional:
+Pódcast hecho por completo con IA, solo de inteligencia artificial. Tiene dos programas fijos y uno ocasional:
 
 - **Parte diario IA:** de domingo a viernes.
-- **Claves progreso:** en stand by desde el 12 oct 2026 (`config/pausa.json`); eran los viernes, historias de lo
-  que mejora gracias a personas concretas. Su episodio y su feed siguen publicados.
 - **Claves semanales IA:** los sábados.
-- **Claves mundo:** los domingos.
 - **Especiales:** de vez en cuando, un tema a fondo (no sale en la web hasta el primero).
+
+Claves mundo (domingos) y Claves progreso (viernes) se retiraron el 20 oct 2026 por decisión de Cristian: sin
+pautas, páginas ni feeds. Sus Releases y MP3 se quedan (`publicar.vigentes`), como los de un episodio retirado.
 
 Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian). Estado: `ESTADO.md`.
 
@@ -28,7 +28,7 @@ Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian).
    - el MP3 se sube como Release `ep-<clave>`;
    - `scripts/sitio.py` rehace la web y los feeds RSS y los publica en GitHub Pages
      (`claves.cristiansdrojek.com`): portada con los tres programas y cómo seguirlo, historial completo por programa
-     (`/parte/`, `/claves/`, `/mundo/`) y general (`/historial/`), y una página por episodio con guion y fuentes.
+     (`/parte/`, `/claves/`, `/especial/`) y general (`/historial/`), y una página por episodio con guion y fuentes.
      El aspecto imita las páginas de pódcast de cristiansdrojek.com (fuentes propias en `assets/fuentes`).
    - Un push a `main` que toque `scripts/sitio.py`, `assets/` o `config/programas.json` (o un lanzamiento a mano sin
      episodios nuevos) rehace solo la web, sin voz ni clave (job `solo_web`).
@@ -37,7 +37,7 @@ Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian).
    - **Apps de pódcast (iVoox, Spotify, Apple): un solo pódcast**, «Las claves de la IA», en `parte.xml`. Se llama así
      porque las apps ya estaban dadas de alta con esa dirección y Spotify no deja cambiarla. Lleva todos los programas,
      cada título con el programa delante («Parte diario IA · …»), y la portada `assets/portadas/general.jpg`.
-   - **YouTube: un feed por lista**: `parte-solo.xml`, `claves.xml`, `mundo.xml` y `especial.xml`.
+   - **YouTube: un feed por lista**: `parte-solo.xml`, `claves.xml` y `especial.xml`.
    - La descripción de cada episodio en los feeds no pasa de 4.000 caracteres (Apple; YouTube admite 5.000): si las
      fuentes no caben, se cortan y se remite a la página del episodio («Más fuentes: …»).
    - Enlaces de las apps en `canal.apps` de `config/programas.json` (un botón por app en la web).
@@ -53,19 +53,10 @@ Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian).
    deja un informe en `revisiones/AAAA-MM-DD.md`, en una rama `claude/revision-…`. Solo propone; no toca `main`. La
    web no publica las revisiones. Para aplicar una propuesta, dile a una sesión «aplica la revisión del AAAA-MM-DD».
 
-6. **Vida media de las noticias** (`.github/workflows/titulares.yml`, cada día hacia las 07:00 de Madrid, independiente de
-   `publicar.yml`): `scripts/titulares.py` guarda en `datos/titulares/AAAA-MM-DD.json` los titulares de portada (RSS) de El
-   País, El Mundo, La Vanguardia, elDiario.es y BBC; solo titular, URL, medio, fecha y sección, sin duplicados entre
-   días (lo que reaparece va a «reaparecen»). `scripts/vida_media.py` mide sin modelo, para los titulares de hace 30+
-   días, si su tema sigue apareciendo a los 7, 14 y 30 días, y escribe `datos/vida_media.json`. Los domingos el
-   encargado juzga una muestra de ~40 (paso 0b de `prompts/ENCARGADO.md`) y la guarda en `datos/juicios/`
-   (`scripts/juicios.py` valida y resume); con 8 semanas de juicios propone entradas C-NNN de criterio. Los titulares y
-   `vida_media.json` viven en la rama `datos-titulares` (main exige firma y el bot no firma). Con datos, la web publica `/vida-media/` (sin enlace en el menú).
-
-7. **Marcador de predicciones** (pauta común §12): el programa da de vez en cuando una probabilidad a algo decidible con una
+6. **Marcador de predicciones** (pauta común §12): el programa da de vez en cuando una probabilidad a algo decidible con una
    fuente y una fecha (1-24 meses). El registro es un diario, `datos/predicciones/AAAA-MM-DD.json` (altas y resoluciones);
    las altas salen de las líneas `Predicciones dadas:` de las tarjetas y las resoluciones de las vencidas, y las escribe el
-   encargado de los domingos (paso 0c de `prompts/ENCARGADO.md`) en su rama `claude/revision-*`, sin tocar `main`.
+   encargado de los domingos (paso 0b de `prompts/ENCARGADO.md`) en su rama `claude/revision-*`, sin tocar `main`.
    `scripts/predicciones.py` valida el formato y los ids, calcula el Brier (global, por autor y por tema) y la calibración
    por tramos, y con `--ramas` lee también lo aún sin fusionar. La web publica `/marcador/` (enlace en el pie) con las
    abiertas, las resueltas, el Brier y la calibración en SVG. El balance anual lo propone el encargado.
@@ -92,7 +83,7 @@ Diseño y decisiones: `~/bin/docs/INFORME_IA_DISENO.md` (en el Mac de Cristian).
 - **Cambiar de voz:** edita `voz.nombre` en `config/programas.json`, sube el cambio y lanza «Publicar episodios» con
   `rehacer` = `todos` (Actions › Run workflow). El MP3 nuevo se sube con otro nombre (`<clave>-<fecha y hora>.mp3`)
   y el viejo se queda, para que el feed nunca apunte a un fichero que no está; YouTube no cambia lo ya importado.
-- **Retirar un episodio:** `python3 scripts/retirar.py <clave>` (p. ej. `2026-10-11-progreso`). Marca «retirado» en
+- **Retirar un episodio:** `python3 scripts/retirar.py <clave>` (p. ej. `2026-10-09-parte`). Marca «retirado» en
   su Release y rehace la web: sale de la web y de los feeds, pero su MP3 NO se borra. No borres la Release: el feed
   se quedaría apuntando a un audio que ya no existe y Apple retira el pódcast entero cuando lo ve (sospecha fundada: así le pasó tras el 8 y el 9 oct 2026).
   `--deshacer` lo devuelve. En YouTube, el vídeo ya importado se oculta a mano en Studio.

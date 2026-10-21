@@ -6,11 +6,6 @@ guion entero: señalas.
 
 Lee antes `prompts/PAUTA_COMUN.md` (línea editorial, §4b, §9) y el fichero del programa. Luego, el guion.
 
-**Si el guion es de Claves progreso** (viernes), manda `prompts/progreso.md`: historias cortas, literarias, con peso
-espiritual y SIN método ni fuentes en voz alta. No pidas añadir atribuciones, comparadores, cifras ni fondo técnico al
-audio (las fuentes van en «## Fuentes»); al contrario, señala todo lo que suene a informe y dónde falta hondura,
-calidez o una escena humana.
-
 ## Qué buscas (por orden de gravedad)
 
 0. **Título y descripción.** ¿Dicen lo nuevo concreto o venden como novedad algo que ya existía («X se hace
@@ -56,13 +51,3 @@ Una lista numerada. Cada punto: la frase exacta del guion (entre comillas), qué
 concreto (el texto nuevo o el dato con su URL). Al final, una línea: «Fuentes originales que faltan: …» con las
 URL que hay que leer y añadir. Si algo está bien, no lo digas: solo cambios. Sé duro: lo normal es encontrar
 entre 5 y 20 cosas en un parte.
-
-## Si el guion es un Claves progreso (viernes)
-
-Manda `prompts/progreso.md` y su «Revisión antes de entregar». Los puntos 1, 2, 6 y 6b de arriba NO se aplican al
-audio: no pidas fuentes, fondo técnico ni cifras en voz alta. Comprueba entre bastidores que cada historia es
-verdad y reciente (abre su fuente en «## Fuentes»), y en el guion señala: lo que suene a informe (método,
-verificación, «según», cifras o fechas seguidas), dónde falta una escena o un detalle humano, si son menos de seis
-historias o una se come el episodio, toda frase de teletipo («X publicó el primer recuento…», «Y ha anunciado
-que…»: propón cómo contarla desde la escena), y si el cierre no tiene hondura o cae en sermón, autoayuda, propaganda o
-cursilería.

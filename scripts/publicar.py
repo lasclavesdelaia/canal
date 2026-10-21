@@ -112,6 +112,13 @@ def visibles(eps):
     return [e for e in eps if not e.get("retirado")]
 
 
+def vigentes(eps, cfg):
+    """Los episodios de los programas que siguen en config/programas.json. Claves mundo y Claves progreso se retiraron
+    el 20 oct 2026: sus Releases siguen contando como publicadas (y para el tope del mes), pero no salen en la web ni
+    en los feeds ni se rehacen. Sus MP3 no se borran, por la misma razón que los de un episodio retirado."""
+    return [e for e in eps if e.get("programa") in cfg["programas"]]
+
+
 def caracteres_del_mes(eps, hoy, nombre_voz=None):
     """Caracteres enviados a la voz este mes: episodios publicados en él y voces rehechas en él.
     Con nombre_voz, solo los de esa voz."""
@@ -347,7 +354,7 @@ def main():
     hoy = datetime.datetime.now(MADRID).date()
     ya = publicados(repo)
     borradores = publicados(repo, "borrador-")
-    a_rehacer = elegir_rehacer(args.rehacer, ya)  # antes de publicar: lo nuevo ya sale con la voz actual
+    a_rehacer = elegir_rehacer(args.rehacer, vigentes(ya, cfg))  # antes de publicar: lo nuevo ya sale con la voz actual
     hechos = {e["clave"] for e in ya}
     fallos = []
     rechazos_rutina = []
@@ -418,7 +425,7 @@ def main():
             nuevo = rehacer_uno(meta, cfg, repo, functools.partial(caracteres_del_mes, ya + borradores, hoy), hoy)
             if nuevo:
                 ya = [nuevo if e["clave"] == nuevo["clave"] else e for e in ya]
-    en_web = visibles(ya)
+    en_web = visibles(vigentes(ya, cfg))
     with tempfile.TemporaryDirectory() as tmp:
         audios = audios_recientes(en_web, repo, hoy, cfg["canal"].get("audio_en_la_web_dias", 60), tmp)
         sitio.generar(en_web, cfg, args.sitio, audios)

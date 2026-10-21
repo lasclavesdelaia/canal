@@ -190,13 +190,13 @@ class ConLaPauta(unittest.TestCase):
                   "cumplido si la serie diaria de la Agencia de Información Energética de ese día baja de esa cifra. "
                   "Hace un año dimos un 65 % a que el bono a diez años acabara sobre el cinco por ciento; pasó, y "
                   "acertamos porque el déficit siguió empujando la emisión.")
-        texto = ("---\nprograma: mundo\nfecha: 2026-10-11\ntitulo: Una prueba\ndescripcion: Una descripción.\n---\n"
+        texto = ("---\nprograma: claves\nfecha: 2026-10-10\ntitulo: Una prueba\ndescripcion: Una descripción.\n---\n"
                  f"{cuerpo}\n\n## Fuentes\n- EIA: https://www.eia.gov/x\n")
-        errores = validar("2026-10-11-mundo.md", texto)[1]
+        errores = validar("2026-10-10-claves.md", texto)[1]
         self.assertFalse([e for e in errores if "coletilla" in e or "molde" in e], errores)
 
     def test_la_pauta_y_los_programas_hablan_del_marcador(self):
-        for f in ("PAUTA_COMUN", "ENCARGADO", "RUTINA", "claves", "mundo", "parte"):
+        for f in ("PAUTA_COMUN", "ENCARGADO", "RUTINA", "claves", "parte"):
             self.assertIn("predicciones", (RAIZ / "prompts" / f"{f}.md").read_text(encoding="utf-8").lower(), f)
 
 

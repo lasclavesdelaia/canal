@@ -1,6 +1,6 @@
 """Retira un episodio publicado sin borrar su audio: marca «retirado» en las notas de su Release y rehace la web.
 
-    python3 scripts/retirar.py 2026-10-11-progreso [--motivo "texto"]
+    python3 scripts/retirar.py 2026-10-09-parte [--motivo "texto"]
 
 El episodio desaparece de la web y de los feeds en la pasada que se lanza al final (unos minutos). La Release y su
 MP3 se quedan: borrarlos deja a Apple, Spotify o YouTube leyendo un feed que apunta a un audio que ya no existe, y
@@ -20,7 +20,7 @@ REPO = "lasclavesdelaia/canal"
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("clave", help="p. ej. 2026-10-11-progreso")
+    ap.add_argument("clave", help="p. ej. 2026-10-09-parte")
     ap.add_argument("--motivo", default="")
     ap.add_argument("--deshacer", action="store_true", help="vuelve a sacarlo en la web y los feeds")
     ap.add_argument("--sin-web", action="store_true", help="no lanzar la pasada que rehace la web")

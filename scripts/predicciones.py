@@ -3,7 +3,7 @@
 El programa da de vez en cuando una probabilidad a algo que se podrá decidir con una fuente (ver
 prompts/PAUTA_COMUN.md, §12). El registro es un diario: cada fichero `datos/predicciones/AAAA-MM-DD.json` lleva las
 altas de esa semana y las resoluciones de las vencidas. Así la revisión de cada domingo añade un fichero propio en su
-rama `claude/revision-*` sin pisar a nadie (igual que `datos/juicios/`).
+rama `claude/revision-*` sin pisar a nadie.
 
 Formato de un fichero:
   {"fecha": "AAAA-MM-DD",
@@ -35,6 +35,8 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 CARPETA = RAIZ / "datos" / "predicciones"
+# Mundo y progreso se retiraron el 20 oct 2026, pero sus predicciones ya registradas siguen en el marcador: borrar
+# predicciones abiertas restaría crédito a la puntuación. No se dan nuevas (ya no hay episodios suyos).
 PROGRAMAS = ("parte", "progreso", "claves", "mundo", "especial")
 AUTORES = ("programa", "modelo")
 ESTADOS = ("abierta", "acertada", "fallada", "anulada")

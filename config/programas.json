@@ -8,7 +8,7 @@
     "aviso": "Este programa lo investiga, lo escribe y lo locuta por completo una inteligencia artificial, sin revisión humana. Puede contener errores. Las fuentes de cada noticia están en la descripción.",
     "aviso_hablado": "Este programa lo hace por completo una inteligencia artificial y puede contener errores.",
     "aviso_feed": "Hecho por completo con inteligencia artificial, sin revisión humana. Puede contener errores.",
-    "descripcion": "Programas de audio sobre inteligencia artificial y sobre el mundo, con datos y con sus fuentes. Parte diario IA, de domingo a viernes; Claves semanales IA, los sábados; Claves mundo, la economía y la geopolítica de la semana, los domingos; y, de vez en cuando, especiales a fondo.",
+    "descripcion": "Programas de audio sobre inteligencia artificial, con datos y con sus fuentes. Parte diario IA, de domingo a viernes; Claves semanales IA, los sábados; y, de vez en cuando, especiales a fondo.",
     "youtube": "https://www.youtube.com/@LasclavesdelaIA",
     "audio_en_la_web_dias": 60,
     "apps": {
@@ -46,15 +46,6 @@
       "palabras_max": 3700,
       "despedida": "Esto ha sido el Parte diario de Las claves de la IA. Hasta mañana."
     },
-    "progreso": {
-      "lista": "Claves progreso",
-      "voz": "gemini",
-      "descripcion": "Historias reales de las últimas semanas en las que algo mejoró gracias a personas concretas, contadas con calma y con una reflexión de fondo sobre lo que dicen del ser humano.",
-      "dias": "viernes",
-      "palabras_min": 3000,
-      "palabras_max": 6500,
-      "despedida": "Esto han sido las Claves progreso de Las claves de la IA. Hasta el viernes que viene."
-    },
     "claves": {
       "lista": "Claves semanales IA",
       "voz": "gemini",
@@ -63,15 +54,6 @@
       "palabras_min": 2400,
       "palabras_max": 10000,
       "despedida": "Esto han sido las Claves semanales de Las claves de la IA. Hasta el sábado que viene."
-    },
-    "mundo": {
-      "lista": "Claves mundo",
-      "voz": "gemini",
-      "descripcion": "Cada domingo, la economía y la geopolítica de la semana con datos: grandes economías, países emergentes y las leyes e impuestos que importan en España.",
-      "dias": "domingo",
-      "palabras_min": 2400,
-      "palabras_max": 10000,
-      "despedida": "Esto han sido las Claves mundo de Las claves de la IA. Hasta el domingo que viene."
     },
     "especial": {
       "lista": "Especiales",

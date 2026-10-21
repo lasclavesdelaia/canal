@@ -13,12 +13,13 @@ texto en Source Serif 4, verde oliva de acento):
   /e/<clave>.transcripcion.html  transcripción: el texto hablado completo (podcast:transcript del feed)
   /marcador/           marcador de predicciones: abiertas, resueltas, Brier y calibración (con las abiertas ya basta;
                        enlace discreto en el pie)
-  /vida-media/         curva de vida media de las noticias por tema (solo cuando datos/vida_media.json ya tiene
-                       titulares de 30+ días; sin enlace en el menú)
   /parte.xml           feed GENERAL «Las claves de la IA», con todos los programas: lo leen las apps de pódcast
                        (iVoox, Spotify y Apple ya estaban dados de alta con esta dirección y Spotify no deja cambiarla)
-  /parte-solo.xml, /progreso.xml, /claves.xml, /mundo.xml, /especial.xml
+  /parte-solo.xml, /claves.xml, /especial.xml
                        un feed por programa: YouTube necesita uno por lista
+
+Claves mundo y Claves progreso se retiraron el 20 oct 2026: sin páginas ni feeds (mundo.xml y progreso.xml ya no se
+publican). Sus Releases y sus MP3 se quedan, como los de cualquier episodio retirado.
 """
 import datetime
 import html
@@ -33,7 +34,7 @@ from comun import MESES, RAIZ, Episodio, fecha_hablada, pausa_hasta, texto_habla
 ULTIMOS_EN_PORTADA = 6
 FEED_GENERAL = "parte"  # nombre histórico: las apps ya leen /parte.xml
 MAX_DESCRIPCION = 4000  # Apple corta a 4.000 caracteres; YouTube, a 5.000
-FRECUENCIA = {"todos": "Cada día", "menos sabado": "De domingo a viernes", "viernes": "Cada viernes", "sabado": "Cada sábado", "domingo": "Cada domingo", "a veces": "De vez en cuando"}
+FRECUENCIA = {"todos": "Cada día", "menos sabado": "De domingo a viernes", "sabado": "Cada sábado", "a veces": "De vez en cuando"}
 
 ESTILO = """
 @font-face{font-family:"Inter Tight";font-style:normal;font-weight:100 900;font-display:swap;
@@ -269,7 +270,7 @@ def pagina_inicio(episodios, cfg):
     recientes = (f'<ul class="episodios">{recientes}</ul>' if recientes
                  else '<p class="suave">Todavía no hay episodios.</p>')
     cuerpo = f"""<h1>{_e(canal['nombre'])}</h1>
-<p class="entradilla">Programas de audio sobre inteligencia artificial y sobre el mundo, con datos y con sus fuentes.
+<p class="entradilla">Programas de audio sobre inteligencia artificial, con datos y con sus fuentes.
 Los hace por completo una IA, sin revisión humana.</p>
 <h2 id="programas">Los programas</h2>
 <div class="programas">{''.join(tarjetas)}</div>
@@ -443,63 +444,6 @@ def feed_general(episodios, cfg):
     return _canal_rss(cfg, canal["nombre"], FEED_GENERAL, canal["descripcion"], "general.jpg", items)
 
 
-COLORES_CURVA = ("#3a5117", "#a4502b", "#2b6ca4", "#7a4aa0", "#b08a1e", "#2b8a7a", "#8a2b4a", "#5f5e58")
-
-
-def _leer_vida_media():
-    """datos/vida_media.json si existe y ya mide algo (titulares de 30+ días); si no, None."""
-    try:
-        datos = json.loads((RAIZ / "datos" / "vida_media.json").read_text(encoding="utf-8"))
-    except (OSError, ValueError):
-        return None
-    return datos if datos.get("titulares_elegibles") and datos.get("curva_global") else None
-
-
-def pagina_vida_media(datos, cfg):
-    """Curva de supervivencia (% de titulares cuyo tema sigue apareciendo tras N días), por tema, en SVG."""
-    ancho, alto, m = 640, 300, 40
-    x = lambda d: m + (ancho - 2 * m) * d / 30
-    y = lambda v: alto - m - (alto - 2 * m) * v
-    ejes = "".join(
-        f'<line x1="{m}" x2="{ancho - m}" y1="{y(v):.0f}" y2="{y(v):.0f}" stroke="#e2dfd6"/>'
-        f'<text x="{m - 6}" y="{y(v) + 4:.0f}" text-anchor="end" font-size="11" fill="#5f5e58">{round(v * 100)} %</text>'
-        for v in (0, .25, .5, .75, 1)) + "".join(
-        f'<text x="{x(d):.0f}" y="{alto - m + 16}" text-anchor="middle" font-size="11" fill="#5f5e58">{d} d</text>'
-        for d in (0, 7, 14, 21, 30))
-    series = [("Todos", datos["curva_global"], "#262625")] + [
-        (t, c, COLORES_CURVA[i % len(COLORES_CURVA)]) for i, (t, c) in enumerate(datos.get("curva_por_tema", {}).items())]
-    lineas = "".join(
-        f'<polyline fill="none" stroke="{col}" stroke-width="{3 if n == "Todos" else 2}" '
-        f'points="{" ".join(f"{x(d):.1f},{y(v):.1f}" for d, v in enumerate(c))}"/>' for n, c, col in series)
-    leyenda = "".join(f'<li><span style="color:{col}">&#9632;</span> {_e(n)}</li>' for n, c, col in series)
-    g = datos["global"]
-
-    def fila(nombre, r):
-        p = r["persistencia"]
-        celdas = "".join(f"<td>{'' if p[h] is None else str(round(p[h] * 100)) + ' %'}</td>" for h in ("7", "14", "30"))
-        dudoso = "" if r["fiable"] else " (pocos datos)"
-        return f"<tr><th>{_e(nombre)}{dudoso}</th><td>{r['n']}</td>{celdas}<td>{r['vida_media_dias']}</td></tr>"
-
-    def tabla(titulo, grupos):
-        filas = "".join(fila(k, r) for k, r in grupos.items())
-        return (f"<h2>{titulo}</h2><table><thead><tr><th></th><th>Titulares</th><th>7 d</th><th>14 d</th><th>30 d</th>"
-                f"<th>Vida media (d)</th></tr></thead><tbody>{filas}</tbody></table>")
-
-    cuerpo = f"""<h1>Vida media de las noticias</h1>
-<p class="entradilla">De los titulares que los periódicos pusieron en portada hace al menos 30 días, qué parte de sus
-temas seguía apareciendo una semana, dos semanas y un mes después. Medida mecánica sobre {g['n']} titulares
-(desde {_e(datos.get('desde') or '')}); la vida media tiene un tope de 30 días.</p>
-<svg viewBox="0 0 {ancho} {alto}" role="img" aria-label="Porcentaje de titulares cuyo tema sigue apareciendo, por días"
- style="width:100%;height:auto">{ejes}{lineas}</svg>
-<ul class="suave" style="list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:4px 16px">{leyenda}</ul>
-{tabla("Por tema", datos.get("por_tema", {}))}
-{tabla("Por medio", datos.get("por_medio", {}))}
-<p class="suave">Medios: El País, El Mundo, La Vanguardia, elDiario.es y BBC. Solo se guarda titular, enlace, medio,
-fecha y sección. Los temas se agrupan por solapamiento de palabras, así que la medida es prudente: un tema que cambia
-de vocabulario cuenta como terminado. Actualizado el {_e(datos['referencia'])}.</p>"""
-    return _pagina(f"Vida media de las noticias · {cfg['canal']['nombre']}", cuerpo, cfg, ancho=False)
-
-
 def _leer_marcador():
     """Predicciones del registro (datos/predicciones/) con su estado; [] si no hay o el registro tiene errores."""
     try:
@@ -601,7 +545,8 @@ def generar(episodios, cfg, destino, audios=None):
     if destino.exists():
         shutil.rmtree(destino)
     (destino / "e").mkdir(parents=True)
-    episodios = [dict(e) for e in episodios]
+    # Solo los programas de config/programas.json: los de mundo y progreso (retirados) no salen en ninguna página.
+    episodios = [dict(e) for e in episodios if e["programa"] in cfg["programas"]]
     if audios:
         (destino / "audio").mkdir()
         for e in episodios:
@@ -640,10 +585,6 @@ def generar(episodios, cfg, destino, audios=None):
             shutil.copytree(origen, destino / carpeta)
     dominio = cfg["canal"]["web"].split("://", 1)[-1].strip("/")
     (destino / "CNAME").write_text(dominio + "\n")
-    vida = _leer_vida_media()
-    if vida:
-        (destino / "vida-media").mkdir()
-        (destino / "vida-media" / "index.html").write_text(pagina_vida_media(vida, cfg), encoding="utf-8")
     marcador = _leer_marcador()
     if marcador:
         (destino / "marcador").mkdir()
