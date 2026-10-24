@@ -29,7 +29,14 @@ Lee antes `prompts/PAUTA_COMUN.md` (línea editorial, §4b, §9) y el fichero de
    repite el cajón de uno de los tres últimos titulares? ¿Entra `seguridad` (ciberseguridad, agentes que se saltan
    controles, seguridad y política de los laboratorios) sin un hecho sin precedentes, o cuando la semana ya tuvo su
    pieza principal de seguridad, o con más de una clave en el semanal? Di qué pieza sale o baja y qué tema de otro
-   cajón la sustituye. ¿Las medianas son de cajones variados?
+   cajón la sustituye. ¿Las medianas son de cajones variados? ¿Llega al mínimo de cajones distintos (parte: 5, o
+   3 en un día flojo; semanal: 7) sin piezas de relleno? ¿Algún cajón se come el programa (más de dos piezas en el
+   parte; más de una cuarta parte del semanal)? Mira qué cajones faltan en los partes desde el último sábado y
+   cuáles llevan dos semanas sin aparecer: si hay en ellos algo que pase el listón, propónlo con su fuente.
+2c. **Siempre los mismos protagonistas** (pauta, §3b). Líneas `Protagonistas:` de los dos partes anteriores: ¿el
+   titular repite su empresa, laboratorio o persona? ¿Hay más de dos piezas de la misma empresa? ¿Todo son los tres
+   o cuatro grandes laboratorios de EE. UU. cuando había algo que valía la pena de laboratorios chinos o europeos,
+   universidades o gente concreta? Di cuál.
 2b. **Voces repetidas** (pauta, §4c). Si cuenta lo que dijo alguien: busca (líneas `Voces:` de las tarjetas y una
    búsqueda web en sus entrevistas y textos anteriores) si ya lo había dicho. Si es su tesis de siempre, fuera. Si
    es de alguien con interés en su tesis (inversor, analista que vende a la industria), ¿se dice ese interés y se
@@ -77,6 +84,6 @@ Lee antes `prompts/PAUTA_COMUN.md` (línea editorial, §4b, §9) y el fichero de
 
 Una lista numerada. Cada punto: la frase exacta del guion (entre comillas), qué falla (una línea) y el cambio
 concreto (el texto nuevo o el dato con su URL). Al final, una línea: «Fuentes originales que faltan: …» con las
-URL que hay que leer y añadir. Y otra: «Tarjeta: …» con lo que haya que poner en sus líneas `Cajones:`, `Voces:` y
+URL que hay que leer y añadir. Y otra: «Tarjeta: …» con lo que haya que poner en sus líneas `Cajones:`, `Protagonistas:`, `Voces:` y
 (semanal) `Arquitectura:`. Si algo está bien, no lo digas: solo cambios. Sé duro: lo normal es encontrar entre 5 y 20
 cosas en un parte.

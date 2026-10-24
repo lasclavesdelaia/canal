@@ -1323,12 +1323,27 @@ ideas nuevas de las voces de referencia; y qué hacemos nosotros con ello. Fuera
     red_catalogo.txt). 599 líneas.
   - programas.json: parte 4.800 palabras, claves 11.000, tope de Gemini 800.000 caracteres (el general, 900.000, lo
     deja pasar). Cálculo: unos 760.000 caracteres al mes con las longitudes normales.
-  - 139 pruebas en verde.
+  - Más variedad (segundo pedido de Cristian, el mismo 24 oct: «deberían ser mucho más variados, en definitiva»):
+    - 16 cajones finos: `sociedad` se parte en trabajo, educacion, ciencia y creatividad; `chips` sale de `dinero`;
+      nuevos `abierto`, `herramientas` (sale de `uso`) y `robotica` (sale de `otros-modelos`). El validador sigue
+      aceptando `sociedad` en tarjetas viejas.
+    - Mínimos de cajones distintos: parte 5 (3 si baja de 2.000 palabras; sin mínimo por debajo de 800); semanal 7
+      (5 si baja de 5.000). Topes: dos piezas por cajón en el parte; en el semanal ningún cajón pasa de una cuarta
+      parte de las piezas. validar.py lee las palabras del episodio hermano para elegir el mínimo.
+    - Rotación: el parte busca a propósito los cajones que faltan desde el último sábado; el semanal, los que la
+      semana dejó vacíos; revisor y encargado señalan los que llevan dos semanas sin aparecer.
+    - Protagonistas: línea `Protagonistas:` en la tarjeta; el titular no repite el de los dos partes anteriores;
+      como mucho dos piezas (o dos claves) de la misma empresa; validado. Se buscan laboratorios chinos y europeos,
+      universidades y gente concreta.
+  - 146 pruebas en verde.
 - En curso: commit local hecho en main, SIN SUBIR. Esta sesión leyó este ESTADO.md (el portero lo trata como privado)
   y no puede hacer push. Lo sube una sesión limpia con `git push origin main`, sin leer este fichero.
 - Siguiente: escuchar o leer el parte del domingo 25 y el semanal del 31 (cajones, longitud, umbral, bloque de
   arquitectura en el escalón 1); el encargado del domingo 25 ya revisa con la vara nueva.
 - Decisiones menores tomadas:
+  - Umbrales del día flojo y de la semana pobre puestos por palabras (2.000 y 5.000), porque es lo único que el
+    validador puede medir sin juicio; el tope de una cuarta parte del semanal se mide por número de piezas en el
+    validador y por minutos en el revisor.
   - Seguridad y política de los laboratorios, un solo cajón con una sola cuota: más simple de contar y más estricto,
     que es lo que pide la queja.
   - En las tablas de imagen y vídeo, «relevante» = los tres primeros más la distancia al primero, para que un empate

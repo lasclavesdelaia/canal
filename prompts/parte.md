@@ -37,6 +37,10 @@ Se oye a velocidad 1,1, unas 165 palabras por minuto.
   pasa, qué mecanismo hay debajo, qué tensión revela, qué consecuencias tiene y para quién.
 - **Cada pieza mediana, de 150 a 350 palabras,** y de cajones variados (pauta, §3b). No es un titular: deja algo
   entendido (qué es, por qué importa, un mecanismo o una consecuencia). Si un tema no da para eso, no entra.
+- **Variado por obligación** (pauta, §3b; Cristian, 24 oct 2026: «deberían ser mucho más variados»): al menos 5
+  cajones distintos entre todas las piezas (3 en un día flojo), como mucho dos piezas del mismo cajón y como mucho
+  dos de la misma empresa. El validador lo comprueba en la tarjeta. Si el material del día no llega a eso con
+  temas que pasen el listón, el parte es más corto, nunca más repetido.
 - Sin bombardeo (Cristian, 9 oct 2026: «es un bombardeo»): pocas cifras por pieza, las que sostienen la idea.
 - **La paja manda sobre la longitud** (pauta, línea editorial). Un día flojo puede quedarse en unas 1.200
   palabras; el máximo son unas 4.500. No rellenes con ruido ni con temas que no pasan el listón.
@@ -83,8 +87,12 @@ Los nombres de estas partes son para ti: no los anuncies como secciones. Pasa de
 Antes de investigar, lee las tarjetas de los últimos 7 partes (`tarjetas/*-parte.md`, en las ramas `claude/`) y la
 del último semanal de IA (`tarjetas/*-claves.md`). En ellas mira sobre todo:
 - la línea `Cajones:` de los tres últimos partes: el cajón de su `titular` no puede ser el de tu titular de hoy;
-- las líneas `Cajones:` de los partes desde el último sábado: si alguno ya llevó `seguridad` como titular o como
-  principal, esta semana ya no cabe otra pieza principal de seguridad (pauta, §3b);
+- la línea `Protagonistas:` de los dos últimos partes: la empresa, el laboratorio o la persona de su `titular` no
+  puede protagonizar tu titular de hoy;
+- las líneas `Cajones:` de los partes desde el último sábado: qué cajones faltan esta semana, para buscar a
+  propósito material de ellos antes de investigar lo de siempre (si nada de esos cajones pasa el listón, no se
+  fuerza); y si alguno ya llevó `seguridad` como titular o como principal, esta semana ya no cabe otra pieza
+  principal de seguridad (pauta, §3b);
 - las líneas `Voces:`: lo que alguien ya contó no vuelve como nuevo (pauta, §4c).
 Una noticia ya contada solo vuelve si hay algo nuevo, y entonces se cuenta lo nuevo, remitiendo en media frase
 («como contamos el lunes…»). Mira también los «hilos abiertos»: si hoy se resuelve alguno, es candidato a lo
@@ -95,20 +103,28 @@ hay novedad, se cuenta en corto; si no, va a tu tarjeta con «revisar: sábado»
 
 ## Temas que vigilar (uso interno; no son secciones)
 
-Por cajones (pauta, §3b), para que el día no salga de uno solo:
+Por cajones (pauta, §3b), para que el día no salga de uno solo. Recorre la lista entera al buscar, no solo los
+primeros: los cajones del final son los que se quedan vacíos si no se buscan.
 
-- **`llm`:** lanzamientos y actualizaciones de EE. UU., China y laboratorios nuevos que pasen el umbral (pauta, §3);
+- **`llm`:** lanzamientos y actualizaciones de los modelos cerrados de la frontera que pasen el umbral (pauta, §3);
   clasificaciones independientes; precios y coste por tarea.
+- **`abierto`:** modelos abiertos de cualquier país, y lo que corre en local (portátil, móvil), con el mismo umbral.
 - **`otros-modelos`:** difusión de texto, voz, transcripción, música, imagen, vídeo, modelos del mundo, biología,
-  robótica, con el mismo umbral; sus clasificaciones están en `config/fuentes.md`.
+  con el mismo umbral; sus clasificaciones están en `config/fuentes.md`.
+- **`robotica`:** robots y los modelos que los mueven.
 - **`investigacion`:** papers e ideas nuevas de universidades y empresas, también de lo que no está de moda, en
   lenguaje llano; técnicas de arquitectura y de entrenamiento.
-- **`uso`:** cómo la usa la gente que sabe; cambios concretos en las apps de Claude, Gemini y ChatGPT (funciones
-  nuevas, límites, precios de los planes), y en las de Meta, xAI, Mistral, los laboratorios chinos u otros cuando se
-  pongan a su altura o la superen; eficiencia de tokens.
+- **`uso`:** cómo la usa la gente que sabe; qué funciona de verdad en el trabajo; eficiencia de tokens.
+- **`herramientas`:** cambios concretos en las apps de Claude, Gemini y ChatGPT (funciones nuevas, límites, precios
+  de los planes), y en las de Meta, xAI, Mistral, los laboratorios chinos u otros cuando se pongan a su altura o la
+  superen; herramientas útiles para el día a día.
 - **`voces`:** lo nuevo que dice alguien con trabajo propio en una entrevista, un pódcast o un texto (pauta, §4c).
-- **`dinero`:** rondas, startups, resultados, centros de datos, energía, movimientos de la cadena de chips.
-- **`sociedad`:** empleo, educación, avances científicos hechos con IA, creatividad y cultura, estudios serios.
+- **`dinero`:** rondas, startups, resultados, compras.
+- **`chips`:** hardware, centros de datos, energía, la cadena de chips.
+- **`trabajo`:** empleo y oficios, con estudios serios.
+- **`educacion`:** la IA en la escuela, la universidad y el aprendizaje.
+- **`ciencia`:** la IA aplicada a la ciencia y a la medicina.
+- **`creatividad`:** arte, música, cine, escritura.
 - **`seguridad`:** solo hechos sin precedentes, con la cuota de la pauta (§3b).
 - **`leyes`:** gobiernos, reguladores, tribunales.
 - **Anthropic:** sus informes de investigación, de interpretabilidad, el índice económico y los de uso de Claude se
@@ -125,7 +141,7 @@ cuyo resultado se conozca hoy o cuyo tema sea justo la noticia principal. Nada d
 
 La noticia principal del día, en una frase corta y natural de menos de 70 caracteres (pauta común, §7). Lo nuevo
 de verdad, no lo que ya se sabía. Los demás temas, en la descripción. Una pregunta solo de vez en cuando. Su cajón no
-repite el de los titulares de los tres partes anteriores (pauta, §3b): es el que apuntas como `titular` en la
-línea `Cajones:` de la tarjeta.
+repite el de los titulares de los tres partes anteriores, ni su protagonista el de los dos anteriores (pauta, §3b): son
+los que apuntas como `titular` en las líneas `Cajones:` y `Protagonistas:` de la tarjeta.
 
 Ejemplo de forma (no de contenido): «Qwen 4 entra en el podio de los modelos abiertos».

@@ -55,10 +55,16 @@ no se menciona. En tu tarjeta, solo los que sigan abiertos y aún importen, con 
 - **Antes de escribir, lee las tarjetas** (no los guiones): las de los últimos 6 sábados (`tarjetas/*-claves.md`)
   y las de los partes de esta semana (`tarjetas/*-parte.md`), en las ramas `claude/`. Sirven para no repetir temas
   ni moldes y para tirar de los hilos que quedaron abiertos.
-- **Variedad de cajones** (pauta, §3b): las claves, de cajones distintos; como mucho dos del mismo cajón, y solo si
-  son de verdad temas distintos. **`seguridad`, como mucho una clave**, y solo con un hecho sin precedentes. Mira las
-  líneas `Cajones:` de los partes de la semana: si un cajón ya ocupó varios titulares, el semanal no le da más sitio
-  salvo que haya algo nuevo que subir de nivel.
+- **Variedad de cajones** (pauta, §3b; Cristian, 24 oct 2026: «deberían ser mucho más variados»): al menos 7
+  cajones distintos entre todas las piezas del programa (5 si la semana es pobre), y ningún cajón pasa de una cuarta
+  parte del programa. Las claves, de cajones distintos; como mucho dos del mismo cajón, y solo si son de verdad
+  temas distintos. **`seguridad`, como mucho una clave**, y solo con un hecho sin precedentes. El validador lo
+  comprueba en la tarjeta.
+- **Rotación:** mira las líneas `Cajones:` de los partes de la semana. Los cajones que la semana dejó vacíos se buscan
+  a propósito, y si hay algo de ellos que pase el listón, entra. Si un cajón ya ocupó varios titulares, el semanal no
+  le da más sitio salvo que haya algo nuevo que subir de nivel.
+- **Protagonistas:** como mucho dos claves de la misma empresa, y no siempre los mismos laboratorios: busca también
+  laboratorios chinos y europeos, universidades y gente concreta (pauta, §3b).
 - **Lo que el oyente ya oyó en los partes** no se vuelve a contar: se da por sabido en una frase y se sube un
   escalón (qué significa, qué patrón se ve, qué no se ha dicho).
 - **Prioriza lo que vaya a seguir importando dentro de un mes.** Ejemplos:

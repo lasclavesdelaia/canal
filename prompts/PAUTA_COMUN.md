@@ -218,28 +218,70 @@ saca una empresa conocida, porque eso llena el programa de lanzamientos que no c
 conocer lo que está en la cima y lo que innova, no el catálogo. Cada vez que entre uno que no es de lenguaje, una
 frase sobre **qué es** y otra sobre **para qué sirve**.
 
-## 3b. Variedad: los cajones
+## 3b. Variedad: cajones y protagonistas
 
-Cada pieza de un programa cae en un cajón temático. En la tarjeta se apuntan con estas etiquetas (§10):
+Cristian, 24 oct 2026: «siempre habla de lo mismo… deberían ser mucho más variados, en definitiva». La variedad no
+sale sola: cada día gana el tema con más titulares, que suele ser el mismo, y el mismo puñado de empresas. Por eso se
+construye a propósito, con cajones finos, mínimos que obligan a abrir el abanico, rotación en la semana y variedad
+de protagonistas. Manda siempre el listón de calidad: la variedad se busca, pero nunca se rellena con lo que no
+merece la pena («La paja manda sobre la longitud»).
 
-- `llm`: modelos de lenguaje (lanzamientos, versiones, precios, clasificaciones);
+**Los cajones.** Cada pieza cae en uno. Son finos a propósito: en un cajón ancho cabe un programa entero, y entonces
+cumple las reglas y suena igual de repetido. En la tarjeta se apuntan con estas etiquetas (§10):
+
+- `llm`: modelos de lenguaje cerrados de la frontera (lanzamientos, versiones, precios, clasificaciones);
+- `abierto`: modelos abiertos y la IA en local (pesos publicados, lo que corre en un portátil o un móvil);
 - `otros-modelos`: los que no son el modelo de lenguaje de siempre (difusión de texto, voz, transcripción, música,
-  imagen, vídeo, modelos del mundo, biología, robótica);
+  imagen, vídeo, modelos del mundo, biología);
+- `robotica`: robots y los modelos que los mueven;
 - `investigacion`: investigación y arquitectura (papers, técnicas, cómo están hechos);
-- `uso`: uso real (cómo la usa la gente que sabe, qué funciona en el trabajo, apps y funciones nuevas que cambian el
-  uso);
+- `uso`: cómo la usa la gente que sabe, qué funciona de verdad en el trabajo;
+- `herramientas`: apps y funciones útiles para el día a día (lo nuevo en las apps de los laboratorios y de otros);
 - `voces`: voces e ideas (lo nuevo que dice alguien con trabajo propio, §4c);
-- `dinero`: empresas, chips y dinero (rondas, ingresos, centros de datos, energía, cadena de chips);
-- `sociedad`: sociedad, empleo, educación, ciencia y cultura;
+- `dinero`: empresas y dinero (rondas, ingresos, resultados, compras, valoraciones);
+- `chips`: hardware, centros de datos, energía y la cadena de chips;
+- `trabajo`: empleo y oficios;
+- `educacion`: la IA en la escuela, la universidad y el aprendizaje;
+- `ciencia`: la IA aplicada a la ciencia y a la medicina;
+- `creatividad`: arte, música, cine, escritura;
 - `seguridad`: ciberseguridad, seguridad de los agentes, y la seguridad y la política de los laboratorios (sus
   normas de seguridad, sus informes de riesgos, su presión sobre gobiernos), Anthropic incluida;
 - `leyes`: leyes, reguladores y tribunales.
 
-Reglas:
-- **En un mismo parte, como mucho una pieza principal por cajón.** Las medianas, de cajones variados: tres del mismo
-  cajón en un parte ya son demasiadas.
-- **El titular no repite el cajón de los titulares de los tres partes anteriores** (línea `Cajones:` de sus
-  tarjetas). Si lo más importante del día cae en ese cajón, va como segunda principal y el título sale de la otra.
+Si una tarjeta trae `sociedad`, es el cajón ancho de antes, que se partió en `trabajo`, `educacion`, `ciencia` y
+`creatividad`: se lee como cualquiera de esos cuatro, y el validador la sigue aceptando, pero las tarjetas nuevas
+usan los finos. Las tarjetas anteriores al 25 oct 2026 no traen la línea `Cajones:`: deduce sus cajones de las
+líneas `Temas:` y `Ángulo y forma:`.
+
+**Mínimos y topes en cada programa.** El validador los comprueba en la línea `Cajones:` de la tarjeta. Por qué un
+número y no un consejo: así la variedad no queda a juicio del redactor del día, que siempre tira hacia el tema con
+más material.
+- **Parte:** al menos 5 cajones distintos entre todas sus piezas; un día flojo (menos de unas 2.000 palabras), al
+  menos 3; el de «hoy no ha pasado nada» (menos de unas 800), sin mínimo. Como mucho dos piezas del mismo cajón,
+  contando todas, y una sola pieza principal por cajón.
+- **Semanal:** al menos 7 cajones distintos (5 si la semana es pobre y el programa no llega a unas 5.000
+  palabras). Ningún cajón pasa de una cuarta parte del programa (el validador lo mira por número de piezas; el
+  revisor, por minutos).
+- Si para llegar al mínimo haría falta un tema que no pasa el listón, no se fuerza: el episodio baja a la longitud
+  de un día flojo o de una semana pobre, más corto. Lo que no vale es cumplir el número con piezas de relleno.
+
+**Rotación en la semana.** La variedad se ve en la semana, no solo en el día: cinco partes variados por dentro pueden
+repetir los mismos cinco cajones.
+- Al planificar, el parte mira qué cajones faltan en los partes desde el último sábado (líneas `Cajones:`) y busca a
+  propósito material de esos. Si no hay nada que merezca la pena, no se fuerza.
+- El semanal cubre los cajones que la semana dejó vacíos, si hay algo de ellos que pase el listón.
+- **El titular no repite el cajón de los titulares de los tres partes anteriores.** Si lo más importante del día cae
+  en ese cajón, va como segunda principal y el título sale de la otra.
+
+**Protagonistas.** La sensación de «siempre lo mismo» también viene de contar siempre a las mismas empresas.
+- El titular no repite la empresa, el laboratorio o la persona protagonista de los titulares de los dos partes
+  anteriores (línea `Protagonistas:` de sus tarjetas).
+- Ningún parte dedica más de dos piezas a la misma empresa; en el semanal, como mucho dos claves.
+- Se buscan a propósito protagonistas de fuera de los tres o cuatro grandes laboratorios de EE. UU.: laboratorios
+  chinos y europeos, universidades, empresas pequeñas, gente concreta con trabajo propio. Con el mismo listón:
+  entran porque lo que hacen importa, no por cuota.
+
+**Seguridad, con freno.**
 - **`seguridad` entra solo con un hecho sin precedentes**: algo que no había pasado nunca, no otro caso de un patrón
   ya contado. Que una IA encuentra o explota fallos, o que un agente se salta un control, ya se sabe. Y aun así,
   **como mucho una pieza principal a la semana** sumando los partes de domingo a viernes (cuéntalas en las tarjetas
@@ -247,10 +289,6 @@ Reglas:
 - Por qué la cuota y no una prohibición: lo de verdad nuevo en seguridad sí interesa; lo que cansa es la repetición
   (Cristian, 24 oct 2026: «siempre habla de ciberataques… ya es un poquito cansino»). Y esa clase de historia
   abunda cada día, así que sin tope acaba ocupando el programa y desplazando todo lo demás.
-- Las tarjetas anteriores al 25 oct 2026 no traen la línea `Cajones:`: deduce sus cajones de las líneas `Temas:` y
-  `Ángulo y forma:`.
-- Por qué los cajones: un programa variado se construye a propósito. Sin una regla, cada día gana el tema con más
-  titulares, que suele ser el mismo.
 
 ## 4. Benchmarks y lo que opina la gente
 
@@ -590,7 +628,8 @@ fecha: 2026-10-09
 cubre: 2026-10-08 a 2026-10-09
 ---
 Temas: …
-Cajones: titular llm; principal uso; medianas otros-modelos, investigacion, dinero, leyes
+Cajones: titular abierto; principal trabajo; medianas llm, chips, ciencia, creatividad, leyes
+Protagonistas: titular Qwen; principal Universidad de Tokio; medianas OpenAI, Nvidia, varios, varios, Comisión Europea
 Voces: persona — la idea nueva en pocas palabras (dónde y cuándo); una por persona, o «ninguna»
 Ángulo y forma: cómo se contó y con qué estructura (para no repetir el molde).
 Datos clave citados: cifras con su fuente, en corto.
@@ -606,10 +645,14 @@ LMArena contada: <tabla> <fecha de publicación> (solo si el episodio contó un 
 Arquitectura: <concepto> (escalón N) (solo en el semanal; §13).
 ```
 
-- **Cajones** (§3b), con las etiquetas de la lista. En el parte, `titular` (el cajón de la pieza que da el título),
-  `principal` (la otra principal) y `medianas`; en el semanal, `claves` y `noticias`. Con esta línea el siguiente
-  episodio sabe qué cajón dio los últimos titulares y cuánta seguridad lleva la semana. `python3 scripts/validar.py
-  tarjetas/<fichero>` la comprueba.
+- **Cajones** (§3b), con las etiquetas de la lista, una por pieza y en el orden de las piezas. En el parte,
+  `titular` (el cajón de la pieza que da el título), `principal` (la otra principal) y `medianas`; en el semanal,
+  `claves` y `noticias`. Con esta línea el siguiente episodio sabe qué cajón dio los últimos titulares, qué cajones
+  faltan en la semana y cuánta seguridad lleva.
+- **Protagonistas** (§3b), con los mismos papeles y en el mismo orden: la empresa, el laboratorio, la universidad o
+  la persona protagonista de cada pieza, separados por comas; «varios» si la pieza no tiene uno.
+- `python3 scripts/validar.py episodios/<fichero> tarjetas/<fichero>` comprueba las dos líneas: mínimos de cajones,
+  topes por cajón y por protagonista.
 
 - **Cabos sueltos.** Solo lo que importa y no se sabía (por ejemplo, el precio de un modelo que se anunció sin
   precio), no cualquier duda. Cada uno con su fecha de revisión: el parte apunta «revisar: <mañana>». Si no hay, «Cabos sueltos: ninguno».

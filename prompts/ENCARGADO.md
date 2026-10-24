@@ -95,7 +95,12 @@ Para cada episodio de la semana:
 - **Variedad y seguridad** (PAUTA §3b), con las líneas `Cajones:` de las tarjetas de la semana: qué cajón tuvo cada
   titular (¿alguno repite el de los tres partes anteriores?), cuántas piezas principales de `seguridad` sumaron los
   partes (máximo una) y cuántas claves el semanal (máximo una), y si cada una era de verdad un hecho sin precedentes.
-  Cuenta también las tarjetas que no traen la línea.
+  La distribución de la semana: cuántas piezas tuvo cada cajón, sumando todos los episodios, y qué cajones no
+  aparecieron. Los que lleven dos semanas sin aparecer (mira también la revisión anterior), señálalos en el informe
+  con un ejemplo de lo que se pudo contar de ellos, si lo hubo. Cuenta también las tarjetas que no traen la línea.
+- **Protagonistas** (PAUTA §3b), con las líneas `Protagonistas:`: ¿algún titular repitió el protagonista de los dos
+  partes anteriores? ¿Qué empresas acumulan más piezas en la semana? ¿Hubo laboratorios chinos y europeos,
+  universidades y gente concreta, o siempre los mismos?
 - **Modelos** (PAUTA §3): ¿alguno entró sin pasar el umbral (el mejor de su categoría según una medición
   independiente, o una innovación de cómo está hecho)? Para los que no son de lenguaje, compruébalo en las
   clasificaciones de `config/fuentes.md`.

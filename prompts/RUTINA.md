@@ -55,7 +55,8 @@ en un commit nuevo. No escribas otro episodio. Si al mirarlo ya valida (otra eje
    - para el parte, las de los últimos 7 partes;
    - para `claves`, las de los últimos 6 sábados más las de los partes de esta semana, y además las líneas
      `Arquitectura:` de todas las tarjetas de semanales (`prompts/claves.md`, «El bloque de arquitectura»);
-   - en las dos, sus líneas `Cajones:` y `Voces:` (pauta, §3b y §4c);
+   - en las dos, sus líneas `Cajones:`, `Protagonistas:` y `Voces:` (pauta, §3b y §4c): qué cajones faltan esta
+     semana y qué protagonistas no pueden repetir titular;
    Apunta sus cabos sueltos pendientes (pauta, §10): forman parte de lo que investigas hoy.
    En `parte` (si el tema lo pide), `claves` y los especiales, mira también las predicciones abiertas
    (`python3 scripts/predicciones.py --abiertas --ramas`; pauta, §12): retoma las vencidas o las que vuelven a la
@@ -68,7 +69,7 @@ en un commit nuevo. No escribas otro episodio. Si al mirarlo ya valida (otra eje
    - abre los artículos solo cuando haga falta.
 8. **Escribe** el guion con el formato exacto del apartado 7 de la pauta y haz el repaso del apartado 8.
 9. **Escribe la tarjeta** de cada episodio: `tarjetas/AAAA-MM-DD-<programa>.md`, con el formato del apartado 10 de la
-   pauta (de 120 a 300 palabras), con sus cabos sueltos y sus líneas `Cajones:`, `Voces:` y, en `claves`,
+   pauta (de 120 a 300 palabras), con sus cabos sueltos y sus líneas `Cajones:`, `Protagonistas:`, `Voces:` y, en `claves`,
    `Arquitectura:`. Es
    pública, como el guion: solo contenido.
     Si has dado o retomado una predicción, sus líneas `Predicciones dadas:` / `Predicciones retomadas:` (pauta, §12).
