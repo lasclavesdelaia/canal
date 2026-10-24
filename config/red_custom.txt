@@ -225,7 +225,6 @@ arxiv.org
 semianalysis.com
 aws.amazon.com
 blog.google
-blogs.microsoft.com
 *.nvidia.com
 cincodias.elpais.com
 cohere.com
@@ -394,17 +393,8 @@ cbi.iq
 nbs.sk
 *.bcl.lu
 *.bot.or.th
-bancocentral.tl
 *.bccr.fi.cr
 *.bch.hn
-*.brh.ht
-boj.org.jm
-*.central-bank.org.tt
-*.centralbank.org.bb
-*.centralbankbahamas.com
-bankofguyana.org.gy
-*.cbvs.sr
-*.eccb-centralbank.org
 *.bcv.org.ve
 *.bce.fin.ec
 *.newyorkfed.org
@@ -413,10 +403,7 @@ bnm.md
 *.bankofalbania.org
 cbcg.me
 *.bcc.cd
-cbl.org.lr
-*.cbg.gm
 *.bcrg-guinee.org
-bcm.mr
 *.bcv.cv
 
 # C. Organismos internacionales y bancos de desarrollo
@@ -623,3 +610,18 @@ spectrum.ieee.org
 arcprize.org
 support.claude.com
 gemini.google
+# Desde el 24 oct 2026: clasificaciones de modelos que no son de lenguaje, pódcasts y blogs de arquitectura
+# (config/fuentes.md). Para hacerles sitio salieron 12 bancos centrales pequeños (canal solo de IA desde el
+# 20 oct; siguen en red_catalogo.txt) y blogs.microsoft.com, que ya cubría *.microsoft.com.
+hf-audio-open-asr-leaderboard.hf.space
+tts-agi-tts-arena-v2.hf.space
+sequoiacap.com
+www.mlst.ai
+www.ycombinator.com
+ai.engineer
+karpathy.github.io
+magazine.sebastianraschka.com
+lilianweng.github.io
+jalammar.github.io
+newsletter.languagemodels.co
+huyenchip.com

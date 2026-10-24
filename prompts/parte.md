@@ -8,8 +8,10 @@ hace días y no se contó, solo entra si sigue importando hoy y se dice de cuán
 IA. Por eso el parte del domingo cubre desde el sábado por la mañana y no repite lo que contó el semanal (mira su
 tarjeta).
 
-**El tono del parte:** informativo, ágil, con su opinión breve cuando toque. La reflexión larga del apartado 2 de la
-pauta es sobre todo para los semanales; aquí, como mucho una frase de fondo en alguna noticia principal, no en todas.
+**El tono del parte:** informativo, ágil, con su opinión breve cuando toque. El ensayo largo es para los semanales.
+Pero cada pieza principal lleva su lectura del impacto a varios niveles (pauta, «Qué hacemos con esto»): un párrafo
+razonado, no una frase de fondo ni una moraleja. Por qué: sin esa lectura la noticia llega en bruto, y lo que le
+sirve al oyente es saber qué hacer con ella.
 
 ## Si hubo días sin parte
 
@@ -20,55 +22,70 @@ parte es de antes de ayer o más atrás, este parte cubre todo lo ocurrido desde
   lo más importante desde entonces».
 - Selecciona más duro: lo que siga importando hoy, por importancia, no día a día. Lo que ya se ha quedado viejo se
   despacha en una frase o se omite.
-- Puede llegar a unos 22 minutos (3.600 palabras); no más.
+- Puede llegar al máximo del parte, unos 27 minutos (4.500 palabras); no más.
 - Un solo episodio, con la fecha de hoy. Nunca episodios atrasados con fechas pasadas.
 - La tarjeta lo refleja en `cubre` (por ejemplo, `2026-11-04 a 2026-11-07`).
 
 ## Extensión
 
-- Depende del día: de 450 a 3.300 palabras, es decir, de 3 a 20 minutos.
-- **Un día con dos o tres noticias de peso pide 12-20 minutos (2.000-3.300 palabras).** Cada noticia principal se
-  cuenta a fondo, con al menos 400-600 palabras: no más datos, sino más desarrollo de la idea: por qué pasa, qué
-  mecanismo hay debajo, qué tensión revela, qué consecuencias tiene, qué se parece a otras épocas. Historia de
-  fondo, no crónica de hechos. Seis minutos para tres asuntos serios no dan para entrar en ninguno (Cristian, 9 oct 2026).
-  Solo un día de verdad flojo es corto.
-- **Pocas cosas, pensadas.** El oyente no quiere un aluvión de titulares ni de cifras: quiere entender dos o tres
-  cosas de verdad (Cristian, 9 oct 2026: «es un bombardeo»). Mejor una noticia menos y una idea más desarrollada.
-- No rellenes con ruido. Un día de verdad flojo es un episodio corto, y está bien.
-- **Siempre sale algo:** si no ha pasado nada importante, un episodio de 2 o 3 minutos que lo diga con naturalidad
-  («hoy no ha pasado nada que cambie el panorama») y cuente lo poco que merezca un minuto.
+Se oye a velocidad 1,1, unas 165 palabras por minuto.
+
+- **Lo normal: de 2.800 a 3.800 palabras (de 17 a 23 minutos),** con 2 piezas principales y de 4 a 7 piezas
+  medianas. El parte crece a base de más temas, no de más palabras sobre el mismo (pauta, «Variedad con
+  sustancia»; Cristian, 24 oct 2026: «no largo metiendo más sobre el mismo tema, sino metiendo más temas»).
+- **Cada pieza principal, a fondo** (unas 500-800 palabras): no más datos, sino más desarrollo de la idea: por qué
+  pasa, qué mecanismo hay debajo, qué tensión revela, qué consecuencias tiene y para quién.
+- **Cada pieza mediana, de 150 a 350 palabras,** y de cajones variados (pauta, §3b). No es un titular: deja algo
+  entendido (qué es, por qué importa, un mecanismo o una consecuencia). Si un tema no da para eso, no entra.
+- Sin bombardeo (Cristian, 9 oct 2026: «es un bombardeo»): pocas cifras por pieza, las que sostienen la idea.
+- **La paja manda sobre la longitud** (pauta, línea editorial). Un día flojo puede quedarse en unas 1.200
+  palabras; el máximo son unas 4.500. No rellenes con ruido ni con temas que no pasan el listón.
+- **Siempre sale algo:** si de verdad no ha pasado nada importante, un episodio de 2 o 3 minutos que lo diga con
+  naturalidad («hoy no ha pasado nada que cambie el panorama») y cuente lo poco que merezca un minuto.
 
 ## Orden (propio de este programa)
 
 El orden va por **importancia**, no por temas.
 
 1. **Arranque:** una o dos frases con lo que trae el día. Sin gancho, sin pregunta retórica.
-2. **Lo principal:** de una a tres noticias contadas a fondo. En cada una:
+2. **Lo principal:** dos piezas contadas a fondo, de cajones distintos (pauta, §3b). Un día con una sola cosa de
+   peso, una; uno excepcional, tres. En cada una:
    - qué ha pasado;
    - el dato;
    - qué dicen distintas voces;
-   - por qué importa (con un dato o un mecanismo, no con una advertencia).
+   - por qué importa (con un dato o un mecanismo, no con una advertencia);
+   - su impacto en los dos o tres niveles donde de verdad toca, razonado (pauta, «Qué hacemos con esto»).
    Sin frase final de duda o de sospecha (pauta, §4b).
-   **Si es un modelo** (y también si un modelo sale en corto o en el termómetro): desde su ficha o su informe
-   técnico, no desde la prensa: cómo está hecho (arquitectura, tamaño o parámetros activos, contexto, cómo se
-   entrenó), qué cambia frente a su versión anterior, precio, y dónde queda en Artificial Analysis frente a sus
-   rivales. Si no hay ficha ni informe publicado, va en corto y en una frase.
+   **Si es un modelo** (también si sale como pieza mediana o en el termómetro): solo si pasa el umbral de la pauta
+   (§3: el mejor de su categoría según una medición independiente, o una innovación de cómo está hecho). Se cuenta
+   desde su ficha o su informe técnico, no desde la prensa: cómo está hecho (arquitectura, tamaño o parámetros
+   activos, contexto, cómo se entrenó), qué cambia frente a su versión anterior, precio, y dónde queda frente a sus
+   rivales en las clasificaciones de su categoría. Y un párrafo que explique de verdad un mecanismo suyo: qué hace
+   esa pieza y por qué funciona, no la lista de parámetros (pauta, §13). Si entra por innovación, se cuenta la
+   innovación, no el producto. Si no hay ficha ni informe publicado, no va como principal.
    **Si es una política, un informe o un anuncio de una empresa:** se lee el texto original en su web y se cuenta
    desde ahí.
-3. **En corto:** como mucho cuatro cosas, y solo si cambian algo para el oyente; una o dos frases cada una, con una
-   cifra como mucho. Lo demás no entra: el parte no es un repaso de todo lo que pasó.
-4. **Para entenderlo** (solo si hace falta): un concepto, un paper o un modelo raro, explicado con calma para alguien
-   que no es técnico.
-5. **El termómetro** (solo si hay algo): un ranking frente al uso real, o qué se comenta entre quienes usan los
+3. **Las piezas medianas:** de 4 a 7, de 150 a 350 palabras cada una, de cajones variados. Solo lo que cambia algo
+   para el oyente. Cada una dice qué es, por qué importa y deja una idea; una o dos cifras como mucho. No es un
+   repaso de todo lo que pasó: lo que no llega a pieza mediana no entra.
+4. **Qué dicen y cómo la usan** (cuando haya algo fuerte): lo nuevo que dijo alguien con trabajo propio, o cómo usa
+   la IA alguien que sabe, contado para que no haga falta escuchar la entrevista (pauta, §4c). Puede ser principal
+   o mediana.
+5. **Para entenderlo** (solo si hace falta): un concepto, un paper o un modelo raro, explicado con calma.
+6. **El termómetro** (solo si hay algo): un ranking frente al uso real, o qué se comenta entre quienes usan los
    modelos.
-6. **Cierre:** una frase breve. Sin invitaciones.
+7. **Cierre:** una frase breve. Sin invitaciones.
 
 Los nombres de estas partes son para ti: no los anuncies como secciones. Pasa de una a otra con frases naturales.
 
 ## Para no repetirte
 
 Antes de investigar, lee las tarjetas de los últimos 7 partes (`tarjetas/*-parte.md`, en las ramas `claude/`) y la
-del último semanal de IA (`tarjetas/*-claves.md`).
+del último semanal de IA (`tarjetas/*-claves.md`). En ellas mira sobre todo:
+- la línea `Cajones:` de los tres últimos partes: el cajón de su `titular` no puede ser el de tu titular de hoy;
+- las líneas `Cajones:` de los partes desde el último sábado: si alguno ya llevó `seguridad` como titular o como
+  principal, esta semana ya no cabe otra pieza principal de seguridad (pauta, §3b);
+- las líneas `Voces:`: lo que alguien ya contó no vuelve como nuevo (pauta, §4c).
 Una noticia ya contada solo vuelve si hay algo nuevo, y entonces se cuenta lo nuevo, remitiendo en media frase
 («como contamos el lunes…»). Mira también los «hilos abiertos»: si hoy se resuelve alguno, es candidato a lo
 principal.
@@ -78,29 +95,25 @@ hay novedad, se cuenta en corto; si no, va a tu tarjeta con «revisar: sábado»
 
 ## Temas que vigilar (uso interno; no son secciones)
 
-- **Modelos:** lo que más le importa al oyente:
-  - lanzamientos y actualizaciones de EE. UU., China y laboratorios nuevos;
-  - rankings independientes;
-  - precios;
-  - modelos raros y su utilidad.
-- **Siempre que salgan:**
-  - los informes de Anthropic (investigación, interpretabilidad, seguridad, el índice económico, uso de Claude): se
-    cuentan con su fondo, no solo el titular;
-  - cambios concretos en las apps de Claude, Gemini y ChatGPT (funciones nuevas, límites, precios de los planes), y
-    en las de Meta, xAI, Mistral, los laboratorios chinos u otros cuando se pongan a su altura o la superen.
-- **Investigación:** papers e ideas nuevas de universidades y empresas, también de lo que no está de moda, en
-  lenguaje llano. El oyente sabe poco de la parte técnica y quiere familiarizarse poco a poco.
-- **Empresas:** rondas, startups, resultados, movimientos de la cadena de chips.
-- **Alrededor:**
-  - lo que dice alguien influyente en una entrevista o un pódcast (si es nuevo);
-  - avances científicos;
-  - creatividad y sociedad;
-  - empleo;
-  - precios de suscripciones y eficiencia de tokens;
-  - benchmarks que se saturan o cambian;
-  - estudios de consultoras;
-  - ciberataques;
-  - gobiernos y leyes.
+Por cajones (pauta, §3b), para que el día no salga de uno solo:
+
+- **`llm`:** lanzamientos y actualizaciones de EE. UU., China y laboratorios nuevos que pasen el umbral (pauta, §3);
+  clasificaciones independientes; precios y coste por tarea.
+- **`otros-modelos`:** difusión de texto, voz, transcripción, música, imagen, vídeo, modelos del mundo, biología,
+  robótica, con el mismo umbral; sus clasificaciones están en `config/fuentes.md`.
+- **`investigacion`:** papers e ideas nuevas de universidades y empresas, también de lo que no está de moda, en
+  lenguaje llano; técnicas de arquitectura y de entrenamiento.
+- **`uso`:** cómo la usa la gente que sabe; cambios concretos en las apps de Claude, Gemini y ChatGPT (funciones
+  nuevas, límites, precios de los planes), y en las de Meta, xAI, Mistral, los laboratorios chinos u otros cuando se
+  pongan a su altura o la superen; eficiencia de tokens.
+- **`voces`:** lo nuevo que dice alguien con trabajo propio en una entrevista, un pódcast o un texto (pauta, §4c).
+- **`dinero`:** rondas, startups, resultados, centros de datos, energía, movimientos de la cadena de chips.
+- **`sociedad`:** empleo, educación, avances científicos hechos con IA, creatividad y cultura, estudios serios.
+- **`seguridad`:** solo hechos sin precedentes, con la cuota de la pauta (§3b).
+- **`leyes`:** gobiernos, reguladores, tribunales.
+- **Anthropic:** sus informes de investigación, de interpretabilidad, el índice económico y los de uso de Claude se
+  cuentan con su fondo cuando traen algo nuevo; los de seguridad y política, con el freno de `seguridad`. Siempre
+  con la misma vara que cualquier otra empresa (pauta, línea editorial).
 
 ## Predicciones
 
@@ -111,6 +124,8 @@ cuyo resultado se conozca hoy o cuyo tema sea justo la noticia principal. Nada d
 ## Título
 
 La noticia principal del día, en una frase corta y natural de menos de 70 caracteres (pauta común, §7). Lo nuevo
-de verdad, no lo que ya se sabía. Los demás temas, en la descripción. Una pregunta solo de vez en cuando.
+de verdad, no lo que ya se sabía. Los demás temas, en la descripción. Una pregunta solo de vez en cuando. Su cajón no
+repite el de los titulares de los tres partes anteriores (pauta, §3b): es el que apuntas como `titular` en la
+línea `Cajones:` de la tarjeta.
 
 Ejemplo de forma (no de contenido): «Qwen 4 entra en el podio de los modelos abiertos».

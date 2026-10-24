@@ -92,6 +92,19 @@ Para cada episodio de la semana:
   hueco, mira si hay rama sin Release (se escribió pero no se publicó: entonces el fallo está en Actions o en el
   validador) o si no hay ni rama (falló la rutina).
 - **Repeticiones** entre episodios, tono (PAUTA §1 y §2) y reglas legales (§5).
+- **Variedad y seguridad** (PAUTA §3b), con las líneas `Cajones:` de las tarjetas de la semana: qué cajón tuvo cada
+  titular (¿alguno repite el de los tres partes anteriores?), cuántas piezas principales de `seguridad` sumaron los
+  partes (máximo una) y cuántas claves el semanal (máximo una), y si cada una era de verdad un hecho sin precedentes.
+  Cuenta también las tarjetas que no traen la línea.
+- **Modelos** (PAUTA §3): ¿alguno entró sin pasar el umbral (el mejor de su categoría según una medición
+  independiente, o una innovación de cómo está hecho)? Para los que no son de lenguaje, compruébalo en las
+  clasificaciones de `config/fuentes.md`.
+- **Arquitectura** (PAUTA §13): ¿el semanal llevó su bloque y su línea `Arquitectura:`? ¿Subió un escalón sobre los
+  anteriores (líneas `Arquitectura:` de todas las tarjetas de semanales) o repitió uno ya dado?
+- **Voces** (PAUTA §4c): ¿lo que se contó de alguien era nuevo, o ya lo había dicho antes (líneas `Voces:` y sus
+  entrevistas anteriores)?
+- **Longitud frente a paja:** ¿los partes se quedaron cortos con material de sobra, o se alargaron con temas que no
+  pasaban el listón? Lo segundo es más grave.
 - **Runs de Actions:** cuántos fallaron o se cancelaron y por qué, si puedes verlo.
 
 ## 4. Si falta un parte diario

@@ -53,7 +53,9 @@ en un commit nuevo. No escribas otro episodio. Si al mirarlo ya valida (otra eje
 6. **Lee la memoria: solo las tarjetas** (`tarjetas/`, en las ramas `claude/`; con `git show rama:ruta`), nunca los
    guiones viejos:
    - para el parte, las de los últimos 7 partes;
-   - para `claves`, las de los últimos 6 sábados más las de los partes de esta semana;
+   - para `claves`, las de los últimos 6 sábados más las de los partes de esta semana, y además las líneas
+     `Arquitectura:` de todas las tarjetas de semanales (`prompts/claves.md`, «El bloque de arquitectura»);
+   - en las dos, sus líneas `Cajones:` y `Voces:` (pauta, §3b y §4c);
    Apunta sus cabos sueltos pendientes (pauta, §10): forman parte de lo que investigas hoy.
    En `parte` (si el tema lo pide), `claves` y los especiales, mira también las predicciones abiertas
    (`python3 scripts/predicciones.py --abiertas --ramas`; pauta, §12): retoma las vencidas o las que vuelven a la
@@ -66,7 +68,8 @@ en un commit nuevo. No escribas otro episodio. Si al mirarlo ya valida (otra eje
    - abre los artículos solo cuando haga falta.
 8. **Escribe** el guion con el formato exacto del apartado 7 de la pauta y haz el repaso del apartado 8.
 9. **Escribe la tarjeta** de cada episodio: `tarjetas/AAAA-MM-DD-<programa>.md`, con el formato del apartado 10 de la
-   pauta (de 120 a 260 palabras), con sus cabos sueltos. Es
+   pauta (de 120 a 300 palabras), con sus cabos sueltos y sus líneas `Cajones:`, `Voces:` y, en `claves`,
+   `Arquitectura:`. Es
    pública, como el guion: solo contenido.
     Si has dado o retomado una predicción, sus líneas `Predicciones dadas:` / `Predicciones retomadas:` (pauta, §12).
 9b. **Revisión del editor, obligatoria.** Lanza un subagente (herramienta Agent) que NO haya escrito el guion, con
@@ -76,8 +79,9 @@ en un commit nuevo. No escribas otro episodio. Si al mirarlo ya valida (otra eje
     cambios: lee las fuentes originales que señale y añádelas a «## Fuentes». Si un cambio te parece un error,
     no lo apliques y di por qué al final de tu respuesta. Si la herramienta Agent no está disponible, haz tú la
     revisión de REVISOR.md releyendo el guion como si fuera de otro, y dilo al final de tu respuesta.
-10. **Valida antes de subir:** `python3 scripts/validar.py episodios/AAAA-MM-DD-<programa>.md`. Si da «MAL»,
-    corrige lo que diga (sobre todo las coletillas, pauta §4b) y repite hasta que dé «bien». Nunca subas un guion
+10. **Valida antes de subir:** `python3 scripts/validar.py episodios/AAAA-MM-DD-<programa>.md
+    tarjetas/AAAA-MM-DD-<programa>.md` (el guion y su tarjeta). Si da «MAL», corrige lo que diga (sobre todo las
+    coletillas, pauta §4b) y repite hasta que dé «bien». Nunca subas un guion
     que no valide: Actions no lo publicaría.
 11. **Sube solo esos ficheros.** Crea la rama `claude/episodios-AAAA-MM-DD`, haz `git add` solo de
     `episodios/AAAA-MM-DD-*.md` y `tarjetas/AAAA-MM-DD-*.md` y haz el commit con el mensaje «Episodios

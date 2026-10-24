@@ -52,6 +52,19 @@ class Cambios(unittest.TestCase):
         ultima = [fila(1, "a"), fila(2, "b"), fila(3, "c"), fila(lmarena.RELEVANTES + 1, "lejano")]
         self.assertEqual(lmarena.cambios(ultima, VISTOS), [])
 
+    def test_imagen_y_video_solo_arriba_y_con_la_distancia_al_primero(self):
+        # 24 oct 2026: un modelo que no es de lenguaje entra solo si es el mejor de su categoría (PAUTA_COMUN §3).
+        viejas = [fila(1, "a", "2026-10-02", 1300), fila(2, "b", "2026-10-02", 1290)]
+        ultima = [fila(1, "a", rating=1300), fila(2, "nuevo", rating=1296), fila(3, "b", rating=1290),
+                  fila(4, "lejano", rating=1250)]
+        t = lmarena.resumir("Text-to-Image · Overall", "text_to_image", "overall", viejas + ultima)
+        self.assertEqual(t["cambios"], ["entra un modelo nuevo, nuevo (lab), en el puesto 2, entre a y b; primero: a; "
+                                        "a 4 puntos del primero (1296 (±5) frente a 1300 (±5))"])
+        abajo = [fila(1, "a", rating=1300), fila(2, "b", rating=1290), fila(3, "c", rating=1280),
+                 fila(4, "nuevo", rating=1270)]
+        self.assertEqual(lmarena.resumir("T2V", "text_to_video", "overall", ANTES + abajo)["cambios"], [])
+        self.assertEqual({s for _, s, _ in lmarena.TABLAS} & lmarena.MEDIOS, lmarena.MEDIOS)
+
     def test_primera_publicacion_no_es_cambio(self):
         self.assertEqual(lmarena.cambios([fila(1, "a")], set()), [])
 

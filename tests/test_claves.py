@@ -487,6 +487,57 @@ class FeedGeneral(unittest.TestCase):
         self.assertLessEqual(len(sitio.descripcion_item(e, config())), 4000)
 
 
+def tarjeta(programa="parte", fecha="2026-10-25", cajones="Cajones: titular llm; principal uso; medianas dinero, leyes",
+            extra=""):
+    return (f"---\nprograma: {programa}\nfecha: {fecha}\ncubre: {fecha} a {fecha}\n---\nTemas: algo.\n"
+            f"{cajones}\n{extra}")
+
+
+class Tarjetas(unittest.TestCase):
+    """validar.py también mira las tarjetas (24 oct 2026): «Cajones:» en parte y semanal, «Arquitectura:» en el semanal."""
+
+    def setUp(self):
+        from validar import validar_tarjeta
+        self.v = validar_tarjeta
+
+    def test_parte_bien(self):
+        self.assertEqual(self.v("tarjetas/2026-10-25-parte.md", tarjeta()), [])
+
+    def test_parte_sin_cajones(self):
+        errores = self.v("tarjetas/2026-10-25-parte.md", tarjeta(cajones=""))
+        self.assertTrue(any("Cajones" in e for e in errores), errores)
+
+    def test_cajon_inventado_y_dos_principales_del_mismo_cajon(self):
+        errores = self.v("tarjetas/2026-10-25-parte.md", tarjeta(cajones="Cajones: titular ciber; principal ciber"))
+        self.assertTrue(any("no existen: ciber" in e for e in errores), errores)
+        errores = self.v("tarjetas/2026-10-25-parte.md", tarjeta(cajones="Cajones: titular seguridad; principal seguridad"))
+        self.assertTrue(any("mismo cajón" in e for e in errores), errores)
+
+    def test_semanal_pide_arquitectura_y_una_sola_clave_de_seguridad(self):
+        bien = tarjeta("claves", "2026-10-31", "Cajones: claves llm, dinero, seguridad; noticias leyes",
+                       "Arquitectura: caché KV y contexto largo (escalón 2)\n")
+        self.assertEqual(self.v("tarjetas/2026-10-31-claves.md", bien), [])
+        sin = tarjeta("claves", "2026-10-31", "Cajones: claves llm, dinero; noticias leyes")
+        self.assertTrue(any("Arquitectura" in e for e in self.v("tarjetas/2026-10-31-claves.md", sin)))
+        doble = tarjeta("claves", "2026-10-31", "Cajones: claves seguridad, llm, seguridad",
+                        "Arquitectura: mezcla de expertos (escalón 4)\n")
+        self.assertTrue(any("seguridad" in e for e in self.v("tarjetas/2026-10-31-claves.md", doble)))
+
+    def test_cabecera_que_no_casa(self):
+        errores = self.v("tarjetas/2026-10-26-parte.md", tarjeta())
+        self.assertTrue(any("cabecera" in e for e in errores), errores)
+
+    def test_especial_sin_requisitos(self):
+        texto = "---\nprograma: especial\nfecha: 2026-10-25\n---\nTemas: algo.\n"
+        self.assertEqual(self.v("tarjetas/2026-10-25-especial-vox.md", texto), [])
+
+    def test_la_pauta_y_el_validador_usan_los_mismos_cajones(self):
+        from validar import CAJONES
+        pauta = (RAIZ / "prompts" / "PAUTA_COMUN.md").read_text(encoding="utf-8")
+        for c in CAJONES:
+            self.assertIn(f"`{c}`", pauta, c)
+
+
 if __name__ == "__main__":
     unittest.main()
 

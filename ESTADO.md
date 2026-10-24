@@ -1289,3 +1289,60 @@ Encargo para aplicarlo: tarea «Claves IA: aplicar notas de línea editorial» (
   assets/youtube/banner.png = opción A (banda derecha de Especial, papel con lupa). La B (amarilla con barras de
   Claves) sale con banner(derecha="claves"). Pendiente de Cristian: subirlo a mano en YouTube Studio.
 - Siguiente: nada en esto.
+
+## Variedad, fondo y arquitectura en el parte y el semanal (24 oct 2026)
+Tema: que el parte diario y el semanal cuenten más temas y más variados, y cada uno con fondo de verdad: modelos de
+cualquier tipo que estén en la cima o innoven; arquitectura enseñada poco a poco; cómo usa la IA la gente que sabe;
+ideas nuevas de las voces de referencia; y qué hacemos nosotros con ello. Fuera la ciberseguridad repetida y la paja.
+- Hecho:
+  - PAUTA_COMUN: en la línea editorial, «La paja manda sobre la longitud», «Variedad con sustancia» (sustituye a
+    «pocas cosas, pensadas» del 9 oct), «Qué hacemos con esto» (impacto a varios niveles) y el mecanismo de verdad en
+    cada modelo; §3 con umbral de modelos de todo tipo (el mejor de su categoría o una innovación; fuera «aunque sean
+    flojos») y la seguridad repetida como ruido; §3b nuevo, los nueve cajones y la cuota de seguridad (una principal a
+    la semana en los partes, una clave el sábado, solo hechos sin precedentes; incluye política y seguridad de los
+    laboratorios, Anthropic también); §4c nuevo, «Qué dicen y cómo la usan» (solo lo nuevo, comprobado; tesis de parte
+    atribuidas y contrastadas); §9 aclara que «no se explica» es solo en las noticias; §10 con las líneas `Cajones:`,
+    `Voces:` y `Arquitectura:` (tarjeta de 120 a 300 palabras); §13 nuevo, la escalera de arquitectura.
+  - parte.md: 2.800-3.800 palabras lo normal (día flojo ~1.200, máximo 4.500), 2 principales con lectura del impacto y
+    4-7 medianas de 150-350; temas por cajones; el titular no repite el cajón de los tres partes anteriores.
+  - claves.md: 45-60 min (7.400-9.900), 4-7 claves; bloques fijos de arquitectura (900-1.400, con el comando para
+    leer todas las líneas `Arquitectura:`) y cierre reflexivo (400-700); bloque de voces cuando haya material.
+  - config/arquitectura_escalera.md nuevo (15 escalones, orientativo, cómo saltar y volver).
+  - REVISOR (umbral, cajones y cuota, voces repetidas, impacto, bloque de arquitectura) y ENCARGADO (lo mismo, por
+    semana); RUTINA valida también la tarjeta.
+  - validar.py comprueba la tarjeta (`validar.py tarjetas/…`): «Cajones:» con cajones de la lista, dos principales de
+    cajones distintos, como mucho una clave de seguridad, «Arquitectura:» en el semanal. Solo desde la línea de
+    órdenes: publicar.py no lo usa, para que una tarjeta nunca impida publicar un episodio. Con sus pruebas.
+  - lmarena.py: tablas Text-to-Image, Image Edit, Text-to-Video e Image-to-Video (cuenta un modelo nuevo solo en los
+    tres primeros, con la distancia al primero). Con su prueba.
+  - fuentes.md: clasificaciones de modelos que no son de lenguaje (API de medios de Artificial Analysis: TTS, imagen,
+    edición, vídeo; sin STT en la gratuita; Open ASR en `…hf.space/config`; TTS Arena en `…/api/leaderboard`), pódcasts
+    con transcripción y blogs de arquitectura (Raschka, Weng, Alammar, Huyen, Karpathy), todo comprobado sin cuenta; el
+    interés de Sequoia y SemiAnalysis.
+  - red_custom.txt: 12 dominios nuevos; salen blogs.microsoft.com (redundante) y 12 bancos centrales pequeños (siguen en
+    red_catalogo.txt). 599 líneas.
+  - programas.json: parte 4.800 palabras, claves 11.000, tope de Gemini 800.000 caracteres (el general, 900.000, lo
+    deja pasar). Cálculo: unos 760.000 caracteres al mes con las longitudes normales.
+  - 139 pruebas en verde.
+- En curso: commit local hecho en main, SIN SUBIR. Esta sesión leyó este ESTADO.md (el portero lo trata como privado)
+  y no puede hacer push. Lo sube una sesión limpia con `git push origin main`, sin leer este fichero.
+- Siguiente: escuchar o leer el parte del domingo 25 y el semanal del 31 (cajones, longitud, umbral, bloque de
+  arquitectura en el escalón 1); el encargado del domingo 25 ya revisa con la vara nueva.
+- Decisiones menores tomadas:
+  - Seguridad y política de los laboratorios, un solo cajón con una sola cuota: más simple de contar y más estricto,
+    que es lo que pide la queja.
+  - En las tablas de imagen y vídeo, «relevante» = los tres primeros más la distancia al primero, para que un empate
+    dentro del margen cuente como «el mejor de su categoría» sin que entre cualquiera del top 20.
+  - Música, modelos del mundo, biología y robótica: sin arena abierta verificada; entran por una medición de un
+    tercero con método publicado o por la vía de la innovación.
+- Preguntas para Cristian:
+  - Coste de la voz: hasta el 7 ene 2027 lo pagan los créditos de Google Cloud; desde el 1 ene 2027 Gemini 3.8 Flash
+    Lite TTS sube a 12 $/M de tokens de audio y con estas longitudes saldría por unos 12-13 $/mes, frente a ~8 $ ahora
+    (cálculo de la sesión que lo diagnosticó, no comprobado aquí). He subido el tope a 800.000 como se pidió; ¿se
+    mantienen las longitudes desde enero o se recortan?
+  - Tu frase quedó cortada: «no quiero tampoco paja, no quiero…». ¿Cómo acababa? La he leído como «no quiero relleno
+    para alargar»: de ahí la regla «la paja manda sobre la longitud».
+  - ¿Una cuota de seguridad compartida con la política de los laboratorios (lo que he hecho) o dos cuotas separadas?
+  - Visto de paso, sin tocar: en PAUTA §4b sigue la línea «LMArena: solo lo que publique la prensa o el laboratorio,
+    citándolo (según LMArena, citado por…)», que choca con §4 (scripts/lmarena.py) y con el validador, que rechaza
+    «citado por». Propuesta: borrarla.

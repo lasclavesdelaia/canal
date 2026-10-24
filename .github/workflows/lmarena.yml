@@ -1,4 +1,5 @@
-# Resumen diario de LMArena para la rutina: Text Arena · Overall y Agent Arena · Overall (scripts/lmarena.py).
+# Resumen diario de LMArena para la rutina: Text Arena y Agent Arena, y desde el 24 oct 2026 las tablas de imagen
+# y vídeo (todas · Overall; scripts/lmarena.py).
 # Baja los parquet completos del dataset oficial de LMArena en Hugging Face (CC-BY-4.0), compara la última
 # publicación de cada tabla con la anterior y guarda datos/lmarena.json. No lee la web de arena.ai.
 # Los datos viven en la rama `datos-lmarena`, no en main: main exige commits firmados y el bot no firma.

@@ -4,6 +4,7 @@ Es la puerta entre lo que escribe la rutina (que lee internet) y lo que se publi
 sale y el motivo queda en el registro de GitHub Actions.
 
 Uso: python3 scripts/validar.py episodios/2026-10-09-parte.md [...]
+     python3 scripts/validar.py tarjetas/2026-10-09-parte.md (la tarjeta: sus líneas «Cajones:» y «Arquitectura:»)
 """
 import re
 import sys
@@ -100,6 +101,12 @@ def _es_foro(url):
     host = (urlparse(url).hostname or "").lower().removeprefix("www.")
     return any(host == f or host.endswith("." + f) for f in FOROS)
 
+
+# Cajones temáticos de la variedad (PAUTA_COMUN §3b, 24 oct 2026). La tarjeta de cada parte y de cada semanal los
+# apunta en «Cajones:»; con ellos el siguiente episodio sabe qué cajón dio los últimos titulares y cuánta seguridad
+# lleva la semana.
+CAJONES = ("llm", "otros-modelos", "investigacion", "uso", "voces", "dinero", "sociedad", "seguridad", "leyes")
+PAPELES = {"parte": ("titular", "principal", "medianas"), "claves": ("claves", "noticias")}
 
 # Solo avisan.
 VIGILAR = [r"\bincre[ií]ble", r"\bhist[oó]ric[oa]", r"\brevoluci[oó]n", r"\batenci[oó]n[,:]", r"\bimpactante"]
@@ -229,9 +236,67 @@ def validar(nombre, texto, cfg=None):
     return ep, errores, avisos
 
 
+def cajones(linea, programa):
+    """{papel: [cajón, …]} de una línea «Cajones: titular llm; principal uso; medianas dinero, leyes»."""
+    salida = {}
+    for trozo in linea.split(";"):
+        palabras = trozo.replace(",", " ").split()
+        if palabras:
+            salida.setdefault(palabras[0].lower(), []).extend(c.lower() for c in palabras[1:])
+    return salida
+
+
+def validar_tarjeta(nombre, texto):
+    """Errores de una tarjeta (PAUTA_COMUN §10): solo lo barato de comprobar. El parte y el semanal llevan «Cajones:»
+    con cajones de la lista; el titular del parte no comparte cajón con la otra principal; el semanal lleva
+    «Arquitectura:» (el escalón de la semana, §13) y como mucho una clave de seguridad."""
+    partes = partes_nombre(Path(nombre).name)
+    if not partes:
+        return [f"nombre de tarjeta no válido: {Path(nombre).name}"]
+    fecha, programa, _ = partes
+    errores = []
+    cabecera = dict(re.findall(r"^(\w+):\s*(.*?)\s*$", texto.split("\n---", 1)[0], re.M))
+    if (cabecera.get("programa"), cabecera.get("fecha")) != (programa, fecha):
+        errores.append("la fecha o el programa de la cabecera no coinciden con el nombre de la tarjeta")
+    if programa not in PAPELES:
+        return errores
+    linea = re.search(r"^Cajones:(.*)$", texto, re.M)
+    if not linea:
+        errores.append(f"falta la línea «Cajones:» (PAUTA_COMUN §10), por ejemplo «Cajones: "
+                       + ("titular llm; principal uso; medianas dinero, leyes" if programa == "parte" else
+                          "claves llm, dinero, voces; noticias leyes") + "»")
+    else:
+        dados = cajones(linea.group(1), programa)
+        raros = [p for p in dados if p not in PAPELES[programa]]
+        malos = sorted({c for lista in dados.values() for c in lista if c not in CAJONES})
+        if raros:
+            errores.append(f"«Cajones:» con papeles que no existen: {', '.join(raros)} (van {', '.join(PAPELES[programa])})")
+        if malos:
+            errores.append(f"«Cajones:» con cajones que no existen: {', '.join(malos)} (lista: {', '.join(CAJONES)})")
+        principal = PAPELES[programa][0]
+        if not dados.get(principal):
+            errores.append(f"«Cajones:» sin «{principal}»")
+        if programa == "parte" and len(dados.get("titular", [])) > 1:
+            errores.append("«Cajones:» con más de un cajón de titular: es uno")
+        if programa == "parte" and set(dados.get("titular", [])) & set(dados.get("principal", [])):
+            errores.append("las dos piezas principales son del mismo cajón (PAUTA_COMUN §3b: una por cajón)")
+        if programa == "claves" and dados.get("claves", []).count("seguridad") > 1:
+            errores.append("más de una clave de seguridad en el semanal (PAUTA_COMUN §3b: como mucho una)")
+    if programa == "claves" and not re.search(r"^Arquitectura:[ \t]*\S", texto, re.M):
+        errores.append("falta la línea «Arquitectura: <concepto> (escalón N)» del bloque de arquitectura (PAUTA_COMUN §13)")
+    return errores
+
+
 def main(rutas):
     fallos = 0
     for ruta in rutas:
+        if Path(ruta).parent.name == "tarjetas":
+            errores = validar_tarjeta(ruta, Path(ruta).read_text(encoding="utf-8"))
+            print(f"{'MAL' if errores else 'bien'}: {ruta}")
+            for e in errores:
+                print(f"  error: {e}")
+            fallos += bool(errores)
+            continue
         ep, errores, avisos = validar(ruta, Path(ruta).read_text(encoding="utf-8"))
         estado = "MAL" if errores else "bien"
         print(f"{estado}: {ruta}" + (f" ({ep.palabras} palabras)" if ep else ""))
