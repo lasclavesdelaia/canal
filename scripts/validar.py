@@ -4,6 +4,7 @@ Es la puerta entre lo que escribe la rutina (que lee internet) y lo que se publi
 sale y el motivo queda en el registro de GitHub Actions.
 
 Uso: python3 scripts/validar.py episodios/2026-10-09-parte.md [...]
+     python3 scripts/validar.py tarjetas/2026-10-09-parte.md (la tarjeta: sus líneas «Cajones:» y «Arquitectura:»)
 """
 import re
 import sys
@@ -100,6 +101,23 @@ def _es_foro(url):
     host = (urlparse(url).hostname or "").lower().removeprefix("www.")
     return any(host == f or host.endswith("." + f) for f in FOROS)
 
+
+# Cajones temáticos de la variedad (PAUTA_COMUN §3b, 24 oct 2026). La tarjeta de cada parte y de cada semanal los
+# apunta en «Cajones:»; con ellos el siguiente episodio sabe qué cajón dio los últimos titulares y cuánta seguridad
+# lleva la semana. Son finos a propósito: en un cajón ancho cabe un programa entero y suena igual de repetido.
+CAJONES = ("llm", "abierto", "otros-modelos", "robotica", "investigacion", "uso", "herramientas", "voces", "dinero",
+           "chips", "trabajo", "educacion", "ciencia", "creatividad", "seguridad", "leyes")
+# «sociedad» se partió en trabajo, educación, ciencia y creatividad el 24 oct 2026: las tarjetas que ya lo llevan
+# siguen valiendo, pero una tarjeta nueva usa los cajones finos.
+CAJONES_ANTIGUOS = ("sociedad",)
+PAPELES = {"parte": ("titular", "principal", "medianas"), "claves": ("claves", "noticias")}
+# Mínimo de cajones distintos entre todas las piezas (PAUTA_COMUN §3b), según lo largo que sea el episodio: así la
+# variedad no queda a juicio del redactor del día, que tira hacia el tema con más material. Un parte de «hoy no ha
+# pasado nada» (menos de 800 palabras) no tiene mínimo; el día flojo, 3; el normal, 5. El semanal, 7 (5 si es corto).
+MINIMO_CAJONES = {"parte": ((800, 1), (2000, 3), (None, 5)), "claves": ((5000, 5), (None, 7))}
+MAX_POR_CAJON_PARTE = 2        # piezas del mismo cajón en un parte, contando todas
+MAX_POR_PROTAGONISTA_PARTE = 2  # piezas con la misma empresa, laboratorio o persona de protagonista
+SIN_PROTAGONISTA = {"varios", "ninguno", "nadie", "—", "-"}
 
 # Solo avisan.
 VIGILAR = [r"\bincre[ií]ble", r"\bhist[oó]ric[oa]", r"\brevoluci[oó]n", r"\batenci[oó]n[,:]", r"\bimpactante"]
@@ -229,9 +247,125 @@ def validar(nombre, texto, cfg=None):
     return ep, errores, avisos
 
 
+def cajones(linea, programa):
+    """{papel: [cajón, …]} de una línea «Cajones: titular llm; principal uso; medianas dinero, leyes»."""
+    salida = {}
+    for trozo in linea.split(";"):
+        palabras = trozo.replace(",", " ").split()
+        if palabras:
+            salida.setdefault(palabras[0].lower(), []).extend(c.lower() for c in palabras[1:])
+    return salida
+
+
+def protagonistas(linea):
+    """{papel: [protagonista, …]} de «Protagonistas: titular Anthropic; principal Universidad de Tsinghua;
+    medianas Qwen, Mistral». Los nombres pueden llevar espacios: se separan por comas."""
+    salida = {}
+    for trozo in linea.split(";"):
+        trozo = trozo.strip()
+        if not trozo:
+            continue
+        papel, _, resto = trozo.partition(" ")
+        salida.setdefault(papel.lower(), []).extend(n.strip() for n in resto.split(",") if n.strip())
+    return salida
+
+
+def minimo_cajones(programa, palabras):
+    for tope, minimo in MINIMO_CAJONES[programa]:
+        if tope is None or (palabras is not None and palabras < tope):
+            return minimo
+    return 0
+
+
+def validar_tarjeta(nombre, texto, palabras=None):
+    """Errores de una tarjeta (PAUTA_COMUN §3b, §10, §13): solo lo barato de comprobar. El parte y el semanal llevan
+    «Cajones:» con cajones de la lista, con un mínimo de cajones distintos y sin que uno se coma el programa, y
+    «Protagonistas:»; el titular del parte no comparte cajón con la otra principal; el semanal lleva «Arquitectura:» y
+    como mucho una clave de seguridad. `palabras`: las del episodio (para el mínimo); sin ellas, el de un episodio
+    normal."""
+    partes = partes_nombre(Path(nombre).name)
+    if not partes:
+        return [f"nombre de tarjeta no válido: {Path(nombre).name}"]
+    fecha, programa, _ = partes
+    errores = []
+    cabecera = dict(re.findall(r"^(\w+):\s*(.*?)\s*$", texto.split("\n---", 1)[0], re.M))
+    if (cabecera.get("programa"), cabecera.get("fecha")) != (programa, fecha):
+        errores.append("la fecha o el programa de la cabecera no coinciden con el nombre de la tarjeta")
+    if programa not in PAPELES:
+        return errores
+    principal = PAPELES[programa][0]
+    linea = re.search(r"^Cajones:(.*)$", texto, re.M)
+    if not linea:
+        errores.append(f"falta la línea «Cajones:» (PAUTA_COMUN §10), por ejemplo «Cajones: "
+                       + ("titular llm; principal trabajo; medianas abierto, chips, ciencia, leyes" if programa == "parte"
+                          else "claves llm, chips, educacion, creatividad, voces; noticias abierto, leyes") + "»")
+    else:
+        dados = cajones(linea.group(1), programa)
+        todos = [c for lista in dados.values() for c in lista]
+        raros = [p for p in dados if p not in PAPELES[programa]]
+        malos = sorted({c for c in todos if c not in CAJONES + CAJONES_ANTIGUOS})
+        if raros:
+            errores.append(f"«Cajones:» con papeles que no existen: {', '.join(raros)} (van {', '.join(PAPELES[programa])})")
+        if malos:
+            errores.append(f"«Cajones:» con cajones que no existen: {', '.join(malos)} (lista: {', '.join(CAJONES)})")
+        if not dados.get(principal):
+            errores.append(f"«Cajones:» sin «{principal}»")
+        minimo = minimo_cajones(programa, palabras)
+        if len(set(todos)) < minimo:
+            errores.append(f"solo {len(set(todos))} cajones distintos entre todas las piezas (mínimo {minimo}; PAUTA_COMUN "
+                           "§3b). Busca a propósito material de los cajones que faltan esta semana; si no hay nada que "
+                           "pase el listón, el episodio es más corto, no más repetido")
+        repetidos = sorted({c for c in todos if todos.count(c) > MAX_POR_CAJON_PARTE}) if programa == "parte" else \
+            sorted({c for c in todos if todos.count(c) > max(2, len(todos) // 4)})
+        if repetidos:
+            errores.append(f"demasiadas piezas del cajón {', '.join(repetidos)} (PAUTA_COMUN §3b: "
+                           + ("como mucho dos por parte" if programa == "parte" else
+                              "en el semanal ningún cajón pasa de una cuarta parte") + ")")
+        if programa == "parte" and len(dados.get("titular", [])) > 1:
+            errores.append("«Cajones:» con más de un cajón de titular: es uno")
+        if programa == "parte" and set(dados.get("titular", [])) & set(dados.get("principal", [])):
+            errores.append("las dos piezas principales son del mismo cajón (PAUTA_COMUN §3b: una por cajón)")
+        if programa == "claves" and dados.get("claves", []).count("seguridad") > 1:
+            errores.append("más de una clave de seguridad en el semanal (PAUTA_COMUN §3b: como mucho una)")
+    linea = re.search(r"^Protagonistas:(.*)$", texto, re.M)
+    if not linea:
+        errores.append("falta la línea «Protagonistas:» (PAUTA_COMUN §10), por ejemplo «Protagonistas: "
+                       + ("titular Mistral; principal Universidad de Tokio; medianas Qwen, varios" if programa == "parte"
+                          else "claves DeepSeek, varios, Epoch AI; noticias Meta") + "»")
+    else:
+        dados = protagonistas(linea.group(1))
+        if not dados.get(principal):
+            errores.append(f"«Protagonistas:» sin «{principal}»")
+        nombres = [n.lower() for lista in dados.values() for n in lista if n.lower() not in SIN_PROTAGONISTA]
+        if programa == "claves":
+            nombres = [n.lower() for n in dados.get("claves", []) if n.lower() not in SIN_PROTAGONISTA]
+        mucho = sorted({n for n in nombres if nombres.count(n) > MAX_POR_PROTAGONISTA_PARTE})
+        if mucho:
+            errores.append(f"más de dos piezas con el mismo protagonista: {', '.join(mucho)} (PAUTA_COMUN §3b)")
+    if programa == "claves" and not re.search(r"^Arquitectura:[ \t]*\S", texto, re.M):
+        errores.append("falta la línea «Arquitectura: <concepto> (escalón N)» del bloque de arquitectura (PAUTA_COMUN §13)")
+    return errores
+
+
+def _palabras_del_episodio(ruta_tarjeta):
+    """Las palabras del episodio hermano (episodios/<mismo nombre>), si está y se lee; si no, None."""
+    ep = Path(ruta_tarjeta).resolve().parent.parent / "episodios" / Path(ruta_tarjeta).name
+    try:
+        return leer_episodio(ep.read_text(encoding="utf-8")).palabras
+    except (OSError, ValueError):
+        return None
+
+
 def main(rutas):
     fallos = 0
     for ruta in rutas:
+        if Path(ruta).parent.name == "tarjetas":
+            errores = validar_tarjeta(ruta, Path(ruta).read_text(encoding="utf-8"), _palabras_del_episodio(ruta))
+            print(f"{'MAL' if errores else 'bien'}: {ruta}")
+            for e in errores:
+                print(f"  error: {e}")
+            fallos += bool(errores)
+            continue
         ep, errores, avisos = validar(ruta, Path(ruta).read_text(encoding="utf-8"))
         estado = "MAL" if errores else "bien"
         print(f"{estado}: {ruta}" + (f" ({ep.palabras} palabras)" if ep else ""))

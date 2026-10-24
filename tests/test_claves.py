@@ -487,6 +487,113 @@ class FeedGeneral(unittest.TestCase):
         self.assertLessEqual(len(sitio.descripcion_item(e, config())), 4000)
 
 
+CAJONES_PARTE = "Cajones: titular llm; principal trabajo; medianas abierto, chips, ciencia, leyes"
+PROTAS_PARTE = "Protagonistas: titular Mistral; principal Universidad de Tokio; medianas Qwen, Nvidia, varios, varios"
+CAJONES_CLAVES = "Cajones: claves llm, chips, educacion, creatividad, voces; noticias abierto, leyes"
+PROTAS_CLAVES = "Protagonistas: claves DeepSeek, Nvidia, varios, varios, Andrej Karpathy; noticias Meta, varios"
+
+
+def tarjeta(programa="parte", fecha="2026-10-25", cajones=CAJONES_PARTE, extra="", protas=None):
+    if protas is None:
+        protas = PROTAS_PARTE if programa == "parte" else PROTAS_CLAVES
+    return (f"---\nprograma: {programa}\nfecha: {fecha}\ncubre: {fecha} a {fecha}\n---\nTemas: algo.\n"
+            f"{cajones}\n{protas}\n{extra}")
+
+
+def semanal(cajones=CAJONES_CLAVES, protas=None, extra="Arquitectura: caché KV y contexto largo (escalón 2)\n"):
+    return tarjeta("claves", "2026-10-31", cajones, extra, protas)
+
+
+class Tarjetas(unittest.TestCase):
+    """validar.py también mira las tarjetas (24 oct 2026): cajones variados y protagonistas en parte y semanal,
+    «Arquitectura:» en el semanal (PAUTA_COMUN §3b, §10, §13)."""
+
+    def setUp(self):
+        from validar import validar_tarjeta
+        self.v = validar_tarjeta
+
+    def errores(self, texto, nombre="tarjetas/2026-10-25-parte.md", palabras=None):
+        return self.v(nombre, texto, palabras)
+
+    def hay(self, trozo, errores):
+        self.assertTrue(any(trozo in e for e in errores), errores)
+
+    def test_parte_bien(self):
+        self.assertEqual(self.errores(tarjeta()), [])
+
+    def test_parte_sin_cajones_o_sin_protagonistas(self):
+        self.hay("Cajones", self.errores(tarjeta(cajones="")))
+        self.hay("Protagonistas", self.errores(tarjeta(protas="")))
+
+    def test_cajon_inventado_y_dos_principales_del_mismo_cajon(self):
+        self.hay("no existen: ciber", self.errores(tarjeta(
+            cajones="Cajones: titular ciber; principal llm; medianas abierto, chips, ciencia")))
+        self.hay("mismo cajón", self.errores(tarjeta(
+            cajones="Cajones: titular seguridad; principal seguridad; medianas abierto, chips, ciencia, leyes")))
+
+    def test_minimo_de_cajones_segun_lo_largo_del_parte(self):
+        tres = tarjeta(cajones="Cajones: titular llm; principal trabajo; medianas llm, chips, trabajo")
+        self.hay("cajones distintos", self.errores(tres, palabras=3000))
+        self.assertEqual(self.errores(tres, palabras=1500), [])  # día flojo: 3
+        dos = tarjeta(cajones="Cajones: titular llm; medianas chips")
+        self.hay("cajones distintos", self.errores(dos, palabras=1500))
+        self.assertEqual(self.errores(dos, palabras=500), [])  # «hoy no ha pasado nada»: sin mínimo
+
+    def test_como_mucho_dos_piezas_del_mismo_cajon_en_el_parte(self):
+        self.hay("demasiadas piezas del cajón llm", self.errores(tarjeta(
+            cajones="Cajones: titular llm; principal trabajo; medianas llm, llm, chips, ciencia, leyes")))
+
+    def test_como_mucho_dos_piezas_con_el_mismo_protagonista(self):
+        self.hay("anthropic", self.errores(tarjeta(
+            protas="Protagonistas: titular Anthropic; principal varios; medianas anthropic, Anthropic, Qwen")))
+        # «varios» no es un protagonista
+        self.assertEqual(self.errores(tarjeta(
+            protas="Protagonistas: titular Mistral; principal varios; medianas varios, varios, varios")), [])
+
+    def test_tarjetas_viejas_con_sociedad_siguen_valiendo(self):
+        vieja = tarjeta(cajones="Cajones: titular sociedad; principal llm; medianas abierto, chips, leyes")
+        self.assertEqual(self.errores(vieja), [])
+
+    def test_semanal_bien(self):
+        self.assertEqual(self.errores(semanal(), "tarjetas/2026-10-31-claves.md"), [])
+
+    def test_semanal_pide_arquitectura_y_una_sola_clave_de_seguridad(self):
+        self.hay("Arquitectura", self.errores(semanal(extra=""), "tarjetas/2026-10-31-claves.md"))
+        doble = semanal("Cajones: claves seguridad, llm, seguridad, chips, educacion, creatividad; noticias voces, leyes")
+        self.hay("seguridad", self.errores(doble, "tarjetas/2026-10-31-claves.md"))
+
+    def test_semanal_variado_y_sin_un_cajon_que_se_lo_coma(self):
+        poco = semanal("Cajones: claves llm, chips, educacion, voces; noticias abierto, leyes")
+        self.hay("cajones distintos", self.errores(poco, "tarjetas/2026-10-31-claves.md", 8000))
+        self.assertEqual(self.errores(poco, "tarjetas/2026-10-31-claves.md", 4000), [])  # semanal corto: 5
+        comido = semanal("Cajones: claves llm, llm, llm, chips, educacion, creatividad; noticias voces, leyes, abierto")
+        self.hay("cuarta parte", self.errores(comido, "tarjetas/2026-10-31-claves.md"))
+
+    def test_cabecera_que_no_casa(self):
+        self.hay("cabecera", self.errores(tarjeta(), "tarjetas/2026-10-26-parte.md"))
+
+    def test_especial_sin_requisitos(self):
+        texto = "---\nprograma: especial\nfecha: 2026-10-25\n---\nTemas: algo.\n"
+        self.assertEqual(self.v("tarjetas/2026-10-25-especial-vox.md", texto), [])
+
+    def test_la_linea_de_ordenes_lee_las_palabras_del_episodio(self):
+        import validar
+        with tempfile.TemporaryDirectory() as d:
+            (Path(d) / "episodios").mkdir()
+            (Path(d) / "tarjetas").mkdir()
+            (Path(d) / "episodios" / "2026-10-25-parte.md").write_text(
+                con_cuerpo(TEXTO_LARGO, fecha="2026-10-25"), encoding="utf-8")
+            ruta = Path(d) / "tarjetas" / "2026-10-25-parte.md"
+            self.assertEqual(validar._palabras_del_episodio(ruta), 560)
+            self.assertIsNone(validar._palabras_del_episodio(Path(d) / "tarjetas" / "2026-10-26-parte.md"))
+
+    def test_la_pauta_y_el_validador_usan_los_mismos_cajones(self):
+        from validar import CAJONES
+        pauta = (RAIZ / "prompts" / "PAUTA_COMUN.md").read_text(encoding="utf-8")
+        for c in CAJONES:
+            self.assertIn(f"`{c}`", pauta, c)
+
+
 if __name__ == "__main__":
     unittest.main()
 

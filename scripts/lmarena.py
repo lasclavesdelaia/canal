@@ -30,12 +30,21 @@ FICHERO = "datos/lmarena.json"
 # (nombre, subconjunto, categoría). «Text · Overall» de la web es la versión con control de estilo (la de por defecto
 # desde mayo de 2025). Agent Arena puntúa con IPS (mejora neta, en tanto por uno) y en el dataset solo publica
 # «overall»: sus categorías Code, Chat y Work están solo en la web, que no se lee (13 oct 2026).
+# Las de imagen y vídeo (24 oct 2026) son para los modelos que no son de lenguaje: entran en el programa solo si son
+# los mejores de su categoría (PAUTA_COMUN §3), así que en ellas solo cuenta un modelo nuevo en los primeros puestos,
+# y el resumen dice a cuánto queda del primero para ver si es un empate.
 TABLAS = (
     ("Text Arena · Overall", "text_style_control", "overall"),
     ("Agent Arena · Overall", "agent", "overall"),
+    ("Text-to-Image · Overall", "text_to_image", "overall"),
+    ("Image Edit · Overall", "image_edit", "overall"),
+    ("Text-to-Video · Overall", "text_to_video", "overall"),
+    ("Image-to-Video · Overall", "image_to_video", "overall"),
 )
+MEDIOS = {"text_to_image", "image_edit", "text_to_video", "image_to_video"}
 GUARDADAS = 25     # filas de cada tabla en el resumen
 RELEVANTES = 20    # un modelo nuevo por debajo de este puesto no se cuenta
+RELEVANTES_MEDIOS = 3
 # Variantes del mismo modelo: «Claude Opus 5.5 (High)» y «(Max)», «claude-opus-5.5-high», «…-preview», «…-20260922».
 # El 12 oct 2026 «Claude Opus 5.5 (Max)» salió con ese nombre por primera vez, pero el modelo llevaba semanas.
 VARIANTE = re.compile(r"-(?:x?high|max|min|low|medium|thinking|reasoning|preview|exp|experimental|latest"
@@ -52,9 +61,10 @@ def base(nombre):
     return n
 
 
-def cambios(ultima, vistos, relevantes=RELEVANTES):
+def cambios(ultima, vistos, relevantes=RELEVANTES, distancia=False):
     """Lo único que se cuenta: un modelo nuevo de verdad (su `base` no está en `vistos`, lo ya salido antes en
-    LMArena) que entra entre los `relevantes` primeros, con su puesto, sus vecinos y quién va primero."""
+    LMArena) que entra entre los `relevantes` primeros, con su puesto, sus vecinos y quién va primero. Con
+    `distancia`, también a cuántos puntos queda del primero y los márgenes de los dos."""
     if not ultima or not vistos:
         return []
     orden = sorted(ultima, key=lambda f: f["rank"])
@@ -66,7 +76,9 @@ def cambios(ultima, vistos, relevantes=RELEVANTES):
         salida.append(f"entra un modelo nuevo, {f['model_name']} ({f['organization']}), en el puesto {int(f['rank'])}"
                       + (f", entre {' y '.join(vecinos)}" if len(vecinos) == 2 else
                          f", justo {'debajo' if i else 'encima'} de {vecinos[0]}" if vecinos else "")
-                      + ("; pasa a ser el primero" if i == 0 else f"; primero: {orden[0]['model_name']}"))
+                      + ("; pasa a ser el primero" if i == 0 else f"; primero: {orden[0]['model_name']}")
+                      + (f"; a {orden[0]['rating'] - f['rating']:.0f} puntos del primero ({puntuacion(f)} frente a "
+                         f"{puntuacion(orden[0])})" if distancia and i and "rating" in f else ""))
     return salida
 
 
@@ -82,7 +94,8 @@ def resumir(nombre, subconjunto, categoria, filas, historico=()):
     limpia = [{k: (round(f[k], 4) if isinstance(f[k], float) else f[k]) for k in CAMPOS if f.get(k) is not None}
               for f in sorted(ultima, key=lambda f: f["rank"])[:GUARDADAS]]
     return {"nombre": nombre, "subconjunto": subconjunto, "categoria": categoria, "fecha": fechas[-1],
-            "anterior": fechas[-2] if len(fechas) > 1 else None, "cambios": cambios(ultima, vistos), "filas": limpia}
+            "anterior": fechas[-2] if len(fechas) > 1 else None, "filas": limpia,
+            "cambios": cambios(ultima, vistos, *((RELEVANTES_MEDIOS, True) if subconjunto in MEDIOS else ()))}
 
 
 def descargar(salida):
