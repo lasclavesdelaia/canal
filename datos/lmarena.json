@@ -342,6 +342,26 @@
     },
     {
      "rank": 8,
+     "model_name": "GPT-6.1 Terra (Max)",
+     "organization": "openai",
+     "license": "Proprietary",
+     "score": 0.1057,
+     "score_ci_lower": 0.0862,
+     "score_ci_upper": 0.1253,
+     "session_count": 8977.0
+    },
+    {
+     "rank": 9,
+     "model_name": "Muse Wonder Full (Max)",
+     "organization": "meta",
+     "license": "Proprietary",
+     "score": 0.1009,
+     "score_ci_lower": 0.0915,
+     "score_ci_upper": 0.1103,
+     "session_count": 26753.0
+    },
+    {
+     "rank": 10,
      "model_name": "Claude Fable 5 (High)",
      "organization": "anthropic",
      "license": "Proprietary",
@@ -351,7 +371,7 @@
      "session_count": 50866.0
     },
     {
-     "rank": 9,
+     "rank": 11,
      "model_name": "GPT-6 Sol (Max)",
      "organization": "openai",
      "license": "Proprietary",
@@ -361,7 +381,7 @@
      "session_count": 12107.0
     },
     {
-     "rank": 10,
+     "rank": 12,
      "model_name": "Claude Opus 5 (Max)",
      "organization": "anthropic",
      "license": "Proprietary",
@@ -371,7 +391,17 @@
      "session_count": 31777.0
     },
     {
-     "rank": 11,
+     "rank": 13,
+     "model_name": "Kimi K3.1 Pro (Max)",
+     "organization": "moonshot",
+     "license": "Proprietary",
+     "score": 0.0596,
+     "score_ci_lower": 0.0437,
+     "score_ci_upper": 0.0754,
+     "session_count": 14300.0
+    },
+    {
+     "rank": 14,
      "model_name": "GPT-5.6 Sol (xHigh)",
      "organization": "openai",
      "license": "Proprietary",
@@ -381,7 +411,7 @@
      "session_count": 45156.0
     },
     {
-     "rank": 12,
+     "rank": 15,
      "model_name": "Muse Wonder (Max)",
      "organization": "meta",
      "license": "Proprietary",
@@ -391,7 +421,7 @@
      "session_count": 12530.0
     },
     {
-     "rank": 13,
+     "rank": 16,
      "model_name": "Claude Sonnet 5 (High)",
      "organization": "anthropic",
      "license": "Proprietary",
@@ -401,7 +431,7 @@
      "session_count": 41456.0
     },
     {
-     "rank": 14,
+     "rank": 17,
      "model_name": "MiMo-V2.6-Pro",
      "organization": "xiaomi",
      "license": "MIT",
@@ -411,7 +441,17 @@
      "session_count": 46354.0
     },
     {
-     "rank": 15,
+     "rank": 18,
+     "model_name": "DeepSeek-V4.1-Flash-20261017 (Max)",
+     "organization": "deepseek",
+     "license": "MIT",
+     "score": 0.0267,
+     "score_ci_lower": 0.0203,
+     "score_ci_upper": 0.0332,
+     "session_count": 54255.0
+    },
+    {
+     "rank": 19,
      "model_name": "Gemini 3.8 Flash (High)",
      "organization": "google",
      "license": "Proprietary",
@@ -421,7 +461,7 @@
      "session_count": 52730.0
     },
     {
-     "rank": 16,
+     "rank": 20,
      "model_name": "Muse Spark 1.3 (Max)",
      "organization": "meta",
      "license": "Proprietary",
@@ -431,7 +471,7 @@
      "session_count": 80518.0
     },
     {
-     "rank": 17,
+     "rank": 21,
      "model_name": "Grok 4.7 (xHigh)",
      "organization": "xai",
      "license": "Proprietary",
@@ -441,7 +481,7 @@
      "session_count": 18559.0
     },
     {
-     "rank": 18,
+     "rank": 22,
      "model_name": "GPT-6 Luna (Max)",
      "organization": "openai",
      "license": "Proprietary",
@@ -451,7 +491,7 @@
      "session_count": 217544.0
     },
     {
-     "rank": 19,
+     "rank": 23,
      "model_name": "DeepSeek-V4.1-Flash-20260910 (Max)",
      "organization": "deepseek",
      "license": "MIT",
@@ -461,7 +501,7 @@
      "session_count": 266436.0
     },
     {
-     "rank": 20,
+     "rank": 24,
      "model_name": "Claude Haiku 5.5 (High)",
      "organization": "anthropic",
      "license": "Proprietary",
@@ -471,7 +511,7 @@
      "session_count": 29343.0
     },
     {
-     "rank": 21,
+     "rank": 25,
      "model_name": "GLM-5.2 (Max)",
      "organization": "zai",
      "license": "MIT",
@@ -479,50 +519,11 @@
      "score_ci_lower": 0.0049,
      "score_ci_upper": 0.0202,
      "session_count": 98542.0
-    },
-    {
-     "rank": 22,
-     "model_name": "Hy4 preview",
-     "organization": "tencent",
-     "license": "Apache 2.0",
-     "score": 0.0122,
-     "score_ci_lower": 0.0055,
-     "score_ci_upper": 0.019,
-     "session_count": 98590.0
-    },
-    {
-     "rank": 23,
-     "model_name": "Kimi K3 (Max)",
-     "organization": "moonshot",
-     "license": "Kimi K3 license",
-     "score": 0.0108,
-     "score_ci_lower": 0.0051,
-     "score_ci_upper": 0.0165,
-     "session_count": 160249.0
-    },
-    {
-     "rank": 24,
-     "model_name": "MiMo-V2.6-Flash",
-     "organization": "xiaomi",
-     "license": "MIT",
-     "score": 0.01,
-     "score_ci_lower": -0.0014,
-     "score_ci_upper": 0.0215,
-     "session_count": 26781.0
-    },
-    {
-     "rank": 25,
-     "model_name": "GLM-5.3 (Max)",
-     "organization": "zai",
-     "license": "MIT",
-     "score": 0.0091,
-     "score_ci_lower": 0.0014,
-     "score_ci_upper": 0.0168,
-     "session_count": 96109.0
     }
    ],
    "cambios": [
-    "entra un modelo nuevo, Gemini 4 Carbon (High) (google), en el puesto 2, entre Claude Opus 5.5 (Max) y Claude Sonnet 5.5 (Max); primero: Claude Opus 5.5 (Max)"
+    "entra un modelo nuevo, Gemini 4 Carbon (High) (google), en el puesto 2, entre Claude Opus 5.5 (Max) y Claude Sonnet 5.5 (Max); primero: Claude Opus 5.5 (Max)",
+    "entra un modelo nuevo, GPT-6.1 Terra (Max) (openai), en el puesto 8, entre Gemini 4 Argon (High) y Muse Wonder Full (Max); primero: Claude Opus 5.5 (Max)"
    ]
   },
   {
