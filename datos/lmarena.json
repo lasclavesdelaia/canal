@@ -1051,521 +1051,526 @@
    "nombre": "Text-to-Video · Overall",
    "subconjunto": "text_to_video",
    "categoria": "overall",
-   "fecha": "2026-09-22",
-   "anterior": "2026-09-04",
+   "fecha": "2026-11-05",
+   "anterior": "2026-09-22",
    "filas": [
     {
      "rank": 1,
-     "model_name": "gemini-omni-1.1-flash",
+     "model_name": "Gemini Omni 1.2 Flash",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1516.2119,
-     "rating_lower": 1500.7733,
-     "rating_upper": 1531.6505,
-     "vote_count": 1784
+     "rating": 1541.3914,
+     "rating_lower": 1525.894,
+     "rating_upper": 1556.8887,
+     "vote_count": 1742
     },
     {
      "rank": 2,
-     "model_name": "gemini-omni-flash",
+     "model_name": "Gemini Omni 1.1 Flash",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1512.8868,
-     "rating_lower": 1503.9324,
-     "rating_upper": 1521.8412,
-     "vote_count": 26576
+     "rating": 1513.574,
+     "rating_lower": 1498.2883,
+     "rating_upper": 1528.8596,
+     "vote_count": 1803
     },
     {
      "rank": 3,
-     "model_name": "flux-3-video",
-     "organization": "bfl",
+     "model_name": "gemini-omni-flash",
+     "organization": "google",
      "license": "Proprietary",
-     "rating": 1493.0543,
-     "rating_lower": 1475.834,
-     "rating_upper": 1510.2746,
-     "vote_count": 1302
+     "rating": 1509.4201,
+     "rating_lower": 1501.1087,
+     "rating_upper": 1517.7314,
+     "vote_count": 45833
     },
     {
      "rank": 4,
-     "model_name": "grok-imagine-video-1.5-agent",
-     "organization": "xai",
+     "model_name": "FLUX 3 Video",
+     "organization": "bfl",
      "license": "Proprietary",
-     "rating": 1492.3047,
-     "rating_lower": 1474.0052,
-     "rating_upper": 1510.6042,
-     "vote_count": 1218
+     "rating": 1490.5422,
+     "rating_lower": 1473.5861,
+     "rating_upper": 1507.4983,
+     "vote_count": 1321
     },
     {
      "rank": 5,
-     "model_name": "dreamina-seedance-2.0-720p",
-     "organization": "bytedance",
+     "model_name": "Grok Imagine Video 1.5",
+     "organization": "xai",
      "license": "Proprietary",
-     "rating": 1479.1757,
-     "rating_lower": 1471.1601,
-     "rating_upper": 1487.1913,
-     "vote_count": 56318
+     "rating": 1486.2799,
+     "rating_lower": 1467.7886,
+     "rating_upper": 1504.7711,
+     "vote_count": 1260
     },
     {
      "rank": 6,
-     "model_name": "wan3.0",
-     "organization": "alibaba",
+     "model_name": "Dreamina Seedance 2.0 (720p)",
+     "organization": "bytedance",
      "license": "Proprietary",
-     "rating": 1476.274,
-     "rating_lower": 1463.6175,
-     "rating_upper": 1488.9305,
-     "vote_count": 2598
+     "rating": 1481.4087,
+     "rating_lower": 1473.8162,
+     "rating_upper": 1489.0011,
+     "vote_count": 71590
     },
     {
      "rank": 7,
-     "model_name": "dreamina-seedance-2.5-720p",
+     "model_name": "Dreamina Seedance 2.5 (720p)",
      "organization": "bytedance",
      "license": "Proprietary",
-     "rating": 1473.9318,
-     "rating_lower": 1465.388,
-     "rating_upper": 1482.4756,
-     "vote_count": 8001
+     "rating": 1480.1297,
+     "rating_lower": 1472.4988,
+     "rating_upper": 1487.7607,
+     "vote_count": 24549
     },
     {
      "rank": 8,
-     "model_name": "minimax-h3",
-     "organization": "minimax",
-     "license": "minimax-h3-community-license-agreement",
-     "rating": 1460.3433,
-     "rating_lower": 1451.7376,
-     "rating_upper": 1468.9489,
-     "vote_count": 11417
+     "model_name": "Wan 3.0",
+     "organization": "alibaba",
+     "license": "Proprietary",
+     "rating": 1477.3929,
+     "rating_lower": 1465.8695,
+     "rating_upper": 1488.9162,
+     "vote_count": 3082
     },
     {
      "rank": 9,
-     "model_name": "muse-video",
-     "organization": "meta",
+     "model_name": "SkyReels V4",
+     "organization": "skyreel",
      "license": "Proprietary",
-     "rating": 1455.8204,
-     "rating_lower": 1441.1588,
-     "rating_upper": 1470.482,
-     "vote_count": 2188
+     "rating": 1457.1327,
+     "rating_lower": 1438.9169,
+     "rating_upper": 1475.3485,
+     "vote_count": 1073
     },
     {
      "rank": 10,
-     "model_name": "happyhorse-1.0",
-     "organization": "aorizon",
+     "model_name": "Muse Video",
+     "organization": "meta",
      "license": "Proprietary",
-     "rating": 1427.1825,
-     "rating_lower": 1414.6667,
-     "rating_upper": 1439.6983,
-     "vote_count": 22264
+     "rating": 1456.8467,
+     "rating_lower": 1442.3212,
+     "rating_upper": 1471.3723,
+     "vote_count": 2241
     },
     {
      "rank": 11,
-     "model_name": "sora-2-pro",
-     "organization": "openai",
-     "license": "Proprietary",
-     "rating": 1367.7785,
-     "rating_lower": 1361.0413,
-     "rating_upper": 1374.5157,
-     "vote_count": 54167
+     "model_name": "MiniMax H3",
+     "organization": "minimax",
+     "license": "minimax-h3-community-license-agreement",
+     "rating": 1456.375,
+     "rating_lower": 1448.5095,
+     "rating_upper": 1464.2405,
+     "vote_count": 28443
     },
     {
      "rank": 12,
-     "model_name": "veo-3.1-audio",
-     "organization": "google",
+     "model_name": "HappyHorse 1.0",
+     "organization": "aorizon",
      "license": "Proprietary",
-     "rating": 1364.1829,
-     "rating_lower": 1349.7964,
-     "rating_upper": 1378.5695,
-     "vote_count": 13741
+     "rating": 1428.449,
+     "rating_lower": 1415.9832,
+     "rating_upper": 1440.9148,
+     "vote_count": 23004
     },
     {
      "rank": 13,
-     "model_name": "veo-3.1-audio-1080p",
-     "organization": "google",
+     "model_name": "Sora 2 Pro",
+     "organization": "openai",
      "license": "Proprietary",
-     "rating": 1362.2059,
-     "rating_lower": 1351.8706,
-     "rating_upper": 1372.5411,
-     "vote_count": 25076
+     "rating": 1367.4342,
+     "rating_lower": 1360.8622,
+     "rating_upper": 1374.0063,
+     "vote_count": 56212
     },
     {
      "rank": 14,
-     "model_name": "veo-3.1-fast-audio",
+     "model_name": "Veo 3.1 (Audio)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1361.9115,
-     "rating_lower": 1351.4621,
-     "rating_upper": 1372.361,
-     "vote_count": 39484
+     "rating": 1363.0464,
+     "rating_lower": 1348.6809,
+     "rating_upper": 1377.412,
+     "vote_count": 13819
     },
     {
      "rank": 15,
-     "model_name": "veo-3.1-fast-audio-1080p",
+     "model_name": "Veo 3.1 (Audio, 1080p)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1357.9481,
-     "rating_lower": 1347.91,
-     "rating_upper": 1367.9863,
-     "vote_count": 25870
+     "rating": 1362.6048,
+     "rating_lower": 1352.4252,
+     "rating_upper": 1372.7844,
+     "vote_count": 25759
     },
     {
      "rank": 16,
-     "model_name": "veo-3-fast-audio",
+     "model_name": "Veo 3.1 Fast (Audio)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1347.8534,
-     "rating_lower": 1336.5662,
-     "rating_upper": 1359.1407,
-     "vote_count": 25258
+     "rating": 1361.341,
+     "rating_lower": 1350.9241,
+     "rating_upper": 1371.7579,
+     "vote_count": 40391
     },
     {
      "rank": 17,
-     "model_name": "sora-2",
-     "organization": "openai",
+     "model_name": "Veo 3.1 Fast (Audio, 1080p)",
+     "organization": "google",
      "license": "Proprietary",
-     "rating": 1342.5556,
-     "rating_lower": 1336.4983,
-     "rating_upper": 1348.6128,
-     "vote_count": 71947
+     "rating": 1357.06,
+     "rating_lower": 1347.1904,
+     "rating_upper": 1366.9296,
+     "vote_count": 26594
     },
     {
      "rank": 18,
-     "model_name": "grok-imagine-video-720p",
-     "organization": "xai",
+     "model_name": "Veo 3 Fast (Audio)",
+     "organization": "google",
      "license": "Proprietary",
-     "rating": 1342.1529,
-     "rating_lower": 1335.7264,
-     "rating_upper": 1348.5794,
-     "vote_count": 165462
+     "rating": 1347.4327,
+     "rating_lower": 1336.1622,
+     "rating_upper": 1358.7031,
+     "vote_count": 25288
     },
     {
      "rank": 19,
-     "model_name": "veo-3-audio",
-     "organization": "google",
+     "model_name": "Sora 2",
+     "organization": "openai",
      "license": "Proprietary",
-     "rating": 1340.1573,
-     "rating_lower": 1327.5659,
-     "rating_upper": 1352.7486,
-     "vote_count": 19002
+     "rating": 1342.6287,
+     "rating_lower": 1336.5942,
+     "rating_upper": 1348.6633,
+     "vote_count": 74272
     },
     {
      "rank": 20,
-     "model_name": "wan2.7-t2v",
-     "organization": "wan",
+     "model_name": "Grok Imagine Video (720p)",
+     "organization": "xai",
      "license": "Proprietary",
-     "rating": 1337.1762,
-     "rating_lower": 1329.901,
-     "rating_upper": 1344.4513,
-     "vote_count": 27626
+     "rating": 1341.4211,
+     "rating_lower": 1335.29,
+     "rating_upper": 1347.5522,
+     "vote_count": 189688
     },
     {
      "rank": 21,
-     "model_name": "wan2.6-t2v",
-     "organization": "alibaba",
+     "model_name": "Veo 3 (Audio)",
+     "organization": "google",
      "license": "Proprietary",
-     "rating": 1326.7386,
-     "rating_lower": 1319.3283,
-     "rating_upper": 1334.1488,
-     "vote_count": 54050
+     "rating": 1340.532,
+     "rating_lower": 1327.9348,
+     "rating_upper": 1353.1292,
+     "vote_count": 19041
     },
     {
      "rank": 22,
-     "model_name": "seedance-v1.5-pro",
-     "organization": "bytedance",
+     "model_name": "Wan 2.7",
+     "organization": "alibaba",
      "license": "Proprietary",
-     "rating": 1255.964,
-     "rating_lower": 1249.3122,
-     "rating_upper": 1262.6158,
-     "vote_count": 76171
+     "rating": 1337.4886,
+     "rating_lower": 1330.6212,
+     "rating_upper": 1344.3561,
+     "vote_count": 47586
     },
     {
      "rank": 23,
-     "model_name": "veo-3",
-     "organization": "google",
+     "model_name": "Wan 2.6",
+     "organization": "alibaba",
      "license": "Proprietary",
-     "rating": 1253.6514,
-     "rating_lower": 1242.3963,
-     "rating_upper": 1264.9066,
-     "vote_count": 15005
+     "rating": 1323.6538,
+     "rating_lower": 1316.6452,
+     "rating_upper": 1330.6623,
+     "vote_count": 74901
     },
     {
      "rank": 24,
-     "model_name": "veo-3-fast",
-     "organization": "google",
+     "model_name": "Seedance 1.5 Pro",
+     "organization": "bytedance",
      "license": "Proprietary",
-     "rating": 1248.1756,
-     "rating_lower": 1236.2806,
-     "rating_upper": 1260.0705,
-     "vote_count": 15283
+     "rating": 1255.7693,
+     "rating_lower": 1249.1572,
+     "rating_upper": 1262.3813,
+     "vote_count": 78310
     },
     {
      "rank": 25,
-     "model_name": "wan2.5-t2v-preview",
-     "organization": "alibaba",
+     "model_name": "Veo 3",
+     "organization": "google",
      "license": "Proprietary",
-     "rating": 1245.3337,
-     "rating_lower": 1236.6501,
-     "rating_upper": 1254.0172,
-     "vote_count": 36378
+     "rating": 1254.6194,
+     "rating_lower": 1243.4063,
+     "rating_upper": 1265.8324,
+     "vote_count": 15026
     }
    ],
-   "cambios": []
+   "cambios": [
+    "entra un modelo nuevo, Gemini Omni 1.2 Flash (google), en el puesto 1, justo encima de Gemini Omni 1.1 Flash; pasa a ser el primero"
+   ]
   },
   {
    "nombre": "Image-to-Video · Overall",
    "subconjunto": "image_to_video",
    "categoria": "overall",
-   "fecha": "2026-09-22",
-   "anterior": "2026-09-14",
+   "fecha": "2026-11-05",
+   "anterior": "2026-09-22",
    "filas": [
     {
      "rank": 1,
-     "model_name": "minimax-h3",
-     "organization": "minimax",
-     "license": "minimax-h3-community-license-agreement",
-     "rating": 1495.4129,
-     "rating_lower": 1490.2078,
-     "rating_upper": 1500.618,
-     "vote_count": 57112
+     "model_name": "Gemini Omni 1.2 Flash",
+     "organization": "google",
+     "license": "Proprietary",
+     "rating": 1502.3238,
+     "rating_lower": 1490.7557,
+     "rating_upper": 1513.892,
+     "vote_count": 2745
     },
     {
      "rank": 2,
-     "model_name": "gemini-omni-1.1-flash",
-     "organization": "google",
-     "license": "Proprietary",
-     "rating": 1488.4907,
-     "rating_lower": 1477.5724,
-     "rating_upper": 1499.4089,
-     "vote_count": 3734
+     "model_name": "MiniMax H3",
+     "organization": "minimax",
+     "license": "minimax-h3-community-license-agreement",
+     "rating": 1493.1838,
+     "rating_lower": 1487.9202,
+     "rating_upper": 1498.4474,
+     "vote_count": 120401
     },
     {
      "rank": 3,
-     "model_name": "wan3.0",
-     "organization": "alibaba",
+     "model_name": "Dreamina Seedance 2.5 (720p)",
+     "organization": "bytedance",
      "license": "Proprietary",
-     "rating": 1479.8061,
-     "rating_lower": 1469.0142,
-     "rating_upper": 1490.598,
-     "vote_count": 3442
+     "rating": 1488.2727,
+     "rating_lower": 1481.384,
+     "rating_upper": 1495.1613,
+     "vote_count": 42283
     },
     {
      "rank": 4,
-     "model_name": "dreamina-seedance-2.5-720p",
-     "organization": "bytedance",
+     "model_name": "Gemini Omni 1.1 Flash",
+     "organization": "google",
      "license": "Proprietary",
-     "rating": 1477.4129,
-     "rating_lower": 1470.197,
-     "rating_upper": 1484.6288,
-     "vote_count": 15729
+     "rating": 1486.4603,
+     "rating_lower": 1475.5252,
+     "rating_upper": 1497.3955,
+     "vote_count": 3775
     },
     {
      "rank": 5,
-     "model_name": "dreamina-seedance-2.0-720p",
-     "organization": "bytedance",
+     "model_name": "Wan 3.0",
+     "organization": "alibaba",
      "license": "Proprietary",
-     "rating": 1474.5724,
-     "rating_lower": 1467.5226,
-     "rating_upper": 1481.6223,
-     "vote_count": 121427
+     "rating": 1480.9404,
+     "rating_lower": 1470.1698,
+     "rating_upper": 1491.7109,
+     "vote_count": 3478
     },
     {
      "rank": 6,
-     "model_name": "gemini-omni-flash",
-     "organization": "google",
+     "model_name": "Dreamina Seedance 2.0 (720p)",
+     "organization": "bytedance",
      "license": "Proprietary",
-     "rating": 1464.8279,
-     "rating_lower": 1459.2869,
-     "rating_upper": 1470.3689,
-     "vote_count": 87155
+     "rating": 1478.4003,
+     "rating_lower": 1471.6697,
+     "rating_upper": 1485.1309,
+     "vote_count": 148286
     },
     {
      "rank": 7,
-     "model_name": "hidream-o1-video-1.0",
-     "organization": "hidream",
+     "model_name": "SkyReels V4",
+     "organization": "skyreel",
      "license": "Proprietary",
-     "rating": 1456.4653,
-     "rating_lower": 1448.5468,
-     "rating_upper": 1464.3839,
-     "vote_count": 6488
+     "rating": 1476.3325,
+     "rating_lower": 1460.8726,
+     "rating_upper": 1491.7923,
+     "vote_count": 1585
     },
     {
      "rank": 8,
-     "model_name": "grok-imagine-video-1.5-720p",
-     "organization": "xai",
+     "model_name": "gemini-omni-flash",
+     "organization": "google",
      "license": "Proprietary",
-     "rating": 1456.017,
-     "rating_lower": 1451.8293,
-     "rating_upper": 1460.2047,
-     "vote_count": 137459
+     "rating": 1463.0642,
+     "rating_lower": 1457.6996,
+     "rating_upper": 1468.4287,
+     "vote_count": 135678
     },
     {
      "rank": 9,
-     "model_name": "flux-3-video-20260811",
-     "organization": "bfl",
+     "model_name": "HiDream-O1-Video-1.0",
+     "organization": "hidream",
      "license": "Proprietary",
-     "rating": 1449.4474,
-     "rating_lower": 1444.504,
-     "rating_upper": 1454.3907,
-     "vote_count": 37042
+     "rating": 1454.7012,
+     "rating_lower": 1447.7298,
+     "rating_upper": 1461.6727,
+     "vote_count": 24948
     },
     {
      "rank": 10,
-     "model_name": "happyhorse-1.0",
-     "organization": "aorizon",
+     "model_name": "Grok Imagine Video 1.5 (720p)",
+     "organization": "xai",
      "license": "Proprietary",
-     "rating": 1441.6632,
-     "rating_lower": 1431.8358,
-     "rating_upper": 1451.4906,
-     "vote_count": 70640
+     "rating": 1453.9214,
+     "rating_lower": 1449.6244,
+     "rating_upper": 1458.2185,
+     "vote_count": 196981
     },
     {
      "rank": 11,
-     "model_name": "wan2.7-i2v",
-     "organization": "wan",
+     "model_name": "FLUX 3 Video (20260811)",
+     "organization": "bfl",
      "license": "Proprietary",
-     "rating": 1428.2142,
-     "rating_lower": 1423.3784,
-     "rating_upper": 1433.05,
-     "vote_count": 85521
+     "rating": 1450.974,
+     "rating_lower": 1445.8897,
+     "rating_upper": 1456.0583,
+     "vote_count": 83848
     },
     {
      "rank": 12,
-     "model_name": "grok-imagine-video-720p",
-     "organization": "xai",
+     "model_name": "HappyHorse 1.0",
+     "organization": "aorizon",
      "license": "Proprietary",
-     "rating": 1415.3041,
-     "rating_lower": 1411.1784,
-     "rating_upper": 1419.4299,
-     "vote_count": 554050
+     "rating": 1443.2465,
+     "rating_lower": 1433.0195,
+     "rating_upper": 1453.4735,
+     "vote_count": 73986
     },
     {
      "rank": 13,
-     "model_name": "veo-3.1-audio",
-     "organization": "google",
+     "model_name": "Wan 2.7",
+     "organization": "alibaba",
      "license": "Proprietary",
-     "rating": 1398.0959,
-     "rating_lower": 1387.599,
-     "rating_upper": 1408.5928,
-     "vote_count": 25116
+     "rating": 1428.3015,
+     "rating_lower": 1423.1668,
+     "rating_upper": 1433.4363,
+     "vote_count": 109419
     },
     {
      "rank": 14,
-     "model_name": "veo-3.1-audio-1080p",
-     "organization": "google",
+     "model_name": "Grok Imagine Video (720p)",
+     "organization": "xai",
      "license": "Proprietary",
-     "rating": 1390.2367,
-     "rating_lower": 1381.6665,
-     "rating_upper": 1398.807,
-     "vote_count": 53089
+     "rating": 1411.6997,
+     "rating_lower": 1407.6479,
+     "rating_upper": 1415.7514,
+     "vote_count": 626961
     },
     {
      "rank": 15,
-     "model_name": "veo-3.1-fast-audio",
+     "model_name": "Veo 3.1 (Audio)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1385.0582,
-     "rating_lower": 1376.2308,
-     "rating_upper": 1393.8856,
-     "vote_count": 99804
+     "rating": 1398.5632,
+     "rating_lower": 1388.1166,
+     "rating_upper": 1409.0097,
+     "vote_count": 25283
     },
     {
      "rank": 16,
-     "model_name": "grok-imagine-video-480p",
-     "organization": "xai",
+     "model_name": "Veo 3.1 (Audio, 1080p)",
+     "organization": "google",
      "license": "Proprietary",
-     "rating": 1384.8553,
-     "rating_lower": 1376.4414,
-     "rating_upper": 1393.2692,
-     "vote_count": 19429
+     "rating": 1388.6796,
+     "rating_lower": 1380.2154,
+     "rating_upper": 1397.1437,
+     "vote_count": 55154
     },
     {
      "rank": 17,
-     "model_name": "veo-3.1-fast-audio-1080p",
+     "model_name": "Veo 3.1 Fast (Audio)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1371.595,
-     "rating_lower": 1362.1133,
-     "rating_upper": 1381.0767,
-     "vote_count": 54380
+     "rating": 1385.8273,
+     "rating_lower": 1377.0176,
+     "rating_upper": 1394.6371,
+     "vote_count": 102932
     },
     {
      "rank": 18,
-     "model_name": "vidu-q3-pro",
-     "organization": "shengshu",
+     "model_name": "Grok Imagine Video (480p)",
+     "organization": "xai",
      "license": "Proprietary",
-     "rating": 1363.1487,
-     "rating_lower": 1354.4169,
-     "rating_upper": 1371.8805,
-     "vote_count": 36679
+     "rating": 1384.9793,
+     "rating_lower": 1376.6733,
+     "rating_upper": 1393.2853,
+     "vote_count": 19907
     },
     {
      "rank": 19,
-     "model_name": "kling-v3-pro",
-     "organization": "kling",
+     "model_name": "Veo 3.1 Fast (Audio, 1080p)",
+     "organization": "google",
      "license": "Proprietary",
-     "rating": 1354.0141,
-     "rating_lower": 1348.5011,
-     "rating_upper": 1359.527,
-     "vote_count": 206221
+     "rating": 1372.3208,
+     "rating_lower": 1362.9958,
+     "rating_upper": 1381.6457,
+     "vote_count": 56497
     },
     {
      "rank": 20,
-     "model_name": "veo-3-audio",
-     "organization": "google",
+     "model_name": "Vidu Q3 Pro",
+     "organization": "shengshu",
      "license": "Proprietary",
-     "rating": 1331.4941,
-     "rating_lower": 1319.8745,
-     "rating_upper": 1343.1137,
-     "vote_count": 32367
+     "rating": 1363.018,
+     "rating_lower": 1354.4835,
+     "rating_upper": 1371.5524,
+     "vote_count": 38708
     },
     {
      "rank": 21,
-     "model_name": "veo-3-fast-audio",
-     "organization": "google",
+     "model_name": "Kling 3.0 Pro",
+     "organization": "kling",
      "license": "Proprietary",
-     "rating": 1326.0442,
-     "rating_lower": 1316.5399,
-     "rating_upper": 1335.5484,
-     "vote_count": 41194
+     "rating": 1353.4238,
+     "rating_lower": 1348.2283,
+     "rating_upper": 1358.6193,
+     "vote_count": 263903
     },
     {
      "rank": 22,
-     "model_name": "wan2.5-i2v-preview",
-     "organization": "alibaba",
+     "model_name": "Veo 3 (Audio)",
+     "organization": "google",
      "license": "Proprietary",
-     "rating": 1321.3786,
-     "rating_lower": 1311.0749,
-     "rating_upper": 1331.6823,
-     "vote_count": 16907
+     "rating": 1331.7081,
+     "rating_lower": 1320.3444,
+     "rating_upper": 1343.0719,
+     "vote_count": 32406
     },
     {
      "rank": 23,
-     "model_name": "wan2.6-i2v",
-     "organization": "alibaba",
+     "model_name": "Veo 3 Fast (Audio)",
+     "organization": "google",
      "license": "Proprietary",
-     "rating": 1309.5358,
-     "rating_lower": 1302.763,
-     "rating_upper": 1316.3087,
-     "vote_count": 121082
+     "rating": 1327.3243,
+     "rating_lower": 1317.9099,
+     "rating_upper": 1336.7387,
+     "vote_count": 41245
     },
     {
      "rank": 24,
-     "model_name": "seedance-v1.5-pro",
-     "organization": "bytedance",
+     "model_name": "Wan 2.5 Preview",
+     "organization": "alibaba",
      "license": "Proprietary",
-     "rating": 1307.1971,
-     "rating_lower": 1300.0602,
-     "rating_upper": 1314.334,
-     "vote_count": 245206
+     "rating": 1321.9389,
+     "rating_lower": 1311.64,
+     "rating_upper": 1332.2379,
+     "vote_count": 17107
     },
     {
      "rank": 25,
-     "model_name": "pixverse-v5.6",
-     "organization": "",
+     "model_name": "Wan 2.6",
+     "organization": "alibaba",
      "license": "Proprietary",
-     "rating": 1299.2576,
-     "rating_lower": 1291.9523,
-     "rating_upper": 1306.5628,
-     "vote_count": 126710
+     "rating": 1308.9284,
+     "rating_lower": 1302.35,
+     "rating_upper": 1315.5068,
+     "vote_count": 143559
     }
    ],
-   "cambios": []
+   "cambios": [
+    "entra un modelo nuevo, Gemini Omni 1.2 Flash (google), en el puesto 1, justo encima de MiniMax H3; pasa a ser el primero",
+    "entra un modelo nuevo, Dreamina Seedance 2.5 (720p) (bytedance), en el puesto 3, entre MiniMax H3 y Gemini Omni 1.1 Flash; primero: Gemini Omni 1.2 Flash; a 14 puntos del primero (1488 (±7) frente a 1502 (±12))"
+   ]
   }
  ]
 }
