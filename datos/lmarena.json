@@ -5,263 +5,261 @@
    "nombre": "Text Arena · Overall",
    "subconjunto": "text_style_control",
    "categoria": "overall",
-   "fecha": "2026-10-28",
-   "anterior": "2026-10-22",
+   "fecha": "2026-11-06",
+   "anterior": "2026-10-28",
    "filas": [
     {
      "rank": 1,
      "model_name": "Gemini 4 Carbon (High)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1527.5065,
-     "rating_lower": 1518.0976,
-     "rating_upper": 1536.9155,
-     "vote_count": 4403.0
+     "rating": 1526.4957,
+     "rating_lower": 1517.1216,
+     "rating_upper": 1535.8697,
+     "vote_count": 4483.0
     },
     {
      "rank": 2,
      "model_name": "Gemini 4 Argon (High)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1520.2546,
-     "rating_lower": 1513.9808,
-     "rating_upper": 1526.5285,
-     "vote_count": 11889.0
+     "rating": 1522.6255,
+     "rating_lower": 1517.0868,
+     "rating_upper": 1528.1643,
+     "vote_count": 18399.0
     },
     {
      "rank": 3,
-     "model_name": "Claude Opus 5.5 (High)",
-     "organization": "anthropic",
-     "license": "Proprietary",
-     "rating": 1508.6976,
-     "rating_lower": 1502.0906,
-     "rating_upper": 1515.3046,
-     "vote_count": 11415.0
-    },
-    {
-     "rank": 4,
      "model_name": "Muse Wonder (Max)",
      "organization": "meta",
      "license": "Proprietary",
-     "rating": 1507.0977,
-     "rating_lower": 1499.7595,
-     "rating_upper": 1514.4358,
-     "vote_count": 7749.0
+     "rating": 1513.1136,
+     "rating_lower": 1506.5944,
+     "rating_upper": 1519.6327,
+     "vote_count": 11229.0
+    },
+    {
+     "rank": 4,
+     "model_name": "Claude Opus 5.5 (High)",
+     "organization": "anthropic",
+     "license": "Proprietary",
+     "rating": 1505.0984,
+     "rating_lower": 1499.0012,
+     "rating_upper": 1511.1956,
+     "vote_count": 14849.0
     },
     {
      "rank": 5,
-     "model_name": "Claude Fable 5.1 (Max)",
-     "organization": "anthropic",
-     "license": "Proprietary",
-     "rating": 1504.3663,
-     "rating_lower": 1498.5537,
-     "rating_upper": 1510.179,
-     "vote_count": 17178.0
-    },
-    {
-     "rank": 6,
      "model_name": "Claude Fable 5 (High)",
      "organization": "anthropic",
      "license": "Proprietary",
-     "rating": 1503.8924,
-     "rating_lower": 1499.7176,
-     "rating_upper": 1508.0673,
-     "vote_count": 45341.0
+     "rating": 1504.0257,
+     "rating_lower": 1499.8812,
+     "rating_upper": 1508.1703,
+     "vote_count": 46601.0
+    },
+    {
+     "rank": 6,
+     "model_name": "Claude Fable 5.1 (Max)",
+     "organization": "anthropic",
+     "license": "Proprietary",
+     "rating": 1503.6508,
+     "rating_lower": 1498.0723,
+     "rating_upper": 1509.2294,
+     "vote_count": 19892.0
     },
     {
      "rank": 7,
      "model_name": "Claude Opus 4.6 (High)",
      "organization": "anthropic",
      "license": "Proprietary",
-     "rating": 1503.1628,
-     "rating_lower": 1499.8981,
-     "rating_upper": 1506.4274,
-     "vote_count": 84512.0
+     "rating": 1503.1717,
+     "rating_lower": 1499.9284,
+     "rating_upper": 1506.415,
+     "vote_count": 85548.0
     },
     {
      "rank": 8,
      "model_name": "Claude Opus 4.7 (High)",
      "organization": "anthropic",
      "license": "Proprietary",
-     "rating": 1501.0498,
-     "rating_lower": 1497.2938,
-     "rating_upper": 1504.8058,
-     "vote_count": 65110.0
+     "rating": 1500.9896,
+     "rating_lower": 1497.2324,
+     "rating_upper": 1504.7468,
+     "vote_count": 65007.0
     },
     {
      "rank": 9,
-     "model_name": "Claude Opus 4.6",
-     "organization": "anthropic",
-     "license": "Proprietary",
-     "rating": 1496.0961,
-     "rating_lower": 1492.9113,
-     "rating_upper": 1499.2809,
-     "vote_count": 89324.0
-    },
-    {
-     "rank": 10,
      "model_name": "Gemini 3.8 Flash (High)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1495.9451,
-     "rating_lower": 1491.5081,
-     "rating_upper": 1500.3821,
-     "vote_count": 47803.0
+     "rating": 1497.7816,
+     "rating_lower": 1493.5635,
+     "rating_upper": 1501.9997,
+     "vote_count": 59680.0
+    },
+    {
+     "rank": 10,
+     "model_name": "Claude Opus 4.6",
+     "organization": "anthropic",
+     "license": "Proprietary",
+     "rating": 1496.3125,
+     "rating_lower": 1493.1436,
+     "rating_upper": 1499.4814,
+     "vote_count": 90487.0
     },
     {
      "rank": 11,
      "model_name": "Muse Spark 1.3 (Max)",
      "organization": "meta",
      "license": "Proprietary",
-     "rating": 1495.0456,
-     "rating_lower": 1489.8004,
-     "rating_upper": 1500.2908,
-     "vote_count": 22134.0
+     "rating": 1495.4818,
+     "rating_lower": 1490.388,
+     "rating_upper": 1500.5755,
+     "vote_count": 25672.0
     },
     {
      "rank": 12,
      "model_name": "Claude Opus 4.7",
      "organization": "anthropic",
      "license": "Proprietary",
-     "rating": 1493.7218,
-     "rating_lower": 1489.9618,
-     "rating_upper": 1497.4819,
-     "vote_count": 66140.0
+     "rating": 1493.8354,
+     "rating_lower": 1490.0762,
+     "rating_upper": 1497.5946,
+     "vote_count": 66092.0
     },
     {
      "rank": 13,
      "model_name": "Muse Spark 1.2 (xHigh)",
      "organization": "meta",
      "license": "Proprietary",
-     "rating": 1492.188,
-     "rating_lower": 1485.8408,
-     "rating_upper": 1498.5353,
-     "vote_count": 11724.0
+     "rating": 1493.3045,
+     "rating_lower": 1487.3667,
+     "rating_upper": 1499.2422,
+     "vote_count": 14436.0
     },
     {
      "rank": 14,
      "model_name": "Claude Opus 5 (High)",
      "organization": "anthropic",
      "license": "Proprietary",
-     "rating": 1491.5506,
-     "rating_lower": 1487.9715,
-     "rating_upper": 1495.1297,
-     "vote_count": 73167.0
+     "rating": 1490.3848,
+     "rating_lower": 1486.7944,
+     "rating_upper": 1493.9752,
+     "vote_count": 75732.0
     },
     {
      "rank": 15,
-     "model_name": "Claude Opus 5 (Max)",
-     "organization": "anthropic",
-     "license": "Proprietary",
-     "rating": 1490.504,
-     "rating_lower": 1485.809,
-     "rating_upper": 1495.1991,
-     "vote_count": 35531.0
-    },
-    {
-     "rank": 16,
      "model_name": "Muse Spark 1.1",
      "organization": "meta",
      "license": "Proprietary",
-     "rating": 1490.2352,
-     "rating_lower": 1486.0855,
-     "rating_upper": 1494.3848,
-     "vote_count": 46354.0
+     "rating": 1490.235,
+     "rating_lower": 1486.0915,
+     "rating_upper": 1494.3785,
+     "vote_count": 46714.0
+    },
+    {
+     "rank": 16,
+     "model_name": "Claude Opus 5 (Max)",
+     "organization": "anthropic",
+     "license": "Proprietary",
+     "rating": 1489.3719,
+     "rating_lower": 1484.6926,
+     "rating_upper": 1494.0513,
+     "vote_count": 36681.0
     },
     {
      "rank": 17,
-     "model_name": "Gemini 3.7 Flash (High)",
-     "organization": "google",
-     "license": "Proprietary",
-     "rating": 1489.5501,
-     "rating_lower": 1484.8759,
-     "rating_upper": 1494.2242,
-     "vote_count": 32289.0
-    },
-    {
-     "rank": 18,
      "model_name": "Muse Spark",
      "organization": "meta",
      "license": "Proprietary",
-     "rating": 1489.0251,
-     "rating_lower": 1483.2952,
-     "rating_upper": 1494.755,
-     "vote_count": 14140.0
+     "rating": 1489.1501,
+     "rating_lower": 1483.4163,
+     "rating_upper": 1494.884,
+     "vote_count": 14119.0
+    },
+    {
+     "rank": 18,
+     "model_name": "Gemini 3.7 Flash (High)",
+     "organization": "google",
+     "license": "Proprietary",
+     "rating": 1488.9127,
+     "rating_lower": 1484.2794,
+     "rating_upper": 1493.546,
+     "vote_count": 34346.0
     },
     {
      "rank": 19,
      "model_name": "Kimi K3 (Max)",
      "organization": "moonshot",
      "license": "Kimi K3 license",
-     "rating": 1488.1895,
-     "rating_lower": 1483.7479,
-     "rating_upper": 1492.6311,
-     "vote_count": 36780.0
+     "rating": 1488.0628,
+     "rating_lower": 1483.7361,
+     "rating_upper": 1492.3894,
+     "vote_count": 40814.0
     },
     {
      "rank": 20,
      "model_name": "Gemini 3.1 Pro Preview",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1486.9,
-     "rating_lower": 1483.9759,
-     "rating_upper": 1489.824,
-     "vote_count": 132547.0
+     "rating": 1486.8061,
+     "rating_lower": 1483.8918,
+     "rating_upper": 1489.7205,
+     "vote_count": 134284.0
     },
     {
      "rank": 21,
      "model_name": "Gemini 3 Pro",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1485.4329,
-     "rating_lower": 1481.6428,
-     "rating_upper": 1489.223,
-     "vote_count": 42057.0
+     "rating": 1485.5924,
+     "rating_lower": 1481.8015,
+     "rating_upper": 1489.3832,
+     "vote_count": 42019.0
     },
     {
      "rank": 22,
      "model_name": "GPT-5.6 Sol (xHigh)",
      "organization": "openai",
      "license": "Proprietary",
-     "rating": 1484.9105,
-     "rating_lower": 1480.6749,
-     "rating_upper": 1489.146,
-     "vote_count": 43796.0
+     "rating": 1485.4244,
+     "rating_lower": 1481.2143,
+     "rating_upper": 1489.6345,
+     "vote_count": 45082.0
     },
     {
      "rank": 23,
-     "model_name": "Gemini 3.6 Flash (High)",
-     "organization": "google",
+     "model_name": "Qwen3.8-Max",
+     "organization": "alibaba",
      "license": "Proprietary",
-     "rating": 1483.1551,
-     "rating_lower": 1478.7318,
-     "rating_upper": 1487.5784,
+     "rating": 1483.0305,
+     "rating_lower": 1478.3878,
+     "rating_upper": 1487.6732,
      "vote_count": 36028.0
     },
     {
      "rank": 24,
-     "model_name": "Qwen3.8-Max",
-     "organization": "alibaba",
+     "model_name": "GPT-6.1 Sol (Max)",
+     "organization": "openai",
      "license": "Proprietary",
-     "rating": 1482.4121,
-     "rating_lower": 1477.621,
-     "rating_upper": 1487.2033,
-     "vote_count": 31915.0
+     "rating": 1482.8,
+     "rating_lower": 1476.381,
+     "rating_upper": 1489.219,
+     "vote_count": 12539.0
     },
     {
      "rank": 25,
-     "model_name": "Claude Opus 4.8 (High)",
-     "organization": "anthropic",
+     "model_name": "Gemini 3.6 Flash (High)",
+     "organization": "google",
      "license": "Proprietary",
-     "rating": 1481.7111,
-     "rating_lower": 1477.8453,
-     "rating_upper": 1485.5769,
-     "vote_count": 63994.0
+     "rating": 1482.5764,
+     "rating_lower": 1478.1589,
+     "rating_upper": 1486.9939,
+     "vote_count": 36116.0
     }
    ],
-   "cambios": [
-    "entra un modelo nuevo, Gemini 4 Carbon (High) (google), en el puesto 1, justo encima de Gemini 4 Argon (High); pasa a ser el primero"
-   ]
+   "cambios": []
   },
   {
    "nombre": "Agent Arena · Overall",
@@ -527,127 +525,127 @@
    "nombre": "Text-to-Image · Overall",
    "subconjunto": "text_to_image",
    "categoria": "overall",
-   "fecha": "2026-11-04",
-   "anterior": "2026-10-26",
+   "fecha": "2026-11-06",
+   "anterior": "2026-11-04",
    "filas": [
     {
      "rank": 1,
      "model_name": "GPT-Image-2.5 Sunburst",
      "organization": "openai",
      "license": "Proprietary",
-     "rating": 1427.1321,
-     "rating_lower": 1421.8948,
-     "rating_upper": 1432.3694,
-     "vote_count": 54913
+     "rating": 1428.8761,
+     "rating_lower": 1423.8198,
+     "rating_upper": 1433.9324,
+     "vote_count": 60081
     },
     {
      "rank": 2,
      "model_name": "GPT-Image-2.6 Sunburst (Medium)",
      "organization": "openai",
      "license": "Proprietary",
-     "rating": 1408.9955,
-     "rating_lower": 1396.1866,
-     "rating_upper": 1421.8045,
-     "vote_count": 2967
+     "rating": 1408.8626,
+     "rating_lower": 1396.0613,
+     "rating_upper": 1421.664,
+     "vote_count": 2972
     },
     {
      "rank": 3,
      "model_name": "GPT-Image-2.5 Flare",
      "organization": "openai",
      "license": "Proprietary",
-     "rating": 1399.4437,
-     "rating_lower": 1394.2804,
-     "rating_upper": 1404.6071,
-     "vote_count": 53925
+     "rating": 1401.7567,
+     "rating_lower": 1396.8082,
+     "rating_upper": 1406.7052,
+     "vote_count": 59106
     },
     {
      "rank": 4,
      "model_name": "GPT-Image-2.6 Flare (Medium)",
      "organization": "openai",
      "license": "Proprietary",
-     "rating": 1383.572,
-     "rating_lower": 1370.99,
-     "rating_upper": 1396.154,
-     "vote_count": 2792
+     "rating": 1382.775,
+     "rating_lower": 1370.2105,
+     "rating_upper": 1395.3394,
+     "vote_count": 2796
     },
     {
      "rank": 5,
      "model_name": "GPT-Image-2 (Medium)",
      "organization": "openai",
      "license": "Proprietary",
-     "rating": 1382.0983,
-     "rating_lower": 1378.252,
-     "rating_upper": 1385.9446,
-     "vote_count": 106737
+     "rating": 1382.1875,
+     "rating_lower": 1378.3933,
+     "rating_upper": 1385.9816,
+     "vote_count": 109042
     },
     {
      "rank": 6,
      "model_name": "MAI-Image-2.6",
      "organization": "microsoft-ai",
      "license": "Proprietary",
-     "rating": 1330.5777,
-     "rating_lower": 1325.2697,
-     "rating_upper": 1335.8857,
-     "vote_count": 38071
+     "rating": 1329.6854,
+     "rating_lower": 1324.6015,
+     "rating_upper": 1334.7694,
+     "vote_count": 40495
     },
     {
      "rank": 7,
      "model_name": "Gemini Nano Banana 2.1",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1325.3098,
-     "rating_lower": 1316.4765,
-     "rating_upper": 1334.143,
-     "vote_count": 5239
+     "rating": 1325.2978,
+     "rating_lower": 1316.4686,
+     "rating_upper": 1334.1269,
+     "vote_count": 5242
     },
     {
      "rank": 8,
      "model_name": "Grok Imagine Image 2.0",
      "organization": "xai",
      "license": "Proprietary",
-     "rating": 1317.3116,
-     "rating_lower": 1310.1665,
-     "rating_upper": 1324.4567,
-     "vote_count": 10830
+     "rating": 1317.9543,
+     "rating_lower": 1310.8111,
+     "rating_upper": 1325.0976,
+     "vote_count": 10832
     },
     {
      "rank": 9,
      "model_name": "Reve 2.1",
      "organization": "reve",
      "license": "Proprietary",
-     "rating": 1300.4033,
-     "rating_lower": 1292.8958,
-     "rating_upper": 1307.9107,
-     "vote_count": 8237
+     "rating": 1300.2226,
+     "rating_lower": 1292.716,
+     "rating_upper": 1307.7293,
+     "vote_count": 8238
     },
     {
      "rank": 10,
      "model_name": "Grok Imagine Image 2.0 (20260801)",
      "organization": "xai",
      "license": "Proprietary",
-     "rating": 1290.742,
-     "rating_lower": 1285.3468,
-     "rating_upper": 1296.1372,
-     "vote_count": 30734
+     "rating": 1288.8855,
+     "rating_lower": 1283.7561,
+     "rating_upper": 1294.0149,
+     "vote_count": 33919
     },
     {
      "rank": 11,
      "model_name": "Muse Image",
      "organization": "meta",
      "license": "Proprietary",
-     "rating": 1268.1171,
-     "rating_lower": 1263.5576,
-     "rating_upper": 1272.6767,
-     "vote_count": 57568
+     "rating": 1268.1967,
+     "rating_lower": 1263.7585,
+     "rating_upper": 1272.6349,
+     "vote_count": 59930
     },
     {
      "rank": 12,
      "model_name": "Reve 2.0",
      "organization": "reve",
      "license": "Proprietary",
-     "rating": 1267.7422,
-     "rating_lower": 1261.5521,
-     "rating_upper": 1273.9323,
+     "rating": 1267.6821,
+     "rating_lower": 1261.4927,
+     "rating_upper": 1273.8715,
      "vote_count": 15756
     },
     {
@@ -655,413 +653,409 @@
      "model_name": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1257.4929,
-     "rating_lower": 1253.6264,
-     "rating_upper": 1261.3593,
-     "vote_count": 77495
+     "rating": 1257.1898,
+     "rating_lower": 1253.4201,
+     "rating_upper": 1260.9595,
+     "vote_count": 80662
     },
     {
      "rank": 14,
      "model_name": "Qwen-Image-3.0-Pro",
      "organization": "alibaba",
      "license": "Proprietary",
-     "rating": 1254.0611,
-     "rating_lower": 1247.5867,
-     "rating_upper": 1260.5355,
-     "vote_count": 11412
+     "rating": 1254.0409,
+     "rating_lower": 1247.5656,
+     "rating_upper": 1260.5162,
+     "vote_count": 11406
     },
     {
      "rank": 15,
      "model_name": "MAI-Image-2.5",
      "organization": "microsoft-ai",
      "license": "Proprietary",
-     "rating": 1252.998,
-     "rating_lower": 1248.8214,
-     "rating_upper": 1257.1746,
-     "vote_count": 61222
+     "rating": 1253.0012,
+     "rating_lower": 1248.8247,
+     "rating_upper": 1257.1778,
+     "vote_count": 61217
     },
     {
      "rank": 16,
      "model_name": "Seedream 5.0 Pro",
      "organization": "bytedance",
      "license": "Proprietary",
-     "rating": 1250.7979,
-     "rating_lower": 1246.9484,
-     "rating_upper": 1254.6474,
-     "vote_count": 109680
+     "rating": 1250.0599,
+     "rating_lower": 1246.319,
+     "rating_upper": 1253.8007,
+     "vote_count": 112585
     },
     {
      "rank": 17,
      "model_name": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1249.4383,
-     "rating_lower": 1243.4733,
-     "rating_upper": 1255.4033,
-     "vote_count": 17787
+     "rating": 1249.369,
+     "rating_lower": 1243.405,
+     "rating_upper": 1255.3329,
+     "vote_count": 17790
     },
     {
      "rank": 18,
      "model_name": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1246.3108,
-     "rating_lower": 1243.3553,
-     "rating_upper": 1249.2664,
-     "vote_count": 191257
+     "rating": 1246.3096,
+     "rating_lower": 1243.3531,
+     "rating_upper": 1249.2661,
+     "vote_count": 191259
     },
     {
      "rank": 19,
      "model_name": "GPT-Image-1.5 (High Fidelity)",
      "organization": "openai",
      "license": "Proprietary",
-     "rating": 1236.3923,
-     "rating_lower": 1233.3773,
-     "rating_upper": 1239.4073,
-     "vote_count": 173798
+     "rating": 1236.3196,
+     "rating_lower": 1233.3039,
+     "rating_upper": 1239.3354,
+     "vote_count": 173799
     },
     {
      "rank": 20,
      "model_name": "Gemini 3 Pro Image Preview (nano-banana-pro)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1231.7943,
-     "rating_lower": 1226.9138,
-     "rating_upper": 1236.6747,
-     "vote_count": 86446
+     "rating": 1231.805,
+     "rating_lower": 1226.9238,
+     "rating_upper": 1236.6862,
+     "vote_count": 86445
     },
     {
      "rank": 21,
      "model_name": "Qwen-Image-2.1",
      "organization": "alibaba",
      "license": "qwen-research",
-     "rating": 1226.5536,
-     "rating_lower": 1220.5181,
-     "rating_upper": 1232.589,
-     "vote_count": 19378
+     "rating": 1226.5449,
+     "rating_lower": 1220.514,
+     "rating_upper": 1232.5758,
+     "vote_count": 19390
     },
     {
      "rank": 22,
      "model_name": "Ideogram 4.0 (Quality)",
      "organization": "ideogram",
      "license": "Ideogram Open Model",
-     "rating": 1199.235,
-     "rating_lower": 1195.466,
-     "rating_upper": 1203.0041,
-     "vote_count": 77424
+     "rating": 1199.3648,
+     "rating_lower": 1195.7015,
+     "rating_upper": 1203.0281,
+     "vote_count": 80646
     },
     {
      "rank": 23,
      "model_name": "Qwen-Image-2.0-Pro (2026-06-22)",
      "organization": "alibaba",
      "license": "Proprietary",
-     "rating": 1191.6299,
-     "rating_lower": 1185.78,
-     "rating_upper": 1197.4798,
-     "vote_count": 13081
+     "rating": 1191.5433,
+     "rating_lower": 1185.6941,
+     "rating_upper": 1197.3926,
+     "vote_count": 13079
     },
     {
      "rank": 24,
      "model_name": "UNI-1.1 Max",
      "organization": "luma-ai",
      "license": "Proprietary",
-     "rating": 1188.7526,
-     "rating_lower": 1182.5903,
-     "rating_upper": 1194.9149,
-     "vote_count": 14079
+     "rating": 1188.7492,
+     "rating_lower": 1182.5872,
+     "rating_upper": 1194.9111,
+     "vote_count": 14080
     },
     {
      "rank": 25,
      "model_name": "MAI-Image-2",
      "organization": "microsoft-ai",
      "license": "Proprietary",
-     "rating": 1183.3581,
-     "rating_lower": 1178.8087,
-     "rating_upper": 1187.9075,
-     "vote_count": 51435
+     "rating": 1183.3689,
+     "rating_lower": 1178.8195,
+     "rating_upper": 1187.9184,
+     "vote_count": 51436
     }
    ],
-   "cambios": [
-    "entra un modelo nuevo, GPT-Image-2.6 Sunburst (Medium) (openai), en el puesto 2, entre GPT-Image-2.5 Sunburst y GPT-Image-2.5 Flare; primero: GPT-Image-2.5 Sunburst; a 18 puntos del primero (1409 (±13) frente a 1427 (±5))"
-   ]
+   "cambios": []
   },
   {
    "nombre": "Image Edit · Overall",
    "subconjunto": "image_edit",
    "categoria": "overall",
-   "fecha": "2026-11-04",
-   "anterior": "2026-10-27",
+   "fecha": "2026-11-06",
+   "anterior": "2026-11-04",
    "filas": [
     {
      "rank": 1,
      "model_name": "GPT-Image-2.5 Sunburst",
      "organization": "openai",
      "license": "Proprietary",
-     "rating": 1517.3031,
-     "rating_lower": 1512.5784,
-     "rating_upper": 1522.0278,
-     "vote_count": 114468
+     "rating": 1517.4229,
+     "rating_lower": 1512.9005,
+     "rating_upper": 1521.9454,
+     "vote_count": 125387
     },
     {
      "rank": 2,
      "model_name": "GPT-Image-2.5 Flare",
      "organization": "openai",
      "license": "Proprietary",
-     "rating": 1482.1321,
-     "rating_lower": 1477.6146,
-     "rating_upper": 1486.6496,
-     "vote_count": 111635
+     "rating": 1483.0817,
+     "rating_lower": 1478.7163,
+     "rating_upper": 1487.4471,
+     "vote_count": 122435
     },
     {
      "rank": 3,
      "model_name": "GPT-Image-2.6 Sunburst (Medium)",
      "organization": "openai",
      "license": "Proprietary",
-     "rating": 1476.2612,
-     "rating_lower": 1466.1853,
-     "rating_upper": 1486.3371,
-     "vote_count": 3833
+     "rating": 1475.7722,
+     "rating_lower": 1465.7137,
+     "rating_upper": 1485.8307,
+     "vote_count": 3843
     },
     {
      "rank": 4,
      "model_name": "MAI-Image-2.7-Preview",
      "organization": "microsoft-ai",
      "license": "Proprietary",
-     "rating": 1468.7642,
-     "rating_lower": 1462.017,
-     "rating_upper": 1475.5114,
-     "vote_count": 12728
+     "rating": 1467.1872,
+     "rating_lower": 1461.054,
+     "rating_upper": 1473.3204,
+     "vote_count": 19682
     },
     {
      "rank": 5,
      "model_name": "GPT-Image-2.6 Flare (Medium)",
      "organization": "openai",
      "license": "Proprietary",
-     "rating": 1461.9989,
-     "rating_lower": 1452.0757,
-     "rating_upper": 1471.9221,
-     "vote_count": 3850
+     "rating": 1462.0184,
+     "rating_lower": 1452.0962,
+     "rating_upper": 1471.9406,
+     "vote_count": 3852
     },
     {
      "rank": 6,
      "model_name": "GPT-Image-2 (Medium)",
      "organization": "openai",
      "license": "Proprietary",
-     "rating": 1460.0893,
-     "rating_lower": 1457.0888,
-     "rating_upper": 1463.0899,
-     "vote_count": 359999
+     "rating": 1459.9196,
+     "rating_lower": 1456.9778,
+     "rating_upper": 1462.8614,
+     "vote_count": 368928
     },
     {
      "rank": 7,
      "model_name": "Grok Imagine Image 2.0",
      "organization": "xai",
      "license": "Proprietary",
-     "rating": 1438.0444,
-     "rating_lower": 1432.5419,
-     "rating_upper": 1443.5469,
-     "vote_count": 37138
+     "rating": 1438.3855,
+     "rating_lower": 1432.8792,
+     "rating_upper": 1443.8917,
+     "vote_count": 37184
     },
     {
      "rank": 8,
      "model_name": "Gemini Nano Banana 2.1",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1427.314,
-     "rating_lower": 1421.5103,
-     "rating_upper": 1433.1177,
-     "vote_count": 12853
+     "rating": 1427.1901,
+     "rating_lower": 1421.3897,
+     "rating_upper": 1432.9905,
+     "vote_count": 12864
     },
     {
      "rank": 9,
      "model_name": "MAI-Image-2.6",
      "organization": "microsoft-ai",
      "license": "Proprietary",
-     "rating": 1426.3071,
-     "rating_lower": 1421.8298,
-     "rating_upper": 1430.7844,
-     "vote_count": 89003
+     "rating": 1426.5256,
+     "rating_lower": 1422.0508,
+     "rating_upper": 1431.0004,
+     "vote_count": 89086
     },
     {
      "rank": 10,
      "model_name": "Grok Imagine Image 2.0 (20260801)",
      "organization": "xai",
      "license": "Proprietary",
-     "rating": 1416.0618,
-     "rating_lower": 1411.7536,
-     "rating_upper": 1420.3701,
-     "vote_count": 114884
+     "rating": 1416.5054,
+     "rating_lower": 1412.4088,
+     "rating_upper": 1420.6021,
+     "vote_count": 127412
     },
     {
      "rank": 11,
      "model_name": "Krea 3 Ultra",
      "organization": "krea",
      "license": "",
-     "rating": 1411.1401,
-     "rating_lower": 1400.2568,
-     "rating_upper": 1422.0234,
-     "vote_count": 2918
+     "rating": 1411.0803,
+     "rating_lower": 1400.2062,
+     "rating_upper": 1421.9545,
+     "vote_count": 2924
     },
     {
      "rank": 12,
      "model_name": "MAI-Image-2.5",
      "organization": "microsoft-ai",
      "license": "Proprietary",
-     "rating": 1400.2755,
-     "rating_lower": 1396.5884,
-     "rating_upper": 1403.9626,
-     "vote_count": 190011
+     "rating": 1400.3515,
+     "rating_lower": 1396.669,
+     "rating_upper": 1404.0341,
+     "vote_count": 190033
     },
     {
      "rank": 13,
      "model_name": "Muse Image",
      "organization": "meta",
      "license": "Proprietary",
-     "rating": 1399.3935,
-     "rating_lower": 1395.618,
-     "rating_upper": 1403.1689,
-     "vote_count": 196287
+     "rating": 1399.3101,
+     "rating_lower": 1395.6306,
+     "rating_upper": 1402.9895,
+     "vote_count": 204472
     },
     {
      "rank": 14,
      "model_name": "Seedream 5.0 Pro",
      "organization": "bytedance",
      "license": "Proprietary",
-     "rating": 1390.9385,
-     "rating_lower": 1387.7364,
-     "rating_upper": 1394.1406,
-     "vote_count": 342188
+     "rating": 1391.4432,
+     "rating_lower": 1388.3443,
+     "rating_upper": 1394.542,
+     "vote_count": 353731
     },
     {
      "rank": 15,
      "model_name": "Grok Imagine Image (Quality, 20260519)",
      "organization": "xai",
      "license": "Proprietary",
-     "rating": 1390.7305,
-     "rating_lower": 1385.1249,
-     "rating_upper": 1396.3361,
-     "vote_count": 38203
+     "rating": 1390.7441,
+     "rating_lower": 1385.1368,
+     "rating_upper": 1396.3514,
+     "vote_count": 38200
     },
     {
      "rank": 16,
      "model_name": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1390.2049,
-     "rating_lower": 1387.7258,
-     "rating_upper": 1392.684,
-     "vote_count": 706552
+     "rating": 1390.1619,
+     "rating_lower": 1387.6841,
+     "rating_upper": 1392.6398,
+     "vote_count": 706596
     },
     {
      "rank": 17,
      "model_name": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1386.5513,
-     "rating_lower": 1383.5499,
-     "rating_upper": 1389.5526,
-     "vote_count": 283121
+     "rating": 1386.632,
+     "rating_lower": 1383.6301,
+     "rating_upper": 1389.6339,
+     "vote_count": 283171
     },
     {
      "rank": 18,
      "model_name": "ChatGPT Image Latest (High Fidelity, 20251216)",
      "organization": "openai",
      "license": "Proprietary",
-     "rating": 1386.3644,
-     "rating_lower": 1383.7803,
-     "rating_upper": 1388.9485,
-     "vote_count": 678695
+     "rating": 1386.3808,
+     "rating_lower": 1383.7962,
+     "rating_upper": 1388.9654,
+     "vote_count": 678721
     },
     {
      "rank": 19,
      "model_name": "Gemini 3 Pro Image Preview (nano-banana-pro)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1385.2183,
-     "rating_lower": 1382.3724,
-     "rating_upper": 1388.0641,
-     "vote_count": 540524
+     "rating": 1385.1949,
+     "rating_lower": 1382.3473,
+     "rating_upper": 1388.0424,
+     "vote_count": 540474
     },
     {
      "rank": 20,
      "model_name": "Reve 2.1",
      "organization": "reve",
      "license": "Proprietary",
-     "rating": 1373.5355,
-     "rating_lower": 1367.4844,
-     "rating_upper": 1379.5866,
-     "vote_count": 20797
+     "rating": 1373.5377,
+     "rating_lower": 1367.4882,
+     "rating_upper": 1379.5871,
+     "vote_count": 20800
     },
     {
      "rank": 21,
      "model_name": "GPT-Image-1.5 (High Fidelity)",
      "organization": "openai",
      "license": "Proprietary",
-     "rating": 1367.9476,
-     "rating_lower": 1365.419,
-     "rating_upper": 1370.4762,
-     "vote_count": 704550
+     "rating": 1367.9317,
+     "rating_lower": 1365.4031,
+     "rating_upper": 1370.4602,
+     "vote_count": 704630
     },
     {
      "rank": 22,
      "model_name": "Qwen-Image-2.1",
      "organization": "alibaba",
      "license": "qwen-research",
-     "rating": 1363.7083,
-     "rating_lower": 1357.8061,
-     "rating_upper": 1369.6105,
-     "vote_count": 41482
+     "rating": 1363.938,
+     "rating_lower": 1358.0437,
+     "rating_upper": 1369.8323,
+     "vote_count": 41522
     },
     {
      "rank": 23,
      "model_name": "Reve 2.0",
      "organization": "reve",
      "license": "Proprietary",
-     "rating": 1358.2357,
-     "rating_lower": 1351.7705,
-     "rating_upper": 1364.7009,
-     "vote_count": 19289
+     "rating": 1358.23,
+     "rating_lower": 1351.7645,
+     "rating_upper": 1364.6955,
+     "vote_count": 19291
     },
     {
      "rank": 24,
      "model_name": "Ideogram 4.5",
      "organization": "ideogram",
      "license": "Proprietary",
-     "rating": 1346.6402,
-     "rating_lower": 1342.2165,
-     "rating_upper": 1351.0639,
-     "vote_count": 87673
+     "rating": 1345.2943,
+     "rating_lower": 1341.1139,
+     "rating_upper": 1349.4748,
+     "vote_count": 100744
     },
     {
      "rank": 25,
      "model_name": "UNI-1.1 Max",
      "organization": "luma-ai",
      "license": "Proprietary",
-     "rating": 1333.8502,
-     "rating_lower": 1328.9787,
-     "rating_upper": 1338.7216,
-     "vote_count": 43467
+     "rating": 1333.8866,
+     "rating_lower": 1329.0145,
+     "rating_upper": 1338.7586,
+     "vote_count": 43463
     }
    ],
-   "cambios": [
-    "entra un modelo nuevo, GPT-Image-2.6 Sunburst (Medium) (openai), en el puesto 3, entre GPT-Image-2.5 Flare y MAI-Image-2.7-Preview; primero: GPT-Image-2.5 Sunburst; a 41 puntos del primero (1476 (±10) frente a 1517 (±5))"
-   ]
+   "cambios": []
   },
   {
    "nombre": "Text-to-Video · Overall",
    "subconjunto": "text_to_video",
    "categoria": "overall",
-   "fecha": "2026-11-05",
-   "anterior": "2026-09-22",
+   "fecha": "2026-11-06",
+   "anterior": "2026-11-05",
    "filas": [
     {
      "rank": 1,
      "model_name": "Gemini Omni 1.2 Flash",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1541.3914,
-     "rating_lower": 1525.894,
-     "rating_upper": 1556.8887,
+     "rating": 1541.4082,
+     "rating_lower": 1525.9097,
+     "rating_upper": 1556.9068,
      "vote_count": 1742
     },
     {
@@ -1069,9 +1063,9 @@
      "model_name": "Gemini Omni 1.1 Flash",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1513.574,
-     "rating_lower": 1498.2883,
-     "rating_upper": 1528.8596,
+     "rating": 1513.5769,
+     "rating_lower": 1498.2914,
+     "rating_upper": 1528.8624,
      "vote_count": 1803
     },
     {
@@ -1079,19 +1073,19 @@
      "model_name": "gemini-omni-flash",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1509.4201,
-     "rating_lower": 1501.1087,
-     "rating_upper": 1517.7314,
-     "vote_count": 45833
+     "rating": 1509.4552,
+     "rating_lower": 1501.1476,
+     "rating_upper": 1517.7627,
+     "vote_count": 46396
     },
     {
      "rank": 4,
      "model_name": "FLUX 3 Video",
      "organization": "bfl",
      "license": "Proprietary",
-     "rating": 1490.5422,
-     "rating_lower": 1473.5861,
-     "rating_upper": 1507.4983,
+     "rating": 1490.5456,
+     "rating_lower": 1473.5896,
+     "rating_upper": 1507.5016,
      "vote_count": 1321
     },
     {
@@ -1099,9 +1093,9 @@
      "model_name": "Grok Imagine Video 1.5",
      "organization": "xai",
      "license": "Proprietary",
-     "rating": 1486.2799,
-     "rating_lower": 1467.7886,
-     "rating_upper": 1504.7711,
+     "rating": 1486.285,
+     "rating_lower": 1467.794,
+     "rating_upper": 1504.776,
      "vote_count": 1260
     },
     {
@@ -1109,49 +1103,49 @@
      "model_name": "Dreamina Seedance 2.0 (720p)",
      "organization": "bytedance",
      "license": "Proprietary",
-     "rating": 1481.4087,
-     "rating_lower": 1473.8162,
-     "rating_upper": 1489.0011,
-     "vote_count": 71590
+     "rating": 1481.3095,
+     "rating_lower": 1473.7183,
+     "rating_upper": 1488.9008,
+     "vote_count": 72038
     },
     {
      "rank": 7,
      "model_name": "Dreamina Seedance 2.5 (720p)",
      "organization": "bytedance",
      "license": "Proprietary",
-     "rating": 1480.1297,
-     "rating_lower": 1472.4988,
-     "rating_upper": 1487.7607,
-     "vote_count": 24549
+     "rating": 1480.3814,
+     "rating_lower": 1472.7532,
+     "rating_upper": 1488.0097,
+     "vote_count": 25044
     },
     {
      "rank": 8,
      "model_name": "Wan 3.0",
      "organization": "alibaba",
      "license": "Proprietary",
-     "rating": 1477.3929,
-     "rating_lower": 1465.8695,
-     "rating_upper": 1488.9162,
-     "vote_count": 3082
+     "rating": 1477.2844,
+     "rating_lower": 1465.7528,
+     "rating_upper": 1488.8159,
+     "vote_count": 3080
     },
     {
      "rank": 9,
      "model_name": "SkyReels V4",
      "organization": "skyreel",
      "license": "Proprietary",
-     "rating": 1457.1327,
-     "rating_lower": 1438.9169,
-     "rating_upper": 1475.3485,
-     "vote_count": 1073
+     "rating": 1457.6697,
+     "rating_lower": 1439.4512,
+     "rating_upper": 1475.8882,
+     "vote_count": 1074
     },
     {
      "rank": 10,
      "model_name": "Muse Video",
      "organization": "meta",
      "license": "Proprietary",
-     "rating": 1456.8467,
-     "rating_lower": 1442.3212,
-     "rating_upper": 1471.3723,
+     "rating": 1456.8505,
+     "rating_lower": 1442.3251,
+     "rating_upper": 1471.376,
      "vote_count": 2241
     },
     {
@@ -1159,39 +1153,39 @@
      "model_name": "MiniMax H3",
      "organization": "minimax",
      "license": "minimax-h3-community-license-agreement",
-     "rating": 1456.375,
-     "rating_lower": 1448.5095,
-     "rating_upper": 1464.2405,
-     "vote_count": 28443
+     "rating": 1456.5795,
+     "rating_lower": 1448.7158,
+     "rating_upper": 1464.4433,
+     "vote_count": 28943
     },
     {
      "rank": 12,
      "model_name": "HappyHorse 1.0",
      "organization": "aorizon",
      "license": "Proprietary",
-     "rating": 1428.449,
-     "rating_lower": 1415.9832,
-     "rating_upper": 1440.9148,
-     "vote_count": 23004
+     "rating": 1428.4681,
+     "rating_lower": 1416.0023,
+     "rating_upper": 1440.9338,
+     "vote_count": 23006
     },
     {
      "rank": 13,
      "model_name": "Sora 2 Pro",
      "organization": "openai",
      "license": "Proprietary",
-     "rating": 1367.4342,
-     "rating_lower": 1360.8622,
-     "rating_upper": 1374.0063,
-     "vote_count": 56212
+     "rating": 1367.4381,
+     "rating_lower": 1360.8658,
+     "rating_upper": 1374.0103,
+     "vote_count": 56208
     },
     {
      "rank": 14,
      "model_name": "Veo 3.1 (Audio)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1363.0464,
-     "rating_lower": 1348.6809,
-     "rating_upper": 1377.412,
+     "rating": 1363.0559,
+     "rating_lower": 1348.6905,
+     "rating_upper": 1377.4213,
      "vote_count": 13819
     },
     {
@@ -1199,39 +1193,39 @@
      "model_name": "Veo 3.1 (Audio, 1080p)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1362.6048,
-     "rating_lower": 1352.4252,
-     "rating_upper": 1372.7844,
-     "vote_count": 25759
+     "rating": 1362.6131,
+     "rating_lower": 1352.4334,
+     "rating_upper": 1372.7927,
+     "vote_count": 25760
     },
     {
      "rank": 16,
      "model_name": "Veo 3.1 Fast (Audio)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1361.341,
-     "rating_lower": 1350.9241,
-     "rating_upper": 1371.7579,
-     "vote_count": 40391
+     "rating": 1361.3505,
+     "rating_lower": 1350.9337,
+     "rating_upper": 1371.7673,
+     "vote_count": 40389
     },
     {
      "rank": 17,
      "model_name": "Veo 3.1 Fast (Audio, 1080p)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1357.06,
-     "rating_lower": 1347.1904,
-     "rating_upper": 1366.9296,
-     "vote_count": 26594
+     "rating": 1357.0653,
+     "rating_lower": 1347.1953,
+     "rating_upper": 1366.9353,
+     "vote_count": 26595
     },
     {
      "rank": 18,
      "model_name": "Veo 3 Fast (Audio)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1347.4327,
-     "rating_lower": 1336.1622,
-     "rating_upper": 1358.7031,
+     "rating": 1347.4452,
+     "rating_lower": 1336.1748,
+     "rating_upper": 1358.7157,
      "vote_count": 25288
     },
     {
@@ -1239,29 +1233,29 @@
      "model_name": "Sora 2",
      "organization": "openai",
      "license": "Proprietary",
-     "rating": 1342.6287,
-     "rating_lower": 1336.5942,
-     "rating_upper": 1348.6633,
-     "vote_count": 74272
+     "rating": 1342.6376,
+     "rating_lower": 1336.6031,
+     "rating_upper": 1348.6721,
+     "vote_count": 74271
     },
     {
      "rank": 20,
      "model_name": "Grok Imagine Video (720p)",
      "organization": "xai",
      "license": "Proprietary",
-     "rating": 1341.4211,
-     "rating_lower": 1335.29,
-     "rating_upper": 1347.5522,
-     "vote_count": 189688
+     "rating": 1341.4759,
+     "rating_lower": 1335.3455,
+     "rating_upper": 1347.6062,
+     "vote_count": 190307
     },
     {
      "rank": 21,
      "model_name": "Veo 3 (Audio)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1340.532,
-     "rating_lower": 1327.9348,
-     "rating_upper": 1353.1292,
+     "rating": 1340.5445,
+     "rating_lower": 1327.9473,
+     "rating_upper": 1353.1417,
      "vote_count": 19041
     },
     {
@@ -1269,61 +1263,59 @@
      "model_name": "Wan 2.7",
      "organization": "alibaba",
      "license": "Proprietary",
-     "rating": 1337.4886,
-     "rating_lower": 1330.6212,
-     "rating_upper": 1344.3561,
-     "vote_count": 47586
+     "rating": 1337.4577,
+     "rating_lower": 1330.5274,
+     "rating_upper": 1344.388,
+     "vote_count": 48201
     },
     {
      "rank": 23,
      "model_name": "Wan 2.6",
      "organization": "alibaba",
      "license": "Proprietary",
-     "rating": 1323.6538,
-     "rating_lower": 1316.6452,
-     "rating_upper": 1330.6623,
-     "vote_count": 74901
+     "rating": 1323.6715,
+     "rating_lower": 1316.6636,
+     "rating_upper": 1330.6794,
+     "vote_count": 75458
     },
     {
      "rank": 24,
      "model_name": "Seedance 1.5 Pro",
      "organization": "bytedance",
      "license": "Proprietary",
-     "rating": 1255.7693,
-     "rating_lower": 1249.1572,
-     "rating_upper": 1262.3813,
-     "vote_count": 78310
+     "rating": 1255.782,
+     "rating_lower": 1249.1699,
+     "rating_upper": 1262.394,
+     "vote_count": 78309
     },
     {
      "rank": 25,
      "model_name": "Veo 3",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1254.6194,
-     "rating_lower": 1243.4063,
-     "rating_upper": 1265.8324,
+     "rating": 1254.632,
+     "rating_lower": 1243.419,
+     "rating_upper": 1265.8451,
      "vote_count": 15026
     }
    ],
-   "cambios": [
-    "entra un modelo nuevo, Gemini Omni 1.2 Flash (google), en el puesto 1, justo encima de Gemini Omni 1.1 Flash; pasa a ser el primero"
-   ]
+   "cambios": []
   },
   {
    "nombre": "Image-to-Video · Overall",
    "subconjunto": "image_to_video",
    "categoria": "overall",
-   "fecha": "2026-11-05",
-   "anterior": "2026-09-22",
+   "fecha": "2026-11-06",
+   "anterior": "2026-11-05",
    "filas": [
     {
      "rank": 1,
      "model_name": "Gemini Omni 1.2 Flash",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1502.3238,
-     "rating_lower": 1490.7557,
-     "rating_upper": 1513.892,
+     "rating": 1502.4404,
+     "rating_lower": 1490.8719,
+     "rating_upper": 1514.0088,
      "vote_count": 2745
     },
     {
@@ -1331,139 +1323,139 @@
      "model_name": "MiniMax H3",
      "organization": "minimax",
      "license": "minimax-h3-community-license-agreement",
-     "rating": 1493.1838,
-     "rating_lower": 1487.9202,
-     "rating_upper": 1498.4474,
-     "vote_count": 120401
+     "rating": 1493.1333,
+     "rating_lower": 1487.874,
+     "rating_upper": 1498.3926,
+     "vote_count": 121819
     },
     {
      "rank": 3,
      "model_name": "Dreamina Seedance 2.5 (720p)",
      "organization": "bytedance",
      "license": "Proprietary",
-     "rating": 1488.2727,
-     "rating_lower": 1481.384,
-     "rating_upper": 1495.1613,
-     "vote_count": 42283
+     "rating": 1488.1573,
+     "rating_lower": 1481.2779,
+     "rating_upper": 1495.0367,
+     "vote_count": 42856
     },
     {
      "rank": 4,
      "model_name": "Gemini Omni 1.1 Flash",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1486.4603,
-     "rating_lower": 1475.5252,
-     "rating_upper": 1497.3955,
-     "vote_count": 3775
+     "rating": 1486.4719,
+     "rating_lower": 1475.5436,
+     "rating_upper": 1497.4002,
+     "vote_count": 3776
     },
     {
      "rank": 5,
      "model_name": "Wan 3.0",
      "organization": "alibaba",
      "license": "Proprietary",
-     "rating": 1480.9404,
-     "rating_lower": 1470.1698,
-     "rating_upper": 1491.7109,
-     "vote_count": 3478
+     "rating": 1480.8818,
+     "rating_lower": 1470.1158,
+     "rating_upper": 1491.6478,
+     "vote_count": 3480
     },
     {
      "rank": 6,
      "model_name": "Dreamina Seedance 2.0 (720p)",
      "organization": "bytedance",
      "license": "Proprietary",
-     "rating": 1478.4003,
-     "rating_lower": 1471.6697,
-     "rating_upper": 1485.1309,
-     "vote_count": 148286
+     "rating": 1478.529,
+     "rating_lower": 1471.8003,
+     "rating_upper": 1485.2578,
+     "vote_count": 148872
     },
     {
      "rank": 7,
      "model_name": "SkyReels V4",
      "organization": "skyreel",
      "license": "Proprietary",
-     "rating": 1476.3325,
-     "rating_lower": 1460.8726,
-     "rating_upper": 1491.7923,
-     "vote_count": 1585
+     "rating": 1475.9043,
+     "rating_lower": 1460.4323,
+     "rating_upper": 1491.3763,
+     "vote_count": 1584
     },
     {
      "rank": 8,
      "model_name": "gemini-omni-flash",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1463.0642,
-     "rating_lower": 1457.6996,
-     "rating_upper": 1468.4287,
-     "vote_count": 135678
+     "rating": 1463.1537,
+     "rating_lower": 1457.7902,
+     "rating_upper": 1468.5173,
+     "vote_count": 136811
     },
     {
      "rank": 9,
      "model_name": "HiDream-O1-Video-1.0",
      "organization": "hidream",
      "license": "Proprietary",
-     "rating": 1454.7012,
-     "rating_lower": 1447.7298,
-     "rating_upper": 1461.6727,
-     "vote_count": 24948
+     "rating": 1455.1053,
+     "rating_lower": 1448.1408,
+     "rating_upper": 1462.0698,
+     "vote_count": 25279
     },
     {
      "rank": 10,
      "model_name": "Grok Imagine Video 1.5 (720p)",
      "organization": "xai",
      "license": "Proprietary",
-     "rating": 1453.9214,
-     "rating_lower": 1449.6244,
-     "rating_upper": 1458.2185,
-     "vote_count": 196981
+     "rating": 1453.8954,
+     "rating_lower": 1449.6008,
+     "rating_upper": 1458.1899,
+     "vote_count": 198242
     },
     {
      "rank": 11,
      "model_name": "FLUX 3 Video (20260811)",
      "organization": "bfl",
      "license": "Proprietary",
-     "rating": 1450.974,
-     "rating_lower": 1445.8897,
-     "rating_upper": 1456.0583,
-     "vote_count": 83848
+     "rating": 1451.0753,
+     "rating_lower": 1445.9931,
+     "rating_upper": 1456.1575,
+     "vote_count": 84740
     },
     {
      "rank": 12,
      "model_name": "HappyHorse 1.0",
      "organization": "aorizon",
      "license": "Proprietary",
-     "rating": 1443.2465,
-     "rating_lower": 1433.0195,
-     "rating_upper": 1453.4735,
-     "vote_count": 73986
+     "rating": 1443.2432,
+     "rating_lower": 1433.0163,
+     "rating_upper": 1453.4701,
+     "vote_count": 73990
     },
     {
      "rank": 13,
      "model_name": "Wan 2.7",
      "organization": "alibaba",
      "license": "Proprietary",
-     "rating": 1428.3015,
-     "rating_lower": 1423.1668,
-     "rating_upper": 1433.4363,
-     "vote_count": 109419
+     "rating": 1428.2325,
+     "rating_lower": 1423.0954,
+     "rating_upper": 1433.3695,
+     "vote_count": 109715
     },
     {
      "rank": 14,
      "model_name": "Grok Imagine Video (720p)",
      "organization": "xai",
      "license": "Proprietary",
-     "rating": 1411.6997,
-     "rating_lower": 1407.6479,
-     "rating_upper": 1415.7514,
-     "vote_count": 626961
+     "rating": 1411.6134,
+     "rating_lower": 1407.5638,
+     "rating_upper": 1415.6629,
+     "vote_count": 628186
     },
     {
      "rank": 15,
      "model_name": "Veo 3.1 (Audio)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1398.5632,
-     "rating_lower": 1388.1166,
-     "rating_upper": 1409.0097,
+     "rating": 1398.5634,
+     "rating_lower": 1388.1168,
+     "rating_upper": 1409.01,
      "vote_count": 25283
     },
     {
@@ -1471,9 +1463,9 @@
      "model_name": "Veo 3.1 (Audio, 1080p)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1388.6796,
-     "rating_lower": 1380.2154,
-     "rating_upper": 1397.1437,
+     "rating": 1388.6696,
+     "rating_lower": 1380.2055,
+     "rating_upper": 1397.1337,
      "vote_count": 55154
     },
     {
@@ -1481,59 +1473,59 @@
      "model_name": "Veo 3.1 Fast (Audio)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1385.8273,
-     "rating_lower": 1377.0176,
-     "rating_upper": 1394.6371,
-     "vote_count": 102932
+     "rating": 1385.8292,
+     "rating_lower": 1377.0193,
+     "rating_upper": 1394.639,
+     "vote_count": 102935
     },
     {
      "rank": 18,
      "model_name": "Grok Imagine Video (480p)",
      "organization": "xai",
      "license": "Proprietary",
-     "rating": 1384.9793,
-     "rating_lower": 1376.6733,
-     "rating_upper": 1393.2853,
-     "vote_count": 19907
+     "rating": 1384.9994,
+     "rating_lower": 1376.6934,
+     "rating_upper": 1393.3054,
+     "vote_count": 19906
     },
     {
      "rank": 19,
      "model_name": "Veo 3.1 Fast (Audio, 1080p)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1372.3208,
-     "rating_lower": 1362.9958,
-     "rating_upper": 1381.6457,
-     "vote_count": 56497
+     "rating": 1372.3258,
+     "rating_lower": 1363.0009,
+     "rating_upper": 1381.6508,
+     "vote_count": 56496
     },
     {
      "rank": 20,
      "model_name": "Vidu Q3 Pro",
      "organization": "shengshu",
      "license": "Proprietary",
-     "rating": 1363.018,
-     "rating_lower": 1354.4835,
-     "rating_upper": 1371.5524,
-     "vote_count": 38708
+     "rating": 1363.074,
+     "rating_lower": 1354.5394,
+     "rating_upper": 1371.6086,
+     "vote_count": 38707
     },
     {
      "rank": 21,
      "model_name": "Kling 3.0 Pro",
      "organization": "kling",
      "license": "Proprietary",
-     "rating": 1353.4238,
-     "rating_lower": 1348.2283,
-     "rating_upper": 1358.6193,
-     "vote_count": 263903
+     "rating": 1353.3633,
+     "rating_lower": 1348.169,
+     "rating_upper": 1358.5576,
+     "vote_count": 264958
     },
     {
      "rank": 22,
      "model_name": "Veo 3 (Audio)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1331.7081,
-     "rating_lower": 1320.3444,
-     "rating_upper": 1343.0719,
+     "rating": 1331.7065,
+     "rating_lower": 1320.3427,
+     "rating_upper": 1343.0702,
      "vote_count": 32406
     },
     {
@@ -1541,9 +1533,9 @@
      "model_name": "Veo 3 Fast (Audio)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1327.3243,
-     "rating_lower": 1317.9099,
-     "rating_upper": 1336.7387,
+     "rating": 1327.3227,
+     "rating_lower": 1317.9083,
+     "rating_upper": 1336.737,
      "vote_count": 41245
     },
     {
@@ -1551,9 +1543,9 @@
      "model_name": "Wan 2.5 Preview",
      "organization": "alibaba",
      "license": "Proprietary",
-     "rating": 1321.9389,
-     "rating_lower": 1311.64,
-     "rating_upper": 1332.2379,
+     "rating": 1321.9403,
+     "rating_lower": 1311.6415,
+     "rating_upper": 1332.2391,
      "vote_count": 17107
     },
     {
@@ -1561,16 +1553,13 @@
      "model_name": "Wan 2.6",
      "organization": "alibaba",
      "license": "Proprietary",
-     "rating": 1308.9284,
-     "rating_lower": 1302.35,
-     "rating_upper": 1315.5068,
-     "vote_count": 143559
+     "rating": 1308.9853,
+     "rating_lower": 1302.404,
+     "rating_upper": 1315.5665,
+     "vote_count": 143569
     }
    ],
-   "cambios": [
-    "entra un modelo nuevo, Gemini Omni 1.2 Flash (google), en el puesto 1, justo encima de MiniMax H3; pasa a ser el primero",
-    "entra un modelo nuevo, Dreamina Seedance 2.5 (720p) (bytedance), en el puesto 3, entre MiniMax H3 y Gemini Omni 1.1 Flash; primero: Gemini Omni 1.2 Flash; a 14 puntos del primero (1488 (±7) frente a 1502 (±12))"
-   ]
+   "cambios": []
   }
  ]
 }
