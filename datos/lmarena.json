@@ -5,263 +5,261 @@
    "nombre": "Text Arena · Overall",
    "subconjunto": "text_style_control",
    "categoria": "overall",
-   "fecha": "2026-11-18",
-   "anterior": "2026-11-11",
+   "fecha": "2026-11-19",
+   "anterior": "2026-11-18",
    "filas": [
     {
      "rank": 1,
      "model_name": "Gemini 4 Carbon (High)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1525.9479,
-     "rating_lower": 1516.3398,
-     "rating_upper": 1535.5561,
-     "vote_count": 4266.0
+     "rating": 1526.9707,
+     "rating_lower": 1517.3499,
+     "rating_upper": 1536.5915,
+     "vote_count": 4262.0
     },
     {
      "rank": 2,
      "model_name": "Gemini 4 Argon (High)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1520.5618,
-     "rating_lower": 1515.4551,
-     "rating_upper": 1525.6685,
-     "vote_count": 25751.0
+     "rating": 1519.6224,
+     "rating_lower": 1514.5529,
+     "rating_upper": 1524.6919,
+     "vote_count": 27193.0
     },
     {
      "rank": 3,
      "model_name": "Gemini 4 Neon (High)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1518.4651,
-     "rating_lower": 1508.5181,
-     "rating_upper": 1528.4121,
-     "vote_count": 3885.0
+     "rating": 1512.936,
+     "rating_lower": 1504.4227,
+     "rating_upper": 1521.4494,
+     "vote_count": 5555.0
     },
     {
      "rank": 4,
      "model_name": "Muse Wonder (Max)",
      "organization": "meta",
      "license": "Proprietary",
-     "rating": 1510.6635,
-     "rating_lower": 1504.8085,
-     "rating_upper": 1516.5185,
-     "vote_count": 15331.0
+     "rating": 1511.4389,
+     "rating_lower": 1505.6648,
+     "rating_upper": 1517.213,
+     "vote_count": 16158.0
     },
     {
      "rank": 5,
      "model_name": "Claude Opus 5.5 (High)",
      "organization": "anthropic",
      "license": "Proprietary",
-     "rating": 1507.0246,
-     "rating_lower": 1501.2763,
-     "rating_upper": 1512.773,
-     "vote_count": 17727.0
+     "rating": 1505.9622,
+     "rating_lower": 1500.2585,
+     "rating_upper": 1511.6659,
+     "vote_count": 18286.0
     },
     {
      "rank": 6,
      "model_name": "Claude Fable 5 (High)",
      "organization": "anthropic",
      "license": "Proprietary",
-     "rating": 1504.0839,
-     "rating_lower": 1499.9051,
-     "rating_upper": 1508.2628,
-     "vote_count": 45336.0
+     "rating": 1504.1413,
+     "rating_lower": 1499.9644,
+     "rating_upper": 1508.3182,
+     "vote_count": 45315.0
     },
     {
      "rank": 7,
-     "model_name": "Claude Opus 4.6 (High)",
+     "model_name": "Claude Fable 5.2 (Max)",
      "organization": "anthropic",
      "license": "Proprietary",
-     "rating": 1502.8218,
-     "rating_lower": 1499.5613,
-     "rating_upper": 1506.0824,
-     "vote_count": 84226.0
+     "rating": 1503.0556,
+     "rating_lower": 1494.3075,
+     "rating_upper": 1511.8038,
+     "vote_count": 5216.0
     },
     {
      "rank": 8,
-     "model_name": "Claude Fable 5.1 (Max)",
+     "model_name": "Claude Opus 4.6 (High)",
      "organization": "anthropic",
      "license": "Proprietary",
-     "rating": 1502.1298,
-     "rating_lower": 1496.7707,
-     "rating_upper": 1507.4888,
-     "vote_count": 21941.0
+     "rating": 1502.8305,
+     "rating_lower": 1499.5713,
+     "rating_upper": 1506.0897,
+     "vote_count": 84188.0
     },
     {
      "rank": 9,
-     "model_name": "Claude Opus 4.7 (High)",
+     "model_name": "Claude Fable 5.1 (Max)",
      "organization": "anthropic",
      "license": "Proprietary",
-     "rating": 1501.071,
-     "rating_lower": 1497.2974,
-     "rating_upper": 1504.8446,
-     "vote_count": 64131.0
+     "rating": 1502.7697,
+     "rating_lower": 1497.4483,
+     "rating_upper": 1508.0912,
+     "vote_count": 22408.0
     },
     {
      "rank": 10,
-     "model_name": "Muse Spark 1.3 (Max)",
-     "organization": "meta",
+     "model_name": "Claude Opus 4.7 (High)",
+     "organization": "anthropic",
      "license": "Proprietary",
-     "rating": 1497.6122,
-     "rating_lower": 1492.7598,
-     "rating_upper": 1502.4645,
-     "vote_count": 29406.0
+     "rating": 1501.2364,
+     "rating_lower": 1497.4629,
+     "rating_upper": 1505.0099,
+     "vote_count": 64074.0
     },
     {
      "rank": 11,
-     "model_name": "Gemini 3.8 Flash (High)",
-     "organization": "google",
+     "model_name": "Muse Spark 1.3 (Max)",
+     "organization": "meta",
      "license": "Proprietary",
-     "rating": 1496.7264,
-     "rating_lower": 1492.6716,
-     "rating_upper": 1500.7813,
-     "vote_count": 70822.0
+     "rating": 1498.3717,
+     "rating_lower": 1493.537,
+     "rating_upper": 1503.2064,
+     "vote_count": 30142.0
     },
     {
      "rank": 12,
-     "model_name": "Claude Opus 4.6",
-     "organization": "anthropic",
+     "model_name": "Gemini 3.8 Flash (High)",
+     "organization": "google",
      "license": "Proprietary",
-     "rating": 1496.5623,
-     "rating_lower": 1493.3727,
-     "rating_upper": 1499.7519,
-     "vote_count": 88982.0
+     "rating": 1497.2778,
+     "rating_lower": 1493.249,
+     "rating_upper": 1501.3067,
+     "vote_count": 73351.0
     },
     {
      "rank": 13,
-     "model_name": "Claude Opus 4.7",
+     "model_name": "Claude Opus 4.6",
      "organization": "anthropic",
      "license": "Proprietary",
-     "rating": 1494.0952,
-     "rating_lower": 1490.3196,
-     "rating_upper": 1497.8709,
-     "vote_count": 65194.0
+     "rating": 1496.4028,
+     "rating_lower": 1493.2137,
+     "rating_upper": 1499.5919,
+     "vote_count": 88918.0
     },
     {
      "rank": 14,
-     "model_name": "Muse Spark 1.2 (xHigh)",
-     "organization": "meta",
+     "model_name": "Claude Opus 4.7",
+     "organization": "anthropic",
      "license": "Proprietary",
-     "rating": 1492.9672,
-     "rating_lower": 1487.4077,
-     "rating_upper": 1498.5266,
-     "vote_count": 17645.0
+     "rating": 1494.0352,
+     "rating_lower": 1490.2606,
+     "rating_upper": 1497.8098,
+     "vote_count": 65152.0
     },
     {
      "rank": 15,
-     "model_name": "Muse Spark 1.1",
+     "model_name": "Muse Spark 1.2 (xHigh)",
      "organization": "meta",
      "license": "Proprietary",
-     "rating": 1491.1094,
-     "rating_lower": 1486.9314,
-     "rating_upper": 1495.2874,
-     "vote_count": 45370.0
+     "rating": 1493.2502,
+     "rating_lower": 1487.7562,
+     "rating_upper": 1498.7442,
+     "vote_count": 18264.0
     },
     {
      "rank": 16,
-     "model_name": "Gemini 4 Hydrogen (High)",
-     "organization": "google",
+     "model_name": "Muse Spark 1.1",
+     "organization": "meta",
      "license": "Proprietary",
-     "rating": 1489.7697,
-     "rating_lower": 1480.7835,
-     "rating_upper": 1498.7559,
-     "vote_count": 4737.0
+     "rating": 1491.1096,
+     "rating_lower": 1486.934,
+     "rating_upper": 1495.2852,
+     "vote_count": 45342.0
     },
     {
      "rank": 17,
      "model_name": "Gemini 3.7 Flash (High)",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1489.7317,
-     "rating_lower": 1485.0413,
-     "rating_upper": 1494.4221,
-     "vote_count": 33110.0
+     "rating": 1489.8544,
+     "rating_lower": 1485.1644,
+     "rating_upper": 1494.5444,
+     "vote_count": 33087.0
     },
     {
      "rank": 18,
-     "model_name": "Claude Opus 5 (High)",
-     "organization": "anthropic",
+     "model_name": "Gemini 4 Hydrogen (High)",
+     "organization": "google",
      "license": "Proprietary",
-     "rating": 1489.6383,
-     "rating_lower": 1486.0115,
-     "rating_upper": 1493.265,
-     "vote_count": 73457.0
+     "rating": 1489.7756,
+     "rating_lower": 1480.8049,
+     "rating_upper": 1498.7463,
+     "vote_count": 4743.0
     },
     {
      "rank": 19,
-     "model_name": "Muse Spark",
-     "organization": "meta",
+     "model_name": "Claude Opus 5 (High)",
+     "organization": "anthropic",
      "license": "Proprietary",
-     "rating": 1489.2821,
-     "rating_lower": 1483.5188,
-     "rating_upper": 1495.0455,
-     "vote_count": 13972.0
+     "rating": 1489.6916,
+     "rating_lower": 1486.0672,
+     "rating_upper": 1493.316,
+     "vote_count": 73414.0
     },
     {
      "rank": 20,
-     "model_name": "Claude Opus 5 (Max)",
-     "organization": "anthropic",
+     "model_name": "Muse Spark",
+     "organization": "meta",
      "license": "Proprietary",
-     "rating": 1488.7425,
-     "rating_lower": 1484.0147,
-     "rating_upper": 1493.4702,
-     "vote_count": 35568.0
+     "rating": 1489.2933,
+     "rating_lower": 1483.5313,
+     "rating_upper": 1495.0553,
+     "vote_count": 13972.0
     },
     {
      "rank": 21,
-     "model_name": "Kimi K3 (Max)",
-     "organization": "moonshot",
-     "license": "Kimi K3 license",
-     "rating": 1487.2609,
-     "rating_lower": 1483.063,
-     "rating_upper": 1491.4588,
-     "vote_count": 43641.0
+     "model_name": "Claude Opus 5 (Max)",
+     "organization": "anthropic",
+     "license": "Proprietary",
+     "rating": 1488.7741,
+     "rating_lower": 1484.0475,
+     "rating_upper": 1493.5007,
+     "vote_count": 35534.0
     },
     {
      "rank": 22,
-     "model_name": "Gemini 3.1 Pro Preview",
-     "organization": "google",
-     "license": "Proprietary",
-     "rating": 1486.8266,
-     "rating_lower": 1483.8973,
-     "rating_upper": 1489.7558,
-     "vote_count": 131977.0
+     "model_name": "Kimi K3 (Max)",
+     "organization": "moonshot",
+     "license": "Kimi K3 license",
+     "rating": 1487.7554,
+     "rating_lower": 1483.5769,
+     "rating_upper": 1491.934,
+     "vote_count": 44364.0
     },
     {
      "rank": 23,
-     "model_name": "Kimi K3.1 Pro (Max)",
-     "organization": "moonshot",
-     "license": "Kimi K3.1 Pro License",
-     "rating": 1486.5554,
-     "rating_lower": 1478.0813,
-     "rating_upper": 1495.0294,
-     "vote_count": 6011.0
+     "model_name": "Gemini 3.1 Pro Preview",
+     "organization": "google",
+     "license": "Proprietary",
+     "rating": 1486.7901,
+     "rating_lower": 1483.8629,
+     "rating_upper": 1489.7174,
+     "vote_count": 131889.0
     },
     {
      "rank": 24,
      "model_name": "Gemini 3 Pro",
      "organization": "google",
      "license": "Proprietary",
-     "rating": 1485.6367,
-     "rating_lower": 1481.8353,
-     "rating_upper": 1489.4381,
-     "vote_count": 41801.0
+     "rating": 1485.5732,
+     "rating_lower": 1481.7722,
+     "rating_upper": 1489.3743,
+     "vote_count": 41792.0
     },
     {
      "rank": 25,
      "model_name": "GPT-5.6 Sol (xHigh)",
      "organization": "openai",
      "license": "Proprietary",
-     "rating": 1485.2201,
-     "rating_lower": 1480.9659,
-     "rating_upper": 1489.4744,
-     "vote_count": 43809.0
+     "rating": 1485.1204,
+     "rating_lower": 1480.864,
+     "rating_upper": 1489.3767,
+     "vote_count": 43782.0
     }
    ],
-   "cambios": [
-    "entra un modelo nuevo, Gemini 4 Neon (High) (google), en el puesto 3, entre Gemini 4 Argon (High) y Muse Wonder (Max); primero: Gemini 4 Carbon (High)"
-   ]
+   "cambios": []
   },
   {
    "nombre": "Agent Arena · Overall",
